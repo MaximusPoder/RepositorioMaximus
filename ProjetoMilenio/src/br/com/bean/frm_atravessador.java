@@ -35,12 +35,12 @@ public class frm_atravessador extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         botao_cadastrar_atravessador = new javax.swing.JButton();
         botao_questionario_atravessador = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        botao_outros_questionarios = new javax.swing.JButton();
         botao_sair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel1.setForeground(new java.awt.Color(0, 102, 102));
         jLabel1.setText("Formulário atravessador principal ");
 
@@ -60,7 +60,12 @@ public class frm_atravessador extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Outros Questionários");
+        botao_outros_questionarios.setText("Outros Questionários");
+        botao_outros_questionarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_outros_questionariosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -71,7 +76,7 @@ public class frm_atravessador extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botao_questionario_atravessador)
                     .addComponent(botao_cadastrar_atravessador)
-                    .addComponent(jButton1))
+                    .addComponent(botao_outros_questionarios))
                 .addContainerGap(124, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -82,11 +87,16 @@ public class frm_atravessador extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botao_questionario_atravessador)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(botao_outros_questionarios)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         botao_sair.setText("Sair");
+        botao_sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_sairActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -128,6 +138,14 @@ public class frm_atravessador extends javax.swing.JFrame {
         new frm_questionario_atravessador().setVisible(true);
     }//GEN-LAST:event_botao_questionario_atravessadorActionPerformed
 
+    private void botao_outros_questionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_outros_questionariosActionPerformed
+        new questionario_atravessador_3().setVisible(true);
+    }//GEN-LAST:event_botao_outros_questionariosActionPerformed
+
+    private void botao_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_sairActionPerformed
+       System.exit(EXIT_ON_CLOSE);
+    }//GEN-LAST:event_botao_sairActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -142,9 +160,9 @@ public class frm_atravessador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botao_cadastrar_atravessador;
+    private javax.swing.JButton botao_outros_questionarios;
     private javax.swing.JButton botao_questionario_atravessador;
     private javax.swing.JButton botao_sair;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

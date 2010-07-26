@@ -82,7 +82,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="botao_questionario_atravessador" min="-2" max="-2" attributes="0"/>
                       <Component id="botao_cadastrar_atravessador" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="botao_outros_questionarios" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="124" max="32767" attributes="0"/>
               </Group>
@@ -96,7 +96,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="botao_questionario_atravessador" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  <Component id="botao_outros_questionarios" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -119,10 +119,13 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botao_questionario_atravessadorActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="botao_outros_questionarios">
           <Properties>
             <Property name="text" type="java.lang.String" value="Outros Question&#xe1;rios"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botao_outros_questionariosActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -130,6 +133,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Sair"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botao_sairActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

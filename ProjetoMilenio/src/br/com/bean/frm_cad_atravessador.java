@@ -12,15 +12,11 @@
 package br.com.bean;
 
 import br.com.Persistencia.Conexao;
-import br.com.bean.addMaterial;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
+
 
 /**
  *
@@ -47,8 +43,6 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
         }catch (SQLException ex) {
             Logger.getLogger(frm_cad_atravessador.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-
 
         conexao.execute("select * from dat_questionario_atravessador");
 
@@ -667,7 +661,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
         tfNome.setText("");
         tfApelido.setText("");
         tfNaturalidade.setText("");
-        tfIdade.setText("");
+        tfIdade.setText("0");
         tfAtividadePrincipal.setText("");
         tfAtividadeSecundaria.setText("");
         tfEstadoCivil.setText("");
@@ -772,7 +766,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
                     tfQualColonia.getText()+"','"+
                     tfDesdeQuando.getText()+"')";
 
-
+                    System.out.println(sqlinsert);
             conexao.salvar(sqlinsert);
             //agora é hora de atualizar o resultset
             conexao.execute("select * from dat_questionario_atravessador");
@@ -794,7 +788,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
+                new frm_atravessador().setVisible(true);
             }
         });
     }
