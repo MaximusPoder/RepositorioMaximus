@@ -57,7 +57,13 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
                     }catch (SQLException ex) {
                         System.out.println(ex);
                     }
-
+         conexao.execute("select * from dat_questionario_atravessador_pescado_sub");
+        try {
+            conexao.resultSet.first();
+        } catch (SQLException ex) {
+            Logger.getLogger(frm_questionario_atravessador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         mostra_dados();
 
 
 
@@ -77,17 +83,17 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jpPescadoSubproduto = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
-        Cadastrar4 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        botao_primeiro4 = new javax.swing.JButton();
-        botao_anterior4 = new javax.swing.JButton();
-        botao_proximo4 = new javax.swing.JButton();
-        botao_ultimo4 = new javax.swing.JButton();
+        botao_cadastrar = new javax.swing.JButton();
+        botao_excluir = new javax.swing.JButton();
+        botao_primeiro = new javax.swing.JButton();
+        botao_anterior = new javax.swing.JButton();
+        botao_proximo = new javax.swing.JButton();
+        botao_ultimo = new javax.swing.JButton();
         cbNomeAtravessador = new javax.swing.JComboBox();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        ckbSempreOsMesmos = new javax.swing.JCheckBox();
+        ckbSempreDosMesmos = new javax.swing.JCheckBox();
         jLabel11 = new javax.swing.JLabel();
         ckbPeixeInteiro = new javax.swing.JCheckBox();
         jLabel12 = new javax.swing.JLabel();
@@ -113,6 +119,9 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
         jScrollPane9 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         botao_material_atualizar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        taExigenciaCompraPescado = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -125,45 +134,45 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
-        Cadastrar4.setText("Ok");
-        Cadastrar4.addActionListener(new java.awt.event.ActionListener() {
+        botao_cadastrar.setText("Cadastrar");
+        botao_cadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Cadastrar4Action(evt);
+                botao_cadastrarAction(evt);
             }
         });
 
-        jButton19.setText("Excluir");
-        jButton19.addActionListener(new java.awt.event.ActionListener() {
+        botao_excluir.setText("Excluir");
+        botao_excluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton19ActionPerformed(evt);
+                botao_excluirActionPerformed(evt);
             }
         });
 
-        botao_primeiro4.setText("<<");
-        botao_primeiro4.addActionListener(new java.awt.event.ActionListener() {
+        botao_primeiro.setText("<<");
+        botao_primeiro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botao_primeiro4ActionPerformed(evt);
+                botao_primeiroActionPerformed(evt);
             }
         });
 
-        botao_anterior4.setText("<");
-        botao_anterior4.addActionListener(new java.awt.event.ActionListener() {
+        botao_anterior.setText("<");
+        botao_anterior.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botao_anterior4ActionPerformed(evt);
+                botao_anteriorActionPerformed(evt);
             }
         });
 
-        botao_proximo4.setText(">");
-        botao_proximo4.addActionListener(new java.awt.event.ActionListener() {
+        botao_proximo.setText(">");
+        botao_proximo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botao_proximo4ActionPerformed(evt);
+                botao_proximoActionPerformed(evt);
             }
         });
 
-        botao_ultimo4.setText(">>");
-        botao_ultimo4.addActionListener(new java.awt.event.ActionListener() {
+        botao_ultimo.setText(">>");
+        botao_ultimo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botao_ultimo4ActionPerformed(evt);
+                botao_ultimoActionPerformed(evt);
             }
         });
 
@@ -175,17 +184,17 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(Cadastrar4)
+                        .addComponent(botao_cadastrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton19))
+                        .addComponent(botao_excluir))
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(botao_primeiro4)
+                        .addComponent(botao_primeiro)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botao_anterior4)
+                        .addComponent(botao_anterior)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botao_proximo4)
+                        .addComponent(botao_proximo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botao_ultimo4)))
+                        .addComponent(botao_ultimo)))
                 .addContainerGap(398, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
@@ -193,14 +202,14 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botao_primeiro4)
-                    .addComponent(botao_anterior4)
-                    .addComponent(botao_proximo4)
-                    .addComponent(botao_ultimo4))
+                    .addComponent(botao_primeiro)
+                    .addComponent(botao_anterior)
+                    .addComponent(botao_proximo)
+                    .addComponent(botao_ultimo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Cadastrar4)
-                    .addComponent(jButton19))
+                    .addComponent(botao_cadastrar)
+                    .addComponent(botao_excluir))
                 .addContainerGap())
         );
 
@@ -216,7 +225,7 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
 
         jLabel10.setText("Adquire o produto sempre dos mesmo pescadores?");
 
-        ckbSempreOsMesmos.setText("SIM");
+        ckbSempreDosMesmos.setText("SIM");
 
         jLabel11.setText("Só vente o peixe inteiro? Outras formas de comercialização?");
 
@@ -288,6 +297,12 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Quais as suas exigências quanto à compra do pescado, e dos subprodutos?");
+
+        taExigenciaCompraPescado.setColumns(20);
+        taExigenciaCompraPescado.setRows(5);
+        jScrollPane2.setViewportView(taExigenciaCompraPescado);
+
         javax.swing.GroupLayout jpPescadoSubprodutoLayout = new javax.swing.GroupLayout(jpPescadoSubproduto);
         jpPescadoSubproduto.setLayout(jpPescadoSubprodutoLayout);
         jpPescadoSubprodutoLayout.setHorizontalGroup(
@@ -296,54 +311,47 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                        .addComponent(jLabel16)
-                        .addContainerGap(276, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 714, Short.MAX_VALUE)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 606, Short.MAX_VALUE)
-                                .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.LEADING)))
-                        .addContainerGap())
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 606, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jScrollPane5)
+                                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 606, Short.MAX_VALUE)
+                                .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                                    .addComponent(jLabel8)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(cbNomeAtravessador, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel9)
+                                .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                                    .addComponent(jLabel11)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(ckbPeixeInteiro))
+                                .addComponent(jLabel12)
+                                .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                                    .addComponent(jLabel10)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(ckbSempreDosMesmos))
+                                .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel1)))
+                        .addContainerGap(68, Short.MAX_VALUE))
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                        .addComponent(jLabel17)
-                        .addContainerGap(513, Short.MAX_VALUE))
-                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                        .addComponent(jLabel18)
-                        .addContainerGap(372, Short.MAX_VALUE))
-                    .addComponent(jLabel20)
-                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                        .addComponent(jLabel19)
-                        .addContainerGap(229, Short.MAX_VALUE))
-                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                        .addComponent(botao_add_atravessador)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botao_material_atualizar)
-                        .addContainerGap())
-                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 606, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                                .addComponent(jLabel8)
+                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel14)
+                            .addComponent(jScrollPane8)
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 606, Short.MAX_VALUE)
+                            .addComponent(jScrollPane7)
+                            .addComponent(jScrollPane9)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel19)
+                            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                                .addComponent(botao_add_atravessador)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cbNomeAtravessador, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ckbPeixeInteiro))
-                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ckbSempreOsMesmos))
-                            .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(118, Short.MAX_VALUE))))
+                                .addComponent(botao_material_atualizar)))
+                        .addContainerGap(68, Short.MAX_VALUE))))
         );
         jpPescadoSubprodutoLayout.setVerticalGroup(
             jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -361,7 +369,7 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
                 .addGap(9, 9, 9)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(ckbSempreOsMesmos))
+                    .addComponent(ckbSempreDosMesmos))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
@@ -370,6 +378,10 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
                 .addComponent(jLabel12)
                 .addGap(3, 3, 3)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -428,29 +440,29 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
         setBounds((screenSize.width-769)/2, (screenSize.height-790)/2, 769, 790);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Cadastrar4Action(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastrar4Action
+    private void botao_cadastrarAction(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_cadastrarAction
         // TODO add your handling code here:
-}//GEN-LAST:event_Cadastrar4Action
+}//GEN-LAST:event_botao_cadastrarAction
 
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+    private void botao_excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_excluirActionPerformed
         // TODO add your handling code here:
-}//GEN-LAST:event_jButton19ActionPerformed
+}//GEN-LAST:event_botao_excluirActionPerformed
 
-    private void botao_primeiro4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_primeiro4ActionPerformed
+    private void botao_primeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_primeiroActionPerformed
         // TODO add your handling code here:
-}//GEN-LAST:event_botao_primeiro4ActionPerformed
+}//GEN-LAST:event_botao_primeiroActionPerformed
 
-    private void botao_anterior4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_anterior4ActionPerformed
+    private void botao_anteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_anteriorActionPerformed
         // TODO add your handling code here:
-}//GEN-LAST:event_botao_anterior4ActionPerformed
+}//GEN-LAST:event_botao_anteriorActionPerformed
 
-    private void botao_proximo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_proximo4ActionPerformed
+    private void botao_proximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_proximoActionPerformed
         // TODO add your handling code here:
-}//GEN-LAST:event_botao_proximo4ActionPerformed
+}//GEN-LAST:event_botao_proximoActionPerformed
 
-    private void botao_ultimo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_ultimo4ActionPerformed
+    private void botao_ultimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_ultimoActionPerformed
         // TODO add your handling code here:
-}//GEN-LAST:event_botao_ultimo4ActionPerformed
+}//GEN-LAST:event_botao_ultimoActionPerformed
 
     private void cbNomeAtravessadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbNomeAtravessadorActionPerformed
        
@@ -504,17 +516,18 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Cadastrar4;
     private javax.swing.JButton botao_add_atravessador;
-    private javax.swing.JButton botao_anterior4;
+    private javax.swing.JButton botao_anterior;
+    private javax.swing.JButton botao_cadastrar;
+    private javax.swing.JButton botao_excluir;
     private javax.swing.JButton botao_material_atualizar;
-    private javax.swing.JButton botao_primeiro4;
-    private javax.swing.JButton botao_proximo4;
-    private javax.swing.JButton botao_ultimo4;
+    private javax.swing.JButton botao_primeiro;
+    private javax.swing.JButton botao_proximo;
+    private javax.swing.JButton botao_ultimo;
     private javax.swing.JComboBox cbNomeAtravessador;
     private javax.swing.JCheckBox ckbPeixeInteiro;
-    private javax.swing.JCheckBox ckbSempreOsMesmos;
-    private javax.swing.JButton jButton19;
+    private javax.swing.JCheckBox ckbSempreDosMesmos;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -530,6 +543,7 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
@@ -541,6 +555,7 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
     private javax.swing.JTextArea taArmazenamento;
     private javax.swing.JTextArea taComercializacao;
     private javax.swing.JTextArea taCriterioQualidadeProduto;
+    private javax.swing.JTextArea taExigenciaCompraPescado;
     private javax.swing.JTextArea taOrigemProduto;
     private javax.swing.JTextArea taRecepcao;
     // End of variables declaration//GEN-END:variables
@@ -576,7 +591,27 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
 
     public void mostra_dados(){
         try {
+            //Exibir os text areas
             taOrigemProduto.setText(conexao.resultSet.getString("origem_produto"));
+            taCriterioQualidadeProduto.setText(conexao.resultSet.getString("criterios_qualidade_produto"));
+            taExigenciaCompraPescado.setText(conexao.resultSet.getString("exigencia_pescado_subprodutos"));
+            taRecepcao.setText(conexao.resultSet.getString("como_func_recepcao"));
+            taArmazenamento.setText(conexao.resultSet.getString("como_func_armazenamento"));
+            taComercializacao.setText(conexao.resultSet.getString("como_funf_comercializacao"));
+
+            //Selecionar os check boxes conforme o BD
+            if (conexao.resultSet.getString("sempre_dos_mesmos_pesc").equals("1"))
+                   ckbSempreDosMesmos.setSelected(true);
+            else
+                   ckbSempreDosMesmos.setSelected(false);
+
+            if (conexao.resultSet.getString("peixe_inteiro").equals("1"))
+                   ckbPeixeInteiro.setSelected(true);
+            else
+                   ckbPeixeInteiro.setSelected(false);
+
+
+
         } catch (Exception e) {
             System.out.println(e);
         }

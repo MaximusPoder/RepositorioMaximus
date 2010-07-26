@@ -766,7 +766,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
                     tfQualColonia.getText()+"','"+
                     tfDesdeQuando.getText()+"')";
 
-                    System.out.println(sqlinsert);
+                    //System.out.println(sqlinsert);
             conexao.salvar(sqlinsert);
             //agora é hora de atualizar o resultset
             conexao.execute("select * from dat_questionario_atravessador");
