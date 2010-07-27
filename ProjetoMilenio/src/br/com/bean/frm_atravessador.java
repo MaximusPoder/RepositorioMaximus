@@ -11,12 +11,14 @@
 
 package br.com.bean;
 
+import br.com.Persistencia.Conexao;
+
 /**
  *
  * @author MPA
  */
 public class frm_atravessador extends javax.swing.JFrame {
-
+    Conexao conexao;
     /** Creates new form frm_atravessador */
     public frm_atravessador() {
         initComponents();
@@ -39,6 +41,11 @@ public class frm_atravessador extends javax.swing.JFrame {
         botao_sair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel1.setForeground(new java.awt.Color(0, 102, 102));
@@ -111,7 +118,7 @@ public class frm_atravessador extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(254, Short.MAX_VALUE)
+                        .addContainerGap(276, Short.MAX_VALUE)
                         .addComponent(botao_sair)))
                 .addContainerGap())
         );
@@ -145,6 +152,10 @@ public class frm_atravessador extends javax.swing.JFrame {
     private void botao_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_sairActionPerformed
        System.exit(EXIT_ON_CLOSE);
     }//GEN-LAST:event_botao_sairActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowClosed
 
     /**
     * @param args the command line arguments

@@ -45,23 +45,24 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
 
                 //Preenche a tabela
                     try {
-                        //cbMunicipio.removeAllItems();
                         conexao.execute("select * from dat_questionario_a_material");
                         preencher_jtable();
                         conexao.execute("select * from dat_questionario_atravessador");
                         conexao.resultSet.first();
                         while (conexao.resultSet.next()){
                             //cbMunicipio.addItem(conexao.resultSet.getString("nome"));
+                           System.out.println("xD");
                             System.out.println(conexao.resultSet.getString("nome"));
                         }
                     }catch (SQLException ex) {
                         System.out.println(ex);
                     }
-         conexao.execute("select * from dat_questionario_atravessador_pescado_sub");
+
+        conexao.execute("select * from dat_questionario_atravessador_pescado_sub");
         try {
             conexao.resultSet.first();
         } catch (SQLException ex) {
-            Logger.getLogger(frm_questionario_atravessador.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex+" linha 65");
         }
          mostra_dados();
 
@@ -467,7 +468,7 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
     private void cbNomeAtravessadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbNomeAtravessadorActionPerformed
        
         //Pesquisa automática do Combo Box Nome do atravessador
-        /*
+        
         if (inicia_combo == 1){
          try {
             conexao.execute("select * from dat_questionario_atravessador_pescado_sub");
@@ -481,13 +482,14 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
                     conexao.resultSet.next();
             }
             //nas linhas abaixo, mostra_conteudo_tabela();
-            // mostra_dados_atravessador_aba2();
+             mostra_dados();
 
         } catch (SQLException ex) {
-            System.out.println(ex);
+            limpar_dados();
+            System.out.println(ex+" Erro na pesquisa de nome");
             }
         }inicia_combo = 1;
-         */
+         
     }//GEN-LAST:event_cbNomeAtravessadorActionPerformed
 
     private void botao_add_atravessadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_add_atravessadorActionPerformed
@@ -613,8 +615,22 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
 
 
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println(e + " metodo mostrar dados");
         }
+    }
+
+        public void limpar_dados(){
+            taOrigemProduto.setText("");
+            taCriterioQualidadeProduto.setText("");
+            taExigenciaCompraPescado.setText("");
+            taRecepcao.setText("");
+            taArmazenamento.setText("");
+            taComercializacao.setText("");
+
+
+            ckbSempreDosMesmos.setSelected(false);
+            ckbPeixeInteiro.setSelected(false);
+
     }
 
 
