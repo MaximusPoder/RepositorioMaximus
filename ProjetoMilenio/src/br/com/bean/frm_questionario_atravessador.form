@@ -69,7 +69,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
@@ -96,19 +96,19 @@
                                   <Component id="jPanel8" alignment="0" max="32767" attributes="1"/>
                                   <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="195" max="32767" attributes="0"/>
+                              <EmptySpace pref="132" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jScrollPane2" alignment="0" pref="651" max="32767" attributes="1"/>
-                                  <Component id="jLabel13" alignment="0" pref="651" max="32767" attributes="1"/>
+                                  <Component id="jScrollPane2" alignment="0" pref="588" max="32767" attributes="1"/>
+                                  <Component id="jLabel13" alignment="0" pref="588" max="32767" attributes="1"/>
                                   <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel15" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="1"/>
-                                  <Component id="jScrollPane8" alignment="0" pref="651" max="32767" attributes="1"/>
-                                  <Component id="jScrollPane6" alignment="0" pref="651" max="32767" attributes="1"/>
-                                  <Component id="jScrollPane7" alignment="0" pref="651" max="32767" attributes="1"/>
-                                  <Component id="jScrollPane9" alignment="0" pref="651" max="32767" attributes="1"/>
+                                  <Component id="jScrollPane8" alignment="0" pref="588" max="32767" attributes="1"/>
+                                  <Component id="jScrollPane6" alignment="0" pref="588" max="32767" attributes="1"/>
+                                  <Component id="jScrollPane7" alignment="0" pref="588" max="32767" attributes="1"/>
+                                  <Component id="jScrollPane9" alignment="0" pref="588" max="32767" attributes="1"/>
                                   <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel20" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -127,21 +127,47 @@
                               <Component id="jLabel2" alignment="0" pref="607" max="32767" attributes="1"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="610" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jScrollPane13" alignment="0" pref="699" max="32767" attributes="1"/>
                                   <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jScrollPane12" alignment="0" max="32767" attributes="1"/>
-                                      <Component id="jScrollPane11" alignment="0" pref="709" max="32767" attributes="1"/>
-                                      <Component id="jScrollPane10" alignment="0" max="32767" attributes="1"/>
-                                  </Group>
+                                  <Component id="jScrollPane12" alignment="0" pref="699" max="32767" attributes="1"/>
+                                  <Component id="jScrollPane11" alignment="0" pref="699" max="32767" attributes="1"/>
                               </Group>
-                              <EmptySpace pref="92" max="32767" attributes="0"/>
+                              <EmptySpace pref="39" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="102" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="jScrollPane10" alignment="0" max="32767" attributes="1"/>
+                                  <Component id="jLabel4" alignment="0" max="32767" attributes="1"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel22" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="ckbConsumidor" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="ckbRestaurante" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="ckbSupemercados" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="ckbRevendedores" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="ckbFeiras" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="ckbOutros_principaisClientes" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="tfOutros_principaisClientes" min="-2" pref="132" max="-2" attributes="1"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -228,7 +254,23 @@
                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane12" min="-2" pref="97" max="-2" attributes="0"/>
-                      <EmptySpace pref="695" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane13" min="-2" pref="97" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="ckbConsumidor" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckbRestaurante" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckbSupemercados" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckbRevendedores" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckbFeiras" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckbOutros_principaisClientes" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfOutros_principaisClientes" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="543" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -596,6 +638,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="11" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Mercado Local (no mesmo munic&#xed;pio)"/>
               </Properties>
             </Component>
@@ -623,6 +668,9 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel6">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="11" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Mercado Estadual (sem o mesmo munic&#xed;pio)"/>
               </Properties>
             </Component>
@@ -650,6 +698,9 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="11" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Mercado Nacional (sem o de origem)"/>
               </Properties>
             </Component>
@@ -675,6 +726,76 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JLabel" name="jLabel21">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="11" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Mercado Internacional"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane13">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="jTable5">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="5" rowCount="4">
+                        <Column editable="true" title="Esp&#xe9;cie" type="java.lang.Object"/>
+                        <Column editable="true" title="Produto" type="java.lang.Object"/>
+                        <Column editable="true" title="Destino" type="java.lang.Object"/>
+                        <Column editable="true" title="Volume" type="java.lang.Object"/>
+                        <Column editable="true" title="Pre&#xe7;o ($)" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JCheckBox" name="ckbRestaurante">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Restaurante"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="ckbSupemercados">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Supermercados"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel22">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Quais os principais clientes?"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="ckbConsumidor">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Consumidor"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="ckbRevendedores">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Revendedores"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="ckbFeiras">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Feiras"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="tfOutros_principaisClientes">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfOutros_principaisClientesActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="ckbOutros_principaisClientes">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Outros"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
       </SubComponents>

@@ -304,7 +304,7 @@ public class addProduto_MercadoLocal extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //new addMaterial().setVisible(true);
+                new addProduto_MercadoLocal("").setVisible(true);
             }
         });
     }
