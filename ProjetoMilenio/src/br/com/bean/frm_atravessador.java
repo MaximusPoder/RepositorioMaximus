@@ -37,7 +37,6 @@ public class frm_atravessador extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         botao_cadastrar_atravessador = new javax.swing.JButton();
         botao_questionario_atravessador = new javax.swing.JButton();
-        botao_outros_questionarios = new javax.swing.JButton();
         botao_sair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -67,24 +66,19 @@ public class frm_atravessador extends javax.swing.JFrame {
             }
         });
 
-        botao_outros_questionarios.setText("Outros Questionários");
-        botao_outros_questionarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botao_outros_questionariosActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(70, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botao_questionario_atravessador)
-                    .addComponent(botao_cadastrar_atravessador)
-                    .addComponent(botao_outros_questionarios))
-                .addContainerGap(124, Short.MAX_VALUE))
+                    .addComponent(botao_questionario_atravessador, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(botao_cadastrar_atravessador)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(66, 66, 66))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,8 +87,6 @@ public class frm_atravessador extends javax.swing.JFrame {
                 .addComponent(botao_cadastrar_atravessador)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botao_questionario_atravessador)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botao_outros_questionarios)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -111,12 +103,12 @@ public class frm_atravessador extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addComponent(jLabel1))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap(276, Short.MAX_VALUE)
                         .addComponent(botao_sair)))
@@ -129,7 +121,7 @@ public class frm_atravessador extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(botao_sair)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -144,10 +136,6 @@ public class frm_atravessador extends javax.swing.JFrame {
     private void botao_questionario_atravessadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_questionario_atravessadorActionPerformed
         new frm_questionario_atravessador().setVisible(true);
     }//GEN-LAST:event_botao_questionario_atravessadorActionPerformed
-
-    private void botao_outros_questionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_outros_questionariosActionPerformed
-        new questionario_atravessador_3().setVisible(true);
-    }//GEN-LAST:event_botao_outros_questionariosActionPerformed
 
     private void botao_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_sairActionPerformed
        System.exit(EXIT_ON_CLOSE);
@@ -171,7 +159,6 @@ public class frm_atravessador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botao_cadastrar_atravessador;
-    private javax.swing.JButton botao_outros_questionarios;
     private javax.swing.JButton botao_questionario_atravessador;
     private javax.swing.JButton botao_sair;
     private javax.swing.JLabel jLabel1;

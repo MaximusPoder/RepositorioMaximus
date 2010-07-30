@@ -722,9 +722,9 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
         // Para graver os dados no banco de dados
         String a;
         if (chbPossuiColonia.isSelected()){
-            a = "SIM";
+            a = "1";
         }else
-            a = "NÃO";
+            a = "0";
         //System.out.println(a);
 
 
@@ -761,8 +761,8 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
                     tfNetos.getText()+"','"+
                     tfTempoDiario.getText()+"','"+
                     tfTempoAtividade.getText()+"','"+
-                    tfRendaMensal.getText()+"','"+
-                    a+"','"+
+                    tfRendaMensal.getText()+"',"+
+                    a+",'"+
                     tfQualColonia.getText()+"','"+
                     tfDesdeQuando.getText()+"')";
 
@@ -892,7 +892,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
 
             //System.out.println(conexao.resultSet.getString("local_moradia"));
             
-            if (conexao.resultSet.getString("possui_reg_colonia").equals("SIM"))
+            if (conexao.resultSet.getString("possui_reg_colonia").equals("1"))
                    chbPossuiColonia.setSelected(true);
             else
                    chbPossuiColonia.setSelected(false);

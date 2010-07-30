@@ -1,7 +1,5 @@
 package br.com.Persistencia;
 
-import br.com.bean.ItemProduto;
-import br.com.bean.Produto;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
@@ -72,8 +70,6 @@ public class HibernateUtil {
                 setProperty("hibernate.jdbc.batch_size", "20").//isso serve para updates em batch
                 setProperty("hibernate.cache.use_second_level_cache", "false").//isso serve para updates em batch
                 setProperty("hibernate.c3p0.timeout", "100").
-                addAnnotatedClass(Produto.class).
-                addAnnotatedClass(ItemProduto.class).
                 buildSessionFactory();
 
     }
