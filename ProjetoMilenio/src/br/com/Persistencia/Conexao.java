@@ -9,6 +9,7 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sql.rowset.JdbcRowSet;
+import javax.swing.JOptionPane;
 
 public class Conexao {
 
@@ -103,6 +104,7 @@ public class Conexao {
            return  1 == statement.executeUpdate(sql);
 
         } catch (Exception exception) {
+            JOptionPane.showMessageDialog(null,"Erro ao salvar " + exception);
             System.out.println("Erro execute.: " + exception);
         }
         return false;

@@ -44,7 +44,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
             Logger.getLogger(frm_cad_atravessador.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        conexao.execute("select * from dat_questionario_atravessador");
+        conexao.execute("select * from atravessador_cadastro");
 
         try {
             conexao.resultSet.first();
@@ -682,31 +682,31 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
 
         //System.out.println(conexao.resultSet.getString("local_moradia"));
         chbPossuiColonia.setSelected(false);
-        cbMunicipio.setSelectedItem("ABAETETUBA");
-        cbSexo.setSelectedItem("M");
-        cbLocalMoradia.setSelectedItem("Sede Municipal");
-        cbQualidadeMoradia.setSelectedItem("Péssima");
+        cbMunicipio.setSelectedIndex(0);
+        cbSexo.setSelectedIndex(0);
+        cbLocalMoradia.setSelectedIndex(0);
+        cbQualidadeMoradia.setSelectedIndex(0);
 }//GEN-LAST:event_botao_novoActionPerformed
 
     private void botao_excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_excluirActionPerformed
         String sql;
         try {
-            sql = "select * from dat_questionario_atravessador Where id_atravessador =" + conexao.resultSet.getString("id_atravessador");
+            sql = "select * from atravessador_cadastro Where id_atravessador =" + conexao.resultSet.getString("id_atravessador");
             conexao.execute(sql);
             conexao.resultSet.first();
             String nome = "Deletar o atravessador : "+conexao.resultSet.getString("nome")+" ?";
             int opcao_escolhida = JOptionPane.showConfirmDialog(null,nome,"Exclusão ",JOptionPane.YES_NO_OPTION);
             if (opcao_escolhida == JOptionPane.YES_OPTION) {
-                sql = "DELETE FROM dat_questionario_atravessador Where id_atravessador ="+conexao.resultSet.getString("id_atravessador");
+                sql = "DELETE FROM atravessador_cadastro Where id_atravessador ="+conexao.resultSet.getString("id_atravessador");
                 if (conexao.salvar(sql)) {
                     JOptionPane.showMessageDialog(null,"Exclusão realizada com sucesso");
                     //atualiza o ResultSet
-                    conexao.execute("select * from dat_questionario_atravessador");
+                    conexao.execute("select * from atravessador_cadastro");
                     conexao.resultSet.first();
                     mostra_dados_atravessador();
                 }
             } else{
-                conexao.execute("select * from dat_questionario_atravessador");
+                conexao.execute("select * from atravessador_cadastro");
                 conexao.resultSet.first();
                 mostra_dados_atravessador();
             }
@@ -729,7 +729,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
 
 
         try {
-            String sqlinsert = "insert into dat_questionario_atravessador "
+            String sqlinsert = "insert into atravessador_cadastro "
                     + "(id_local,nome,apelido,naturalidade,"
                     + "sexo,idade,atividade_principal,atividade_secundaria,"
                     + "estado_civil,composicao_familiar,escolaridade,pq_parou,"
@@ -769,7 +769,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
                     //System.out.println(sqlinsert);
             conexao.salvar(sqlinsert);
             //agora é hora de atualizar o resultset
-            conexao.execute("select * from dat_questionario_atravessador");
+            conexao.execute("select * from atravessador_cadastro");
             conexao.resultSet.first(); //1º registro
             mostra_dados_atravessador();
 

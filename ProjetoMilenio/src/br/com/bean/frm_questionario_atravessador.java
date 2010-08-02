@@ -36,7 +36,7 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
         //Insere nome no cbNomeAtravessador
                 try {
                     cbNomeAtravessador.removeAllItems();
-                    conexao.execute("select * from dat_questionario_atravessador");
+                    conexao.execute("select * from atravessador_cadastro");
                     
                     while (conexao.resultSet.next()){
                         cbNomeAtravessador.addItem(conexao.resultSet.getString("id_atravessador")+
@@ -49,7 +49,7 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
                     System.out.println(ex);
                 }
 
-        conexao.execute("select * from dat_questionario_atravessador_pescado_sub");
+        conexao.execute("select * from atravessador_questionario");
         try {
             conexao.resultSet.first();
         } catch (SQLException ex) {
@@ -188,7 +188,7 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
         jLabel40 = new javax.swing.JLabel();
         jScrollPane17 = new javax.swing.JScrollPane();
         tpExigenciasCompradores = new javax.swing.JTextPane();
-        jButton1 = new javax.swing.JButton();
+        botao_mercado = new javax.swing.JButton();
         botao_salvar_questionario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -529,7 +529,12 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
 
         jScrollPane17.setViewportView(tpExigenciasCompradores);
 
-        jButton1.setText("Add");
+        botao_mercado.setText("Add");
+        botao_mercado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_mercadoActionPerformed(evt);
+            }
+        });
 
         botao_salvar_questionario.setText("Salvar");
         botao_salvar_questionario.addActionListener(new java.awt.event.ActionListener() {
@@ -626,7 +631,7 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
                 .addGap(48, 48, 48))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap(799, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(botao_mercado)
                 .addContainerGap())
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
@@ -814,7 +819,7 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botao_mercado, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(13, 13, 13)
                 .addComponent(jLabel22)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -938,7 +943,7 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
         
         if (inicia_combo == 1){
          try {
-            conexao.execute("select * from dat_questionario_atravessador_pescado_sub");
+            conexao.execute("select * from atravessador_questionario");
             conexao.resultSet.first();
             String igual = "n"; //inicia dizendo que não localizou
             while(igual == "n") //diz que enquanto não localizar é para ir executando
@@ -962,14 +967,14 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
     }//GEN-LAST:event_cbNomeAtravessadorActionPerformed
 
     private void botao_add_atravessadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_add_atravessadorActionPerformed
-        new addMaterial(pega_codigo_ou_nome(0,cbNomeAtravessador.getSelectedItem().toString())).setVisible(true);
+        new addMaterial(pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())).setVisible(true);
 }//GEN-LAST:event_botao_add_atravessadorActionPerformed
 
     private void botao_material_atualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_material_atualizarActionPerformed
-        conexao.execute("select * from dat_questionario_a_material where nome_atravessador='"
-                            +pega_codigo_ou_nome(0,cbNomeAtravessador.getSelectedItem()+"'"));
+        conexao.execute("select * from atravessador_addmaterial where id_atravessador="
+                            +pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+"");
         preencher_jtable();
-        conexao.execute("select * from dat_questionario_atravessador");
+        conexao.execute("select * from atravessador_cadastro");
 }//GEN-LAST:event_botao_material_atualizarActionPerformed
 
     private void fechar_janela(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_fechar_janela
@@ -1021,7 +1026,7 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
 
 
         try {
-            String sqlinsert = "insert into dat_questionario_atravessador_pescado_sub "
+            String sqlinsert = "insert into atravessador_questionario "
                     + "(id_atravessador,nome_atravessador,origem_produto,"
                     + "sempre_dos_mesmos_pesc,peixe_inteiro,criterios_qualidade_produto,"
                     + "exigencia_pescado_subprodutos,como_func_recepcao,"
@@ -1072,9 +1077,10 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
                     System.out.println(sqlinsert);
             conexao.salvar(sqlinsert);
             //agora é hora de atualizar o resultset
-            conexao.execute("select * from dat_questionario_atravessador_pescado_sub");
+            conexao.execute("select * from atravessador_questionario");
             conexao.resultSet.first(); //1º registro
             mostra_dados();
+            cbNomeAtravessador.setSelectedIndex(0);
 
         }catch (SQLException erro){
             System.out.println(erro);
@@ -1088,6 +1094,10 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
         else
             tfOutros_principaisClientes.setEditable(false);
     }//GEN-LAST:event_ckbOutros_principaisClientesStateChanged
+
+    private void botao_mercadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_mercadoActionPerformed
+        new addProduto_MercadoLocal(pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())).setVisible(true);
+    }//GEN-LAST:event_botao_mercadoActionPerformed
 
     /**
     * @param args the command line arguments
@@ -1105,6 +1115,7 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
     private javax.swing.JButton botao_cadastrar;
     private javax.swing.JButton botao_excluir;
     private javax.swing.JButton botao_material_atualizar;
+    private javax.swing.JButton botao_mercado;
     private javax.swing.JButton botao_salvar_questionario;
     private javax.swing.JComboBox cbNomeAtravessador;
     private javax.swing.JCheckBox ckbConsumidor;
@@ -1115,7 +1126,6 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
     private javax.swing.JCheckBox ckbRevendedores;
     private javax.swing.JCheckBox ckbSempreDosMesmos;
     private javax.swing.JCheckBox ckbSupemercados;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

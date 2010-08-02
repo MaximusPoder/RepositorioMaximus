@@ -16,6 +16,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,14 +26,14 @@ public class addProduto_MercadoLocal extends javax.swing.JFrame {
 
     /** Creates new form winProduto */
     private Conexao conexao;
-    public String nm_atravessador;
-    public addProduto_MercadoLocal(String nome_atravessador) {
+    public String id_atravessador;
+    public addProduto_MercadoLocal(String idd_atravessador) {
         
         initComponents();
         conexao = new Conexao();
         conexao.conecta("mil_interface");
-        System.out.println(nome_atravessador);
-        nm_atravessador = nome_atravessador;
+        System.out.println(idd_atravessador);
+        id_atravessador = idd_atravessador;
     }
 
 
@@ -69,6 +70,8 @@ public class addProduto_MercadoLocal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        tfVolume.setText("0");
+
         jLabel1.setText("Destino.:");
 
         jLabel2.setText("Volume.:");
@@ -85,6 +88,8 @@ public class addProduto_MercadoLocal extends javax.swing.JFrame {
         tfOutraEspecie.setEditable(false);
 
         jLabel4.setText("Preço ($).:");
+
+        tfPreco.setText("0");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel6.setText("Mercado Local (no mesmo município)");
@@ -236,30 +241,46 @@ public class addProduto_MercadoLocal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Action(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Action
-       /*
-        try {
-            conexao.execute("select * from dat_questionario_a_material");
+       //Gambiarra pra pegar o nome do RadioButom Selecionado
+        String rb_selecionado = "Mercado Local";
+        if (rbMercadoLocal.isSelected()) {
+            rb_selecionado = "Mercado Local";
+        }else if (rbMercadoEstadual.isSelected()) {
+                  rb_selecionado = "Mercado Estadual";
+              }else if (rbMercadoNacional.isSelected()) {
+                        rb_selecionado = "Mercado Nacional";
+                    }else
+                        rb_selecionado = "Mercado Internacional";
+
+        System.out.println(rb_selecionado);
+
+       /* try {
+            conexao.execute("select * from atravessador_addmercado");
             conexao.resultSet.first();
-            System.out.println(conexao.resultSet.getString("nome"));
+            System.out.println(conexao.resultSet.getString("mercado"));
         } catch (SQLException ex) {
             System.out.println(ex);
-        }
+        }*/
 
-         String sqlinsert = "insert into dat_questionario_a_material "
-                    + "(nome_atravessador,nome,tipo,quantidade,"
-                    + "custo,outros,frequencia) values ('"+
-                    nm_atravessador+"','"+
-                    registro_q_vai()+"','"+
+         String sqlinsert = "insert into atravessador_addmercado "
+                    + "(id_atravessador,mercado,especie,produto,"
+                    + "destino,volume,preco) values ('"+
+                    id_atravessador+"','"+
+                    rb_selecionado+"','"+
+                    registro_especie()+"','"+
+                    registro_produto()+"','"+
                     tfDestino.getText()+"','"+
                     tfVolume.getText()+"','"+
-                    tfPreco.getText()+"','"+
-                    tfMatOutros.getText()+"','"+
-                    tfMatFrequencia.getText()+"')";
+                    tfPreco.getText()+"')";
 
-                    conexao.salvar(sqlinsert);
+                    System.out.println(sqlinsert);
+                    if (conexao.salvar(sqlinsert)){
+                        JOptionPane.showMessageDialog(null,"Salvo com sucesso");
+                        limpar();
+                    }
                     //agora é hora de atualizar o resultset
-                    addMaterial.this.dispose();
-*/
+
+                    //addMaterial.this.dispose();
     }//GEN-LAST:event_Action
 
     private void cbEspecieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEspecieActionPerformed
@@ -333,12 +354,33 @@ public class addProduto_MercadoLocal extends javax.swing.JFrame {
     private javax.swing.JTextField tfVolume;
     // End of variables declaration//GEN-END:variables
 
-    public Object registro_q_vai(){
+    public Object registro_especie(){
                  if (tfOutraEspecie.isEditable()){
                      return tfOutraEspecie.getText();
                  }
                  else
                      return cbEspecie.getSelectedItem();
          }
+
+    public Object registro_produto(){
+                 if (tfOutroProduto.isEditable()){
+                     return tfOutroProduto.getText();
+                 }
+                 else
+                     return cbProduto.getSelectedItem();
+         }
+
+    public void limpar(){
+        tfDestino.setText("");
+        tfVolume.setText("0");
+        tfPreco.setText("0");
+        
+        tfOutraEspecie.setText("");
+        tfOutroProduto.setText("");
+        
+        cbEspecie.setSelectedIndex(0);
+        cbProduto.setSelectedIndex(0);
+        
+    }
 
 }

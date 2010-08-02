@@ -25,14 +25,14 @@ public class addMaterial extends javax.swing.JFrame {
 
     /** Creates new form winProduto */
     private Conexao conexao;
-    public String nm_atravessador;
-    public addMaterial(String nome_atravessador) {
+    public String idd_atravessador;
+    public addMaterial(String id_atravessador) {
         
         initComponents();
         conexao = new Conexao();
         conexao.conecta("mil_interface");
-        System.out.println(nome_atravessador);
-        nm_atravessador = nome_atravessador;
+        System.out.println(id_atravessador);
+        idd_atravessador = id_atravessador;
     }
 
 
@@ -83,7 +83,9 @@ public class addMaterial extends javax.swing.JFrame {
 
         jLabel4.setText("Custo.:");
 
-        jLabel5.setText("Frequência:");
+        tfMatCusto.setText("0");
+
+        jLabel5.setText("Frequência.:");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel6.setText("Gastos com material na atividade");
@@ -134,7 +136,7 @@ public class addMaterial extends javax.swing.JFrame {
                         .addComponent(jLabel6)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(231, Short.MAX_VALUE)
+                .addContainerGap(248, Short.MAX_VALUE)
                 .addComponent(botao_add_mat, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -182,17 +184,17 @@ public class addMaterial extends javax.swing.JFrame {
     private void Action(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Action
          
         try {
-            conexao.execute("select * from dat_questionario_a_material");
+            conexao.execute("select * from atravessador_addmaterial");
             conexao.resultSet.first();
             System.out.println(conexao.resultSet.getString("nome"));
         } catch (SQLException ex) {
             System.out.println(ex);
         }
 
-         String sqlinsert = "insert into dat_questionario_a_material "
-                    + "(nome_atravessador,nome,tipo,quantidade,"
+         String sqlinsert = "insert into atravessador_addmaterial "
+                    + "(id_atravessador,nome,tipo,quantidade,"
                     + "custo,outros,frequencia) values ('"+
-                    nm_atravessador+"','"+
+                    idd_atravessador+"','"+
                     registro_q_vai()+"','"+
                     tfMatTipo.getText()+"',"+
                     tfMatQuantidade.getText()+",'"+
@@ -200,7 +202,7 @@ public class addMaterial extends javax.swing.JFrame {
                     tfMatOutros.getText()+"','"+
                     tfMatFrequencia.getText()+"')";
 
-         System.out.println(sqlinsert);
+                    System.out.println(sqlinsert);
                     conexao.salvar(sqlinsert);
                     //agora é hora de atualizar o resultset
                     addMaterial.this.dispose();
