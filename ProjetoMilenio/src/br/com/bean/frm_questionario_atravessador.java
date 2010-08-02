@@ -27,6 +27,7 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
     private Conexao conexao;
     int inicia_combo = 0;
     String id_atravessador;
+    String ItemDoCb;
     public frm_questionario_atravessador() {
         initComponents();
         conexao = new Conexao();
@@ -36,28 +37,17 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
                 try {
                     cbNomeAtravessador.removeAllItems();
                     conexao.execute("select * from dat_questionario_atravessador");
+                    
                     while (conexao.resultSet.next()){
-                        cbNomeAtravessador.addItem(conexao.resultSet.getString("nome"));
-                        System.out.println(conexao.resultSet.getString("nome"));
+                        cbNomeAtravessador.addItem(conexao.resultSet.getString("id_atravessador")+
+                                                       " # "+ conexao.resultSet.getString("nome"));
+                        //ItemDoCb = conexao.resultSet.getString("id_atravessador")+ " # "+ conexao.resultSet.getString("nome");
+                        //pega_codigo(1);
+                        //System.out.println(conexao.resultSet.getString("nome"));
                     }
                 }catch (SQLException ex) {
                     System.out.println(ex);
                 }
-
-                //Preenche a tabela
-                    try {
-                        conexao.execute("select * from dat_questionario_a_material");
-                        preencher_jtable();
-                        conexao.execute("select * from dat_questionario_atravessador");
-                        conexao.resultSet.first();
-                        while (conexao.resultSet.next()){
-                            //cbMunicipio.addItem(conexao.resultSet.getString("nome"));
-                           System.out.println("xD");
-                            System.out.println(conexao.resultSet.getString("nome"));
-                        }
-                    }catch (SQLException ex) {
-                        System.out.println(ex);
-                    }
 
         conexao.execute("select * from dat_questionario_atravessador_pescado_sub");
         try {
@@ -226,7 +216,7 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
             }
         });
 
-        jLabel41.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel41.setFont(new java.awt.Font("Tahoma", 1, 13));
         jLabel41.setForeground(new java.awt.Color(0, 102, 102));
         jLabel41.setText("Questionário Atravessador");
 
@@ -423,7 +413,7 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
 
         ckbSupemercados.setText("Supermercados");
 
-        jLabel22.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel22.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel22.setText("Quais os principais clientes?");
 
         ckbConsumidor.setText("Consumidor");
@@ -439,6 +429,11 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
         });
 
         ckbOutros_principaisClientes.setText("Outros");
+        ckbOutros_principaisClientes.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                ckbOutros_principaisClientesStateChanged(evt);
+            }
+        });
 
         jTextField3.setText("jTextField2");
 
@@ -948,7 +943,8 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
             String igual = "n"; //inicia dizendo que não localizou
             while(igual == "n") //diz que enquanto não localizar é para ir executando
             {
-                if (conexao.resultSet.getString("nome_atravessador").equals(cbNomeAtravessador.getSelectedItem())) {
+                String id = pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString());
+                if (conexao.resultSet.getString("id_atravessador").equals(id)) {
                     igual = "s"; //incica que achou
                 } else
                     conexao.resultSet.next();
@@ -956,19 +952,6 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
             //nas linhas abaixo, mostra_conteudo_tabela();
              mostra_dados();
 
-            //pegar a Id do atravessador
-            conexao.execute("select * from dat_questionario_atravessador");
-            conexao.resultSet.first();
-            igual = "n"; //inicia dizendo que não localizou
-            while(igual == "n") //diz que enquanto não localizar é para ir executando
-            {
-                if (conexao.resultSet.getString("nome").equals(cbNomeAtravessador.getSelectedItem())) {
-                    igual = "s"; //incica que achou
-                    id_atravessador = conexao.resultSet.getString("id_atravessador").toString();
-                } else
-                    conexao.resultSet.next();
-            }
-             System.out.println(id_atravessador);
 
         } catch (SQLException ex) {
             limpar_dados();
@@ -979,11 +962,12 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
     }//GEN-LAST:event_cbNomeAtravessadorActionPerformed
 
     private void botao_add_atravessadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_add_atravessadorActionPerformed
-        new addMaterial(cbNomeAtravessador.getSelectedItem().toString()).setVisible(true);
+        new addMaterial(pega_codigo_ou_nome(0,cbNomeAtravessador.getSelectedItem().toString())).setVisible(true);
 }//GEN-LAST:event_botao_add_atravessadorActionPerformed
 
     private void botao_material_atualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_material_atualizarActionPerformed
-        conexao.execute("select * from dat_questionario_a_material where nome_atravessador='"+cbNomeAtravessador.getSelectedItem()+"'");
+        conexao.execute("select * from dat_questionario_a_material where nome_atravessador='"
+                            +pega_codigo_ou_nome(0,cbNomeAtravessador.getSelectedItem()+"'"));
         preencher_jtable();
         conexao.execute("select * from dat_questionario_atravessador");
 }//GEN-LAST:event_botao_material_atualizarActionPerformed
@@ -1052,8 +1036,8 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
                     + "estoque_continua_estavel,pescado_diminuindo_mot_mudanca,"
                     + "numero_aumentou_o_que_acha,perspectiva,pretende_continuar,"
                     + "desejo_para_filhos) values ("+
-                    id_atravessador+",'"+
-                    cbNomeAtravessador.getSelectedItem()+"','"+
+                    pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+",'"+
+                    pega_codigo_ou_nome(0,cbNomeAtravessador.getSelectedItem().toString())+"','"+
                     taOrigemProduto.getText()+"',"+
                     ckb[0]+","+
                     ckb[1]+",'"+
@@ -1096,6 +1080,14 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
             System.out.println(erro);
         }
     }//GEN-LAST:event_botao_salvar_questionarioActionPerformed
+
+    private void ckbOutros_principaisClientesStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ckbOutros_principaisClientesStateChanged
+        if (ckbOutros_principaisClientes.isSelected()){ // Marcar outros e deixar o TF ser editado
+            tfOutros_principaisClientes.setEditable(true);
+        }
+        else
+            tfOutros_principaisClientes.setEditable(false);
+    }//GEN-LAST:event_ckbOutros_principaisClientesStateChanged
 
     /**
     * @param args the command line arguments
@@ -1268,6 +1260,22 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
             taArmazenamento.setText(conexao.resultSet.getString("como_func_armazenamento"));
             taComercializacao.setText(conexao.resultSet.getString("como_funf_comercializacao"));
 
+           tpDificuldadesEncontradas.setText(conexao.resultSet.getString("dificuldades_para_manter_e_solucoes"));
+           tpSempreMesmoCompradores.setText(conexao.resultSet.getString("sempre_vende_pros_mesmos"));
+           tpExigenciasCompradores.setText(conexao.resultSet.getString("exigencias_compradores"));
+           tpComoNegocia.setText(conexao.resultSet.getString("como_negocia"));
+           tpCedeAdiantamento.setText(conexao.resultSet.getString("cede_adiantamento"));
+           tpSitObrigaEntregar.setText(conexao.resultSet.getString("situacao_obriga_entregar_prod"));
+           tpExisteIteracao.setText(conexao.resultSet.getString("existe_interacao"));
+           tpGrauCompetitividade.setText(conexao.resultSet.getString("grau_competitividade"));
+           tpAtuacaoInstituicoesSuaRelacao.setText(conexao.resultSet.getString("atuacao_instituicoes_sua_relacao"));
+           tpEstoqueContEstavel.setText(conexao.resultSet.getString("estoque_continua_estavel"));
+           tpTamanhoPescadoDiminuindo.setText(conexao.resultSet.getString("pescado_diminuindo_mot_mudanca"));
+           tpNumeroFornecedoresAumentou.setText(conexao.resultSet.getString("numero_aumentou_o_que_acha"));
+           tpPerspectiva.setText(conexao.resultSet.getString("perspectiva"));
+           tpContinuarAtividade.setText(conexao.resultSet.getString("pretende_continuar"));
+           tpDesejoFilhos.setText(conexao.resultSet.getString("desejo_para_filhos"));
+
             //Selecionar os check boxes conforme o BD
             if (conexao.resultSet.getString("sempre_dos_mesmos_pesc").equals("1"))
                    ckbSempreDosMesmos.setSelected(true);
@@ -1279,8 +1287,41 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
             else
                    ckbPeixeInteiro.setSelected(false);
 
-           tpDificuldadesEncontradas.setText(conexao.resultSet.getString("como_funf_comercializacao"));
+            if (conexao.resultSet.getString("possui_cliente_consumidor").equals("1"))
+                   ckbConsumidor.setSelected(true);
+            else
+                   ckbConsumidor.setSelected(false);
 
+            if (conexao.resultSet.getString("possui_cliente_restaurante").equals("1"))
+                   ckbRestaurante.setSelected(true);
+            else
+                   ckbRestaurante.setSelected(false);
+
+            if (conexao.resultSet.getString("possui_cliente_supermercados").equals("1"))
+                   ckbSupemercados.setSelected(true);
+            else
+                   ckbSupemercados.setSelected(false);
+
+            if (conexao.resultSet.getString("possui_cliente_revendedores").equals("1"))
+                   ckbRevendedores.setSelected(true);
+            else
+                   ckbRevendedores.setSelected(false);
+
+            if (conexao.resultSet.getString("possui_cliente_feiras").equals("1"))
+                   ckbFeiras.setSelected(true);
+            else
+                   ckbFeiras.setSelected(false);
+
+            if (conexao.resultSet.getString("possui_cliente_outros").equals("1"))
+                   ckbOutros_principaisClientes.setSelected(true);
+            else
+                   ckbOutros_principaisClientes.setSelected(false);
+        
+           if (ckbOutros_principaisClientes.isSelected()){ // se outros estiver marcado, deixa editar
+            tfOutros_principaisClientes.setEditable(true);
+            }
+           else
+            tfOutros_principaisClientes.setEditable(false);
 
 
         } catch (Exception e) {
@@ -1326,5 +1367,30 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
 
     }
 
+        public String pega_codigo_ou_nome(int n,String teste) { //Se entrar com 1 pega o Código, se não pega o Nome
+              //pegar a Id do atravessador
+              
+              //aqui ele pega a quantidade de carcteres que tem uma determinada variável
+              //e armazena numa INT para usá-la de contador
+              int contador = teste.length();
+
+              //cria um for( para fazer uma varredura letra por letra até encontrar
+              for(int i = 0;i<contador;i++){
+                 //usamos substring pra pegar um caractere, passando como parâmetro,
+                 //o primeiro caractere a ser pega, até a ultima.
+                //fiz um if para verificar se o caractere é igual a "#"
+                if (teste.substring(i,i+1).equals("#")){
+                   int posicao = i+1;
+                    System.out.println("Está na posição " + posicao);
+                    if (n == 1){
+                        return teste.substring(0,posicao-2);
+                    }
+                    else
+                        return teste.substring(posicao+1,teste.length());
+                }
+
+              }
+              return "nada";
+        }
 
 }

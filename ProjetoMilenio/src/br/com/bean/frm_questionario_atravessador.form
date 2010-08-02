@@ -974,6 +974,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Outros"/>
               </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckbOutros_principaisClientesStateChanged"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField3">
               <Properties>
