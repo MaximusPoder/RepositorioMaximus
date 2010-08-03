@@ -415,6 +415,8 @@
                                       <Component id="Cadastrar" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="botao_excluir" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                                      <Component id="botao_alterar" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="botao_primeiro" min="-2" max="-2" attributes="0"/>
@@ -426,7 +428,7 @@
                                       <Component id="botao_ultimo" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="484" max="32767" attributes="0"/>
+                              <EmptySpace pref="406" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -445,6 +447,7 @@
                                   <Component id="botao_novo" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="Cadastrar" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="botao_excluir" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="botao_alterar" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -506,6 +509,14 @@
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botao_ultimoActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="botao_alterar">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Alterar"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botao_alterarActionPerformed"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -722,12 +733,16 @@
                 <Component class="javax.swing.JTextField" name="tfQualColonia">
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfDesdeQuando">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="01/01/2001"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="chbPossuiColonia">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Sim"/>
                   </Properties>
                   <Events>
+                    <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="chbPossuiColoniaStateChanged"/>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chbPossuiColoniaActionPerformed"/>
                   </Events>
                 </Component>

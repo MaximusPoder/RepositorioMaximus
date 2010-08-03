@@ -38,7 +38,7 @@ public class addEspecie extends javax.swing.JFrame {
         //Insere nomes das espécies cadastradas
         cbEspecie.removeAllItems();
         try {
-            conexao.execute("select * especie FROM atravessador_addmercado");
+            conexao.execute("select * FROM atravessador_addmercado where id_atravessador="+idd_atravessador);
             while (conexao.resultSet.next()){
                 cbEspecie.addItem(conexao.resultSet.getString("especie"));
                 //System.out.println(conexao.resultSet.getString("nome"));
@@ -186,13 +186,13 @@ public class addEspecie extends javax.swing.JFrame {
         else
              causa_perda = cbCaudaDaPerda.getSelectedItem().toString();
 
-        try {
+       /* try {
             conexao.execute("select * from atravessador_addespecie");
             conexao.resultSet.first();
             System.out.println(conexao.resultSet.getString("nome"));
         } catch (SQLException ex) {
             System.out.println(ex);
-        }
+        }*/
 
          String sqlinsert = "insert into atravessador_addespecie "
                     + "(id_atravessador,especie,causa_da_perda,"

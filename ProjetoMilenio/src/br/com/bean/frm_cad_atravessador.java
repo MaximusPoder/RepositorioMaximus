@@ -99,6 +99,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
         botao_anterior = new javax.swing.JButton();
         botao_proximo = new javax.swing.JButton();
         botao_ultimo = new javax.swing.JButton();
+        botao_alterar = new javax.swing.JButton();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         tfApelido = new javax.swing.JTextField();
@@ -223,6 +224,13 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
             }
         });
 
+        botao_alterar.setText("Alterar");
+        botao_alterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_alterarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -235,7 +243,9 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Cadastrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botao_excluir))
+                        .addComponent(botao_excluir)
+                        .addGap(7, 7, 7)
+                        .addComponent(botao_alterar))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(botao_primeiro)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -244,7 +254,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
                         .addComponent(botao_proximo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botao_ultimo)))
-                .addContainerGap(484, Short.MAX_VALUE))
+                .addContainerGap(406, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,7 +269,8 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botao_novo)
                     .addComponent(Cadastrar)
-                    .addComponent(botao_excluir))
+                    .addComponent(botao_excluir)
+                    .addComponent(botao_alterar))
                 .addContainerGap())
         );
 
@@ -329,7 +340,14 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
 
         jLabel6.setText("Desde quando? (ex: 14/10/1988)");
 
+        tfDesdeQuando.setText("01/01/2001");
+
         chbPossuiColonia.setText("Sim");
+        chbPossuiColonia.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                chbPossuiColoniaStateChanged(evt);
+            }
+        });
         chbPossuiColonia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chbPossuiColoniaActionPerformed(evt);
@@ -677,7 +695,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
         tfTempoAtividade.setText("");
         tfRendaMensal.setText("");
         tfQualColonia.setText("");
-        tfDesdeQuando.setText("");
+        tfDesdeQuando.setText("01/01/2001");
         tfTipoConstrucao.setText("");
 
         //System.out.println(conexao.resultSet.getString("local_moradia"));
@@ -784,6 +802,70 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
         conexao.desconecta();
     }//GEN-LAST:event_fechar_janela
 
+    private void chbPossuiColoniaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_chbPossuiColoniaStateChanged
+        if (chbPossuiColonia.isSelected()){
+            tfQualColonia.setEditable(true);
+        }else{
+            tfQualColonia.setEditable(false);
+            tfQualColonia.setText("");
+        }
+    }//GEN-LAST:event_chbPossuiColoniaStateChanged
+
+    private void botao_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_alterarActionPerformed
+        // Codigo para alterar os dados do BD
+        String a;
+        if (chbPossuiColonia.isSelected()){
+            a = "1";
+        }else
+            a = "0";
+
+        try{
+            String sql ="UPDATE atravessador_cadastro SET "+
+                          "id_local = '"+cbMunicipio.getSelectedItem()+"',"+
+                          "nome = '"+tfNome.getText()+"',"+
+                          "apelido = '"+ tfApelido.getText() +"',"+
+                          "naturalidade = '"+ tfNaturalidade.getText() +"',"+
+                          "sexo = '"+ cbSexo.getSelectedItem() +"',"+
+                          "idade = '"+ tfIdade.getText() +"',"+
+                          "atividade_principal = '"+ tfAtividadePrincipal.getText() +"',"+
+                          "atividade_secundaria = '"+ tfAtividadeSecundaria.getText() +"',"+
+                          "estado_civil = '"+ tfEstadoCivil.getText() +"',"+
+                          "composicao_familiar = '"+ tfComposicaoFamiliar.getText() +"',"+
+                          "escolaridade = '"+ tfEscolaridade.getText() +"',"+
+                          "pq_parou = '"+ tfPqParou.getText() +"',"+
+                          "local_moradia = '"+ cbLocalMoradia.getSelectedItem() +"',"+
+                          "qualidade_moradia = '"+ cbQualidadeMoradia.getSelectedItem() +"',"+
+                          "tipo_construcao = '"+ tfTipoConstrucao.getText() +"',"+
+                          "atividades_geram_renda = '"+ taAtividadeRendaFamilia.getText() +"',"+
+                          "atividade_entrevistado = '"+ tfEntrevistado.getText() +"',"+
+                          "atividade_esposa = '"+ tfEsposa.getText() +"',"+
+                          "atividade_filhos = '"+ tfFilhos.getText() +"',"+
+                          "atividade_netos = '"+ tfNetos.getText() +"',"+
+                          "tempo_diario_trab = '"+ tfTempoDiario.getText() +"',"+
+                          "tempo_na_atividade = '"+ tfTempoAtividade.getText() +"',"+
+                          "renda_mensal_ou_viagem = '"+ tfRendaMensal.getText() +"',"+
+                          "possui_reg_colonia = '"+ a +"',"+
+                          "qual_colonia = '"+ tfQualColonia.getText() +"',"+
+                          "na_colonia_desde = '"+ tfDesdeQuando.getText() +"' "+
+
+
+                          "where id_atravessador = "+conexao.resultSet.getString("id_atravessador");
+
+            System.out.println(sql);
+            if (conexao.update(sql)){
+            JOptionPane.showMessageDialog(null,"Alterado com sucesso");
+            //Atualiza Resultset
+            conexao.execute("select * from atravessador_cadastro");
+            conexao.resultSet.next();
+            mostra_dados_atravessador();
+            }
+            
+
+        }catch (Exception e){
+            System.out.println(e + "Erro no botão alterar");
+        }
+    }//GEN-LAST:event_botao_alterarActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -797,6 +879,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cadastrar;
+    private javax.swing.JButton botao_alterar;
     private javax.swing.JButton botao_anterior;
     private javax.swing.JButton botao_excluir;
     private javax.swing.JButton botao_novo;

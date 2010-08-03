@@ -121,13 +121,15 @@ public class Conexao {
      * @param sql The String sql
      * @Exemple Insert Into pessoa (nome,idade) values (pessoa.getNome,pessoa.getIdade)
      */
-    public void manipulationData(String sql) {
+    public boolean update(String sql) {
         try {
 
             statement = connection.createStatement();
-            statement.executeUpdate(sql);
+            return 1 == statement.executeUpdate(sql);
         } catch (Exception exception) {
             System.out.println("Erro execute.: " + exception);
         }
+        return false;
     }
+
 }
