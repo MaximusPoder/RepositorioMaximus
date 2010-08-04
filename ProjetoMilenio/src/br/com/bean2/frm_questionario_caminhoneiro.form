@@ -205,7 +205,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="cbNomeAtravessador" min="-2" pref="336" max="-2" attributes="0"/>
+                                      <Component id="cbNomeAtravessador" min="-2" pref="331" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
@@ -536,7 +536,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel10">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Adquire o produto sempre dos mesmo pescadores?"/>
+                <Property name="text" type="java.lang.String" value="Adquire o produto sempre dos mesmo pescadores/atravessadores?"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JCheckBox" name="ckbSempreDosMesmos">
@@ -546,7 +546,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel11">
               <Properties>
-                <Property name="text" type="java.lang.String" value="S&#xf3; vente o peixe inteiro? Outras formas de comercializa&#xe7;&#xe3;o?"/>
+                <Property name="text" type="java.lang.String" value="S&#xf3; vente/transporta o peixe inteiro? Outras formas de comercializa&#xe7;&#xe3;o ou tranporte?"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JCheckBox" name="ckbPeixeInteiro">

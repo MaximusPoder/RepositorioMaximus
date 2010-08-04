@@ -4,11 +4,11 @@
  */
 
 /*
- * frm_questionario_atravessador.java
+ * frm_questionario_caminhoneiro.java
  *
  * Created on 26/07/2010, 09:44:24
  */
-package br.com.bean;
+package br.com.bean2;
 
 import br.com.Persistencia.Conexao;
 import java.sql.*;
@@ -23,14 +23,14 @@ import javax.swing.table.DefaultTableModel;
  * @author MPA
  */
 
-public class frm_questionario_atravessador extends javax.swing.JFrame {
+public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
 
-    /** Creates new form frm_questionario_atravessador */
+    /** Creates new form frm_questionario_caminhoneiro */
     private Conexao conexao;
     int inicia_combo = 0;
     String id_atravessador;
     String ItemDoCb;
-    public frm_questionario_atravessador() {
+    public frm_questionario_caminhoneiro() {
         initComponents();
         conexao = new Conexao();
         conexao.conecta("mil_interface");
@@ -231,11 +231,11 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
 
         jLabel9.setText("Origem do produto? Pescado e subprodutos.");
 
-        jLabel10.setText("Adquire o produto sempre dos mesmo pescadores?");
+        jLabel10.setText("Adquire o produto sempre dos mesmo pescadores/atravessadores?");
 
         ckbSempreDosMesmos.setText("SIM");
 
-        jLabel11.setText("Só vente o peixe inteiro? Outras formas de comercialização?");
+        jLabel11.setText("Só vente/transporta o peixe inteiro? Outras formas de comercialização ou tranporte?");
 
         ckbPeixeInteiro.setText("SIM");
 
@@ -643,7 +643,7 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
                             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cbNomeAtravessador, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(cbNomeAtravessador, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel9)
                             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                 .addComponent(jLabel11)
@@ -1206,7 +1206,7 @@ int[] ckb = new int[9];
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frm_questionario_atravessador().setVisible(true);
+                new frm_questionario_caminhoneiro().setVisible(true);
             }
         });
     }
