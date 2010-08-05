@@ -28,6 +28,8 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
     int navega = 0; //variavel pra saber o  botão clicado;
     private Conexao conexao;
     int inicia_combo = 0;
+    private boolean state = false;
+
     public frm_cad_atravessador() {
         initComponents(); //Inicializa os componentes da tela
         conexao = new Conexao();
@@ -643,6 +645,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
 
     private void botao_proximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_proximoActionPerformed
         try {
+            
             conexao.resultSet.next();
             mostra_dados_atravessador();
             navega = 2;
@@ -989,15 +992,35 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
 
 
         }catch (SQLException ex) {
-            if (navega == 1)
+            if (navega == 1){
                 JOptionPane.showMessageDialog(null,"Você já esta no primeiro registro");
-            else if (navega == 2)
+                proximo();
+            }
+            else if (navega == 2){
                 JOptionPane.showMessageDialog(null,"Você já esta no ultimo registro");
+                anterior();
+            }
             else
                 JOptionPane.showMessageDialog(null,"Nenhum registro encontrado "+ ex );
             navega = 0;
             //Logger.getLogger(frm_cad_atravessador.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    private void anterior() {
+         try {
+                    conexao.resultSet.previous();
+                } catch (SQLException ex1) {
+                    Logger.getLogger(frm_cad_atravessador.class.getName()).log(Level.SEVERE, null, ex1);
+                }
+    }
+
+    private void proximo() {
+        try {
+                    conexao.resultSet.next();
+                } catch (SQLException ex1) {
+                    Logger.getLogger(frm_cad_atravessador.class.getName()).log(Level.SEVERE, null, ex1);
+                }
     }
     
 
