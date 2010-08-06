@@ -1,6 +1,6 @@
 <?xml version="1.1" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -27,10 +27,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" pref="1524" max="32767" attributes="0"/>
-          </Group>
+          <Component id="jScrollPane1" alignment="1" pref="2054" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -46,13 +43,35 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                              <Component id="jScrollPane2" min="-2" pref="506" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="188" max="-2" attributes="0"/>
-                              <Component id="jLabel1" min="-2" pref="352" max="-2" attributes="0"/>
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="cbConsumo" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                                              <Component id="cbVenda" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="cbComunidadeMonitoramento" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
@@ -83,7 +102,7 @@
                                           </Group>
                                           <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="704" max="32767" attributes="0"/>
+                                      <EmptySpace pref="385" max="32767" attributes="0"/>
                                       <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
@@ -102,13 +121,13 @@
                                   </Group>
                                   <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="rbnao" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="rbPouco" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbNao" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="rbmaisMenos" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="rbBastante" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbUmPouco" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="cbMaisOuMenos" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="cbBastante" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="1">
                                       <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
@@ -197,29 +216,130 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="cbTipoDeDefeso" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jLabel32" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="rbNao2" min="-2" pref="58" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="rbUmPouco2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="rbMaisOuMenos2" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="rbBastante2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbExisteDefeso" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jLabel33" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="rbRendaNoDefeso" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="rbAposentadoria" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="rbSeguroDesemprego" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbTipoAuxiliio" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="cbGovernoDuranteDefeso" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="cbComunidadeLocalEspecifico" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace pref="306" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                              <Component id="jScrollPane2" min="-2" pref="506" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel42" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="cbAlvenaria" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="cbMadeira" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="cbBarro" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="cbPalha" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jLabel44" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="cbTelhadoBarroComum" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="cbCavaco" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="cbAmiantoBrasilit" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="cbTerraBatida" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="cbCimento" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="cbLajotado" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="cbMercearias" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="cbBares" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="cbMerceariaBar" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel48" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel50" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="cbJ" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="cbTransporteDaComunidade" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel40" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="cbProducaoVenda" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="tfOutrasLocalidades" min="-2" pref="152" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="cbRamal" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="cbEstrada" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="cbRio" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Component id="cbMangue" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                                      <Component id="cbOutros" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="tfComunidadefeita" min="-2" pref="122" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jLabel41" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -231,6 +351,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
@@ -343,11 +464,11 @@
                       <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                       <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="rbnao" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rbPouco" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rbmaisMenos" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rbBastante" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="cbNao" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbUmPouco" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbMaisOuMenos" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbBastante" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
@@ -367,23 +488,117 @@
                           <Component id="cbTipoDeDefeso" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbExisteDefeso" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="rbNao2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rbUmPouco2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rbMaisOuMenos2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rbBastante2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbTipoAuxiliio" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbGovernoDuranteDefeso" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbComunidadeMonitoramento" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbComunidadeLocalEspecifico" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbConsumo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel39" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbVenda" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel40" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbProducaoVenda" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfOutrasLocalidades" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLabel41" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jLabel42" min="-2" pref="21" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="cbRamal" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cbRio" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cbMangue" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cbOutros" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel43" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cbTransporteDaComunidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="tfComunidadefeita" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="cbEstrada" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="cbAlvenaria" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbMadeira" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbBarro" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbPalha" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="rbRendaNoDefeso" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rbAposentadoria" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rbSeguroDesemprego" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="cbTelhadoBarroComum" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbCavaco" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbAmiantoBrasilit" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="559" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="cbTerraBatida" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbCimento" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbLajotado" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="cbMercearias" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbMerceariaBar" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbBares" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jLabel48" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel50" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbJ" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="105" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -392,7 +607,7 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="18" style="1"/>
+                  <Font name="Tahoma" size="24" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Forma de Organiza&#xe7;&#xe3;o da Comunidade"/>
               </Properties>
@@ -655,35 +870,9 @@
             <Component class="javax.swing.JLabel" name="jLabel27">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="18" style="1"/>
+                  <Font name="Tahoma" size="24" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Caracteriza&#xe7;&#xe3;o da Pesca"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="rbnao">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="N&#xe3;o"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbnaoActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="rbPouco">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Um Pouco"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="rbmaisMenos">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Mais ou Menos"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbmaisMenosActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="rbBastante">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Bastante"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel28">
@@ -805,53 +994,321 @@
                 <Property name="text" type="java.lang.String" value="39. Existe defeso,ele &#xe9; respeitado?"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="rbNao2">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="N&#xe3;o"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbNao2ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="rbUmPouco2">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Um Pouco"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="rbMaisOuMenos2">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Mais ou Menos"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="rbBastante2">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Bastante"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbBastante2ActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel33">
               <Properties>
                 <Property name="text" type="java.lang.String" value="40. Os pescadores recebem algum tipo de auxilio ?"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="rbRendaNoDefeso">
+            <Component class="javax.swing.JLabel" name="jLabel34">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Renda no Defeso"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbRendaNoDefesoActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="rbAposentadoria">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Aposentadoria"/>
+                <Property name="text" type="java.lang.String" value="41. Voc&#xea; acha o valor recebido do governo durante o defeso ?"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="rbSeguroDesemprego">
+            <Component class="javax.swing.JLabel" name="jLabel35">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Seguro Desemprego"/>
+                <Property name="text" type="java.lang.String" value="42. Nesta comunidade existem algum monitoramento para estimativa a produ&#xe7;&#xe3;o ?"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cbComunidadeMonitoramento">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="2">
+                    <StringItem index="0" value="Sim"/>
+                    <StringItem index="1" value="N&#xe3;o"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel36">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="43. Esta comunidade tem local especifico para o desembarque da produ&#xe7;&#xe3;o  ?"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cbComunidadeLocalEspecifico">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="2">
+                    <StringItem index="0" value="Sim"/>
+                    <StringItem index="1" value="N&#xe3;o"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel37">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="44. Destino da produ&#xe7;&#xe3;o para :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel38">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="A_ Consumo:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel39">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="B_Venda:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel40">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="45. A produ&#xe7;&#xe3;o, quando para venda, esta &#xe9; feita na :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="tfOutrasLocalidades">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel41">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="24" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Infraestrutura da Comunidade"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel42">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="46. O acesso a comunidade &#xe9; feita por(m&#xfa;ltipla escolha) ? "/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cbExisteDefeso">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="4">
+                    <StringItem index="0" value="N&#xe3;o"/>
+                    <StringItem index="1" value="Um Pouco"/>
+                    <StringItem index="2" value="Mais ou Menos"/>
+                    <StringItem index="3" value="Bastante"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cbTipoAuxiliio">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="3">
+                    <StringItem index="0" value="Renda do Defeso"/>
+                    <StringItem index="1" value="Aposentadoria"/>
+                    <StringItem index="2" value="Seguro Desemprego"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cbGovernoDuranteDefeso">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="3">
+                    <StringItem index="0" value="N&#xe3;o"/>
+                    <StringItem index="1" value="Mais ou Menos"/>
+                    <StringItem index="2" value="Suficiente"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cbConsumo">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="4">
+                    <StringItem index="0" value="Muito Pouco"/>
+                    <StringItem index="1" value="Pouco"/>
+                    <StringItem index="2" value="A Maior Parte"/>
+                    <StringItem index="3" value="Toda Produ&#xe7;&#xe3;o"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cbVenda">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="4">
+                    <StringItem index="0" value="Muito Pouco"/>
+                    <StringItem index="1" value="Pouco"/>
+                    <StringItem index="2" value="A Maior Parte "/>
+                    <StringItem index="3" value="Toda a Produ&#xe7;&#xe3;o"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cbProducaoVenda">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="3">
+                    <StringItem index="0" value="Cidade"/>
+                    <StringItem index="1" value="Para o Atravessador"/>
+                    <StringItem index="2" value="Em Outras Localidades"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel43">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="47. Quais os principais meios e transporte usados para chegar &#xe0; comunidade ?"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cbTransporteDaComunidade">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="4">
+                    <StringItem index="0" value="&#xd4;nibus"/>
+                    <StringItem index="1" value="Barco"/>
+                    <StringItem index="2" value="Bicicleta"/>
+                    <StringItem index="3" value="&#xc0; P&#xe9;"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel44">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="48. Quais e quantos tipos de moradia existem na comunidade (multipla resposta e em quantidade) ?"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="tfComunidadefeita">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel45">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="49.Quais os tipos de cobertura das casas (m&#xfa;ltipla resposta e em quantidade) ?"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel46">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="50. Quais os tipos de piso das casas(M&#xfa;ltiplas respostas e em quantidade) ?"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel47">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="51. Quantos pontos comerciais existem na comunidade ?"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel48">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="24" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Atividades"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel49">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Pesca Emalhe"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel50">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="1.Serra:"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Checkbox" name="cbJ">
+              <Properties>
+                <Property name="label" type="java.lang.String" value="J"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Checkbox" name="cbNao">
+              <Properties>
+                <Property name="label" type="java.lang.String" value="N&#xe3;o"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Checkbox" name="cbUmPouco">
+              <Properties>
+                <Property name="label" type="java.lang.String" value="Um Pouco"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Checkbox" name="cbMaisOuMenos">
+              <Properties>
+                <Property name="label" type="java.lang.String" value="Mais ou Menos"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Checkbox" name="cbBastante">
+              <Properties>
+                <Property name="label" type="java.lang.String" value="Bastante"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Checkbox" name="cbRamal">
+              <Properties>
+                <Property name="label" type="java.lang.String" value="Ramal"/>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Checkbox" name="cbEstrada">
+              <Properties>
+                <Property name="label" type="java.lang.String" value="Estrada"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Checkbox" name="cbRio">
+              <Properties>
+                <Property name="label" type="java.lang.String" value="Rio"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Checkbox" name="cbMangue">
+              <Properties>
+                <Property name="label" type="java.lang.String" value="Mangue"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Checkbox" name="cbOutros">
+              <Properties>
+                <Property name="label" type="java.lang.String" value="Outros"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Checkbox" name="cbAlvenaria">
+              <Properties>
+                <Property name="label" type="java.lang.String" value="Alvenaria"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Checkbox" name="cbMadeira">
+              <Properties>
+                <Property name="label" type="java.lang.String" value="Madeira"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Checkbox" name="cbBarro">
+              <Properties>
+                <Property name="label" type="java.lang.String" value="Barro"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Checkbox" name="cbPalha">
+              <Properties>
+                <Property name="label" type="java.lang.String" value="Palha"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Checkbox" name="cbTelhadoBarroComum">
+              <Properties>
+                <Property name="label" type="java.lang.String" value="Telhado de Barro/Comum"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Checkbox" name="cbCavaco">
+              <Properties>
+                <Property name="label" type="java.lang.String" value="Cavaco"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Checkbox" name="cbAmiantoBrasilit">
+              <Properties>
+                <Property name="label" type="java.lang.String" value="Amianto/Brasilit"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Checkbox" name="cbTerraBatida">
+              <Properties>
+                <Property name="label" type="java.lang.String" value="Terra Batida"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Checkbox" name="cbCimento">
+              <Properties>
+                <Property name="label" type="java.lang.String" value="CImento"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Checkbox" name="cbLajotado">
+              <Properties>
+                <Property name="label" type="java.lang.String" value="Lajotado"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Checkbox" name="cbMercearias">
+              <Properties>
+                <Property name="label" type="java.lang.String" value="Mercearias"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Checkbox" name="cbBares">
+              <Properties>
+                <Property name="label" type="java.lang.String" value="Bares"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Checkbox" name="cbMerceariaBar">
+              <Properties>
+                <Property name="label" type="java.lang.String" value="Mercearia e Bar"/>
               </Properties>
             </Component>
           </SubComponents>

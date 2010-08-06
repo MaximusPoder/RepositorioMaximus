@@ -80,10 +80,6 @@ public class comunidade_questionario extends javax.swing.JFrame {
         tfInadiplentes = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        rbnao = new javax.swing.JRadioButton();
-        rbPouco = new javax.swing.JRadioButton();
-        rbmaisMenos = new javax.swing.JRadioButton();
-        rbBastante = new javax.swing.JRadioButton();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
@@ -99,18 +95,62 @@ public class comunidade_questionario extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         cbTipoDeDefeso = new javax.swing.JComboBox();
         jLabel32 = new javax.swing.JLabel();
-        rbNao2 = new javax.swing.JRadioButton();
-        rbUmPouco2 = new javax.swing.JRadioButton();
-        rbMaisOuMenos2 = new javax.swing.JRadioButton();
-        rbBastante2 = new javax.swing.JRadioButton();
         jLabel33 = new javax.swing.JLabel();
-        rbRendaNoDefeso = new javax.swing.JRadioButton();
-        rbAposentadoria = new javax.swing.JRadioButton();
-        rbSeguroDesemprego = new javax.swing.JRadioButton();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        cbComunidadeMonitoramento = new javax.swing.JComboBox();
+        jLabel36 = new javax.swing.JLabel();
+        cbComunidadeLocalEspecifico = new javax.swing.JComboBox();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        tfOutrasLocalidades = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        cbExisteDefeso = new javax.swing.JComboBox();
+        cbTipoAuxiliio = new javax.swing.JComboBox();
+        cbGovernoDuranteDefeso = new javax.swing.JComboBox();
+        cbConsumo = new javax.swing.JComboBox();
+        cbVenda = new javax.swing.JComboBox();
+        cbProducaoVenda = new javax.swing.JComboBox();
+        jLabel43 = new javax.swing.JLabel();
+        cbTransporteDaComunidade = new javax.swing.JComboBox();
+        jLabel44 = new javax.swing.JLabel();
+        tfComunidadefeita = new javax.swing.JTextField();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        cbJ = new java.awt.Checkbox();
+        cbNao = new java.awt.Checkbox();
+        cbUmPouco = new java.awt.Checkbox();
+        cbMaisOuMenos = new java.awt.Checkbox();
+        cbBastante = new java.awt.Checkbox();
+        cbRamal = new java.awt.Checkbox();
+        cbEstrada = new java.awt.Checkbox();
+        cbRio = new java.awt.Checkbox();
+        cbMangue = new java.awt.Checkbox();
+        cbOutros = new java.awt.Checkbox();
+        cbAlvenaria = new java.awt.Checkbox();
+        cbMadeira = new java.awt.Checkbox();
+        cbBarro = new java.awt.Checkbox();
+        cbPalha = new java.awt.Checkbox();
+        cbTelhadoBarroComum = new java.awt.Checkbox();
+        cbCavaco = new java.awt.Checkbox();
+        cbAmiantoBrasilit = new java.awt.Checkbox();
+        cbTerraBatida = new java.awt.Checkbox();
+        cbCimento = new java.awt.Checkbox();
+        cbLajotado = new java.awt.Checkbox();
+        cbMercearias = new java.awt.Checkbox();
+        cbBares = new java.awt.Checkbox();
+        cbMerceariaBar = new java.awt.Checkbox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Forma de Organização da Comunidade");
 
         jLabel2.setText("*Comunidade:");
@@ -209,26 +249,8 @@ public class comunidade_questionario extends javax.swing.JFrame {
 
         jLabel26.setText("34. Você acha os financiamentos da administrção pública importante para a atividade de pesca ?");
 
-        jLabel27.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel27.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel27.setText("Caracterização da Pesca");
-
-        rbnao.setText("Não");
-        rbnao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbnaoActionPerformed(evt);
-            }
-        });
-
-        rbPouco.setText("Um Pouco");
-
-        rbmaisMenos.setText("Mais ou Menos");
-        rbmaisMenos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbmaisMenosActionPerformed(evt);
-            }
-        });
-
-        rbBastante.setText("Bastante");
 
         jLabel28.setText("35. Principais pesqueiros em ordem de importância");
 
@@ -279,36 +301,108 @@ public class comunidade_questionario extends javax.swing.JFrame {
 
         jLabel32.setText("39. Existe defeso,ele é respeitado?");
 
-        rbNao2.setText("Não");
-        rbNao2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbNao2ActionPerformed(evt);
-            }
-        });
-
-        rbUmPouco2.setText("Um Pouco");
-
-        rbMaisOuMenos2.setText("Mais ou Menos");
-
-        rbBastante2.setText("Bastante");
-        rbBastante2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbBastante2ActionPerformed(evt);
-            }
-        });
-
         jLabel33.setText("40. Os pescadores recebem algum tipo de auxilio ?");
 
-        rbRendaNoDefeso.setText("Renda no Defeso");
-        rbRendaNoDefeso.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbRendaNoDefesoActionPerformed(evt);
-            }
-        });
+        jLabel34.setText("41. Você acha o valor recebido do governo durante o defeso ?");
 
-        rbAposentadoria.setText("Aposentadoria");
+        jLabel35.setText("42. Nesta comunidade existem algum monitoramento para estimativa a produção ?");
 
-        rbSeguroDesemprego.setText("Seguro Desemprego");
+        cbComunidadeMonitoramento.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sim", "Não" }));
+
+        jLabel36.setText("43. Esta comunidade tem local especifico para o desembarque da produção  ?");
+
+        cbComunidadeLocalEspecifico.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sim", "Não" }));
+
+        jLabel37.setText("44. Destino da produção para :");
+
+        jLabel38.setText("A_ Consumo:");
+
+        jLabel39.setText("B_Venda:");
+
+        jLabel40.setText("45. A produção, quando para venda, esta é feita na :");
+
+        jLabel41.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel41.setText("Infraestrutura da Comunidade");
+
+        jLabel42.setText("46. O acesso a comunidade é feita por(múltipla escolha) ? ");
+
+        cbExisteDefeso.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não", "Um Pouco", "Mais ou Menos", "Bastante" }));
+
+        cbTipoAuxiliio.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Renda do Defeso", "Aposentadoria", "Seguro Desemprego" }));
+
+        cbGovernoDuranteDefeso.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não", "Mais ou Menos", "Suficiente" }));
+
+        cbConsumo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Muito Pouco", "Pouco", "A Maior Parte", "Toda Produção" }));
+
+        cbVenda.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Muito Pouco", "Pouco", "A Maior Parte ", "Toda a Produção" }));
+
+        cbProducaoVenda.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cidade", "Para o Atravessador", "Em Outras Localidades" }));
+
+        jLabel43.setText("47. Quais os principais meios e transporte usados para chegar à comunidade ?");
+
+        cbTransporteDaComunidade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ônibus", "Barco", "Bicicleta", "À Pé" }));
+
+        jLabel44.setText("48. Quais e quantos tipos de moradia existem na comunidade (multipla resposta e em quantidade) ?");
+
+        jLabel45.setText("49.Quais os tipos de cobertura das casas (múltipla resposta e em quantidade) ?");
+
+        jLabel46.setText("50. Quais os tipos de piso das casas(Múltiplas respostas e em quantidade) ?");
+
+        jLabel47.setText("51. Quantos pontos comerciais existem na comunidade ?");
+
+        jLabel48.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel48.setText("Atividades");
+
+        jLabel49.setText("Pesca Emalhe");
+
+        jLabel50.setText("1.Serra:");
+
+        cbJ.setLabel("J");
+
+        cbNao.setLabel("Não");
+
+        cbUmPouco.setLabel("Um Pouco");
+
+        cbMaisOuMenos.setLabel("Mais ou Menos");
+
+        cbBastante.setLabel("Bastante");
+
+        cbRamal.setLabel("Ramal");
+        cbRamal.setName(""); // NOI18N
+
+        cbEstrada.setLabel("Estrada");
+
+        cbRio.setLabel("Rio");
+
+        cbMangue.setLabel("Mangue");
+
+        cbOutros.setLabel("Outros");
+
+        cbAlvenaria.setLabel("Alvenaria");
+
+        cbMadeira.setLabel("Madeira");
+
+        cbBarro.setLabel("Barro");
+
+        cbPalha.setLabel("Palha");
+
+        cbTelhadoBarroComum.setLabel("Telhado de Barro/Comum");
+
+        cbCavaco.setLabel("Cavaco");
+
+        cbAmiantoBrasilit.setLabel("Amianto/Brasilit");
+
+        cbTerraBatida.setLabel("Terra Batida");
+
+        cbCimento.setLabel("CImento");
+
+        cbLajotado.setLabel("Lajotado");
+
+        cbMercearias.setLabel("Mercearias");
+
+        cbBares.setLabel("Bares");
+
+        cbMerceariaBar.setLabel("Mercearia e Bar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -317,11 +411,28 @@ public class comunidade_questionario extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(188, 188, 188)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel35)
+                                    .addComponent(jLabel37)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel38)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(cbConsumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel39)
+                                        .addGap(2, 2, 2)
+                                        .addComponent(cbVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cbComunidadeMonitoramento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -347,7 +458,7 @@ public class comunidade_questionario extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(cbEleicoes, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel7))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 704, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 385, Short.MAX_VALUE)
                                 .addComponent(jLabel5))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel12)
@@ -363,13 +474,13 @@ public class comunidade_questionario extends javax.swing.JFrame {
                                 .addComponent(tfEspecificar, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel13)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(rbnao)
-                                .addGap(18, 18, 18)
-                                .addComponent(rbPouco)
+                                .addComponent(cbNao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rbmaisMenos)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(rbBastante))
+                                .addComponent(cbUmPouco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbMaisOuMenos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbBastante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel14)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -439,25 +550,106 @@ public class comunidade_questionario extends javax.swing.JFrame {
                                 .addComponent(jLabel31)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(cbTipoDeDefeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel32)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(rbNao2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rbUmPouco2)
+                                .addComponent(jLabel32)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(rbMaisOuMenos2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(rbBastante2))
-                            .addComponent(jLabel33)
+                                .addComponent(cbExisteDefeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(rbRendaNoDefeso)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(rbAposentadoria)
+                                .addComponent(jLabel33)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rbSeguroDesemprego))))
+                                .addComponent(cbTipoAuxiliio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel34)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cbGovernoDuranteDefeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel36)
+                                .addGap(18, 18, 18)
+                                .addComponent(cbComunidadeLocalEspecifico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 306, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap()
+                        .addComponent(jLabel42))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(cbAlvenaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbMadeira, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbBarro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbPalha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel44)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel45))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(cbTelhadoBarroComum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cbCavaco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cbAmiantoBrasilit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel46))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(cbTerraBatida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cbCimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cbLajotado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel47))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(cbMercearias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(cbBares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22)
+                        .addComponent(cbMerceariaBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel48))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel50)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel49))
+                        .addGap(154, 154, 154))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel43)
+                                .addGap(18, 18, 18)
+                                .addComponent(cbTransporteDaComunidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel40)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cbProducaoVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(tfOutrasLocalidades, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(cbRamal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbEstrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbRio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(34, 34, 34)
+                                .addComponent(cbMangue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(2, 2, 2)
+                                .addComponent(cbOutros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfComunidadefeita, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel41))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -465,6 +657,7 @@ public class comunidade_questionario extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(37, 37, 37)
@@ -555,11 +748,11 @@ public class comunidade_questionario extends javax.swing.JFrame {
                 .addGap(8, 8, 8)
                 .addComponent(jLabel26)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rbnao)
-                    .addComponent(rbPouco)
-                    .addComponent(rbmaisMenos)
-                    .addComponent(rbBastante))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cbNao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbUmPouco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbMaisOuMenos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbBastante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel28)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -577,21 +770,98 @@ public class comunidade_questionario extends javax.swing.JFrame {
                     .addComponent(jLabel31)
                     .addComponent(cbTipoDeDefeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel32)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel32)
+                    .addComponent(cbExisteDefeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rbNao2)
-                    .addComponent(rbUmPouco2)
-                    .addComponent(rbMaisOuMenos2)
-                    .addComponent(rbBastante2))
+                    .addComponent(jLabel33)
+                    .addComponent(cbTipoAuxiliio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel34)
+                    .addComponent(cbGovernoDuranteDefeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel35)
+                    .addComponent(cbComunidadeMonitoramento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel36)
+                    .addComponent(cbComunidadeLocalEspecifico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel37)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel33)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel38)
+                    .addComponent(cbConsumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rbRendaNoDefeso)
-                    .addComponent(rbAposentadoria)
-                    .addComponent(rbSeguroDesemprego))
-                .addContainerGap(559, Short.MAX_VALUE))
+                    .addComponent(jLabel39)
+                    .addComponent(cbVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel40)
+                    .addComponent(cbProducaoVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfOutrasLocalidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel41)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cbRamal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbRio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbMangue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbOutros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel43)
+                                    .addComponent(cbTransporteDaComunidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(tfComunidadefeita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel44))
+                    .addComponent(cbEstrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cbAlvenaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbMadeira, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbBarro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbPalha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel45)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cbTelhadoBarroComum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbCavaco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbAmiantoBrasilit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel46)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cbTerraBatida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbCimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbLajotado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel47)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cbMercearias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbMerceariaBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbBares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel48)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel49)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel50)
+                    .addComponent(cbJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -604,9 +874,7 @@ public class comunidade_questionario extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1524, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 2054, Short.MAX_VALUE)
         );
 
         pack();
@@ -620,26 +888,6 @@ public class comunidade_questionario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfCANActionPerformed
 
-    private void rbmaisMenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbmaisMenosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rbmaisMenosActionPerformed
-
-    private void rbNao2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbNao2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rbNao2ActionPerformed
-
-    private void rbnaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rbnaoActionPerformed
-
-    private void rbBastante2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbBastante2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rbBastante2ActionPerformed
-
-    private void rbRendaNoDefesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbRendaNoDefesoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rbRendaNoDefesoActionPerformed
-
     /**
     * @param args the command line arguments
     */
@@ -652,13 +900,45 @@ public class comunidade_questionario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private java.awt.Checkbox cbAlvenaria;
+    private java.awt.Checkbox cbAmiantoBrasilit;
     private javax.swing.JComboBox cbAssociação;
+    private java.awt.Checkbox cbBares;
+    private java.awt.Checkbox cbBarro;
+    private java.awt.Checkbox cbBastante;
+    private java.awt.Checkbox cbCavaco;
+    private java.awt.Checkbox cbCimento;
     private javax.swing.JComboBox cbComunidade;
+    private javax.swing.JComboBox cbComunidadeLocalEspecifico;
+    private javax.swing.JComboBox cbComunidadeMonitoramento;
+    private javax.swing.JComboBox cbConsumo;
     private javax.swing.JComboBox cbEleicoes;
+    private java.awt.Checkbox cbEstrada;
     private javax.swing.JComboBox cbExisteClube;
+    private javax.swing.JComboBox cbExisteDefeso;
+    private javax.swing.JComboBox cbGovernoDuranteDefeso;
     private javax.swing.JComboBox cbIgreja;
+    private java.awt.Checkbox cbJ;
+    private java.awt.Checkbox cbLajotado;
+    private java.awt.Checkbox cbMadeira;
+    private java.awt.Checkbox cbMaisOuMenos;
+    private java.awt.Checkbox cbMangue;
+    private java.awt.Checkbox cbMerceariaBar;
+    private java.awt.Checkbox cbMercearias;
+    private java.awt.Checkbox cbNao;
+    private java.awt.Checkbox cbOutros;
+    private java.awt.Checkbox cbPalha;
     private javax.swing.JComboBox cbPresidente;
+    private javax.swing.JComboBox cbProducaoVenda;
+    private java.awt.Checkbox cbRamal;
+    private java.awt.Checkbox cbRio;
+    private java.awt.Checkbox cbTelhadoBarroComum;
+    private java.awt.Checkbox cbTerraBatida;
+    private javax.swing.JComboBox cbTipoAuxiliio;
     private javax.swing.JComboBox cbTipoDeDefeso;
+    private javax.swing.JComboBox cbTransporteDaComunidade;
+    private java.awt.Checkbox cbUmPouco;
+    private javax.swing.JComboBox cbVenda;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -686,8 +966,25 @@ public class comunidade_questionario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -701,17 +998,6 @@ public class comunidade_questionario extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JRadioButton rbAposentadoria;
-    private javax.swing.JRadioButton rbBastante;
-    private javax.swing.JRadioButton rbBastante2;
-    private javax.swing.JRadioButton rbMaisOuMenos2;
-    private javax.swing.JRadioButton rbNao2;
-    private javax.swing.JRadioButton rbPouco;
-    private javax.swing.JRadioButton rbRendaNoDefeso;
-    private javax.swing.JRadioButton rbSeguroDesemprego;
-    private javax.swing.JRadioButton rbUmPouco2;
-    private javax.swing.JRadioButton rbmaisMenos;
-    private javax.swing.JRadioButton rbnao;
     private javax.swing.JTextArea taArteDaPesca;
     private javax.swing.JTextArea taEspecificar;
     private javax.swing.JTextArea taOrdemDeImportancia;
@@ -719,10 +1005,12 @@ public class comunidade_questionario extends javax.swing.JFrame {
     private javax.swing.JTextField tfBPP;
     private javax.swing.JTextField tfCAM;
     private javax.swing.JTextField tfCAN;
+    private javax.swing.JTextField tfComunidadefeita;
     private javax.swing.JTextField tfEspecificar;
     private javax.swing.JTextField tfFNO;
     private javax.swing.JTextField tfGEL;
     private javax.swing.JTextField tfInadiplentes;
+    private javax.swing.JTextField tfOutrasLocalidades;
     private javax.swing.JTextField tfPagantes;
     private javax.swing.JTextField tfmon;
     private javax.swing.JTextField tfnumeroEmbarcacoes;
