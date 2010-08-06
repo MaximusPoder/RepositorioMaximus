@@ -1223,6 +1223,27 @@ int[] ckb = new int[9];
         // TODO add your handling code here:
         System.out.println(jTable1.getValueAt(jTable1.getSelectedRow(),0));
         //.removeRow(jTable1.getSelectedRow());
+                String sql;
+
+            sql = "delete from atravessador_addmaterial Where id_material =" + jTable1.getValueAt(jTable1.getSelectedRow(),0);
+
+                if (conexao.salvar(sql)) {
+                    JOptionPane.showMessageDialog(null,"Exclusão realizada com sucesso");
+                    //exibe o jTable1
+                    conexao.execute("select * from atravessador_addmaterial where id_atravessador="
+                            +pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+"");
+                    preencher_jtable();
+                    conexao.execute("select * from atravessador_cadastro");
+
+                }else{
+                JOptionPane.showMessageDialog(null,"Erro na exclusão");
+
+                   
+                }
+
+
+
+
     }//GEN-LAST:event_botao_excluir_jtable1ActionPerformed
 
     /**
