@@ -497,15 +497,23 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
 
         jtEspecie.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Espécie", "Causa da perda", "Estimativa da perda (%)", "Destino do peixe perdido"
+                "id", "Espécie", "Causa da perda", "Estimativa da perda (%)", "Destino do peixe perdido"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane15.setViewportView(jtEspecie);
 
         jScrollPane16.setViewportView(tpSempreMesmoCompradores);
@@ -1337,7 +1345,7 @@ int[] ckb = new int[9];
             sql = "delete from atravessador_addmaterial Where id_material =" + jTable1.getValueAt(jTable1.getSelectedRow(),0);
 
                 if (conexao.salvar(sql)) {
-                    JOptionPane.showMessageDialog(null,"Exclusão realizada com sucesso");
+                    System.out.println("Exclusão realizada com sucesso");
                     //exibe o jTable1
                     conexao.execute("select * from atravessador_addmaterial where id_atravessador="
                             +pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+"");
@@ -1382,7 +1390,7 @@ int[] ckb = new int[9];
         sql = "delete from atravessador_addmercado Where id_mercado =" + id_pra_excluir;
 
                 if (conexao.salvar(sql)) {
-                    JOptionPane.showMessageDialog(null,"Exclusão realizada com sucesso");
+                    System.out.println("Exclusão realizada com sucesso");
                     //exibe o jTable1
                     exibir_L_E_N_I(0);exibir_L_E_N_I(1);exibir_L_E_N_I(2);exibir_L_E_N_I(3);
 
@@ -1395,6 +1403,27 @@ int[] ckb = new int[9];
 
     private void botao_excluir_especieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_excluir_especieActionPerformed
         // TODO add your handling code here:
+        System.out.println(jtEspecie.getValueAt(jtEspecie.getSelectedRow(),0));
+        //.removeRow(jTable1.getSelectedRow());
+                String sql;
+
+            sql = "delete from atravessador_addespecie Where id_especie =" + jtEspecie.getValueAt(jtEspecie.getSelectedRow(),0);
+
+                if (conexao.salvar(sql)) {
+                    System.out.println("Exclusão realizada com sucesso");
+                    //exibe
+                    conexao.execute("select * from atravessador_addespecie where id_atravessador="
+                        +pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+"");
+                    preencher_jtableEspecie();
+                    conexao.execute("select * from atravessador_cadastro");
+
+                }else{
+                JOptionPane.showMessageDialog(null,"Erro na exclusão");
+
+
+                }
+
+
     }//GEN-LAST:event_botao_excluir_especieActionPerformed
 
     private void jtMercadoLocalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtMercadoLocalMouseClicked
@@ -1778,17 +1807,20 @@ int[] ckb = new int[9];
     }
 
                 public void preencher_jtableEspecie(){
-        jtEspecie.getColumnModel().getColumn(0).setPreferredWidth(10);
+        jtEspecie.getColumnModel().getColumn(0).setMaxWidth(0);
+        jtEspecie.getColumnModel().getColumn(0).setPreferredWidth(0);
         jtEspecie.getColumnModel().getColumn(1).setPreferredWidth(10);
         jtEspecie.getColumnModel().getColumn(2).setPreferredWidth(10);
         jtEspecie.getColumnModel().getColumn(3).setPreferredWidth(10);
+        jtEspecie.getColumnModel().getColumn(4).setPreferredWidth(10);
 
         DefaultTableModel modelo = (DefaultTableModel)jtEspecie.getModel();
         modelo.setNumRows(0);//limpa o JTable;
 
         try{
             while (conexao.resultSet.next())
-                modelo.addRow(new Object[]{conexao.resultSet.getString("especie"),
+                modelo.addRow(new Object[]{conexao.resultSet.getString("id_especie"),
+                                           conexao.resultSet.getString("especie"),
                                            conexao.resultSet.getString("causa_da_perda"),
                                            conexao.resultSet.getString("estimativa_da_perda"),
                                            conexao.resultSet.getString("destino_do_peixe_perdido")});
