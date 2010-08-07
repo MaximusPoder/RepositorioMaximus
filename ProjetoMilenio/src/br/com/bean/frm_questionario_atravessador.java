@@ -189,6 +189,8 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
         botao_atualizar_especie = new javax.swing.JButton();
         botao_alterar = new javax.swing.JButton();
         botao_excluir_jtable1 = new javax.swing.JButton();
+        botao_excluir_mercadoria = new javax.swing.JButton();
+        botao_excluir_especie = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -334,15 +336,33 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
 
         jtMercadoLocal.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Espécie", "Produto", "Destino", "Volume", "Preço ($)"
+                "id", "Espécie", "Produto", "Destino", "Volume", "Preço ($)"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jtMercadoLocal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtMercadoLocalMouseClicked(evt);
+            }
+        });
+        jtMercadoLocal.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jtMercadoLocalFocusGained(evt);
+            }
+        });
         jScrollPane10.setViewportView(jtMercadoLocal);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11));
@@ -350,15 +370,33 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
 
         jtMercadoEstadual.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Espécie", "Produto", "Destino", "Volume", "Preço ($)"
+                "id", "Espécie", "Produto", "Destino", "Volume", "Preço ($)"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jtMercadoEstadual.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtMercadoEstadualMouseClicked(evt);
+            }
+        });
+        jtMercadoEstadual.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jtMercadoEstadualFocusGained(evt);
+            }
+        });
         jScrollPane11.setViewportView(jtMercadoEstadual);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11));
@@ -366,15 +404,33 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
 
         jtMercadoNacional.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Espécie", "Produto", "Destino", "Volume", "Preço ($)"
+                "id", "Espécie", "Produto", "Destino", "Volume", "Preço ($)"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jtMercadoNacional.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtMercadoNacionalMouseClicked(evt);
+            }
+        });
+        jtMercadoNacional.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jtMercadoNacionalFocusGained(evt);
+            }
+        });
         jScrollPane12.setViewportView(jtMercadoNacional);
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 11));
@@ -382,15 +438,33 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
 
         jtMercadoInternacional.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Espécie", "Produto", "Destino", "Volume", "Preço ($)"
+                "id", "Espécie", "Produto", "Destino", "Volume", "Preço ($)"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jtMercadoInternacional.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtMercadoInternacionalMouseClicked(evt);
+            }
+        });
+        jtMercadoInternacional.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jtMercadoInternacionalFocusGained(evt);
+            }
+        });
         jScrollPane13.setViewportView(jtMercadoInternacional);
 
         ckbRestaurante.setText("Restaurante");
@@ -541,6 +615,20 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
             }
         });
 
+        botao_excluir_mercadoria.setText("Excluir");
+        botao_excluir_mercadoria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_excluir_mercadoriaActionPerformed(evt);
+            }
+        });
+
+        botao_excluir_especie.setText("Excluir");
+        botao_excluir_especie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_excluir_especieActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jpPescadoSubprodutoLayout = new javax.swing.GroupLayout(jpPescadoSubproduto);
         jpPescadoSubproduto.setLayout(jpPescadoSubprodutoLayout);
         jpPescadoSubprodutoLayout.setHorizontalGroup(
@@ -548,11 +636,11 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel26)
-                .addContainerGap(600, Short.MAX_VALUE))
+                .addContainerGap(628, Short.MAX_VALUE))
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel38)
-                .addContainerGap(587, Short.MAX_VALUE))
+                .addContainerGap(614, Short.MAX_VALUE))
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel27)
@@ -560,11 +648,11 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel39)
-                .addContainerGap(442, Short.MAX_VALUE))
+                .addContainerGap(443, Short.MAX_VALUE))
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel36)
-                .addContainerGap(478, Short.MAX_VALUE))
+                .addContainerGap(488, Short.MAX_VALUE))
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addGap(8, 8, 8)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -591,30 +679,30 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
                                         .addContainerGap())
                                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jScrollPane24, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
-                                            .addComponent(jScrollPane25, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
-                                            .addComponent(jScrollPane20, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
-                                            .addComponent(jScrollPane18, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
-                                            .addComponent(jScrollPane19, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
-                                            .addComponent(jScrollPane22, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
-                                            .addComponent(jScrollPane21, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
+                                            .addComponent(jScrollPane24, javax.swing.GroupLayout.DEFAULT_SIZE, 905, Short.MAX_VALUE)
+                                            .addComponent(jScrollPane25, javax.swing.GroupLayout.DEFAULT_SIZE, 905, Short.MAX_VALUE)
+                                            .addComponent(jScrollPane20, javax.swing.GroupLayout.DEFAULT_SIZE, 905, Short.MAX_VALUE)
+                                            .addComponent(jScrollPane18, javax.swing.GroupLayout.DEFAULT_SIZE, 905, Short.MAX_VALUE)
+                                            .addComponent(jScrollPane19, javax.swing.GroupLayout.DEFAULT_SIZE, 905, Short.MAX_VALUE)
+                                            .addComponent(jScrollPane22, javax.swing.GroupLayout.DEFAULT_SIZE, 905, Short.MAX_VALUE)
+                                            .addComponent(jScrollPane21, javax.swing.GroupLayout.DEFAULT_SIZE, 905, Short.MAX_VALUE)
                                             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                                 .addComponent(jLabel34)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 379, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(jScrollPane23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jScrollPane23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 905, Short.MAX_VALUE)
                                             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                                 .addComponent(jLabel33)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 553, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 590, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                                 .addComponent(jLabel37)
                                                 .addGap(554, 554, 554))
                                             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                                 .addComponent(jLabel40)
                                                 .addGap(330, 330, 330))
-                                            .addComponent(jScrollPane29, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
-                                            .addComponent(jScrollPane27, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
-                                            .addComponent(jScrollPane28, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
-                                            .addComponent(jScrollPane26, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
+                                            .addComponent(jScrollPane29, javax.swing.GroupLayout.DEFAULT_SIZE, 905, Short.MAX_VALUE)
+                                            .addComponent(jScrollPane27, javax.swing.GroupLayout.DEFAULT_SIZE, 905, Short.MAX_VALUE)
+                                            .addComponent(jScrollPane28, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 905, Short.MAX_VALUE)
+                                            .addComponent(jScrollPane26, javax.swing.GroupLayout.DEFAULT_SIZE, 905, Short.MAX_VALUE)
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
                                                 .addComponent(botao_salvar_questionario)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -622,20 +710,25 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
                                         .addGap(48, 48, 48))))))))
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane17, javax.swing.GroupLayout.DEFAULT_SIZE, 816, Short.MAX_VALUE)
+                .addComponent(jScrollPane17, javax.swing.GroupLayout.DEFAULT_SIZE, 901, Short.MAX_VALUE)
                 .addGap(48, 48, 48))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                .addContainerGap(732, Short.MAX_VALUE)
-                .addComponent(botao_mercado)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botao_atualizar_mercado)
-                .addContainerGap())
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                        .addComponent(jScrollPane15, javax.swing.GroupLayout.DEFAULT_SIZE, 854, Short.MAX_VALUE)
-                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 847, Short.MAX_VALUE)
+                            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                                .addComponent(botao_mercado)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(botao_excluir_mercadoria)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(botao_atualizar_mercado)
+                                .addGap(3, 3, 3))
+                            .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 847, Short.MAX_VALUE)
+                            .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 847, Short.MAX_VALUE)
+                            .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 847, Short.MAX_VALUE))
+                        .addGap(102, 102, 102))
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
@@ -673,13 +766,11 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jScrollPane4))
-                        .addContainerGap(129, Short.MAX_VALUE))
-                    .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 607, Short.MAX_VALUE))
+                        .addContainerGap(214, Short.MAX_VALUE))
+                    .addComponent(jLabel3)
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addComponent(jLabel21)
-                        .addContainerGap(736, Short.MAX_VALUE))
+                        .addContainerGap(821, Short.MAX_VALUE))
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addContainerGap())
@@ -687,48 +778,54 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
                         .addComponent(jLabel24)
                         .addGap(548, 548, 548))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                        .addComponent(jScrollPane16, javax.swing.GroupLayout.DEFAULT_SIZE, 816, Short.MAX_VALUE)
+                        .addComponent(jScrollPane16, javax.swing.GroupLayout.DEFAULT_SIZE, 901, Short.MAX_VALUE)
                         .addGap(48, 48, 48))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 767, Short.MAX_VALUE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 767, Short.MAX_VALUE)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 852, Short.MAX_VALUE)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 852, Short.MAX_VALUE)
                             .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 767, Short.MAX_VALUE)
-                            .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 767, Short.MAX_VALUE)
-                            .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 767, Short.MAX_VALUE)
-                            .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 767, Short.MAX_VALUE)
+                            .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 852, Short.MAX_VALUE)
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 852, Short.MAX_VALUE)
+                            .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 852, Short.MAX_VALUE)
+                            .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 852, Short.MAX_VALUE)
                             .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 767, Short.MAX_VALUE)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 767, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 852, Short.MAX_VALUE)
                             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                 .addComponent(botao_add_atravessador)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(botao_excluir_jtable1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(botao_material_atualizar)))
+                                .addComponent(botao_material_atualizar))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 712, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(97, 97, 97))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 854, Short.MAX_VALUE)
-                            .addComponent(jScrollPane13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 854, Short.MAX_VALUE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 854, Short.MAX_VALUE)
-                            .addComponent(jScrollPane11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 854, Short.MAX_VALUE))
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addContainerGap(700, Short.MAX_VALUE))
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 722, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                .addContainerGap(732, Short.MAX_VALUE)
-                .addComponent(botao_add_especie)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botao_atualizar_especie)
-                .addContainerGap())
+            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(botao_add_especie)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botao_excluir_especie)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botao_atualizar_especie))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 856, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
         jpPescadoSubprodutoLayout.setVerticalGroup(
             jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -798,22 +895,30 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addGap(13, 13, 13)
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(9, 9, 9)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel21)
+                .addGap(5, 5, 5)
+                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel6)
+                        .addGap(111, 111, 111)
+                        .addComponent(jLabel7))
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addGap(111, 111, 111)
+                        .addComponent(jLabel21))
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botao_excluir_mercadoria)
                     .addComponent(botao_atualizar_mercado)
                     .addComponent(botao_mercado, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(13, 13, 13)
@@ -829,14 +934,18 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
                     .addComponent(tfOutros_principaisClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel24)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botao_atualizar_especie)
-                    .addComponent(botao_add_especie, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
-                .addComponent(jLabel26)
+                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addGap(93, 93, 93)
+                        .addComponent(jLabel26))
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(botao_atualizar_especie)
+                            .addComponent(botao_excluir_especie)
+                            .addComponent(botao_add_especie, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -906,15 +1015,15 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 891, Short.MAX_VALUE)
+            .addGap(0, 889, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 891, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 889, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 750, Short.MAX_VALUE)
+            .addGap(0, 743, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 743, Short.MAX_VALUE))
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
@@ -1246,6 +1355,89 @@ int[] ckb = new int[9];
 
     }//GEN-LAST:event_botao_excluir_jtable1ActionPerformed
 
+    private void botao_excluir_mercadoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_excluir_mercadoriaActionPerformed
+        // TODO add your handling code here:
+        String id_pra_excluir = "";
+
+        if (jtMercadoEstadual.getSelectedRow() != -1){
+            id_pra_excluir = jtMercadoEstadual.getValueAt(jtMercadoEstadual.getSelectedRow(),0).toString()+"";
+        }
+
+        if (jtMercadoInternacional.getSelectedRow() != -1){
+            id_pra_excluir = jtMercadoInternacional.getValueAt(jtMercadoInternacional.getSelectedRow(),0).toString()+"";
+        }
+
+        if (jtMercadoLocal.getSelectedRow() != -1){
+            id_pra_excluir = jtMercadoLocal.getValueAt(jtMercadoLocal.getSelectedRow(),0).toString()+"";
+        }
+
+        if (jtMercadoNacional.getSelectedRow() != -1){
+            id_pra_excluir = jtMercadoNacional.getValueAt(jtMercadoNacional.getSelectedRow(),0).toString()+"";
+        }
+
+        System.out.println(id_pra_excluir);
+        
+        String sql;
+
+        sql = "delete from atravessador_addmercado Where id_mercado =" + id_pra_excluir;
+
+                if (conexao.salvar(sql)) {
+                    JOptionPane.showMessageDialog(null,"Exclusão realizada com sucesso");
+                    //exibe o jTable1
+                    exibir_L_E_N_I(0);exibir_L_E_N_I(1);exibir_L_E_N_I(2);exibir_L_E_N_I(3);
+
+                }else{
+                JOptionPane.showMessageDialog(null,"Erro na exclusão");
+
+
+                }
+    }//GEN-LAST:event_botao_excluir_mercadoriaActionPerformed
+
+    private void botao_excluir_especieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_excluir_especieActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botao_excluir_especieActionPerformed
+
+    private void jtMercadoLocalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtMercadoLocalMouseClicked
+            
+    }//GEN-LAST:event_jtMercadoLocalMouseClicked
+
+    private void jtMercadoEstadualMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtMercadoEstadualMouseClicked
+           
+    }//GEN-LAST:event_jtMercadoEstadualMouseClicked
+
+    private void jtMercadoNacionalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtMercadoNacionalMouseClicked
+            
+    }//GEN-LAST:event_jtMercadoNacionalMouseClicked
+
+    private void jtMercadoInternacionalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtMercadoInternacionalMouseClicked
+            
+    }//GEN-LAST:event_jtMercadoInternacionalMouseClicked
+
+    private void jtMercadoLocalFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtMercadoLocalFocusGained
+        // TODO add your handling code here:
+            exibir_L_E_N_I(1);
+            exibir_L_E_N_I(2);
+            exibir_L_E_N_I(3);
+    }//GEN-LAST:event_jtMercadoLocalFocusGained
+
+    private void jtMercadoEstadualFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtMercadoEstadualFocusGained
+            exibir_L_E_N_I(0);
+            exibir_L_E_N_I(2);
+            exibir_L_E_N_I(3);
+    }//GEN-LAST:event_jtMercadoEstadualFocusGained
+
+    private void jtMercadoNacionalFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtMercadoNacionalFocusGained
+            exibir_L_E_N_I(0);
+            exibir_L_E_N_I(1);
+            exibir_L_E_N_I(3);
+    }//GEN-LAST:event_jtMercadoNacionalFocusGained
+
+    private void jtMercadoInternacionalFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtMercadoInternacionalFocusGained
+            exibir_L_E_N_I(0);
+            exibir_L_E_N_I(1);
+            exibir_L_E_N_I(2);
+    }//GEN-LAST:event_jtMercadoInternacionalFocusGained
+
     /**
     * @param args the command line arguments
     */
@@ -1263,7 +1455,9 @@ int[] ckb = new int[9];
     private javax.swing.JButton botao_alterar;
     private javax.swing.JButton botao_atualizar_especie;
     private javax.swing.JButton botao_atualizar_mercado;
+    private javax.swing.JButton botao_excluir_especie;
     private javax.swing.JButton botao_excluir_jtable1;
+    private javax.swing.JButton botao_excluir_mercadoria;
     private javax.swing.JButton botao_material_atualizar;
     private javax.swing.JButton botao_mercado;
     private javax.swing.JButton botao_salvar_questionario;
@@ -1554,19 +1748,21 @@ int[] ckb = new int[9];
         }
 
         public void preencher_jtableMercado(JTable table){
-        table.getColumnModel().getColumn(0).setPreferredWidth(10);
+        table.getColumnModel().getColumn(0).setMaxWidth(0);
+        table.getColumnModel().getColumn(0).setPreferredWidth(0);
         table.getColumnModel().getColumn(1).setPreferredWidth(40);
         table.getColumnModel().getColumn(2).setPreferredWidth(10);
         table.getColumnModel().getColumn(3).setPreferredWidth(10);
         table.getColumnModel().getColumn(4).setPreferredWidth(10);
-
+        table.getColumnModel().getColumn(5).setPreferredWidth(10);
 
         DefaultTableModel modelo = (DefaultTableModel)table.getModel();
         modelo.setNumRows(0);//limpa o JTable;
 
         try{
             while (conexao.resultSet.next())
-                modelo.addRow(new Object[]{conexao.resultSet.getString("especie"),
+                modelo.addRow(new Object[]{conexao.resultSet.getString("id_mercado"),
+                                           conexao.resultSet.getString("especie"),
                                            conexao.resultSet.getString("produto"),
                                            conexao.resultSet.getString("destino"),
                                            conexao.resultSet.getString("volume"),
@@ -1601,8 +1797,38 @@ int[] ckb = new int[9];
         }catch (SQLException erro){
             System.out.println(erro);
         }
-
-
-
     }
+
+    public void exibir_L_E_N_I(int i){
+        if (i == 0){
+        //Atualiza A primeira tabela Mercado Local
+        conexao.execute("select * from atravessador_addmercado where id_atravessador="
+                        +pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+" "
+                        + "and mercado='Mercado Local'");
+        preencher_jtableMercado(jtMercadoLocal);
+        conexao.execute("select * from atravessador_cadastro");
+        } else if (i == 1){
+        //Atualiza A segunda tabela Mercado Estadual
+        conexao.execute("select * from atravessador_addmercado where id_atravessador="
+                        +pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+" "
+                        + "and mercado='Mercado Estadual'");
+        preencher_jtableMercado(jtMercadoEstadual);
+        conexao.execute("select * from atravessador_cadastro");
+        }else if (i == 2){
+        //Atualiza A terceira tabela Mercado Nacional
+        conexao.execute("select * from atravessador_addmercado where id_atravessador="
+                        +pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+" "
+                        + "and mercado='Mercado Nacional'");
+        preencher_jtableMercado(jtMercadoNacional);
+        conexao.execute("select * from atravessador_cadastro");
+        }else if (i == 3){
+        //Atualiza A primeira tabela Mercado Internacional
+        conexao.execute("select * from atravessador_addmercado where id_atravessador="
+                        +pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+" "
+                        + "and mercado='Mercado Internacional'");
+        preencher_jtableMercado(jtMercadoInternacional);
+        conexao.execute("select * from atravessador_cadastro");
+        }
+    }
+
 }
