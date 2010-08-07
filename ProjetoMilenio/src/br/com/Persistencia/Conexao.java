@@ -34,8 +34,6 @@ public class Conexao {
             Class.forName(driver);
 
             connection = DriverManager.getConnection(url + nome, userName, password);
-
-            System.out.println("Conectou com Acess");
             return result;
 
         } catch (ClassNotFoundException exception) {
@@ -70,8 +68,7 @@ public class Conexao {
     public boolean desconecta() {
         try {
 
-            connection.close();
-            System.out.println("Conexao encerrada");
+            connection.close();            
             return true;
         } catch (Exception exception) {
 
@@ -86,9 +83,7 @@ public class Conexao {
 
             statement = connection.createStatement(java.sql.ResultSet.TYPE_SCROLL_INSENSITIVE,
                     java.sql.ResultSet.CONCUR_READ_ONLY);
-
             resultSet = statement.executeQuery(sql);
-
         } catch (Exception exception) {
             System.out.println("Erro execute.: " + exception);
         }
@@ -100,7 +95,6 @@ public class Conexao {
 
             statement = connection.createStatement(java.sql.ResultSet.TYPE_SCROLL_INSENSITIVE,
                     java.sql.ResultSet.CONCUR_READ_ONLY);
-
            return  1 == statement.executeUpdate(sql);
 
         } catch (Exception exception) {
