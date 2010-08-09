@@ -8,7 +8,6 @@
  *
  * Created on 16/07/2010, 15:50:37
  */
-
 package br.com.bean;
 
 import br.com.Persistencia.Conexao;
@@ -26,15 +25,15 @@ public class addMaterial extends javax.swing.JFrame {
     /** Creates new form winProduto */
     private Conexao conexao;
     public String idd_atravessador;
+
     public addMaterial(String id_atravessador) {
-        
+
         initComponents();
         conexao = new Conexao();
         conexao.conecta("mil_interface");
         System.out.println(id_atravessador);
         idd_atravessador = id_atravessador;
     }
-
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -182,7 +181,7 @@ public class addMaterial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Action(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Action
-         
+
         try {
             conexao.execute("select * from atravessador_addmaterial");
             conexao.resultSet.first();
@@ -191,47 +190,44 @@ public class addMaterial extends javax.swing.JFrame {
             System.out.println(ex);
         }
 
-         String sqlinsert = "insert into atravessador_addmaterial "
-                    + "(id_atravessador,nome,tipo,quantidade,"
-                    + "custo,outros,frequencia) values ('"+
-                    idd_atravessador+"','"+
-                    registro_q_vai()+"','"+
-                    tfMatTipo.getText()+"',"+
-                    tfMatQuantidade.getText()+",'"+
-                    tfMatCusto.getText()+"','"+
-                    tfMatOutros.getText()+"','"+
-                    tfMatFrequencia.getText()+"')";
+        String sqlinsert = "insert into atravessador_addmaterial " + "(id_atravessador,nome,tipo,quantidade," + "custo,outros,frequencia) values ('" +
+                idd_atravessador + "','" +
+                registro_q_vai() + "','" +
+                tfMatTipo.getText() + "'," +
+                tfMatQuantidade.getText() + ",'" +
+                tfMatCusto.getText() + "','" +
+                tfMatOutros.getText() + "','" +
+                tfMatFrequencia.getText() + "')";
 
-                    System.out.println(sqlinsert);
-                    conexao.salvar(sqlinsert);
-                    //agora é hora de atualizar o resultset
-                    addMaterial.this.dispose();
+        System.out.println(sqlinsert);
+        conexao.salvar(sqlinsert);
+        //agora é hora de atualizar o resultset
+        addMaterial.this.dispose();
 
     }//GEN-LAST:event_Action
 
     private void cbMatMaterialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbMatMaterialActionPerformed
-        
     }//GEN-LAST:event_cbMatMaterialActionPerformed
 
     private void cbMatMaterialItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbMatMaterialItemStateChanged
-        if (cbMatMaterial.getSelectedItem() == "Outro"){
+        if (cbMatMaterial.getSelectedItem() == "Outro") {
             tfMatOutroMat.setEditable(true);
-        }
-        else
+        } else {
             tfMatOutroMat.setEditable(false);
+        }
     }//GEN-LAST:event_cbMatMaterialItemStateChanged
 
     /**
-    * @param args the command line arguments
-    */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 //new addMaterial().setVisible(true);
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botao_add_mat;
     private javax.swing.JComboBox cbMatMaterial;
@@ -251,12 +247,11 @@ public class addMaterial extends javax.swing.JFrame {
     private javax.swing.JTextField tfMatTipo;
     // End of variables declaration//GEN-END:variables
 
-    public Object registro_q_vai(){
-                 if (tfMatOutroMat.isEditable()){
-                     return tfMatOutroMat.getText();
-                 }
-                 else
-                     return cbMatMaterial.getSelectedItem();
-         }
-
+    public Object registro_q_vai() {
+        if (tfMatOutroMat.isEditable()) {
+            return tfMatOutroMat.getText();
+        } else {
+            return cbMatMaterial.getSelectedItem();
+        }
+    }
 }
