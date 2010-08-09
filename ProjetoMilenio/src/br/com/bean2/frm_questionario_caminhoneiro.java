@@ -10,6 +10,7 @@
  */
 package br.com.bean2;
 
+import br.com.bean.*;
 import br.com.Persistencia.Conexao;
 import java.sql.*;
 import java.util.logging.Level;
@@ -38,10 +39,10 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
         //Insere nome no cbNomeAtravessador
                 try {
                     cbNomeAtravessador.removeAllItems();
-                    conexao.execute("select * from atravessador_cadastro");
+                    conexao.execute("select * from caminhoneiro_cadastro");
                     
                     while (conexao.resultSet.next()){
-                        cbNomeAtravessador.addItem(conexao.resultSet.getString("id_atravessador")+
+                        cbNomeAtravessador.addItem(conexao.resultSet.getString("id_caminhoneiro")+
                                                        " # "+ conexao.resultSet.getString("nome"));
                         //ItemDoCb = conexao.resultSet.getString("id_atravessador")+ " # "+ conexao.resultSet.getString("nome");
                         //pega_codigo(1);
@@ -51,7 +52,7 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
                     System.out.println(ex);
                 }
 
-        conexao.execute("select * from atravessador_questionario");
+        conexao.execute("select * from caminhoneiro_questionario");
         try {
             conexao.resultSet.first();
         } catch (SQLException ex) {
@@ -155,9 +156,6 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         jScrollPane21 = new javax.swing.JScrollPane();
         tpTamanhoPescadoDiminuindo = new javax.swing.JTextPane();
-        jScrollPane22 = new javax.swing.JScrollPane();
-        tpEstoqueContEstavel = new javax.swing.JTextPane();
-        jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jScrollPane23 = new javax.swing.JScrollPane();
         tpNumeroFornecedoresAumentou = new javax.swing.JTextPane();
@@ -188,6 +186,11 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
         botao_add_especie = new javax.swing.JButton();
         botao_atualizar_especie = new javax.swing.JButton();
         botao_alterar = new javax.swing.JButton();
+        botao_excluir_jtable1 = new javax.swing.JButton();
+        botao_excluir_mercadoria = new javax.swing.JButton();
+        botao_excluir_especie = new javax.swing.JButton();
+        tfOutrasFormasDeComercializacaoPeixe = new javax.swing.JTextField();
+        tfFrete = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -200,25 +203,25 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel41.setFont(new java.awt.Font("Tahoma", 1, 13));
+        jLabel41.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel41.setForeground(new java.awt.Color(0, 102, 102));
-        jLabel41.setText("Questionário Atravessador");
+        jLabel41.setText("Questionário Caminhoneiro");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(267, 267, 267)
+                .addGap(364, 364, 364)
                 .addComponent(jLabel41)
-                .addContainerGap(292, Short.MAX_VALUE))
+                .addContainerGap(385, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(35, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
                 .addComponent(jLabel41)
-                .addGap(32, 32, 32))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         cbNomeAtravessador.addActionListener(new java.awt.event.ActionListener() {
@@ -235,9 +238,14 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
 
         ckbSempreDosMesmos.setText("SIM");
 
-        jLabel11.setText("Só vente/transporta o peixe inteiro? Outras formas de comercialização ou tranporte?");
+        jLabel11.setText("Só vente/transporta o peixe inteiro? Outras formas de comercialização?");
 
         ckbPeixeInteiro.setText("SIM");
+        ckbPeixeInteiro.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                ckbPeixeInteiroStateChanged(evt);
+            }
+        });
 
         jLabel12.setText("Quais os critérios para definir a qualidade do produto?");
 
@@ -286,16 +294,24 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"", null, null, null, null, null},
-                {"", null, null, null, null, null},
-                {"", null, null, null, null, null},
-                {"", null, null, null, null, null},
-                {"", null, null, null, null, null}
+                {null, "", null, null, null, null, null},
+                {null, "", null, null, null, null, null},
+                {null, "", null, null, null, null, null},
+                {null, "", null, null, null, null, null},
+                {null, "", null, null, null, null, null}
             },
             new String [] {
-                "Material", "Tipo", "Quantidade", "Custo", "Outros", "Frequência"
+                "Id_material", "Material", "Tipo", "Quantidade", "Custo", "Outros", "Frequência"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane9.setViewportView(jTable1);
 
         botao_material_atualizar.setText("Atualizar");
@@ -311,9 +327,9 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
         taExigenciaCompraPescado.setRows(5);
         jScrollPane2.setViewportView(taExigenciaCompraPescado);
 
-        jLabel2.setText("Quais as dificuldades (gargalos) encontrados pra manter a atividade da venda? Quais as possíveis soluções (demandas) pra");
+        jLabel2.setText("Quais as dificuldades (gargalos) encontrados pra manter a atividade da venda? Quais as possíveis soluções (demandas) pra melhorar o seu trabalho?");
 
-        jLabel3.setText("melhorar o seu trabalho?");
+        jLabel3.setText("Qual o valor cobrado pelo frete (por rota de venda) R$?");
 
         jScrollPane3.setViewportView(tpDificuldadesEncontradas);
 
@@ -325,15 +341,33 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
 
         jtMercadoLocal.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Espécie", "Produto", "Destino", "Volume", "Preço ($)"
+                "id", "Espécie", "Produto", "Destino", "Volume", "Preço ($)"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jtMercadoLocal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtMercadoLocalMouseClicked(evt);
+            }
+        });
+        jtMercadoLocal.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jtMercadoLocalFocusGained(evt);
+            }
+        });
         jScrollPane10.setViewportView(jtMercadoLocal);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11));
@@ -341,15 +375,33 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
 
         jtMercadoEstadual.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Espécie", "Produto", "Destino", "Volume", "Preço ($)"
+                "id", "Espécie", "Produto", "Destino", "Volume", "Preço ($)"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jtMercadoEstadual.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtMercadoEstadualMouseClicked(evt);
+            }
+        });
+        jtMercadoEstadual.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jtMercadoEstadualFocusGained(evt);
+            }
+        });
         jScrollPane11.setViewportView(jtMercadoEstadual);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11));
@@ -357,15 +409,33 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
 
         jtMercadoNacional.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Espécie", "Produto", "Destino", "Volume", "Preço ($)"
+                "id", "Espécie", "Produto", "Destino", "Volume", "Preço ($)"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jtMercadoNacional.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtMercadoNacionalMouseClicked(evt);
+            }
+        });
+        jtMercadoNacional.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jtMercadoNacionalFocusGained(evt);
+            }
+        });
         jScrollPane12.setViewportView(jtMercadoNacional);
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 11));
@@ -373,15 +443,33 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
 
         jtMercadoInternacional.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Espécie", "Produto", "Destino", "Volume", "Preço ($)"
+                "id", "Espécie", "Produto", "Destino", "Volume", "Preço ($)"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jtMercadoInternacional.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtMercadoInternacionalMouseClicked(evt);
+            }
+        });
+        jtMercadoInternacional.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jtMercadoInternacionalFocusGained(evt);
+            }
+        });
         jScrollPane13.setViewportView(jtMercadoInternacional);
 
         ckbRestaurante.setText("Restaurante");
@@ -414,26 +502,34 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
 
         jtEspecie.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Espécie", "Causa da perda", "Estimativa da perda (%)", "Destino do peixe perdido"
+                "id", "Espécie", "Causa da perda", "Estimativa da perda (%)", "Destino do peixe perdido"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane15.setViewportView(jtEspecie);
 
         jScrollPane16.setViewportView(tpSempreMesmoCompradores);
 
-        jLabel26.setText("Sempre vende para os mesmos compradores? Por que?");
+        jLabel26.setText("Sempre vende para os mesmos clientes? Por que?");
 
-        jLabel27.setText("Quais as exigencias dos compradores (quanto à qualidade dos produtos)?");
+        jLabel27.setText("Quais as exigencias dos clientes (quanto à qualidade dos produtos)?");
 
         jLabel28.setText("Como você observa a atuação das instituições IBAMA; SEPAQ; MINISTÉRIO DA PESCA; UNIVERSIDADES e qual a sua relação");
 
-        jLabel29.setText("Qual o grau de conpetitividade/rivalidade entre os atravessadores?");
+        jLabel29.setText("Qual o grau de conpetitividade/rivalidade entre os transportadores/atravessadores?");
 
         jScrollPane18.setViewportView(tpGrauCompetitividade);
 
@@ -443,13 +539,9 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
 
         jScrollPane20.setViewportView(tpExisteIteracao);
 
-        jLabel31.setText("Existe alguma interação entre os atravessadores em relação à troca, cooperação dos produtos?");
+        jLabel31.setText("Existe alguma interação entre os atravessadores (caminhões...) em relação à troca, cooperação dos produtos?");
 
         jScrollPane21.setViewportView(tpTamanhoPescadoDiminuindo);
-
-        jScrollPane22.setViewportView(tpEstoqueContEstavel);
-
-        jLabel32.setText("Em sua opinião, o estoque pesqueiro continua estável? Explique");
 
         jLabel33.setText("Que perspectiva você tem (vê) para os próximos anos?");
 
@@ -467,7 +559,7 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
 
         jLabel37.setText("Pretende continuar na atividade?");
 
-        jLabel38.setText("Como negocia com os pescadores (a compra do produto)?");
+        jLabel38.setText("Como negocia com os pescadores/atravessadores (a compra do produto)?");
 
         jScrollPane26.setViewportView(tpComoNegocia);
 
@@ -525,6 +617,29 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
             }
         });
 
+        botao_excluir_jtable1.setText("Excluir");
+        botao_excluir_jtable1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_excluir_jtable1ActionPerformed(evt);
+            }
+        });
+
+        botao_excluir_mercadoria.setText("Excluir");
+        botao_excluir_mercadoria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_excluir_mercadoriaActionPerformed(evt);
+            }
+        });
+
+        botao_excluir_especie.setText("Excluir");
+        botao_excluir_especie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_excluir_especieActionPerformed(evt);
+            }
+        });
+
+        tfFrete.setText("0");
+
         javax.swing.GroupLayout jpPescadoSubprodutoLayout = new javax.swing.GroupLayout(jpPescadoSubproduto);
         jpPescadoSubproduto.setLayout(jpPescadoSubprodutoLayout);
         jpPescadoSubprodutoLayout.setHorizontalGroup(
@@ -532,11 +647,11 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel26)
-                .addContainerGap(541, Short.MAX_VALUE))
+                .addContainerGap(777, Short.MAX_VALUE))
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel38)
-                .addContainerGap(527, Short.MAX_VALUE))
+                .addContainerGap(639, Short.MAX_VALUE))
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel27)
@@ -544,82 +659,82 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel39)
-                .addContainerGap(356, Short.MAX_VALUE))
+                .addContainerGap(560, Short.MAX_VALUE))
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel36)
-                .addContainerGap(401, Short.MAX_VALUE))
+                .addContainerGap(605, Short.MAX_VALUE))
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addGap(8, 8, 8)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                        .addComponent(jLabel35)
+                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel30)
+                            .addComponent(jLabel28))
                         .addContainerGap())
                     .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                            .addComponent(jLabel32)
+                            .addComponent(jLabel29)
                             .addContainerGap())
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel30)
-                                    .addComponent(jLabel28))
+                                .addComponent(jLabel31)
                                 .addContainerGap())
-                            .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                                    .addComponent(jLabel29)
-                                    .addContainerGap())
+                            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane24, javax.swing.GroupLayout.DEFAULT_SIZE, 1022, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane25, javax.swing.GroupLayout.DEFAULT_SIZE, 1022, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane20, javax.swing.GroupLayout.DEFAULT_SIZE, 1022, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane18, javax.swing.GroupLayout.DEFAULT_SIZE, 1022, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane19, javax.swing.GroupLayout.DEFAULT_SIZE, 1022, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane26, javax.swing.GroupLayout.DEFAULT_SIZE, 1022, Short.MAX_VALUE)
                                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                                        .addComponent(jLabel31)
-                                        .addContainerGap())
+                                        .addComponent(jLabel35)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 433, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jScrollPane21, javax.swing.GroupLayout.DEFAULT_SIZE, 1022, Short.MAX_VALUE)
                                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jScrollPane24, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
-                                            .addComponent(jScrollPane25, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
-                                            .addComponent(jScrollPane20, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
-                                            .addComponent(jScrollPane18, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
-                                            .addComponent(jScrollPane19, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
-                                            .addComponent(jScrollPane22, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
-                                            .addComponent(jScrollPane21, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
-                                            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                                                .addComponent(jLabel34)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 293, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(jScrollPane23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
-                                            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                                                .addComponent(jLabel33)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 503, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                                                .addComponent(jLabel37)
-                                                .addGap(554, 554, 554))
-                                            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                                                .addComponent(jLabel40)
-                                                .addGap(330, 330, 330))
-                                            .addComponent(jScrollPane29, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
-                                            .addComponent(jScrollPane27, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
-                                            .addComponent(jScrollPane28, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
-                                            .addComponent(jScrollPane26, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                                                .addComponent(botao_salvar_questionario)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(botao_alterar)))
-                                        .addGap(48, 48, 48))))))))
+                                        .addComponent(jLabel34)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 497, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jScrollPane23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1022, Short.MAX_VALUE)
+                                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                                        .addComponent(jLabel33)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 707, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                                        .addComponent(jLabel37)
+                                        .addGap(554, 554, 554))
+                                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                                        .addComponent(jLabel40)
+                                        .addGap(330, 330, 330))
+                                    .addComponent(jScrollPane29, javax.swing.GroupLayout.DEFAULT_SIZE, 1022, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane27, javax.swing.GroupLayout.DEFAULT_SIZE, 1022, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane28, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1022, Short.MAX_VALUE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
+                                        .addComponent(botao_salvar_questionario)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(botao_alterar)))
+                                .addGap(48, 48, 48))))))
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane17, javax.swing.GroupLayout.DEFAULT_SIZE, 814, Short.MAX_VALUE)
+                .addComponent(jScrollPane17, javax.swing.GroupLayout.DEFAULT_SIZE, 1018, Short.MAX_VALUE)
                 .addGap(48, 48, 48))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                .addContainerGap(717, Short.MAX_VALUE)
-                .addComponent(botao_mercado)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botao_atualizar_mercado)
-                .addContainerGap())
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                        .addComponent(jScrollPane15, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
-                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 964, Short.MAX_VALUE)
+                            .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 964, Short.MAX_VALUE)
+                            .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 964, Short.MAX_VALUE)
+                            .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 964, Short.MAX_VALUE)
+                            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                                .addGap(728, 728, 728)
+                                .addComponent(botao_mercado)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(botao_excluir_mercadoria)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(botao_atualizar_mercado)
+                                .addGap(3, 3, 3)))
+                        .addGap(102, 102, 102))
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
@@ -639,31 +754,8 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
                         .addComponent(tfOutros_principaisClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cbNomeAtravessador, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel9)
-                            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ckbPeixeInteiro))
-                            .addComponent(jLabel12)
-                            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ckbSempreDosMesmos))
-                            .addComponent(jLabel1)
-                            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane4))
-                        .addContainerGap(127, Short.MAX_VALUE))
-                    .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 607, Short.MAX_VALUE))
-                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addComponent(jLabel21)
-                        .addContainerGap(734, Short.MAX_VALUE))
+                        .addContainerGap(938, Short.MAX_VALUE))
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addContainerGap())
@@ -671,46 +763,86 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
                         .addComponent(jLabel24)
                         .addGap(548, 548, 548))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                        .addComponent(jScrollPane16, javax.swing.GroupLayout.DEFAULT_SIZE, 814, Short.MAX_VALUE)
+                        .addComponent(jScrollPane16, javax.swing.GroupLayout.DEFAULT_SIZE, 1018, Short.MAX_VALUE)
                         .addGap(48, 48, 48))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 765, Short.MAX_VALUE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 765, Short.MAX_VALUE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addContainerGap(817, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbNomeAtravessador, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ckbPeixeInteiro)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfOutrasFormasDeComercializacaoPeixe, javax.swing.GroupLayout.DEFAULT_SIZE, 504, Short.MAX_VALUE))
+                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ckbSempreDosMesmos))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 969, Short.MAX_VALUE)
+                            .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 969, Short.MAX_VALUE)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 969, Short.MAX_VALUE)
                             .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 765, Short.MAX_VALUE)
-                            .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 765, Short.MAX_VALUE)
-                            .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 765, Short.MAX_VALUE)
-                            .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 765, Short.MAX_VALUE)
+                            .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 969, Short.MAX_VALUE)
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 969, Short.MAX_VALUE)
+                            .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 969, Short.MAX_VALUE)
                             .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                                .addComponent(botao_add_atravessador)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(botao_material_atualizar))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 765, Short.MAX_VALUE)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 765, Short.MAX_VALUE))
-                        .addGap(97, 97, 97))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
-                            .addComponent(jScrollPane13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
-                            .addComponent(jScrollPane11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE))
-                        .addContainerGap())))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                .addContainerGap(717, Short.MAX_VALUE)
-                .addComponent(botao_add_especie)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 969, Short.MAX_VALUE)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 712, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(97, 97, 97))))
+            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addContainerGap(208, Short.MAX_VALUE))
+            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 969, Short.MAX_VALUE)
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addComponent(botao_add_atravessador)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botao_excluir_jtable1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botao_material_atualizar)))
+                .addGap(97, 97, 97))
+            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING))
+                .addContainerGap(470, Short.MAX_VALUE))
+            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botao_atualizar_especie)
-                .addContainerGap())
+                .addComponent(tfFrete, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(607, Short.MAX_VALUE))
+            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 930, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addComponent(botao_add_especie)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botao_excluir_especie)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botao_atualizar_especie)))
+                .addContainerGap(136, Short.MAX_VALUE))
         );
         jpPescadoSubprodutoLayout.setVerticalGroup(
             jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -732,7 +864,8 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(ckbPeixeInteiro))
+                    .addComponent(ckbPeixeInteiro)
+                    .addComponent(tfOutrasFormasDeComercializacaoPeixe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel12)
                 .addGap(3, 3, 3)
@@ -759,42 +892,52 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
                 .addComponent(jLabel18)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
+                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(tfFrete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
                 .addComponent(jLabel19)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel20)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botao_material_atualizar)
+                    .addComponent(botao_excluir_jtable1)
                     .addComponent(botao_add_atravessador))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
+                .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
                 .addGap(13, 13, 13)
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(16, 16, 16)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel21)
+                .addGap(5, 5, 5)
+                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(111, 111, 111)
+                        .addComponent(jLabel7))
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addGap(111, 111, 111)
+                        .addComponent(jLabel21))
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botao_excluir_mercadoria)
                     .addComponent(botao_atualizar_mercado)
                     .addComponent(botao_mercado, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(13, 13, 13)
@@ -810,13 +953,14 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
                     .addComponent(tfOutros_principaisClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel24)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botao_atualizar_especie)
+                    .addComponent(botao_excluir_especie)
                     .addComponent(botao_add_especie, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
+                .addGap(56, 56, 56)
                 .addComponent(jLabel26)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -850,10 +994,6 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
                 .addComponent(jLabel30)
                 .addGap(1, 1, 1)
                 .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel32)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel35)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -878,7 +1018,7 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botao_alterar)
                     .addComponent(botao_salvar_questionario))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jpPescadoSubproduto);
@@ -887,9 +1027,9 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 889, Short.MAX_VALUE)
+            .addGap(0, 1101, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 889, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1101, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -899,7 +1039,7 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-907)/2, (screenSize.height-788)/2, 907, 788);
+        setBounds((screenSize.width-1119)/2, (screenSize.height-788)/2, 1119, 788);
     }// </editor-fold>//GEN-END:initComponents
 
     private void cbNomeAtravessadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbNomeAtravessadorActionPerformed
@@ -908,19 +1048,20 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
         
         if (inicia_combo == 1){
          try {
-            conexao.execute("select * from atravessador_questionario");
+            conexao.execute("select * from caminhoneiro_questionario");
             conexao.resultSet.first();
             String igual = "n"; //inicia dizendo que não localizou
             while(igual == "n") //diz que enquanto não localizar é para ir executando
             {
                 String id = pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString());
-                if (conexao.resultSet.getString("id_atravessador").equals(id)) {
+                if (conexao.resultSet.getString("id_caminhoneiro").equals(id)) {
                     igual = "s"; //incica que achou
                 } else
                     conexao.resultSet.next();
             }
             //nas linhas abaixo, mostra_conteudo_tabela();
              mostra_dados();
+
 
 
         } catch (SQLException ex) {
@@ -932,11 +1073,11 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
     }//GEN-LAST:event_cbNomeAtravessadorActionPerformed
 
     private void botao_add_atravessadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_add_atravessadorActionPerformed
-        new addMaterial(pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())).setVisible(true);
+        new addCMaterial(pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())).setVisible(true);
 }//GEN-LAST:event_botao_add_atravessadorActionPerformed
 
     private void botao_material_atualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_material_atualizarActionPerformed
-        conexao.execute("select * from atravessador_addmaterial where id_atravessador="
+        conexao.execute("select * from caminhoneiro_addmaterial where id_caminhoneiro="
                             +pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+"");
         preencher_jtable();
         conexao.execute("select * from atravessador_cadastro");
@@ -991,8 +1132,8 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
 
 
         try {
-            String sqlinsert = "insert into atravessador_questionario "
-                    + "(id_atravessador,nome_atravessador,origem_produto,"
+            String sqlinsert = "insert into caminhoneiro_questionario "
+                    + "(id_caminhoneiro,nome_caminhoneiro,origem_produto,"
                     + "sempre_dos_mesmos_pesc,peixe_inteiro,criterios_qualidade_produto,"
                     + "exigencia_pescado_subprodutos,como_func_recepcao,"
                     + "como_func_armazenamento,como_funf_comercializacao,"
@@ -1003,8 +1144,8 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
                     + "sempre_vende_pros_mesmos,exigencias_compradores,"
                     + "como_negocia,cede_adiantamento,situacao_obriga_entregar_prod,"
                     + "existe_interacao,grau_competitividade,atuacao_instituicoes_sua_relacao,"
-                    + "estoque_continua_estavel,pescado_diminuindo_mot_mudanca,"
-                    + "numero_aumentou_o_que_acha,perspectiva,pretende_continuar,"
+                    + "pescado_diminuindo_mot_mudanca,"
+                    + "numero_aumentou_o_que_acha,perspectiva,pretende_continuar,sempre_dos_mesmos_pesc_quais,valor_frete,"
                     + "desejo_para_filhos) values ("+
                     pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+",'"+
                     pega_codigo_ou_nome(0,cbNomeAtravessador.getSelectedItem().toString())+"','"+
@@ -1032,18 +1173,21 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
                     tpExisteIteracao.getText()+"','"+
                     tpGrauCompetitividade.getText()+"','"+
                     tpAtuacaoInstituicoesSuaRelacao.getText()+"','"+
-                    tpEstoqueContEstavel.getText()+"','"+
+                    
                     tpTamanhoPescadoDiminuindo.getText()+"','"+
                     tpNumeroFornecedoresAumentou.getText()+"','"+
                     tpPerspectiva.getText()+"','"+
                     tpContinuarAtividade.getText()+"','"+
+                    tfOutrasFormasDeComercializacaoPeixe.getText()+"',"+
+                    tfFrete.getText()+",'"+
                     tpDesejoFilhos.getText()+"')";
 
                     System.out.println(sqlinsert);
 
             if (conexao.salvar(sqlinsert)){
             //agora é hora de atualizar o resultset
-            conexao.execute("select * from atravessador_questionario");
+            JOptionPane.showMessageDialog(null,"Salvo com sucesso");
+            conexao.execute("select * from caminhoneiro_questionario");
             conexao.resultSet.first(); //1º registro
             mostra_dados();
             cbNomeAtravessador.setSelectedIndex(0);
@@ -1065,48 +1209,48 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
     }//GEN-LAST:event_ckbOutros_principaisClientesStateChanged
 
     private void botao_mercadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_mercadoActionPerformed
-        new addProduto_MercadoLocal(pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())).setVisible(true);
+        new addCProduto_MercadoLocal(pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())).setVisible(true);
     }//GEN-LAST:event_botao_mercadoActionPerformed
 
     private void botao_atualizar_mercadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_atualizar_mercadoActionPerformed
         //Atualiza A primeira tabela Mercado Local
-        conexao.execute("select * from atravessador_addmercado where id_atravessador="
+        conexao.execute("select * from caminhoneiro_addmercado where id_caminhoneiro="
                         +pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+" "
                         + "and mercado='Mercado Local'");
         preencher_jtableMercado(jtMercadoLocal);
-        conexao.execute("select * from atravessador_cadastro");
+        conexao.execute("select * from caminhoneiro_cadastro");
         
         //Atualiza A segunda tabela Mercado Estadual
-        conexao.execute("select * from atravessador_addmercado where id_atravessador="
+        conexao.execute("select * from caminhoneiro_addmercado where id_caminhoneiro="
                         +pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+" "
                         + "and mercado='Mercado Estadual'");
         preencher_jtableMercado(jtMercadoEstadual);
-        conexao.execute("select * from atravessador_cadastro");
+        conexao.execute("select * from caminhoneiro_cadastro");
         
         //Atualiza A terceira tabela Mercado Nacional
-        conexao.execute("select * from atravessador_addmercado where id_atravessador="
+        conexao.execute("select * from caminhoneiro_addmercado where id_caminhoneiro="
                         +pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+" "
                         + "and mercado='Mercado Nacional'");
         preencher_jtableMercado(jtMercadoNacional);
-        conexao.execute("select * from atravessador_cadastro");
+        conexao.execute("select * from caminhoneiro_cadastro");
         
         //Atualiza A primeira tabela Mercado Internacional
-        conexao.execute("select * from atravessador_addmercado where id_atravessador="
+        conexao.execute("select * from caminhoneiro_addmercado where id_caminhoneiro="
                         +pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+" "
                         + "and mercado='Mercado Internacional'");
         preencher_jtableMercado(jtMercadoInternacional);
-        conexao.execute("select * from atravessador_cadastro");
+        conexao.execute("select * from caminhoneiro_cadastro");
     }//GEN-LAST:event_botao_atualizar_mercadoActionPerformed
 
     private void botao_add_especieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_add_especieActionPerformed
-        new addEspecie(pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())).setVisible(true);
+        new addCEspecie(pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())).setVisible(true);
     }//GEN-LAST:event_botao_add_especieActionPerformed
 
     private void botao_atualizar_especieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_atualizar_especieActionPerformed
-       conexao.execute("select * from atravessador_addespecie where id_atravessador="
+       conexao.execute("select * from caminhoneiro_addespecie where id_caminhoneiro="
                         +pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+"");
         preencher_jtableEspecie();
-        conexao.execute("select * from atravessador_cadastro");
+        conexao.execute("select * from caminhoneiro_cadastro");
     }//GEN-LAST:event_botao_atualizar_especieActionPerformed
 
     private void botao_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_alterarActionPerformed
@@ -1149,7 +1293,7 @@ int[] ckb = new int[9];
 
 
         try{
-            String sql ="UPDATE atravessador_questionario SET "+
+            String sql ="UPDATE caminhoneiro_questionario SET "+
                           "origem_produto = '"+taOrigemProduto.getText()+"',"+
                           "sempre_dos_mesmos_pesc = '"+ ckb[0] +"',"+
                           "peixe_inteiro = '"+ ckb[1] +"',"+
@@ -1174,21 +1318,23 @@ int[] ckb = new int[9];
                           "existe_interacao = '"+ tpExisteIteracao.getText() +"',"+
                           "grau_competitividade = '"+ tpGrauCompetitividade.getText() +"',"+
                           "atuacao_instituicoes_sua_relacao = '"+ tpAtuacaoInstituicoesSuaRelacao.getText() +"',"+
-                          "estoque_continua_estavel = '"+ tpEstoqueContEstavel.getText() +"',"+
+                          
                           "pescado_diminuindo_mot_mudanca = '"+ tpTamanhoPescadoDiminuindo.getText() +"',"+
                           "numero_aumentou_o_que_acha = '"+ tpNumeroFornecedoresAumentou.getText() +"',"+
                           "perspectiva = '"+ tpPerspectiva.getText() +"',"+
                           "pretende_continuar = '"+ tpContinuarAtividade.getText() +"',"+
-                          "desejo_para_filhos = '"+ tpDesejoFilhos.getText() +"' "+
+                          "desejo_para_filhos = '"+ tpDesejoFilhos.getText() +"',"+
+                          "sempre_dos_mesmos_pesc_quais ='"+ tfOutrasFormasDeComercializacaoPeixe.getText() +"',"+
+                          "valor_frete ='"+ tfFrete.getText() +"' "+
 
 
-                          "where id_atravessador = "+pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString());
+                          "where id_caminhoneiro = "+pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString());
 
             System.out.println(sql);
             if (conexao.update(sql)){
             JOptionPane.showMessageDialog(null,"Alterado com sucesso");
             //Atualiza Resultset
-            conexao.execute("select * from atravessador_questionario");
+            conexao.execute("select * from caminhoneiro_questionario");
             conexao.resultSet.next();
             mostra_dados();
             cbNomeAtravessador.setSelectedIndex(0);
@@ -1199,6 +1345,146 @@ int[] ckb = new int[9];
             System.out.println(e + "Erro no botão alterar");
         }
     }//GEN-LAST:event_botao_alterarActionPerformed
+
+    private void botao_excluir_jtable1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_excluir_jtable1ActionPerformed
+        // TODO add your handling code here:
+        System.out.println(jTable1.getValueAt(jTable1.getSelectedRow(),0));
+        //.removeRow(jTable1.getSelectedRow());
+                String sql;
+
+            sql = "delete from caminhoneiro_addmaterial Where id_material =" + jTable1.getValueAt(jTable1.getSelectedRow(),0);
+
+                if (conexao.salvar(sql)) {
+                    System.out.println("Exclusão realizada com sucesso");
+                    //exibe o jTable1
+                    conexao.execute("select * from caminhoneiro_addmaterial where id_caminhoneiro="
+                            +pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+"");
+                    preencher_jtable();
+                    conexao.execute("select * from caminhoneiro_cadastro");
+
+                }else{
+                JOptionPane.showMessageDialog(null,"Erro na exclusão");
+
+                   
+                }
+
+
+
+
+    }//GEN-LAST:event_botao_excluir_jtable1ActionPerformed
+
+    private void botao_excluir_mercadoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_excluir_mercadoriaActionPerformed
+        // TODO add your handling code here:
+        String id_pra_excluir = "";
+
+        if (jtMercadoEstadual.getSelectedRow() != -1){
+            id_pra_excluir = jtMercadoEstadual.getValueAt(jtMercadoEstadual.getSelectedRow(),0).toString()+"";
+        }
+
+        if (jtMercadoInternacional.getSelectedRow() != -1){
+            id_pra_excluir = jtMercadoInternacional.getValueAt(jtMercadoInternacional.getSelectedRow(),0).toString()+"";
+        }
+
+        if (jtMercadoLocal.getSelectedRow() != -1){
+            id_pra_excluir = jtMercadoLocal.getValueAt(jtMercadoLocal.getSelectedRow(),0).toString()+"";
+        }
+
+        if (jtMercadoNacional.getSelectedRow() != -1){
+            id_pra_excluir = jtMercadoNacional.getValueAt(jtMercadoNacional.getSelectedRow(),0).toString()+"";
+        }
+
+        System.out.println(id_pra_excluir);
+        
+        String sql;
+
+        sql = "delete from caminhoneiro_addmercado Where id_mercado =" + id_pra_excluir;
+
+                if (conexao.salvar(sql)) {
+                    System.out.println("Exclusão realizada com sucesso");
+                    //exibe o jTable1
+                    exibir_L_E_N_I(0);exibir_L_E_N_I(1);exibir_L_E_N_I(2);exibir_L_E_N_I(3);
+
+                }else{
+                JOptionPane.showMessageDialog(null,"Erro na exclusão");
+
+
+                }
+    }//GEN-LAST:event_botao_excluir_mercadoriaActionPerformed
+
+    private void botao_excluir_especieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_excluir_especieActionPerformed
+        // TODO add your handling code here:
+        System.out.println(jtEspecie.getValueAt(jtEspecie.getSelectedRow(),0));
+        //.removeRow(jTable1.getSelectedRow());
+                String sql;
+
+            sql = "delete from caminhoneiro_addespecie Where id_especie =" + jtEspecie.getValueAt(jtEspecie.getSelectedRow(),0);
+
+                if (conexao.salvar(sql)) {
+                    System.out.println("Exclusão realizada com sucesso");
+                    //exibe
+                    conexao.execute("select * from caminhoneiro_addespecie where id_caminhoneiro="
+                        +pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+"");
+                    preencher_jtableEspecie();
+                    conexao.execute("select * from caminhoneiro_cadastro");
+
+                }else{
+                JOptionPane.showMessageDialog(null,"Erro na exclusão");
+
+
+                }
+
+
+    }//GEN-LAST:event_botao_excluir_especieActionPerformed
+
+    private void jtMercadoLocalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtMercadoLocalMouseClicked
+            
+    }//GEN-LAST:event_jtMercadoLocalMouseClicked
+
+    private void jtMercadoEstadualMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtMercadoEstadualMouseClicked
+           
+    }//GEN-LAST:event_jtMercadoEstadualMouseClicked
+
+    private void jtMercadoNacionalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtMercadoNacionalMouseClicked
+            
+    }//GEN-LAST:event_jtMercadoNacionalMouseClicked
+
+    private void jtMercadoInternacionalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtMercadoInternacionalMouseClicked
+            
+    }//GEN-LAST:event_jtMercadoInternacionalMouseClicked
+
+    private void jtMercadoLocalFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtMercadoLocalFocusGained
+        // TODO add your handling code here:
+            exibir_L_E_N_I(1);
+            exibir_L_E_N_I(2);
+            exibir_L_E_N_I(3);
+    }//GEN-LAST:event_jtMercadoLocalFocusGained
+
+    private void jtMercadoEstadualFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtMercadoEstadualFocusGained
+            exibir_L_E_N_I(0);
+            exibir_L_E_N_I(2);
+            exibir_L_E_N_I(3);
+    }//GEN-LAST:event_jtMercadoEstadualFocusGained
+
+    private void jtMercadoNacionalFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtMercadoNacionalFocusGained
+            exibir_L_E_N_I(0);
+            exibir_L_E_N_I(1);
+            exibir_L_E_N_I(3);
+    }//GEN-LAST:event_jtMercadoNacionalFocusGained
+
+    private void jtMercadoInternacionalFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtMercadoInternacionalFocusGained
+            exibir_L_E_N_I(0);
+            exibir_L_E_N_I(1);
+            exibir_L_E_N_I(2);
+    }//GEN-LAST:event_jtMercadoInternacionalFocusGained
+
+    private void ckbPeixeInteiroStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ckbPeixeInteiroStateChanged
+        if (ckbPeixeInteiro.isSelected()){
+            tfOutrasFormasDeComercializacaoPeixe.setEditable(true);
+        }else {
+            tfOutrasFormasDeComercializacaoPeixe.setEditable(false);
+            tfOutrasFormasDeComercializacaoPeixe.setText("");
+        }
+    }//GEN-LAST:event_ckbPeixeInteiroStateChanged
 
     /**
     * @param args the command line arguments
@@ -1217,6 +1503,9 @@ int[] ckb = new int[9];
     private javax.swing.JButton botao_alterar;
     private javax.swing.JButton botao_atualizar_especie;
     private javax.swing.JButton botao_atualizar_mercado;
+    private javax.swing.JButton botao_excluir_especie;
+    private javax.swing.JButton botao_excluir_jtable1;
+    private javax.swing.JButton botao_excluir_mercadoria;
     private javax.swing.JButton botao_material_atualizar;
     private javax.swing.JButton botao_mercado;
     private javax.swing.JButton botao_salvar_questionario;
@@ -1252,7 +1541,6 @@ int[] ckb = new int[9];
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
@@ -1282,7 +1570,6 @@ int[] ckb = new int[9];
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane20;
     private javax.swing.JScrollPane jScrollPane21;
-    private javax.swing.JScrollPane jScrollPane22;
     private javax.swing.JScrollPane jScrollPane23;
     private javax.swing.JScrollPane jScrollPane24;
     private javax.swing.JScrollPane jScrollPane25;
@@ -1310,6 +1597,8 @@ int[] ckb = new int[9];
     private javax.swing.JTextArea taExigenciaCompraPescado;
     private javax.swing.JTextArea taOrigemProduto;
     private javax.swing.JTextArea taRecepcao;
+    private javax.swing.JTextField tfFrete;
+    private javax.swing.JTextField tfOutrasFormasDeComercializacaoPeixe;
     private javax.swing.JTextField tfOutros_principaisClientes;
     private javax.swing.JTextPane tpAtuacaoInstituicoesSuaRelacao;
     private javax.swing.JTextPane tpCedeAdiantamento;
@@ -1317,7 +1606,6 @@ int[] ckb = new int[9];
     private javax.swing.JTextPane tpContinuarAtividade;
     private javax.swing.JTextPane tpDesejoFilhos;
     private javax.swing.JTextPane tpDificuldadesEncontradas;
-    private javax.swing.JTextPane tpEstoqueContEstavel;
     private javax.swing.JTextPane tpExigenciasCompradores;
     private javax.swing.JTextPane tpExisteIteracao;
     private javax.swing.JTextPane tpGrauCompetitividade;
@@ -1329,19 +1617,22 @@ int[] ckb = new int[9];
     // End of variables declaration//GEN-END:variables
 
         public void preencher_jtable(){
-        jTable1.getColumnModel().getColumn(0).setPreferredWidth(10);
+        jTable1.getColumnModel().getColumn(0).setMaxWidth(0);
+        jTable1.getColumnModel().getColumn(0).setPreferredWidth(0);
         jTable1.getColumnModel().getColumn(1).setPreferredWidth(40);
         jTable1.getColumnModel().getColumn(2).setPreferredWidth(10);
         jTable1.getColumnModel().getColumn(3).setPreferredWidth(10);
         jTable1.getColumnModel().getColumn(4).setPreferredWidth(10);
         jTable1.getColumnModel().getColumn(5).setPreferredWidth(10);
+        jTable1.getColumnModel().getColumn(6).setPreferredWidth(10);
 
         DefaultTableModel modelo = (DefaultTableModel)jTable1.getModel();
         modelo.setNumRows(0);//limpa o JTable1;
 
         try{
             while (conexao.resultSet.next())
-                modelo.addRow(new Object[]{conexao.resultSet.getString("nome"),
+                modelo.addRow(new Object[]{conexao.resultSet.getString("id_material"),
+                                           conexao.resultSet.getString("nome"),
                                            conexao.resultSet.getString("tipo"),
                                            conexao.resultSet.getString("quantidade"),
                                            conexao.resultSet.getString("custo"),
@@ -1376,13 +1667,16 @@ int[] ckb = new int[9];
            tpExisteIteracao.setText(conexao.resultSet.getString("existe_interacao"));
            tpGrauCompetitividade.setText(conexao.resultSet.getString("grau_competitividade"));
            tpAtuacaoInstituicoesSuaRelacao.setText(conexao.resultSet.getString("atuacao_instituicoes_sua_relacao"));
-           tpEstoqueContEstavel.setText(conexao.resultSet.getString("estoque_continua_estavel"));
+           
            tpTamanhoPescadoDiminuindo.setText(conexao.resultSet.getString("pescado_diminuindo_mot_mudanca"));
            tpNumeroFornecedoresAumentou.setText(conexao.resultSet.getString("numero_aumentou_o_que_acha"));
            tpPerspectiva.setText(conexao.resultSet.getString("perspectiva"));
            tpContinuarAtividade.setText(conexao.resultSet.getString("pretende_continuar"));
            tpDesejoFilhos.setText(conexao.resultSet.getString("desejo_para_filhos"));
            tfOutros_principaisClientes.setText(conexao.resultSet.getString("possui_cliente_outros_quais"));
+
+           tfFrete.setText(conexao.resultSet.getString("valor_frete"));
+           tfOutrasFormasDeComercializacaoPeixe.setText(conexao.resultSet.getString("sempre_dos_mesmos_pesc_quais"));
 
             //Selecionar os check boxes conforme o BD
             if (conexao.resultSet.getString("sempre_dos_mesmos_pesc").equals("1"))
@@ -1434,6 +1728,8 @@ int[] ckb = new int[9];
 
 
 
+
+
         } catch (Exception e) {
             System.out.println(e + " metodo mostrar dados");
         }
@@ -1464,7 +1760,7 @@ int[] ckb = new int[9];
             tpExisteIteracao.setText("");
             tpGrauCompetitividade.setText("");
             tpAtuacaoInstituicoesSuaRelacao.setText("");
-            tpEstoqueContEstavel.setText("");
+            
             tpTamanhoPescadoDiminuindo.setText("");
 
             tpNumeroFornecedoresAumentou.setText("");
@@ -1478,7 +1774,7 @@ int[] ckb = new int[9];
     }
 
         public String pega_codigo_ou_nome(int n,String teste) { //Se entrar com 1 pega o Código, se não pega o Nome
-              //pegar a Id do atravessador
+              //pegar a Id do caminhoneiro
               
               //aqui ele pega a quantidade de carcteres que tem uma determinada variável
               //e armazena numa INT para usá-la de contador
@@ -1504,22 +1800,24 @@ int[] ckb = new int[9];
         }
 
         public void preencher_jtableMercado(JTable table){
-        table.getColumnModel().getColumn(0).setPreferredWidth(10);
+        table.getColumnModel().getColumn(0).setMaxWidth(0);
+        table.getColumnModel().getColumn(0).setPreferredWidth(0);
         table.getColumnModel().getColumn(1).setPreferredWidth(40);
         table.getColumnModel().getColumn(2).setPreferredWidth(10);
         table.getColumnModel().getColumn(3).setPreferredWidth(10);
         table.getColumnModel().getColumn(4).setPreferredWidth(10);
-
+        table.getColumnModel().getColumn(5).setPreferredWidth(10);
 
         DefaultTableModel modelo = (DefaultTableModel)table.getModel();
         modelo.setNumRows(0);//limpa o JTable;
 
         try{
             while (conexao.resultSet.next())
-                modelo.addRow(new Object[]{conexao.resultSet.getString("especie"),
+                modelo.addRow(new Object[]{conexao.resultSet.getString("id_mercado"),
+                                           conexao.resultSet.getString("especie"),
                                            conexao.resultSet.getString("produto"),
                                            conexao.resultSet.getString("destino"),
-                                           conexao.resultSet.getString("volume"),
+                                           conexao.resultSet.getString("volume")+" "+conexao.resultSet.getString("unidade_volume"),
                                            conexao.resultSet.getString("preco")});
 
             conexao.resultSet.first();
@@ -1532,17 +1830,20 @@ int[] ckb = new int[9];
     }
 
                 public void preencher_jtableEspecie(){
-        jtEspecie.getColumnModel().getColumn(0).setPreferredWidth(10);
+        jtEspecie.getColumnModel().getColumn(0).setMaxWidth(0);
+        jtEspecie.getColumnModel().getColumn(0).setPreferredWidth(0);
         jtEspecie.getColumnModel().getColumn(1).setPreferredWidth(10);
         jtEspecie.getColumnModel().getColumn(2).setPreferredWidth(10);
         jtEspecie.getColumnModel().getColumn(3).setPreferredWidth(10);
+        jtEspecie.getColumnModel().getColumn(4).setPreferredWidth(10);
 
         DefaultTableModel modelo = (DefaultTableModel)jtEspecie.getModel();
         modelo.setNumRows(0);//limpa o JTable;
 
         try{
             while (conexao.resultSet.next())
-                modelo.addRow(new Object[]{conexao.resultSet.getString("especie"),
+                modelo.addRow(new Object[]{conexao.resultSet.getString("id_especie"),
+                                           conexao.resultSet.getString("especie"),
                                            conexao.resultSet.getString("causa_da_perda"),
                                            conexao.resultSet.getString("estimativa_da_perda"),
                                            conexao.resultSet.getString("destino_do_peixe_perdido")});
@@ -1551,8 +1852,38 @@ int[] ckb = new int[9];
         }catch (SQLException erro){
             System.out.println(erro);
         }
-
-
-
     }
+
+    public void exibir_L_E_N_I(int i){
+        if (i == 0){
+        //Atualiza A primeira tabela Mercado Local
+        conexao.execute("select * from caminhoneiro_addmercado where id_caminhoneiro="
+                        +pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+" "
+                        + "and mercado='Mercado Local'");
+        preencher_jtableMercado(jtMercadoLocal);
+        conexao.execute("select * from caminhoneiro_cadastro");
+        } else if (i == 1){
+        //Atualiza A segunda tabela Mercado Estadual
+        conexao.execute("select * from caminhoneiro_addmercado where id_caminhoneiro="
+                        +pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+" "
+                        + "and mercado='Mercado Estadual'");
+        preencher_jtableMercado(jtMercadoEstadual);
+        conexao.execute("select * from caminhoneiro_cadastro");
+        }else if (i == 2){
+        //Atualiza A terceira tabela Mercado Nacional
+        conexao.execute("select * from caminhoneiro_addmercado where id_caminhoneiro="
+                        +pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+" "
+                        + "and mercado='Mercado Nacional'");
+        preencher_jtableMercado(jtMercadoNacional);
+        conexao.execute("select * from caminhoneiro_cadastro");
+        }else if (i == 3){
+        //Atualiza A primeira tabela Mercado Internacional
+        conexao.execute("select * from caminhoneiro_addmercado where id_caminhoneiro="
+                        +pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+" "
+                        + "and mercado='Mercado Internacional'");
+        preencher_jtableMercado(jtMercadoInternacional);
+        conexao.execute("select * from caminhoneiro_cadastro");
+        }
+    }
+
 }

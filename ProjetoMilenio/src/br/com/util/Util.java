@@ -5,7 +5,7 @@
 
 package br.com.util;
 
-import br.com.pojo.Empresa;
+//import br.com.pojo.Empresa;
 import java.awt.Component;
 import java.awt.Container;
 import java.lang.reflect.Field;

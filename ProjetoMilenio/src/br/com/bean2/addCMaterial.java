@@ -21,12 +21,12 @@ import java.util.logging.Logger;
  *
  * @author Elton
  */
-public class addMaterial extends javax.swing.JFrame {
+public class addCMaterial extends javax.swing.JFrame {
 
     /** Creates new form winProduto */
     private Conexao conexao;
     public String idd_atravessador;
-    public addMaterial(String id_atravessador) {
+    public addCMaterial(String id_atravessador) {
         
         initComponents();
         conexao = new Conexao();
@@ -92,7 +92,7 @@ public class addMaterial extends javax.swing.JFrame {
 
         jLabel7.setText("Outro Mat.:");
 
-        cbMatMaterial.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Combustível", "Lubrificante", "Gelo", "Rancho", "Pagamento de pescador", "Outro" }));
+        cbMatMaterial.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Combustível", "Lubrificante", "Gelo", "Pagamento de pescador", "Manutenção de veículo", "Outro" }));
         cbMatMaterial.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cbMatMaterialItemStateChanged(evt);
@@ -184,15 +184,15 @@ public class addMaterial extends javax.swing.JFrame {
     private void Action(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Action
          
         try {
-            conexao.execute("select * from atravessador_addmaterial");
+            conexao.execute("select * from caminhoneiro_addmaterial");
             conexao.resultSet.first();
             System.out.println(conexao.resultSet.getString("nome"));
         } catch (SQLException ex) {
             System.out.println(ex);
         }
 
-         String sqlinsert = "insert into atravessador_addmaterial "
-                    + "(id_atravessador,nome,tipo,quantidade,"
+         String sqlinsert = "insert into caminhoneiro_addmaterial "
+                    + "(id_caminhoneiro,nome,tipo,quantidade,"
                     + "custo,outros,frequencia) values ('"+
                     idd_atravessador+"','"+
                     registro_q_vai()+"','"+
@@ -205,7 +205,7 @@ public class addMaterial extends javax.swing.JFrame {
                     System.out.println(sqlinsert);
                     conexao.salvar(sqlinsert);
                     //agora é hora de atualizar o resultset
-                    addMaterial.this.dispose();
+                    addCMaterial.this.dispose();
 
     }//GEN-LAST:event_Action
 
@@ -227,7 +227,7 @@ public class addMaterial extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //new addMaterial().setVisible(true);
+                //new addCMaterial().setVisible(true);
             }
         });
     }

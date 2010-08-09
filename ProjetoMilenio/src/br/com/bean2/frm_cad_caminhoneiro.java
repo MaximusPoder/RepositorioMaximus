@@ -28,6 +28,8 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
     int navega = 0; //variavel pra saber o  botão clicado;
     private Conexao conexao;
     int inicia_combo = 0;
+    private boolean state = false;
+
     public frm_cad_caminhoneiro() {
         initComponents(); //Inicializa os componentes da tela
         conexao = new Conexao();
@@ -44,7 +46,7 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
             Logger.getLogger(frm_cad_caminhoneiro.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        conexao.execute("select * from atravessador_cadastro");
+        conexao.execute("select * from caminhoneiro_cadastro");
 
         try {
             conexao.resultSet.first();
@@ -113,7 +115,6 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         tfAtividadeSecundaria = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
-        tfEstadoCivil = new javax.swing.JTextField();
         jLabel32 = new javax.swing.JLabel();
         tfComposicaoFamiliar = new javax.swing.JTextField();
         jLabel33 = new javax.swing.JLabel();
@@ -150,8 +151,9 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
         chbPossuiColonia = new javax.swing.JCheckBox();
         jLabel7 = new javax.swing.JLabel();
         tfTipoConstrucao = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        cbEstadoCivil = new javax.swing.JComboBox();
+        rdSoTransporta = new javax.swing.JRadioButton();
+        rdTransportaComercializa = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Questionário Atravessador");
@@ -359,9 +361,13 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
 
         jLabel7.setText("Tipo de construção.:");
 
-        jRadioButton1.setText("Só Transporta");
+        cbEstadoCivil.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Solteiro", "Casado", "União Estável" }));
 
-        jRadioButton2.setText("Trasnporta e comercializa");
+        buttonGroup3.add(rdSoTransporta);
+        rdSoTransporta.setText("Só Transporta");
+
+        buttonGroup3.add(rdTransportaComercializa);
+        rdTransportaComercializa.setText("Trasnporta e comercializa");
 
         javax.swing.GroupLayout jpAtravessadorLayout = new javax.swing.GroupLayout(jpAtravessador);
         jpAtravessador.setLayout(jpAtravessadorLayout);
@@ -377,17 +383,17 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
                         .addComponent(jLabel24)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(cbMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jRadioButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton2)
-                        .addGap(225, 225, 225))
+                        .addComponent(rdSoTransporta)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rdTransportaComercializa)
+                        .addGap(230, 230, 230))
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addComponent(jLabel25)
-                        .addContainerGap(722, Short.MAX_VALUE))
+                        .addContainerGap(718, Short.MAX_VALUE))
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addComponent(jLabel38)
-                        .addContainerGap(516, Short.MAX_VALUE))
+                        .addContainerGap(512, Short.MAX_VALUE))
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addComponent(jLabel39)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -425,16 +431,17 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpAtravessadorLayout.createSequentialGroup()
                                 .addComponent(jLabel33)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfEscolaridade, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
+                                .addComponent(tfEscolaridade, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel34)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfPqParou, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(tfPqParou, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(13, 13, 13))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpAtravessadorLayout.createSequentialGroup()
                                 .addComponent(jLabel31)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel32)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(tfComposicaoFamiliar, javax.swing.GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE))
@@ -476,7 +483,7 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(tfRendaMensal, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(509, Short.MAX_VALUE))
+                        .addContainerGap(505, Short.MAX_VALUE))
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpAtravessadorLayout.createSequentialGroup()
@@ -486,7 +493,7 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
                             .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(chbPossuiColonia)
-                        .addContainerGap(300, Short.MAX_VALUE))
+                        .addContainerGap(296, Short.MAX_VALUE))
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpAtravessadorLayout.createSequentialGroup()
@@ -507,14 +514,14 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
         jpAtravessadorLayout.setVerticalGroup(
             jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
+                .addContainerGap(14, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel24)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
+                    .addComponent(rdSoTransporta)
+                    .addComponent(rdTransportaComercializa))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel25)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -542,9 +549,9 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31)
-                    .addComponent(tfEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel32)
-                    .addComponent(tfComposicaoFamiliar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfComposicaoFamiliar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel33)
@@ -606,8 +613,7 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(tfDesdeQuando, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(tfDesdeQuando, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jScrollPane2.setViewportView(jpAtravessador);
@@ -618,17 +624,15 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 758, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 830, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 773, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-776)/2, (screenSize.height-818)/2, 776, 818);
+        setBounds((screenSize.width-848)/2, (screenSize.height-865)/2, 848, 865);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
@@ -656,6 +660,7 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
 
     private void botao_proximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_proximoActionPerformed
         try {
+            
             conexao.resultSet.next();
             mostra_dados_atravessador();
             navega = 2;
@@ -695,7 +700,7 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
         tfIdade.setText("0");
         tfAtividadePrincipal.setText("");
         tfAtividadeSecundaria.setText("");
-        tfEstadoCivil.setText("");
+        cbEstadoCivil.setSelectedIndex(0);
         tfComposicaoFamiliar.setText("");
         tfEscolaridade.setText("");
         tfPqParou.setText("");
@@ -717,27 +722,29 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
         cbSexo.setSelectedIndex(0);
         cbLocalMoradia.setSelectedIndex(0);
         cbQualidadeMoradia.setSelectedIndex(0);
+
+        buttonGroup3.clearSelection();
 }//GEN-LAST:event_botao_novoActionPerformed
 
     private void botao_excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_excluirActionPerformed
         String sql;
         try {
-            sql = "select * from atravessador_cadastro Where id_atravessador =" + conexao.resultSet.getString("id_atravessador");
+            sql = "select * from caminhoneiro_cadastro Where id_caminhoneiro =" + conexao.resultSet.getString("id_caminhoneiro");
             conexao.execute(sql);
             conexao.resultSet.first();
-            String nome = "Deletar o atravessador : "+conexao.resultSet.getString("nome")+" ?";
+            String nome = "Deletar o caminhoneiro : "+conexao.resultSet.getString("nome")+" ?";
             int opcao_escolhida = JOptionPane.showConfirmDialog(null,nome,"Exclusão ",JOptionPane.YES_NO_OPTION);
             if (opcao_escolhida == JOptionPane.YES_OPTION) {
-                sql = "DELETE FROM atravessador_cadastro Where id_atravessador ="+conexao.resultSet.getString("id_atravessador");
+                sql = "DELETE FROM caminhoneiro_cadastro Where id_caminhoneiro ="+conexao.resultSet.getString("id_caminhoneiro");
                 if (conexao.salvar(sql)) {
                     JOptionPane.showMessageDialog(null,"Exclusão realizada com sucesso");
                     //atualiza o ResultSet
-                    conexao.execute("select * from atravessador_cadastro");
+                    conexao.execute("select * from caminhoneiro_cadastro");
                     conexao.resultSet.first();
                     mostra_dados_atravessador();
                 }
             } else{
-                conexao.execute("select * from atravessador_cadastro");
+                conexao.execute("select * from caminhoneiro_cadastro");
                 conexao.resultSet.first();
                 mostra_dados_atravessador();
             }
@@ -751,16 +758,25 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
 
     private void CadastrarAction(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarAction
         // Para graver os dados no banco de dados
-        String a;
+        int[] ckb = new int[3];
         if (chbPossuiColonia.isSelected()){
-            a = "1";
+            ckb[0] = 1;
         }else
-            a = "0";
+            ckb[0] = 0;
         //System.out.println(a);
+        if (rdSoTransporta.isSelected()){
+            ckb[1] = 1;
+        }else
+            ckb[1] = 0;
+
+        if (rdTransportaComercializa.isSelected()){
+            ckb[2] = 1;
+        }else
+            ckb[2] = 0;
 
 
         try {
-            String sqlinsert = "insert into atravessador_cadastro "
+            String sqlinsert = "insert into caminhoneiro_cadastro "
                     + "(id_local,nome,apelido,naturalidade,"
                     + "sexo,idade,atividade_principal,atividade_secundaria,"
                     + "estado_civil,composicao_familiar,escolaridade,pq_parou,"
@@ -768,7 +784,7 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
                     + "atividades_geram_renda,atividade_entrevistado,"
                     + "atividade_esposa,atividade_filhos,atividade_netos,"
                     + "tempo_diario_trab,tempo_na_atividade,"
-                    + "renda_mensal_ou_viagem,possui_reg_colonia,qual_colonia,"
+                    + "renda_mensal_ou_viagem,possui_reg_colonia,qual_colonia,so_tranporta,transporta_e_comercializa,"
                     + "na_colonia_desde) values ('"+
                     cbMunicipio.getSelectedItem()+"','"+
                     tfNome.getText()+"','"+
@@ -778,7 +794,7 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
                     tfIdade.getText()+",'"+
                     tfAtividadePrincipal.getText()+"','"+
                     tfAtividadeSecundaria.getText()+"','"+
-                    tfEstadoCivil.getText()+"','"+
+                    cbEstadoCivil.getSelectedItem()+"','"+
                     tfComposicaoFamiliar.getText()+"','"+
                     tfEscolaridade.getText()+"','"+
                     tfPqParou.getText()+"','"+
@@ -793,14 +809,16 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
                     tfTempoDiario.getText()+"','"+
                     tfTempoAtividade.getText()+"','"+
                     tfRendaMensal.getText()+"',"+
-                    a+",'"+
-                    tfQualColonia.getText()+"','"+
+                    ckb[0]+",'"+
+                    tfQualColonia.getText()+"',"+
+                    ckb[1]+","+
+                    ckb[2]+",'"+
                     tfDesdeQuando.getText()+"')";
 
                     //System.out.println(sqlinsert);
             if (conexao.salvar(sqlinsert)) {
                 //agora é hora de atualizar o resultset
-                conexao.execute("select * from atravessador_cadastro");
+                conexao.execute("select * from caminhoneiro_cadastro");
                 conexao.resultSet.first(); //1º registro
                 mostra_dados_atravessador();
             }
@@ -826,15 +844,27 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
 
     private void botao_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_alterarActionPerformed
         // Codigo para alterar os dados do BD
-        String a;
+        int[] ckb = new int[3];
         if (chbPossuiColonia.isSelected()){
-            a = "1";
+            ckb[0] = 1;
         }else
-            a = "0";
+            ckb[0] = 0;
+        //System.out.println(a);
+        if (rdSoTransporta.isSelected()){
+            ckb[1] = 1;
+        }else
+            ckb[1] = 0;
+
+        if (rdTransportaComercializa.isSelected()){
+            ckb[2] = 1;
+        }else
+            ckb[2] = 0;
 
         try{
-            String sql ="UPDATE atravessador_cadastro SET "+
+            String sql ="UPDATE caminhoneiro_cadastro SET "+
                           "id_local = '"+cbMunicipio.getSelectedItem()+"',"+
+                          "so_tranporta ='"+ckb[1]+"',"+
+                          "transporta_e_comercializa ='"+ckb[2]+"',"+
                           "nome = '"+tfNome.getText()+"',"+
                           "apelido = '"+ tfApelido.getText() +"',"+
                           "naturalidade = '"+ tfNaturalidade.getText() +"',"+
@@ -842,7 +872,7 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
                           "idade = '"+ tfIdade.getText() +"',"+
                           "atividade_principal = '"+ tfAtividadePrincipal.getText() +"',"+
                           "atividade_secundaria = '"+ tfAtividadeSecundaria.getText() +"',"+
-                          "estado_civil = '"+ tfEstadoCivil.getText() +"',"+
+                          "estado_civil = '"+ cbEstadoCivil.getSelectedItem() +"',"+
                           "composicao_familiar = '"+ tfComposicaoFamiliar.getText() +"',"+
                           "escolaridade = '"+ tfEscolaridade.getText() +"',"+
                           "pq_parou = '"+ tfPqParou.getText() +"',"+
@@ -857,18 +887,18 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
                           "tempo_diario_trab = '"+ tfTempoDiario.getText() +"',"+
                           "tempo_na_atividade = '"+ tfTempoAtividade.getText() +"',"+
                           "renda_mensal_ou_viagem = '"+ tfRendaMensal.getText() +"',"+
-                          "possui_reg_colonia = '"+ a +"',"+
+                          "possui_reg_colonia = '"+ ckb[0] +"',"+
                           "qual_colonia = '"+ tfQualColonia.getText() +"',"+
                           "na_colonia_desde = '"+ tfDesdeQuando.getText() +"' "+
 
 
-                          "where id_atravessador = "+conexao.resultSet.getString("id_atravessador");
+                          "where id_caminhoneiro = "+conexao.resultSet.getString("id_caminhoneiro");
 
             System.out.println(sql);
             if (conexao.update(sql)){
             JOptionPane.showMessageDialog(null,"Alterado com sucesso");
             //Atualiza Resultset
-            conexao.execute("select * from atravessador_cadastro");
+            conexao.execute("select * from caminhoneiro_cadastro");
             conexao.resultSet.next();
             mostra_dados_atravessador();
             }
@@ -902,6 +932,7 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.JComboBox cbEstadoCivil;
     private javax.swing.JComboBox cbLocalMoradia;
     private javax.swing.JComboBox cbMunicipio;
     private javax.swing.JComboBox cbQualidadeMoradia;
@@ -936,12 +967,12 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JPanel jpAtravessador;
+    private javax.swing.JRadioButton rdSoTransporta;
+    private javax.swing.JRadioButton rdTransportaComercializa;
     private javax.swing.JTextArea taAtividadeRendaFamilia;
     private javax.swing.JTextField tfApelido;
     private javax.swing.JTextField tfAtividadePrincipal;
@@ -951,7 +982,6 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
     private javax.swing.JTextField tfEntrevistado;
     private javax.swing.JTextField tfEscolaridade;
     private javax.swing.JTextField tfEsposa;
-    private javax.swing.JTextField tfEstadoCivil;
     private javax.swing.JTextField tfFilhos;
     private javax.swing.JTextField tfIdade;
     private javax.swing.JTextField tfNaturalidade;
@@ -975,7 +1005,7 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
             tfIdade.setText(conexao.resultSet.getString("idade"));
             tfAtividadePrincipal.setText(conexao.resultSet.getString("atividade_principal"));
             tfAtividadeSecundaria.setText(conexao.resultSet.getString("atividade_secundaria"));
-            tfEstadoCivil.setText(conexao.resultSet.getString("estado_civil"));
+            cbEstadoCivil.setSelectedItem(conexao.resultSet.getString("estado_civil"));
             tfComposicaoFamiliar.setText(conexao.resultSet.getString("composicao_familiar"));
             tfEscolaridade.setText(conexao.resultSet.getString("escolaridade"));
             tfPqParou.setText(conexao.resultSet.getString("pq_parou"));
@@ -1003,17 +1033,47 @@ public class frm_cad_caminhoneiro extends javax.swing.JFrame {
             cbLocalMoradia.setSelectedItem(conexao.resultSet.getString("local_moradia"));
             cbQualidadeMoradia.setSelectedItem(conexao.resultSet.getString("qualidade_moradia"));
 
+            if (conexao.resultSet.getString("so_tranporta").equals("1"))
+                   rdSoTransporta.setSelected(true);
+            else
+                   rdSoTransporta.setSelected(false);
+
+            if (conexao.resultSet.getString("transporta_e_comercializa").equals("1"))
+                   rdTransportaComercializa.setSelected(true);
+            else
+                   rdTransportaComercializa.setSelected(false);
+
 
         }catch (SQLException ex) {
-            if (navega == 1)
+            if (navega == 1){
                 JOptionPane.showMessageDialog(null,"Você já esta no primeiro registro");
-            else if (navega == 2)
+                proximo();
+            }
+            else if (navega == 2){
                 JOptionPane.showMessageDialog(null,"Você já esta no ultimo registro");
+                anterior();
+            }
             else
                 JOptionPane.showMessageDialog(null,"Nenhum registro encontrado "+ ex );
             navega = 0;
             //Logger.getLogger(frm_cad_caminhoneiro.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    private void anterior() {
+         try {
+                    conexao.resultSet.previous();
+                } catch (SQLException ex1) {
+                    Logger.getLogger(frm_cad_caminhoneiro.class.getName()).log(Level.SEVERE, null, ex1);
+                }
+    }
+
+    private void proximo() {
+        try {
+                    conexao.resultSet.next();
+                } catch (SQLException ex1) {
+                    Logger.getLogger(frm_cad_caminhoneiro.class.getName()).log(Level.SEVERE, null, ex1);
+                }
     }
     
 

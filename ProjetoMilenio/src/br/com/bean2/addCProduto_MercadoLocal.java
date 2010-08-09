@@ -11,6 +11,7 @@
 
 package br.com.bean2;
 
+import br.com.bean.*;
 import br.com.Persistencia.Conexao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,12 +23,12 @@ import javax.swing.JOptionPane;
  *
  * @author Elton
  */
-public class addProduto_MercadoLocal extends javax.swing.JFrame {
+public class addCProduto_MercadoLocal extends javax.swing.JFrame {
 
     /** Creates new form winProduto */
     private Conexao conexao;
     public String id_atravessador;
-    public addProduto_MercadoLocal(String idd_atravessador) {
+    public addCProduto_MercadoLocal(String idd_atravessador) {
         
         initComponents();
         conexao = new Conexao();
@@ -67,6 +68,9 @@ public class addProduto_MercadoLocal extends javax.swing.JFrame {
         rbMercadoEstadual = new javax.swing.JRadioButton();
         rbMercadoNacional = new javax.swing.JRadioButton();
         rbMercadoInternacional = new javax.swing.JRadioButton();
+        jLabel5 = new javax.swing.JLabel();
+        cbUnidadeVolume = new javax.swing.JComboBox();
+        tfOutroUnidadeVolume = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -139,6 +143,17 @@ public class addProduto_MercadoLocal extends javax.swing.JFrame {
         grupo_botoes_mercado.add(rbMercadoInternacional);
         rbMercadoInternacional.setText("Mercado Internacional");
 
+        jLabel5.setText("Volume em:");
+
+        cbUnidadeVolume.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kg", "Tonelada", "Outro" }));
+        cbUnidadeVolume.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbUnidadeVolumeItemStateChanged(evt);
+            }
+        });
+
+        tfOutroUnidadeVolume.setEditable(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -172,18 +187,25 @@ public class addProduto_MercadoLocal extends javax.swing.JFrame {
                                             .addComponent(rbMercadoLocal))
                                         .addGap(22, 22, 22)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rbMercadoEstadual)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel1)
-                                            .addComponent(jLabel2)
-                                            .addComponent(jLabel4))
-                                        .addGap(31, 31, 31)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(tfPreco, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(tfVolume, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(tfDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(rbMercadoInternacional)))))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(rbMercadoEstadual)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel1)
+                                                .addComponent(jLabel2)
+                                                .addComponent(jLabel4))
+                                            .addGap(31, 31, 31)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(tfPreco, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                    .addComponent(tfVolume, javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(tfDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                        .addComponent(cbUnidadeVolume, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(tfOutroUnidadeVolume)))))
+                                        .addComponent(rbMercadoInternacional))
+                                    .addComponent(jLabel5)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(173, 173, 173)
                         .addComponent(jLabel6)))
@@ -202,9 +224,9 @@ public class addProduto_MercadoLocal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rbMercadoNacional)
                     .addComponent(rbMercadoInternacional))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 5, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cbEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))
@@ -219,7 +241,8 @@ public class addProduto_MercadoLocal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tfOutroProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9)))
+                            .addComponent(jLabel9))
+                        .addGap(3, 3, 3))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
@@ -228,11 +251,16 @@ public class addProduto_MercadoLocal extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
                             .addComponent(tfVolume, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(cbUnidadeVolume, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfOutroUnidadeVolume, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tfPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))))
-                .addGap(3, 3, 3)
+                            .addComponent(jLabel4))
+                        .addGap(27, 27, 27)))
                 .addComponent(botao_add_mat)
                 .addGap(26, 26, 26))
         );
@@ -262,15 +290,16 @@ public class addProduto_MercadoLocal extends javax.swing.JFrame {
             System.out.println(ex);
         }*/
 
-         String sqlinsert = "insert into atravessador_addmercado "
-                    + "(id_atravessador,mercado,especie,produto,"
-                    + "destino,volume,preco) values ('"+
+         String sqlinsert = "insert into caminhoneiro_addmercado "
+                    + "(id_caminhoneiro,mercado,especie,produto,"
+                    + "destino,volume,unidade_volume,preco) values ('"+
                     id_atravessador+"','"+
                     rb_selecionado+"','"+
                     registro_especie()+"','"+
                     registro_produto()+"','"+
                     tfDestino.getText()+"','"+
                     tfVolume.getText()+"','"+
+                    registro_outra_unidade_volume()+"','"+
                     tfPreco.getText()+"')";
 
                     System.out.println(sqlinsert);
@@ -319,13 +348,21 @@ public class addProduto_MercadoLocal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbProdutoActionPerformed
 
+    private void cbUnidadeVolumeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbUnidadeVolumeItemStateChanged
+        if (cbUnidadeVolume.getSelectedItem() == "Outro"){
+            tfOutroUnidadeVolume.setEditable(true);
+        }
+        else
+            tfOutroUnidadeVolume.setEditable(false);
+    }//GEN-LAST:event_cbUnidadeVolumeItemStateChanged
+
     /**
     * @param args the command line arguments
     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new addProduto_MercadoLocal("").setVisible(true);
+                new addCProduto_MercadoLocal("").setVisible(true);
             }
         });
     }
@@ -334,12 +371,14 @@ public class addProduto_MercadoLocal extends javax.swing.JFrame {
     private javax.swing.JButton botao_add_mat;
     private javax.swing.JComboBox cbEspecie;
     private javax.swing.JComboBox cbProduto;
+    private javax.swing.JComboBox cbUnidadeVolume;
     private javax.swing.ButtonGroup grupo_botoes_mercado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
@@ -350,6 +389,7 @@ public class addProduto_MercadoLocal extends javax.swing.JFrame {
     private javax.swing.JTextField tfDestino;
     private javax.swing.JTextField tfOutraEspecie;
     private javax.swing.JTextField tfOutroProduto;
+    private javax.swing.JTextField tfOutroUnidadeVolume;
     private javax.swing.JTextField tfPreco;
     private javax.swing.JTextField tfVolume;
     // End of variables declaration//GEN-END:variables
@@ -381,6 +421,14 @@ public class addProduto_MercadoLocal extends javax.swing.JFrame {
         cbEspecie.setSelectedIndex(0);
         cbProduto.setSelectedIndex(0);
         
+    }
+
+    private Object registro_outra_unidade_volume() {
+        if (tfOutroUnidadeVolume.isEditable()){
+            return tfOutroUnidadeVolume.getText();
+        }
+        else
+            return cbUnidadeVolume.getSelectedItem();
     }
 
 }

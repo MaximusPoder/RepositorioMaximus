@@ -22,12 +22,12 @@ import javax.swing.JOptionPane;
  *
  * @author Elton
  */
-public class addEspecie extends javax.swing.JFrame {
+public class addCEspecie extends javax.swing.JFrame {
 
     /** Creates new form winProduto */
     private Conexao conexao;
     public String idd_atravessador;
-    public addEspecie(String id_atravessador) {
+    public addCEspecie(String id_atravessador) {
         
         initComponents();
         conexao = new Conexao();
@@ -38,7 +38,7 @@ public class addEspecie extends javax.swing.JFrame {
         //Insere nomes das espécies cadastradas
         cbEspecie.removeAllItems();
         try {
-            conexao.execute("select * FROM atravessador_addmercado where id_atravessador="+idd_atravessador);
+            conexao.execute("select * FROM caminhoneiro_addmercado where id_caminhoneiro="+idd_atravessador);
             while (conexao.resultSet.next()){
                 cbEspecie.addItem(conexao.resultSet.getString("especie"));
                 //System.out.println(conexao.resultSet.getString("nome"));
@@ -194,8 +194,8 @@ public class addEspecie extends javax.swing.JFrame {
             System.out.println(ex);
         }*/
 
-         String sqlinsert = "insert into atravessador_addespecie "
-                    + "(id_atravessador,especie,causa_da_perda,"
+         String sqlinsert = "insert into caminhoneiro_addespecie "
+                    + "(id_caminhoneiro,especie,causa_da_perda,"
                     + "estimativa_da_perda,destino_do_peixe_perdido) values ('"+
                     idd_atravessador+"','"+
                     cbEspecie.getSelectedItem()+"','"+
@@ -209,7 +209,7 @@ public class addEspecie extends javax.swing.JFrame {
                         //limpar();
                     }
                     //agora é hora de atualizar o resultset
-                    addEspecie.this.dispose();
+                    addCEspecie.this.dispose();
 
     }//GEN-LAST:event_Action
 
