@@ -6,9 +6,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.sql.rowset.JdbcRowSet;
 import javax.swing.JOptionPane;
 
 public class Conexao {
@@ -45,22 +42,7 @@ public class Conexao {
         }
 
     }
-/*
-    public JdbcRowSet rowSet(String nomeBanco, String tabela) {
-        JdbcRowSet rowSet = null;
-        try {
-            rowSet = new JdbcRowSetImpl();
-            rowSet.setUrl(url);
-            rowSet.setUsername(userName);
-            rowSet.setPassword(password);
-            rowSet.setCommand("select * from " + tabela);
-            rowSet.execute();
-        } catch (SQLException ex) {
-            Logger.getLogger(Conexao.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return rowSet;
-    }
-*/
+
     /**
      * Desconecta do Banco de dados Acess
      * @return Verdadeiro caso encerre a conexão.
@@ -81,7 +63,7 @@ public class Conexao {
     public void execute(String sql) {
         try {
 
-            statement = connection.createStatement(java.sql.ResultSet.TYPE_SCROLL_INSENSITIVE,
+           statement = connection.createStatement(java.sql.ResultSet.TYPE_SCROLL_INSENSITIVE,
                     java.sql.ResultSet.CONCUR_READ_ONLY);
             resultSet = statement.executeQuery(sql);
         } catch (Exception exception) {
