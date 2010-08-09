@@ -114,7 +114,6 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         tfAtividadeSecundaria = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
-        tfEstadoCivil = new javax.swing.JTextField();
         jLabel32 = new javax.swing.JLabel();
         tfComposicaoFamiliar = new javax.swing.JTextField();
         jLabel33 = new javax.swing.JLabel();
@@ -151,6 +150,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
         chbPossuiColonia = new javax.swing.JCheckBox();
         jLabel7 = new javax.swing.JLabel();
         tfTipoConstrucao = new javax.swing.JTextField();
+        cbEstadoCivil = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Questionário Atravessador");
@@ -358,6 +358,8 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
 
         jLabel7.setText("Tipo de construção.:");
 
+        cbEstadoCivil.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Solteiro", "Casado", "União Estável" }));
+
         javax.swing.GroupLayout jpAtravessadorLayout = new javax.swing.GroupLayout(jpAtravessador);
         jpAtravessador.setLayout(jpAtravessadorLayout);
         jpAtravessadorLayout.setHorizontalGroup(
@@ -375,10 +377,10 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addComponent(jLabel25)
-                        .addContainerGap(648, Short.MAX_VALUE))
+                        .addContainerGap(646, Short.MAX_VALUE))
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addComponent(jLabel38)
-                        .addContainerGap(442, Short.MAX_VALUE))
+                        .addContainerGap(440, Short.MAX_VALUE))
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addComponent(jLabel39)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -424,8 +426,8 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpAtravessadorLayout.createSequentialGroup()
                                 .addComponent(jLabel31)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel32)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(tfComposicaoFamiliar, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE))
@@ -467,7 +469,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(tfRendaMensal, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(435, Short.MAX_VALUE))
+                        .addContainerGap(433, Short.MAX_VALUE))
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpAtravessadorLayout.createSequentialGroup()
@@ -477,7 +479,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
                             .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(chbPossuiColonia)
-                        .addContainerGap(226, Short.MAX_VALUE))
+                        .addContainerGap(224, Short.MAX_VALUE))
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpAtravessadorLayout.createSequentialGroup()
@@ -531,9 +533,9 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31)
-                    .addComponent(tfEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel32)
-                    .addComponent(tfComposicaoFamiliar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfComposicaoFamiliar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel33)
@@ -685,7 +687,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
         tfIdade.setText("0");
         tfAtividadePrincipal.setText("");
         tfAtividadeSecundaria.setText("");
-        tfEstadoCivil.setText("");
+        cbEstadoCivil.setSelectedIndex(0);
         tfComposicaoFamiliar.setText("");
         tfEscolaridade.setText("");
         tfPqParou.setText("");
@@ -768,7 +770,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
                     tfIdade.getText()+",'"+
                     tfAtividadePrincipal.getText()+"','"+
                     tfAtividadeSecundaria.getText()+"','"+
-                    tfEstadoCivil.getText()+"','"+
+                    cbEstadoCivil.getSelectedItem()+"','"+
                     tfComposicaoFamiliar.getText()+"','"+
                     tfEscolaridade.getText()+"','"+
                     tfPqParou.getText()+"','"+
@@ -832,7 +834,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
                           "idade = '"+ tfIdade.getText() +"',"+
                           "atividade_principal = '"+ tfAtividadePrincipal.getText() +"',"+
                           "atividade_secundaria = '"+ tfAtividadeSecundaria.getText() +"',"+
-                          "estado_civil = '"+ tfEstadoCivil.getText() +"',"+
+                          "estado_civil = '"+ cbEstadoCivil.getSelectedItem() +"',"+
                           "composicao_familiar = '"+ tfComposicaoFamiliar.getText() +"',"+
                           "escolaridade = '"+ tfEscolaridade.getText() +"',"+
                           "pq_parou = '"+ tfPqParou.getText() +"',"+
@@ -891,6 +893,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
     private javax.swing.JButton botao_ultimo;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JComboBox cbEstadoCivil;
     private javax.swing.JComboBox cbLocalMoradia;
     private javax.swing.JComboBox cbMunicipio;
     private javax.swing.JComboBox cbQualidadeMoradia;
@@ -938,7 +941,6 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
     private javax.swing.JTextField tfEntrevistado;
     private javax.swing.JTextField tfEscolaridade;
     private javax.swing.JTextField tfEsposa;
-    private javax.swing.JTextField tfEstadoCivil;
     private javax.swing.JTextField tfFilhos;
     private javax.swing.JTextField tfIdade;
     private javax.swing.JTextField tfNaturalidade;
@@ -962,7 +964,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
             tfIdade.setText(conexao.resultSet.getString("idade"));
             tfAtividadePrincipal.setText(conexao.resultSet.getString("atividade_principal"));
             tfAtividadeSecundaria.setText(conexao.resultSet.getString("atividade_secundaria"));
-            tfEstadoCivil.setText(conexao.resultSet.getString("estado_civil"));
+            cbEstadoCivil.setSelectedItem(conexao.resultSet.getString("estado_civil"));
             tfComposicaoFamiliar.setText(conexao.resultSet.getString("composicao_familiar"));
             tfEscolaridade.setText(conexao.resultSet.getString("escolaridade"));
             tfPqParou.setText(conexao.resultSet.getString("pq_parou"));
