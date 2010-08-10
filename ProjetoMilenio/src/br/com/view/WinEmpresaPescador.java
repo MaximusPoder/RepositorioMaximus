@@ -198,6 +198,8 @@ public class WinEmpresaPescador extends javax.swing.JPanel {
         jLabel67 = new javax.swing.JLabel();
         jLabel66 = new javax.swing.JLabel();
 
+        setPreferredSize(new java.awt.Dimension(1099, 1300));
+
         panelCrudEmpresa1.setBackground(new java.awt.Color(255, 255, 255));
 
         btCadastrar.setText("Cadastrar");

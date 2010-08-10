@@ -215,7 +215,7 @@ public class WinQuestionario4 extends javax.swing.JPanel {
         jScrollPane32 = new javax.swing.JScrollPane();
         tfQuestao32 = new javax.swing.JTextArea();
 
-        setPreferredSize(new java.awt.Dimension(999, 999));
+        setPreferredSize(new java.awt.Dimension(1099, 1300));
 
         ScrollQuestionario4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         ScrollQuestionario4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -377,7 +377,7 @@ public class WinQuestionario4 extends javax.swing.JPanel {
                                 .addComponent(jLabel92)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1705, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1609, Short.MAX_VALUE)
                 .addComponent(jLabel88)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)

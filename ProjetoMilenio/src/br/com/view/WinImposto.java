@@ -209,7 +209,7 @@ public class WinImposto extends javax.swing.JPanel {
         jLabel66 = new javax.swing.JLabel();
         jLabel67 = new javax.swing.JLabel();
 
-        setPreferredSize(new java.awt.Dimension(999, 999));
+        setPreferredSize(new java.awt.Dimension(1099, 1300));
 
         panelCrudEmpresa6.setBackground(new java.awt.Color(255, 255, 255));
 

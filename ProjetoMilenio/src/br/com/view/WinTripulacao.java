@@ -220,6 +220,8 @@ public class WinTripulacao extends javax.swing.JPanel {
         tfLucro = new JMoneyField();
         tfSalario = new JMoneyField();
 
+        setPreferredSize(new java.awt.Dimension(1099, 1300));
+
         panelCrudEmpresa1.setBackground(new java.awt.Color(255, 255, 255));
 
         btCadastrar.setText("Cadastrar");
