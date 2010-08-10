@@ -21,13 +21,20 @@ public class addMaterial extends javax.swing.JFrame {
 
     /** Creates new form winProduto */
     private Conexao conexao;
-    public Integer empresaId;;
+    private Integer id;
+    private String chave;
+    private String bean;
 
-    public addMaterial(String id_atravessador) {
+    public addMaterial() {
     }
 
-    addMaterial(Integer empresa) {
-        empresaId = empresa;
+    public addMaterial(Integer id,Class t) {
+        this.id = id;
+        bean =  t.getSimpleName();
+        if(bean.equalsIgnoreCase("EmpresaMaterial"))
+        {
+            chave = "empresaId";
+        }else chave = "pescadorId";
         initComponents();
         conexao = new Conexao();
         conexao.conecta("mil_interface");
@@ -182,16 +189,16 @@ public class addMaterial extends javax.swing.JFrame {
 
     private void Action(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Action
 
-       String sqlinsert = "insert into EmpresaMaterial " +
-                "(material,tipo,quantidade," +
-                "custo,outros,frequencia,empresaId) values ('"+
+       String sqlinsert = "insert into " +bean +
+                " (material,tipo,quantidade," +
+                "custo,outros,frequencia,"+chave+") values ('"+
                 cbMatMaterial.getSelectedItem().toString() + "','" +
                 tfMatTipo.getText() + "','" +
                 tfMatQuantidade.getText() + "','" +
                 tfMatCusto.getText() + "','" +
                 tfMatOutros.getText() + "','" +
                 tfMatFrequencia.getText() + "'," +
-                empresaId+")";
+                id+")";
 
         
         conexao.salvar(sqlinsert);

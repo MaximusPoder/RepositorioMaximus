@@ -2,6 +2,7 @@ package br.com.view;
 
 import br.com.dao.DAOEmpresa;
 
+import br.com.dao.IOperationBean;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -26,6 +27,15 @@ public class WinConsulta extends javax.swing.JFrame {
         initAction();
         DAOEmpresa daoe = new DAOEmpresa();
         list = daoe.getListWithQuery("select * from "+bean.getSimpleName());
+
+        addLinhaTabela();
+    }
+    public WinConsulta(Class bean,IOperationBean operationBean) {
+        initComponents();
+        initAction();
+
+        list = operationBean.
+                getListWithQuery("select * from "+bean.getSimpleName());
 
         addLinhaTabela();
     }

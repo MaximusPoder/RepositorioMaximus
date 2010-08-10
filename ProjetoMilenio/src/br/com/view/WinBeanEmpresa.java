@@ -115,7 +115,8 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
         }
 
     }
-     private void setEmpresaForPanel(Empresa e) {
+
+    private void setEmpresaForPanel(Empresa e) {
         tfColetor.setText(e.getColetor());
 
         tfNomeEmpresa.setText(e.getNomeEmpresa());
