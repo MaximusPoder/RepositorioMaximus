@@ -1767,7 +1767,8 @@ int[] ckb = new int[9];
             tpPerspectiva.setText("");
             tpContinuarAtividade.setText("");
             tpDesejoFilhos.setText("");
-            
+
+            tfFrete.setText("0");
             ckbSempreDosMesmos.setSelected(false);
             ckbPeixeInteiro.setSelected(false);
 
