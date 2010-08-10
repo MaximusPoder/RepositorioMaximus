@@ -222,7 +222,7 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
         tfFone = new javax.swing.JFormattedTextField();
         tfTempoEmpresa = new javax.swing.JTextField();
 
-        setPreferredSize(new java.awt.Dimension(999, 999));
+        setPreferredSize(new java.awt.Dimension(1099, 1300));
 
         panelCrudEmpresa.setBackground(new java.awt.Color(255, 255, 255));
 

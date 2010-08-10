@@ -215,6 +215,8 @@ public class WinEmpresaMercado extends javax.swing.JPanel {
         jLabel69 = new javax.swing.JLabel();
         tfValor = new JMoneyField();
 
+        setPreferredSize(new java.awt.Dimension(1099, 1300));
+
         panelCrudEmpresa1.setBackground(new java.awt.Color(255, 255, 255));
 
         btCadastrar.setText("Cadastrar");

@@ -218,17 +218,7 @@ public class addMaterial extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_cbMatMaterialItemStateChanged
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-
-            public void run() {
-                //new addMaterial().setVisible(true);
-            }
-        });
-    }
+  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botao_add_mat;
     private javax.swing.JComboBox cbMatMaterial;

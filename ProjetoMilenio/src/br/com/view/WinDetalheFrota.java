@@ -91,6 +91,8 @@ public class WinDetalheFrota extends javax.swing.JPanel {
         jLabel27 = new javax.swing.JLabel();
         tfProducao = new javax.swing.JTextField();
 
+        setPreferredSize(new java.awt.Dimension(1099, 1300));
+
         panelCrudEmpresa1.setBackground(new java.awt.Color(255, 255, 255));
 
         btCadastrar.setText("Cadastrar");
