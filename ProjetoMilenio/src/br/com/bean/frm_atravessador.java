@@ -13,6 +13,7 @@ package br.com.bean;
 
 import br.com.Persistencia.Conexao;
 import br.com.bean2.*;
+import br.com.bean3.*;
 
 /**
  *
@@ -41,8 +42,12 @@ public class frm_atravessador extends javax.swing.JFrame {
         botao_sair = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        botao_cadastrar_atravessador1 = new javax.swing.JButton();
-        botao_questionario_atravessador1 = new javax.swing.JButton();
+        botao_cadastrar_caminhoneiro = new javax.swing.JButton();
+        botao_questionario_caminhoneiro = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        botao_cadastrar_comunidade = new javax.swing.JButton();
+        botao_questionario_comunidade = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -101,23 +106,23 @@ public class frm_atravessador extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel2.setForeground(new java.awt.Color(0, 0, 153));
         jLabel2.setText("Formulário caminhoneiro principal ");
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        botao_cadastrar_atravessador1.setText("Cadastrar Caminhoneiro");
-        botao_cadastrar_atravessador1.addActionListener(new java.awt.event.ActionListener() {
+        botao_cadastrar_caminhoneiro.setText("Cadastrar Caminhoneiro");
+        botao_cadastrar_caminhoneiro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botao_cadastrar_atravessador1ActionPerformed(evt);
+                botao_cadastrar_caminhoneiroActionPerformed(evt);
             }
         });
 
-        botao_questionario_atravessador1.setText("Questionário Caminhoneiro");
-        botao_questionario_atravessador1.addActionListener(new java.awt.event.ActionListener() {
+        botao_questionario_caminhoneiro.setText("Questionário Caminhoneiro");
+        botao_questionario_caminhoneiro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botao_questionario_atravessador1ActionPerformed(evt);
+                botao_questionario_caminhoneiroActionPerformed(evt);
             }
         });
 
@@ -130,17 +135,60 @@ public class frm_atravessador extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(8, 8, 8)
-                        .addComponent(botao_cadastrar_atravessador1))
-                    .addComponent(botao_questionario_atravessador1))
+                        .addComponent(botao_cadastrar_caminhoneiro))
+                    .addComponent(botao_questionario_caminhoneiro))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(botao_cadastrar_atravessador1)
+                .addComponent(botao_cadastrar_caminhoneiro)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botao_questionario_atravessador1)
+                .addComponent(botao_questionario_caminhoneiro)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(153, 0, 102));
+        jLabel3.setText("Formulário comunidade principal ");
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        botao_cadastrar_comunidade.setText("Cadastrar Comunidade");
+        botao_cadastrar_comunidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_cadastrar_comunidadeActionPerformed(evt);
+            }
+        });
+
+        botao_questionario_comunidade.setText("Questionário Comunidade");
+        botao_questionario_comunidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_questionario_comunidadeActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(botao_cadastrar_comunidade))
+                    .addComponent(botao_questionario_comunidade))
+                .addContainerGap(51, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(botao_cadastrar_comunidade)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botao_questionario_comunidade)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -160,6 +208,15 @@ public class frm_atravessador extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(34, 34, 34))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel3)
+                        .addGap(20, 20, 20)))
+                .addContainerGap(328, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(543, Short.MAX_VALUE)
                 .addComponent(botao_sair)
@@ -176,9 +233,13 @@ public class frm_atravessador extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel3)
                 .addGap(18, 18, 18)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(41, 41, 41)
                 .addComponent(botao_sair)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(22, 22, 22))
         );
 
         pack();
@@ -200,13 +261,21 @@ public class frm_atravessador extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_formWindowClosed
 
-    private void botao_cadastrar_atravessador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_cadastrar_atravessador1ActionPerformed
+    private void botao_cadastrar_caminhoneiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_cadastrar_caminhoneiroActionPerformed
         new frm_cad_caminhoneiro().setVisible(true);
-    }//GEN-LAST:event_botao_cadastrar_atravessador1ActionPerformed
+    }//GEN-LAST:event_botao_cadastrar_caminhoneiroActionPerformed
 
-    private void botao_questionario_atravessador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_questionario_atravessador1ActionPerformed
+    private void botao_questionario_caminhoneiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_questionario_caminhoneiroActionPerformed
         new frm_questionario_caminhoneiro().setVisible(true);
-    }//GEN-LAST:event_botao_questionario_atravessador1ActionPerformed
+    }//GEN-LAST:event_botao_questionario_caminhoneiroActionPerformed
+
+    private void botao_cadastrar_comunidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_cadastrar_comunidadeActionPerformed
+        new comunidade_cadastro().setVisible(true);
+    }//GEN-LAST:event_botao_cadastrar_comunidadeActionPerformed
+
+    private void botao_questionario_comunidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_questionario_comunidadeActionPerformed
+        new comunidade_questionario().setVisible(true);
+    }//GEN-LAST:event_botao_questionario_comunidadeActionPerformed
 
     /**
     * @param args the command line arguments
@@ -222,14 +291,18 @@ public class frm_atravessador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botao_cadastrar_atravessador;
-    private javax.swing.JButton botao_cadastrar_atravessador1;
+    private javax.swing.JButton botao_cadastrar_caminhoneiro;
+    private javax.swing.JButton botao_cadastrar_comunidade;
     private javax.swing.JButton botao_questionario_atravessador;
-    private javax.swing.JButton botao_questionario_atravessador1;
+    private javax.swing.JButton botao_questionario_caminhoneiro;
+    private javax.swing.JButton botao_questionario_comunidade;
     private javax.swing.JButton botao_sair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 
 }
