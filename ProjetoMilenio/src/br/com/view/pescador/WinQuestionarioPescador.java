@@ -8,14 +8,18 @@
  *
  * Created on 10/08/2010, 00:50:14
  */
-
 package br.com.view.pescador;
 
-import br.com.pojo.Pescador;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Insets;
+import java.awt.Toolkit;
 import javax.swing.JPanel;
+import javax.swing.UIManager;
+import javax.swing.UIManager.LookAndFeelInfo;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -25,9 +29,38 @@ public class WinQuestionarioPescador extends javax.swing.JFrame {
 
     /** Creates new form WinQuestionarioPescador */
     public WinQuestionarioPescador() {
+        initLookAndfeel();
         initComponents();
+        Insets in = Toolkit.getDefaultToolkit().getScreenInsets(this.getGraphicsConfiguration());
+        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        int width = d.width - (in.left + in.top);
+        int height = d.height - (in.top + in.bottom);
+        setSize(width, height);
+        setLocation(in.left, in.top);
+
     }
-         /**
+
+    private void initLookAndfeel() {
+        try {
+            for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+
+                if ("Nimbus".equals(info.getName())) {
+                    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                    break;
+                }
+            }
+        } catch (UnsupportedLookAndFeelException e) {
+            // handle exception
+        } catch (ClassNotFoundException e) {
+            // handle exception
+        } catch (InstantiationException e) {
+            // handle exception
+        } catch (IllegalAccessException e) {
+            // handle exception
+        }
+    }
+
+    /**
      * Realiza a troca de panel dinamicamente
      * @param nomePainel O nome do painel
      * @param jPanel O Jpanel a ser mostrada
@@ -50,7 +83,6 @@ public class WinQuestionarioPescador extends javax.swing.JFrame {
 
 
         } catch (Exception e) {
-
         }
     }
 
@@ -79,7 +111,7 @@ public class WinQuestionarioPescador extends javax.swing.JFrame {
         panelDireito.setLayout(panelDireitoLayout);
         panelDireitoLayout.setHorizontalGroup(
             panelDireitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 889, Short.MAX_VALUE)
+            .addGap(0, 1013, Short.MAX_VALUE)
         );
         panelDireitoLayout.setVerticalGroup(
             panelDireitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,30 +158,30 @@ public class WinQuestionarioPescador extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addComponent(panelDireito, javax.swing.GroupLayout.PREFERRED_SIZE, 889, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton5)
+                    .addComponent(jButton4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(panelDireito, javax.swing.GroupLayout.PREFERRED_SIZE, 1013, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(104, 104, 104)
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
                 .addGap(18, 18, 18)
                 .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(21, 21, 21)
                 .addComponent(jButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jButton5)
-                .addContainerGap(408, Short.MAX_VALUE))
+                .addContainerGap(322, Short.MAX_VALUE))
             .addComponent(panelDireito, javax.swing.GroupLayout.DEFAULT_SIZE, 616, Short.MAX_VALUE)
         );
 
@@ -163,34 +195,34 @@ public class WinQuestionarioPescador extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-         ChangePanel("", new WinComposicaoPescaria());
+        ChangePanel("", new WinComposicaoPescaria());
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-         ChangePanel("", new WinDadosEmbarcacao());
+        ChangePanel("", new WinDadosEmbarcacao());
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-         ChangePanel("", new WinPescadorEspecies());
+        ChangePanel("", new WinPescadorEspecies());
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-         ChangePanel("", new WinPercepcaoAmbiental());
+        ChangePanel("", new WinPercepcaoAmbiental());
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
-    * @param args the command line arguments
-    */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new WinQuestionarioPescador().setVisible(true);
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -199,5 +231,4 @@ public class WinQuestionarioPescador extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JPanel panelDireito;
     // End of variables declaration//GEN-END:variables
-
 }
