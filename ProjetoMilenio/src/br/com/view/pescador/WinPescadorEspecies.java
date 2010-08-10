@@ -250,6 +250,8 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
         jLabel70 = new javax.swing.JLabel();
         tfFimSafra = new javax.swing.JTextField();
 
+        setPreferredSize(new java.awt.Dimension(1035, 806));
+
         panelCrudEmpresa3.setBackground(new java.awt.Color(255, 255, 255));
 
         btCadastrar.setText("Cadastrar");

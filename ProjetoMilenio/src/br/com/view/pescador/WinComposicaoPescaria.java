@@ -331,6 +331,8 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
 
+        setPreferredSize(new java.awt.Dimension(1035, 806));
+
         panelCrudEmpresa3.setBackground(new java.awt.Color(255, 255, 255));
 
         btCadastrar.setText("Cadastrar");
@@ -701,7 +703,7 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 877, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 777, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
