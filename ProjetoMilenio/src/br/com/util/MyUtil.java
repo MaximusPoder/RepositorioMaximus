@@ -292,6 +292,28 @@ public class MyUtil {
 
     }
 
+      /**
+     * Seta o buttom group e retorna a uma string na resposta, caso exista
+     * @param bg
+     * @param o
+     * @return
+     */
+    public static void setOpcaoWithResponse(ButtonGroup bg, String o, JTextField component) {
+        String[] opcs = o.split(";");
+        if (opcs.length > 1) {
+            String texto = opcs[1];
+            component.setText("");
+            component.setText(texto);
+        }
+        for (Enumeration e = bg.getElements(); e.hasMoreElements();) {
+            JRadioButton b = (JRadioButton) e.nextElement();
+            if (b.getActionCommand().equalsIgnoreCase(opcs[0])) {
+                b.setSelected(true);
+            }
+        }
+
+    }
+
     /**
      * Seta o buttom group e retorna a uma string na resposta, caso exista
      * @param bg
