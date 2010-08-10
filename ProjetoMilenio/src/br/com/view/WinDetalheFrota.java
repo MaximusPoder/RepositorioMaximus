@@ -506,6 +506,7 @@ public class WinDetalheFrota extends javax.swing.JPanel {
     private void action(ActionEvent e) {
         String cmd = e.getActionCommand();
 
+        if(cbEmpresa.getSelectedIndex()>0){
         if (cmd.equalsIgnoreCase("Cadastrar")) {
             edf = getEDFofPanel();
             new DAODetalhaFrota().cadastrar(edf);
@@ -519,6 +520,8 @@ public class WinDetalheFrota extends javax.swing.JPanel {
         refresh();
         clear();
         edf = null;
+        cbEmpresa.setSelectedIndex(0);
+        }
     }
 
     private void clear() {

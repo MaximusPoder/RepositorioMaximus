@@ -76,7 +76,7 @@ public class WinTripulacao extends javax.swing.JPanel {
                         refresh();
                     } else {
                         clear();
-                          edf = null;
+                        edf = null;
                     }
                 }
             }
@@ -106,8 +106,8 @@ public class WinTripulacao extends javax.swing.JPanel {
         for (int i = 0; i < list.size(); i++) {
             EmpresaTripulacao e = list.get(i);
             Object[] objeto = {e.getFrotaEspecie(), e.getFuncao(),
-                e.getNumero(), "R$ "+ ToMoney.StringtoMoney(e.getSalario()),"R$ "+ ToMoney.StringtoMoney(e.getCusto()),
-                "R$ "+ ToMoney.StringtoMoney(e.getLucro())};
+                e.getNumero(), "R$ " + ToMoney.StringtoMoney(e.getSalario()), "R$ " + ToMoney.StringtoMoney(e.getCusto()),
+                "R$ " + ToMoney.StringtoMoney(e.getLucro())};
             model.addRow(objeto);
         }
     }
@@ -145,7 +145,7 @@ public class WinTripulacao extends javax.swing.JPanel {
         tfNumero.setText(e.getNumero());
         tfCusto.setText(e.getCusto());
         tfLucro.setText(e.getLucro());
-        tfSalario.setText(e.getLucro());       
+        tfSalario.setText(e.getLucro());
 
         return e;
     }
@@ -160,27 +160,31 @@ public class WinTripulacao extends javax.swing.JPanel {
     }
 
     private void action(ActionEvent e) {
-        String cmd = e.getActionCommand();
 
-        if (cmd.equalsIgnoreCase("Cadastrar")) {
-            edf = getEDFofPanel();
-            new DAOTripulacao().cadastrar(edf);
-        } else if (cmd.equalsIgnoreCase("Excluir")) {
-            edf = getEDFofPanel();
-            new DAOTripulacao().excluir(edf);
-        } else if (cmd.equalsIgnoreCase("Atualizar")) {
-            edf = getEDFofPanel();
-            new DAOTripulacao().atualizar(edf);
+        String cmd = e.getActionCommand();
+        if (cbEmpresa.getSelectedIndex() > 0) {
+            if (cmd.equalsIgnoreCase("Cadastrar")) {
+                edf = getEDFofPanel();
+                new DAOTripulacao().cadastrar(edf);
+            } else if (cmd.equalsIgnoreCase("Excluir")) {
+                edf = getEDFofPanel();
+                new DAOTripulacao().excluir(edf);
+            } else if (cmd.equalsIgnoreCase("Atualizar")) {
+                edf = getEDFofPanel();
+                new DAOTripulacao().atualizar(edf);
+            }
+            refresh();
+            clear();
+            MyUtil.clearTable(table);
+            cbEmpresa.setSelectedIndex(0);
+            edf = null;
         }
-        refresh();
-        clear();
-        edf = null;
     }
 
     private void clear() {
         MyUtil.FieldsClear(this);
         bgRelacaoTrabalho.clearSelection();
-       
+
     }
 
     /** This method is called from within the constructor to

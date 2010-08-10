@@ -208,6 +208,7 @@ public class EmpresaMaterial extends javax.swing.JPanel {
                         public void windowClosed(WindowEvent e) {
                             super.windowClosed(e);
                             refresh();
+                            cbEmpresa.setSelectedIndex(0);
                         }
                     });
                 }
@@ -219,6 +220,7 @@ public class EmpresaMaterial extends javax.swing.JPanel {
             public void actionPerformed(ActionEvent e) {
                 new DAOEmpresaMaterial().excluir(getEMofTable());
                 refresh();
+                 cbEmpresa.setSelectedIndex(0);
             }
         });      
         table.addMouseListener(new MouseAdapter() {
@@ -247,6 +249,7 @@ public class EmpresaMaterial extends javax.swing.JPanel {
 
     private void clear() {
         MyUtil.clearTable(table);
+         cbEmpresa.setSelectedIndex(0);
     }
 
     private void refresh() {

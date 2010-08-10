@@ -76,7 +76,7 @@ public class WinImposto extends javax.swing.JPanel {
     private void actionImposto(ActionEvent e) {
 
         String cmd = e.getActionCommand();
-
+        if(cbEmpresaImposto.getSelectedIndex()>0){
         if (cmd.equalsIgnoreCase("Cadastrar")) {
             empresaImposto = getEmpresaImpostoOfPanel();
             new DAOEmpresaImposto().cadastrar(empresaImposto);
@@ -90,6 +90,8 @@ public class WinImposto extends javax.swing.JPanel {
         refreshEmpresaImposto();
         clearTab(tabEmpresaImposto);
         empresaImposto = null;
+        cbEmpresaImposto.setSelectedIndex(0);
+        }
     }
 
     private void clearTab(JPanel jPanel) {
@@ -214,17 +216,19 @@ public class WinImposto extends javax.swing.JPanel {
         panelCrudEmpresa6.setBackground(new java.awt.Color(255, 255, 255));
 
         btCadastrarImposto.setText("Cadastrar");
-        btCadastrarImposto.setToolTipText("Realiza a Confirmação do Pagamento definindo exatamente o dia de pagamento."); // NOI18N
+        btCadastrarImposto.setToolTipText(""); // NOI18N
         btCadastrarImposto.setFocusable(false);
         btCadastrarImposto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btCadastrarImposto.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         btAtualizarImposto.setText("Atualizar");
-        btAtualizarImposto.setToolTipText("Atualiza Valor e Data de pagamento da mensalidade");
+        btAtualizarImposto.setToolTipText("");
 
         btExcluirImposto.setText("Excluir");
+        btExcluirImposto.setToolTipText("");
 
         btNovoImposto.setText("Novo");
+        btNovoImposto.setToolTipText("");
 
         cbEmpresaImposto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -259,7 +263,7 @@ public class WinImposto extends javax.swing.JPanel {
                                 .addGap(26, 26, 26)
                                 .addComponent(cbEmpresaImposto, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel61))))
-                .addContainerGap(230, Short.MAX_VALUE))
+                .addContainerGap(607, Short.MAX_VALUE))
         );
         panelCrudEmpresa6Layout.setVerticalGroup(
             panelCrudEmpresa6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -312,9 +316,6 @@ public class WinImposto extends javax.swing.JPanel {
         tabEmpresaImpostoLayout.setHorizontalGroup(
             tabEmpresaImpostoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabEmpresaImpostoLayout.createSequentialGroup()
-                .addComponent(panelCrudEmpresa6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(233, 233, 233))
-            .addGroup(tabEmpresaImpostoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(tabEmpresaImpostoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(tabEmpresaImpostoLayout.createSequentialGroup()
@@ -339,7 +340,8 @@ public class WinImposto extends javax.swing.JPanel {
                                 .addGap(84, 84, 84)
                                 .addComponent(tfAno, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 747, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(371, Short.MAX_VALUE))
+                .addContainerGap(515, Short.MAX_VALUE))
+            .addComponent(panelCrudEmpresa6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         tabEmpresaImpostoLayout.setVerticalGroup(
             tabEmpresaImpostoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -372,7 +374,7 @@ public class WinImposto extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1128, Short.MAX_VALUE)
+            .addGap(0, 1272, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)

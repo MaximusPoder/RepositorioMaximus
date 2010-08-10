@@ -89,9 +89,11 @@ public class WinQuestionario1 extends javax.swing.JPanel {
     }
 
     private void actionEmpresaQuestionario1(ActionEvent e) {
+
         String cmd = e.getActionCommand();
 
-        if (cmd.equalsIgnoreCase("Cadastrar")) {
+        if(cbEmpresaQuestionario1.getSelectedIndex()>0)
+        {if (cmd.equalsIgnoreCase("Cadastrar")) {
             empresaQuestionario1 = getQuestionario1OfPanel();
             new DAOQuestionario1().cadastrar(empresaQuestionario1);
         } else if (cmd.equalsIgnoreCase("Atualizar")) {
@@ -101,6 +103,8 @@ public class WinQuestionario1 extends javax.swing.JPanel {
         clearTab(tabQuestionario1);
         MyUtil.clearCheckBox(tabQuestionario1);
         empresaQuestionario1 = null;
+        cbEmpresaQuestionario1.setSelectedIndex(0);
+        }
 
     }
 
