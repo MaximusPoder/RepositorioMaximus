@@ -65,7 +65,7 @@ public class WinQuestionario7 extends javax.swing.JPanel {
         String questao57 = tfQuestao57.getText();
         String questao58 = bgQuestao58.getSelection().getActionCommand();
         String questao59 = tfQuestao59.getText();
-        String questao60 = tfQuestao59.getText();
+        String questao60 = tfQuestao60.getText();
         String questao61 = tfQuestao61.getText();
         String questao62 = tfQuestao62.getText();
         String questao63 = tfQuestao63.getText();

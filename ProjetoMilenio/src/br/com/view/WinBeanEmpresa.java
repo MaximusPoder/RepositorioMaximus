@@ -101,6 +101,7 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
                 }
             });
         } else {
+            if(cbMunicipio.getSelectedIndex()>0){
             if (cmd.equalsIgnoreCase("Cadastrar")) {
                 empresa = getEmpresaOfPanel();
                 dAOEmpresa.cadastrar(empresa);
@@ -112,6 +113,7 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
                 dAOEmpresa.atualizar(empresa);
             }
             clearTabEmpresa();
+            }
         }
 
     }
@@ -319,7 +321,19 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
 
         jLabel11.setText("Função");
 
+        try {
+            tfData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         cbMunicipio.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        try {
+            tfFone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         javax.swing.GroupLayout tabEmpresaLayout = new javax.swing.GroupLayout(tabEmpresa);
         tabEmpresa.setLayout(tabEmpresaLayout);

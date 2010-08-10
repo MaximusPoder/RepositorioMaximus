@@ -13,10 +13,10 @@ package br.com.view;
 import br.com.dao.DAOEmpresa;
 import br.com.dao.DAOEmpresaProblema;
 import br.com.pojo.Empresa;
-import br.com.pojo.EmpresaEB;
 import br.com.pojo.EmpresaProblema;
-import br.com.pojo.EspecieProcessada;
+import br.com.util.JMoneyField;
 import br.com.util.MyUtil;
+import br.com.util.ToMoney;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,7 +26,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTable;
@@ -38,12 +37,10 @@ import javax.swing.table.DefaultTableModel;
  */
 public class WinProblemas extends javax.swing.JPanel {
 
-    
     private EmpresaProblema empresaProblema;
     private DefaultTableModel model;
-    private List<Empresa> empresas;   
+    private List<Empresa> empresas;
     private List<EmpresaProblema> empresaProblemas;
-  
 
     public WinProblemas() {
         initComponents();
@@ -71,6 +68,11 @@ public class WinProblemas extends javax.swing.JPanel {
 
             public void actionPerformed(ActionEvent e) {
                 clearTab(tabEmpresaProblema);
+                cbEmpresaProblema.setSelectedIndex(0);
+                cbFinanciamento.setSelectedIndex(0);
+                cbProducao.setSelectedIndex(0);
+                cbQualificacao.setSelectedIndex(0);
+                cbTransporte.setSelectedIndex(0);
                 bgEmpresaProblemas.clearSelection();
                 empresaProblema = null;
             }
@@ -92,28 +94,15 @@ public class WinProblemas extends javax.swing.JPanel {
         cbEmpresaProblema.addItemListener(new ItemListener() {
 
             public void itemStateChanged(ItemEvent e) {
+                clear();
+                clearTable(tableProblemas);
                 if (e.getStateChange() == ItemEvent.SELECTED) {
-                    if(cbEmpresaProblema.getSelectedIndex()>0)
-                    {
+                    if (cbEmpresaProblema.getSelectedIndex() > 0) {
                         refreshEmpresaProblema();
-                    }else
-                    {
-                         clearTab(tabEmpresaProblema);
-                          clearTable(tableProblemas);
-                bgEmpresaProblemas.clearSelection();
-                empresaProblema = null;
                     }
                 }
             }
         });
-    }
-
-    private void refresComboBox(List list, JComboBox cb) {
-
-        cb.removeAllItems();
-        for (Object object : list) {
-            cb.addItem(object);
-        }
     }
 
     private void clearTab(JPanel jPanel) {
@@ -141,21 +130,22 @@ public class WinProblemas extends javax.swing.JPanel {
 
     private void actionEmpresaProblema(ActionEvent e) {
 
-        String cmd = e.getActionCommand();
-        if (cmd.equalsIgnoreCase("Cadastrar")) {
-            empresaProblema = getEmpresaProblemaOfTable();
-            new DAOEmpresaProblema().cadastrar(empresaProblema);
-        } else if (cmd.equalsIgnoreCase("Excluir")) {
-            empresaProblema = getEmpresaProblemaOfTable();
-            new DAOEmpresaProblema().excluir(empresaProblema);
-        } else if (cmd.equalsIgnoreCase("Atualizar")) {
-            empresaProblema = getEmpresaProblemaOfTable();
-            new DAOEmpresaProblema().atualizar(empresaProblema);
+        if (cbEmpresaProblema.getSelectedIndex() > 0) {
+            String cmd = e.getActionCommand();
+            if (cmd.equalsIgnoreCase("Cadastrar")) {
+                empresaProblema = getEmpresaProblemaOfTable();
+                new DAOEmpresaProblema().cadastrar(empresaProblema);
+            } else if (cmd.equalsIgnoreCase("Excluir")) {
+                empresaProblema = getEmpresaProblemaOfTable();
+                new DAOEmpresaProblema().excluir(empresaProblema);
+            } else if (cmd.equalsIgnoreCase("Atualizar")) {
+                empresaProblema = getEmpresaProblemaOfTable();
+                new DAOEmpresaProblema().atualizar(empresaProblema);
+            }
+            refreshEmpresaProblema();
+            clear();
+            setCB();
         }
-        refreshEmpresaProblema();
-        bgEmpresaProblemas.clearSelection();
-        clearTab(tabEmpresaProblema);
-        empresaProblema = null;
 
     }
 
@@ -179,14 +169,14 @@ public class WinProblemas extends javax.swing.JPanel {
             tipo = cbQualificacao.getSelectedItem().toString();
             obs = tfQualificacao.getText();
         }
-
+    
         if (this.empresaProblema != null) {
             empresaProblema.all(problema, tipo, obs,
-                    empresas.get(cbEmpresaProblema.getSelectedIndex()).getId());
+                    empresas.get(cbEmpresaProblema.getSelectedIndex()-1).getId());
             return empresaProblema;
         }
         ep.all(problema, tipo, obs,
-                empresas.get(cbEmpresaProblema.getSelectedIndex()).getId());
+                empresas.get(cbEmpresaProblema.getSelectedIndex()-1).getId());
         return ep;
     }
 
@@ -211,12 +201,14 @@ public class WinProblemas extends javax.swing.JPanel {
     }
 
     private void refreshEmpresaProblema() {
+
         empresaProblemas = new ArrayList<EmpresaProblema>();
         if (cbEmpresaProblema.getSelectedIndex() > 0) {
             empresaProblemas = new DAOEmpresaProblema().getListWithQuery("select * from " +
                     "EmpresaProblema where empresaId = " +
-                    empresas.get(cbEmpresaProblema.getSelectedIndex()-1).getId());
+                    empresas.get(cbEmpresaProblema.getSelectedIndex() - 1).getId());
         }
+
         refreshTableEmpresaProblema(empresaProblemas);
 
     }
@@ -228,7 +220,8 @@ public class WinProblemas extends javax.swing.JPanel {
         for (int i = 0; i < list.size(); i++) {
             EmpresaProblema e = list.get(i);
             Object[] objeto = {e.getProblema(),
-                e.getTipo(), e.getObs()};
+                e.getTipo(), "R$ " +ToMoney.StringtoMoney(e.getObs())
+            };
 
             model.addRow(objeto);
         }
@@ -259,18 +252,18 @@ public class WinProblemas extends javax.swing.JPanel {
         cbQualificacao = new javax.swing.JComboBox();
         cbProducao = new javax.swing.JComboBox();
         cbFinanciamento = new javax.swing.JComboBox();
-        tfTransporte = new javax.swing.JTextField();
+        tfTransporte = new JMoneyField();
         rbTransporte = new javax.swing.JRadioButton();
         rbFinanciamento = new javax.swing.JRadioButton();
         rbQualificacao = new javax.swing.JRadioButton();
         rbProducao = new javax.swing.JRadioButton();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
-        tfFinanciamento = new javax.swing.JTextField();
+        tfFinanciamento = new JMoneyField();
         jLabel41 = new javax.swing.JLabel();
-        tfQualificacao = new javax.swing.JTextField();
+        tfQualificacao = new JMoneyField();
         jLabel42 = new javax.swing.JLabel();
-        tfProducao = new javax.swing.JTextField();
+        tfProducao = new JMoneyField();
         jScrollPane5 = new javax.swing.JScrollPane();
         tableProblemas = new javax.swing.JTable();
 
@@ -531,4 +524,20 @@ public class WinProblemas extends javax.swing.JPanel {
     private javax.swing.JTextField tfQualificacao;
     private javax.swing.JTextField tfTransporte;
     // End of variables declaration//GEN-END:variables
+
+    private void clear() {
+        clearTab(tabEmpresaProblema);
+
+        bgEmpresaProblemas.clearSelection();
+        empresaProblema = null;
+        empresaProblema = null;
+    }
+
+    private void setCB() {
+        cbEmpresaProblema.setSelectedIndex(0);
+        cbFinanciamento.setSelectedIndex(0);
+        cbProducao.setSelectedIndex(0);
+        cbQualificacao.setSelectedIndex(0);
+        cbTransporte.setSelectedIndex(0);
+    }
 }

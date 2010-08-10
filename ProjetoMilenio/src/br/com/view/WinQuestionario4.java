@@ -113,8 +113,9 @@ public class WinQuestionario4 extends javax.swing.JPanel {
     /*Metodos Actions do 8° Tab = Questionario 3*/
     private void actionEmpresaQuestionario4(ActionEvent e) {
 
-        String cmd = e.getActionCommand();
 
+        String cmd = e.getActionCommand();
+if(cbEmpresa.getSelectedIndex()>0){
         if (cmd.equalsIgnoreCase("Cadastrar")) {
             empresaQuestionario4 = getQuestionario3OfPanel();
             new DAOQuestionario4().cadastrar(empresaQuestionario4);
@@ -123,6 +124,8 @@ public class WinQuestionario4 extends javax.swing.JPanel {
             new DAOQuestionario4().atualizar(empresaQuestionario4);
         }
         clearQuestionario3();
+        cbEmpresa.setSelectedIndex(0);
+}
     }
 
     private void initAction() {

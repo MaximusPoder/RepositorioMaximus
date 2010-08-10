@@ -27,7 +27,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="ScrollQuestionario2" alignment="1" pref="999" max="32767" attributes="0"/>
+          <Component id="ScrollQuestionario2" alignment="1" pref="1099" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -426,6 +426,9 @@
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButton8">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="bgQuestao21"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="N&#xe3;o"/>
               </Properties>
             </Component>

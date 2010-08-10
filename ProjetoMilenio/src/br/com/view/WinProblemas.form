@@ -327,6 +327,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfTransporte">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JMoneyField()"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JRadioButton" name="rbTransporte">
           <Properties>
@@ -371,6 +374,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfFinanciamento">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JMoneyField()"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel41">
           <Properties>
@@ -378,6 +384,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfQualificacao">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JMoneyField()"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel42">
           <Properties>
@@ -385,6 +394,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfProducao">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JMoneyField()"/>
+          </AuxValues>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane5">
           <AuxValues>

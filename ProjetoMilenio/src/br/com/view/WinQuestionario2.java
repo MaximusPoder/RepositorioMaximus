@@ -101,7 +101,7 @@ public class WinQuestionario2 extends javax.swing.JPanel {
     private void actionEmpresaQuestionario2(ActionEvent e) {
 
         String cmd = e.getActionCommand();
-
+        if(cbEmpresaQuestionario2.getSelectedIndex()>0){
         if (cmd.equalsIgnoreCase("Cadastrar")) {
             empresaQuestionario2 = getQuestionario2OfPanel();
             new DAOQuestionario2().cadastrar(empresaQuestionario2);
@@ -113,6 +113,8 @@ public class WinQuestionario2 extends javax.swing.JPanel {
         bgQuestao15.clearSelection();
         bgQuestao21.clearSelection();
         empresaQuestionario2 = null;
+        cbEmpresaQuestionario2.setSelectedIndex(0);
+        }
 
     }
 
@@ -336,6 +338,7 @@ public class WinQuestionario2 extends javax.swing.JPanel {
         bgQuestao21.add(jRadioButton7);
         jRadioButton7.setText("Sim");
 
+        bgQuestao21.add(jRadioButton8);
         jRadioButton8.setText("Não");
 
         tfQuestao22.setColumns(20);
@@ -457,7 +460,7 @@ public class WinQuestionario2 extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ScrollQuestionario2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 999, Short.MAX_VALUE)
+            .addComponent(ScrollQuestionario2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1099, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
