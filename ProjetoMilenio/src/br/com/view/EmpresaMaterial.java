@@ -182,7 +182,9 @@ public class EmpresaMaterial extends javax.swing.JPanel {
             public void actionPerformed(ActionEvent e) {
                 if (cbEmpresa.getSelectedIndex() > 0) {
                     addMaterial m =
-                            new addMaterial(empresas.get(cbEmpresa.getSelectedIndex() - 1).getId());
+                            new addMaterial(empresas.
+                            get(cbEmpresa.getSelectedIndex() - 1).getId(),
+                            EmpresaMaterial.class);
                     m.addWindowListener(new WindowAdapter() {
 
                         @Override
