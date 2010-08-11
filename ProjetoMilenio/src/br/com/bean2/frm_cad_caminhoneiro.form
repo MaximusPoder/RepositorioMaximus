@@ -202,7 +202,7 @@
                           </Group>
                           <Component id="jPanel4" alignment="0" max="32767" attributes="1"/>
                       </Group>
-                      <EmptySpace pref="17" max="32767" attributes="0"/>
+                      <EmptySpace pref="66" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -330,7 +330,7 @@
                           <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="tfDesdeQuando" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="57" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -439,7 +439,7 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="botao_novo">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Novo"/>
+                    <Property name="text" type="java.lang.String" value="Limpar"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botao_novoActionPerformed"/>
