@@ -14,6 +14,8 @@ package br.com.bean;
 import br.com.Persistencia.Conexao;
 import br.com.bean2.*;
 import br.com.bean3.*;
+import br.com.view.WinQuestionarioEmpresa;
+import br.com.view.pescador.WinQuestionarioPescador;
 
 /**
  *
@@ -55,11 +57,9 @@ public class frm_atravessador extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         botao_cadastrar_pescador = new javax.swing.JButton();
-        botao_questionario_comunidade2 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         botao_cadastrar_economia = new javax.swing.JButton();
-        botao_questionario_comunidade3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -204,7 +204,7 @@ public class frm_atravessador extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel4.setText("Formulário comunidade principal ");
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -246,23 +246,16 @@ public class frm_atravessador extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel5.setForeground(new java.awt.Color(153, 153, 0));
         jLabel5.setText("Formulário pescador principal ");
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
-        botao_cadastrar_pescador.setText("Cadastrar Pescador");
+        botao_cadastrar_pescador.setText("Questionário  Pescador");
         botao_cadastrar_pescador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botao_cadastrar_pescadorActionPerformed(evt);
-            }
-        });
-
-        botao_questionario_comunidade2.setText("Questionário Comunidade");
-        botao_questionario_comunidade2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botao_questionario_comunidade2ActionPerformed(evt);
             }
         });
 
@@ -271,42 +264,28 @@ public class frm_atravessador extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(botao_questionario_comunidade2))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(botao_cadastrar_pescador)))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addGap(50, 50, 50)
+                .addComponent(botao_cadastrar_pescador)
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(26, 26, 26)
                 .addComponent(botao_cadastrar_pescador)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botao_questionario_comunidade2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel6.setForeground(new java.awt.Color(204, 0, 0));
         jLabel6.setText("Formulário economico principal ");
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
-        botao_cadastrar_economia.setText("Cadastrar Economico");
+        botao_cadastrar_economia.setText("Questionário  Economico");
         botao_cadastrar_economia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botao_cadastrar_economiaActionPerformed(evt);
-            }
-        });
-
-        botao_questionario_comunidade3.setText("Questionário Comunidade");
-        botao_questionario_comunidade3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botao_questionario_comunidade3ActionPerformed(evt);
             }
         });
 
@@ -314,24 +293,17 @@ public class frm_atravessador extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(botao_questionario_comunidade3))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(botao_cadastrar_economia)))
-                .addContainerGap(51, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(53, Short.MAX_VALUE)
+                .addComponent(botao_cadastrar_economia)
+                .addGap(51, 51, 51))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(27, Short.MAX_VALUE)
                 .addComponent(botao_cadastrar_economia)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botao_questionario_comunidade3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(24, 24, 24))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -369,7 +341,7 @@ public class frm_atravessador extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(botao_sair)
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -452,19 +424,14 @@ public class frm_atravessador extends javax.swing.JFrame {
 
     private void botao_cadastrar_pescadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_cadastrar_pescadorActionPerformed
         // TODO add your handling code here:
+         new WinQuestionarioPescador().setVisible(true);
     }//GEN-LAST:event_botao_cadastrar_pescadorActionPerformed
-
-    private void botao_questionario_comunidade2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_questionario_comunidade2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botao_questionario_comunidade2ActionPerformed
 
     private void botao_cadastrar_economiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_cadastrar_economiaActionPerformed
         // TODO add your handling code here:
+       
+          new WinQuestionarioEmpresa().setVisible(true);
     }//GEN-LAST:event_botao_cadastrar_economiaActionPerformed
-
-    private void botao_questionario_comunidade3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_questionario_comunidade3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botao_questionario_comunidade3ActionPerformed
 
     /**
     * @param args the command line arguments
@@ -489,8 +456,6 @@ public class frm_atravessador extends javax.swing.JFrame {
     private javax.swing.JButton botao_questionario_caminhoneiro;
     private javax.swing.JButton botao_questionario_comunidade;
     private javax.swing.JButton botao_questionario_comunidade1;
-    private javax.swing.JButton botao_questionario_comunidade2;
-    private javax.swing.JButton botao_questionario_comunidade3;
     private javax.swing.JButton botao_sair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
