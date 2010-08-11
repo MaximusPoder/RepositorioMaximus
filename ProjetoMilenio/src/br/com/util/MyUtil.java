@@ -51,7 +51,9 @@ public class MyUtil {
         for (int i = 0; i < tableModel.getRowCount(); i++) {
 
             for (int c = 0; c < tableModel.getColumnCount(); c++) {
+                if(tableModel.getValueAt(i, c) !=null)
                 texto += tableModel.getValueAt(i, c).toString() + ";";
+                else texto+= " ;";
             }
             texto += "/";
         }

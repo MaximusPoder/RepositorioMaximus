@@ -102,7 +102,7 @@ public class WinQuestionarioPescador extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         panelDireito.setBackground(new java.awt.Color(255, 255, 255));
         panelDireito.setPreferredSize(new java.awt.Dimension(999, 999));
@@ -212,17 +212,6 @@ public class WinQuestionarioPescador extends javax.swing.JFrame {
         ChangePanel("", new WinPercepcaoAmbiental());
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-
-            public void run() {
-                new WinQuestionarioPescador().setVisible(true);
-            }
-        });
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
