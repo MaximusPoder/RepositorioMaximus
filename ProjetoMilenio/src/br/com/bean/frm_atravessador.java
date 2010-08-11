@@ -13,6 +13,7 @@ package br.com.bean;
 
 import br.com.Persistencia.Conexao;
 import br.com.bean2.*;
+import br.com.bean4.*;
 import br.com.bean3.*;
 import br.com.view.WinQuestionarioEmpresa;
 import br.com.view.pescador.WinQuestionarioPescador;
@@ -415,7 +416,7 @@ public class frm_atravessador extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_questionario_comunidadeActionPerformed
 
     private void botao_cadastrar_comunidade1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_cadastrar_comunidade1ActionPerformed
-        // TODO add your handling code here:
+        new comunidade_questionariomarcadofera().setVisible(true);
     }//GEN-LAST:event_botao_cadastrar_comunidade1ActionPerformed
 
     private void botao_questionario_comunidade1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_questionario_comunidade1ActionPerformed
