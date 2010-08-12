@@ -104,35 +104,35 @@ public class WinQuestionarioEmpresa extends javax.swing.JFrame {
             .addGap(0, 661, Short.MAX_VALUE)
         );
 
-        jButton1.setText("Passo 1");
+        jButton1.setText("1- Dados Empresa");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Passo 2");
+        jButton2.setText("2 - Produtos e Custos");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Passo 3");
+        jButton3.setText("3 - Espécies Processadas Pela Empresa");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Passo 4");
+        jButton4.setText("4 - Questionário");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Passo 5");
+        jButton5.setText("5 - Problemas Enfrentados");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -248,7 +248,7 @@ public class WinQuestionarioEmpresa extends javax.swing.JFrame {
                     .addComponent(jButton17)
                     .addComponent(jButton6)
                     .addComponent(jButton7))
-                .addContainerGap(1087, Short.MAX_VALUE))
+                .addContainerGap(943, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap(110, Short.MAX_VALUE)
