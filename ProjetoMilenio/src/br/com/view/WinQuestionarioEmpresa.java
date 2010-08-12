@@ -97,7 +97,7 @@ public class WinQuestionarioEmpresa extends javax.swing.JFrame {
         panelDireito.setLayout(panelDireitoLayout);
         panelDireitoLayout.setHorizontalGroup(
             panelDireitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1062, Short.MAX_VALUE)
+            .addGap(0, 842, Short.MAX_VALUE)
         );
         panelDireitoLayout.setVerticalGroup(
             panelDireitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -251,8 +251,8 @@ public class WinQuestionarioEmpresa extends javax.swing.JFrame {
                 .addContainerGap(867, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(110, Short.MAX_VALUE)
-                    .addComponent(panelDireito, javax.swing.GroupLayout.PREFERRED_SIZE, 1062, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addContainerGap(330, Short.MAX_VALUE)
+                    .addComponent(panelDireito, javax.swing.GroupLayout.PREFERRED_SIZE, 842, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
