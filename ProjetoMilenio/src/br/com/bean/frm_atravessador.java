@@ -54,7 +54,6 @@ public class frm_atravessador extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         botao_cadastrar_comunidade1 = new javax.swing.JButton();
-        botao_questionario_comunidade1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         botao_cadastrar_pescador = new javax.swing.JButton();
@@ -71,7 +70,7 @@ public class frm_atravessador extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel1.setForeground(new java.awt.Color(0, 102, 102));
-        jLabel1.setText("Formulário atravessador principal ");
+        jLabel1.setText("Formulário Atravessador ");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -121,7 +120,7 @@ public class frm_atravessador extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel2.setForeground(new java.awt.Color(0, 0, 153));
-        jLabel2.setText("Formulário caminhoneiro principal ");
+        jLabel2.setText("Formulário Caminhoneiro");
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -206,7 +205,7 @@ public class frm_atravessador extends javax.swing.JFrame {
         );
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14));
-        jLabel4.setText("Formulário comunidade principal ");
+        jLabel4.setText("Formulário Mercado Feira ");
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -217,34 +216,21 @@ public class frm_atravessador extends javax.swing.JFrame {
             }
         });
 
-        botao_questionario_comunidade1.setText("Questionário Comunidade");
-        botao_questionario_comunidade1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botao_questionario_comunidade1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(botao_cadastrar_comunidade1))
-                    .addComponent(botao_questionario_comunidade1))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addGap(48, 48, 48)
+                .addComponent(botao_cadastrar_comunidade1)
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(28, 28, 28)
                 .addComponent(botao_cadastrar_comunidade1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botao_questionario_comunidade1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14));
@@ -312,12 +298,6 @@ public class frm_atravessador extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(34, 34, 34))
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -329,20 +309,28 @@ public class frm_atravessador extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(jLabel5)))
-                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jLabel6))
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(jLabel6))
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(botao_sair)
+                                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jLabel4))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(botao_sair)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(60, Short.MAX_VALUE))
+                        .addGap(79, 79, 79)
+                        .addComponent(jLabel4)))
+                .addContainerGap(28, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(117, 117, 117))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -419,10 +407,6 @@ public class frm_atravessador extends javax.swing.JFrame {
         new comunidade_questionariomarcadofera().setVisible(true);
     }//GEN-LAST:event_botao_cadastrar_comunidade1ActionPerformed
 
-    private void botao_questionario_comunidade1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_questionario_comunidade1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botao_questionario_comunidade1ActionPerformed
-
     private void botao_cadastrar_pescadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_cadastrar_pescadorActionPerformed
         // TODO add your handling code here:
          new WinQuestionarioPescador().setVisible(true);
@@ -456,7 +440,6 @@ public class frm_atravessador extends javax.swing.JFrame {
     private javax.swing.JButton botao_questionario_atravessador;
     private javax.swing.JButton botao_questionario_caminhoneiro;
     private javax.swing.JButton botao_questionario_comunidade;
-    private javax.swing.JButton botao_questionario_comunidade1;
     private javax.swing.JButton botao_sair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
