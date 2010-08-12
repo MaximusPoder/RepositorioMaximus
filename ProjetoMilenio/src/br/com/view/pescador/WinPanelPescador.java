@@ -20,6 +20,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.JPopupMenu;
 
 /**
  *
@@ -116,7 +118,8 @@ public class WinPanelPescador extends javax.swing.JPanel {
         MyUtil.setSelected(p.getQuestao20(), bgQuestao20);
         tfQuestao21.setText(p.getQuestao21());
         tfQuestao22.setText(p.getQuestao22());
-        tfQuestao23.setText(p.getQuestao23());
+        MyUtil.setStringsToFields(p.getQuestao23(), tfQuestao23_0,tfQuestao23_1,
+                tfQuestao23_2,tfQuestao23_3);
         tfQuestao24.setText(p.getQuestao24());
         tfQuestao25.setText(p.getQuestao25());
         tfQuestao26.setText(p.getQuestao26());
@@ -125,7 +128,10 @@ public class WinPanelPescador extends javax.swing.JPanel {
 
     private Pescador getpescadorOfPanel() {
 
-        String questao1 = cbMunicipioQuestao1.getSelectedItem().toString();
+
+
+        try {
+             String questao1 = cbMunicipioQuestao1.getSelectedItem().toString();
         String questao2 = tfQuestao2.getText();
         String questao3 = tfQuestao3.getText();
         String questao4 = tfQuestao4.getText();
@@ -147,7 +153,9 @@ public class WinPanelPescador extends javax.swing.JPanel {
         String questao20 = bgQuestao20.getSelection().getActionCommand();
         String questao21 = tfQuestao21.getText();
         String questao22 = tfQuestao22.getText();
-        String questao23 = tfQuestao23.getText();
+
+        String questao23 = MyUtil.getStringOfFields(tfQuestao23_0,tfQuestao23_1,
+                tfQuestao23_2,tfQuestao23_3);
         String questao24 = tfQuestao24.getText();
         String questao25 = tfQuestao25.getText();
         String questao26 = tfQuestao26.getText();
@@ -170,6 +178,11 @@ public class WinPanelPescador extends javax.swing.JPanel {
                 questao25, questao26);
 
         return pescador;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Verifique os campos estão preenchidos e marcados corretamente",
+                    "erro", JOptionPane.ERROR_MESSAGE);
+        }
+        return null;
     }
     private void clear() {
         MyUtil.FieldsClear(panel);
@@ -272,14 +285,20 @@ public class WinPanelPescador extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         tfQuestao22 = new javax.swing.JTextArea();
         jLabel30 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tfQuestao23 = new javax.swing.JTextArea();
         jLabel31 = new javax.swing.JLabel();
         tfQuestao24 = new javax.swing.JTextField();
         jLabel32 = new javax.swing.JLabel();
         tfQuestao25 = new javax.swing.JTextField();
         jLabel33 = new javax.swing.JLabel();
         tfQuestao26 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        tfQuestao23_0 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        tfQuestao23_1 = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        tfQuestao23_2 = new javax.swing.JTextField();
+        jLabel35 = new javax.swing.JLabel();
+        tfQuestao23_3 = new javax.swing.JTextField();
 
         panelCrudEmpresa.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -326,7 +345,7 @@ public class WinPanelPescador extends javax.swing.JPanel {
                         .addComponent(btExcluir)
                         .addGap(6, 6, 6)
                         .addComponent(btPesquisa)))
-                .addContainerGap(994, Short.MAX_VALUE))
+                .addContainerGap(1021, Short.MAX_VALUE))
         );
         panelCrudEmpresaLayout.setVerticalGroup(
             panelCrudEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -367,7 +386,7 @@ public class WinPanelPescador extends javax.swing.JPanel {
 
         jLabel9.setText("Idade");
 
-        jLabel10.setText("Atividadeprincipal de Renda");
+        jLabel10.setText("Atividade principal de Renda");
 
         jLabel11.setText("Atividadeprincipal Secundaria");
 
@@ -484,16 +503,19 @@ public class WinPanelPescador extends javax.swing.JPanel {
 
         jLabel30.setText("Quem na sua familília trabalha? e com qual atividade?");
 
-        tfQuestao23.setColumns(20);
-        tfQuestao23.setRows(5);
-        tfQuestao23.setText("Entrevistado:\t\n\t\t\t\nEsposa:\n\nFilhos: \t\t\n\nNetos:");
-        jScrollPane3.setViewportView(tfQuestao23);
-
         jLabel31.setText("Qual o tempo diário que passaram trabalhando?");
 
         jLabel32.setText("Quanto tempo está na atividade?");
 
         jLabel33.setText("Qual a Renda por mês ou pro viagem?");
+
+        jLabel2.setText("Entrevistado");
+
+        jLabel4.setText("Esposa");
+
+        jLabel34.setText("Filhos");
+
+        jLabel35.setText("Netos");
 
         javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
         panel.setLayout(panelLayout);
@@ -504,19 +526,19 @@ public class WinPanelPescador extends javax.swing.JPanel {
                 .addComponent(jLabel31)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tfQuestao24, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(986, Short.MAX_VALUE))
+                .addContainerGap(1013, Short.MAX_VALUE))
             .addGroup(panelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel32)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tfQuestao25, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1055, Short.MAX_VALUE))
+                .addContainerGap(1082, Short.MAX_VALUE))
             .addGroup(panelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel33)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tfQuestao26, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1033, Short.MAX_VALUE))
+                .addContainerGap(1060, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLayout.createSequentialGroup()
                 .addComponent(panelCrudEmpresa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -527,11 +549,10 @@ public class WinPanelPescador extends javax.swing.JPanel {
                 .addComponent(jRadioButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jRadioButton2)
-                .addContainerGap(962, Short.MAX_VALUE))
+                .addContainerGap(989, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 623, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(panelLayout.createSequentialGroup()
                             .addComponent(jLabel9)
@@ -644,12 +665,26 @@ public class WinPanelPescador extends javax.swing.JPanel {
                             .addComponent(jLabel28)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(tfQuestao21)))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 623, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
                     .addComponent(jLabel29, javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelLayout.createSequentialGroup()
                         .addComponent(jLabel30)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 369, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 396, Short.MAX_VALUE)))
                 .addGap(771, 771, 771))
+            .addGroup(panelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel34)
+                    .addComponent(jLabel35))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(tfQuestao23_0, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+                    .addComponent(tfQuestao23_1)
+                    .addComponent(tfQuestao23_2)
+                    .addComponent(tfQuestao23_3))
+                .addContainerGap(1128, Short.MAX_VALUE))
             .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelLayout.createSequentialGroup()
                     .addContainerGap()
@@ -763,9 +798,23 @@ public class WinPanelPescador extends javax.swing.JPanel {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel30)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(tfQuestao23_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(tfQuestao23_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel34)
+                    .addComponent(tfQuestao23_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel35)
+                    .addComponent(tfQuestao23_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
                 .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31)
                     .addComponent(tfQuestao24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -794,7 +843,7 @@ public class WinPanelPescador extends javax.swing.JPanel {
                     .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel7)
                         .addComponent(tfQuestao4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(656, Short.MAX_VALUE)))
+                    .addContainerGap(662, Short.MAX_VALUE)))
         );
 
         jScrollPane1.setViewportView(panel);
@@ -844,6 +893,7 @@ public class WinPanelPescador extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -859,6 +909,9 @@ public class WinPanelPescador extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -890,7 +943,6 @@ public class WinPanelPescador extends javax.swing.JPanel {
     private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JPanel panel;
     private javax.swing.JPanel panelCrudEmpresa;
     private javax.swing.JTextField tfQuestao10;
@@ -903,7 +955,10 @@ public class WinPanelPescador extends javax.swing.JPanel {
     private javax.swing.JTextField tfQuestao2;
     private javax.swing.JTextField tfQuestao21;
     private javax.swing.JTextArea tfQuestao22;
-    private javax.swing.JTextArea tfQuestao23;
+    private javax.swing.JTextField tfQuestao23_0;
+    private javax.swing.JTextField tfQuestao23_1;
+    private javax.swing.JTextField tfQuestao23_2;
+    private javax.swing.JTextField tfQuestao23_3;
     private javax.swing.JTextField tfQuestao24;
     private javax.swing.JTextField tfQuestao25;
     private javax.swing.JTextField tfQuestao26;
