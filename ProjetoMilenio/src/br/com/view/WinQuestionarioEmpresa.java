@@ -139,84 +139,84 @@ public class WinQuestionarioEmpresa extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setText("Passo 6");
+        jButton6.setText("6 - Fabrica de Gelo");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
 
-        jButton7.setText("Passo 7");
+        jButton7.setText("7 - Impostos");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
             }
         });
 
-        jButton8.setText("Passo 8");
+        jButton8.setText("8 - Impostos (2)");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
             }
         });
 
-        jButton9.setText("Passo 9");
+        jButton9.setText("9 - Equipamentos Tecnicos e Frota");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
             }
         });
 
-        jButton10.setText("Passo 10");
+        jButton10.setText("10 - Detalhamento da Frota ");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton10ActionPerformed(evt);
             }
         });
 
-        jButton11.setText("Passo 11");
+        jButton11.setText("11 - Gastos com material");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton11ActionPerformed(evt);
             }
         });
 
-        jButton12.setText("Passo 12");
+        jButton12.setText("12 - Tripulação");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton12ActionPerformed(evt);
             }
         });
 
-        jButton13.setText("Passo 13");
+        jButton13.setText("13 - Financiamento e Abundancia de recurso pesqueiro");
         jButton13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton13ActionPerformed(evt);
             }
         });
 
-        jButton14.setText("Passo 14");
+        jButton14.setText("14 - Perda de Pescado");
         jButton14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton14ActionPerformed(evt);
             }
         });
 
-        jButton15.setText("Passo 15");
+        jButton15.setText("15 - Problemas do pescado");
         jButton15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton15ActionPerformed(evt);
             }
         });
 
-        jButton16.setText("Passo 16");
+        jButton16.setText("16 - Mercado");
         jButton16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton16ActionPerformed(evt);
             }
         });
 
-        jButton17.setText("Passo 17");
+        jButton17.setText("17 - Outras questões");
         jButton17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton17ActionPerformed(evt);
@@ -248,7 +248,7 @@ public class WinQuestionarioEmpresa extends javax.swing.JFrame {
                     .addComponent(jButton17)
                     .addComponent(jButton6)
                     .addComponent(jButton7))
-                .addContainerGap(943, Short.MAX_VALUE))
+                .addContainerGap(867, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap(110, Short.MAX_VALUE)
