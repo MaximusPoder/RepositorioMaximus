@@ -43,8 +43,9 @@ public class WinTripulacao extends javax.swing.JPanel {
         initComponents();
         empresas = new DAOEmpresa().getListWithQuery("select * from Empresa");
         MyUtil.refresComboBox(empresas, cbEmpresa);
-        MyUtil.initiActionCmd(this);
+       
         initAction();
+         MyUtil.initiActionCmd(this);
     }
 
     private void initAction() {
