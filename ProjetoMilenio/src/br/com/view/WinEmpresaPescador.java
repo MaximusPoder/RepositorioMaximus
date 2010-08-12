@@ -198,7 +198,7 @@ public class WinEmpresaPescador extends javax.swing.JPanel {
         jLabel67 = new javax.swing.JLabel();
         jLabel66 = new javax.swing.JLabel();
 
-        setPreferredSize(new java.awt.Dimension(1099, 1300));
+        setPreferredSize(new java.awt.Dimension(900, 1700));
 
         panelCrudEmpresa1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -238,7 +238,7 @@ public class WinEmpresaPescador extends javax.swing.JPanel {
                                 .addGap(26, 26, 26)
                                 .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel47))))
-                .addContainerGap(254, Short.MAX_VALUE))
+                .addContainerGap(418, Short.MAX_VALUE))
         );
         panelCrudEmpresa1Layout.setVerticalGroup(
             panelCrudEmpresa1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -316,7 +316,7 @@ public class WinEmpresaPescador extends javax.swing.JPanel {
                                 .addGap(84, 84, 84)
                                 .addComponent(tfDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 747, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(178, Short.MAX_VALUE))
+                .addContainerGap(342, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -342,7 +342,7 @@ public class WinEmpresaPescador extends javax.swing.JPanel {
                             .addComponent(jLabel67))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(1024, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -267,7 +267,7 @@ public class WinProblemas extends javax.swing.JPanel {
         jScrollPane5 = new javax.swing.JScrollPane();
         tableProblemas = new javax.swing.JTable();
 
-        setPreferredSize(new java.awt.Dimension(1099, 1300));
+        setPreferredSize(new java.awt.Dimension(900, 1300));
 
         panelCrudEmpresa4.setBackground(new java.awt.Color(255, 255, 255));
 

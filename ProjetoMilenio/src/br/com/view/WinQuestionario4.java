@@ -218,7 +218,7 @@ if(cbEmpresa.getSelectedIndex()>0){
         jScrollPane32 = new javax.swing.JScrollPane();
         tfQuestao32 = new javax.swing.JTextArea();
 
-        setPreferredSize(new java.awt.Dimension(1099, 1300));
+        setPreferredSize(new java.awt.Dimension(900, 1300));
 
         ScrollQuestionario4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         ScrollQuestionario4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -488,7 +488,7 @@ if(cbEmpresa.getSelectedIndex()>0){
                     .addComponent(jRadioButton28))
                 .addGap(442, 442, 442)
                 .addComponent(jLabel99)
-                .addContainerGap(224, Short.MAX_VALUE))
+                .addContainerGap(261, Short.MAX_VALUE))
         );
 
         ScrollQuestionario4.setViewportView(tabQuestionario4);
@@ -499,11 +499,11 @@ if(cbEmpresa.getSelectedIndex()>0){
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(ScrollQuestionario4, javax.swing.GroupLayout.PREFERRED_SIZE, 886, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(213, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ScrollQuestionario4, javax.swing.GroupLayout.DEFAULT_SIZE, 1263, Short.MAX_VALUE)
+            .addComponent(ScrollQuestionario4, javax.swing.GroupLayout.DEFAULT_SIZE, 1300, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
