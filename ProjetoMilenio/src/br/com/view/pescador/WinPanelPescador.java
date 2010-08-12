@@ -124,6 +124,7 @@ public class WinPanelPescador extends javax.swing.JPanel {
     }
 
     private Pescador getpescadorOfPanel() {
+
         String questao1 = cbMunicipioQuestao1.getSelectedItem().toString();
         String questao2 = tfQuestao2.getText();
         String questao3 = tfQuestao3.getText();
