@@ -240,7 +240,7 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
         tfVenda = new JMoneyField();
         cbProduto = new javax.swing.JComboBox();
 
-        setPreferredSize(new java.awt.Dimension(1099, 1300));
+        setPreferredSize(new java.awt.Dimension(900, 1300));
 
         panelCrudEmpresa2.setBackground(new java.awt.Color(255, 255, 255));
 

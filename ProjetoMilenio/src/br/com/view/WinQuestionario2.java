@@ -224,7 +224,7 @@ public class WinQuestionario2 extends javax.swing.JPanel {
         tfQuestao22 = new javax.swing.JTextArea();
         jLabel59 = new javax.swing.JLabel();
 
-        setPreferredSize(new java.awt.Dimension(1099, 1300));
+        setPreferredSize(new java.awt.Dimension(900, 1300));
 
         ScrollQuestionario2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 

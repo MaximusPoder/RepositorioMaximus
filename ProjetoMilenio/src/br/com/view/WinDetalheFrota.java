@@ -91,7 +91,7 @@ public class WinDetalheFrota extends javax.swing.JPanel {
         jLabel27 = new javax.swing.JLabel();
         tfProducao = new javax.swing.JTextField();
 
-        setPreferredSize(new java.awt.Dimension(1099, 1300));
+        setPreferredSize(new java.awt.Dimension(1000, 1700));
 
         panelCrudEmpresa1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -136,7 +136,7 @@ public class WinDetalheFrota extends javax.swing.JPanel {
                                 .addGap(26, 26, 26)
                                 .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel47))))
-                .addContainerGap(326, Short.MAX_VALUE))
+                .addContainerGap(313, Short.MAX_VALUE))
         );
         panelCrudEmpresa1Layout.setVerticalGroup(
             panelCrudEmpresa1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -223,8 +223,8 @@ public class WinDetalheFrota extends javax.swing.JPanel {
                                     .addComponent(tfCompMedio, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(tfEstocagem, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
-                                            .addComponent(tfPotMotor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE))
+                                            .addComponent(tfEstocagem, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                                            .addComponent(tfPotMotor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
                                         .addGap(5, 5, 5)))
                                 .addGap(11, 11, 11))
                             .addComponent(tfFrota, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -272,7 +272,7 @@ public class WinDetalheFrota extends javax.swing.JPanel {
                     .addComponent(tfDuracao, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tfProducao, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(170, 170, 170))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 991, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 978, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -327,7 +327,7 @@ public class WinDetalheFrota extends javax.swing.JPanel {
                                     .addComponent(jLabel19))))))
                 .addGap(27, 27, 27)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(157, Short.MAX_VALUE))
+                .addContainerGap(1339, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables

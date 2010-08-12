@@ -201,7 +201,7 @@ public class WinQuestionario6 extends javax.swing.JPanel {
         jScrollPane35 = new javax.swing.JScrollPane();
         tfQuestao53 = new javax.swing.JTextArea();
 
-        setPreferredSize(new java.awt.Dimension(1099, 1300));
+        setPreferredSize(new java.awt.Dimension(900, 1700));
 
         panelCrudEmpresa7.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -245,7 +245,7 @@ public class WinQuestionario6 extends javax.swing.JPanel {
                         .addComponent(jLabel71)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(432, Short.MAX_VALUE))
+                .addContainerGap(543, Short.MAX_VALUE))
         );
         panelCrudEmpresa7Layout.setVerticalGroup(
             panelCrudEmpresa7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -358,7 +358,7 @@ public class WinQuestionario6 extends javax.swing.JPanel {
                         .addComponent(jLabel104)
                         .addGap(27, 27, 27)
                         .addComponent(tfQuestao52, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(540, Short.MAX_VALUE))
+                .addContainerGap(651, Short.MAX_VALUE))
             .addGroup(tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(tabQuestionarioLayout.createSequentialGroup()
                     .addGap(10, 10, 10)
@@ -413,7 +413,7 @@ public class WinQuestionario6 extends javax.swing.JPanel {
                         .addComponent(jRadioButton44)
                         .addGap(23, 23, 23))
                     .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(650, Short.MAX_VALUE))
             .addGroup(tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(tabQuestionarioLayout.createSequentialGroup()
                     .addGap(73, 73, 73)
@@ -452,7 +452,7 @@ public class WinQuestionario6 extends javax.swing.JPanel {
                             .addComponent(jRadioButton39)
                             .addGap(23, 23, 23))
                         .addComponent(jScrollPane34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(249, Short.MAX_VALUE)))
+                    .addContainerGap(847, Short.MAX_VALUE)))
         );
 
         jScrollPane1.setViewportView(tabQuestionario);
@@ -461,11 +461,11 @@ public class WinQuestionario6 extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 924, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1099, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 719, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1300, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables

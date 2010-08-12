@@ -198,7 +198,7 @@ public class WinEB extends javax.swing.JPanel {
         tfTerceiro = new javax.swing.JTextField();
         tfEpocaAno = new javax.swing.JTextField();
 
-        setPreferredSize(new java.awt.Dimension(999, 999));
+        setPreferredSize(new java.awt.Dimension(900, 1300));
 
         panelCrudEmpresa1.setBackground(new java.awt.Color(255, 255, 255));
 
