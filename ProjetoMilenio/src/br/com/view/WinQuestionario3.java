@@ -46,8 +46,9 @@ public class WinQuestionario3 extends javax.swing.JPanel {
         empresas = new DAOEmpresa().getListWithQuery("select * from Empresa");
         MyUtil.refresComboBox(empresas, cbEmpresaQuestionario3);
         initAction();
-        initiActionCmd(tabQuestionario3);
+        
         iniciaModeloTable27();
+        initiActionCmd(tabQuestionario3);
 
     }
 

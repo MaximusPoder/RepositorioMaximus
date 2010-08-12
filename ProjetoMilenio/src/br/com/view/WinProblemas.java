@@ -45,9 +45,9 @@ public class WinProblemas extends javax.swing.JPanel {
     public WinProblemas() {
         initComponents();
         empresas = new DAOEmpresa().getListWithQuery("select * from Empresa");
-        MyUtil.refresComboBox(empresas, cbEmpresaProblema);
-        initiActionCmd(tabEmpresaProblema);
+        MyUtil.refresComboBox(empresas, cbEmpresaProblema);        
         initAction();
+        initiActionCmd(tabEmpresaProblema);
 
     }
 
