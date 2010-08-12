@@ -58,21 +58,21 @@
                       <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="tfQuestao24" min="-2" pref="169" max="-2" attributes="0"/>
-                      <EmptySpace pref="986" max="32767" attributes="0"/>
+                      <EmptySpace pref="1013" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="tfQuestao25" min="-2" pref="169" max="-2" attributes="0"/>
-                      <EmptySpace pref="1055" max="32767" attributes="0"/>
+                      <EmptySpace pref="1082" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="tfQuestao26" min="-2" pref="169" max="-2" attributes="0"/>
-                      <EmptySpace pref="1033" max="32767" attributes="0"/>
+                      <EmptySpace pref="1060" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="panelCrudEmpresa" max="32767" attributes="1"/>
@@ -85,12 +85,11 @@
                       <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="962" max="32767" attributes="0"/>
+                      <EmptySpace pref="989" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jScrollPane3" alignment="0" pref="623" max="32767" attributes="0"/>
                           <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
@@ -225,14 +224,31 @@
                                   <Component id="tfQuestao21" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="jScrollPane2" alignment="0" pref="623" max="32767" attributes="0"/>
+                          <Component id="jScrollPane2" alignment="0" pref="650" max="32767" attributes="0"/>
                           <Component id="jLabel29" alignment="0" min="-2" max="-2" attributes="1"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel30" min="-2" max="-2" attributes="1"/>
-                              <EmptySpace pref="369" max="32767" attributes="0"/>
+                              <EmptySpace pref="396" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="771" pref="771" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel34" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel35" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="tfQuestao23_0" alignment="0" pref="228" max="32767" attributes="1"/>
+                          <Component id="tfQuestao23_1" alignment="0" max="32767" attributes="1"/>
+                          <Component id="tfQuestao23_2" alignment="0" max="32767" attributes="1"/>
+                          <Component id="tfQuestao23_3" alignment="0" max="32767" attributes="1"/>
+                      </Group>
+                      <EmptySpace pref="1128" max="32767" attributes="0"/>
                   </Group>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
@@ -367,9 +383,27 @@
                       <Component id="jScrollPane2" min="-2" pref="48" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" min="-2" pref="142" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfQuestao23_0" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfQuestao23_1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfQuestao23_2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfQuestao23_3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel31" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="tfQuestao24" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -405,7 +439,7 @@
                               <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Component id="tfQuestao4" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="656" max="32767" attributes="0"/>
+                          <EmptySpace pref="662" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -452,7 +486,7 @@
                                   <Component id="btPesquisa" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="994" max="32767" attributes="0"/>
+                          <EmptySpace pref="1021" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -587,7 +621,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel10">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Atividadeprincipal de Renda"/>
+                <Property name="text" type="java.lang.String" value="Atividade principal de Renda"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfQuestao7">
@@ -896,22 +930,6 @@
                 <Property name="text" type="java.lang.String" value="Quem na sua famil&#xed;lia trabalha? e com qual atividade?"/>
               </Properties>
             </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane3">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTextArea" name="tfQuestao23">
-                  <Properties>
-                    <Property name="columns" type="int" value="20"/>
-                    <Property name="rows" type="int" value="5"/>
-                    <Property name="text" type="java.lang.String" value="Entrevistado:&#x9;&#xa;&#x9;&#x9;&#x9;&#xa;Esposa:&#xa;&#xa;Filhos: &#x9;&#x9;&#xa;&#xa;Netos:"/>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
             <Component class="javax.swing.JLabel" name="jLabel31">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Qual o tempo di&#xe1;rio que passaram trabalhando?"/>
@@ -932,6 +950,34 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfQuestao26">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Entrevistado"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="tfQuestao23_0">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Esposa"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="tfQuestao23_1">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel34">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Filhos"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="tfQuestao23_2">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel35">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Netos"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="tfQuestao23_3">
             </Component>
           </SubComponents>
         </Container>
