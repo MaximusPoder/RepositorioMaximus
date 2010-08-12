@@ -28,6 +28,40 @@ import javax.swing.table.DefaultTableModel;
 
 public class MyUtil {
 
+    public static String getStringOfFields(JTextField... fields)
+    {
+        String texto = "";
+        for (JTextField jTextField : fields) {
+            texto += jTextField.getText()+";";
+        }
+        return texto;
+    }
+
+    public static void setStringsToFields(String texto,JTextField... f)
+    {
+        String[] t =  texto.split(";");
+        for (int i = 0; i < t.length; i++) {
+            String string = t[i];
+            f[i].setText(string);
+
+        }
+
+    }
+
+     public static void setStringsToFields(ButtonGroup bg,String texto,JTextField... f)
+    {
+
+        String[] t =  texto.split(";");
+        String opcao = t[0];
+        setSelected(opcao, bg);
+        for (int i = 1; i < t.length; i++) {
+            String string = t[i];
+            f[i-1].setText(string);
+
+        }
+
+    }
+
     public static void clearTable(JTable table) {
         /*Esvazia Campo*/
         DefaultTableModel model = (DefaultTableModel) table.getModel();
