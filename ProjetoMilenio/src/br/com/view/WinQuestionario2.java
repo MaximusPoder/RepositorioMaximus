@@ -15,6 +15,7 @@ import br.com.dao.DAOQuestionario2;
 import br.com.pojo.Empresa;
 import br.com.pojo.EmpresaQuestionario2;
 import br.com.util.JMoneyField;
+import br.com.util.Mensagens;
 import br.com.util.MyUtil;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -25,7 +26,6 @@ import java.util.List;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -103,8 +103,10 @@ public class WinQuestionario2 extends javax.swing.JPanel {
         String cmd = e.getActionCommand();
         if(cbEmpresaQuestionario2.getSelectedIndex()>0){
         if (cmd.equalsIgnoreCase("Cadastrar")) {
+            if(empresaQuestionario2==null){
             empresaQuestionario2 = getQuestionario2OfPanel();
-            new DAOQuestionario2().cadastrar(empresaQuestionario2);
+            new DAOQuestionario2().cadastrar(empresaQuestionario2);}
+            else Mensagens.showMessageNaoCadastrar();
         } else if (cmd.equalsIgnoreCase("Atualizar")) {
             empresaQuestionario2 = getQuestionario2OfPanel();
             new DAOQuestionario2().atualizar(empresaQuestionario2);
@@ -117,15 +119,6 @@ public class WinQuestionario2 extends javax.swing.JPanel {
         }
 
     }
-
-    private void refresComboBox(List list, JComboBox cb) {
-
-        cb.removeAllItems();
-        for (Object object : list) {
-            cb.addItem(object);
-        }
-    }
-
     private void clearTab(JPanel jPanel) {
         MyUtil.FieldsClear(jPanel);
     }
@@ -200,6 +193,7 @@ public class WinQuestionario2 extends javax.swing.JPanel {
         btNovoQuestionario2 = new javax.swing.JButton();
         jLabel45 = new javax.swing.JLabel();
         cbEmpresaQuestionario2 = new javax.swing.JComboBox();
+        jLabel12 = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
         jScrollPane9 = new javax.swing.JScrollPane();
@@ -245,32 +239,40 @@ public class WinQuestionario2 extends javax.swing.JPanel {
 
         cbEmpresaQuestionario2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        jLabel12.setFont(new java.awt.Font("Verdana", 1, 11));
+        jLabel12.setText("Fabrica de Gelo");
+
         javax.swing.GroupLayout panelCrudEmpresa5Layout = new javax.swing.GroupLayout(panelCrudEmpresa5);
         panelCrudEmpresa5.setLayout(panelCrudEmpresa5Layout);
         panelCrudEmpresa5Layout.setHorizontalGroup(
             panelCrudEmpresa5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCrudEmpresa5Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(panelCrudEmpresa5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelCrudEmpresa5Layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
-                        .addComponent(jLabel43)
-                        .addGap(45, 45, 45)
-                        .addComponent(jLabel44))
+                        .addContainerGap()
+                        .addGroup(panelCrudEmpresa5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelCrudEmpresa5Layout.createSequentialGroup()
+                                .addGap(83, 83, 83)
+                                .addComponent(jLabel43)
+                                .addGap(45, 45, 45)
+                                .addComponent(jLabel44))
+                            .addGroup(panelCrudEmpresa5Layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(jLabel51))
+                            .addGroup(panelCrudEmpresa5Layout.createSequentialGroup()
+                                .addComponent(btNovoQuestionario2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btCadastrarQuestionario2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btAtualizarQuestionario2)
+                                .addGap(31, 31, 31)
+                                .addComponent(jLabel45)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbEmpresaQuestionario2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(panelCrudEmpresa5Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(jLabel51))
-                    .addGroup(panelCrudEmpresa5Layout.createSequentialGroup()
-                        .addComponent(btNovoQuestionario2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btCadastrarQuestionario2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btAtualizarQuestionario2)
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel45)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbEmpresaQuestionario2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(626, Short.MAX_VALUE))
+                        .addGap(255, 255, 255)
+                        .addComponent(jLabel12)))
+                .addContainerGap(383, Short.MAX_VALUE))
         );
         panelCrudEmpresa5Layout.setVerticalGroup(
             panelCrudEmpresa5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -280,15 +282,16 @@ public class WinQuestionario2 extends javax.swing.JPanel {
                     .addComponent(jLabel43)
                     .addGroup(panelCrudEmpresa5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel51)
-                        .addComponent(jLabel44)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel44))
+                    .addComponent(jLabel12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelCrudEmpresa5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btAtualizarQuestionario2)
                     .addComponent(btCadastrarQuestionario2)
                     .addComponent(btNovoQuestionario2)
                     .addComponent(jLabel45)
                     .addComponent(cbEmpresaQuestionario2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jLabel52.setText("15 - Tem fábrica de Gelo");
@@ -351,71 +354,65 @@ public class WinQuestionario2 extends javax.swing.JPanel {
         tabQuestionario2.setLayout(tabQuestionario2Layout);
         tabQuestionario2Layout.setHorizontalGroup(
             tabQuestionario2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelCrudEmpresa5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(tabQuestionario2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel52)
-                .addContainerGap(999, Short.MAX_VALUE))
-            .addGroup(tabQuestionario2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(tabQuestionario2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
-                    .addComponent(jLabel54, javax.swing.GroupLayout.Alignment.LEADING))
-                .addGap(632, 632, 632))
-            .addGroup(tabQuestionario2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel55)
-                .addContainerGap(926, Short.MAX_VALUE))
-            .addGroup(tabQuestionario2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(tfQuestao18, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1053, Short.MAX_VALUE))
-            .addGroup(tabQuestionario2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(tabQuestionario2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jScrollPane11, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel56, javax.swing.GroupLayout.Alignment.LEADING))
-                .addContainerGap(778, Short.MAX_VALUE))
-            .addGroup(tabQuestionario2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(tabQuestionario2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jScrollPane12, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel57, javax.swing.GroupLayout.Alignment.LEADING))
-                .addContainerGap(878, Short.MAX_VALUE))
             .addGroup(tabQuestionario2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(tabQuestionario2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(tabQuestionario2Layout.createSequentialGroup()
+                        .addComponent(jLabel52)
+                        .addContainerGap(999, Short.MAX_VALUE))
+                    .addGroup(tabQuestionario2Layout.createSequentialGroup()
+                        .addGroup(tabQuestionario2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
+                            .addComponent(jLabel54, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(632, 632, 632))
+                    .addGroup(tabQuestionario2Layout.createSequentialGroup()
+                        .addComponent(jLabel55)
+                        .addContainerGap(926, Short.MAX_VALUE))
+                    .addGroup(tabQuestionario2Layout.createSequentialGroup()
+                        .addComponent(tfQuestao18, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(1053, Short.MAX_VALUE))
+                    .addGroup(tabQuestionario2Layout.createSequentialGroup()
+                        .addGroup(tabQuestionario2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane11, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel56, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addContainerGap(778, Short.MAX_VALUE))
+                    .addGroup(tabQuestionario2Layout.createSequentialGroup()
+                        .addGroup(tabQuestionario2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane12, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel57, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addContainerGap(878, Short.MAX_VALUE))
                     .addGroup(tabQuestionario2Layout.createSequentialGroup()
                         .addComponent(jRadioButton5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jRadioButton6)
-                        .addGap(883, 883, 883))
+                        .addGap(1028, 1028, 1028))
                     .addGroup(tabQuestionario2Layout.createSequentialGroup()
                         .addGroup(tabQuestionario2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
                             .addComponent(jLabel53, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addContainerGap(736, Short.MAX_VALUE))))
-            .addGroup(tabQuestionario2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(tabQuestionario2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addContainerGap(736, Short.MAX_VALUE))
                     .addGroup(tabQuestionario2Layout.createSequentialGroup()
-                        .addComponent(jRadioButton7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jRadioButton8))
-                    .addComponent(jLabel58))
-                .addContainerGap(926, Short.MAX_VALUE))
+                        .addGroup(tabQuestionario2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(tabQuestionario2Layout.createSequentialGroup()
+                                .addComponent(jRadioButton7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jRadioButton8))
+                            .addComponent(jLabel58))
+                        .addContainerGap(926, Short.MAX_VALUE))
+                    .addGroup(tabQuestionario2Layout.createSequentialGroup()
+                        .addGroup(tabQuestionario2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane13, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel59, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addContainerGap(826, Short.MAX_VALUE))))
             .addGroup(tabQuestionario2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(tabQuestionario2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jScrollPane13, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel59, javax.swing.GroupLayout.Alignment.LEADING))
-                .addContainerGap(826, Short.MAX_VALUE))
+                .addComponent(panelCrudEmpresa5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(243, Short.MAX_VALUE))
         );
         tabQuestionario2Layout.setVerticalGroup(
             tabQuestionario2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabQuestionario2Layout.createSequentialGroup()
                 .addComponent(panelCrudEmpresa5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel52)
                 .addGap(2, 2, 2)
                 .addGroup(tabQuestionario2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -460,7 +457,7 @@ public class WinQuestionario2 extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ScrollQuestionario2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1099, Short.MAX_VALUE)
+            .addComponent(ScrollQuestionario2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -477,6 +474,7 @@ public class WinQuestionario2 extends javax.swing.JPanel {
     private javax.swing.JButton btCadastrarQuestionario2;
     private javax.swing.JButton btNovoQuestionario2;
     private javax.swing.JComboBox cbEmpresaQuestionario2;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;

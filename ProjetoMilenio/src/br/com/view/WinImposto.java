@@ -14,6 +14,7 @@ import br.com.dao.DAOEmpresa;
 import br.com.dao.DAOEmpresaImposto;
 import br.com.pojo.Empresa;
 import br.com.pojo.EmpresaImposto;
+import br.com.util.Mensagens;
 import br.com.util.MyUtil;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -78,8 +79,9 @@ public class WinImposto extends javax.swing.JPanel {
         String cmd = e.getActionCommand();
         if(cbEmpresaImposto.getSelectedIndex()>0){
         if (cmd.equalsIgnoreCase("Cadastrar")) {
+            if(empresaImposto == null){
             empresaImposto = getEmpresaImpostoOfPanel();
-            new DAOEmpresaImposto().cadastrar(empresaImposto);
+            new DAOEmpresaImposto().cadastrar(empresaImposto);}else Mensagens.showMessageNaoCadastrar();
         } else if (cmd.equalsIgnoreCase("Excluir")) {
             empresaImposto = getEmpresaImpostoOfPanel();
             new DAOEmpresaImposto().excluir(empresaImposto);
@@ -200,6 +202,7 @@ public class WinImposto extends javax.swing.JPanel {
         btNovoImposto = new javax.swing.JButton();
         cbEmpresaImposto = new javax.swing.JComboBox();
         jLabel63 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
         tfImposto = new javax.swing.JTextField();
         jLabel65 = new javax.swing.JLabel();
@@ -234,6 +237,9 @@ public class WinImposto extends javax.swing.JPanel {
 
         jLabel63.setText("Empresa");
 
+        jLabel12.setFont(new java.awt.Font("Verdana", 1, 11));
+        jLabel12.setText("Impostos -Parte 1");
+
         javax.swing.GroupLayout panelCrudEmpresa6Layout = new javax.swing.GroupLayout(panelCrudEmpresa6);
         panelCrudEmpresa6.setLayout(panelCrudEmpresa6Layout);
         panelCrudEmpresa6Layout.setHorizontalGroup(
@@ -250,7 +256,6 @@ public class WinImposto extends javax.swing.JPanel {
                         .addGap(16, 16, 16)
                         .addGroup(panelCrudEmpresa6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelCrudEmpresa6Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btNovoImposto)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btCadastrarImposto)
@@ -258,31 +263,39 @@ public class WinImposto extends javax.swing.JPanel {
                                 .addComponent(btAtualizarImposto)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btExcluirImposto)
-                                .addGap(91, 91, 91)
-                                .addComponent(jLabel63)
-                                .addGap(26, 26, 26)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(panelCrudEmpresa6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(panelCrudEmpresa6Layout.createSequentialGroup()
+                                        .addComponent(jLabel63)
+                                        .addGap(26, 26, 26))
+                                    .addGroup(panelCrudEmpresa6Layout.createSequentialGroup()
+                                        .addComponent(jLabel12)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                                 .addComponent(cbEmpresaImposto, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel61))))
-                .addContainerGap(607, Short.MAX_VALUE))
+                .addContainerGap(136, Short.MAX_VALUE))
         );
         panelCrudEmpresa6Layout.setVerticalGroup(
             panelCrudEmpresa6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCrudEmpresa6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelCrudEmpresa6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel60)
-                    .addGroup(panelCrudEmpresa6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel61)
-                        .addComponent(jLabel62)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelCrudEmpresa6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btExcluirImposto)
-                    .addComponent(btAtualizarImposto)
-                    .addComponent(btCadastrarImposto)
-                    .addComponent(btNovoImposto)
-                    .addComponent(cbEmpresaImposto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel63))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel12)
+                    .addGroup(panelCrudEmpresa6Layout.createSequentialGroup()
+                        .addGroup(panelCrudEmpresa6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel60)
+                            .addGroup(panelCrudEmpresa6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel61)
+                                .addComponent(jLabel62)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                        .addGroup(panelCrudEmpresa6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btExcluirImposto)
+                            .addComponent(btAtualizarImposto)
+                            .addComponent(btCadastrarImposto)
+                            .addComponent(btNovoImposto)
+                            .addComponent(cbEmpresaImposto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel63))))
+                .addContainerGap())
         );
 
         jLabel64.setText("Imposto");
@@ -340,14 +353,14 @@ public class WinImposto extends javax.swing.JPanel {
                                 .addGap(84, 84, 84)
                                 .addComponent(tfAno, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 747, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(515, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
             .addComponent(panelCrudEmpresa6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         tabEmpresaImpostoLayout.setVerticalGroup(
             tabEmpresaImpostoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabEmpresaImpostoLayout.createSequentialGroup()
                 .addComponent(panelCrudEmpresa6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabEmpresaImpostoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(tabEmpresaImpostoLayout.createSequentialGroup()
                         .addGroup(tabEmpresaImpostoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -374,21 +387,13 @@ public class WinImposto extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1272, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(tabEmpresaImposto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addComponent(tabEmpresaImposto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1502, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(tabEmpresaImposto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(tabEmpresaImposto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -397,6 +402,7 @@ public class WinImposto extends javax.swing.JPanel {
     private javax.swing.JButton btExcluirImposto;
     private javax.swing.JButton btNovoImposto;
     private javax.swing.JComboBox cbEmpresaImposto;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;

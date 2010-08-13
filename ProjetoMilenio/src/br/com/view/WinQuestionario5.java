@@ -15,14 +15,13 @@ import br.com.dao.DAOEmpresa;
 import br.com.dao.DAOQuestionario5;
 import br.com.pojo.Empresa;
 import br.com.pojo.EmpresaQuestionario5;
-import br.com.pojo.EmpresaQuestionario5;
+import br.com.util.Mensagens;
 import br.com.util.MyUtil;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.List;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -31,8 +30,7 @@ import javax.swing.table.DefaultTableModel;
 public class WinQuestionario5 extends javax.swing.JPanel {
 
     /** Creates new form WinQuestionario5 */
-     private EmpresaQuestionario5 q;
-    private DefaultTableModel model;
+    private EmpresaQuestionario5 q;
     private List<Empresa> empresas;
     public WinQuestionario5() {
         initComponents();
@@ -67,6 +65,7 @@ public class WinQuestionario5 extends javax.swing.JPanel {
         btNovoQuestionario4 = new javax.swing.JButton();
         jLabel83 = new javax.swing.JLabel();
         cbEmpresa = new javax.swing.JComboBox();
+        jLabel13 = new javax.swing.JLabel();
         jLabel93 = new javax.swing.JLabel();
         jRadioButton25 = new javax.swing.JRadioButton();
         jRadioButton26 = new javax.swing.JRadioButton();
@@ -99,6 +98,7 @@ public class WinQuestionario5 extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(900, 1700));
 
         panelCrudEmpresa8.setBackground(new java.awt.Color(255, 255, 255));
+        panelCrudEmpresa8.setPreferredSize(new java.awt.Dimension(900, 51));
 
         btCadastrarQuestionario4.setText("Cadastrar");
         btCadastrarQuestionario4.setToolTipText("Realiza a Confirmação do Pagamento definindo exatamente o dia de pagamento."); // NOI18N
@@ -115,32 +115,40 @@ public class WinQuestionario5 extends javax.swing.JPanel {
 
         cbEmpresa.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        jLabel13.setFont(new java.awt.Font("Verdana", 1, 11));
+        jLabel13.setText("Financiamento e Abundancia de recurso pesqueiro");
+
         javax.swing.GroupLayout panelCrudEmpresa8Layout = new javax.swing.GroupLayout(panelCrudEmpresa8);
         panelCrudEmpresa8.setLayout(panelCrudEmpresa8Layout);
         panelCrudEmpresa8Layout.setHorizontalGroup(
             panelCrudEmpresa8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCrudEmpresa8Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(panelCrudEmpresa8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelCrudEmpresa8Layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
-                        .addComponent(jLabel72)
-                        .addGap(45, 45, 45)
-                        .addComponent(jLabel76))
+                        .addContainerGap()
+                        .addGroup(panelCrudEmpresa8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelCrudEmpresa8Layout.createSequentialGroup()
+                                .addGap(83, 83, 83)
+                                .addComponent(jLabel72)
+                                .addGap(45, 45, 45)
+                                .addComponent(jLabel76))
+                            .addGroup(panelCrudEmpresa8Layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(jLabel75))
+                            .addGroup(panelCrudEmpresa8Layout.createSequentialGroup()
+                                .addComponent(btNovoQuestionario4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btCadastrarQuestionario4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btAtualizarQuestionario4)
+                                .addGap(31, 31, 31)
+                                .addComponent(jLabel83)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(panelCrudEmpresa8Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(jLabel75))
-                    .addGroup(panelCrudEmpresa8Layout.createSequentialGroup()
-                        .addComponent(btNovoQuestionario4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btCadastrarQuestionario4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btAtualizarQuestionario4)
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel83)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(597, Short.MAX_VALUE))
+                        .addGap(257, 257, 257)
+                        .addComponent(jLabel13)))
+                .addContainerGap(312, Short.MAX_VALUE))
         );
         panelCrudEmpresa8Layout.setVerticalGroup(
             panelCrudEmpresa8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,15 +158,16 @@ public class WinQuestionario5 extends javax.swing.JPanel {
                     .addComponent(jLabel72)
                     .addGroup(panelCrudEmpresa8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel75)
-                        .addComponent(jLabel76)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel76))
+                    .addComponent(jLabel13))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addGroup(panelCrudEmpresa8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btAtualizarQuestionario4)
                     .addComponent(btCadastrarQuestionario4)
                     .addComponent(jLabel83)
                     .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btNovoQuestionario4))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jLabel93.setText("39 - A empresa financia frota e pescador");
@@ -282,8 +291,8 @@ public class WinQuestionario5 extends javax.swing.JPanel {
         tabQuestionarioLayout.setVerticalGroup(
             tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabQuestionarioLayout.createSequentialGroup()
-                .addComponent(panelCrudEmpresa8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(panelCrudEmpresa8, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel93)
                     .addComponent(jRadioButton25)
@@ -337,12 +346,12 @@ public class WinQuestionario5 extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 843, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1289, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1689, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -359,6 +368,7 @@ public class WinQuestionario5 extends javax.swing.JPanel {
     private javax.swing.JButton btNovoQuestionario4;
     private javax.swing.JComboBox cbEmpresa;
     private javax.swing.JLabel jLabel100;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel76;
@@ -459,6 +469,7 @@ public class WinQuestionario5 extends javax.swing.JPanel {
         bgQuestao45.clearSelection();
         bgQuestao46.clearSelection();
         cbEmpresa.setSelectedIndex(0);
+        q = null;
 
     }
 
@@ -468,8 +479,10 @@ public class WinQuestionario5 extends javax.swing.JPanel {
         String cmd = e.getActionCommand();
 
         if (cmd.equalsIgnoreCase("Cadastrar")) {
+            if(q == null){
             q = getQuestionarioOfPanel();
-            new DAOQuestionario5().cadastrar(q);
+            new DAOQuestionario5().cadastrar(q);}
+            else Mensagens.showMessageNaoCadastrar();
         } else if (cmd.equalsIgnoreCase("Atualizar")) {
             q = getQuestionarioOfPanel();
             new DAOQuestionario5().atualizar(q);

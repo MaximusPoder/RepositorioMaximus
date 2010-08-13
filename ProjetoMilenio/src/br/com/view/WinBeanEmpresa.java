@@ -13,6 +13,7 @@ package br.com.view;
 import br.com.dao.DAOEmpresa;
 
 import br.com.pojo.Empresa;
+import br.com.util.Mensagens;
 import br.com.util.MyUtil;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -20,7 +21,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.List;
-import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
@@ -38,11 +38,12 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
     public WinBeanEmpresa() {
         initComponents();
         dAOEmpresa = new DAOEmpresa();
-
+        
         municipios = dAOEmpresa.getMunicipiosWithQuery();
         MyUtil.refresComboBox(municipios, cbMunicipio);
         initAction();
         initiActionCmd(tabEmpresa);
+        
     }
 
     private void initAction() {
@@ -99,10 +100,13 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
                 }
             });
         } else {
+
             if (cbMunicipio.getSelectedIndex() > 0) {
                 if (cmd.equalsIgnoreCase("Cadastrar")) {
+                    if(empresa == null){
                     empresa = getEmpresaOfPanel();
                     dAOEmpresa.cadastrar(empresa);
+                    } Mensagens.showMessageNaoCadastrar();
                 } else if (cmd.equalsIgnoreCase("Excluir")) {
                     empresa = getEmpresaOfPanel();
                     dAOEmpresa.excluir(empresa);
@@ -117,8 +121,8 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
     }
 
     private void setEmpresaForPanel(Empresa e) {
-        tfColetor.setText(e.getColetor());
 
+        tfColetor.setText(e.getColetor());
         tfNomeEmpresa.setText(e.getNomeEmpresa());
         tfData.setText(MyUtil.dateToString(e.getData()));
         tfEndereco.setText(e.getEndereco());
@@ -199,6 +203,7 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         btPesquisa = new javax.swing.JButton();
         btNovo = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -219,8 +224,8 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
         tfEndereco = new javax.swing.JTextField();
         tfPessoaEntrevistada = new javax.swing.JTextField();
         tfFuncao = new javax.swing.JTextField();
-        tfFone = new javax.swing.JFormattedTextField();
         tfTempoEmpresa = new javax.swing.JTextField();
+        tfFone = new javax.swing.JTextField();
 
         setPreferredSize(new java.awt.Dimension(900, 1300));
 
@@ -242,6 +247,9 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
         btPesquisa.setText("Pesquisar");
 
         btNovo.setText("Novo");
+
+        jLabel12.setFont(new java.awt.Font("Verdana", 1, 11));
+        jLabel12.setText("Dados da Empresa");
 
         javax.swing.GroupLayout panelCrudEmpresaLayout = new javax.swing.GroupLayout(panelCrudEmpresa);
         panelCrudEmpresa.setLayout(panelCrudEmpresaLayout);
@@ -270,8 +278,11 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btExcluir)
                         .addGap(6, 6, 6)
-                        .addComponent(btPesquisa)))
-                .addContainerGap(254, Short.MAX_VALUE))
+                        .addComponent(btPesquisa))
+                    .addGroup(panelCrudEmpresaLayout.createSequentialGroup()
+                        .addGap(230, 230, 230)
+                        .addComponent(jLabel12)))
+                .addContainerGap(500, Short.MAX_VALUE))
         );
         panelCrudEmpresaLayout.setVerticalGroup(
             panelCrudEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -282,7 +293,9 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
                     .addGroup(panelCrudEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel46)
                         .addComponent(jLabel1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addComponent(jLabel12)
+                .addGap(18, 18, 18)
                 .addGroup(panelCrudEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btNovo)
                     .addComponent(btCadastrar)
@@ -329,30 +342,22 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
 
         cbMunicipio.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        try {
-            tfFone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###-####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-
         javax.swing.GroupLayout tabEmpresaLayout = new javax.swing.GroupLayout(tabEmpresa);
         tabEmpresa.setLayout(tabEmpresaLayout);
         tabEmpresaLayout.setHorizontalGroup(
             tabEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabEmpresaLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(tabEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(tabEmpresaLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tfNomeEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(tabEmpresaLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jLabel7)
                         .addGap(18, 18, 18)
                         .addComponent(tfTempoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(tabEmpresaLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jLabel9)
                         .addGap(18, 18, 18)
                         .addComponent(rbComprado)
@@ -361,41 +366,40 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(rbModificado))
                     .addGroup(tabEmpresaLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(tabEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tabEmpresaLayout.createSequentialGroup()
-                                .addGroup(tabEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(tabEmpresaLayout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tfEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(tabEmpresaLayout.createSequentialGroup()
-                                        .addComponent(jLabel8)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tfPessoaEntrevistada)))
-                                .addGap(10, 10, 10)
-                                .addGroup(tabEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(tabEmpresaLayout.createSequentialGroup()
-                                        .addComponent(jLabel10)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tfFone, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(tabEmpresaLayout.createSequentialGroup()
-                                        .addComponent(jLabel11)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tfFuncao, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tabEmpresaLayout.createSequentialGroup()
-                                .addComponent(jLabel2)
+                        .addGroup(tabEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(tabEmpresaLayout.createSequentialGroup()
+                                .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfColetor, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel4)
+                                .addComponent(tfEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(tabEmpresaLayout.createSequentialGroup()
+                                .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfData, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(32, 32, 32)
-                                .addComponent(jLabel3)
+                                .addComponent(tfPessoaEntrevistada)))
+                        .addGap(10, 10, 10)
+                        .addGroup(tabEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(tabEmpresaLayout.createSequentialGroup()
+                                .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cbMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(54, Short.MAX_VALUE))
+                                .addComponent(tfFone, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(tabEmpresaLayout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfFuncao, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(389, Short.MAX_VALUE))
+            .addGroup(tabEmpresaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfColetor, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfData, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cbMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(300, Short.MAX_VALUE))
             .addComponent(panelCrudEmpresa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         tabEmpresaLayout.setVerticalGroup(
@@ -410,7 +414,7 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
                     .addComponent(tfData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(cbMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel5)
                     .addComponent(tfNomeEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -436,16 +440,16 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
                     .addComponent(rbComprado)
                     .addComponent(rbConstruido)
                     .addComponent(rbModificado))
-                .addContainerGap(1232, Short.MAX_VALUE))
+                .addContainerGap(1231, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 654, Short.MAX_VALUE)
+            .addGap(0, 900, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(tabEmpresa, javax.swing.GroupLayout.DEFAULT_SIZE, 654, Short.MAX_VALUE))
+                .addComponent(tabEmpresa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -467,6 +471,7 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -485,7 +490,7 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
     private javax.swing.JTextField tfColetor;
     private javax.swing.JFormattedTextField tfData;
     private javax.swing.JTextField tfEndereco;
-    private javax.swing.JFormattedTextField tfFone;
+    private javax.swing.JTextField tfFone;
     private javax.swing.JTextField tfFuncao;
     private javax.swing.JTextField tfNomeEmpresa;
     private javax.swing.JTextField tfPessoaEntrevistada;

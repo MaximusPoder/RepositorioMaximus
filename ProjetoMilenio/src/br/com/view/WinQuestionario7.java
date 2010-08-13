@@ -15,6 +15,7 @@ import br.com.dao.DAOQuestionario7;
 
 import br.com.pojo.Empresa;
 import br.com.pojo.EmpresaQuestionario7;
+import br.com.util.Mensagens;
 import br.com.util.MyUtil;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -33,12 +34,7 @@ import javax.swing.table.DefaultTableModel;
 public class WinQuestionario7 extends javax.swing.JPanel {
 
     /** Creates new form WinQuestionario7 */
-    private String textoHTMLQ60;
-    private String textoHTMLQ61;
-    private String textoHTMLQ62;
-    private String textoHTMLQ63;
     private EmpresaQuestionario7 empresaQuestionario7;
-    private DefaultTableModel model;
     private List<Empresa> empresas;
 
     public WinQuestionario7() {
@@ -107,6 +103,7 @@ public class WinQuestionario7 extends javax.swing.JPanel {
         MyUtil.clearCheckBox(tabQuestionario);
         bgQuestao56.clearSelection();
         bgQuestao58.clearSelection();
+        empresaQuestionario7 = null;
     }
 
     /*Metodos Actions do 8° Tab = Questionario 3*/
@@ -115,8 +112,10 @@ public class WinQuestionario7 extends javax.swing.JPanel {
         String cmd = e.getActionCommand();
 
         if (cmd.equalsIgnoreCase("Cadastrar")) {
+            if(empresaQuestionario7 == null){
             empresaQuestionario7 = getQuestionario7OfPanel();
-            new DAOQuestionario7().cadastrar(empresaQuestionario7);
+            new DAOQuestionario7().cadastrar(empresaQuestionario7);}
+            else Mensagens.showMessageNaoCadastrar();
         } else if (cmd.equalsIgnoreCase("Atualizar")) {
             empresaQuestionario7 = getQuestionario7OfPanel();
             new DAOQuestionario7().atualizar(empresaQuestionario7);
@@ -213,6 +212,7 @@ public class WinQuestionario7 extends javax.swing.JPanel {
         btNovo = new javax.swing.JButton();
         jLabel35 = new javax.swing.JLabel();
         cbEmpresa = new javax.swing.JComboBox();
+        jLabel13 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         ckConsumidor = new javax.swing.JCheckBox();
         ckOutro = new javax.swing.JCheckBox();
@@ -282,6 +282,7 @@ public class WinQuestionario7 extends javax.swing.JPanel {
         tabQuestionario.setPreferredSize(new java.awt.Dimension(990, 2300));
 
         panelCrudEmpresa3.setBackground(new java.awt.Color(255, 255, 255));
+        panelCrudEmpresa3.setPreferredSize(new java.awt.Dimension(500, 51));
 
         btCadastrar.setText("Cadastrar");
         btCadastrar.setToolTipText("Realiza a Confirmação do Pagamento definindo exatamente o dia de pagamento."); // NOI18N
@@ -298,6 +299,9 @@ public class WinQuestionario7 extends javax.swing.JPanel {
 
         cbEmpresa.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        jLabel13.setFont(new java.awt.Font("Verdana", 1, 11));
+        jLabel13.setText("Outras questões");
+
         javax.swing.GroupLayout panelCrudEmpresa3Layout = new javax.swing.GroupLayout(panelCrudEmpresa3);
         panelCrudEmpresa3.setLayout(panelCrudEmpresa3Layout);
         panelCrudEmpresa3Layout.setHorizontalGroup(
@@ -306,42 +310,52 @@ public class WinQuestionario7 extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
-                        .addComponent(jLabel25)
-                        .addGap(45, 45, 45)
-                        .addComponent(jLabel28))
-                    .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(jLabel49))
-                    .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
                         .addComponent(btNovo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btCadastrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btAtualizar)
-                        .addGap(31, 31, 31)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 238, Short.MAX_VALUE)
                         .addComponent(jLabel35)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(490, Short.MAX_VALUE))
+                        .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(174, 174, 174))
+                    .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
+                        .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
+                                .addGap(83, 83, 83)
+                                .addComponent(jLabel25)
+                                .addGap(45, 45, 45)
+                                .addComponent(jLabel28))
+                            .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(jLabel49)))
+                        .addContainerGap(743, Short.MAX_VALUE))))
+            .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
+                .addGap(369, 369, 369)
+                .addComponent(jLabel13)
+                .addContainerGap(406, Short.MAX_VALUE))
         );
         panelCrudEmpresa3Layout.setVerticalGroup(
             panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel25)
-                    .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel49)
-                        .addComponent(jLabel28)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btAtualizar)
-                    .addComponent(btCadastrar)
-                    .addComponent(btNovo)
-                    .addComponent(jLabel35)
-                    .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel13)
+                    .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
+                        .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel25)
+                            .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel49)
+                                .addComponent(jLabel28)))
+                        .addGap(18, 18, 18)
+                        .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btAtualizar)
+                            .addComponent(btCadastrar)
+                            .addComponent(btNovo)
+                            .addComponent(jLabel35)
+                            .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jLabel31.setText("55 - Quais os Principais clientes");
@@ -451,114 +465,116 @@ public class WinQuestionario7 extends javax.swing.JPanel {
         tabQuestionario.setLayout(tabQuestionarioLayout);
         tabQuestionarioLayout.setHorizontalGroup(
             tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelCrudEmpresa3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(tabQuestionarioLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
                 .addGroup(tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(tabQuestionarioLayout.createSequentialGroup()
-                            .addComponent(jLabel54)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(tfQuestao63_0, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabQuestionarioLayout.createSequentialGroup()
-                                .addComponent(jLabel52)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(tfQuestao63_2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabQuestionarioLayout.createSequentialGroup()
-                                .addComponent(jLabel53)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfQuestao63_1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(tabQuestionarioLayout.createSequentialGroup()
-                            .addComponent(jLabel48)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(tfQuestao62_0, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabQuestionarioLayout.createSequentialGroup()
-                                .addComponent(jLabel51)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(tfQuestao62_2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabQuestionarioLayout.createSequentialGroup()
-                                .addComponent(jLabel50)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfQuestao62_1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(tabQuestionarioLayout.createSequentialGroup()
-                        .addComponent(jLabel47)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfQuestao61_1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jScrollPane12, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel39, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane13, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel40, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane14, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel41, javax.swing.GroupLayout.Alignment.LEADING))
-                    .addComponent(jLabel38)
-                    .addComponent(jLabel37)
-                    .addComponent(jLabel36)
-                    .addGroup(tabQuestionarioLayout.createSequentialGroup()
-                        .addComponent(jLabel46)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfQuestao61_0, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel34)
-                    .addGroup(tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel33, javax.swing.GroupLayout.Alignment.LEADING))
-                    .addComponent(jRadioButton41)
-                    .addComponent(jRadioButton37)
-                    .addComponent(jRadioButton38)
-                    .addComponent(jLabel101)
-                    .addComponent(jRadioButton39)
-                    .addComponent(jRadioButton40)
-                    .addGroup(tabQuestionarioLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(tfQuestao57, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jRadioButton36)
-                    .addComponent(jRadioButton34)
-                    .addComponent(jLabel100)
-                    .addComponent(jRadioButton33)
-                    .addComponent(jRadioButton35)
-                    .addComponent(jLabel31)
-                    .addGroup(tabQuestionarioLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
                         .addGroup(tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(tabQuestionarioLayout.createSequentialGroup()
+                                    .addComponent(jLabel54)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(tfQuestao63_0, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabQuestionarioLayout.createSequentialGroup()
+                                        .addComponent(jLabel52)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(tfQuestao63_2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabQuestionarioLayout.createSequentialGroup()
+                                        .addComponent(jLabel53)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(tfQuestao63_1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(tabQuestionarioLayout.createSequentialGroup()
+                                    .addComponent(jLabel48)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(tfQuestao62_0, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabQuestionarioLayout.createSequentialGroup()
+                                        .addComponent(jLabel51)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(tfQuestao62_2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabQuestionarioLayout.createSequentialGroup()
+                                        .addComponent(jLabel50)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(tfQuestao62_1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(tabQuestionarioLayout.createSequentialGroup()
+                                .addComponent(jLabel47)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfQuestao61_1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jScrollPane12, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel39, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jScrollPane13, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel40, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jScrollPane14, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel41, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(jLabel38)
+                            .addComponent(jLabel37)
+                            .addComponent(jLabel36)
+                            .addGroup(tabQuestionarioLayout.createSequentialGroup()
+                                .addComponent(jLabel46)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfQuestao61_0, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel34)
+                            .addGroup(tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel33, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(jRadioButton41)
+                            .addComponent(jRadioButton37)
+                            .addComponent(jRadioButton38)
+                            .addComponent(jLabel101)
+                            .addComponent(jRadioButton39)
+                            .addComponent(jRadioButton40)
+                            .addGroup(tabQuestionarioLayout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(tfQuestao57, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jRadioButton36)
+                            .addComponent(jRadioButton34)
+                            .addComponent(jLabel100)
+                            .addComponent(jRadioButton33)
+                            .addComponent(jRadioButton35)
+                            .addComponent(jLabel31)
                             .addGroup(tabQuestionarioLayout.createSequentialGroup()
                                 .addGroup(tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ckRest)
-                                    .addComponent(ckConsumidor))
-                                .addGap(18, 18, 18))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabQuestionarioLayout.createSequentialGroup()
-                                .addComponent(ckSuper)
-                                .addGap(4, 4, 4)))
-                        .addGroup(tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(ckRevendedores, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ckOutro, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ckFeiras, javax.swing.GroupLayout.Alignment.LEADING)))
-                    .addGroup(tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(tabQuestionarioLayout.createSequentialGroup()
-                            .addComponent(jLabel42)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(tfQuestao60_0, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabQuestionarioLayout.createSequentialGroup()
-                                .addComponent(jLabel45)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(tfQuestao60_3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabQuestionarioLayout.createSequentialGroup()
-                                .addComponent(jLabel44)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(tfQuestao60_2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabQuestionarioLayout.createSequentialGroup()
-                                .addComponent(jLabel43)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfQuestao60_1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(527, Short.MAX_VALUE))
+                                    .addGroup(tabQuestionarioLayout.createSequentialGroup()
+                                        .addGroup(tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(ckRest)
+                                            .addComponent(ckConsumidor))
+                                        .addGap(18, 18, 18))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabQuestionarioLayout.createSequentialGroup()
+                                        .addComponent(ckSuper)
+                                        .addGap(4, 4, 4)))
+                                .addGroup(tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(ckRevendedores, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ckOutro, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ckFeiras, javax.swing.GroupLayout.Alignment.LEADING)))
+                            .addGroup(tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(tabQuestionarioLayout.createSequentialGroup()
+                                    .addComponent(jLabel42)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(tfQuestao60_0, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabQuestionarioLayout.createSequentialGroup()
+                                        .addComponent(jLabel45)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(tfQuestao60_3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabQuestionarioLayout.createSequentialGroup()
+                                        .addComponent(jLabel44)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(tfQuestao60_2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabQuestionarioLayout.createSequentialGroup()
+                                        .addComponent(jLabel43)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(tfQuestao60_1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addComponent(panelCrudEmpresa3, javax.swing.GroupLayout.PREFERRED_SIZE, 881, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
         tabQuestionarioLayout.setVerticalGroup(
             tabQuestionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabQuestionarioLayout.createSequentialGroup()
-                .addComponent(panelCrudEmpresa3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panelCrudEmpresa3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel31)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -673,7 +689,7 @@ public class WinQuestionario7 extends javax.swing.JPanel {
                 .addComponent(jLabel41)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(701, Short.MAX_VALUE))
+                .addContainerGap(679, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(tabQuestionario);
@@ -682,11 +698,11 @@ public class WinQuestionario7 extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 737, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1406, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1300, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -705,6 +721,7 @@ public class WinQuestionario7 extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel101;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel31;
