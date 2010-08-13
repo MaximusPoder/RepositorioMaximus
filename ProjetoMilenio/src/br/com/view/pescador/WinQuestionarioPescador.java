@@ -28,9 +28,15 @@ import javax.swing.UnsupportedLookAndFeelException;
 public class WinQuestionarioPescador extends javax.swing.JFrame {
 
     /** Creates new form WinQuestionarioPescador */
+     private Integer index = 1;
+    private final int max = 5;
+    private final int min = 2;
+
     public WinQuestionarioPescador() {
         initLookAndfeel();
         initComponents();
+        btAnterior.setEnabled(false);
+        ChangePanel("", new WinPanelPescador());
         Insets in = Toolkit.getDefaultToolkit().getScreenInsets(this.getGraphicsConfiguration());
         Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
         int width = d.width - (in.left + in.top);
@@ -86,6 +92,32 @@ public class WinQuestionarioPescador extends javax.swing.JFrame {
         }
     }
 
+     private void updatePanel(Integer index) {
+        switch (index) {
+            case 1: {
+                  ChangePanel("", new WinPanelPescador());
+                break;
+            }
+            case 2: {
+               ChangePanel("", new WinComposicaoPescaria());
+                break;
+            }
+            case 3: {
+                  ChangePanel("", new WinDadosEmbarcacao());
+                break;
+            }
+            case 4: {
+                 ChangePanel("", new WinPescadorEspecies());
+                break;
+            }
+            case 5: {
+                  ChangePanel("", new WinPercepcaoAmbiental());
+                break;
+            }
+
+        }
+    }
+
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -96,11 +128,8 @@ public class WinQuestionarioPescador extends javax.swing.JFrame {
     private void initComponents() {
 
         panelDireito = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btAnterior = new javax.swing.JButton();
+        btProximo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -111,45 +140,24 @@ public class WinQuestionarioPescador extends javax.swing.JFrame {
         panelDireito.setLayout(panelDireitoLayout);
         panelDireitoLayout.setHorizontalGroup(
             panelDireitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1013, Short.MAX_VALUE)
+            .addGap(0, 931, Short.MAX_VALUE)
         );
         panelDireitoLayout.setVerticalGroup(
             panelDireitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 616, Short.MAX_VALUE)
         );
 
-        jButton1.setText("Passo 1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btAnterior.setText("Anterior");
+        btAnterior.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btAnteriorActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Passo 2");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btProximo.setText("Proximo");
+        btProximo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton3.setText("Passo 3");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        jButton4.setText("Passo 4");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-
-        jButton5.setText("Passo 5");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btProximoActionPerformed(evt);
             }
         });
 
@@ -157,67 +165,59 @@ public class WinQuestionarioPescador extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton5)
-                    .addComponent(jButton4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(panelDireito, javax.swing.GroupLayout.PREFERRED_SIZE, 1013, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(btAnterior)
+                .addGap(18, 18, 18)
+                .addComponent(btProximo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addComponent(panelDireito, javax.swing.GroupLayout.PREFERRED_SIZE, 931, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addComponent(jButton1)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addGap(18, 18, 18)
-                .addComponent(jButton3)
-                .addGap(21, 21, 21)
-                .addComponent(jButton4)
-                .addGap(18, 18, 18)
-                .addComponent(jButton5)
-                .addContainerGap(322, Short.MAX_VALUE))
             .addComponent(panelDireito, javax.swing.GroupLayout.DEFAULT_SIZE, 616, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(137, 137, 137)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btAnterior)
+                    .addComponent(btProximo))
+                .addContainerGap(456, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAnteriorActionPerformed
         // TODO add your handling code here:
-        ChangePanel("", new WinPanelPescador());
-    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        if (index-- == min) {
+            updatePanel(index);
+            btAnterior.setEnabled(false);
+
+        } else {
+            updatePanel(index);
+        }
+
+        btProximo.setEnabled(true);
+}//GEN-LAST:event_btAnteriorActionPerformed
+
+    private void btProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btProximoActionPerformed
         // TODO add your handling code here:
-        ChangePanel("", new WinComposicaoPescaria());
-    }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        ChangePanel("", new WinDadosEmbarcacao());
-    }//GEN-LAST:event_jButton3ActionPerformed
+        if (index++ == max) {
+            updatePanel(index);
+            btProximo.setEnabled(false);
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        ChangePanel("", new WinPescadorEspecies());
-    }//GEN-LAST:event_jButton4ActionPerformed
+        } else {
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-        ChangePanel("", new WinPercepcaoAmbiental());
-    }//GEN-LAST:event_jButton5ActionPerformed
+            updatePanel(index);
+        }
+        btAnterior.setEnabled(true);
+    }//GEN-LAST:event_btProximoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton btAnterior;
+    private javax.swing.JButton btProximo;
     private javax.swing.JPanel panelDireito;
     // End of variables declaration//GEN-END:variables
 }

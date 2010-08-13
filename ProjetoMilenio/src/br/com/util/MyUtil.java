@@ -28,6 +28,18 @@ import javax.swing.table.DefaultTableModel;
 
 public class MyUtil {
 
+    public static  void setEnableFields(Boolean b,JTextField...fields)
+    {
+        for (JTextField tf : fields) {
+            tf.setEnabled(b);
+        }
+    }
+    public static  void setEnableFields(Boolean b,JTextArea...fields)
+    {
+        for (JTextArea tf : fields) {
+            tf.setEnabled(b);
+        }
+    }
     public static String getStringOfFields(JTextField... fields)
     {
         String texto = "";
@@ -327,6 +339,9 @@ public class MyUtil {
         }
 
     }
+
+
+   
 
       /**
      * Seta o buttom group e retorna a uma string na resposta, caso exista

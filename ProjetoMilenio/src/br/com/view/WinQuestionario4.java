@@ -308,9 +308,19 @@ if(cbEmpresa.getSelectedIndex()>0){
 
         bgQuestao32.add(jRadioButton19);
         jRadioButton19.setText("Sim");
+        jRadioButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton19ActionPerformed(evt);
+            }
+        });
 
         bgQuestao32.add(jRadioButton20);
         jRadioButton20.setText("Não");
+        jRadioButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton20ActionPerformed(evt);
+            }
+        });
 
         jLabel88.setText("Porque? ");
 
@@ -398,27 +408,27 @@ if(cbEmpresa.getSelectedIndex()>0){
             .addGroup(tabQuestionario4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel96)
-                .addContainerGap(885, Short.MAX_VALUE))
+                .addContainerGap(3737, Short.MAX_VALUE))
             .addGroup(tabQuestionario4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(627, Short.MAX_VALUE))
+                .addContainerGap(3479, Short.MAX_VALUE))
             .addGroup(tabQuestionario4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(tabQuestionario4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel97)
                     .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(627, Short.MAX_VALUE))
+                .addContainerGap(3479, Short.MAX_VALUE))
             .addGroup(tabQuestionario4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(tabQuestionario4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel98)
                     .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(627, Short.MAX_VALUE))
+                .addContainerGap(3479, Short.MAX_VALUE))
             .addGroup(tabQuestionario4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel99)
-                .addContainerGap(980, Short.MAX_VALUE))
+                .addContainerGap(3832, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabQuestionario4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(tabQuestionario4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -438,10 +448,10 @@ if(cbEmpresa.getSelectedIndex()>0){
                 .addComponent(jRadioButton27)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRadioButton28)
-                .addContainerGap(613, Short.MAX_VALUE))
+                .addContainerGap(3465, Short.MAX_VALUE))
             .addGroup(tabQuestionario4Layout.createSequentialGroup()
                 .addComponent(panelCrudEmpresa8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(2942, Short.MAX_VALUE))
         );
         tabQuestionario4Layout.setVerticalGroup(
             tabQuestionario4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -516,6 +526,17 @@ if(cbEmpresa.getSelectedIndex()>0){
             .addComponent(ScrollQuestionario4, javax.swing.GroupLayout.DEFAULT_SIZE, 1300, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jRadioButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton20ActionPerformed
+        // TODO add your handling code here:
+         MyUtil.setEnableFields(Boolean.FALSE, tfQuestao32);
+    }//GEN-LAST:event_jRadioButton20ActionPerformed
+
+    private void jRadioButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton19ActionPerformed
+        // TODO add your handling code here:
+         MyUtil.setEnableFields(Boolean.TRUE, tfQuestao32);
+    }//GEN-LAST:event_jRadioButton19ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane ScrollQuestionario4;
     private javax.swing.ButtonGroup bgQuestao32;

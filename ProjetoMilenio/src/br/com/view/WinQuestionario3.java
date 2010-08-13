@@ -158,6 +158,7 @@ public class WinQuestionario3 extends javax.swing.JPanel {
 
     private void initAction() {
 
+
         btAddLinhaQ3.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
@@ -422,15 +423,35 @@ public class WinQuestionario3 extends javax.swing.JPanel {
 
         bgQuestao25.add(jRadioButton9);
         jRadioButton9.setText("Sim");
+        jRadioButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton9ActionPerformed(evt);
+            }
+        });
 
         bgQuestao25.add(jRadioButton10);
         jRadioButton10.setText("Não");
+        jRadioButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton10ActionPerformed(evt);
+            }
+        });
 
         bgQuestao26.add(jRadioButton13);
         jRadioButton13.setText("Sim");
+        jRadioButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton13ActionPerformed(evt);
+            }
+        });
 
         bgQuestao26.add(jRadioButton14);
         jRadioButton14.setText("Não");
+        jRadioButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton14ActionPerformed(evt);
+            }
+        });
 
         jLabel79.setText("28 - As universidades e outras intituições de pesquisa tem colaborado (voluntariamente ou através de demanda da empresa) com o desenvolvimento de: ");
 
@@ -444,15 +465,26 @@ public class WinQuestionario3 extends javax.swing.JPanel {
 
         bgQuestao30.add(jRadioButton15);
         jRadioButton15.setText("Sim");
+        jRadioButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton15ActionPerformed(evt);
+            }
+        });
 
         bgQuestao30.add(jRadioButton16);
         jRadioButton16.setText("Não");
+        jRadioButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton16ActionPerformed(evt);
+            }
+        });
 
         jLabel86.setText("Relacionar:");
 
         jLabel90.setText("Se Sim, Quais?");
 
         tfQuestao30.setColumns(20);
+        tfQuestao30.setLineWrap(true);
         tfQuestao30.setRows(5);
         jScrollPane24.setViewportView(tfQuestao30);
 
@@ -797,6 +829,41 @@ public class WinQuestionario3 extends javax.swing.JPanel {
                 .addComponent(ScrollQuestionario3, javax.swing.GroupLayout.DEFAULT_SIZE, 1700, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jRadioButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton10ActionPerformed
+        // TODO add your handling code here:
+      
+        MyUtil.setEnableFields(Boolean.FALSE, tfQuestao25_0, tfQuestao25_1, tfQuestao25_2);
+
+    }//GEN-LAST:event_jRadioButton10ActionPerformed
+
+    private void jRadioButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton9ActionPerformed
+        // TODO add your handling code here:
+         MyUtil.setEnableFields(Boolean.TRUE, tfQuestao25_0, tfQuestao25_1, tfQuestao25_2);
+    }//GEN-LAST:event_jRadioButton9ActionPerformed
+
+    private void jRadioButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton13ActionPerformed
+        // TODO add your handling code here:
+         MyUtil.setEnableFields(Boolean.TRUE, tfQuestao26_0, tfQuestao26_1, tfQuestao26_2);
+         MyUtil.setEnableFields(Boolean.FALSE, tfQuestao26_3);
+    }//GEN-LAST:event_jRadioButton13ActionPerformed
+
+    private void jRadioButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton14ActionPerformed
+        // TODO add your handling code here:
+        MyUtil.setEnableFields(Boolean.FALSE, tfQuestao26_0, tfQuestao26_1, tfQuestao26_2);
+         MyUtil.setEnableFields(Boolean.TRUE, tfQuestao26_3);
+    }//GEN-LAST:event_jRadioButton14ActionPerformed
+
+    private void jRadioButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton16ActionPerformed
+        // TODO add your handling code here:
+         MyUtil.setEnableFields(false, tfQuestao30);
+    }//GEN-LAST:event_jRadioButton16ActionPerformed
+
+    private void jRadioButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton15ActionPerformed
+        // TODO add your handling code here:
+         MyUtil.setEnableFields(Boolean.TRUE, tfQuestao30);
+    }//GEN-LAST:event_jRadioButton15ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane ScrollQuestionario3;
     private javax.swing.ButtonGroup bgQuestao25;
