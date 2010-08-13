@@ -111,7 +111,6 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         tfOrgaoCarteiraPescado = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
-        cbRelacaoTrabalho = new javax.swing.JComboBox();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
@@ -192,6 +191,11 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         botao_cadastrar = new javax.swing.JButton();
         botao_Excluir = new javax.swing.JButton();
         botao_alterar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        ckbFamiliar = new javax.swing.JCheckBox();
+        ckbArtesanalComVizinho = new javax.swing.JCheckBox();
+        ckbArmadorEmbarcacao = new javax.swing.JCheckBox();
+        ckbAssalariado = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -268,8 +272,6 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         jLabel26.setText("Qual Orgão?");
 
         jLabel27.setText("Relação de Trabalho:");
-
-        cbRelacaoTrabalho.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "FAMILIAR", "ARTESANAL COM VIZINHO,AMIGOS,ETC", "ARMADOR OU EMBARCADO", "ASSALARIADO(CARTEIRA ASSINADA)" }));
 
         jLabel28.setText("Possui assisência ao plano de saúde.Especificar:");
 
@@ -456,6 +458,21 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
         botao_alterar.setText("Alterar");
 
+        jButton1.setText("Add");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        ckbFamiliar.setText("Familiar");
+
+        ckbArtesanalComVizinho.setText("Artesanal com vizinho, amigos,etc");
+
+        ckbArmadorEmbarcacao.setText("Armador ou Embarcação");
+
+        ckbAssalariado.setText("Assalariado");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -508,8 +525,14 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                                 .addComponent(tfTipoConstrucao, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel27)
-                                .addGap(18, 18, 18)
-                                .addComponent(cbRelacaoTrabalho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(ckbFamiliar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(ckbArtesanalComVizinho)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(ckbArmadorEmbarcacao)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(ckbAssalariado))
                             .addComponent(jLabel28)
                             .addComponent(jLabel29)
                             .addComponent(jLabel30)
@@ -598,7 +621,10 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(tfNetos, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 679, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton1))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel36)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -802,7 +828,10 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel27)
-                            .addComponent(cbRelacaoTrabalho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ckbFamiliar)
+                            .addComponent(ckbArtesanalComVizinho)
+                            .addComponent(ckbArmadorEmbarcacao)
+                            .addComponent(ckbAssalariado))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel28)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -836,7 +865,9 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel39)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -897,7 +928,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                 .addComponent(jLabel54)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -912,7 +943,9 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1760, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 3016, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -999,7 +1032,10 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
             cbEstadoCivil.setSelectedIndex(0);
             cbLocalMoradia.setSelectedIndex(0);
             cbQualidadeMoradia.setSelectedIndex(0);
-            cbRelacaoTrabalho.setSelectedIndex(0);
+            ckbFamiliar.setSelected(false);
+            ckbArtesanalComVizinho.setSelected(false);
+            ckbArmadorEmbarcacao.setSelected(false);
+            ckbAssalariado.setSelected(false);
             ckbInss.setSelected(false);
             ckbColonia.setSelected(false);
             ckbAlgumaAssociacao.setSelected(false);
@@ -1010,7 +1046,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
     private void botao_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_cadastrarActionPerformed
         // Para Gravar no banco de dados
-      int[] ckb = new int[7];
+      int[] ckb = new int[11];
       if (ckbInss.isSelected()){
         ckb[0]=1;
       } else
@@ -1039,17 +1075,34 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
           ckb[6]=1;
        }else
           ckb[6]=0;
+      if (ckbFamiliar.isSelected()){
+           ckb[7]=1;
+      }else
+          ckb[7]=0;
+       if (ckbArtesanalComVizinho.isSelected()){
+            ckb[8]=1;
+       }else
+           ckb[8]=0;
+       if (ckbArmadorEmbarcacao.isSelected()){
+            ckb[9]=1;
+        }else
+            ckb[9]=0;
+        if (ckbAssalariado.isSelected()){
+            ckb[10]=1;
+        }else
+            ckb[10]=0;
         try {
-          String sqlinsert = "insert into comunidade_questionariomarcadofeira"
-             + "(id_marcado,nome,apelido,naturalidade,"
-             + "sexo,idade.atividadeprincipal,atividadesecundaria,"
-             + "numero_boxe,quantidade_boxe,estado_civil,composicao_familiar,"
-             + "escolaridade,porque_parou,local_moradia,qualidade_moradia,"
-             + "tipo_construcao,possui_registro_inss,possui_registro_colonia,qual_colonia,"
-             + "alguma_associacao,qual_associacao,possui_carta_pescador,qual_orgao_pesca,"
-             + "relacao_de_trabalho,atividade_entrevistado,atividade_esposa,atividae_filhos,"
-             + "atividade_netos,tempo_diario_trabalho,tempo_na_atividade,criancar_envolvidas_pesca) values('" +
-              cbMunicipio.getSelectedIndex()+"',"+
+          String sqlinsert = "insert into mercado_questionario"
+             + "(nome_municipio,e_mercado,e_fera_livre,nome,apelido,naturalidade,"
+             + "sexo,idade,atividade_principal,atividade_secundaria,"
+             + "boxe_local,quantos_possui,estado_civil,composicao_familiar,"
+             + "escolaridade,pq_parou,local_moradia,qualidade_moradia,"
+             + "tipo_construcao,inss,na_colonia,qual_colonia,"
+             + "alguma_associacao,qual_associacao,carteira_pescador,orgao_carteira_pesca,relacao_trab_familiar"
+             + ",relacao_trab_artesanal,relacao_trab_armador,relacao_trab_assalariado,plano_saude,atividade_renda_familiar,entrevistado,esposa,filhos,"
+             + "netos,tempo_diario_trabalho,periodo_atividade,periodo_atividade"
+             + "questao1,questao2,questao3,questao4,questao5,questao6,questao7,questao8,questao9,questao9,questao10,questao11 ) values('" +
+              cbMunicipio.getSelectedItem()+"',"+
               ckb[5]+","+
               ckb[6]+",'"+
               tfNome.getText()+"','"+
@@ -1073,15 +1126,31 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
               tfQualColonia.getText()+"','"+
               tfAlgumaAssociacao.getText()+"',"+
               ckb[2]+",'"+
-              tfOrgaoCarteiraPescado.getText()+"','"+
+              tfOrgaoCarteiraPescado.getText()+"',"+
+              ckb[7]+","+
+              ckb[8]+","+
+              ckb[9]+","+
+              ckb[10]+",'"+
+              tpPlanoSaude.getText()+"','"+
+              tpRendaFamiliar.getText()+"','"+
               tfEntrevistado.getText()+"','"+
               tfEsposa.getText()+"','"+
               tfFilhos.getText()+"','"+
               tfNetos.getText()+"',"+
               tfTempoTrabalho.getText()+","+
               tfTempoAtividade.getText()+","+
-            ckb[4]+",'"+
+              tpQuestao1.getText()+"','"+
+              tpQuestao2.getText()+"','"+
+              tpQuestao3.getText()+"','"+
+              tpQuestao4.getText()+"','"+
+              tpQuestao5.getText()+"','"+
+              tpQuestao6.getText()+"','"+
+              tpQuestao7.getText()+"','"+
+              ckb[4]+
+              tpQuestao9.getText()+"','"+
+              tpQuestao10.getText()+"','"+")";
 
+            System.out.println(sqlinsert);
             if (conexao.salvar(sqlinsert)) {
                 JOptionPane.showMessageDialog(null,"Cadastrado com sucesso");
                 //agora é hora de atualizar o resultset
@@ -1097,26 +1166,43 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_cadastrarActionPerformed
 
     private void botao_ExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_ExcluirActionPerformed
-        string sql;
+        String sql;
         try {
-           sql = "select * from select * from where id_mercado=" + conexao.resultSet.getString("id_mercado");
+           sql = "select * from mercado_questionario where id_mercado=" + conexao.resultSet.getString("id_mercado");
            conexao.execute(sql);
            conexao.resultSet.first();
-           string name="delete o mercado/feira : "+conexao.resultSet.getString("nome")+" ?";
+           String name="delete o mercado/feira : "+conexao.resultSet.getString("nome")+" ?";
            int opcao_escolha=JOptionPane.showConfirmDialog(null,name,"Exclusão",JOptionPane.YES_NO_OPTION );
            if (opcao_escolha == JOptionPane.YES_OPTION)
            {
-            sql = "DELETE FROM comunidade_questionariomarcadofeira  Where id_mercado ="+conexao.resultSet.getString("id_mercado");
+                sql = "DELETE FROM mercado_questionario Where id_mercado ="+conexao.resultSet.getString("id_mercado");
+                if (conexao.salvar(sql)) {
+                        JOptionPane.showMessageDialog(null,"Exclusão realizada com sucesso");
+                        //atualiza o ResultSet
+                        conexao.execute("select * from mercado_questionario");
+                        conexao.resultSet.first();
+                        exibir_dados();
+                    }
+                } else{
+                    conexao.execute("select * from mercado_questionario");
+                    conexao.resultSet.first();
+                    exibir_dados();
+                }
 
+            }catch (Exception e) {
+                System.out.println(e);
+            }
+    }//GEN-LAST:event_botao_ExcluirActionPerformed
 
-
-
-           }
-
-
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            String id = conexao.resultSet.getString("id_mercado").toString();
+            
+            new addMaterial(id).setVisible(true);
+            
         } catch (Exception e) {
         }
-    }//GEN-LAST:event_botao_ExcluirActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
     * @param args the command line arguments
@@ -1144,13 +1230,17 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
     private javax.swing.JComboBox cbLocalMoradia;
     private javax.swing.JComboBox cbMunicipio;
     private javax.swing.JComboBox cbQualidadeMoradia;
-    private javax.swing.JComboBox cbRelacaoTrabalho;
     private javax.swing.JComboBox cbSexo;
     private javax.swing.JCheckBox ckbAlgumaAssociacao;
+    private javax.swing.JCheckBox ckbArmadorEmbarcacao;
+    private javax.swing.JCheckBox ckbArtesanalComVizinho;
+    private javax.swing.JCheckBox ckbAssalariado;
     private javax.swing.JCheckBox ckbCarteiraPescado;
     private javax.swing.JCheckBox ckbColonia;
     private javax.swing.JCheckBox ckbCriancaEnvolvidas;
+    private javax.swing.JCheckBox ckbFamiliar;
     private javax.swing.JCheckBox ckbInss;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
