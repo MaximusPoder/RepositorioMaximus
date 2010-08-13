@@ -14,7 +14,6 @@ import br.com.dao.DAOEmpresa;
 import br.com.dao.DAOEmpresaEB;
 import br.com.pojo.Empresa;
 import br.com.pojo.EmpresaEB;
-import br.com.util.JTableRenderer;
 import br.com.util.MyUtil;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -27,7 +26,6 @@ import java.util.List;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumnModel;
 
 /**
  *
@@ -50,14 +48,7 @@ public class WinEB extends javax.swing.JPanel {
     }
 
     private void initAction() {
-
-
-        btNovoEB.addActionListener(new ActionListener() {
-
-            public void actionPerformed(ActionEvent e) {
-                clearTab(tabEspecieBeneficiada);
-            }
-        });
+        btNovoEB.addActionListener(getActionListenerEB());
         btCadastrarEB.addActionListener(getActionListenerEB());
         btAtualizarEB.addActionListener(getActionListenerEB());
         btExcluirEB.addActionListener(getActionListenerEB());
@@ -102,6 +93,7 @@ public class WinEB extends javax.swing.JPanel {
 
         String cmd = e.getActionCommand();
 
+        if(cbEmpresa.getSelectedIndex()>0){
         if (cmd.equalsIgnoreCase("Cadastrar")) {
             empresaEB = getEmpresaEBOfPanel();
             new DAOEmpresaEB().cadastrar(empresaEB);
@@ -113,12 +105,10 @@ public class WinEB extends javax.swing.JPanel {
             new DAOEmpresaEB().atualizar(empresaEB);
         }
         refreshEB();
-        clearTab(tabEspecieBeneficiada);
+        MyUtil.FieldsClear(tabEspecieBeneficiada);
+        cbEmpresa.setSelectedIndex(0);
         empresaEB = null;
-    }
-
-    private void clearTab(JPanel jPanel) {
-        MyUtil.FieldsClear(jPanel);
+        }
     }
 
     private void clearTable(JTable table) {
