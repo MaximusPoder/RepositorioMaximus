@@ -1,13 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * WinEB.java
- *
- * Created on 08/08/2010, 21:24:48
- */
 package br.com.view;
 
 import br.com.dao.DAOEmpresa;
@@ -23,7 +13,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -44,14 +33,13 @@ public class WinEB extends javax.swing.JPanel {
         empresas = new DAOEmpresa().getListWithQuery("select * from Empresa");
         MyUtil.refresComboBox(empresas, cbEmpresa);
         initAction();
-
     }
 
     private void initAction() {
-        btNovoEB.addActionListener(getActionListenerEB());
-        btCadastrarEB.addActionListener(getActionListenerEB());
-        btAtualizarEB.addActionListener(getActionListenerEB());
-        btExcluirEB.addActionListener(getActionListenerEB());
+        btNovoEB.addActionListener(getActionListener());
+        btCadastrarEB.addActionListener(getActionListener());
+        btAtualizarEB.addActionListener(getActionListener());
+        btExcluirEB.addActionListener(getActionListener());
         tableEB.addMouseListener(new MouseAdapter() {
 
             @Override
@@ -70,11 +58,11 @@ public class WinEB extends javax.swing.JPanel {
         });
     }
 
-    private ActionListener getActionListenerEB() {
+    private ActionListener getActionListener() {
         return new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                actionEB(e);
+                action(e);
             }
         };
     }
@@ -89,7 +77,7 @@ public class WinEB extends javax.swing.JPanel {
         return b;
     }
 
-    private void actionEB(ActionEvent e) {
+    private void action(ActionEvent e) {
 
         String cmd = e.getActionCommand();
 
@@ -135,7 +123,6 @@ public class WinEB extends javax.swing.JPanel {
         b.all(especie, terceiro, apetrecho, epocaAno,
                 empresas.get(cbEmpresa.getSelectedIndex()-1).getId());
         return b;
-
     }
 
     private void refreshTableEB(List<EmpresaEB> list) {
