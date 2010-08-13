@@ -463,9 +463,19 @@ public class WinPanelPescador extends javax.swing.JPanel {
 
         bgQuestao17.add(jRadioButton14);
         jRadioButton14.setText("Sim");
+        jRadioButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton14ActionPerformed(evt);
+            }
+        });
 
         bgQuestao17.add(jRadioButton15);
         jRadioButton15.setText("Não");
+        jRadioButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton15ActionPerformed(evt);
+            }
+        });
 
         jLabel22.setText("Qual Côlonia?");
 
@@ -473,9 +483,19 @@ public class WinPanelPescador extends javax.swing.JPanel {
 
         bgQuestao18.add(jRadioButton16);
         jRadioButton16.setText("Sim");
+        jRadioButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton16ActionPerformed(evt);
+            }
+        });
 
         bgQuestao18.add(jRadioButton17);
         jRadioButton17.setText("Não");
+        jRadioButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton17ActionPerformed(evt);
+            }
+        });
 
         jLabel24.setText("Qual?");
 
@@ -483,9 +503,19 @@ public class WinPanelPescador extends javax.swing.JPanel {
 
         bgQuestao19.add(jRadioButton18);
         jRadioButton18.setText("Sim");
+        jRadioButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton18ActionPerformed(evt);
+            }
+        });
 
         bgQuestao19.add(jRadioButton19);
         jRadioButton19.setText("Não");
+        jRadioButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton19ActionPerformed(evt);
+            }
+        });
 
         jLabel26.setText("Qual Orgão?");
 
@@ -877,6 +907,37 @@ public class WinPanelPescador extends javax.swing.JPanel {
     private void jRadioButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton7ActionPerformed
+
+    private void jRadioButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton14ActionPerformed
+        // TODO add your handling code here:
+        MyUtil.setEnableFields(Boolean.TRUE, tfQuestao17);
+    }//GEN-LAST:event_jRadioButton14ActionPerformed
+
+    private void jRadioButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton15ActionPerformed
+        // TODO add your handling code here:
+         MyUtil.setEnableFields(Boolean.FALSE, tfQuestao17);
+    }//GEN-LAST:event_jRadioButton15ActionPerformed
+
+    private void jRadioButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton16ActionPerformed
+        // TODO add your handling code here:
+         MyUtil.setEnableFields(Boolean.TRUE, tfQuestao18);
+    }//GEN-LAST:event_jRadioButton16ActionPerformed
+
+    private void jRadioButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton17ActionPerformed
+        // TODO add your handling code here:
+            MyUtil.setEnableFields(Boolean.FALSE, tfQuestao18);
+    }//GEN-LAST:event_jRadioButton17ActionPerformed
+
+    private void jRadioButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton19ActionPerformed
+        // TODO add your handling code here:
+            MyUtil.setEnableFields(Boolean.TRUE, tfQuestao19);
+    }//GEN-LAST:event_jRadioButton19ActionPerformed
+
+    private void jRadioButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton18ActionPerformed
+        // TODO add your handling code here:
+            MyUtil.setEnableFields(Boolean.TRUE, tfQuestao19);
+    }//GEN-LAST:event_jRadioButton18ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup bgQuestao13;
     private javax.swing.ButtonGroup bgQuestao14;

@@ -19,4 +19,10 @@ public class Mensagens {
         
     }
 
+    public static void showMessageErroPreencherDados()
+    {
+        JOptionPane.showMessageDialog(null, "Preenchimento no Formulário Incorreto\nVerifique se existe opcão não selecionada", "Erro", JOptionPane.ERROR_MESSAGE);
+
+    }
+
 }
