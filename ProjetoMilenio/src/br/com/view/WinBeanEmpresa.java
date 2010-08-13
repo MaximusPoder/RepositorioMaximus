@@ -38,12 +38,12 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
     public WinBeanEmpresa() {
         initComponents();
         dAOEmpresa = new DAOEmpresa();
-        
+
         municipios = dAOEmpresa.getMunicipiosWithQuery();
         MyUtil.refresComboBox(municipios, cbMunicipio);
         initAction();
-        initiActionCmd(tabEmpresa);
-        
+        MyUtil.initiActionCmd(tabEmpresa);
+
     }
 
     private void initAction() {
@@ -70,17 +70,7 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
             }
         };
     }
-
-    private void initiActionCmd(JPanel obj) {
-
-        for (int i = 0; i < obj.getComponentCount(); i++) {
-            Component comps[] = obj.getComponents();
-            if (comps[i] instanceof JRadioButton) {
-                final JRadioButton radioButton = (JRadioButton) comps[i];
-                radioButton.setActionCommand(radioButton.getText());
-            }
-        }
-    }
+  
 
     private void actionEmpresa(ActionEvent e) {
         String cmd = e.getActionCommand();
@@ -103,10 +93,11 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
 
             if (cbMunicipio.getSelectedIndex() > 0) {
                 if (cmd.equalsIgnoreCase("Cadastrar")) {
-                    if(empresa == null){
-                    empresa = getEmpresaOfPanel();
-                    dAOEmpresa.cadastrar(empresa);
-                    } Mensagens.showMessageNaoCadastrar();
+                    if (empresa == null) {
+                        empresa = getEmpresaOfPanel();
+                        dAOEmpresa.cadastrar(empresa);
+                    }else
+                    Mensagens.showMessageNaoCadastrar();
                 } else if (cmd.equalsIgnoreCase("Excluir")) {
                     empresa = getEmpresaOfPanel();
                     dAOEmpresa.excluir(empresa);
@@ -136,32 +127,37 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
 
     private Empresa getEmpresaOfPanel() {
 
-        if (this.empresa != null) {
-            this.empresa.setNomeEmpresa(tfNomeEmpresa.getText());
-            this.empresa.setColetor(tfColetor.getText());
-            this.empresa.setData(MyUtil.StringToDate(tfData.getText()));
-            this.empresa.setEndereco(tfEndereco.getText());
-            this.empresa.setFoneFax(tfFone.getText());
-            this.empresa.setMunicipio(cbMunicipio.getSelectedItem().toString());
-            this.empresa.setPessoaEntrevistada(tfPessoaEntrevistada.getText());
-            this.empresa.setStatus(bgStatus.getSelection().getActionCommand());
-            this.empresa.setTempoEmpresa(tfTempoEmpresa.getText());
-            this.empresa.setFuncao(tfFuncao.getText());
-            return this.empresa;
-        }
+        try {
+            if (this.empresa != null) {
+                this.empresa.setNomeEmpresa(tfNomeEmpresa.getText());
+                this.empresa.setColetor(tfColetor.getText());
+                this.empresa.setData(MyUtil.StringToDate(tfData.getText()));
+                this.empresa.setEndereco(tfEndereco.getText());
+                this.empresa.setFoneFax(tfFone.getText());
+                this.empresa.setMunicipio(cbMunicipio.getSelectedItem().toString());
+                this.empresa.setPessoaEntrevistada(tfPessoaEntrevistada.getText());
+                this.empresa.setStatus(bgStatus.getSelection().getActionCommand());
+                this.empresa.setTempoEmpresa(tfTempoEmpresa.getText());
+                this.empresa.setFuncao(tfFuncao.getText());
+                return this.empresa;
+            }
 
-        Empresa empresa = new Empresa();
-        empresa.setNomeEmpresa(tfNomeEmpresa.getText());
-        empresa.setColetor(tfColetor.getText());
-        empresa.setData(MyUtil.StringToDate(tfData.getText()));
-        empresa.setEndereco(tfEndereco.getText());
-        empresa.setFoneFax(tfFone.getText());
-        empresa.setMunicipio(cbMunicipio.getSelectedItem().toString());
-        empresa.setPessoaEntrevistada(tfPessoaEntrevistada.getText());
-        empresa.setStatus(bgStatus.getSelection().getActionCommand());
-        empresa.setTempoEmpresa(tfTempoEmpresa.getText());
-        empresa.setFuncao(tfFuncao.getText());
-        return empresa;
+            Empresa empresa = new Empresa();
+            empresa.setNomeEmpresa(tfNomeEmpresa.getText());
+            empresa.setColetor(tfColetor.getText());
+            empresa.setData(MyUtil.StringToDate(tfData.getText()));
+            empresa.setEndereco(tfEndereco.getText());
+            empresa.setFoneFax(tfFone.getText());
+            empresa.setMunicipio(cbMunicipio.getSelectedItem().toString());
+            empresa.setPessoaEntrevistada(tfPessoaEntrevistada.getText());
+            empresa.setStatus(bgStatus.getSelection().getActionCommand());
+            empresa.setTempoEmpresa(tfTempoEmpresa.getText());
+            empresa.setFuncao(tfFuncao.getText());
+            return empresa;
+        } catch (Exception e) {
+            Mensagens.showMessageErroPreencherDados();
+        }
+        return null;
     }
 
     private void setSelectedEmpresa(String selected) {
@@ -453,7 +449,7 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1524, Short.MAX_VALUE)
+            .addGap(0, 1513, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(tabEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)

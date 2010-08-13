@@ -1,9 +1,4 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
  * WinQuestionario6.java
  *
  * Created on 09/08/2010, 13:33:48
@@ -31,7 +26,6 @@ public class WinQuestionario6 extends javax.swing.JPanel {
 
     /** Creates new form WinQuestionario6 */
     private EmpresaQuestionario6 q;
-    private DefaultTableModel model;
     private List<Empresa> empresas;
 
     public WinQuestionario6() {
@@ -60,28 +54,35 @@ public class WinQuestionario6 extends javax.swing.JPanel {
 
     private EmpresaQuestionario6 getQuestionarioOfPanel() {
 
-        String questao48 = bgQuestao48.getSelection().getActionCommand() +
-                ";" + tfQuestao48.getText();
-        String questao49 = bgQuestao49.getSelection().getActionCommand() +
-                ";" + tfQuestao49.getText();
-        String questao50 = bgQuestao50.getSelection().getActionCommand() +
-                ";" + tfQuestao50.getText();
-        String questao51 = tfQuestao51.getText();
-        String questao52 = tfQuestao52.getText();
-        String questao53 = bgQuestao53.getSelection().getActionCommand() +
-                ";" + tfQuestao53.getText();
 
 
-        if (q != null) {
-            q.all(questao48, questao49, questao50, questao51, questao52,
-                    questao53,empresas.get(cbEmpresa.getSelectedIndex() - 1).getId());
-            return q;
+        try {
+            String questao48 = bgQuestao48.getSelection().getActionCommand() +
+                    ";" + tfQuestao48.getText();
+            String questao49 = bgQuestao49.getSelection().getActionCommand() +
+                    ";" + tfQuestao49.getText();
+            String questao50 = bgQuestao50.getSelection().getActionCommand() +
+                    ";" + tfQuestao50.getText();
+            String questao51 = tfQuestao51.getText();
+            String questao52 = tfQuestao52.getText();
+            String questao53 = bgQuestao53.getSelection().getActionCommand() +
+                    ";" + tfQuestao53.getText();
+
+
+            if (q != null) {
+                q.all(questao48, questao49, questao50, questao51, questao52,
+                        questao53, empresas.get(cbEmpresa.getSelectedIndex() - 1).getId());
+                return q;
+            }
+
+            EmpresaQuestionario6 eq = new EmpresaQuestionario6();
+            eq.all(questao48, questao49, questao50, questao51, questao52,
+                    questao53, empresas.get(cbEmpresa.getSelectedIndex() - 1).getId());
+            return eq;
+        } catch (Exception e) {
+            Mensagens.showMessageErroPreencherDados();
         }
-
-        EmpresaQuestionario6 eq = new EmpresaQuestionario6();
-        eq.all(questao48, questao49, questao50, questao51, questao52,
-                questao53,empresas.get(cbEmpresa.getSelectedIndex() - 1).getId());
-        return eq;
+        return null;
     }
 
     private void setQuestionarioForPanel(EmpresaQuestionario6 eq) {
@@ -110,10 +111,12 @@ public class WinQuestionario6 extends javax.swing.JPanel {
         String cmd = e.getActionCommand();
 
         if (cmd.equalsIgnoreCase("Cadastrar")) {
-            if(q == null){
-            q = getQuestionarioOfPanel();
-            new DAOQuestionario6().cadastrar(q);}
-            else Mensagens.showMessageNaoCadastrar();
+            if (q == null) {
+                q = getQuestionarioOfPanel();
+                new DAOQuestionario6().cadastrar(q);
+            } else {
+                Mensagens.showMessageNaoCadastrar();
+            }
         } else if (cmd.equalsIgnoreCase("Atualizar")) {
             q = getQuestionarioOfPanel();
             new DAOQuestionario6().atualizar(q);
@@ -135,9 +138,11 @@ public class WinQuestionario6 extends javax.swing.JPanel {
 
             public void itemStateChanged(ItemEvent e) {
                 if (e.getStateChange() == ItemEvent.SELECTED) {
-                     if(cbEmpresa.getSelectedIndex()>0)
-                    isExist();
-                    else clearQuestionario();
+                    if (cbEmpresa.getSelectedIndex() > 0) {
+                        isExist();
+                    } else {
+                        clearQuestionario();
+                    }
                 }
             }
         });

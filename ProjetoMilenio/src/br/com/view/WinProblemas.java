@@ -155,7 +155,9 @@ public class WinProblemas extends javax.swing.JPanel {
     private EmpresaProblema getEmpresaProblemaOfTable() {
 
 
-        EmpresaProblema ep = new EmpresaProblema();
+
+        try {
+             EmpresaProblema ep = new EmpresaProblema();
         String problema = bgEmpresaProblemas.getSelection().getActionCommand();
         String tipo;
         String obs;
@@ -172,7 +174,7 @@ public class WinProblemas extends javax.swing.JPanel {
             tipo = cbQualificacao.getSelectedItem().toString();
             obs = tfQualificacao.getText();
         }
-    
+
         if (this.empresaProblema != null) {
             empresaProblema.all(problema, tipo, obs,
                     empresas.get(cbEmpresaProblema.getSelectedIndex()-1).getId());
@@ -181,6 +183,11 @@ public class WinProblemas extends javax.swing.JPanel {
         ep.all(problema, tipo, obs,
                 empresas.get(cbEmpresaProblema.getSelectedIndex()-1).getId());
         return ep;
+        } catch (Exception e) {
+
+            Mensagens.showMessageErroPreencherDados();
+        }
+        return null;
     }
 
     private void setEmpresaProblemaOfTable() {

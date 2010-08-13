@@ -48,21 +48,28 @@ public class WinImposto extends javax.swing.JPanel {
 
     private EmpresaImposto getEmpresaImpostoOfPanel() {
 
-        String imposto = tfImposto.getText();
-        String anterior = tfAnterior.getText();
-        String ano = tfAno.getText();
-        String anual = tfAtual.getText();
 
-        if (empresaImposto != null) {
-            empresaImposto.all(imposto, anterior, anual, ano,
+
+        try {
+            String imposto = tfImposto.getText();
+            String anterior = tfAnterior.getText();
+            String ano = tfAno.getText();
+            String anual = tfAtual.getText();
+
+            if (empresaImposto != null) {
+                empresaImposto.all(imposto, anterior, anual, ano,
+                        empresas.get(cbEmpresaImposto.getSelectedIndex() - 1).getId());
+                return empresaImposto;
+            }
+
+            EmpresaImposto b = new EmpresaImposto();
+            b.all(imposto, anterior, anual, ano,
                     empresas.get(cbEmpresaImposto.getSelectedIndex() - 1).getId());
-            return empresaImposto;
+            return b;
+        } catch (Exception e) {
+            Mensagens.showMessageErroPreencherDados();
         }
-
-        EmpresaImposto b = new EmpresaImposto();
-        b.all(imposto, anterior, anual, ano,
-                empresas.get(cbEmpresaImposto.getSelectedIndex() - 1).getId());
-        return b;
+        return null;
 
     }
 
@@ -77,22 +84,25 @@ public class WinImposto extends javax.swing.JPanel {
     private void actionImposto(ActionEvent e) {
 
         String cmd = e.getActionCommand();
-        if(cbEmpresaImposto.getSelectedIndex()>0){
-        if (cmd.equalsIgnoreCase("Cadastrar")) {
-            if(empresaImposto == null){
-            empresaImposto = getEmpresaImpostoOfPanel();
-            new DAOEmpresaImposto().cadastrar(empresaImposto);}else Mensagens.showMessageNaoCadastrar();
-        } else if (cmd.equalsIgnoreCase("Excluir")) {
-            empresaImposto = getEmpresaImpostoOfPanel();
-            new DAOEmpresaImposto().excluir(empresaImposto);
-        } else if (cmd.equalsIgnoreCase("Atualizar")) {
-            empresaImposto = getEmpresaImpostoOfPanel();
-            new DAOEmpresaImposto().atualizar(empresaImposto);
-        }
-        refreshEmpresaImposto();
-        clearTab(tabEmpresaImposto);
-        empresaImposto = null;
-        cbEmpresaImposto.setSelectedIndex(0);
+        if (cbEmpresaImposto.getSelectedIndex() > 0) {
+            if (cmd.equalsIgnoreCase("Cadastrar")) {
+                if (empresaImposto == null) {
+                    empresaImposto = getEmpresaImpostoOfPanel();
+                    new DAOEmpresaImposto().cadastrar(empresaImposto);
+                } else {
+                    Mensagens.showMessageNaoCadastrar();
+                }
+            } else if (cmd.equalsIgnoreCase("Excluir")) {
+                empresaImposto = getEmpresaImpostoOfPanel();
+                new DAOEmpresaImposto().excluir(empresaImposto);
+            } else if (cmd.equalsIgnoreCase("Atualizar")) {
+                empresaImposto = getEmpresaImpostoOfPanel();
+                new DAOEmpresaImposto().atualizar(empresaImposto);
+            }
+            refreshEmpresaImposto();
+            clearTab(tabEmpresaImposto);
+            empresaImposto = null;
+            cbEmpresaImposto.setSelectedIndex(0);
         }
     }
 

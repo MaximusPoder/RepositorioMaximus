@@ -537,5 +537,6 @@ public class WinDetalheFrota extends javax.swing.JPanel {
 
     private void clear() {
         MyUtil.FieldsClear(this);
+        MyUtil.clearTable(table);
     }
 }

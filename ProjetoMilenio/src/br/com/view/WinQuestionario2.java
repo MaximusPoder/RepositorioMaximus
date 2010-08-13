@@ -59,7 +59,10 @@ public class WinQuestionario2 extends javax.swing.JPanel {
 
     private EmpresaQuestionario2 getQuestionario2OfPanel() {
 
-        String questao15 = bgQuestao15.getSelection().getActionCommand();
+
+
+         try {
+            String questao15 = bgQuestao15.getSelection().getActionCommand();
         String questao16 = tfQuestao16.getText();
         String questao17 = tfQuestao17.getText();
         String questao18 = tfQuestao18.getText();
@@ -82,6 +85,11 @@ public class WinQuestionario2 extends javax.swing.JPanel {
                 empresas.get(cbEmpresaQuestionario2.getSelectedIndex()-1).getId());
 
         return eq;
+        } catch (Exception e) {
+
+            Mensagens.showMessageErroPreencherDados();
+        }
+        return null;
 
     }
 
@@ -117,6 +125,8 @@ public class WinQuestionario2 extends javax.swing.JPanel {
         empresaQuestionario2 = null;
         cbEmpresaQuestionario2.setSelectedIndex(0);
         }
+
+
 
     }
     private void clearTab(JPanel jPanel) {

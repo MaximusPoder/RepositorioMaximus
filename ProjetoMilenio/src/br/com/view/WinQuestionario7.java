@@ -25,7 +25,6 @@ import java.awt.event.ItemListener;
 import java.util.List;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -48,7 +47,10 @@ public class WinQuestionario7 extends javax.swing.JPanel {
 
     private EmpresaQuestionario7 getQuestionario7OfPanel() {
 
-        String questao55 = MyUtil.getSelected(ckConsumidor, ckFeiras, ckOutro, ckRest, ckRevendedores, ckSuper);
+
+
+        try {
+             String questao55 = MyUtil.getSelected(ckConsumidor, ckFeiras, ckOutro, ckRest, ckRevendedores, ckSuper);
         String questao56 = bgQuestao56.getSelection().getActionCommand();
         String questao57 = tfQuestao57.getText();
         String questao58 = bgQuestao58.getSelection().getActionCommand();
@@ -76,6 +78,11 @@ public class WinQuestionario7 extends javax.swing.JPanel {
                 questao61, questao62, questao63, questao64, questao65, questao66,
                 empresas.get(cbEmpresa.getSelectedIndex() - 1).getId());
         return eq;
+        } catch (Exception e) {
+
+            Mensagens.showMessageErroPreencherDados();
+        }
+        return null;
     }
 
     private void setQuestionario7ForPanel(EmpresaQuestionario7 eq) {

@@ -15,6 +15,7 @@ import br.com.dao.DAOTripulacao;
 import br.com.pojo.Empresa;
 import br.com.pojo.EmpresaTripulacao;
 import br.com.util.JMoneyField;
+import br.com.util.Mensagens;
 import br.com.util.ToMoney;
 import br.com.util.MyUtil;
 import java.awt.event.ActionEvent;
@@ -115,6 +116,9 @@ public class WinTripulacao extends javax.swing.JPanel {
 
     private EmpresaTripulacao getEDFofPanel() {
 
+
+        try {
+
         if (edf != null) {
             edf.setRelacaoTrabalho(bgRelacaoTrabalho.getSelection().getActionCommand());
             edf.setFrotaEspecie(tfFrota.getText());
@@ -135,6 +139,11 @@ public class WinTripulacao extends javax.swing.JPanel {
         edf.setSalario(tfSalario.getText());
         edf.setEmpresaId(empresas.get(cbEmpresa.getSelectedIndex() - 1).getId());
         return edf;
+        } catch (Exception e) {
+
+            Mensagens.showMessageErroPreencherDados();
+        }
+        return null;
     }
 
     private EmpresaTripulacao getEDFofTable() {

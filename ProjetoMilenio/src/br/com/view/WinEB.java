@@ -14,6 +14,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -23,7 +24,6 @@ import javax.swing.table.DefaultTableModel;
  */
 public class WinEB extends javax.swing.JPanel {
 
-   
     private EmpresaEB empresaEB;
     private DefaultTableModel model;
     private List<Empresa> empresas;
@@ -37,7 +37,15 @@ public class WinEB extends javax.swing.JPanel {
     }
 
     private void initAction() {
-        btNovoEB.addActionListener(getActionListener());
+        btNovoEB.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+
+                MyUtil.FieldsClear(tabEspecieBeneficiada);
+
+                empresaEB = null;
+            }
+        });
         btCadastrarEB.addActionListener(getActionListener());
         btAtualizarEB.addActionListener(getActionListener());
         btExcluirEB.addActionListener(getActionListener());
@@ -82,23 +90,25 @@ public class WinEB extends javax.swing.JPanel {
 
         String cmd = e.getActionCommand();
 
-        if(cbEmpresa.getSelectedIndex()>0){
-        if (cmd.equalsIgnoreCase("Cadastrar")) {
-            if(empresaEB == null){
-            empresaEB = getEmpresaEBOfPanel();
-            new DAOEmpresaEB().cadastrar(empresaEB);}
-            else Mensagens.showMessageNaoCadastrar();
-        } else if (cmd.equalsIgnoreCase("Excluir")) {
-            empresaEB = getEmpresaEBOfPanel();
-            new DAOEmpresaEB().excluir(empresaEB);
-        } else if (cmd.equalsIgnoreCase("Atualizar")) {
-            empresaEB = getEmpresaEBOfPanel();
-            new DAOEmpresaEB().atualizar(empresaEB);
-        }
-        refreshEB();
-        MyUtil.FieldsClear(tabEspecieBeneficiada);
-        cbEmpresa.setSelectedIndex(0);
-        empresaEB = null;
+        if (cbEmpresa.getSelectedIndex() > 0) {
+            if (cmd.equalsIgnoreCase("Cadastrar")) {
+                if (empresaEB == null) {
+                    empresaEB = getEmpresaEBOfPanel();
+                    new DAOEmpresaEB().cadastrar(empresaEB);
+                } else {
+                    Mensagens.showMessageNaoCadastrar();
+                }
+            } else if (cmd.equalsIgnoreCase("Excluir")) {
+                empresaEB = getEmpresaEBOfPanel();
+                new DAOEmpresaEB().excluir(empresaEB);
+            } else if (cmd.equalsIgnoreCase("Atualizar")) {
+                empresaEB = getEmpresaEBOfPanel();
+                new DAOEmpresaEB().atualizar(empresaEB);
+            }
+            refreshEB();
+            MyUtil.FieldsClear(tabEspecieBeneficiada);
+            cbEmpresa.setSelectedIndex(0);
+            empresaEB = null;
         }
     }
 
@@ -112,20 +122,27 @@ public class WinEB extends javax.swing.JPanel {
 
     private EmpresaEB getEmpresaEBOfPanel() {
 
-        String especie = tfEspecie.getText();
-        String apetrecho = tfApetrecho.getText();
-        String terceiro = tfTerceiro.getText();
-        String epocaAno = tfEpocaAno.getText();
 
-        if (empresaEB != null) {
-            empresaEB.all(especie, terceiro, apetrecho, epocaAno, empresaEB.getEmpresaId());
-            return empresaEB;
+        try {
+            String especie = tfEspecie.getText();
+            String apetrecho = tfApetrecho.getText();
+            String terceiro = tfTerceiro.getText();
+            String epocaAno = tfEpocaAno.getText();
+
+            if (empresaEB != null) {
+                empresaEB.all(especie, terceiro, apetrecho, epocaAno, empresaEB.getEmpresaId());
+                return empresaEB;
+            }
+
+            EmpresaEB b = new EmpresaEB();
+            b.all(especie, terceiro, apetrecho, epocaAno,
+                    empresas.get(cbEmpresa.getSelectedIndex() - 1).getId());
+            return b;
+
+        } catch (Exception e) {
+            Mensagens.showMessageErroPreencherDados();
         }
-
-        EmpresaEB b = new EmpresaEB();
-        b.all(especie, terceiro, apetrecho, epocaAno,
-                empresas.get(cbEmpresa.getSelectedIndex()-1).getId());
-        return b;
+        return null;
     }
 
     private void refreshTableEB(List<EmpresaEB> list) {
@@ -147,7 +164,7 @@ public class WinEB extends javax.swing.JPanel {
         if (cbEmpresa.getSelectedIndex() > 0) {
             empresasEBs = new DAOEmpresaEB().getListWithQuery("select * from " +
                     "EmpresaEB where empresaId = " +
-                    empresas.get(cbEmpresa.getSelectedIndex()-1).getId());
+                    empresas.get(cbEmpresa.getSelectedIndex() - 1).getId());
         }
         refreshTableEB(empresasEBs);
     }
