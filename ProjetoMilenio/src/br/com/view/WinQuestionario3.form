@@ -68,201 +68,194 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="panelCrudEmpresa7" alignment="0" max="32767" attributes="1"/>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jRadioButton11" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jRadioButton12" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jLabel86" min="-2" max="-2" attributes="1"/>
-                          </Group>
-                          <Component id="jLabel78" alignment="0" min="-2" max="-2" attributes="1"/>
-                      </Group>
-                      <EmptySpace pref="13972" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel73" min="-2" max="-2" attributes="1"/>
-                      <EmptySpace pref="13709" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel79" min="-2" max="-2" attributes="1"/>
-                      <EmptySpace pref="13384" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btAddLinhaQ3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btRetiraQ3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="13946" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel102" min="-2" max="-2" attributes="1"/>
-                          <Component id="jLabel103" alignment="0" min="-2" max="-2" attributes="1"/>
-                          <Component id="jLabel101" alignment="0" min="-2" max="-2" attributes="1"/>
-                          <Component id="jLabel91" alignment="0" min="-2" max="-2" attributes="1"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="tfBanco" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="tfCredito" alignment="0" max="32767" attributes="1"/>
-                              <Component id="tfFinalidade" alignment="0" pref="110" max="32767" attributes="1"/>
-                              <Component id="tfDataEmprestimo" alignment="0" pref="110" max="32767" attributes="1"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel107" alignment="0" min="-2" max="-2" attributes="1"/>
-                          <Component id="jLabel106" alignment="0" min="-2" max="-2" attributes="1"/>
-                          <Component id="jLabel105" alignment="0" min="-2" max="-2" attributes="1"/>
-                          <Component id="jLabel104" alignment="0" min="-2" max="-2" attributes="1"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="tfCarencia" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
-                          <Component id="tfPrestacao" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
-                          <Component id="tfPagou" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
-                          <Component id="tfDia" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="13633" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel74" min="-2" max="-2" attributes="1"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jRadioButton9" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jRadioButton10" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jRadioButton11" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton12" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jLabel86" min="-2" max="-2" attributes="1"/>
+                                  </Group>
+                                  <Component id="jLabel78" alignment="0" min="-2" max="-2" attributes="1"/>
+                              </Group>
+                              <EmptySpace pref="842" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel77" min="-2" max="-2" attributes="1"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jRadioButton13" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jRadioButton14" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel73" min="-2" max="-2" attributes="1"/>
+                              <EmptySpace pref="579" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="jScrollPane18" alignment="0" min="-2" pref="353" max="-2" attributes="1"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="13164" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tfQuestao25_0" pref="142" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="13947" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tfQuestao25_2" pref="229" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="13845" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="1">
-                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                              <Component id="tfQuestao25_1" min="-2" pref="92" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="13981" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel79" min="-2" max="-2" attributes="1"/>
+                              <EmptySpace pref="254" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="btAddLinhaQ3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="tfQuestao26_2" pref="196" max="32767" attributes="0"/>
+                              <Component id="btRetiraQ3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="816" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel102" min="-2" max="-2" attributes="1"/>
+                                  <Component id="jLabel103" alignment="0" min="-2" max="-2" attributes="1"/>
+                                  <Component id="jLabel101" alignment="0" min="-2" max="-2" attributes="1"/>
+                                  <Component id="jLabel91" alignment="0" min="-2" max="-2" attributes="1"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="tfQuestao26_1" alignment="0" min="-2" pref="92" max="-2" attributes="0"/>
-                                  <Component id="tfQuestao26_0" alignment="0" min="-2" pref="76" max="-2" attributes="0"/>
+                                  <Component id="tfBanco" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="tfCredito" alignment="0" max="32767" attributes="1"/>
+                                      <Component id="tfFinalidade" alignment="0" pref="110" max="32767" attributes="1"/>
+                                      <Component id="tfDataEmprestimo" alignment="0" pref="110" max="32767" attributes="1"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="13845" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tfQuestao26_3" pref="189" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="13845" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel107" alignment="0" min="-2" max="-2" attributes="1"/>
+                                  <Component id="jLabel106" alignment="0" min="-2" max="-2" attributes="1"/>
+                                  <Component id="jLabel105" alignment="0" min="-2" max="-2" attributes="1"/>
+                                  <Component id="jLabel104" alignment="0" min="-2" max="-2" attributes="1"/>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="tfQuestao28_0" pref="142" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="tfCarencia" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
+                                  <Component id="tfPrestacao" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
+                                  <Component id="tfPagou" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
+                                  <Component id="tfDia" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="503" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel74" min="-2" max="-2" attributes="1"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jRadioButton9" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jRadioButton10" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel77" min="-2" max="-2" attributes="1"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jRadioButton13" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jRadioButton14" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jScrollPane18" alignment="0" min="-2" pref="353" max="-2" attributes="1"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="13164" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="tfQuestao28_2" pref="229" max="32767" attributes="0"/>
+                              <Component id="tfQuestao25_0" pref="142" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="13947" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="tfQuestao25_2" pref="229" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="13845" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="1">
                                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                                      <Component id="tfQuestao28_1" min="-2" pref="92" max="-2" attributes="0"/>
+                                      <Component id="tfQuestao25_1" min="-2" pref="92" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="136" max="-2" attributes="0"/>
+                              <EmptySpace pref="851" max="32767" attributes="0"/>
                           </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="13845" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel80" alignment="0" min="-2" max="-2" attributes="1"/>
-                          <Component id="jScrollPane22" alignment="0" min="-2" pref="598" max="-2" attributes="1"/>
-                      </Group>
-                      <EmptySpace pref="13440" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jRadioButton15" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jRadioButton16" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jLabel90" min="-2" max="-2" attributes="1"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="tfQuestao26_2" pref="196" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="tfQuestao26_1" alignment="0" min="-2" pref="92" max="-2" attributes="0"/>
+                                          <Component id="tfQuestao26_0" alignment="0" min="-2" pref="76" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="13845" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jLabel82" alignment="0" min="-2" max="-2" attributes="1"/>
-                          <Component id="jScrollPane24" alignment="0" min="-2" pref="598" max="-2" attributes="1"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="tfQuestao26_3" pref="189" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="13845" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="tfQuestao28_0" pref="142" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="tfQuestao28_2" pref="229" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="1">
+                                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                                              <Component id="tfQuestao28_1" min="-2" pref="92" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace pref="136" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="13845" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel80" alignment="0" min="-2" max="-2" attributes="1"/>
+                                  <Component id="jScrollPane22" alignment="0" min="-2" pref="598" max="-2" attributes="1"/>
+                              </Group>
+                              <EmptySpace pref="310" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jRadioButton15" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton16" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jLabel90" min="-2" max="-2" attributes="1"/>
+                                  </Group>
+                                  <Component id="jLabel82" alignment="0" min="-2" max="-2" attributes="1"/>
+                                  <Component id="jScrollPane24" alignment="0" min="-2" pref="598" max="-2" attributes="1"/>
+                              </Group>
+                              <EmptySpace pref="392" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jScrollPane15" min="-2" pref="721" max="-2" attributes="0"/>
+                              <EmptySpace pref="269" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace pref="13522" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane15" min="-2" pref="721" max="-2" attributes="0"/>
-                      <EmptySpace pref="13399" max="32767" attributes="0"/>
+                      <Component id="panelCrudEmpresa7" min="-2" pref="883" max="-2" attributes="1"/>
+                      <EmptySpace pref="13247" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -270,7 +263,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="panelCrudEmpresa7" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel73" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jScrollPane18" min="-2" pref="69" max="-2" attributes="0"/>
@@ -424,12 +417,15 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[900, 67]"/>
+                </Property>
               </Properties>
 
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
@@ -451,10 +447,13 @@
                                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                   <Component id="jLabel71" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="cbEmpresaQuestionario3" min="-2" pref="189" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbEmpresaQuestionario3" alignment="0" min="-2" pref="189" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="13630" max="32767" attributes="0"/>
+                          <EmptySpace pref="381" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -468,6 +467,7 @@
                                   <Component id="jLabel69" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel70" alignment="1" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -477,7 +477,7 @@
                               <Component id="jLabel71" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="cbEmpresaQuestionario3" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="12" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -524,6 +524,14 @@
                         <StringItem index="3" value="Item 4"/>
                       </StringArray>
                     </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel12">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Verdana" size="11" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Impostos -Parte 2"/>
                   </Properties>
                 </Component>
               </SubComponents>

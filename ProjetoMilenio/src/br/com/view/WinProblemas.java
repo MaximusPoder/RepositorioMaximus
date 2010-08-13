@@ -15,6 +15,7 @@ import br.com.dao.DAOEmpresaProblema;
 import br.com.pojo.Empresa;
 import br.com.pojo.EmpresaProblema;
 import br.com.util.JMoneyField;
+import br.com.util.Mensagens;
 import br.com.util.MyUtil;
 import br.com.util.ToMoney;
 import java.awt.Component;
@@ -133,8 +134,10 @@ public class WinProblemas extends javax.swing.JPanel {
         if (cbEmpresaProblema.getSelectedIndex() > 0) {
             String cmd = e.getActionCommand();
             if (cmd.equalsIgnoreCase("Cadastrar")) {
+                if(empresaProblema==null){
                 empresaProblema = getEmpresaProblemaOfTable();
-                new DAOEmpresaProblema().cadastrar(empresaProblema);
+                new DAOEmpresaProblema().cadastrar(empresaProblema);}
+                else Mensagens.showMessageNaoCadastrar();
             } else if (cmd.equalsIgnoreCase("Excluir")) {
                 empresaProblema = getEmpresaProblemaOfTable();
                 new DAOEmpresaProblema().excluir(empresaProblema);
@@ -248,6 +251,7 @@ public class WinProblemas extends javax.swing.JPanel {
         btNovoEmpresaProblema = new javax.swing.JButton();
         cbEmpresaProblema = new javax.swing.JComboBox();
         jLabel38 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         cbTransporte = new javax.swing.JComboBox();
         cbQualificacao = new javax.swing.JComboBox();
         cbProducao = new javax.swing.JComboBox();
@@ -288,36 +292,43 @@ public class WinProblemas extends javax.swing.JPanel {
 
         jLabel38.setText("Empresa");
 
+        jLabel12.setFont(new java.awt.Font("Verdana", 1, 11));
+        jLabel12.setText("Dados Empresa");
+
         javax.swing.GroupLayout panelCrudEmpresa4Layout = new javax.swing.GroupLayout(panelCrudEmpresa4);
         panelCrudEmpresa4.setLayout(panelCrudEmpresa4Layout);
         panelCrudEmpresa4Layout.setHorizontalGroup(
             panelCrudEmpresa4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCrudEmpresa4Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(panelCrudEmpresa4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelCrudEmpresa4Layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
-                        .addComponent(jLabel36)
-                        .addGap(45, 45, 45)
-                        .addComponent(jLabel37))
-                    .addGroup(panelCrudEmpresa4Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
+                        .addContainerGap()
                         .addGroup(panelCrudEmpresa4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelCrudEmpresa4Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btNovoEmpresaProblema)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btCadastrarEmpresaProblema)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btAtualizarEmpresaProblema)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btExcluirEmpresaProblema)
-                                .addGap(91, 91, 91)
-                                .addComponent(jLabel38)
-                                .addGap(26, 26, 26)
-                                .addComponent(cbEmpresaProblema, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel50))))
-                .addContainerGap(463, Short.MAX_VALUE))
+                                .addGap(83, 83, 83)
+                                .addComponent(jLabel36)
+                                .addGap(45, 45, 45)
+                                .addComponent(jLabel37))
+                            .addGroup(panelCrudEmpresa4Layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addGroup(panelCrudEmpresa4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(panelCrudEmpresa4Layout.createSequentialGroup()
+                                        .addComponent(btNovoEmpresaProblema)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btCadastrarEmpresaProblema)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btAtualizarEmpresaProblema)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btExcluirEmpresaProblema)
+                                        .addGap(91, 91, 91)
+                                        .addComponent(jLabel38)
+                                        .addGap(26, 26, 26)
+                                        .addComponent(cbEmpresaProblema, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel50)))))
+                    .addGroup(panelCrudEmpresa4Layout.createSequentialGroup()
+                        .addGap(331, 331, 331)
+                        .addComponent(jLabel12)))
+                .addContainerGap(177, Short.MAX_VALUE))
         );
         panelCrudEmpresa4Layout.setVerticalGroup(
             panelCrudEmpresa4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -327,8 +338,9 @@ public class WinProblemas extends javax.swing.JPanel {
                     .addComponent(jLabel36)
                     .addGroup(panelCrudEmpresa4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel50)
-                        .addComponent(jLabel37)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel37))
+                    .addComponent(jLabel12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addGroup(panelCrudEmpresa4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btExcluirEmpresaProblema)
                     .addComponent(btAtualizarEmpresaProblema)
@@ -336,7 +348,7 @@ public class WinProblemas extends javax.swing.JPanel {
                     .addComponent(btNovoEmpresaProblema)
                     .addComponent(cbEmpresaProblema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel38))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         cbTransporte.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Transporte Estadual", "Transporte Federal", "Transporte Aéreo", "Outros" }));
@@ -400,44 +412,44 @@ public class WinProblemas extends javax.swing.JPanel {
                     .addGroup(tabEmpresaProblemaLayout.createSequentialGroup()
                         .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(rbTransporte)
-                            .addComponent(rbProducao)
                             .addComponent(rbQualificacao)
-                            .addComponent(rbFinanciamento))
+                            .addComponent(rbFinanciamento)
+                            .addComponent(rbProducao))
                         .addGap(28, 28, 28)
-                        .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cbQualificacao, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cbProducao, 0, 152, Short.MAX_VALUE)
-                            .addComponent(cbFinanciamento, 0, 141, Short.MAX_VALUE)
-                            .addComponent(cbTransporte, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(cbProducao, javax.swing.GroupLayout.Alignment.LEADING, 0, 0, Short.MAX_VALUE)
+                            .addComponent(cbQualificacao, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbFinanciamento, javax.swing.GroupLayout.Alignment.LEADING, 0, 141, Short.MAX_VALUE)
+                            .addComponent(cbTransporte, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(46, 46, 46)
-                        .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(tabEmpresaProblemaLayout.createSequentialGroup()
-                                .addComponent(jLabel39)
+                                .addComponent(jLabel42)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(tfTransporte, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(tfProducao, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(tabEmpresaProblemaLayout.createSequentialGroup()
-                                    .addComponent(jLabel42)
+                                    .addComponent(jLabel39)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(tfProducao, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(tabEmpresaProblemaLayout.createSequentialGroup()
-                                        .addComponent(jLabel41)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(tfQualificacao, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(tabEmpresaProblemaLayout.createSequentialGroup()
-                                        .addComponent(jLabel40)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(tfFinanciamento, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addGap(104, 104, 104))
+                                    .addComponent(tfTransporte, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(tabEmpresaProblemaLayout.createSequentialGroup()
+                                    .addComponent(jLabel41)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(tfQualificacao, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(tabEmpresaProblemaLayout.createSequentialGroup()
+                                    .addComponent(jLabel40)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(tfFinanciamento, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addGap(31, 31, 31))
         );
         tabEmpresaProblemaLayout.setVerticalGroup(
             tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabEmpresaProblemaLayout.createSequentialGroup()
                 .addComponent(panelCrudEmpresa4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(tabEmpresaProblemaLayout.createSequentialGroup()
-                        .addGap(56, 56, 56)
+                        .addGap(40, 40, 40)
                         .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbFinanciamento)
                             .addComponent(cbFinanciamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -446,7 +458,7 @@ public class WinProblemas extends javax.swing.JPanel {
                             .addComponent(rbQualificacao)
                             .addComponent(cbQualificacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(tabEmpresaProblemaLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbTransporte)
                             .addComponent(cbTransporte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -460,7 +472,7 @@ public class WinProblemas extends javax.swing.JPanel {
                         .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel41)
                             .addComponent(tfQualificacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(11, 11, 11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rbProducao)
                     .addComponent(cbProducao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -468,28 +480,20 @@ public class WinProblemas extends javax.swing.JPanel {
                     .addComponent(tfProducao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1164, Short.MAX_VALUE))
+                .addContainerGap(1331, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1128, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(tabEmpresaProblema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addComponent(tabEmpresaProblema, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1502, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(tabEmpresaProblema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(tabEmpresaProblema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -503,6 +507,7 @@ public class WinProblemas extends javax.swing.JPanel {
     private javax.swing.JComboBox cbProducao;
     private javax.swing.JComboBox cbQualificacao;
     private javax.swing.JComboBox cbTransporte;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
@@ -530,7 +535,7 @@ public class WinProblemas extends javax.swing.JPanel {
 
         bgEmpresaProblemas.clearSelection();
         empresaProblema = null;
-        empresaProblema = null;
+        
     }
 
     private void setCB() {

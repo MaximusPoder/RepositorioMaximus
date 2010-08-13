@@ -200,6 +200,7 @@ public class WinEmpresaMercado extends javax.swing.JPanel {
         cbEmpresa = new javax.swing.JComboBox();
         jLabel17 = new javax.swing.JLabel();
         btNovo = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
         tfEspecie = new javax.swing.JTextField();
         jScrollPane14 = new javax.swing.JScrollPane();
@@ -233,33 +234,41 @@ public class WinEmpresaMercado extends javax.swing.JPanel {
 
         btNovo.setText("Novo");
 
+        jLabel13.setFont(new java.awt.Font("Verdana", 1, 11));
+        jLabel13.setText("Mercado");
+
         javax.swing.GroupLayout panelCrudEmpresa1Layout = new javax.swing.GroupLayout(panelCrudEmpresa1);
         panelCrudEmpresa1.setLayout(panelCrudEmpresa1Layout);
         panelCrudEmpresa1Layout.setHorizontalGroup(
             panelCrudEmpresa1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCrudEmpresa1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(panelCrudEmpresa1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelCrudEmpresa1Layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
-                        .addComponent(jLabel20)
-                        .addGap(45, 45, 45)
-                        .addComponent(jLabel12))
-                    .addGroup(panelCrudEmpresa1Layout.createSequentialGroup()
-                        .addComponent(btNovo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addContainerGap()
                         .addGroup(panelCrudEmpresa1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelCrudEmpresa1Layout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addComponent(btCadastrar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btExcluir)
-                                .addGap(237, 237, 237)
-                                .addComponent(jLabel17)
-                                .addGap(26, 26, 26)
-                                .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel47))))
-                .addContainerGap(379, Short.MAX_VALUE))
+                                .addGap(83, 83, 83)
+                                .addComponent(jLabel20)
+                                .addGap(45, 45, 45)
+                                .addComponent(jLabel12))
+                            .addGroup(panelCrudEmpresa1Layout.createSequentialGroup()
+                                .addGap(61, 61, 61)
+                                .addComponent(jLabel47))))
+                    .addGroup(panelCrudEmpresa1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(btNovo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btCadastrar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btExcluir)
+                        .addGap(237, 237, 237)
+                        .addComponent(jLabel17)
+                        .addGap(26, 26, 26)
+                        .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelCrudEmpresa1Layout.createSequentialGroup()
+                        .addGap(361, 361, 361)
+                        .addComponent(jLabel13)))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
         panelCrudEmpresa1Layout.setVerticalGroup(
             panelCrudEmpresa1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -270,6 +279,8 @@ public class WinEmpresaMercado extends javax.swing.JPanel {
                     .addGroup(panelCrudEmpresa1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel47)
                         .addComponent(jLabel12)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelCrudEmpresa1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -277,7 +288,7 @@ public class WinEmpresaMercado extends javax.swing.JPanel {
                     .addComponent(btNovo)
                     .addComponent(btCadastrar)
                     .addComponent(btExcluir))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(21, 21, 21))
         );
 
         jLabel64.setText("Mercado");
@@ -346,14 +357,14 @@ public class WinEmpresaMercado extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tfVolume, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tfValor, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(243, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
             .addComponent(panelCrudEmpresa1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(panelCrudEmpresa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -395,7 +406,7 @@ public class WinEmpresaMercado extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(796, Short.MAX_VALUE))
+                .addContainerGap(1170, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -405,6 +416,7 @@ public class WinEmpresaMercado extends javax.swing.JPanel {
     private javax.swing.JComboBox cbEmpresa;
     private javax.swing.JComboBox cbMercado;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel47;
