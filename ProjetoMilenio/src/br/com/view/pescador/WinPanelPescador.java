@@ -13,6 +13,7 @@ package br.com.view.pescador;
 import br.com.dao.DAOEmpresa;
 import br.com.dao.DAOPescador;
 import br.com.pojo.Pescador;
+import br.com.util.Mensagens;
 import br.com.util.MyUtil;
 import br.com.view.WinConsulta;
 import java.awt.event.ActionEvent;
@@ -81,8 +82,9 @@ public class WinPanelPescador extends javax.swing.JPanel {
             });
         } else {
             if (cmd.equalsIgnoreCase("Cadastrar")) {
+                if(pescador == null){
                 pescador = getpescadorOfPanel();
-                new DAOPescador().cadastrar(pescador);
+                new DAOPescador().cadastrar(pescador);}else Mensagens.showMessageNaoCadastrar();
             } else if (cmd.equalsIgnoreCase("Excluir")) {
                 pescador = getpescadorOfPanel();
                 new DAOPescador().excluir(pescador);
@@ -218,6 +220,7 @@ public class WinPanelPescador extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         btPesquisa = new javax.swing.JButton();
         btNovo = new javax.swing.JButton();
+        jLabel36 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         cbMunicipioQuestao1 = new javax.swing.JComboBox();
         jLabel5 = new javax.swing.JLabel();
@@ -317,6 +320,9 @@ public class WinPanelPescador extends javax.swing.JPanel {
 
         btNovo.setText("Novo");
 
+        jLabel36.setFont(new java.awt.Font("Verdana", 1, 11));
+        jLabel36.setText("Dados do Pescador");
+
         javax.swing.GroupLayout panelCrudEmpresaLayout = new javax.swing.GroupLayout(panelCrudEmpresa);
         panelCrudEmpresa.setLayout(panelCrudEmpresaLayout);
         panelCrudEmpresaLayout.setHorizontalGroup(
@@ -344,8 +350,11 @@ public class WinPanelPescador extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btExcluir)
                         .addGap(6, 6, 6)
-                        .addComponent(btPesquisa)))
-                .addContainerGap(1021, Short.MAX_VALUE))
+                        .addComponent(btPesquisa))
+                    .addGroup(panelCrudEmpresaLayout.createSequentialGroup()
+                        .addGap(369, 369, 369)
+                        .addComponent(jLabel36)))
+                .addContainerGap(928, Short.MAX_VALUE))
         );
         panelCrudEmpresaLayout.setVerticalGroup(
             panelCrudEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -355,8 +364,9 @@ public class WinPanelPescador extends javax.swing.JPanel {
                     .addComponent(jLabel19)
                     .addGroup(panelCrudEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel46)
-                        .addComponent(jLabel1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1))
+                    .addComponent(jLabel36))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addGroup(panelCrudEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btNovo)
                     .addComponent(btCadastrar)
@@ -539,9 +549,6 @@ public class WinPanelPescador extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tfQuestao26, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(1060, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLayout.createSequentialGroup()
-                .addComponent(panelCrudEmpresa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
             .addGroup(panelLayout.createSequentialGroup()
                 .addGap(278, 278, 278)
                 .addComponent(jLabel8)
@@ -685,6 +692,9 @@ public class WinPanelPescador extends javax.swing.JPanel {
                     .addComponent(tfQuestao23_2)
                     .addComponent(tfQuestao23_3))
                 .addContainerGap(1128, Short.MAX_VALUE))
+            .addGroup(panelLayout.createSequentialGroup()
+                .addComponent(panelCrudEmpresa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelLayout.createSequentialGroup()
                     .addContainerGap()
@@ -711,7 +721,7 @@ public class WinPanelPescador extends javax.swing.JPanel {
             panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelLayout.createSequentialGroup()
                 .addComponent(panelCrudEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(76, 76, 76)
+                .addGap(56, 56, 56)
                 .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(jRadioButton1)
@@ -911,6 +921,7 @@ public class WinPanelPescador extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel5;

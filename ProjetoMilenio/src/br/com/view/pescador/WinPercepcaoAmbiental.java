@@ -17,6 +17,7 @@ import br.com.dao.DAOPescadorDadosEmbarcacao;
 import br.com.pojo.Pescador;
 import br.com.pojo.PescadorPersPectiva;
 import br.com.pojo.PescadorPersPectiva;
+import br.com.util.Mensagens;
 import br.com.util.MyUtil;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -90,8 +91,9 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
         String cmd = e.getActionCommand();
 
         if (cmd.equalsIgnoreCase("Cadastrar")) {
+            if(pde == null){
             pde = getpescadorOfPanel();
-            new DAOPercepcaoAmbiental().cadastrar(pde);
+            new DAOPercepcaoAmbiental().cadastrar(pde);}else Mensagens.showMessageNaoCadastrar();
         } else if (cmd.equalsIgnoreCase("Excluir")) {
             pde = getpescadorOfPanel();
             new DAOPercepcaoAmbiental().excluir(pde);
@@ -169,8 +171,7 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
     private void clear() {
 
         MyUtil.FieldsClear(this);
-
-
+        pde = null;
     }
 
     private void refresh() {

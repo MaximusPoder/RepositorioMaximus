@@ -17,6 +17,7 @@ import br.com.dao.DAOPescadorDadosEmbarcacao;
 import br.com.pojo.Pescador;
 import br.com.pojo.PescadorComposicao;
 import br.com.pojo.PescadorDadosEmbarcacao;
+import br.com.util.Mensagens;
 import br.com.util.MyUtil;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -97,8 +98,9 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
         String cmd = e.getActionCommand();
 
         if (cmd.equalsIgnoreCase("Cadastrar")) {
+            if(pde == null){
             pde = getpescadorOfPanel();
-            new DAOPescadorDadosEmbarcacao().cadastrar(pde);
+            new DAOPescadorDadosEmbarcacao().cadastrar(pde);}else Mensagens.showMessageNaoCadastrar();
         } else if (cmd.equalsIgnoreCase("Excluir")) {
             pde = getpescadorOfPanel();
             new DAOPescadorDadosEmbarcacao().excluir(pde);
@@ -114,7 +116,8 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
 
    private void setpescadorComposicaoForPanel(PescadorDadosEmbarcacao p) {
 
-        MyUtil.setSelected(p.getQuestao1(), bgQuestao1);
+    
+        MyUtil.setOpcaoWithResponse(bgQuestao1,p.getQuestao1(), tfQuestao1);
         tfQuestao2.setText(p.getQuestao2());
         MyUtil.setOpcaoWithResponse(bgQuestao3, p.getQuestao3(), tfQuestao3);
         tfQuestao4.setText(p.getQuestao4());
@@ -136,7 +139,7 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
 
     private PescadorDadosEmbarcacao getpescadorOfPanel() {
 
-        String questao1 = bgQuestao1.getSelection().getActionCommand();
+        String questao1 = bgQuestao1.getSelection().getActionCommand()+";"+tfQuestao1.getText();
         String questao2 = tfQuestao2.getText();
         String questao3 = bgQuestao3.getSelection().getActionCommand()+";"+tfQuestao3.getText();
         String questao4 = tfQuestao4.getText();
@@ -178,6 +181,7 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
         MyUtil.FieldsClear(this);
         bgQuestao1.clearSelection();
         bgQuestao3.clearSelection();
+        pde=null;
 
     }
 
@@ -215,6 +219,7 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
         btNovo = new javax.swing.JButton();
         cbPescador = new javax.swing.JComboBox();
         jLabel19 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
@@ -257,6 +262,7 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
         jLabel35 = new javax.swing.JLabel();
         tfQuestao17 = new javax.swing.JTextField();
         jRadioButton8 = new javax.swing.JRadioButton();
+        tfQuestao1 = new javax.swing.JTextField();
 
         setPreferredSize(new java.awt.Dimension(1035, 806));
 
@@ -279,35 +285,42 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
 
         jLabel19.setText("Pescador");
 
+        jLabel40.setFont(new java.awt.Font("Verdana", 1, 11));
+        jLabel40.setText("Dados da Embarcação");
+
         javax.swing.GroupLayout panelCrudEmpresa3Layout = new javax.swing.GroupLayout(panelCrudEmpresa3);
         panelCrudEmpresa3.setLayout(panelCrudEmpresa3Layout);
         panelCrudEmpresa3Layout.setHorizontalGroup(
             panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
-                        .addComponent(jLabel22)
-                        .addGap(45, 45, 45)
-                        .addComponent(jLabel14))
-                    .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
+                        .addContainerGap()
                         .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btNovo)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btCadastrar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btAtualizar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btExcluir)
-                                .addGap(91, 91, 91)
-                                .addComponent(jLabel19)
-                                .addGap(26, 26, 26)
-                                .addComponent(cbPescador, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel49))))
+                                .addGap(83, 83, 83)
+                                .addComponent(jLabel22)
+                                .addGap(45, 45, 45)
+                                .addComponent(jLabel14))
+                            .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
+                                        .addComponent(btNovo)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btCadastrar)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btAtualizar)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btExcluir)
+                                        .addGap(91, 91, 91)
+                                        .addComponent(jLabel19)
+                                        .addGap(26, 26, 26)
+                                        .addComponent(cbPescador, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel49)))))
+                    .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
+                        .addGap(363, 363, 363)
+                        .addComponent(jLabel40)))
                 .addContainerGap(365, Short.MAX_VALUE))
         );
         panelCrudEmpresa3Layout.setVerticalGroup(
@@ -318,7 +331,8 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
                     .addComponent(jLabel22)
                     .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel49)
-                        .addComponent(jLabel14)))
+                        .addComponent(jLabel14))
+                    .addComponent(jLabel40))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btExcluir)
@@ -336,18 +350,43 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
 
         bgQuestao1.add(jRadioButton1);
         jRadioButton1.setText("CAN");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionQ1(evt);
+            }
+        });
 
         bgQuestao1.add(jRadioButton2);
-        jRadioButton2.setText("Outros");
+        jRadioButton2.setText("Nenhuma");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionQ1(evt);
+            }
+        });
 
         bgQuestao1.add(jRadioButton3);
         jRadioButton3.setText("BMP");
+        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionQ1(evt);
+            }
+        });
 
         bgQuestao1.add(jRadioButton4);
         jRadioButton4.setText("CAM");
+        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionQ1(evt);
+            }
+        });
 
         bgQuestao1.add(jRadioButton5);
         jRadioButton5.setText("BPP");
+        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionQ1(evt);
+            }
+        });
 
         jLabel18.setText("Porto de Origem");
 
@@ -355,9 +394,19 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
 
         bgQuestao3.add(jRadioButton6);
         jRadioButton6.setText("Própria");
+        jRadioButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton6ActionPerformed(evt);
+            }
+        });
 
         bgQuestao3.add(jRadioButton7);
         jRadioButton7.setText("Financiada (Quem ?)");
+        jRadioButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton7ActionPerformed(evt);
+            }
+        });
 
         jLabel21.setText("Forma de Financimaneto");
 
@@ -388,13 +437,22 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
         jLabel35.setText("Possui Inscrição (IBAMA/Capitania-citar registro)");
 
         bgQuestao1.add(jRadioButton8);
-        jRadioButton8.setText("Nenhuma");
+        jRadioButton8.setText("Outros");
+        jRadioButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton8ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
         panel.setLayout(panelLayout);
         panelLayout.setHorizontalGroup(
             panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelCrudEmpresa3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panelLayout.createSequentialGroup()
+                .addGap(362, 362, 362)
+                .addComponent(tfQuestao1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(549, Short.MAX_VALUE))
             .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelLayout.createSequentialGroup()
                     .addGap(10, 10, 10)
@@ -405,7 +463,7 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(jRadioButton1)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jRadioButton4)
+                            .addComponent(jRadioButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jRadioButton5)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -488,7 +546,9 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
             panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelLayout.createSequentialGroup()
                 .addComponent(panelCrudEmpresa3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(753, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(tfQuestao1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(703, Short.MAX_VALUE))
             .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelLayout.createSequentialGroup()
                     .addGap(68, 68, 68)
@@ -554,7 +614,7 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
                     .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel35)
                         .addComponent(tfQuestao17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(467, Short.MAX_VALUE)))
+                    .addContainerGap(470, Short.MAX_VALUE)))
         );
 
         jScrollPane1.setViewportView(panel);
@@ -570,6 +630,26 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 806, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jRadioButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton8ActionPerformed
+        // TODO add your handling code here:
+        MyUtil.setEnableFields(true, tfQuestao1);
+    }//GEN-LAST:event_jRadioButton8ActionPerformed
+
+    private void actionQ1(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionQ1
+        // TODO add your handling code here:
+          MyUtil.setEnableFields(false, tfQuestao1);
+    }//GEN-LAST:event_actionQ1
+
+    private void jRadioButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton7ActionPerformed
+        // TODO add your handling code here:
+         MyUtil.setEnableFields(true, tfQuestao3);
+    }//GEN-LAST:event_jRadioButton7ActionPerformed
+
+    private void jRadioButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton6ActionPerformed
+        // TODO add your handling code here:
+        MyUtil.setEnableFields(Boolean.FALSE, tfQuestao3);
+    }//GEN-LAST:event_jRadioButton6ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -601,6 +681,7 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
@@ -613,6 +694,7 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel panel;
     private javax.swing.JPanel panelCrudEmpresa3;
+    private javax.swing.JTextField tfQuestao1;
     private javax.swing.JTextField tfQuestao10;
     private javax.swing.JTextField tfQuestao11;
     private javax.swing.JTextField tfQuestao12;

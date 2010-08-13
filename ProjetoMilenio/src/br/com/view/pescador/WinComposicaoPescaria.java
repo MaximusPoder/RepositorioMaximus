@@ -17,6 +17,7 @@ import br.com.dao.DAOPescadorMaterial;
 import br.com.pojo.Pescador;
 import br.com.pojo.PescadorComposicao;
 import br.com.pojo.PescadorMaterial;
+import br.com.util.Mensagens;
 import br.com.util.MyUtil;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -141,9 +142,11 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
         String cmd = e.getActionCommand();
 
         if (cmd.equalsIgnoreCase("Cadastrar")) {
+            if(pescadorComposicao ==null){
             pescadorComposicao = getpescadorComposicaoOfPanel();
             new DAOPescadorComposicao().cadastrar(pescadorComposicao);
-        } else if (cmd.equalsIgnoreCase("Excluir")) {
+            }else Mensagens.showMessageNaoCadastrar();
+         } else if (cmd.equalsIgnoreCase("Excluir")) {
             pescadorComposicao = getpescadorComposicaoOfPanel();
             new DAOPescadorComposicao().excluir(pescadorComposicao);
         } else if (cmd.equalsIgnoreCase("Atualizar")) {
@@ -220,6 +223,7 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
         MyUtil.clearTable(table);
         MyUtil.FieldsClear(this);
         bgQuestao18.clearSelection();
+        pescadorComposicao = null;
     }
 
     private void refresh() {
@@ -281,6 +285,7 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
         btNovo = new javax.swing.JButton();
         cbPescador = new javax.swing.JComboBox();
         jLabel19 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
@@ -352,6 +357,9 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
 
         jLabel19.setText("Pescador");
 
+        jLabel40.setFont(new java.awt.Font("Verdana", 1, 11));
+        jLabel40.setText("Composição da Pescaria");
+
         javax.swing.GroupLayout panelCrudEmpresa3Layout = new javax.swing.GroupLayout(panelCrudEmpresa3);
         panelCrudEmpresa3.setLayout(panelCrudEmpresa3Layout);
         panelCrudEmpresa3Layout.setHorizontalGroup(
@@ -367,8 +375,8 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
                     .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel49)
                             .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btNovo)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btCadastrar)
@@ -377,11 +385,13 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btExcluir)
                                 .addGap(91, 91, 91)
-                                .addComponent(jLabel19)
-                                .addGap(26, 26, 26)
-                                .addComponent(cbPescador, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel49))))
-                .addContainerGap(215, Short.MAX_VALUE))
+                                .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel40)
+                                    .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
+                                        .addComponent(jLabel19)
+                                        .addGap(26, 26, 26)
+                                        .addComponent(cbPescador, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                .addContainerGap(348, Short.MAX_VALUE))
         );
         panelCrudEmpresa3Layout.setVerticalGroup(
             panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -391,8 +401,9 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
                     .addComponent(jLabel22)
                     .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel49)
-                        .addComponent(jLabel14)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel14))
+                    .addComponent(jLabel40))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btExcluir)
                     .addComponent(btAtualizar)
@@ -400,7 +411,7 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
                     .addComponent(btNovo)
                     .addComponent(cbPescador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jLabel15.setText("Período");
@@ -445,11 +456,21 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
 
         bgQuestao18.add(jRadioButton1);
         jRadioButton1.setText("Sim");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
 
         bgQuestao18.add(jRadioButton2);
         jRadioButton2.setText("Não");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
 
-        jLabel39.setText("Período");
+        jLabel39.setText("Se não de quem?");
 
         panelCrudEmpresa7.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -482,7 +503,7 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
                         .addComponent(btAdd)
                         .addGap(18, 18, 18)
                         .addComponent(btRemove)))
-                .addContainerGap(692, Short.MAX_VALUE))
+                .addContainerGap(825, Short.MAX_VALUE))
         );
         panelCrudEmpresa7Layout.setVerticalGroup(
             panelCrudEmpresa7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -518,11 +539,6 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
             panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelLayout.createSequentialGroup()
                 .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelLayout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 681, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)))
                     .addGroup(panelLayout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -607,8 +623,13 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
                                             .addComponent(tfQuestao9, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(tfQuestao12, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(tfQuestao10, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(jLabel29))))))
-                .addContainerGap(163, Short.MAX_VALUE))
+                                    .addComponent(jLabel29)))))
+                    .addGroup(panelLayout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 681, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))))
+                .addContainerGap(296, Short.MAX_VALUE))
             .addComponent(panelCrudEmpresa7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(panelCrudEmpresa3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -693,8 +714,8 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(320, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(353, Short.MAX_VALUE))
         );
 
         jScrollPane3.setViewportView(panel);
@@ -703,13 +724,24 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 777, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1035, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1148, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 851, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+        MyUtil.setEnableFields(false, tfQuestao18);
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        // TODO add your handling code here:
+        MyUtil.setEnableFields(Boolean.TRUE, tfQuestao18);
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup bgQuestao18;
     private javax.swing.JButton btAdd;
@@ -742,6 +774,7 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
