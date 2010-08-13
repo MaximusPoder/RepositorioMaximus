@@ -1,7 +1,7 @@
 package br.com.Persistencia;
 
 //import com.sun.rowset.JdbcRowSetImpl;
-import br.com.bean4.string;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -109,8 +109,6 @@ public class Conexao {
         return false;
     }
 
-    public void execute(string sql) {
-        throw new UnsupportedOperationException("Not yet implemented");
-    }
+    
 
 }
