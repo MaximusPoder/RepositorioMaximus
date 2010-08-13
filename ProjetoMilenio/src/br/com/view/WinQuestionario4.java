@@ -1,9 +1,4 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
  * WinQuestionario4.java
  *
  * Created on 08/08/2010, 22:00:10
@@ -12,10 +7,9 @@ package br.com.view;
 
 import br.com.dao.DAOEmpresa;
 import br.com.dao.DAOQuestionario4;
-import br.com.dao.DaoQuestionario3;
 import br.com.pojo.Empresa;
 import br.com.pojo.EmpresaQuestionario4;
-import br.com.pojo.EmpresaQuestionario4;
+import br.com.util.Mensagens;
 import br.com.util.MyUtil;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -63,6 +57,8 @@ public class WinQuestionario4 extends javax.swing.JPanel {
 
     private EmpresaQuestionario4 getQuestionario3OfPanel() {
 
+        try {
+
         String questao31 = tfQuestao31.getText();
         String questao32 = bgQuestao32.getSelection().getActionCommand() + ";" + tfQuestao32.getText();
         String questao33 = bgQuestao33.getSelection().getActionCommand();
@@ -85,6 +81,12 @@ public class WinQuestionario4 extends javax.swing.JPanel {
                 questao36, questao37, questao38, relacoesTrabalho,
                 empresas.get(cbEmpresa.getSelectedIndex() - 1).getId());
         return eq;
+
+        } catch (Exception e) {
+
+            Mensagens.showMessageErroPreencherDados();
+        }
+        return null;
     }
 
     private void setQuestionario4ForPanel(EmpresaQuestionario4 eq) {
@@ -117,8 +119,10 @@ public class WinQuestionario4 extends javax.swing.JPanel {
         String cmd = e.getActionCommand();
 if(cbEmpresa.getSelectedIndex()>0){
         if (cmd.equalsIgnoreCase("Cadastrar")) {
+            if(empresaQuestionario4==null){
             empresaQuestionario4 = getQuestionario3OfPanel();
-            new DAOQuestionario4().cadastrar(empresaQuestionario4);
+            new DAOQuestionario4().cadastrar(empresaQuestionario4);}
+            else Mensagens.showMessageErroPreencherDados();
         } else if (cmd.equalsIgnoreCase("Atualizar")) {
             empresaQuestionario4 = getQuestionario3OfPanel();
             new DAOQuestionario4().atualizar(empresaQuestionario4);
@@ -408,27 +412,27 @@ if(cbEmpresa.getSelectedIndex()>0){
             .addGroup(tabQuestionario4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel96)
-                .addContainerGap(3737, Short.MAX_VALUE))
+                .addContainerGap(885, Short.MAX_VALUE))
             .addGroup(tabQuestionario4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(3479, Short.MAX_VALUE))
+                .addContainerGap(627, Short.MAX_VALUE))
             .addGroup(tabQuestionario4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(tabQuestionario4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel97)
                     .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(3479, Short.MAX_VALUE))
+                .addContainerGap(627, Short.MAX_VALUE))
             .addGroup(tabQuestionario4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(tabQuestionario4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel98)
                     .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(3479, Short.MAX_VALUE))
+                .addContainerGap(627, Short.MAX_VALUE))
             .addGroup(tabQuestionario4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel99)
-                .addContainerGap(3832, Short.MAX_VALUE))
+                .addContainerGap(980, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabQuestionario4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(tabQuestionario4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -448,10 +452,10 @@ if(cbEmpresa.getSelectedIndex()>0){
                 .addComponent(jRadioButton27)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRadioButton28)
-                .addContainerGap(3465, Short.MAX_VALUE))
+                .addContainerGap(613, Short.MAX_VALUE))
             .addGroup(tabQuestionario4Layout.createSequentialGroup()
                 .addComponent(panelCrudEmpresa8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(2942, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
         tabQuestionario4Layout.setVerticalGroup(
             tabQuestionario4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -517,9 +521,7 @@ if(cbEmpresa.getSelectedIndex()>0){
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(ScrollQuestionario4, javax.swing.GroupLayout.PREFERRED_SIZE, 886, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+            .addComponent(ScrollQuestionario4, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -422,7 +422,10 @@ public class WinQuestionario5 extends javax.swing.JPanel {
 
     private EmpresaQuestionario5 getQuestionarioOfPanel() {
 
-        String questao39 = bgQuestao39.getSelection().getActionCommand();
+
+
+        try {
+                 String questao39 = bgQuestao39.getSelection().getActionCommand();
         String questao40 = bgQuestao40.getSelection().getActionCommand();
         String questao41 = bgQuestao41.getSelection().getActionCommand();
         String questao42 = tfQuestao44.getText();
@@ -445,6 +448,11 @@ public class WinQuestionario5 extends javax.swing.JPanel {
                     questao44, questao45, questao46,
                     empresas.get(cbEmpresa.getSelectedIndex() - 1).getId());
         return eq;
+        } catch (Exception e) {
+
+            Mensagens.showMessageErroPreencherDados();
+        }
+        return null;
     }
 
     private void setQuestionarioForPanel(EmpresaQuestionario5 eq) {
@@ -468,7 +476,7 @@ public class WinQuestionario5 extends javax.swing.JPanel {
         bgQuestao41.clearSelection();
         bgQuestao45.clearSelection();
         bgQuestao46.clearSelection();
-        cbEmpresa.setSelectedIndex(0);
+      
         q = null;
 
     }
@@ -488,6 +496,7 @@ public class WinQuestionario5 extends javax.swing.JPanel {
             new DAOQuestionario5().atualizar(q);
         }
         clearQuestionario();
+          cbEmpresa.setSelectedIndex(0);
     }
 
     private void initAction() {
@@ -496,6 +505,7 @@ public class WinQuestionario5 extends javax.swing.JPanel {
         btNovoQuestionario4.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
+                  cbEmpresa.setSelectedIndex(0);
                 actionEmpresaQuestionario(e);
             }
         });

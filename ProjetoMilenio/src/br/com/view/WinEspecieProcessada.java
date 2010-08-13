@@ -15,9 +15,9 @@ import br.com.dao.DAOEmpresaEB;
 import br.com.dao.DaoEspecieProcessada;
 import br.com.pojo.Empresa;
 import br.com.pojo.EmpresaEB;
-import br.com.pojo.EmpresaProblema;
 import br.com.pojo.EspecieProcessada;
 import br.com.util.JMoneyField;
+import br.com.util.Mensagens;
 import br.com.util.ToMoney;
 import br.com.util.MyUtil;
 import java.awt.event.ActionEvent;
@@ -28,7 +28,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -66,8 +65,12 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
         String cmd = e.getActionCommand();
 
         if (cmd.equalsIgnoreCase("Cadastrar")) {
-            ep = getEmpresaEspecieProcessadaOfPanel();
-            new DaoEspecieProcessada().cadastrar(ep);
+            if (ep == null) {
+                ep = getEmpresaEspecieProcessadaOfPanel();
+                new DaoEspecieProcessada().cadastrar(ep);
+            } else {
+                Mensagens.showMessageNaoCadastrar();
+            }
         } else if (cmd.equalsIgnoreCase("Excluir")) {
             ep = getEmpresaEspecieProcessadaOfPanel();
             new DaoEspecieProcessada().excluir(ep);
@@ -94,21 +97,27 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
 
     private EspecieProcessada getEmpresaEspecieProcessadaOfPanel() {
 
-        String produto = cbProduto.getSelectedItem().toString();
 
-        String quantidadeProduzida = tfQuantidade.getText();
-        String precoVenda = tfVenda.getText();
-        Integer empresaId = empresas.get(cbEmpresaEspecieProcessada.getSelectedIndex() - 1).getId();
-        Integer especieId = empresasEBs.get(cbEspecie.getSelectedIndex() - 1).getId();
+        try {
+            String produto = cbProduto.getSelectedItem().toString();
 
-        if (ep != null) {
+            String quantidadeProduzida = tfQuantidade.getText();
+            String precoVenda = tfVenda.getText();
+            Integer empresaId = empresas.get(cbEmpresaEspecieProcessada.getSelectedIndex() - 1).getId();
+            Integer especieId = empresasEBs.get(cbEspecie.getSelectedIndex() - 1).getId();
+
+            if (ep != null) {
+                ep.all(produto, quantidadeProduzida, precoVenda, especieId, empresaId);
+                return ep;
+            }
+
+            EspecieProcessada ep = new EspecieProcessada();
             ep.all(produto, quantidadeProduzida, precoVenda, especieId, empresaId);
             return ep;
+        } catch (Exception e) {
+            Mensagens.showMessageErroPreencherDados();
         }
-
-        EspecieProcessada ep = new EspecieProcessada();
-        ep.all(produto, quantidadeProduzida, precoVenda, especieId, empresaId);
-        return ep;
+        return null;
     }
 
     private void setEspecieProcessadaForPanel(EspecieProcessada ep) {
@@ -142,7 +151,9 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
                         MyUtil.refresComboBox(empresasEBs, cbEspecie);
                         if (!empresasEBs.isEmpty()) {//Especie for nao nullo
                             refreshEspecieProcessada();
-                        }else clearTable();
+                        } else {
+                            clearTable();
+                        }
                     }
 
                 }
@@ -206,8 +217,6 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
             model.addRow(objeto);
         }
     }
-
-    
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -456,7 +465,7 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
     }
 
     private void clearTable() {
-         model = (DefaultTableModel) tableEspecieProcessada.getModel();
+        model = (DefaultTableModel) tableEspecieProcessada.getModel();
         tableEspecieProcessada.clearSelection();
         clearTable(tableEspecieProcessada);
     }

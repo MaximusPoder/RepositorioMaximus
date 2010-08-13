@@ -66,7 +66,10 @@ public class WinQuestionario1 extends javax.swing.JPanel {
 
     private EmpresaQuestionario1 getQuestionario1OfPanel() {
 
-        String questao8 = tfQuestao8.getText();
+
+
+        try {
+            String questao8 = tfQuestao8.getText();
         String questao9 = tfQuestao9.getText();
         String questao10 = MyUtil.getSelected(ckFile, ckInteiros, ckOutros, ckPosta);
         String questao11 = tfQuestao11.getText();
@@ -86,6 +89,10 @@ public class WinQuestionario1 extends javax.swing.JPanel {
                 empresas.get(cbEmpresaQuestionario1.getSelectedIndex() - 1).getId());
 
         return eq;
+        } catch (Exception e) {
+            Mensagens.showMessageErroPreencherDados();
+        }
+        return null;
 
     }
 
