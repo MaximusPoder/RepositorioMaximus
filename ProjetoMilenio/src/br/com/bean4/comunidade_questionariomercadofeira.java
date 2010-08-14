@@ -15,6 +15,7 @@ import br.com.Persistencia.Conexao;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.print.DocFlavor.STRING;
 import javax.swing.JOptionPane;
 
 /**
@@ -457,6 +458,11 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         });
 
         botao_alterar.setText("Alterar");
+        botao_alterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_alterarActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Add");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -1124,8 +1130,9 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
               ckb[0]+","+
               ckb[1]+",'"+
               tfQualColonia.getText()+"','"+
-              tfAlgumaAssociacao.getText()+"',"+
               ckb[2]+",'"+
+              tfAlgumaAssociacao.getText()+"',"+
+              ckb[3]+",'"+
               tfOrgaoCarteiraPescado.getText()+"',"+
               ckb[7]+","+
               ckb[8]+","+
@@ -1203,6 +1210,124 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         } catch (Exception e) {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void botao_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_alterarActionPerformed
+         int[] ckb = new int[11];
+      if (ckbInss.isSelected()){
+        ckb[0]=1;
+      } else
+        ckb[0]=0;
+    if (ckbColonia.isSelected()){
+          ckb[1]=1;
+      }else
+          ckb[1]=0;
+    if (ckbAlgumaAssociacao.isSelected()){
+          ckb[2]=1;
+      }else
+          ckb[2]=0;
+    if(ckbCarteiraPescado.isSelected()){
+           ckb[3]=1;
+       }else
+           ckb[3]=0;
+    if (ckbCriancaEnvolvidas.isSelected()){
+          ckb[4]=1;
+      }else
+          ckb[4]=0;
+     if(rbMercado.isSelected()){
+           ckb[5]=1;
+       }else
+           ckb[5]=0;
+     if(rbFeiraLivre.isSelected()){
+          ckb[6]=1;
+       }else
+          ckb[6]=0;
+      if (ckbFamiliar.isSelected()){
+           ckb[7]=1;
+      }else
+          ckb[7]=0;
+       if (ckbArtesanalComVizinho.isSelected()){
+            ckb[8]=1;
+       }else
+           ckb[8]=0;
+       if (ckbArmadorEmbarcacao.isSelected()){
+            ckb[9]=1;
+        }else
+            ckb[9]=0;
+        if (ckbAssalariado.isSelected()){
+            ckb[10]=1;
+        }else
+            ckb[10]=0;
+
+        try {
+            String sql= "UPDATE mercado_questionario SET "+
+             "nome_municipio= '" +cbMunicipio.getSelectedItem()+"',"+
+             "e_mercado= '"+ckb[5]+"',"+
+             "e_fera_livre='"+ckb[6]+"',"+
+             "nome= '"+tfNome.getText()+"',"+
+             "apelido='"+tfApelido.getText()+"'," +
+             "naturalidade='"+tfNaturalidade.getText()+"',"+
+             "sexo = '"+cbSexo.getSelectedIndex()+"',"+
+             "idade= '"+tfIdade.getText()+"',"+
+             "atividade_principal ='"+tfAtividadePrincipal.getText()+"',"+
+             "atividade_secundaria='"+tfAtividadeSecundaria.getText()+"',"+
+             "boxe_local='"+tfBoxes.getText()+"',"+
+             "quantos_possui='"+tfQuantosPossui.getText()+"',"+
+             "estado_civil='"+cbEstadoCivil.getSelectedIndex()+"',"+
+             "composicao_familia='"+tfComposicaoFamilia.getText()+"',"+
+             "escolaridade='"+tfEscolaridade.getText()+"',"+
+             "pq_parou='"+tfPorQueParou.getText()+"',"+
+             "local-moradia='"+cbLocalMoradia.getSelectedIndex()+"',"+
+             "qualidade_moradia ='"+cbQualidadeMoradia.getSelectedIndex()+"',"+
+             "tipo_construcao='" +tfTipoConstrucao.getText()+"',"+
+             "inss='"+ckb[0]+","+
+             "na_colonia='"+ckb[1]+",'"+
+             "qual_colonia='"+tfQualColonia.getText()+"','"+
+             "alguma_associacao='"+ckb[2]+",'"+
+             "qual_associacao='"+tfAlgumaAssociacao.getText()+"',"+
+             "carteira_pescador='"+ckb[3]+","+
+             "orgao_carteira_pesca='"+tfOrgaoCarteiraPescado.getText()+"',"+
+             "relacao_trab_familiar='"+ckb[7]+","+
+             "relcao_trab_artesanal='"+ ckb[8]+","+
+             "relacao_trab_armador='"+ ckb[9]+","+
+             "relacao_trab_assalariado='"+ ckb[10]+","+
+             "plano_saude='"+tpPlanoSaude.getText()+"','"+
+             "atividadde_renda_familiar='"+tpRendaFamiliar.getText()+"','"+
+             "entrevistado='"+tfEntrevistado.getText()+"','"+
+             "esposa='"+tfEsposa.getText()+"','"+
+             "filhos='"+tfFilhos.getText()+"','"+
+             "netos='"+tfNetos.getText()+"',"+
+             "tempo_diario_trabalho='"+tfTempoTrabalho.getText()+","+
+             "periodo_atividade='"+tfTempoAtividade.getText()+","+
+             "questao1='"+tpQuestao1.getText()+"','"+
+             "questao2='"+tpQuestao2.getText()+"','"+
+             "questao3='"+tpQuestao3.getText()+"','"+
+             "questao4='"+tpQuestao4.getText()+"','"+
+             "questao5='"+tpQuestao5.getText()+"','"+
+             "questap6='"+tpQuestao6.getText()+"','"+
+             "questao7='"+tpQuestao7.getText()+"','"+
+             "questao8='"+ckb[4]+"',"+
+             "questao9='"+tpQuestao9.getText()+"','"+
+             "questoa10='"+tpQuestao10.getText()+"','"+
+
+             "where id_mercado = "+conexao.resultSet.getString("id_mercado");
+
+              System.out.println(sql);
+            if (conexao.update(sql)){
+            JOptionPane.showMessageDialog(null,"Alterado com sucesso");
+            //Atualiza Resultset
+            conexao.execute("select * from quetionario_mercado");
+            conexao.resultSet.next();
+            exibir_dados();
+            }
+
+
+
+        } catch (Exception e) {
+            System.out.println(e + "Erro no botão alterar");
+        }
+
+
+    }//GEN-LAST:event_botao_alterarActionPerformed
 
     /**
     * @param args the command line arguments
