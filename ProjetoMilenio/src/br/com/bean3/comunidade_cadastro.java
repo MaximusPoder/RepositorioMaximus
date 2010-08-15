@@ -1,9 +1,7 @@
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
- */
-
-/*
+ *
  * comunidade_cadastro.java
  *
  * Created on 05/08/2010, 11:28:34
@@ -11,15 +9,47 @@
 
 package br.com.bean3;
 
+import br.com.Persistencia.Conexao;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 /**
- *
- * @author MPA
+ * @author Jhonathas
  */
 public class comunidade_cadastro extends javax.swing.JFrame {
+
+    int navega = 0; //variavel pra saber o  botão clicado;
+    private Conexao conexao;
+    //int inicia_combo = 0;
+    //private boolean state = false;
+
+
 
     /** Creates new form comunidade_cadastro */
     public comunidade_cadastro() {
         initComponents();
+        conexao = new Conexao();
+        conexao.conecta("mil_interface");
+        //Insere nomes do município no cbMunicipio
+        try {
+            conexao.execute("select * FROM tab_local where pai='Pará'");
+            while (conexao.resultSet.next()){
+                cbMunicipio.addItem(conexao.resultSet.getString("nome"));
+                //System.out.println(conexao.resultSet.getString("nome"));
+            }
+        }catch (SQLException ex) {
+            System.out.println(ex);
+        }
+
+        try {
+            conexao.execute("select * from comunidade_cadastro");
+            conexao.resultSet.first();
+            exibir_dados();
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
     }
 
     /** This method is called from within the constructor to
@@ -42,21 +72,30 @@ public class comunidade_cadastro extends javax.swing.JFrame {
         tfData = new javax.swing.JTextField();
         tfComunidade = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        tfEntrevistador = new javax.swing.JTextField();
+        tfNomeEntrevistador = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        tfEntrevistado = new javax.swing.JTextField();
+        tfNomeEntrevistado = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         tfNaturalidade = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         cbSexo = new javax.swing.JComboBox();
         jLabel10 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        tfIdade = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         cbEstadoCivil = new javax.swing.JComboBox();
         jLabel12 = new javax.swing.JLabel();
-        tfNumerofilho = new javax.swing.JTextField();
+        tfNumerofilhos = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        tfEscolaridade = new javax.swing.JTextField();
+        jPanel7 = new javax.swing.JPanel();
+        Cadastrar3 = new javax.swing.JButton();
+        botao_excluir3 = new javax.swing.JButton();
+        botao_novo3 = new javax.swing.JButton();
+        botao_primeiro3 = new javax.swing.JButton();
+        botao_anterior3 = new javax.swing.JButton();
+        botao_proximo3 = new javax.swing.JButton();
+        botao_ultimo3 = new javax.swing.JButton();
+        botao_alterar3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -66,7 +105,7 @@ public class comunidade_cadastro extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel2.setText("Informações Gerais");
 
-        jLabel3.setText("1.Município");
+        jLabel3.setText("1.Município.:");
 
         cbMunicipio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,7 +129,7 @@ public class comunidade_cadastro extends javax.swing.JFrame {
 
         jLabel10.setText("8.Idade:");
 
-        jTextField1.setText("0");
+        tfIdade.setText("0");
 
         jLabel11.setText("9. Estado Civil:");
 
@@ -98,9 +137,110 @@ public class comunidade_cadastro extends javax.swing.JFrame {
 
         jLabel12.setText("10. N° de Filhos:");
 
-        tfNumerofilho.setText("0");
+        tfNumerofilhos.setText("0");
 
         jLabel13.setText("11. Escolaridade:");
+
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+
+        Cadastrar3.setText("Cadastrar");
+        Cadastrar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Cadastrar3Action(evt);
+            }
+        });
+
+        botao_excluir3.setText("Excluir");
+        botao_excluir3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_excluir3ActionPerformed(evt);
+            }
+        });
+
+        botao_novo3.setText("Limpar");
+        botao_novo3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_novo3ActionPerformed(evt);
+            }
+        });
+
+        botao_primeiro3.setText("<<");
+        botao_primeiro3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_primeiro3ActionPerformed(evt);
+            }
+        });
+
+        botao_anterior3.setText("<");
+        botao_anterior3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_anterior3ActionPerformed(evt);
+            }
+        });
+
+        botao_proximo3.setText(">");
+        botao_proximo3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_proximo3ActionPerformed(evt);
+            }
+        });
+
+        botao_ultimo3.setText(">>");
+        botao_ultimo3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_ultimo3ActionPerformed(evt);
+            }
+        });
+
+        botao_alterar3.setText("Alterar");
+        botao_alterar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_alterar3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(botao_novo3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Cadastrar3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botao_excluir3)
+                        .addGap(7, 7, 7)
+                        .addComponent(botao_alterar3))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(botao_primeiro3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botao_anterior3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botao_proximo3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botao_ultimo3)))
+                .addContainerGap(285, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botao_primeiro3)
+                    .addComponent(botao_anterior3)
+                    .addComponent(botao_proximo3)
+                    .addComponent(botao_ultimo3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botao_novo3)
+                    .addComponent(Cadastrar3)
+                    .addComponent(botao_excluir3)
+                    .addComponent(botao_alterar3))
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -108,73 +248,73 @@ public class comunidade_cadastro extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(81, 81, 81)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addGap(18, 18, 18)
+                                .addComponent(cbEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(31, 31, 31)
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfNumerofilhos, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addGap(18, 18, 18)
+                                .addComponent(tfNomeEntrevistado, javax.swing.GroupLayout.DEFAULT_SIZE, 455, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tfNomeEntrevistador, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(tfComunidade, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(cbMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tfData, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel13)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(tfComunidade, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(tfEscolaridade))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(cbMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGap(10, 10, 10)
-                            .addComponent(jLabel5)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(tfData, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jLabel6)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(tfEntrevistador))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jLabel7)
-                            .addGap(18, 18, 18)
-                            .addComponent(tfEntrevistado)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel8)
-                        .addGap(10, 10, 10)
-                        .addComponent(tfNaturalidade, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel11)
-                        .addGap(18, 18, 18)
-                        .addComponent(cbEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfNumerofilho, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(44, Short.MAX_VALUE))
+                                    .addComponent(jLabel8)
+                                    .addGap(10, 10, 10)
+                                    .addComponent(tfNaturalidade, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jLabel9)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jLabel10)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(cbMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -187,17 +327,17 @@ public class comunidade_cadastro extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(tfEntrevistador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfNomeEntrevistador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(tfEntrevistado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfNomeEntrevistado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tfNaturalidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -205,12 +345,12 @@ public class comunidade_cadastro extends javax.swing.JFrame {
                     .addComponent(jLabel11)
                     .addComponent(cbEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12)
-                    .addComponent(tfNumerofilho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfNumerofilhos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(53, Short.MAX_VALUE))
+                    .addComponent(tfEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -219,11 +359,11 @@ public class comunidade_cadastro extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 653, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 660, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
         );
 
         pack();
@@ -237,6 +377,176 @@ public class comunidade_cadastro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfEntrevistadorActionPerformed
 
+    private void Cadastrar3Action(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastrar3Action
+        // Para graver os dados no banco de dados
+
+        try {
+            String sqlinsert = "insert into comunidade_cadastro "
+                    + "(nome_municipio,comunidade,data,"
+                    + "nm_entrevistador,nm_entrevistado,naturalidade,"
+                    + "sexo,idade,estado_civil,nr_de_filhos,"
+                    + "escolaridade) values ('"+
+                    cbMunicipio.getSelectedItem()+"','"+
+                    tfComunidade.getText()+"','"+
+                    tfData.getText()+"','"+
+
+                    tfNomeEntrevistador.getText()+"','"+
+                    tfNomeEntrevistado.getText()+"','"+
+                    tfNaturalidade.getText()+"','"+
+
+                    cbSexo.getSelectedItem()+"',"+
+                    tfIdade.getText()+",'"+
+                    cbEstadoCivil.getSelectedItem()+"',"+
+                    tfNumerofilhos.getText()+",'"+
+
+                    tfEscolaridade.getText()+"')";
+
+            //System.out.println(sqlinsert);
+            if (conexao.salvar(sqlinsert)) {
+                JOptionPane.showMessageDialog(null,"Cadastrado com sucesso");
+                //agora é hora de atualizar o resultset
+                conexao.execute("select * from comunidade_cadastro");
+                conexao.resultSet.first(); //1º registro
+                exibir_dados();
+            }
+
+
+        }catch (SQLException erro){
+            System.out.println(erro);
+        }
+}//GEN-LAST:event_Cadastrar3Action
+
+    private void botao_excluir3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_excluir3ActionPerformed
+        String sql;
+        try {
+            sql = "select * from comunidade_cadastro Where id_comunidade=" + conexao.resultSet.getString("id_comunidade");
+            conexao.execute(sql);
+            conexao.resultSet.first();
+            String nome = "Deletar o atravessador : "+conexao.resultSet.getString("comunidade")+" ?";
+            int opcao_escolhida = JOptionPane.showConfirmDialog(null,nome,"Exclusão ",JOptionPane.YES_NO_OPTION);
+            if (opcao_escolhida == JOptionPane.YES_OPTION) {
+                sql = "DELETE FROM comunidade_cadastro Where id_comunidade ="+conexao.resultSet.getString("id_comunidade");
+                if (conexao.salvar(sql)) {
+                    JOptionPane.showMessageDialog(null,"Exclusão realizada com sucesso");
+                    //atualiza o ResultSet
+                    conexao.execute("select * from comunidade_cadastro");
+                    conexao.resultSet.first();
+                    exibir_dados();
+                }
+            } else{
+                conexao.execute("select * from comunidade_cadastro");
+                conexao.resultSet.first();
+                exibir_dados();
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Erro ao tentar excluir "+ex);
+        }
+}//GEN-LAST:event_botao_excluir3ActionPerformed
+
+    private void botao_novo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_novo3ActionPerformed
+        
+        tfNaturalidade.setText("");
+        tfIdade.setText("0");
+        cbEstadoCivil.setSelectedIndex(0);
+        tfEscolaridade.setText("");
+        tfData.setText("01/01/2001");
+        tfComunidade.setText("");
+        tfNomeEntrevistado.setText("");
+        tfNomeEntrevistador.setText("");
+        tfNumerofilhos.setText("0");
+        
+
+        //System.out.println(conexao.resultSet.getString("local_moradia"));
+        cbMunicipio.setSelectedIndex(0);
+        cbSexo.setSelectedIndex(0);
+        
+}//GEN-LAST:event_botao_novo3ActionPerformed
+
+    private void botao_primeiro3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_primeiro3ActionPerformed
+        try {
+            conexao.resultSet.first();
+            exibir_dados();
+
+
+        }catch (SQLException ex) {
+            System.out.println(ex);
+        }
+}//GEN-LAST:event_botao_primeiro3ActionPerformed
+
+    private void botao_anterior3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_anterior3ActionPerformed
+        try {
+            conexao.resultSet.previous();
+            exibir_dados();
+            navega = 1;
+
+        }catch (SQLException ex) {
+            System.out.println(ex);
+        }
+}//GEN-LAST:event_botao_anterior3ActionPerformed
+
+    private void botao_proximo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_proximo3ActionPerformed
+        try {
+
+            conexao.resultSet.next();
+            exibir_dados();
+            navega = 2;
+
+
+        }catch (SQLException ex) {
+            System.out.println(ex);
+        }
+}//GEN-LAST:event_botao_proximo3ActionPerformed
+
+    private void botao_ultimo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_ultimo3ActionPerformed
+        try {
+            conexao.resultSet.last();
+            exibir_dados();
+
+
+        }catch (SQLException ex) {
+            System.out.println(ex);
+        }
+}//GEN-LAST:event_botao_ultimo3ActionPerformed
+
+    private void botao_alterar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_alterar3ActionPerformed
+        // Codigo para alterar os dados do BD
+
+
+        try{
+            String sql ="UPDATE comunidade_cadastro SET "+
+                    "nome_municipio = '"+cbMunicipio.getSelectedItem()+"',"+
+                    "comunidade = '"+tfComunidade.getText()+"',"+
+                    "data = '"+tfData.getText()+"',"+
+                    "nm_entrevistador = '"+tfNomeEntrevistador.getText()+"',"+
+                    "nm_entrevistado = '"+tfNomeEntrevistado.getText()+"',"+
+                    "naturalidade = '"+tfNaturalidade.getText()+"',"+
+                    "sexo = '"+cbSexo.getSelectedItem() +"',"+
+                    "idade = "+tfIdade.getText()+","+
+                    "estado_civil = '"+cbEstadoCivil.getSelectedItem() +"',"+
+                    "nr_de_filhos = "+tfNumerofilhos.getText() +","+
+
+
+                    "escolaridade = '"+ tfEscolaridade.getText() +"' "+
+
+
+                    "where id_comunidade = "+conexao.resultSet.getString("id_comunidade");
+
+            System.out.println(sql);
+            if (conexao.update(sql)){
+                JOptionPane.showMessageDialog(null,"Alterado com sucesso");
+                //Atualiza Resultset
+                conexao.execute("select * from comunidade_cadastro");
+                conexao.resultSet.next();
+                exibir_dados();
+            }
+
+
+        }catch (Exception e){
+            System.out.println(e + "Erro no botão alterar");
+        }
+}//GEN-LAST:event_botao_alterar3ActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -249,6 +559,38 @@ public class comunidade_cadastro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Cadastrar;
+    private javax.swing.JButton Cadastrar1;
+    private javax.swing.JButton Cadastrar2;
+    private javax.swing.JButton Cadastrar3;
+    private javax.swing.JButton botao_alterar;
+    private javax.swing.JButton botao_alterar1;
+    private javax.swing.JButton botao_alterar2;
+    private javax.swing.JButton botao_alterar3;
+    private javax.swing.JButton botao_anterior;
+    private javax.swing.JButton botao_anterior1;
+    private javax.swing.JButton botao_anterior2;
+    private javax.swing.JButton botao_anterior3;
+    private javax.swing.JButton botao_excluir;
+    private javax.swing.JButton botao_excluir1;
+    private javax.swing.JButton botao_excluir2;
+    private javax.swing.JButton botao_excluir3;
+    private javax.swing.JButton botao_novo;
+    private javax.swing.JButton botao_novo1;
+    private javax.swing.JButton botao_novo2;
+    private javax.swing.JButton botao_novo3;
+    private javax.swing.JButton botao_primeiro;
+    private javax.swing.JButton botao_primeiro1;
+    private javax.swing.JButton botao_primeiro2;
+    private javax.swing.JButton botao_primeiro3;
+    private javax.swing.JButton botao_proximo;
+    private javax.swing.JButton botao_proximo1;
+    private javax.swing.JButton botao_proximo2;
+    private javax.swing.JButton botao_proximo3;
+    private javax.swing.JButton botao_ultimo;
+    private javax.swing.JButton botao_ultimo1;
+    private javax.swing.JButton botao_ultimo2;
+    private javax.swing.JButton botao_ultimo3;
     private javax.swing.JComboBox cbEstadoCivil;
     private javax.swing.JComboBox cbMunicipio;
     private javax.swing.JComboBox cbSexo;
@@ -266,15 +608,64 @@ public class comunidade_cadastro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField tfComunidade;
     private javax.swing.JTextField tfData;
-    private javax.swing.JTextField tfEntrevistado;
-    private javax.swing.JTextField tfEntrevistador;
+    private javax.swing.JTextField tfEscolaridade;
+    private javax.swing.JTextField tfIdade;
     private javax.swing.JTextField tfNaturalidade;
-    private javax.swing.JTextField tfNumerofilho;
+    private javax.swing.JTextField tfNomeEntrevistado;
+    private javax.swing.JTextField tfNomeEntrevistador;
+    private javax.swing.JTextField tfNumerofilhos;
     // End of variables declaration//GEN-END:variables
+
+        private void anterior() {
+         try {
+                    conexao.resultSet.previous();
+                } catch (SQLException ex1) {
+                    System.out.println(ex1);
+                }
+    }
+
+    private void proximo() {
+        try {
+                    conexao.resultSet.next();
+                } catch (SQLException ex1) {
+                    System.out.println(ex1);
+                }
+    }
+
+    private void exibir_dados() {
+        try {
+            cbMunicipio.setSelectedItem(conexao.resultSet.getString("nome_municipio"));
+            tfComunidade.setText(conexao.resultSet.getString("comunidade"));
+            tfData.setText(conexao.resultSet.getString("data"));
+            tfNomeEntrevistador.setText(conexao.resultSet.getString("nm_entrevistador"));
+            tfNomeEntrevistado.setText(conexao.resultSet.getString("nm_entrevistado"));
+            tfNaturalidade.setText(conexao.resultSet.getString("naturalidade"));
+            cbSexo.setSelectedItem(conexao.resultSet.getString("sexo"));
+            tfIdade.setText(conexao.resultSet.getString("idade"));
+            cbEstadoCivil.setSelectedItem(conexao.resultSet.getString("estado_civil"));
+            tfNumerofilhos.setText(conexao.resultSet.getString("nr_de_filhos"));
+            tfEscolaridade.setText(conexao.resultSet.getString("escolaridade"));
+
+        } catch (Exception e) {
+            if (navega == 1){
+                //JOptionPane.showMessageDialog(null,"Você já esta no primeiro registro");
+                proximo();
+            }
+            else if (navega == 2){
+                //JOptionPane.showMessageDialog(null,"Você já esta no ultimo registro");
+                anterior();
+            }
+            else
+                JOptionPane.showMessageDialog(null,"Nenhum registro encontrado "+ e );
+                navega = 0;
+        }
+    }
 
 }

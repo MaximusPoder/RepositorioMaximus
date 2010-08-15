@@ -55,7 +55,7 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
         try {
             conexao.resultSet.first();
         } catch (SQLException ex) {
-            System.out.println(ex+" linha 65");
+            System.out.println(ex+" linha 58");
         }
          mostra_dados();
 
