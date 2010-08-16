@@ -11,15 +11,45 @@
 
 package br.com.bean3;
 
+import br.com.Persistencia.Conexao;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Jhonathas
  */
 public class comunidade_historia extends javax.swing.JFrame {
-
+    private Conexao conexao;
+    int inicia_combo = 0;
+    String id_atravessador;
+    String ItemDoCb;
     /** Creates new form comunidade_historia */
     public comunidade_historia() {
         initComponents();
+        conexao = new Conexao();
+        conexao.conecta("mil_interface");
+
+        //Insere nome no cbNomeAtravessador
+                try {
+                    cbComunidade.removeAllItems();
+                    conexao.execute("select * from comunidade_cadastro");
+
+                    while (conexao.resultSet.next()){
+                        cbComunidade.addItem(conexao.resultSet.getString("id_comunidade")+
+                                                       " # "+ conexao.resultSet.getString("comunidade"));
+                    }
+                }catch (SQLException ex) {
+                    System.out.println(ex);
+                }
+
+        conexao.execute("select * from comunidade_historia");
+        try {
+            conexao.resultSet.first();
+        } catch (SQLException ex) {
+            System.out.println(ex+" linha 49");
+        }
+         mostra_dados();
     }
 
     /** This method is called from within the constructor to
@@ -35,189 +65,220 @@ public class comunidade_historia extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        cbComunidade = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        questao1 = new javax.swing.JTextPane();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextPane2 = new javax.swing.JTextPane();
+        questao2 = new javax.swing.JTextPane();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextPane3 = new javax.swing.JTextPane();
+        questao3 = new javax.swing.JTextPane();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTextPane4 = new javax.swing.JTextPane();
+        questao4 = new javax.swing.JTextPane();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTextPane5 = new javax.swing.JTextPane();
+        questao5 = new javax.swing.JTextPane();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jTextPane6 = new javax.swing.JTextPane();
+        questao6 = new javax.swing.JTextPane();
         jLabel10 = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
-        jTextPane7 = new javax.swing.JTextPane();
+        questao7 = new javax.swing.JTextPane();
         jLabel11 = new javax.swing.JLabel();
         jScrollPane9 = new javax.swing.JScrollPane();
-        jTextPane8 = new javax.swing.JTextPane();
+        questao8 = new javax.swing.JTextPane();
         jLabel12 = new javax.swing.JLabel();
         jScrollPane10 = new javax.swing.JScrollPane();
-        jTextPane9 = new javax.swing.JTextPane();
+        questao9 = new javax.swing.JTextPane();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jScrollPane11 = new javax.swing.JScrollPane();
-        jTextPane10 = new javax.swing.JTextPane();
+        questao10 = new javax.swing.JTextPane();
         jLabel15 = new javax.swing.JLabel();
         jScrollPane12 = new javax.swing.JScrollPane();
-        jTextPane11 = new javax.swing.JTextPane();
+        questao11 = new javax.swing.JTextPane();
         jLabel16 = new javax.swing.JLabel();
         jScrollPane13 = new javax.swing.JScrollPane();
-        jTextPane12 = new javax.swing.JTextPane();
+        questao12 = new javax.swing.JTextPane();
         jLabel17 = new javax.swing.JLabel();
         jScrollPane14 = new javax.swing.JScrollPane();
-        jTextPane13 = new javax.swing.JTextPane();
+        questao13 = new javax.swing.JTextPane();
         jScrollPane15 = new javax.swing.JScrollPane();
-        jTextPane14 = new javax.swing.JTextPane();
+        questao14 = new javax.swing.JTextPane();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jScrollPane16 = new javax.swing.JScrollPane();
-        jTextPane15 = new javax.swing.JTextPane();
+        questao15 = new javax.swing.JTextPane();
         jLabel20 = new javax.swing.JLabel();
         jScrollPane17 = new javax.swing.JScrollPane();
-        jTextPane16 = new javax.swing.JTextPane();
+        questao16 = new javax.swing.JTextPane();
         jLabel21 = new javax.swing.JLabel();
         jScrollPane18 = new javax.swing.JScrollPane();
-        jTextPane17 = new javax.swing.JTextPane();
+        questao17 = new javax.swing.JTextPane();
         jLabel22 = new javax.swing.JLabel();
         jScrollPane19 = new javax.swing.JScrollPane();
-        jTextPane18 = new javax.swing.JTextPane();
+        questao18 = new javax.swing.JTextPane();
         jLabel23 = new javax.swing.JLabel();
         jScrollPane20 = new javax.swing.JScrollPane();
-        jTextPane19 = new javax.swing.JTextPane();
+        questao19 = new javax.swing.JTextPane();
         jScrollPane21 = new javax.swing.JScrollPane();
-        jTextPane20 = new javax.swing.JTextPane();
+        questao20 = new javax.swing.JTextPane();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jScrollPane22 = new javax.swing.JScrollPane();
-        jTextPane21 = new javax.swing.JTextPane();
-        jLabel26 = new javax.swing.JLabel();
-        jScrollPane23 = new javax.swing.JScrollPane();
-        jTextPane22 = new javax.swing.JTextPane();
+        questao21 = new javax.swing.JTextPane();
         jScrollPane24 = new javax.swing.JScrollPane();
-        jTextPane23 = new javax.swing.JTextPane();
+        questao22 = new javax.swing.JTextPane();
         jLabel27 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btAtualizar = new javax.swing.JButton();
+        btSalver = new javax.swing.JButton();
+        jScrollPane25 = new javax.swing.JScrollPane();
+        questao23 = new javax.swing.JTextPane();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jScrollPane26 = new javax.swing.JScrollPane();
+        questao24 = new javax.swing.JTextPane();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jScrollPane27 = new javax.swing.JScrollPane();
+        questao25 = new javax.swing.JTextPane();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18));
         jLabel1.setText("História de Vida/Entrevista semi estruturada?");
 
         jLabel2.setText("Comunidade.:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbComunidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbComunidadeActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("1. Conte-me quando e onde você nasceu?");
 
-        jScrollPane2.setViewportView(jTextPane1);
+        jScrollPane2.setViewportView(questao1);
 
         jLabel4.setText("2. Quantos irmãos teve? Onde estão agora?");
 
-        jScrollPane3.setViewportView(jTextPane2);
+        jScrollPane3.setViewportView(questao2);
 
         jLabel5.setText("3. Seus pais já trabalhavam com pesca e roça? E seus avós? (explorar semelhanças e diferenças).");
 
-        jScrollPane4.setViewportView(jTextPane3);
+        jScrollPane4.setViewportView(questao3);
 
         jLabel6.setText("4. Você estudou? Onde? (conduzir até o casamento, explorando a memória sobre recursos naturais/pesca).");
 
-        jScrollPane5.setViewportView(jTextPane4);
+        jScrollPane5.setViewportView(questao4);
 
         jLabel7.setText("5. Você pode descrever a casa e o lugar onde você nasceu e como era o momento das refeições?");
 
-        jScrollPane6.setViewportView(jTextPane5);
+        jScrollPane6.setViewportView(questao5);
 
         jLabel8.setText("(explorar as atividades da mãe na cozinha, tecendo rede, etc.)");
 
         jLabel9.setText("6. E seu casamento? Você foi morar onde? (conduzir até o período atual).");
 
-        jScrollPane7.setViewportView(jTextPane6);
+        jScrollPane7.setViewportView(questao6);
 
         jLabel10.setText("7. Você seguiu trabalhando com pesca, roça, extração? (explorar).");
 
-        jScrollPane8.setViewportView(jTextPane7);
+        jScrollPane8.setViewportView(questao7);
 
         jLabel11.setText("8. Sua conunidade tem um padroeiro?");
 
-        jScrollPane9.setViewportView(jTextPane8);
+        jScrollPane9.setViewportView(questao8);
 
         jLabel12.setText("9. Quais são as festas de sua comunidade? (explorar: mais importante, porque, o que há quando acontece,");
 
-        jScrollPane10.setViewportView(jTextPane9);
+        jScrollPane10.setViewportView(questao9);
 
         jLabel13.setText("produtos envolvidos, etc).");
 
         jLabel14.setText("10. Qual a que você mais gosta? Porque?");
 
-        jScrollPane11.setViewportView(jTextPane10);
+        jScrollPane11.setViewportView(questao10);
 
         jLabel15.setText("11. Quando você não está trabalhando o que você faz? E com seus pais era assim?");
 
-        jScrollPane12.setViewportView(jTextPane11);
+        jScrollPane12.setViewportView(questao11);
 
         jLabel16.setText("12. O município possui período de defeso?");
 
-        jScrollPane13.setViewportView(jTextPane12);
+        jScrollPane13.setViewportView(questao12);
 
         jLabel17.setText("13. Por que o período de defeso foi criado?");
 
-        jScrollPane14.setViewportView(jTextPane13);
+        jScrollPane14.setViewportView(questao13);
 
-        jScrollPane15.setViewportView(jTextPane14);
+        jScrollPane15.setViewportView(questao14);
 
         jLabel18.setText("14. Que regras foram criadas no período de defeso? E no tempo de seus pais como era?");
 
         jLabel19.setText("15. O que você faz durante o período de defeso? E no tempo de seus pais como era?");
 
-        jScrollPane16.setViewportView(jTextPane15);
+        jScrollPane16.setViewportView(questao15);
 
         jLabel20.setText("16. As comunidades respeitam o período de defeso?");
 
-        jScrollPane17.setViewportView(jTextPane16);
+        jScrollPane17.setViewportView(questao16);
 
         jLabel21.setText("17. Já foram registradas infrações ao período de defeso?");
 
-        jScrollPane18.setViewportView(jTextPane17);
+        jScrollPane18.setViewportView(questao17);
 
         jLabel22.setText("18. Quanto as pessoas da comunidade você acha que cumpre o período de defeso?");
 
-        jScrollPane19.setViewportView(jTextPane18);
+        jScrollPane19.setViewportView(questao18);
 
         jLabel23.setText("19. Você cumpre o período de defeso? Porque? (explorar)");
 
-        jScrollPane20.setViewportView(jTextPane19);
+        jScrollPane20.setViewportView(questao19);
 
-        jScrollPane21.setViewportView(jTextPane20);
+        jScrollPane21.setViewportView(questao20);
 
         jLabel24.setText("20. Como você considera o impacto do período de defeso. (explorar)");
 
         jLabel25.setText("21. O período de defeso tem atrapalhado a pesca da comunidade? Por que?");
 
-        jScrollPane22.setViewportView(jTextPane21);
+        jScrollPane22.setViewportView(questao21);
 
-        jLabel26.setText("21. O período de defeso tem atrapalhado a pesca da comunidade? Por que?");
-
-        jScrollPane23.setViewportView(jTextPane22);
-
-        jScrollPane24.setViewportView(jTextPane23);
+        jScrollPane24.setViewportView(questao22);
 
         jLabel27.setText("22. O período de defeso já gerou algum tipo de conflito entre os pescadores? Quais? Por que?");
 
-        jButton1.setText("Atualizar");
+        btAtualizar.setText("Atualizar");
+        btAtualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAtualizarActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Salvar");
+        btSalver.setText("Salvar");
+        btSalver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSalverActionPerformed(evt);
+            }
+        });
+
+        jScrollPane25.setViewportView(questao23);
+
+        jLabel28.setText("23. A quantidade de peixe que você pesca hoje, especialmente serra, gurijuba e pescada, corresponde à ");
+
+        jLabel29.setText("mesma quantidade que se pescava no tempo de seus pais? Porque mudou ou continuou?");
+
+        jScrollPane26.setViewportView(questao24);
+
+        jLabel30.setText("24. Você acha justo o período de defeso? Porque?");
+
+        jLabel31.setText("25. Você concordaria com a criação de um período de defeso para a pescada a gurijuba e a serra? Porque?  ");
+
+        jScrollPane27.setViewportView(questao25);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -231,7 +292,7 @@ public class comunidade_historia extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(cbComunidade, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
                             .addComponent(jLabel5)
@@ -276,18 +337,23 @@ public class comunidade_historia extends javax.swing.JFrame {
                             .addComponent(jScrollPane21)
                             .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jScrollPane22)
-                            .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane23)
                             .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jScrollPane24)
+                            .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane25)
+                            .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, 617, Short.MAX_VALUE)
+                            .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane26)
+                            .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane27)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton2)
+                                .addComponent(btSalver)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1))))
+                                .addComponent(btAtualizar))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(182, 182, 182)
                         .addComponent(jLabel1)))
-                .addContainerGap(149, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -297,7 +363,7 @@ public class comunidade_historia extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbComunidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -387,17 +453,27 @@ public class comunidade_historia extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel26)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel27)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel28)
+                .addGap(3, 3, 3)
+                .addComponent(jLabel29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane26, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btAtualizar)
+                    .addComponent(btSalver))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
@@ -417,6 +493,133 @@ public class comunidade_historia extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btSalverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalverActionPerformed
+        try {
+            String sqlinsert = "insert into comunidade_historia "
+                    + "(id_comunidade,questao1,questao2,questao3,questao4,questao5,"
+                    + "questao6,questao7,questao8,questao9,questao10,"
+                    + "questao11,questao12,questao13,questao14,questao15,"
+                    + "questao16,questao17,questao18,questao19,questao20,"
+                    + "questao21,questao22,questao23,questao24,"
+                    + "questao25) values ("+
+                    pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString())+",'"+
+                    questao1.getText()+"','"+
+                    questao2.getText()+"','"+
+                    questao3.getText()+"','"+
+                    questao4.getText()+"','"+
+                    questao5.getText()+"','"+
+                    questao6.getText()+"','"+
+                    questao7.getText()+"','"+
+                    questao8.getText()+"','"+
+                    questao9.getText()+"','"+
+                    questao10.getText()+"','"+
+                    questao11.getText()+"','"+
+                    questao12.getText()+"','"+
+                    questao13.getText()+"','"+
+                    questao14.getText()+"','"+
+                    questao15.getText()+"','"+
+                    questao16.getText()+"','"+
+                    questao17.getText()+"','"+
+                    questao18.getText()+"','"+
+                    questao19.getText()+"','"+
+                    questao20.getText()+"','"+
+                    questao21.getText()+"','"+
+                    questao22.getText()+"','"+
+                    questao23.getText()+"','"+
+                    questao24.getText()+"','"+
+                    questao25.getText()+"')";
+
+                    System.out.println(sqlinsert);
+
+            if (conexao.salvar(sqlinsert)){
+            //agora é hora de atualizar o resultset
+            JOptionPane.showMessageDialog(null,"Cadastrado com sucesso");
+            conexao.execute("select * from comunidade_historia");
+            conexao.resultSet.first(); //1º registro
+            mostra_dados();
+            cbComunidade.setSelectedIndex(0);
+            }
+
+        }catch (SQLException erro){
+            System.out.println(erro);
+        }
+    }//GEN-LAST:event_btSalverActionPerformed
+
+    private void btAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizarActionPerformed
+        try{
+            String sql ="UPDATE comunidade_historia SET "+
+                          "questao1 = '"+questao1.getText()+"',"+
+                          "questao2 = '"+questao2.getText()+"',"+
+                          "questao3 = '"+questao3.getText()+"',"+
+                          "questao4 = '"+questao4.getText()+"',"+
+                          "questao5 = '"+questao5.getText()+"',"+
+                          "questao6 = '"+questao6.getText()+"',"+
+                          "questao7 = '"+questao7.getText()+"',"+
+                          "questao8 = '"+questao8.getText()+"',"+
+                          "questao9 = '"+questao9.getText()+"',"+
+                          "questao10 = '"+questao10.getText()+"',"+
+                          "questao11 = '"+questao11.getText()+"',"+
+                          "questao12 = '"+questao12.getText()+"',"+
+                          "questao13 = '"+questao13.getText()+"',"+
+                          "questao14 = '"+questao14.getText()+"',"+
+                          "questao15 = '"+questao15.getText()+"',"+
+                          "questao16 = '"+questao16.getText()+"',"+
+                          "questao17 = '"+questao17.getText()+"',"+
+                          "questao18 = '"+questao18.getText()+"',"+
+                          "questao19 = '"+questao19.getText()+"',"+
+                          "questao20 = '"+questao20.getText()+"',"+
+                          "questao21 = '"+questao21.getText()+"',"+
+                          "questao22 = '"+questao22.getText()+"',"+
+                          "questao23 = '"+questao23.getText()+"',"+
+                          "questao24 = '"+questao24.getText()+"',"+
+                          "questao25 = '"+questao25.getText()+"' "+
+
+                          "where id_comunidade = "+pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString());
+
+            System.out.println(sql);
+            if (conexao.update(sql)){
+            JOptionPane.showMessageDialog(null,"Alterado com sucesso");
+            //Atualiza Resultset
+            conexao.execute("select * from comunidade_historia");
+            conexao.resultSet.next();
+            mostra_dados();
+            cbComunidade.setSelectedIndex(0);
+            }
+
+        }catch (Exception e){
+            System.out.println(e + "Erro no botão alterar");
+        }
+
+    }//GEN-LAST:event_btAtualizarActionPerformed
+
+    private void cbComunidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbComunidadeActionPerformed
+          //Pesquisa automática do Combo Box Nome do atravessador
+
+        if (inicia_combo == 1){
+         try {
+            conexao.execute("select * from comunidade_historia");
+            conexao.resultSet.first();
+            String igual = "n"; //inicia dizendo que não localizou
+            while(igual == "n") //diz que enquanto não localizar é para ir executando
+            {
+                String id = pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString());
+                if (conexao.resultSet.getString("id_comunidade").equals(id)) {
+                    igual = "s"; //incica que achou
+                } else
+                    conexao.resultSet.next();
+            }
+            //nas linhas abaixo, mostra_conteudo_tabela();
+             mostra_dados();
+
+
+
+        } catch (SQLException ex) {
+            limpar();
+            System.out.println(ex+" Erro na troca do combobox");
+            }
+        }inicia_combo = 1;
+    }//GEN-LAST:event_cbComunidadeActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -429,9 +632,9 @@ public class comunidade_historia extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JButton btAtualizar;
+    private javax.swing.JButton btSalver;
+    private javax.swing.JComboBox cbComunidade;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -450,9 +653,12 @@ public class comunidade_historia extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -475,8 +681,10 @@ public class comunidade_historia extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane20;
     private javax.swing.JScrollPane jScrollPane21;
     private javax.swing.JScrollPane jScrollPane22;
-    private javax.swing.JScrollPane jScrollPane23;
     private javax.swing.JScrollPane jScrollPane24;
+    private javax.swing.JScrollPane jScrollPane25;
+    private javax.swing.JScrollPane jScrollPane26;
+    private javax.swing.JScrollPane jScrollPane27;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -484,29 +692,116 @@ public class comunidade_historia extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTextPane jTextPane1;
-    private javax.swing.JTextPane jTextPane10;
-    private javax.swing.JTextPane jTextPane11;
-    private javax.swing.JTextPane jTextPane12;
-    private javax.swing.JTextPane jTextPane13;
-    private javax.swing.JTextPane jTextPane14;
-    private javax.swing.JTextPane jTextPane15;
-    private javax.swing.JTextPane jTextPane16;
-    private javax.swing.JTextPane jTextPane17;
-    private javax.swing.JTextPane jTextPane18;
-    private javax.swing.JTextPane jTextPane19;
-    private javax.swing.JTextPane jTextPane2;
-    private javax.swing.JTextPane jTextPane20;
-    private javax.swing.JTextPane jTextPane21;
-    private javax.swing.JTextPane jTextPane22;
-    private javax.swing.JTextPane jTextPane23;
-    private javax.swing.JTextPane jTextPane3;
-    private javax.swing.JTextPane jTextPane4;
-    private javax.swing.JTextPane jTextPane5;
-    private javax.swing.JTextPane jTextPane6;
-    private javax.swing.JTextPane jTextPane7;
-    private javax.swing.JTextPane jTextPane8;
-    private javax.swing.JTextPane jTextPane9;
+    private javax.swing.JTextPane questao1;
+    private javax.swing.JTextPane questao10;
+    private javax.swing.JTextPane questao11;
+    private javax.swing.JTextPane questao12;
+    private javax.swing.JTextPane questao13;
+    private javax.swing.JTextPane questao14;
+    private javax.swing.JTextPane questao15;
+    private javax.swing.JTextPane questao16;
+    private javax.swing.JTextPane questao17;
+    private javax.swing.JTextPane questao18;
+    private javax.swing.JTextPane questao19;
+    private javax.swing.JTextPane questao2;
+    private javax.swing.JTextPane questao20;
+    private javax.swing.JTextPane questao21;
+    private javax.swing.JTextPane questao22;
+    private javax.swing.JTextPane questao23;
+    private javax.swing.JTextPane questao24;
+    private javax.swing.JTextPane questao25;
+    private javax.swing.JTextPane questao3;
+    private javax.swing.JTextPane questao4;
+    private javax.swing.JTextPane questao5;
+    private javax.swing.JTextPane questao6;
+    private javax.swing.JTextPane questao7;
+    private javax.swing.JTextPane questao8;
+    private javax.swing.JTextPane questao9;
     // End of variables declaration//GEN-END:variables
 
+    private void mostra_dados() {
+        try {
+            questao1.setText(conexao.resultSet.getString("questao1"));
+            questao2.setText(conexao.resultSet.getString("questao2"));
+            questao3.setText(conexao.resultSet.getString("questao3"));
+            questao4.setText(conexao.resultSet.getString("questao4"));
+            questao5.setText(conexao.resultSet.getString("questao5"));
+            questao6.setText(conexao.resultSet.getString("questao6"));
+            questao7.setText(conexao.resultSet.getString("questao7"));
+            questao8.setText(conexao.resultSet.getString("questao8"));
+            questao9.setText(conexao.resultSet.getString("questao9"));
+            questao10.setText(conexao.resultSet.getString("questao10"));
+            questao11.setText(conexao.resultSet.getString("questao11"));
+            questao12.setText(conexao.resultSet.getString("questao12"));
+            questao13.setText(conexao.resultSet.getString("questao13"));
+            questao14.setText(conexao.resultSet.getString("questao14"));
+            questao15.setText(conexao.resultSet.getString("questao15"));
+            questao16.setText(conexao.resultSet.getString("questao16"));
+            questao17.setText(conexao.resultSet.getString("questao17"));
+            questao18.setText(conexao.resultSet.getString("questao18"));
+            questao19.setText(conexao.resultSet.getString("questao19"));
+            questao20.setText(conexao.resultSet.getString("questao20"));
+            questao21.setText(conexao.resultSet.getString("questao21"));
+            questao22.setText(conexao.resultSet.getString("questao22"));
+            questao23.setText(conexao.resultSet.getString("questao23"));
+            questao24.setText(conexao.resultSet.getString("questao24"));
+            questao25.setText(conexao.resultSet.getString("questao25"));
+        } catch (Exception e) {
+            limpar();
+        }
+    }
+
+    private void limpar() {
+            questao1.setText("");
+            questao2.setText("");
+            questao3.setText("");
+            questao4.setText("");
+            questao5.setText("");
+            questao6.setText("");
+            questao7.setText("");
+            questao8.setText("");
+            questao9.setText("");
+            questao10.setText("");
+            questao11.setText("");
+            questao12.setText("");
+            questao13.setText("");
+            questao14.setText("");
+            questao15.setText("");
+            questao16.setText("");
+            questao17.setText("");
+            questao18.setText("");
+            questao19.setText("");
+            questao20.setText("");
+            questao21.setText("");
+            questao22.setText("");
+            questao23.setText("");
+            questao24.setText("");
+            questao25.setText("");
+    }
+
+               public String pega_codigo_ou_nome(int n,String teste) { //Se entrar com 1 pega o Código, se não pega o Nome
+              //pegar a Id do atravessador
+
+              //aqui ele pega a quantidade de carcteres que tem uma determinada variável
+              //e armazena numa INT para usá-la de contador
+              int contador = teste.length();
+
+              //cria um for( para fazer uma varredura letra por letra até encontrar
+              for(int i = 0;i<contador;i++){
+                 //usamos substring pra pegar um caractere, passando como parâmetro,
+                 //o primeiro caractere a ser pega, até a ultima.
+                //fiz um if para verificar se o caractere é igual a "#"
+                if (teste.substring(i,i+1).equals("#")){
+                   int posicao = i+1;
+                    System.out.println("Está na posição " + posicao);
+                    if (n == 1){
+                        return teste.substring(0,posicao-2);
+                    }
+                    else
+                        return teste.substring(posicao+1,teste.length());
+                }
+
+              }
+              return "nada";
+        }
 }

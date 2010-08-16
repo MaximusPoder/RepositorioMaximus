@@ -184,7 +184,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
             }
         });
 
-        botao_novo.setText("Novo");
+        botao_novo.setText("Limpar");
         botao_novo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botao_novoActionPerformed(evt);
@@ -373,10 +373,10 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addComponent(jLabel25)
-                        .addContainerGap(640, Short.MAX_VALUE))
+                        .addContainerGap(636, Short.MAX_VALUE))
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addComponent(jLabel38)
-                        .addContainerGap(434, Short.MAX_VALUE))
+                        .addContainerGap(430, Short.MAX_VALUE))
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addComponent(jLabel27)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -395,7 +395,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpAtravessadorLayout.createSequentialGroup()
                                 .addComponent(jLabel33)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfEscolaridade, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
+                                .addComponent(tfEscolaridade, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel34)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -433,7 +433,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpAtravessadorLayout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfTipoConstrucao, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE))
+                                .addComponent(tfTipoConstrucao, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE))
                             .addComponent(jLabel37, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpAtravessadorLayout.createSequentialGroup()
                                 .addComponent(jLabel35)
@@ -461,11 +461,11 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
                                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                                         .addComponent(jLabel41)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tfFilhos, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE))
+                                        .addComponent(tfFilhos, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE))
                                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                                         .addComponent(jLabel42)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tfNetos, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE))))
+                                        .addComponent(tfNetos, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE))))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpAtravessadorLayout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -589,7 +589,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
                     .addComponent(tfQualColonia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
                     .addComponent(tfDesdeQuando, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jpAtravessador);
@@ -598,7 +598,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 745, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 743, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
