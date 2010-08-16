@@ -27,12 +27,16 @@ import javax.swing.table.DefaultTableModel;
 public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
       private Conexao conexao;
+      private Conexao conexao_jtable;
+      String id_mercado = null;
 
     /** Creates new form comunidade_questionariomercadofeira */
     public comunidade_questionariomercadofeira() {
         initComponents();
         conexao = new Conexao();
         conexao.conecta("mil_interface");
+        conexao_jtable = new Conexao();
+        conexao_jtable.conecta("mil_interface");
         // adiciona o municipio no combobox//
          try {
             conexao.execute("select * FROM tab_local where pai='Pará'");
@@ -49,10 +53,10 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         try {
             conexao.resultSet.first();
             exibir_dados();
-
+            id_mercado =   conexao.resultSet.getString("id_mercado");
         } catch (Exception e) {
         }
-
+        System.out.println(id_mercado);
 
     }
 
@@ -67,7 +71,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jPanel1 = new javax.swing.JPanel();
+        Atualizar = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         cbMunicipio = new javax.swing.JComboBox();
@@ -194,15 +198,24 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         botao_cadastrar = new javax.swing.JButton();
         botao_Excluir = new javax.swing.JButton();
         botao_alterar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btAdd = new javax.swing.JButton();
         ckbFamiliar = new javax.swing.JCheckBox();
         ckbArtesanalComVizinho = new javax.swing.JCheckBox();
         ckbArmadorEmbarcacao = new javax.swing.JCheckBox();
         ckbAssalariado = new javax.swing.JCheckBox();
-        jbExcluir = new javax.swing.JButton();
-        jbAtualizar = new javax.swing.JButton();
+        btExcluir = new javax.swing.JButton();
+        btAtualizar = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         jbPerdaPescado = new javax.swing.JTable();
+        jbAdd1 = new javax.swing.JButton();
+        jbExcluir1 = new javax.swing.JButton();
+        jbAtualizar1 = new javax.swing.JButton();
+        jbAdd2 = new javax.swing.JButton();
+        jbExcluir2 = new javax.swing.JButton();
+        jbAtualizar2 = new javax.swing.JButton();
+        jbAdd3 = new javax.swing.JButton();
+        jbExcluir3 = new javax.swing.JButton();
+        jbAtualizacao3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -312,7 +325,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "id_mercado", "quantidade", "custo", "outros", "frequência"
+                "id_material", "quantidade", "custo", "outros", "frequência"
             }
         ));
         jScrollPane5.setViewportView(jtMaterialUtilizado);
@@ -337,17 +350,17 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
         jbDadosEspecie.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "null", "Especie", "Quantidade fresco", "Quantidade Salgado", "Preço Fresco", "Preço Salgado", "Id"
+                "id_especies_comercializadas", "Especie", "Quantidade fresco", "Quantidade Salgado", "Preço Fresco", "Preço Salgado"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                true, false, true, true, false, true, true
+                true, false, true, true, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -479,10 +492,10 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Add");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btAdd.setText("Add");
+        btAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btAddActionPerformed(evt);
             }
         });
 
@@ -494,17 +507,17 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
         ckbAssalariado.setText("Assalariado");
 
-        jbExcluir.setText("Excluir");
-        jbExcluir.addActionListener(new java.awt.event.ActionListener() {
+        btExcluir.setText("Excluir");
+        btExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbExcluirActionPerformed(evt);
+                btExcluirActionPerformed(evt);
             }
         });
 
-        jbAtualizar.setText("Atualizer");
-        jbAtualizar.addActionListener(new java.awt.event.ActionListener() {
+        btAtualizar.setText("Atualizar");
+        btAtualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbAtualizarActionPerformed(evt);
+                btAtualizarActionPerformed(evt);
             }
         });
 
@@ -522,17 +535,70 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         jScrollPane4.setViewportView(jbPerdaPescado);
         jbPerdaPescado.getColumnModel().getColumn(2).setResizable(false);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+        jbAdd1.setText("Add");
+        jbAdd1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbAdd1ActionPerformed(evt);
+            }
+        });
+
+        jbExcluir1.setText("Excluir");
+        jbExcluir1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbExcluir1ActionPerformed(evt);
+            }
+        });
+
+        jbAtualizar1.setText("Atualizar");
+        jbAtualizar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbAtualizar1ActionPerformed(evt);
+            }
+        });
+
+        jbAdd2.setText("Add");
+        jbAdd2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbAdd2ActionPerformed(evt);
+            }
+        });
+
+        jbExcluir2.setText("Excluir");
+        jbExcluir2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbExcluir2ActionPerformed(evt);
+            }
+        });
+
+        jbAtualizar2.setText("Atualizar");
+        jbAtualizar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbAtualizar2ActionPerformed(evt);
+            }
+        });
+
+        jbAdd3.setText("Add");
+        jbAdd3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbAdd3ActionPerformed(evt);
+            }
+        });
+
+        jbExcluir3.setText("Excluir");
+
+        jbAtualizacao3.setText("Atualizar");
+
+        javax.swing.GroupLayout AtualizarLayout = new javax.swing.GroupLayout(Atualizar);
+        Atualizar.setLayout(AtualizarLayout);
+        AtualizarLayout.setHorizontalGroup(
+            AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AtualizarLayout.createSequentialGroup()
+                .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AtualizarLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(AtualizarLayout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(tfNaturalidade, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -544,7 +610,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(tfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(AtualizarLayout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(tfAtividadePrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -552,7 +618,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(tfAtividadeSecundaria, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(AtualizarLayout.createSequentialGroup()
                                 .addComponent(jLabel11)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(tfBoxes, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -560,11 +626,11 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                                 .addComponent(jLabel12)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(tfQuantosPossui, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(AtualizarLayout.createSequentialGroup()
                                 .addComponent(jLabel19)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(tfTipoConstrucao, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(AtualizarLayout.createSequentialGroup()
                                 .addComponent(jLabel27)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(ckbFamiliar)
@@ -577,11 +643,11 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                             .addComponent(jLabel28)
                             .addComponent(jLabel29)
                             .addComponent(jLabel30)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 575, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, AtualizarLayout.createSequentialGroup()
                                     .addComponent(jLabel25)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(ckbCarteiraPescado)
@@ -589,7 +655,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                                     .addComponent(jLabel26)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(tfOrgaoCarteiraPescado))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, AtualizarLayout.createSequentialGroup()
                                     .addComponent(jLabel20)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(ckbInss)
@@ -601,7 +667,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                                     .addComponent(jLabel22)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(tfQualColonia))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, AtualizarLayout.createSequentialGroup()
                                     .addComponent(jLabel23)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(ckbAlgumaAssociacao)
@@ -609,8 +675,8 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                                     .addComponent(jLabel24)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(tfAlgumaAssociacao, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, AtualizarLayout.createSequentialGroup()
                                     .addComponent(jLabel13)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(cbEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -618,32 +684,32 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                                     .addComponent(jLabel14)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(tfComposicaoFamilia))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, AtualizarLayout.createSequentialGroup()
                                     .addComponent(jLabel15)
                                     .addGap(178, 178, 178)
                                     .addComponent(jLabel16)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(tfPorQueParou, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addGroup(AtualizarLayout.createSequentialGroup()
+                                .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, AtualizarLayout.createSequentialGroup()
                                         .addComponent(jLabel2)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(cbMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(rbMercado))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, AtualizarLayout.createSequentialGroup()
                                         .addComponent(jLabel4)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(tfNome, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(AtualizarLayout.createSequentialGroup()
                                         .addComponent(jLabel5)
                                         .addGap(10, 10, 10)
                                         .addComponent(tfApelido, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(rbFeiraLivre)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(AtualizarLayout.createSequentialGroup()
                                 .addComponent(jLabel31)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(tfEntrevistado, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -651,7 +717,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                                 .addComponent(jLabel33)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(tfEsposa, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(AtualizarLayout.createSequentialGroup()
                                 .addComponent(jLabel34)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(tfFilhos, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -660,161 +726,144 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(tfNetos, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 679, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(AtualizarLayout.createSequentialGroup()
                                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jbAtualizar)
-                                    .addComponent(jbExcluir)
-                                    .addComponent(jButton1)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btAtualizar)
+                                    .addComponent(btExcluir)
+                                    .addComponent(btAdd)))
+                            .addGroup(AtualizarLayout.createSequentialGroup()
                                 .addComponent(jLabel36)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(tfTempoTrabalho, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(AtualizarLayout.createSequentialGroup()
                                 .addComponent(jLabel37)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(tfTempoAtividade, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel39)
-                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel40)
-                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(AtualizarLayout.createSequentialGroup()
+                                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jbAtualizar1)
+                                    .addComponent(jbExcluir1)
+                                    .addComponent(jbAdd1)))
+                            .addGroup(AtualizarLayout.createSequentialGroup()
+                                .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(tfEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(AtualizarLayout.createSequentialGroup()
                                         .addComponent(jLabel17)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(cbLocalMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel18)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cbQualidadeMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(cbQualidadeMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(AtualizarLayout.createSequentialGroup()
+                                .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel40)
+                                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jbAdd2)
+                                    .addComponent(jbExcluir2)
+                                    .addComponent(jbAtualizar2))))
                         .addGap(62, 62, 62)
                         .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(AtualizarLayout.createSequentialGroup()
                         .addGap(111, 111, 111)
-                        .addComponent(jLabel1)))
-                .addContainerGap(21789, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(botao_primeiro)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(botao_anterior)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(botao_proximo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(botao_ultimo)
-                .addGap(40, 40, 40)
-                .addComponent(botao_limpar)
-                .addGap(14, 14, 14)
-                .addComponent(botao_cadastrar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botao_Excluir)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(botao_alterar)
-                .addContainerGap(21964, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel41)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel42)
+                        .addComponent(jLabel1))
+                    .addGroup(AtualizarLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(botao_primeiro)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cbEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(21980, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel43)
-                .addContainerGap(22090, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel44)
-                .addContainerGap(22054, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
-                .addGap(22083, 22083, 22083))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel45)
-                .addContainerGap(22204, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22093, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel46)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel47)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane11, 0, 0, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel48)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 487, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel49)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel50)
-                .addContainerGap(22138, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane14, javax.swing.GroupLayout.DEFAULT_SIZE, 22530, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel51)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ckbCriancaEnvolvidas)
-                .addContainerGap(22280, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel52)
-                .addContainerGap(21949, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22048, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel53)
-                .addContainerGap(22228, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22099, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel54)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botao_anterior)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(botao_proximo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(botao_ultimo)
+                        .addGap(40, 40, 40)
+                        .addComponent(botao_limpar)
+                        .addGap(14, 14, 14)
+                        .addComponent(botao_cadastrar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botao_Excluir)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(botao_alterar))
+                    .addGroup(AtualizarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel41)
+                            .addGroup(AtualizarLayout.createSequentialGroup()
+                                .addComponent(jLabel42)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cbEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(AtualizarLayout.createSequentialGroup()
+                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jbAtualizacao3)
+                                    .addComponent(jbExcluir3)
+                                    .addComponent(jbAdd3)))))
+                    .addGroup(AtualizarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel43))
+                    .addGroup(AtualizarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel45))
+                    .addComponent(jLabel46)
+                    .addComponent(jLabel47)
+                    .addComponent(jLabel48)
+                    .addComponent(jLabel49)
+                    .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(AtualizarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel50))
+                    .addComponent(jScrollPane14, javax.swing.GroupLayout.DEFAULT_SIZE, 22106, Short.MAX_VALUE)
+                    .addGroup(AtualizarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel51)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ckbCriancaEnvolvidas))
+                    .addGroup(AtualizarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel52))
+                    .addGroup(AtualizarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(AtualizarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel53))
+                    .addGroup(AtualizarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel54)
+                    .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane11, javax.swing.GroupLayout.Alignment.LEADING, 0, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE))
+                    .addGroup(AtualizarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel44, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        AtualizarLayout.setVerticalGroup(
+            AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AtualizarLayout.createSequentialGroup()
                 .addGap(11, 11, 11)
                 .addComponent(jLabel1)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AtualizarLayout.createSequentialGroup()
                         .addGap(941, 941, 941)
                         .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(AtualizarLayout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(botao_primeiro)
                             .addComponent(botao_anterior)
                             .addComponent(botao_proximo)
@@ -824,22 +873,22 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                             .addComponent(botao_Excluir)
                             .addComponent(botao_alterar))
                         .addGap(22, 22, 22)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(cbMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(rbMercado)
                                 .addComponent(rbFeiraLivre)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
                             .addComponent(tfNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5)
                             .addComponent(tfApelido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
                             .addComponent(tfNaturalidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7)
@@ -847,43 +896,43 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                             .addComponent(jLabel8)
                             .addComponent(tfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
                             .addComponent(tfAtividadePrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10)
                             .addComponent(tfAtividadeSecundaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
                             .addComponent(tfBoxes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel12)
                             .addComponent(tfQuantosPossui, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel13)
                             .addComponent(cbEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel14)
                             .addComponent(tfComposicaoFamilia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15)
                             .addComponent(jLabel16)
                             .addComponent(tfPorQueParou, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tfEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel17)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(cbLocalMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel18)
                                 .addComponent(cbQualidadeMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel19)
                             .addComponent(tfTipoConstrucao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel20)
                             .addComponent(jLabel21)
                             .addComponent(jLabel22)
@@ -891,19 +940,19 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                             .addComponent(ckbInss)
                             .addComponent(ckbColonia))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel23)
                             .addComponent(jLabel24)
                             .addComponent(tfAlgumaAssociacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ckbAlgumaAssociacao))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel25)
                             .addComponent(jLabel26)
                             .addComponent(tfOrgaoCarteiraPescado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ckbCarteiraPescado))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel27)
                             .addComponent(ckbFamiliar)
                             .addComponent(ckbArtesanalComVizinho)
@@ -920,85 +969,110 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel30)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel31)
                             .addComponent(tfEntrevistado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel33)
                             .addComponent(tfEsposa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel34)
                             .addComponent(tfFilhos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel35)
                             .addComponent(tfNetos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel36)
                             .addComponent(tfTempoTrabalho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel37)
                             .addComponent(tfTempoAtividade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(AtualizarLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jbExcluir)
+                                .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(AtualizarLayout.createSequentialGroup()
+                                        .addComponent(btAdd)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btExcluir)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btAtualizar)
+                                        .addGap(5, 5, 5)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel39)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(AtualizarLayout.createSequentialGroup()
+                                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel40))
+                                    .addGroup(AtualizarLayout.createSequentialGroup()
+                                        .addComponent(jbAdd1)
+                                        .addGap(4, 4, 4)
+                                        .addComponent(jbExcluir1)
+                                        .addGap(8, 8, 8)
+                                        .addComponent(jbAtualizar1)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AtualizarLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jbAdd2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jbAtualizar)
-                                .addGap(5, 5, 5)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel39)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel40)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jbExcluir2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jbAtualizar2)))))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel41)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel42)
                     .addComponent(cbEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel43)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel44)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel45)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel46)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel47)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel48)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel49)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel50)
+                .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AtualizarLayout.createSequentialGroup()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel43)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel44)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel45)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel46)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel47)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel48)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel49)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel50))
+                    .addGroup(AtualizarLayout.createSequentialGroup()
+                        .addComponent(jbAdd3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jbExcluir3)
+                        .addGap(14, 14, 14)
+                        .addComponent(jbAtualizacao3)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel51)
                     .addComponent(ckbCriancaEnvolvidas))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1016,21 +1090,19 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                 .addContainerGap(96, Short.MAX_VALUE))
         );
 
-        jScrollPane1.setViewportView(jPanel1);
+        jScrollPane1.setViewportView(Atualizar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 762, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 792, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 3016, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1624, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -1044,7 +1116,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         try {
             conexao.resultSet.first();
             exibir_dados();
-
+            id_mercado =   conexao.resultSet.getString("id_mercado");
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -1054,7 +1126,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
          try {
             conexao.resultSet.previous();
             exibir_dados();
-
+            id_mercado =   conexao.resultSet.getString("id_mercado");
         } catch (Exception e) {
         }
     }//GEN-LAST:event_botao_anteriorActionPerformed
@@ -1063,7 +1135,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
           try {
             conexao.resultSet.next();
             exibir_dados();
-
+            id_mercado =   conexao.resultSet.getString("id_mercado");
         } catch (Exception e) {
         }
     }//GEN-LAST:event_botao_proximoActionPerformed
@@ -1072,7 +1144,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
      try {
             conexao.resultSet.last();
             exibir_dados();
-
+            id_mercado =   conexao.resultSet.getString("id_mercado");
         } catch (Exception e) {
         }
     }//GEN-LAST:event_botao_ultimoActionPerformed
@@ -1280,15 +1352,14 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
             }
     }//GEN-LAST:event_botao_ExcluirActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try {
-            String id = conexao.resultSet.getString("id_mercado").toString();
+    private void btAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAddActionPerformed
+       
             
-            new addMaterial(id).setVisible(true);
+            new addMaterial(id_mercado).setVisible(true);
             
-        } catch (Exception e) {
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
+        
+        
+    }//GEN-LAST:event_btAddActionPerformed
 
     private void botao_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_alterarActionPerformed
          int[] ckb = new int[11];
@@ -1406,35 +1477,51 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
     }//GEN-LAST:event_botao_alterarActionPerformed
 
-    private void jbExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluirActionPerformed
-         String id_pra_excluir = "";
-
-        if (jtMaterialUtilizado.getSelectedRow() != -1){
-            id_pra_excluir = jtMaterialUtilizado.getValueAt(jtMaterialUtilizado.getSelectedRow(),0).toString()+"";
-        }
-
-        if (jbOrigemProduto.getSelectedRow() != -1){
-            id_pra_excluir = jbOrigemProduto.getValueAt(jbOrigemProduto.getSelectedRow(),0).toString()+"";
-        }
-
-        if (jbDadosEspecie.getSelectedRow() != -1){
-            id_pra_excluir = jbDadosEspecie.getValueAt(jbDadosEspecie.getSelectedRow(),0).toString()+"";
-        }
-
-        if (jbPerdaPescado.getSelectedRow() != -1){
-            id_pra_excluir = jbPerdaPescado.getValueAt(jbPerdaPescado.getSelectedRow(),0).toString()+"";
-        }
-
-        System.out.println(id_pra_excluir);
-
+    private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
+         
+         
         String sql;
 
-        sql = "delete from mercado_addmercado Where id_mercado =" + id_pra_excluir;
+        sql = "delete from mercado_addmaterial Where id_material =" + jtMaterialUtilizado.getValueAt(jtMaterialUtilizado.getSelectedRow(),0);
 
-                if (conexao.salvar(sql)) {
+                if (conexao_jtable.salvar(sql)) {
                     System.out.println("Exclusão realizada com sucesso");
 
-                    exibir_L_E_N_I(0);exibir_L_E_N_I(1);exibir_L_E_N_I(2);exibir_L_E_N_I(3);
+//                    exibir_L_E_N_I(0);exibir_L_E_N_I(1);exibir_L_E_N_I(2);exibir_L_E_N_I(3);
+
+                }else{
+                JOptionPane.showMessageDialog(null,"Erro na exclusão");
+
+
+        }
+
+    }//GEN-LAST:event_btExcluirActionPerformed
+
+    private void btAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizarActionPerformed
+       conexao_jtable.execute("select * from mercado_addmaterial where id_mercado="
+                         +id_mercado);
+        preencher_jtable();
+       
+    }//GEN-LAST:event_btAtualizarActionPerformed
+
+    private void jbAdd1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAdd1ActionPerformed
+         
+
+            new addProduto(id_mercado).setVisible(true);
+
+        
+    }//GEN-LAST:event_jbAdd1ActionPerformed
+
+    private void jbExcluir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluir1ActionPerformed
+         
+        String sql;
+
+        sql = "delete from mercado_addproduto Where id_produto =" + jtMaterialUtilizado.getValueAt(jtMaterialUtilizado.getSelectedRow(),0);
+
+                if (conexao_jtable.salvar(sql)) {
+                    System.out.println("Exclusão realizada com sucesso");
+
+//                    exibir_L_E_N_I(0);exibir_L_E_N_I(1);exibir_L_E_N_I(2);exibir_L_E_N_I(3);
 
                 }else{
                 JOptionPane.showMessageDialog(null,"Erro na exclusão");
@@ -1442,14 +1529,49 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
                 }
 
-    }//GEN-LAST:event_jbExcluirActionPerformed
+    
 
-    private void jbAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtualizarActionPerformed
-       conexao.execute("select * from mercado_addmaterial where id_mercado="
-                            +pega_codigo_ou_nome(1,cbMunicipio.getSelectedItem().toString())+"");
+    
+    }//GEN-LAST:event_jbExcluir1ActionPerformed
+
+    private void jbAtualizar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtualizar1ActionPerformed
+        conexao_jtable.execute("select * from mercado_addproduto where id_produto="
+                            +id_mercado);
         preencher_jtable();
-        conexao.execute("select * from mercado_cadastro");
-    }//GEN-LAST:event_jbAtualizarActionPerformed
+        conexao_jtable.execute("select * from mercado_cadastro");
+    }//GEN-LAST:event_jbAtualizar1ActionPerformed
+
+    private void jbAdd2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAdd2ActionPerformed
+            new addEspecieComercializada(id_mercado).setVisible(true);
+    }//GEN-LAST:event_jbAdd2ActionPerformed
+
+    private void jbExcluir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluir2ActionPerformed
+           String sql;
+
+        sql = "delete from mercado_addespeciecomercializada Where id_especies_comercializadas =" + jtMaterialUtilizado.getValueAt(jtMaterialUtilizado.getSelectedRow(),0);
+
+                if (conexao_jtable.salvar(sql)) {
+                    System.out.println("Exclusão realizada com sucesso");
+
+//                    exibir_L_E_N_I(0);exibir_L_E_N_I(1);exibir_L_E_N_I(2);exibir_L_E_N_I(3);
+
+                }else{
+                JOptionPane.showMessageDialog(null,"Erro na exclusão");
+
+
+                }
+    }//GEN-LAST:event_jbExcluir2ActionPerformed
+
+    private void jbAtualizar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtualizar2ActionPerformed
+         conexao_jtable.execute("select * from mercado_addespeciecomercializada where  id_especies_comercializadas="
+                            +id_mercado);
+        preencher_jtable();
+        conexao_jtable.execute("select * from mercado_addespeciecomercializada");
+    }//GEN-LAST:event_jbAtualizar2ActionPerformed
+
+    private void jbAdd3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAdd3ActionPerformed
+        new addidEspeciesComercializadas(id_mercado).setVisible(true);
+    }//GEN-LAST:event_jbAdd3ActionPerformed
 
     /**
     * @param args the command line arguments
@@ -1463,6 +1585,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Atualizar;
     private javax.swing.JButton botao_Excluir;
     private javax.swing.JButton botao_alterar;
     private javax.swing.JButton botao_anterior;
@@ -1471,6 +1594,9 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
     private javax.swing.JButton botao_primeiro;
     private javax.swing.JButton botao_proximo;
     private javax.swing.JButton botao_ultimo;
+    private javax.swing.JButton btAdd;
+    private javax.swing.JButton btAtualizar;
+    private javax.swing.JButton btExcluir;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox cbEspecie;
     private javax.swing.JComboBox cbEstadoCivil;
@@ -1487,7 +1613,6 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
     private javax.swing.JCheckBox ckbCriancaEnvolvidas;
     private javax.swing.JCheckBox ckbFamiliar;
     private javax.swing.JCheckBox ckbInss;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1542,7 +1667,6 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
@@ -1560,9 +1684,16 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JButton jbAtualizar;
+    private javax.swing.JButton jbAdd1;
+    private javax.swing.JButton jbAdd2;
+    private javax.swing.JButton jbAdd3;
+    private javax.swing.JButton jbAtualizacao3;
+    private javax.swing.JButton jbAtualizar1;
+    private javax.swing.JButton jbAtualizar2;
     private javax.swing.JTable jbDadosEspecie;
-    private javax.swing.JButton jbExcluir;
+    private javax.swing.JButton jbExcluir1;
+    private javax.swing.JButton jbExcluir2;
+    private javax.swing.JButton jbExcluir3;
     private javax.swing.JTable jbOrigemProduto;
     private javax.swing.JTable jbPerdaPescado;
     private javax.swing.JTable jtMaterialUtilizado;
@@ -1700,50 +1831,47 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         jtMaterialUtilizado.getColumnModel().getColumn(2).setPreferredWidth(10);
         jtMaterialUtilizado.getColumnModel().getColumn(3).setPreferredWidth(10);
         jtMaterialUtilizado.getColumnModel().getColumn(4).setPreferredWidth(10);
-        jtMaterialUtilizado.getColumnModel().getColumn(5).setPreferredWidth(10);
-        jtMaterialUtilizado.getColumnModel().getColumn(6).setPreferredWidth(10);
+
 
         DefaultTableModel modelo = (DefaultTableModel)jtMaterialUtilizado.getModel();
         modelo.setNumRows(0);//limpa o JTable1;
 
         try{
-            while (conexao.resultSet.next())
-                modelo.addRow(new Object[]{conexao.resultSet.getString("id_material"),
-                                           conexao.resultSet.getString("nome"),
-                                           conexao.resultSet.getString("tipo"),
-                                           conexao.resultSet.getString("quantidade"),
-                                           conexao.resultSet.getString("custo"),
-                                           conexao.resultSet.getString("outros"),
-                                           conexao.resultSet.getString("frequencia")});
+            while (conexao_jtable.resultSet.next())
+                modelo.addRow(new Object[]{conexao_jtable.resultSet.getString("id_material"),
+                                           conexao_jtable.resultSet.getString("nome"),
+                                           conexao_jtable.resultSet.getString("quantidade"),
+                                           conexao_jtable.resultSet.getString("custo"),
+                                           conexao_jtable.resultSet.getString("outros"),
+                                           conexao_jtable.resultSet.getString("frequencia")});
 
-            conexao.resultSet.first();
+            conexao_jtable.resultSet.first();
         }catch (SQLException erro){
-            System.out.println(erro);
+            System.out.println(erro + "1792");
         }
 }
 
-     public void preencher_jtableMercado(JTable table){
-        table.getColumnModel().getColumn(0).setMaxWidth(0);
-        table.getColumnModel().getColumn(0).setPreferredWidth(0);
-        table.getColumnModel().getColumn(1).setPreferredWidth(40);
-        table.getColumnModel().getColumn(2).setPreferredWidth(10);
-        table.getColumnModel().getColumn(3).setPreferredWidth(10);
-        table.getColumnModel().getColumn(4).setPreferredWidth(10);
-        table.getColumnModel().getColumn(5).setPreferredWidth(10);
+     public void preencher_jbOrigemProduto(JTable table){
+       jbOrigemProduto.getColumnModel().getColumn(0).setMaxWidth(0);
+       jbOrigemProduto.getColumnModel().getColumn(0).setPreferredWidth(0);
+       jbOrigemProduto.getColumnModel().getColumn(1).setPreferredWidth(40);
+       jbOrigemProduto.getColumnModel().getColumn(2).setPreferredWidth(10);
+       jbOrigemProduto.getColumnModel().getColumn(3).setPreferredWidth(10);
+       jbOrigemProduto.getColumnModel().getColumn(4).setPreferredWidth(10);
 
         DefaultTableModel modelo = (DefaultTableModel)table.getModel();
         modelo.setNumRows(0);//limpa o JTable;
 
         try{
-            while (conexao.resultSet.next())
-                modelo.addRow(new Object[]{conexao.resultSet.getString("id_mercado"),
-                                           conexao.resultSet.getString("especie"),
-                                           conexao.resultSet.getString("produto"),
-                                           conexao.resultSet.getString("destino"),
-                                           conexao.resultSet.getString("volume")+" "+conexao.resultSet.getString("unidade_volume"),
-                                           conexao.resultSet.getString("preco")});
+            while (conexao_jtable.resultSet.next())
+                modelo.addRow(new Object[]{conexao_jtable.resultSet.getString("id_produto"),
+                                           conexao_jtable.resultSet.getString("produto"),
+                                           conexao_jtable.resultSet.getString("empresa"),
+                                           conexao_jtable.resultSet.getString("pescadores_diversos"),
+                                           conexao_jtable.resultSet.getString("cooperativa"),
+                                           conexao_jtable.resultSet.getString("outros")});
 
-            conexao.resultSet.first();
+            conexao_jtable.resultSet.first();
         }catch (SQLException erro){
             System.out.println(erro);
         }
@@ -1752,59 +1880,33 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
     }
 
-          public void preencher_jtableEspecie(){
-        jtEspecie.getColumnModel().getColumn(0).setMaxWidth(0);
-        jtEspecie.getColumnModel().getColumn(0).setPreferredWidth(0);
-        jtEspecie.getColumnModel().getColumn(1).setPreferredWidth(10);
-        jtEspecie.getColumnModel().getColumn(2).setPreferredWidth(10);
-        jtEspecie.getColumnModel().getColumn(3).setPreferredWidth(10);
-        jtEspecie.getColumnModel().getColumn(4).setPreferredWidth(10);
+          public void preencher_jbDadosEspecie(){
+        jbDadosEspecie.getColumnModel().getColumn(0).setMaxWidth(0);
+        jbDadosEspecie.getColumnModel().getColumn(0).setPreferredWidth(0);
+        jbDadosEspecie.getColumnModel().getColumn(1).setPreferredWidth(10);
+        jbDadosEspecie.getColumnModel().getColumn(2).setPreferredWidth(10);
+        jbDadosEspecie.getColumnModel().getColumn(3).setPreferredWidth(10);
+        jbDadosEspecie.getColumnModel().getColumn(4).setPreferredWidth(10);
+        jbDadosEspecie.getColumnModel().getColumn(5).setPreferredWidth(10);
 
-        DefaultTableModel modelo = (DefaultTableModel)jtEspecie.getModel();
+        DefaultTableModel modelo = (DefaultTableModel)jbDadosEspecie.getModel();
         modelo.setNumRows(0);//limpa o JTable;
 
         try{
-            while (conexao.resultSet.next())
-                modelo.addRow(new Object[]{conexao.resultSet.getString("id_especie"),
-                                           conexao.resultSet.getString("especie"),
-                                           conexao.resultSet.getString("causa_da_perda"),
-                                           conexao.resultSet.getString("estimativa_da_perda"),
-                                           conexao.resultSet.getString("destino_do_peixe_perdido")});
+            while (conexao_jtable.resultSet.next())
+                modelo.addRow(new Object[]{conexao_jtable.resultSet.getString("id_especies_comercializadas"),
+                                           conexao_jtable.resultSet.getString("especie"),
+                                           conexao_jtable.resultSet.getString("quantidade_fresco"),
+                                           conexao_jtable.resultSet.getString("preco_fresco"),
+                                           conexao_jtable.resultSet.getString("preco_salgado")});
 
-            conexao.resultSet.first();
+            conexao_jtable.resultSet.first();
         }catch (SQLException erro){
-            System.out.println(erro);
+           System.out.println(erro);
         }
-    }
-
-    public void exibir_L_E_N_I(int i){
-        if (i == 0){
-        //Atualiza A primeira tabela Mercado Local
-        conexao.execute("select * from questionariomercadofeira_addmaterial where id_caminhoneiro="
-                        +pega_codigo_ou_nome(1,cbMunicipio.getSelectedItem().toString())+" "
-                        + "and mercado='Mercado Local'");
-        preencher_jtableMercado(jtMaterialUtilizado);
-        conexao.execute("select * from mercado_questionario");
-        } else if (i == 1){
-
-        conexao.execute("select * from mercado_questionario_addmercado where id_caminhoneiro="
-                        +pega_codigo_ou_nome(1,cbMunicipio.getSelectedItem().toString())+" "
-                        + "and mercado='Mercado Estadual'");
-        preencher_jtableMercado(jbOrigemProduto);
-        conexao.execute("select * from caminhoneiro_cadastro");
-        }else if (i == 2){
-        //Atualiza A terceira tabela Mercado Nacional
-        conexao.execute("select * from caminhoneiro_addmercado where id_caminhoneiro="
-                        +pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+" "
-                        + "and mercado='Mercado Nacional'");
-        preencher_jtableMercado(jtMercadoNacional);
-        conexao.execute("select * from caminhoneiro_cadastro");
-        }else if (i == 3){
-        //Atualiza A primeira tabela Mercado Internacional
-
-    }
-
-}
-
+       }
+//    }
+//
+//  
 
 }
