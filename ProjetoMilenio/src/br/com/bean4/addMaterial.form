@@ -28,20 +28,10 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="tfMatFrequencia" alignment="0" max="32767" attributes="1"/>
-                          <Component id="tfMatOutros" alignment="0" max="32767" attributes="1"/>
-                          <Component id="tfMatCusto" alignment="0" max="32767" attributes="1"/>
-                          <Component id="tfMatQuantidade" alignment="0" max="32767" attributes="1"/>
-                          <Component id="tfMatTipo" alignment="0" max="32767" attributes="1"/>
                           <Component id="tfMatOutroMat" alignment="0" max="32767" attributes="1"/>
                           <Component id="cbMatMaterial" alignment="0" pref="209" max="32767" attributes="1"/>
                       </Group>
@@ -50,19 +40,35 @@
                       <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="tfMatQuantidade" pref="209" max="32767" attributes="1"/>
+                          <Component id="tfMatOutros" alignment="0" pref="209" max="32767" attributes="1"/>
+                          <Component id="tfMatFrequencia" alignment="0" pref="209" max="32767" attributes="1"/>
+                          <Component id="tfMatCusto" alignment="0" pref="209" max="32767" attributes="1"/>
+                      </Group>
+                  </Group>
               </Group>
-              <EmptySpace pref="23" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="248" max="32767" attributes="0"/>
+              <EmptySpace pref="236" max="32767" attributes="0"/>
               <Component id="botao_add_mat" min="-2" pref="77" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
@@ -74,11 +80,6 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="tfMatOutroMat" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="tfMatTipo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -96,28 +97,21 @@
                   <Component id="tfMatOutros" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="tfMatFrequencia" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfMatFrequencia" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="botao_add_mat" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JTextField" name="tfMatTipo">
-    </Component>
     <Component class="javax.swing.JTextField" name="tfMatQuantidade">
       <Properties>
         <Property name="text" type="java.lang.String" value="0"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Tipo.:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
@@ -176,13 +170,11 @@
     <Component class="javax.swing.JComboBox" name="cbMatMaterial">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="6">
-            <StringItem index="0" value="Combust&#xed;vel"/>
-            <StringItem index="1" value="Lubrificante"/>
-            <StringItem index="2" value="Gelo"/>
-            <StringItem index="3" value="Rancho"/>
-            <StringItem index="4" value="Pagamento de pescador"/>
-            <StringItem index="5" value="Outro"/>
+          <StringArray count="4">
+            <StringItem index="0" value="Gelo"/>
+            <StringItem index="1" value="Isopor"/>
+            <StringItem index="2" value="Energia"/>
+            <StringItem index="3" value="Taxa de Aluguel"/>
           </StringArray>
         </Property>
       </Properties>
