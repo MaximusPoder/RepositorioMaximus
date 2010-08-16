@@ -8,22 +8,15 @@
  *
  * Created on 09/08/2010, 17:19:30
  */
-
 package br.com.view.pescador;
 
-import br.com.dao.DAOPescador;
-import br.com.dao.DAOPescadorComposicao;
 import br.com.dao.DAOPescadorDadosEmbarcacao;
-import br.com.pojo.Pescador;
-import br.com.pojo.PescadorComposicao;
 import br.com.pojo.PescadorDadosEmbarcacao;
-import br.com.util.Mensagens;
 import br.com.util.MyUtil;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.util.List;
 
 /**
  *
@@ -31,21 +24,18 @@ import java.util.List;
  */
 public class WinDadosEmbarcacao extends javax.swing.JPanel {
 
-    private List<Pescador> pescadors;
     private PescadorDadosEmbarcacao pde;
 
     /** Creates new form WinDadosEmbarcacao */
     public WinDadosEmbarcacao() {
         initComponents();
-      
-        pescadors = new DAOPescador().getListWithQuery("select * from Pescador");
-        MyUtil.refresComboBox(pescadors, cbPescador);
         initAction();
         MyUtil.initiActionCmd(panel);
+        refresh();
 
     }
 
-   private void initAction() {
+    private void initAction() {
 
 
         btExcluir.addActionListener(new ActionListener() {
@@ -55,11 +45,11 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
                 refresh();
             }
         });
-        cbPescador.addItemListener(new ItemListener() {
+        WinSelecionaPescador.cbPescador.addItemListener(new ItemListener() {
 
             public void itemStateChanged(ItemEvent e) {
                 if (e.getStateChange() == ItemEvent.SELECTED) {
-                    if (cbPescador.getSelectedIndex() > 0) {
+                    if (WinSelecionaPescador.cbPescador.getSelectedIndex() > 0) {
                         refresh();
 
                     } else {
@@ -78,11 +68,8 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
             }
         });
         btCadastrar.addActionListener(getActionListener());
-        btAtualizar.addActionListener(getActionListener());
+
         btExcluir.addActionListener(getActionListener());
-
-
-
     }
 
     private ActionListener getActionListener() {
@@ -97,27 +84,27 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
     private void action(ActionEvent e) {
         String cmd = e.getActionCommand();
 
-        if (cmd.equalsIgnoreCase("Cadastrar")) {
-            if(pde == null){
-            pde = getpescadorOfPanel();
-            new DAOPescadorDadosEmbarcacao().cadastrar(pde);}else Mensagens.showMessageNaoCadastrar();
+        if (cmd.equalsIgnoreCase("Salvar")) {
+            if (pde == null) {
+                pde = getpescadorOfPanel();
+                new DAOPescadorDadosEmbarcacao().cadastrar(pde);
+            } else {
+                pde = getpescadorOfPanel();
+                new DAOPescadorDadosEmbarcacao().atualizar(pde);
+            }
         } else if (cmd.equalsIgnoreCase("Excluir")) {
             pde = getpescadorOfPanel();
             new DAOPescadorDadosEmbarcacao().excluir(pde);
         } else if (cmd.equalsIgnoreCase("Atualizar")) {
-            pde = getpescadorOfPanel();
-            new DAOPescadorDadosEmbarcacao().atualizar(pde);
         }
         clear();
-        cbPescador.setSelectedIndex(0);
-
 
     }
 
-   private void setpescadorComposicaoForPanel(PescadorDadosEmbarcacao p) {
+    private void setpescadorComposicaoForPanel(PescadorDadosEmbarcacao p) {
 
-    
-        MyUtil.setOpcaoWithResponse(bgQuestao1,p.getQuestao1(), tfQuestao1);
+
+        MyUtil.setOpcaoWithResponse(bgQuestao1, p.getQuestao1(), tfQuestao1);
         tfQuestao2.setText(p.getQuestao2());
         MyUtil.setOpcaoWithResponse(bgQuestao3, p.getQuestao3(), tfQuestao3);
         tfQuestao4.setText(p.getQuestao4());
@@ -139,9 +126,9 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
 
     private PescadorDadosEmbarcacao getpescadorOfPanel() {
 
-        String questao1 = bgQuestao1.getSelection().getActionCommand()+";"+tfQuestao1.getText();
+        String questao1 = bgQuestao1.getSelection().getActionCommand() + ";" + tfQuestao1.getText();
         String questao2 = tfQuestao2.getText();
-        String questao3 = bgQuestao3.getSelection().getActionCommand()+";"+tfQuestao3.getText();
+        String questao3 = bgQuestao3.getSelection().getActionCommand() + ";" + tfQuestao3.getText();
         String questao4 = tfQuestao4.getText();
         String questao5 = tfQuestao5.getText();
         String questao6 = tfQuestao6.getText();
@@ -171,30 +158,26 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
                 questao5, questao6, questao7, questao8, questao9,
                 questao10, questao11, questao12, questao13, questao14,
                 questao15, questao16, questao17,
-                pescadors.get(cbPescador.getSelectedIndex() - 1).getId());
+                WinSelecionaPescador.pescadors.get(WinSelecionaPescador.cbPescador.getSelectedIndex() - 1).getId());
 
         return pescador;
     }
 
     private void clear() {
 
-        MyUtil.FieldsClear(this);
-        bgQuestao1.clearSelection();
-        bgQuestao3.clearSelection();
-        pde=null;
+        pde = null;
 
     }
 
     private void refresh() {
         pde = new DAOPescadorDadosEmbarcacao().getObjectWithQuery("select * from " +
                 "PescadorDadosEmbarcacao where pescadorId = " +
-                pescadors.get(cbPescador.getSelectedIndex() - 1).getId());
+                WinSelecionaPescador.pescadors.get(WinSelecionaPescador.cbPescador.getSelectedIndex() - 1).getId());
         if (pde != null) {
             setpescadorComposicaoForPanel(pde);
         }
 
     }
-
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -211,14 +194,11 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
         panel = new javax.swing.JPanel();
         panelCrudEmpresa3 = new javax.swing.JPanel();
         btCadastrar = new javax.swing.JButton();
-        btAtualizar = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         btExcluir = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         btNovo = new javax.swing.JButton();
-        cbPescador = new javax.swing.JComboBox();
-        jLabel19 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -268,22 +248,15 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
 
         panelCrudEmpresa3.setBackground(new java.awt.Color(255, 255, 255));
 
-        btCadastrar.setText("Cadastrar");
+        btCadastrar.setText("Salvar");
         btCadastrar.setToolTipText("Realiza a Confirmação do Pagamento definindo exatamente o dia de pagamento."); // NOI18N
         btCadastrar.setFocusable(false);
         btCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btCadastrar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        btAtualizar.setText("Atualizar");
-        btAtualizar.setToolTipText("Atualiza Valor e Data de pagamento da mensalidade");
-
         btExcluir.setText("Excluir");
 
         btNovo.setText("Novo");
-
-        cbPescador.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel19.setText("Pescador");
 
         jLabel40.setFont(new java.awt.Font("Verdana", 1, 11));
         jLabel40.setText("Dados da Embarcação");
@@ -310,18 +283,12 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(btCadastrar)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btAtualizar)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btExcluir)
-                                        .addGap(91, 91, 91)
-                                        .addComponent(jLabel19)
-                                        .addGap(26, 26, 26)
-                                        .addComponent(cbPescador, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(btExcluir))
                                     .addComponent(jLabel49)))))
                     .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
                         .addGap(363, 363, 363)
                         .addComponent(jLabel40)))
-                .addContainerGap(365, Short.MAX_VALUE))
+                .addContainerGap(526, Short.MAX_VALUE))
         );
         panelCrudEmpresa3Layout.setVerticalGroup(
             panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -335,12 +302,9 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
                     .addComponent(jLabel40))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btExcluir)
-                    .addComponent(btAtualizar)
                     .addComponent(btCadastrar)
                     .addComponent(btNovo)
-                    .addComponent(cbPescador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel19))
+                    .addComponent(btExcluir))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -638,33 +602,28 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
 
     private void actionQ1(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionQ1
         // TODO add your handling code here:
-          MyUtil.setEnableFields(false, tfQuestao1);
+        MyUtil.setEnableFields(false, tfQuestao1);
     }//GEN-LAST:event_actionQ1
 
     private void jRadioButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton7ActionPerformed
         // TODO add your handling code here:
-         MyUtil.setEnableFields(true, tfQuestao3);
+        MyUtil.setEnableFields(true, tfQuestao3);
     }//GEN-LAST:event_jRadioButton7ActionPerformed
 
     private void jRadioButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton6ActionPerformed
         // TODO add your handling code here:
         MyUtil.setEnableFields(Boolean.FALSE, tfQuestao3);
     }//GEN-LAST:event_jRadioButton6ActionPerformed
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup bgQuestao1;
     private javax.swing.ButtonGroup bgQuestao3;
-    private javax.swing.JButton btAtualizar;
     private javax.swing.JButton btCadastrar;
     private javax.swing.JButton btExcluir;
     private javax.swing.JButton btNovo;
-    private javax.swing.JComboBox cbPescador;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -712,5 +671,4 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
     private javax.swing.JTextField tfQuestao8;
     private javax.swing.JTextField tfQuestao9;
     // End of variables declaration//GEN-END:variables
-
 }

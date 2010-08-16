@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /*
  * WinPescadorEspecies.java
@@ -10,19 +6,13 @@
  */
 package br.com.view.pescador;
 
-import br.com.dao.DAOEmpresaPescador;
-import br.com.dao.DAOPescador;
 import br.com.dao.DAOPescadorEspecieCapturada;
 import br.com.dao.DAOPescadorEspecies;
-import br.com.pojo.PescadorEspecies;
-import br.com.pojo.Pescador;
 import br.com.pojo.PescadorEspecieCapturada;
 import br.com.pojo.PescadorEspecies;
 import br.com.util.MyUtil;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
@@ -34,16 +24,14 @@ import javax.swing.table.DefaultTableModel;
 public class WinPescadorEspecies extends javax.swing.JPanel {
 
     /** Creates new form WinPescadorEspecies */
-    private List<Pescador> pescadors;
     private List<PescadorEspecies> especieses;
     private List<PescadorEspecieCapturada> especieCapturadas;
 
     public WinPescadorEspecies() {
         initComponents();
-        pescadors = new DAOPescador().getListWithQuery("select * from Pescador");
-        MyUtil.refresComboBox(pescadors, cbPescador);
         initAction();
-
+        refresh();
+        refreshEspecies();
     }
 
     private void initAction() {
@@ -55,32 +43,15 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
         // btAtualizar.addActionListener(getActionListener());
         btAdd.addActionListener(getActionListenerEspecies());
 
-        cbPescador.addItemListener(new ItemListener() {
-
-            public void itemStateChanged(ItemEvent e) {
-                if (e.getStateChange() == ItemEvent.SELECTED) {
-                    if (cbPescador.getSelectedIndex() > 0) {
-                        refresh();
-                        refreshEspecies();
-                    } else {
-                        clear();
-
-                    }
-                }
-            }
-        });
-
-
+     
     }
 
     private void refreshEspecies() {
-        if (cbPescador.getSelectedIndex() > 0) {
+        if (WinSelecionaPescador.cbPescador.getSelectedIndex() > 0) {
             especieses = new ArrayList<PescadorEspecies>();
-
             especieses = new DAOPescadorEspecies().getListWithQuery("select * from " +
                     "PescadorEspecies where pescadorId = " +
-                    pescadors.get(cbPescador.getSelectedIndex() - 1).getId());
-
+                    WinSelecionaPescador.pescadors.get(WinSelecionaPescador.cbPescador.getSelectedIndex() - 1).getId());
             refreshTable(especieses);
         } else {
             clear();
@@ -88,12 +59,11 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
     }
 
     private void refresh() {
-        if (cbPescador.getSelectedIndex() > 0) {
+        if (WinSelecionaPescador.cbPescador.getSelectedIndex() > 0) {
             especieCapturadas = new ArrayList<PescadorEspecieCapturada>();
-
             especieCapturadas = new DAOPescadorEspecieCapturada().getListWithQuery("select * from " +
                     "PescadorEspecieCapturada where pescadorId = " +
-                    pescadors.get(cbPescador.getSelectedIndex() - 1).getId());
+                    WinSelecionaPescador.pescadors.get(WinSelecionaPescador.cbPescador.getSelectedIndex() - 1).getId());
 
             refreshTablePEC(especieCapturadas);
         } else {
@@ -149,18 +119,31 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
     private void action(ActionEvent e) {
 
         String cmd = e.getActionCommand();
-        if (cbPescador.getSelectedIndex() > 0) {
-            if (cmd.equalsIgnoreCase("Cadastrar")) {
+        if (WinSelecionaPescador.cbPescador.getSelectedIndex() > 0) {
+            if (cmd.equalsIgnoreCase("Adicionar")) {
                 new DAOPescadorEspecieCapturada().cadastrar(getPECofPanel());
-            } else if (cmd.equalsIgnoreCase("Excluir")) {
+            } else if (cmd.equalsIgnoreCase("Remover")) {
                 new DAOPescadorEspecieCapturada().excluir(getPECofTable());
             }
-            refreshEspecies();
-            cbPescador.setSelectedIndex(0);
+            refresh();
             MyUtil.FieldsClear(this);
 
         }
 
+    }
+     private void actionEspecies(ActionEvent e) {
+
+         String cmd = e.getActionCommand();
+
+        if (WinSelecionaPescador.cbPescador.getSelectedIndex() > 0) {
+            if (cmd.equalsIgnoreCase("Adicionar")) {
+                new DAOPescadorEspecies().cadastrar(getEspeciesofPanel());
+            } else if (cmd.equalsIgnoreCase("Remover")) {
+                new DAOPescadorEspecies().excluir(getEspeciesofTable());
+            }
+            refreshEspecies();
+            MyUtil.FieldsClear(this);
+        }
     }
 
     private PescadorEspecieCapturada getPECofTable() {
@@ -172,7 +155,7 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
         pec.setFimSafra(tfFimSafra.getText());
         pec.setInicioSafra(tfinicioSafra.getText());
         pec.setSsp(tfSsp.getText());
-        pec.setPescadorId(pescadors.get(cbPescador.getSelectedIndex() - 1).getId());
+        pec.setPescadorId(WinSelecionaPescador.pescadors.get(WinSelecionaPescador.cbPescador.getSelectedIndex() - 1).getId());
         return pec;
     }
 
@@ -186,29 +169,17 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
         edf.setCausaPerda(tfCausa.getText());
         edf.setEstimativaPerda(tfEstimativa.getText());
         edf.setDestinoPeixePerdido(tfDestino.getText());
-        edf.setPescadorId(pescadors.get(cbPescador.getSelectedIndex() - 1).getId());
+        edf.setPescadorId(WinSelecionaPescador.pescadors.get(WinSelecionaPescador.cbPescador.getSelectedIndex() - 1).getId());
         return edf;
     }
 
-    private void actionEspecies(ActionEvent e) {
-        String cmd = e.getActionCommand();
-
-        if (cbPescador.getSelectedIndex() > 0) {
-            if (cmd.equalsIgnoreCase("Adicionar")) {
-                new DAOPescadorEspecies().cadastrar(getEspeciesofPanel());
-            } else if (cmd.equalsIgnoreCase("Remover")) {
-                new DAOPescadorEspecies().excluir(getEspeciesofTable());
-            }
-             refreshEspecies();
-        MyUtil.FieldsClear(this);
-        }
-    }
+   
 
     private void clear() {
 
         MyUtil.clearTable(tableEspecies);
         MyUtil.clearTable(tablePec);
-        cbPescador.setSelectedIndex(0);
+     
     }
 
     /** This method is called from within the constructor to
@@ -227,8 +198,6 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
         btExcluir = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         btNovo = new javax.swing.JButton();
-        cbPescador = new javax.swing.JComboBox();
-        jLabel19 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         jLabel65 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
@@ -240,8 +209,6 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
         jScrollPane14 = new javax.swing.JScrollPane();
         tableEspecies = new javax.swing.JTable();
         tfEspecie = new javax.swing.JTextField();
-        btAdd = new javax.swing.JButton();
-        btRemove = new javax.swing.JButton();
         jScrollPane15 = new javax.swing.JScrollPane();
         tablePec = new javax.swing.JTable();
         jLabel68 = new javax.swing.JLabel();
@@ -250,24 +217,23 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
         tfSsp = new javax.swing.JTextField();
         jLabel70 = new javax.swing.JLabel();
         tfFimSafra = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        btAdd = new javax.swing.JButton();
+        btRemove = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(1035, 806));
 
         panelCrudEmpresa3.setBackground(new java.awt.Color(255, 255, 255));
 
-        btCadastrar.setText("Cadastrar");
+        btCadastrar.setText("Adicionar");
         btCadastrar.setToolTipText("Realiza a Confirmação do Pagamento definindo exatamente o dia de pagamento."); // NOI18N
         btCadastrar.setFocusable(false);
         btCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btCadastrar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        btExcluir.setText("Excluir");
+        btExcluir.setText("Remover");
 
         btNovo.setText("Novo");
-
-        cbPescador.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel19.setText("Pescador");
 
         jLabel36.setFont(new java.awt.Font("Verdana", 1, 11));
         jLabel36.setText("Questões de Espécies");
@@ -294,29 +260,17 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btExcluir)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
-                                .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCrudEmpresa3Layout.createSequentialGroup()
-                                        .addComponent(jLabel36)
-                                        .addGap(193, 193, 193))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCrudEmpresa3Layout.createSequentialGroup()
-                                        .addComponent(jLabel19)
-                                        .addGap(26, 26, 26)
-                                        .addComponent(cbPescador, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(3, 3, 3))))
+                                .addComponent(jLabel36)
+                                .addGap(193, 193, 193))
                             .addComponent(jLabel49))))
-                .addContainerGap(358, Short.MAX_VALUE))
+                .addContainerGap(350, Short.MAX_VALUE))
         );
         panelCrudEmpresa3Layout.setVerticalGroup(
             panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
-                        .addComponent(jLabel36)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cbPescador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel19)))
+                    .addComponent(jLabel36)
                     .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
                         .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel22)
@@ -357,14 +311,6 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
         });
         jScrollPane14.setViewportView(tableEspecies);
 
-        btAdd.setText("Adicionar");
-        btAdd.setToolTipText("Realiza a Confirmação do Pagamento definindo exatamente o dia de pagamento."); // NOI18N
-        btAdd.setFocusable(false);
-        btAdd.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btAdd.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        btRemove.setText("Remover");
-
         tablePec.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -388,6 +334,37 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
         jLabel69.setText("Inicio de Safra");
 
         jLabel70.setText("Fim de Safra");
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        btAdd.setText("Adicionar");
+        btAdd.setToolTipText("Realiza a Confirmação do Pagamento definindo exatamente o dia de pagamento."); // NOI18N
+        btAdd.setFocusable(false);
+        btAdd.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btAdd.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        btRemove.setText("Remover");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btAdd)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btRemove)
+                .addContainerGap(867, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btAdd)
+                    .addComponent(btRemove))
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -435,12 +412,9 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(84, 84, 84)
                                 .addComponent(tfDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btAdd)
-                    .addComponent(btRemove))
-                .addContainerGap(284, Short.MAX_VALUE))
+                .addContainerGap(367, Short.MAX_VALUE))
             .addComponent(panelCrudEmpresa3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -462,7 +436,9 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
                         .addComponent(jLabel69)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 272, Short.MAX_VALUE)
+                .addGap(144, 144, 144)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -480,12 +456,7 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel65)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btAdd)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btRemove)))
+                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -495,9 +466,7 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
     private javax.swing.JButton btExcluir;
     private javax.swing.JButton btNovo;
     private javax.swing.JButton btRemove;
-    private javax.swing.JComboBox cbPescador;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel49;
@@ -508,6 +477,7 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel70;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JPanel panelCrudEmpresa3;
