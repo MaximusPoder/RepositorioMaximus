@@ -33,15 +33,14 @@ public class WinDetalheFrota extends javax.swing.JPanel {
 
     /** Creates new form WinDetalheFrota */
     private DefaultTableModel model;
-    private List<Empresa> empresas;
     private List<EmpresaDetalhaFrota> edfs;
     private EmpresaDetalhaFrota edf;
 
     public WinDetalheFrota() {
         initComponents();
-        empresas = new DAOEmpresa().getListWithQuery("select * from Empresa");
-        MyUtil.refresComboBox(empresas, cbEmpresa);
+
         initAction();
+        refresh();
     }
 
     /** This method is called from within the constructor to
@@ -60,8 +59,6 @@ public class WinDetalheFrota extends javax.swing.JPanel {
         btExcluir = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         btNovo = new javax.swing.JButton();
-        cbEmpresa = new javax.swing.JComboBox();
-        jLabel17 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -96,7 +93,7 @@ public class WinDetalheFrota extends javax.swing.JPanel {
 
         panelCrudEmpresa1.setBackground(new java.awt.Color(255, 255, 255));
 
-        btCadastrar.setText("Cadastrar");
+        btCadastrar.setText("Salvar");
         btCadastrar.setToolTipText("Realiza a Confirmação do Pagamento definindo exatamente o dia de pagamento."); // NOI18N
         btCadastrar.setFocusable(false);
         btCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -105,10 +102,6 @@ public class WinDetalheFrota extends javax.swing.JPanel {
         btExcluir.setText("Excluir");
 
         btNovo.setText("Novo");
-
-        cbEmpresa.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel17.setText("Empresa");
 
         jLabel28.setFont(new java.awt.Font("Verdana", 1, 11));
         jLabel28.setText("Detalhamento da Frota ");
@@ -135,16 +128,12 @@ public class WinDetalheFrota extends javax.swing.JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(btCadastrar)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btExcluir)
-                                        .addGap(172, 172, 172)
-                                        .addComponent(jLabel17)
-                                        .addGap(26, 26, 26)
-                                        .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(btExcluir))
                                     .addComponent(jLabel47)))))
                     .addGroup(panelCrudEmpresa1Layout.createSequentialGroup()
                         .addGap(377, 377, 377)
                         .addComponent(jLabel28)))
-                .addContainerGap(335, Short.MAX_VALUE))
+                .addContainerGap(469, Short.MAX_VALUE))
         );
         panelCrudEmpresa1Layout.setVerticalGroup(
             panelCrudEmpresa1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,8 +149,6 @@ public class WinDetalheFrota extends javax.swing.JPanel {
                 .addGroup(panelCrudEmpresa1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btCadastrar)
                     .addComponent(btNovo)
-                    .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17)
                     .addComponent(btExcluir))
                 .addContainerGap())
         );
@@ -290,7 +277,6 @@ public class WinDetalheFrota extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel14)
                             .addComponent(tfFrota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -337,20 +323,18 @@ public class WinDetalheFrota extends javax.swing.JPanel {
                                     .addComponent(jLabel19))))))
                 .addGap(27, 27, 27)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1318, Short.MAX_VALUE))
+                .addContainerGap(1312, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCadastrar;
     private javax.swing.JButton btExcluir;
     private javax.swing.JButton btNovo;
-    private javax.swing.JComboBox cbEmpresa;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
@@ -391,7 +375,7 @@ public class WinDetalheFrota extends javax.swing.JPanel {
             }
         });
         btCadastrar.addActionListener(getActionListener());
-       // btAtualizar.addActionListener(getActionListener());
+        // btAtualizar.addActionListener(getActionListener());
         btExcluir.addActionListener(getActionListener());
         table.addMouseListener(new MouseAdapter() {
 
@@ -402,15 +386,15 @@ public class WinDetalheFrota extends javax.swing.JPanel {
 
             }
         });
-        cbEmpresa.addItemListener(new ItemListener() {
+        WinSelecionaEmpresa.cbEmpresa.addItemListener(new ItemListener() {
 
             public void itemStateChanged(ItemEvent e) {
                 if (e.getStateChange() == ItemEvent.SELECTED) {
-                    if (cbEmpresa.getSelectedIndex() > 0) {
+                    if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0) {
                         refresh();
                     } else {
                         clear();
-                      //  edf = null;
+                        //  edf = null;
                     }
                 }
             }
@@ -420,11 +404,11 @@ public class WinDetalheFrota extends javax.swing.JPanel {
     }
 
     private void refresh() {
-        if (cbEmpresa.getSelectedIndex() > 0) {
+        if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0) {
             edfs = new ArrayList<EmpresaDetalhaFrota>();
             edfs = new DAODetalhaFrota().getListWithQuery("select * from " +
                     "EmpresaDetalheFrota where empresaId = " +
-                    empresas.get(cbEmpresa.getSelectedIndex() - 1).getId());
+                    WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
 
             refreshTable(edfs);
         } else {
@@ -481,7 +465,7 @@ public class WinDetalheFrota extends javax.swing.JPanel {
         e.setDuracao(tfDuracao.getText());
         e.setFreq(tfFreq.getText());
         e.setProducao(tfProducao.getText());
-        e.setEmpresaId(empresas.get(cbEmpresa.getSelectedIndex() - 1).getId());
+        e.setEmpresaId(WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
         return e;
     }
 
@@ -517,26 +501,29 @@ public class WinDetalheFrota extends javax.swing.JPanel {
     private void action(ActionEvent e) {
         String cmd = e.getActionCommand();
 
-        if(cbEmpresa.getSelectedIndex()>0){
-        if (cmd.equalsIgnoreCase("Cadastrar")) {
-            edf = getEDFofPanel();
-            new DAODetalhaFrota().cadastrar(edf);
-        } else if (cmd.equalsIgnoreCase("Excluir")) {
-            edf = getEDFofPanel();
-            new DAODetalhaFrota().excluir(edf);
-        } else if (cmd.equalsIgnoreCase("Atualizar")) {
-            edf = getEDFofPanel();
-            new DAODetalhaFrota().atualizar(edf);
-        }
-        refresh();
-        clear();
-        edf = null;
-        cbEmpresa.setSelectedIndex(0);
+        if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0) {
+            if (cmd.equalsIgnoreCase("Salvar")) {
+                if (edf == null) {
+                    edf = getEDFofPanel();
+                    new DAODetalhaFrota().cadastrar(edf);
+                } else {
+                    edf = getEDFofPanel();
+                    new DAODetalhaFrota().atualizar(edf);
+                }
+            } else if (cmd.equalsIgnoreCase("Excluir")) {
+                edf = getEDFofPanel();
+                new DAODetalhaFrota().excluir(edf);
+            } else if (cmd.equalsIgnoreCase("Atualizar")) {
+            }
+            refresh();
+            clear();
+            edf = null;
+
         }
     }
 
     private void clear() {
         MyUtil.FieldsClear(this);
-        MyUtil.clearTable(table);
+        //MyUtil.clearTable(table);
     }
 }

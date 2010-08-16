@@ -179,7 +179,7 @@
               </Group>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="157" max="-2" attributes="0"/>
-              <EmptySpace pref="1318" max="32767" attributes="0"/>
+              <EmptySpace pref="1312" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -215,10 +215,6 @@
                                           <Component id="btCadastrar" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Component id="btExcluir" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
-                                          <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                          <Component id="cbEmpresa" min="-2" pref="189" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jLabel47" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -230,7 +226,7 @@
                           <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="335" max="32767" attributes="0"/>
+                  <EmptySpace pref="469" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -250,8 +246,6 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btCadastrar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btNovo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cbEmpresa" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -262,7 +256,7 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="btCadastrar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Cadastrar"/>
+            <Property name="text" type="java.lang.String" value="Salvar"/>
             <Property name="toolTipText" type="java.lang.String" value="Realiza a Confirma&#xe7;&#xe3;o do Pagamento definindo exatamente o dia de pagamento." noResource="true"/>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -283,23 +277,6 @@
         <Component class="javax.swing.JButton" name="btNovo">
           <Properties>
             <Property name="text" type="java.lang.String" value="Novo"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="cbEmpresa">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-              </StringArray>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel17">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Empresa"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel28">

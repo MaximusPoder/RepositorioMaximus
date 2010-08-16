@@ -1,33 +1,20 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
  * WinQuestionario3.java
  *
  * Created on 08/08/2010, 21:53:03
  */
 package br.com.view;
 
-import br.com.dao.DAOEmpresa;
 import br.com.dao.DaoQuestionario3;
-import br.com.pojo.Empresa;
-import br.com.pojo.EmpresaImposto;
 import br.com.pojo.EmpresaQuestionario3;
 import br.com.util.JTableRenderer;
-import br.com.util.Mensagens;
 import br.com.util.MyUtil;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 
@@ -40,16 +27,15 @@ public class WinQuestionario3 extends javax.swing.JPanel {
     /** Creates new form WinQuestionario3 */
     private EmpresaQuestionario3 empresaQuestionario3;
     private DefaultTableModel model;
-    private List<Empresa> empresas;
+   
 
     public WinQuestionario3() {
         initComponents();
-        empresas = new DAOEmpresa().getListWithQuery("select * from Empresa");
-        MyUtil.refresComboBox(empresas, cbEmpresaQuestionario3);
+        clearQuestionario3();
         initAction();
-
         iniciaModeloTable27();
         initiActionCmd(tabQuestionario3);
+        refresh();
 
     }
 
@@ -84,7 +70,7 @@ public class WinQuestionario3 extends javax.swing.JPanel {
             if (empresaQuestionario3 != null) {
                 empresaQuestionario3.all(questao24, questao25, questao26, questao27,
                         questao28, questao29, questao30,
-                        empresas.get(cbEmpresaQuestionario3.getSelectedIndex() - 1).getId());
+                        WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
 
                 return empresaQuestionario3;
             }
@@ -92,7 +78,7 @@ public class WinQuestionario3 extends javax.swing.JPanel {
             EmpresaQuestionario3 eq = new EmpresaQuestionario3();
             eq.all(questao24, questao25, questao26, questao27,
                     questao28, questao29, questao30,
-                    empresas.get(cbEmpresaQuestionario3.getSelectedIndex() - 1).getId());
+                    WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
             return eq;
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro no cacastro, verifique todos os campos",
@@ -125,8 +111,6 @@ public class WinQuestionario3 extends javax.swing.JPanel {
 
         clearTab(tabQuestionario3);
         MyUtil.limpaTabela(tableQuestao27);
-
-
         bgQuestao25.clearSelection();
         bgQuestao26.clearSelection();
         bgQuestao27.clearSelection();
@@ -137,22 +121,22 @@ public class WinQuestionario3 extends javax.swing.JPanel {
     private void actionEmpresaQuestionario3(ActionEvent e) {
 
         String cmd = e.getActionCommand();
-        if (cbEmpresaQuestionario3.getSelectedIndex() > 0) {
-
-
-            if (cmd.equalsIgnoreCase("Cadastrar")) {
+        if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0) {
+            if (cmd.equalsIgnoreCase("Salvar")) {
                 if (empresaQuestionario3 == null) {
                     empresaQuestionario3 = getQuestionario3OfPanel();
                     new DaoQuestionario3().cadastrar(empresaQuestionario3);
                 } else {
-                    Mensagens.showMessageNaoCadastrar();
+                      empresaQuestionario3 = getQuestionario3OfPanel();
+                new DaoQuestionario3().atualizar(empresaQuestionario3);
+                 //   Mensagens.showMessageNaoCadastrar();
                 }
             } else if (cmd.equalsIgnoreCase("Atualizar")) {
-                empresaQuestionario3 = getQuestionario3OfPanel();
-                new DaoQuestionario3().atualizar(empresaQuestionario3);
+              
             }
-            clearQuestionario3();
-            cbEmpresaQuestionario3.setSelectedIndex(0);
+            refresh();
+           // clearQuestionario3();
+            
         }
     }
 
@@ -181,39 +165,21 @@ public class WinQuestionario3 extends javax.swing.JPanel {
                 actionEmpresaQuestionario3(e);
             }
         });
-        cbEmpresaQuestionario3.addItemListener(new ItemListener() {
-
-            public void itemStateChanged(ItemEvent e) {
-                if (e.getStateChange() == ItemEvent.SELECTED) {
-                    if (cbEmpresaQuestionario3.getSelectedIndex() > 0) {
-                        isExist();
-                    } else {
-                        clearQuestionario3();
-                    }
-                }
-            }
-        });
+     
         btCadastrarQuestionario3.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
                 actionEmpresaQuestionario3(e);
             }
         });
-        btAtualizarQuestionario3.addActionListener(new ActionListener() {
-
-            public void actionPerformed(ActionEvent e) {
-                actionEmpresaQuestionario3(e);
-            }
-        });
-
-
+      
     }
 
-    private void isExist() {
+    private void refresh() {
         empresaQuestionario3 =
                 new DaoQuestionario3().getObjectWithQuery("select * from EmpresaQuestionario3" +
                 " where empresaId = " +
-                empresas.get(cbEmpresaQuestionario3.getSelectedIndex() - 1).getId());
+                WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
         if (empresaQuestionario3 != null) {
             setQuestionario3ForPanel(empresaQuestionario3);
         } else {
@@ -253,13 +219,10 @@ public class WinQuestionario3 extends javax.swing.JPanel {
         tabQuestionario3 = new javax.swing.JPanel();
         panelCrudEmpresa7 = new javax.swing.JPanel();
         btCadastrarQuestionario3 = new javax.swing.JButton();
-        btAtualizarQuestionario3 = new javax.swing.JButton();
         jLabel68 = new javax.swing.JLabel();
         jLabel69 = new javax.swing.JLabel();
         jLabel70 = new javax.swing.JLabel();
         btNovoQuestionario3 = new javax.swing.JButton();
-        jLabel71 = new javax.swing.JLabel();
-        cbEmpresaQuestionario3 = new javax.swing.JComboBox();
         jLabel12 = new javax.swing.JLabel();
         jLabel73 = new javax.swing.JLabel();
         jLabel74 = new javax.swing.JLabel();
@@ -336,20 +299,13 @@ public class WinQuestionario3 extends javax.swing.JPanel {
         panelCrudEmpresa7.setBackground(new java.awt.Color(255, 255, 255));
         panelCrudEmpresa7.setPreferredSize(new java.awt.Dimension(900, 67));
 
-        btCadastrarQuestionario3.setText("Cadastrar");
+        btCadastrarQuestionario3.setText("Salvar");
         btCadastrarQuestionario3.setToolTipText("Realiza a Confirmação do Pagamento definindo exatamente o dia de pagamento."); // NOI18N
         btCadastrarQuestionario3.setFocusable(false);
         btCadastrarQuestionario3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btCadastrarQuestionario3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        btAtualizarQuestionario3.setText("Atualizar");
-        btAtualizarQuestionario3.setToolTipText("Atualiza Valor e Data de pagamento da mensalidade");
-
         btNovoQuestionario3.setText("Novo");
-
-        jLabel71.setText("Empresa");
-
-        cbEmpresaQuestionario3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel12.setFont(new java.awt.Font("Verdana", 1, 11));
         jLabel12.setText("Impostos -Parte 2");
@@ -373,15 +329,9 @@ public class WinQuestionario3 extends javax.swing.JPanel {
                         .addComponent(btNovoQuestionario3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btCadastrarQuestionario3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btAtualizarQuestionario3)
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel71)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelCrudEmpresa7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12)
-                            .addComponent(cbEmpresaQuestionario3, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(381, Short.MAX_VALUE))
+                        .addGap(159, 159, 159)
+                        .addComponent(jLabel12)))
+                .addContainerGap(470, Short.MAX_VALUE))
         );
         panelCrudEmpresa7Layout.setVerticalGroup(
             panelCrudEmpresa7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -395,11 +345,8 @@ public class WinQuestionario3 extends javax.swing.JPanel {
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelCrudEmpresa7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btAtualizarQuestionario3)
                     .addComponent(btCadastrarQuestionario3)
-                    .addComponent(btNovoQuestionario3)
-                    .addComponent(jLabel71)
-                    .addComponent(cbEmpresaQuestionario3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btNovoQuestionario3))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
@@ -871,11 +818,9 @@ public class WinQuestionario3 extends javax.swing.JPanel {
     private javax.swing.ButtonGroup bgQuestao27;
     private javax.swing.ButtonGroup bgQuestao30;
     private javax.swing.JButton btAddLinhaQ3;
-    private javax.swing.JButton btAtualizarQuestionario3;
     private javax.swing.JButton btCadastrarQuestionario3;
     private javax.swing.JButton btNovoQuestionario3;
     private javax.swing.JButton btRetiraQ3;
-    private javax.swing.JComboBox cbEmpresaQuestionario3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel101;
@@ -895,7 +840,6 @@ public class WinQuestionario3 extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
-    private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel77;

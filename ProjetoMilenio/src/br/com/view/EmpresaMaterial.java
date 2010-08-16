@@ -33,15 +33,14 @@ import javax.swing.table.DefaultTableModel;
 public class EmpresaMaterial extends javax.swing.JPanel {
 
     /** Creates new form EmpresaMaterial */
-    private List<Empresa> empresas;
+  
     private List<br.com.pojo.EmpresaMaterial> ems;
     private br.com.pojo.EmpresaMaterial em;
 
     public EmpresaMaterial() {
         initComponents();
-        empresas = new DAOEmpresa().getListWithQuery("select * from Empresa");
-        MyUtil.refresComboBox(empresas, cbEmpresa);
         initAction();
+        refresh();
     }
 
     /** This method is called from within the constructor to
@@ -60,8 +59,6 @@ public class EmpresaMaterial extends javax.swing.JPanel {
         jLabel68 = new javax.swing.JLabel();
         jLabel69 = new javax.swing.JLabel();
         jLabel70 = new javax.swing.JLabel();
-        jLabel71 = new javax.swing.JLabel();
-        cbEmpresa = new javax.swing.JComboBox();
         jLabel12 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -79,10 +76,6 @@ public class EmpresaMaterial extends javax.swing.JPanel {
 
         btExcluir.setText("Excluir");
         btExcluir.setToolTipText("Atualiza Valor e Data de pagamento da mensalidade");
-
-        jLabel71.setText("Empresa");
-
-        cbEmpresa.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel12.setFont(new java.awt.Font("Verdana", 1, 11));
         jLabel12.setText("Gastos com material");
@@ -108,15 +101,11 @@ public class EmpresaMaterial extends javax.swing.JPanel {
                         .addGap(30, 30, 30)
                         .addComponent(btCadastrar)
                         .addGap(18, 18, 18)
-                        .addComponent(btExcluir)
-                        .addGap(55, 55, 55)
-                        .addComponent(jLabel71)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btExcluir))
                     .addGroup(panelCrudEmpresa7Layout.createSequentialGroup()
                         .addGap(339, 339, 339)
                         .addComponent(jLabel12)))
-                .addContainerGap(419, Short.MAX_VALUE))
+                .addContainerGap(427, Short.MAX_VALUE))
         );
         panelCrudEmpresa7Layout.setVerticalGroup(
             panelCrudEmpresa7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,8 +120,6 @@ public class EmpresaMaterial extends javax.swing.JPanel {
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelCrudEmpresa7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel71)
-                    .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btCadastrar)
                     .addComponent(btExcluir))
                 .addContainerGap())
@@ -191,13 +178,11 @@ public class EmpresaMaterial extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCadastrar;
     private javax.swing.JButton btExcluir;
-    private javax.swing.JComboBox cbEmpresa;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel70;
-    private javax.swing.JLabel jLabel71;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel panelCrudEmpresa7;
@@ -209,10 +194,11 @@ public class EmpresaMaterial extends javax.swing.JPanel {
         btCadastrar.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                if (cbEmpresa.getSelectedIndex() > 0) {
+
+                if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0) {
                     addMaterial m =
-                            new addMaterial(empresas.
-                            get(cbEmpresa.getSelectedIndex() - 1).getId(),
+                            new addMaterial(WinSelecionaEmpresa.empresas.
+                            get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId(),
                             EmpresaMaterial.class);
                     m.addWindowListener(new WindowAdapter() {
 
@@ -220,7 +206,7 @@ public class EmpresaMaterial extends javax.swing.JPanel {
                         public void windowClosed(WindowEvent e) {
                             super.windowClosed(e);
                             refresh();
-                            cbEmpresa.setSelectedIndex(0);
+                     
                         }
                     });
                 }
@@ -232,7 +218,7 @@ public class EmpresaMaterial extends javax.swing.JPanel {
             public void actionPerformed(ActionEvent e) {
                 new DAOEmpresaMaterial().excluir(getEMofTable());
                 refresh();
-                 cbEmpresa.setSelectedIndex(0);
+              
             }
         });      
         table.addMouseListener(new MouseAdapter() {
@@ -244,11 +230,11 @@ public class EmpresaMaterial extends javax.swing.JPanel {
 
             }
         });
-        cbEmpresa.addItemListener(new ItemListener() {
+        WinSelecionaEmpresa.cbEmpresa.addItemListener(new ItemListener() {
 
             public void itemStateChanged(ItemEvent e) {
                 if (e.getStateChange() == ItemEvent.SELECTED) {
-                    if (cbEmpresa.getSelectedIndex() > 0) {
+                    if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0) {
                         refresh();
                     } else {
                         clear();
@@ -261,14 +247,14 @@ public class EmpresaMaterial extends javax.swing.JPanel {
 
     private void clear() {
         MyUtil.clearTable(table);
-         cbEmpresa.setSelectedIndex(0);
+         
     }
 
     private void refresh() {
         ems = new ArrayList<br.com.pojo.EmpresaMaterial>();
         ems = new DAOEmpresaMaterial().getListWithQuery("select * from " +
                 "EmpresaMaterial where empresaId = " +
-                empresas.get(cbEmpresa.getSelectedIndex() - 1).getId());
+                WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
                
         refreshTable(ems);
     }
