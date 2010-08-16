@@ -98,19 +98,23 @@ public class WinQuestionarioPescador extends javax.swing.JFrame {
                   ChangePanel("", new WinPanelPescador());
                 break;
             }
-            case 2: {
-               ChangePanel("", new WinComposicaoPescaria());
+             case 2: {
+               ChangePanel("", new WinSelecionaPescador());
                 break;
             }
             case 3: {
-                  ChangePanel("", new WinDadosEmbarcacao());
+               ChangePanel("", new WinComposicaoPescaria());
                 break;
             }
             case 4: {
-                 ChangePanel("", new WinPescadorEspecies());
+                  ChangePanel("", new WinDadosEmbarcacao());
                 break;
             }
             case 5: {
+                 ChangePanel("", new WinPescadorEspecies());
+                break;
+            }
+            case 6: {
                   ChangePanel("", new WinPercepcaoAmbiental());
                 break;
             }

@@ -8,7 +8,6 @@
  *
  * Created on 09/08/2010, 17:34:18
  */
-
 package br.com.view.pescador;
 
 import br.com.dao.DAOPercepcaoAmbiental;
@@ -32,37 +31,17 @@ import java.util.List;
 public class WinPercepcaoAmbiental extends javax.swing.JPanel {
 
     /** Creates new form WinPercepcaoAmbiental */
-     private List<Pescador> pescadors;
     private PescadorPersPectiva pde;
+
     public WinPercepcaoAmbiental() {
         initComponents();
-          initComponents();
-
-        pescadors = new DAOPescador().getListWithQuery("select * from Pescador");
-        MyUtil.refresComboBox(pescadors, cbPescador);
+        initComponents();
         initAction();
+        refresh();
 
     }
 
-     private void initAction() {
-
-
-
-        cbPescador.addItemListener(new ItemListener() {
-
-            public void itemStateChanged(ItemEvent e) {
-                if (e.getStateChange() == ItemEvent.SELECTED) {
-                    if (cbPescador.getSelectedIndex() > 0) {
-                        refresh();
-
-                    } else {
-                        clear();
-                        pde = null;
-                    }
-                }
-            }
-        });
-
+    private void initAction() {
 
         btNovo.addActionListener(new ActionListener() {
 
@@ -71,11 +50,8 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
             }
         });
         btCadastrar.addActionListener(getActionListener());
-        btAtualizar.addActionListener(getActionListener());
-      //  btExcluir.addActionListener(getActionListener());
-
-
-
+        //btAtualizar.addActionListener(getActionListener());
+        //  btExcluir.addActionListener(getActionListener());
     }
 
     private ActionListener getActionListener() {
@@ -90,24 +66,25 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
     private void action(ActionEvent e) {
         String cmd = e.getActionCommand();
 
-        if (cmd.equalsIgnoreCase("Cadastrar")) {
-            if(pde == null){
-            pde = getpescadorOfPanel();
-            new DAOPercepcaoAmbiental().cadastrar(pde);}else Mensagens.showMessageNaoCadastrar();
+        if (cmd.equalsIgnoreCase("Salvar")) {
+            if (pde == null) {
+                pde = getpescadorOfPanel();
+                new DAOPercepcaoAmbiental().cadastrar(pde);
+            } else {
+                pde = getpescadorOfPanel();
+            new DAOPercepcaoAmbiental().atualizar(pde);
+            }
         } else if (cmd.equalsIgnoreCase("Excluir")) {
             pde = getpescadorOfPanel();
             new DAOPercepcaoAmbiental().excluir(pde);
         } else if (cmd.equalsIgnoreCase("Atualizar")) {
-            pde = getpescadorOfPanel();
-            new DAOPercepcaoAmbiental().atualizar(pde);
+          
         }
         clear();
-        cbPescador.setSelectedIndex(0);
-
-
+    
     }
 
-   private void setpescadorComposicaoForPanel(PescadorPersPectiva p) {
+    private void setpescadorComposicaoForPanel(PescadorPersPectiva p) {
 
         tfQuestao1.setText(p.getQuestao1());
         tfQuestao2.setText(p.getQuestao2());
@@ -160,17 +137,17 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
 
         PescadorPersPectiva pescador = new PescadorPersPectiva();
         pescador.all(questao1, questao2, questao3, questao4,
-                    questao5, questao6, questao7, questao8, questao9,
-                    questao10, questao11, questao12, questao13, questao14,
-                    questao15, questao16, questao17, questao17,
-                    pescadors.get(cbPescador.getSelectedIndex() - 1).getId());
+                questao5, questao6, questao7, questao8, questao9,
+                questao10, questao11, questao12, questao13, questao14,
+                questao15, questao16, questao17, questao17,
+                WinSelecionaPescador.pescadors.get(WinSelecionaPescador.cbPescador.getSelectedIndex() - 1).getId());
 
         return pescador;
     }
 
     private void clear() {
 
-        MyUtil.FieldsClear(this);
+      
         pde = null;
     }
 
@@ -178,7 +155,7 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
 
         pde = new DAOPercepcaoAmbiental().getObjectWithQuery("select * from " +
                 "PescadorPersPectiva where pescadorId = " +
-                pescadors.get(cbPescador.getSelectedIndex() - 1).getId());
+                WinSelecionaPescador.pescadors.get(WinSelecionaPescador.cbPescador.getSelectedIndex() - 1).getId());
         if (pde != null) {
             setpescadorComposicaoForPanel(pde);
         }
@@ -207,13 +184,10 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         panelCrudEmpresa3 = new javax.swing.JPanel();
         btCadastrar = new javax.swing.JButton();
-        btAtualizar = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         btNovo = new javax.swing.JButton();
-        cbPescador = new javax.swing.JComboBox();
-        jLabel19 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -285,20 +259,13 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
 
         panelCrudEmpresa3.setBackground(new java.awt.Color(255, 255, 255));
 
-        btCadastrar.setText("Cadastrar");
+        btCadastrar.setText("Salvar");
         btCadastrar.setToolTipText("Realiza a Confirmação do Pagamento definindo exatamente o dia de pagamento."); // NOI18N
         btCadastrar.setFocusable(false);
         btCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btCadastrar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        btAtualizar.setText("Atualizar");
-        btAtualizar.setToolTipText("Atualiza Valor e Data de pagamento da mensalidade");
-
         btNovo.setText("Novo");
-
-        cbPescador.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel19.setText("Pescador");
 
         jLabel36.setFont(new java.awt.Font("Verdana", 1, 11));
         jLabel36.setText("Questões Ambientais");
@@ -323,14 +290,9 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
                                     .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
                                         .addComponent(btNovo)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btCadastrar)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btAtualizar)
-                                        .addGap(164, 164, 164)
-                                        .addComponent(jLabel19)
-                                        .addGap(26, 26, 26)
-                                        .addComponent(cbPescador, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel49)))))
+                                        .addComponent(btCadastrar))
+                                    .addComponent(jLabel49))))
+                        .addGap(504, 504, 504))
                     .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
                         .addGap(424, 424, 424)
                         .addComponent(jLabel36)))
@@ -348,11 +310,8 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
                     .addComponent(jLabel36))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btAtualizar)
                     .addComponent(btCadastrar)
-                    .addComponent(btNovo)
-                    .addComponent(cbPescador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel19))
+                    .addComponent(btNovo))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -484,7 +443,7 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
                 .addContainerGap(1024, Short.MAX_VALUE))
             .addGroup(panelLayout.createSequentialGroup()
                 .addComponent(panelCrudEmpresa3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(512, 512, 512))
+                .addGap(530, 530, 530))
             .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelLayout.createSequentialGroup()
                     .addContainerGap()
@@ -594,13 +553,9 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
             .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 806, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btAtualizar;
     private javax.swing.JButton btCadastrar;
     private javax.swing.JButton btNovo;
-    private javax.swing.JComboBox cbPescador;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -611,7 +566,6 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
@@ -664,5 +618,4 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
     private javax.swing.JTextArea tfQuestao8;
     private javax.swing.JTextArea tfQuestao9;
     // End of variables declaration//GEN-END:variables
-
 }

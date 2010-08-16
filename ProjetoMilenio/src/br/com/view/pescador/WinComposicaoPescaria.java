@@ -11,23 +11,16 @@
 package br.com.view.pescador;
 
 import br.com.view.addMaterial;
-import br.com.dao.DAOPescador;
 import br.com.dao.DAOPescadorComposicao;
 import br.com.dao.DAOPescadorMaterial;
-import br.com.pojo.Pescador;
 import br.com.pojo.PescadorComposicao;
 import br.com.pojo.PescadorMaterial;
 import br.com.util.Mensagens;
 import br.com.util.MyUtil;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -38,17 +31,17 @@ import javax.swing.table.DefaultTableModel;
 public class WinComposicaoPescaria extends javax.swing.JPanel {
 
     /** Creates new form WinComposicaoPescaria */
-    private List<Pescador> pescadors;
     private List<PescadorMaterial> pescadorMaterials;
     private PescadorComposicao pescadorComposicao;
 
     public WinComposicaoPescaria() {
 
         initComponents();
-        pescadors = new DAOPescador().getListWithQuery("select * from Pescador");
-        MyUtil.refresComboBox(pescadors, cbPescador);
         initAction();
         MyUtil.initiActionCmd(panel);
+        System.out.println("Nome.: "+WinSelecionaPescador.cbPescador.getSelectedItem().toString());
+        refresh();
+        refreshMaterial();
     }
 
     private void initAction() {
@@ -56,9 +49,9 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
         btAdd.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                if (cbPescador.getSelectedIndex() > 0) {
+                if (WinSelecionaPescador.cbPescador.getSelectedIndex() > 0) {
                     addMaterial m =
-                            new addMaterial(pescadors.get(cbPescador.getSelectedIndex() - 1).getId(),
+                            new addMaterial(WinSelecionaPescador.pescadors.get(WinSelecionaPescador.cbPescador.getSelectedIndex() - 1).getId(),
                             PescadorMaterial.class);
                     m.addWindowListener(new WindowAdapter() {
 
@@ -69,9 +62,12 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
                             if (!pescadorMaterials.isEmpty()) {
                                 Integer indice = pescadorMaterials.size();//Valor antigo
                                 while (indice == pescadorMaterials.size()) {
-                                    pescadorMaterials = new DAOPescadorMaterial().getListWithQuery("select * from " +
+                                    pescadorMaterials = new DAOPescadorMaterial().
+                                            getListWithQuery("select * from " +
                                             "PescadorMaterial where pescadorId = " +
-                                            pescadors.get(cbPescador.getSelectedIndex() - 1).getId());
+                                            WinSelecionaPescador.
+                                            pescadors.get(WinSelecionaPescador.
+                                            cbPescador.getSelectedIndex() - 1).getId());
 
                                 }
                             }
@@ -99,22 +95,7 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
                 refresh();
             }
         });
-        cbPescador.addItemListener(new ItemListener() {
-
-            public void itemStateChanged(ItemEvent e) {
-                if (e.getStateChange() == ItemEvent.SELECTED) {
-                    if (cbPescador.getSelectedIndex() > 0) {
-                        refresh();
-                        refreshMaterial();
-                    } else {
-                        clear();
-                        pescadorComposicao = null;
-                    }
-                }
-            }
-        });
-
-
+       
         btNovo.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
@@ -122,7 +103,7 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
             }
         });
         btCadastrar.addActionListener(getActionListener());
-        btAtualizar.addActionListener(getActionListener());
+        //    btAtualizar.addActionListener(getActionListener());
         btExcluir.addActionListener(getActionListener());
 
 
@@ -141,23 +122,23 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
     private void action(ActionEvent e) {
         String cmd = e.getActionCommand();
 
-        if (cmd.equalsIgnoreCase("Cadastrar")) {
-            if(pescadorComposicao ==null){
-            pescadorComposicao = getpescadorComposicaoOfPanel();
-            new DAOPescadorComposicao().cadastrar(pescadorComposicao);
-            }else Mensagens.showMessageNaoCadastrar();
-         } else if (cmd.equalsIgnoreCase("Excluir")) {
+        if (cmd.equalsIgnoreCase("Salvar")) {
+            if (pescadorComposicao == null) {
+                pescadorComposicao = getpescadorComposicaoOfPanel();
+                new DAOPescadorComposicao().cadastrar(pescadorComposicao);
+            } else {
+                 pescadorComposicao = getpescadorComposicaoOfPanel();
+            new DAOPescadorComposicao().atualizar(pescadorComposicao);
+            }
+        } else if (cmd.equalsIgnoreCase("Excluir")) {
             pescadorComposicao = getpescadorComposicaoOfPanel();
             new DAOPescadorComposicao().excluir(pescadorComposicao);
         } else if (cmd.equalsIgnoreCase("Atualizar")) {
-            pescadorComposicao = getpescadorComposicaoOfPanel();
-            new DAOPescadorComposicao().atualizar(pescadorComposicao);
+          
         }
         clear();
-        cbPescador.setSelectedIndex(0);
-
-
-    }
+        refresh();
+         }
 
     private void setpescadorComposicaoForPanel(PescadorComposicao p) {
 
@@ -183,7 +164,8 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
 
     private PescadorComposicao getpescadorComposicaoOfPanel() {
 
-        String questao1 = tfQuestao1.getText();
+        try {
+            String questao1 = tfQuestao1.getText();
         String questao2 = tfQuestao2.getText();
         String questao3 = tfQuestao3.getText();
         String questao4 = tfQuestao4.getText();
@@ -214,22 +196,24 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
         pescador.all(questao1, questao2, questao3, questao4, questao5, questao6,
                 questao7, questao8, questao9, questao10, questao11, questao12,
                 questao13, questao14, questao15, questao16, questao17, questao18,
-                pescadors.get(cbPescador.getSelectedIndex() - 1).getId());
+                WinSelecionaPescador.pescadors.get(WinSelecionaPescador.cbPescador.getSelectedIndex() - 1).getId());
 
         return pescador;
+        } catch (Exception e) {
+            Mensagens.showMessageErroPreencherDados();
+        }
+        return null;
     }
 
     private void clear() {
-        MyUtil.clearTable(table);
-        MyUtil.FieldsClear(this);
-        bgQuestao18.clearSelection();
+       
         pescadorComposicao = null;
     }
 
     private void refresh() {
         pescadorComposicao = new DAOPescadorComposicao().getObjectWithQuery("select * from " +
                 "PescadorComposicao where pescadorId = " +
-                pescadors.get(cbPescador.getSelectedIndex() - 1).getId());
+                WinSelecionaPescador.pescadors.get(WinSelecionaPescador.cbPescador.getSelectedIndex() - 1).getId());
         if (pescadorComposicao != null) {
             setpescadorComposicaoForPanel(pescadorComposicao);
         }
@@ -240,7 +224,7 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
 
         pescadorMaterials = new DAOPescadorMaterial().getListWithQuery("select * from " +
                 "PescadorMaterial where pescadorId = " +
-                pescadors.get(cbPescador.getSelectedIndex() - 1).getId());
+                WinSelecionaPescador.pescadors.get(WinSelecionaPescador.cbPescador.getSelectedIndex() - 1).getId());
         refreshTable(pescadorMaterials);
 
     }
@@ -277,14 +261,11 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
         panel = new javax.swing.JPanel();
         panelCrudEmpresa3 = new javax.swing.JPanel();
         btCadastrar = new javax.swing.JButton();
-        btAtualizar = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         btExcluir = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         btNovo = new javax.swing.JButton();
-        cbPescador = new javax.swing.JComboBox();
-        jLabel19 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -340,22 +321,15 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
 
         panelCrudEmpresa3.setBackground(new java.awt.Color(255, 255, 255));
 
-        btCadastrar.setText("Cadastrar");
+        btCadastrar.setText("Salvar");
         btCadastrar.setToolTipText("Realiza a Confirmação do Pagamento definindo exatamente o dia de pagamento."); // NOI18N
         btCadastrar.setFocusable(false);
         btCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btCadastrar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        btAtualizar.setText("Atualizar");
-        btAtualizar.setToolTipText("Atualiza Valor e Data de pagamento da mensalidade");
-
         btExcluir.setText("Excluir");
 
         btNovo.setText("Novo");
-
-        cbPescador.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel19.setText("Pescador");
 
         jLabel40.setFont(new java.awt.Font("Verdana", 1, 11));
         jLabel40.setText("Composição da Pescaria");
@@ -380,18 +354,14 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
                                 .addComponent(btNovo)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btCadastrar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btAtualizar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btExcluir)
-                                .addGap(91, 91, 91)
                                 .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel40)
                                     .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
-                                        .addComponent(jLabel19)
-                                        .addGap(26, 26, 26)
-                                        .addComponent(cbPescador, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addContainerGap(348, Short.MAX_VALUE))
+                                        .addGap(245, 245, 245)
+                                        .addComponent(jLabel40))
+                                    .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btExcluir)))))))
+                .addContainerGap(467, Short.MAX_VALUE))
         );
         panelCrudEmpresa3Layout.setVerticalGroup(
             panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -405,12 +375,9 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
                     .addComponent(jLabel40))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btExcluir)
-                    .addComponent(btAtualizar)
                     .addComponent(btCadastrar)
                     .addComponent(btNovo)
-                    .addComponent(cbPescador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel19))
+                    .addComponent(btExcluir))
                 .addContainerGap())
         );
 
@@ -728,7 +695,7 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 851, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 806, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -741,21 +708,17 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
         // TODO add your handling code here:
         MyUtil.setEnableFields(Boolean.TRUE, tfQuestao18);
     }//GEN-LAST:event_jRadioButton2ActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup bgQuestao18;
     private javax.swing.JButton btAdd;
-    private javax.swing.JButton btAtualizar;
     private javax.swing.JButton btCadastrar;
     private javax.swing.JButton btExcluir;
     private javax.swing.JButton btNovo;
     private javax.swing.JButton btRemove;
-    private javax.swing.JComboBox cbPescador;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
