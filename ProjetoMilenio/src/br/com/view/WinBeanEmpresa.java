@@ -43,6 +43,7 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
         MyUtil.refresComboBox(municipios, cbMunicipio);
         initAction();
         MyUtil.initiActionCmd(tabEmpresa);
+        MyUtil.disableButtom(btCadastrar, btExcluir, btAtualizar);
 
     }
 
@@ -54,6 +55,8 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
 
             public void actionPerformed(ActionEvent e) {
                 clearTabEmpresa();
+                MyUtil.enableButtom(btCadastrar);
+                MyUtil.disableButtom(btExcluir, btAtualizar);
             }
         });
         btCadastrar.addActionListener(getActionListenerEmpresa());
@@ -70,7 +73,6 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
             }
         };
     }
-  
 
     private void actionEmpresa(ActionEvent e) {
         String cmd = e.getActionCommand();
@@ -85,6 +87,8 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
                     super.windowClosed(e);
                     empresa = (Empresa) consulta.getCurrentElement();
                     if (empresa != null) {
+                        MyUtil.disableButtom(btCadastrar);
+                        MyUtil.enableButtom(btExcluir, btAtualizar);
                         setEmpresaForPanel(empresa);
                     }
                 }
@@ -96,8 +100,9 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
                     if (empresa == null) {
                         empresa = getEmpresaOfPanel();
                         dAOEmpresa.cadastrar(empresa);
-                    }else
-                    Mensagens.showMessageNaoCadastrar();
+                    } else {
+                        Mensagens.showMessageNaoCadastrar();
+                    }
                 } else if (cmd.equalsIgnoreCase("Excluir")) {
                     empresa = getEmpresaOfPanel();
                     dAOEmpresa.excluir(empresa);

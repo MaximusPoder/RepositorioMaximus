@@ -15,6 +15,7 @@ import java.util.Date;
 import java.util.Enumeration;
 import java.util.List;
 import javax.swing.ButtonGroup;
+import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JEditorPane;
@@ -28,6 +29,19 @@ import javax.swing.table.DefaultTableModel;
 
 public class MyUtil {
 
+    public static void disableButtom(JButton... buttons)
+    {
+        for (JButton jButton : buttons) {
+            jButton.setEnabled(false);
+        }
+    }
+
+    public static void enableButtom(JButton... buttons)
+    {
+         for (JButton jButton : buttons) {
+            jButton.setEnabled(true);
+        }
+    }
     public static  void setEnableFields(Boolean b,JTextField...fields)
     {
         for (JTextField tf : fields) {

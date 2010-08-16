@@ -40,20 +40,22 @@ public class WinPanelPescador extends javax.swing.JPanel {
         MyUtil.refresComboBox(municipios, cbMunicipioQuestao1);
         initAction();
         MyUtil.initiActionCmd(panel);
+        MyUtil.disableButtom(btCadastrar,btExcluir,btAtualizar);
+      
     }
 
     private void initAction() {
 
         //Botoes do primeiro TAB
-        btPesquisa.addActionListener(getActionListenerpescador());
-        btNovo.addActionListener(getActionListenerpescador());
-        btCadastrar.addActionListener(getActionListenerpescador());
-        btAtualizar.addActionListener(getActionListenerpescador());
-        btExcluir.addActionListener(getActionListenerpescador());
+        btPesquisa.addActionListener(getActionListener());
+        btNovo.addActionListener(getActionListener());
+        btCadastrar.addActionListener(getActionListener());
+        btAtualizar.addActionListener(getActionListener());
+        btExcluir.addActionListener(getActionListener());
     }
     /*Metodos Actions do Primeiro Tab = pescador*/
 
-    private ActionListener getActionListenerpescador() {
+    private ActionListener getActionListener() {
         return new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
@@ -76,21 +78,29 @@ public class WinPanelPescador extends javax.swing.JPanel {
                     super.windowClosed(e);
                     pescador = (Pescador) consulta.getCurrentElement();
                     if (pescador != null) {
+                        MyUtil.disableButtom(btCadastrar);
+                        MyUtil.enableButtom(btExcluir, btAtualizar);
                         setpescadorForPanel(pescador);
                     }
                 }
             });
         } else {
             if (cmd.equalsIgnoreCase("Cadastrar")) {
-                if(pescador == null){
-                pescador = getpescadorOfPanel();
-                new DAOPescador().cadastrar(pescador);}else Mensagens.showMessageNaoCadastrar();
+                if (pescador == null) {
+                    pescador = getpescadorOfPanel();
+                    new DAOPescador().cadastrar(pescador);
+                } else {
+                    Mensagens.showMessageNaoCadastrar();
+                }
             } else if (cmd.equalsIgnoreCase("Excluir")) {
                 pescador = getpescadorOfPanel();
                 new DAOPescador().excluir(pescador);
             } else if (cmd.equalsIgnoreCase("Atualizar")) {
                 pescador = getpescadorOfPanel();
-                 new DAOPescador().atualizar(pescador);
+                new DAOPescador().atualizar(pescador);
+            } else {
+                MyUtil.enableButtom(btCadastrar);
+                MyUtil.disableButtom(btExcluir, btAtualizar);
             }
             clear();
         }
@@ -120,8 +130,8 @@ public class WinPanelPescador extends javax.swing.JPanel {
         MyUtil.setSelected(p.getQuestao20(), bgQuestao20);
         tfQuestao21.setText(p.getQuestao21());
         tfQuestao22.setText(p.getQuestao22());
-        MyUtil.setStringsToFields(p.getQuestao23(), tfQuestao23_0,tfQuestao23_1,
-                tfQuestao23_2,tfQuestao23_3);
+        MyUtil.setStringsToFields(p.getQuestao23(), tfQuestao23_0, tfQuestao23_1,
+                tfQuestao23_2, tfQuestao23_3);
         tfQuestao24.setText(p.getQuestao24());
         tfQuestao25.setText(p.getQuestao25());
         tfQuestao26.setText(p.getQuestao26());
@@ -133,59 +143,60 @@ public class WinPanelPescador extends javax.swing.JPanel {
 
 
         try {
-             String questao1 = cbMunicipioQuestao1.getSelectedItem().toString();
-        String questao2 = tfQuestao2.getText();
-        String questao3 = tfQuestao3.getText();
-        String questao4 = tfQuestao4.getText();
-        String questao5 = bgQuestao5.getSelection().getActionCommand();
-        String questao6 = tfQuestao6.getText();
-        String questao7 = tfQuestao7.getText();
-        String questao8 = tfQuestao8.getText();
-        String questao9 = tfQuestao9.getText();
-        String questao10 = tfQuestao10.getText();
-        String questao11 = tfQuestao11.getText();
-        String questao12 = tfQuestao12.getText();
-        String questao13 = bgQuestao13.getSelection().getActionCommand();
-        String questao14 = bgQuestao14.getSelection().getActionCommand();
-        String questao15 = tfQuestao15.getText();
-        String questao16 = bgQuestao16.getSelection().getActionCommand();
-        String questao17 = bgQuestao17.getSelection().getActionCommand() + ";" + tfQuestao17.getText();
-        String questao18 = bgQuestao18.getSelection().getActionCommand() + ";" + tfQuestao18.getText();
-        String questao19 = bgQuestao19.getSelection().getActionCommand() + ";" + tfQuestao19.getText();
-        String questao20 = bgQuestao20.getSelection().getActionCommand();
-        String questao21 = tfQuestao21.getText();
-        String questao22 = tfQuestao22.getText();
+            String questao1 = cbMunicipioQuestao1.getSelectedItem().toString();
+            String questao2 = tfQuestao2.getText();
+            String questao3 = tfQuestao3.getText();
+            String questao4 = tfQuestao4.getText();
+            String questao5 = bgQuestao5.getSelection().getActionCommand();
+            String questao6 = tfQuestao6.getText();
+            String questao7 = tfQuestao7.getText();
+            String questao8 = tfQuestao8.getText();
+            String questao9 = tfQuestao9.getText();
+            String questao10 = tfQuestao10.getText();
+            String questao11 = tfQuestao11.getText();
+            String questao12 = tfQuestao12.getText();
+            String questao13 = bgQuestao13.getSelection().getActionCommand();
+            String questao14 = bgQuestao14.getSelection().getActionCommand();
+            String questao15 = tfQuestao15.getText();
+            String questao16 = bgQuestao16.getSelection().getActionCommand();
+            String questao17 = bgQuestao17.getSelection().getActionCommand() + ";" + tfQuestao17.getText();
+            String questao18 = bgQuestao18.getSelection().getActionCommand() + ";" + tfQuestao18.getText();
+            String questao19 = bgQuestao19.getSelection().getActionCommand() + ";" + tfQuestao19.getText();
+            String questao20 = bgQuestao20.getSelection().getActionCommand();
+            String questao21 = tfQuestao21.getText();
+            String questao22 = tfQuestao22.getText();
 
-        String questao23 = MyUtil.getStringOfFields(tfQuestao23_0,tfQuestao23_1,
-                tfQuestao23_2,tfQuestao23_3);
-        String questao24 = tfQuestao24.getText();
-        String questao25 = tfQuestao25.getText();
-        String questao26 = tfQuestao26.getText();
-        if (this.pescador != null) {
+            String questao23 = MyUtil.getStringOfFields(tfQuestao23_0, tfQuestao23_1,
+                    tfQuestao23_2, tfQuestao23_3);
+            String questao24 = tfQuestao24.getText();
+            String questao25 = tfQuestao25.getText();
+            String questao26 = tfQuestao26.getText();
+            if (this.pescador != null) {
+                pescador.all(questao1, questao2, questao3, questao4,
+                        questao5, questao6, questao7, questao8, questao9,
+                        questao10, questao11, questao12, questao13,
+                        questao14, questao15, questao16, questao17, questao18,
+                        questao19, questao20, questao21, questao22, questao23,
+                        questao24, questao25, questao26);
+                return this.pescador;
+            }
+
+            Pescador pescador = new Pescador();
             pescador.all(questao1, questao2, questao3, questao4,
                     questao5, questao6, questao7, questao8, questao9,
-                    questao10, questao11, questao12, questao13,
-                    questao14, questao15, questao16, questao17, questao18,
-                    questao19, questao20, questao21, questao22, questao23,
-                    questao24, questao25, questao26);
-            return this.pescador;
-        }
+                    questao10, questao11, questao12, questao13, questao14,
+                    questao15, questao16, questao17, questao18, questao19,
+                    questao20, questao21, questao22, questao23, questao24,
+                    questao25, questao26);
 
-        Pescador pescador = new Pescador();
-        pescador.all(questao1, questao2, questao3, questao4,
-                questao5, questao6, questao7, questao8, questao9,
-                questao10, questao11, questao12, questao13, questao14,
-                questao15, questao16, questao17, questao18, questao19,
-                questao20, questao21, questao22, questao23, questao24,
-                questao25, questao26);
-
-        return pescador;
+            return pescador;
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Verifique os campos estão preenchidos e marcados corretamente",
                     "erro", JOptionPane.ERROR_MESSAGE);
         }
         return null;
     }
+
     private void clear() {
         MyUtil.FieldsClear(panel);
         pescador = null;
@@ -915,29 +926,28 @@ public class WinPanelPescador extends javax.swing.JPanel {
 
     private void jRadioButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton15ActionPerformed
         // TODO add your handling code here:
-         MyUtil.setEnableFields(Boolean.FALSE, tfQuestao17);
+        MyUtil.setEnableFields(Boolean.FALSE, tfQuestao17);
     }//GEN-LAST:event_jRadioButton15ActionPerformed
 
     private void jRadioButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton16ActionPerformed
         // TODO add your handling code here:
-         MyUtil.setEnableFields(Boolean.TRUE, tfQuestao18);
+        MyUtil.setEnableFields(Boolean.TRUE, tfQuestao18);
     }//GEN-LAST:event_jRadioButton16ActionPerformed
 
     private void jRadioButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton17ActionPerformed
         // TODO add your handling code here:
-            MyUtil.setEnableFields(Boolean.FALSE, tfQuestao18);
+        MyUtil.setEnableFields(Boolean.FALSE, tfQuestao18);
     }//GEN-LAST:event_jRadioButton17ActionPerformed
 
     private void jRadioButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton19ActionPerformed
         // TODO add your handling code here:
-            MyUtil.setEnableFields(Boolean.TRUE, tfQuestao19);
+        MyUtil.setEnableFields(Boolean.TRUE, tfQuestao19);
     }//GEN-LAST:event_jRadioButton19ActionPerformed
 
     private void jRadioButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton18ActionPerformed
         // TODO add your handling code here:
-            MyUtil.setEnableFields(Boolean.TRUE, tfQuestao19);
+        MyUtil.setEnableFields(Boolean.TRUE, tfQuestao19);
     }//GEN-LAST:event_jRadioButton18ActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup bgQuestao13;
     private javax.swing.ButtonGroup bgQuestao14;
@@ -1041,6 +1051,4 @@ public class WinPanelPescador extends javax.swing.JPanel {
     private javax.swing.JTextField tfQuestao8;
     private javax.swing.JTextField tfQuestao9;
     // End of variables declaration//GEN-END:variables
-
-
 }
