@@ -182,6 +182,8 @@ public class WinBeanEmpresa extends javax.swing.JPanel {
         MyUtil.FieldsClear(tabEmpresa);
         bgStatus.clearSelection();
         empresa = null;
+
+        MyUtil.disableButtom(btCadastrar,btExcluir,btAtualizar);
     }
 
     /** This method is called from within the constructor to

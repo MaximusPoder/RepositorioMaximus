@@ -39,8 +39,8 @@ public class WinPanelPescador extends javax.swing.JPanel {
         MyUtil.refresComboBox(municipios, cbMunicipioQuestao1);
         initAction();
         MyUtil.initiActionCmd(panel);
-        MyUtil.disableButtom(btCadastrar,btExcluir,btAtualizar);
-      
+        MyUtil.disableButtom(btCadastrar, btExcluir, btAtualizar);
+
     }
 
     private void initAction() {
@@ -97,11 +97,17 @@ public class WinPanelPescador extends javax.swing.JPanel {
             } else if (cmd.equalsIgnoreCase("Atualizar")) {
                 pescador = getpescadorOfPanel();
                 new DAOPescador().atualizar(pescador);
-            } else  if (cmd.equalsIgnoreCase("Novo")){
+            }
+            if (cmd.equalsIgnoreCase("Novo")) {
                 MyUtil.enableButtom(btCadastrar);
                 MyUtil.disableButtom(btExcluir, btAtualizar);
+                MyUtil.FieldsClear(panel);
+                pescador = null;
+                cbMunicipioQuestao1.setSelectedIndex(0);
+            } else {
+                clear();
             }
-            clear();
+
         }
 
     }
@@ -197,6 +203,9 @@ public class WinPanelPescador extends javax.swing.JPanel {
     }
 
     private void clear() {
+
+        MyUtil.initiActionCmd(panel);
+        MyUtil.disableButtom(btCadastrar, btExcluir, btAtualizar);
         MyUtil.FieldsClear(panel);
         pescador = null;
         cbMunicipioQuestao1.setSelectedIndex(0);
