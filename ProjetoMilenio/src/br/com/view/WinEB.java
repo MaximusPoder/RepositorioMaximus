@@ -14,7 +14,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -26,14 +25,15 @@ public class WinEB extends javax.swing.JPanel {
 
     private EmpresaEB empresaEB;
     private DefaultTableModel model;
-    private List<Empresa> empresas;
+   
     private List<EmpresaEB> empresasEBs;
 
     public WinEB() {
         initComponents();
-        empresas = new DAOEmpresa().getListWithQuery("select * from Empresa");
-        MyUtil.refresComboBox(empresas, cbEmpresa);
+        System.out.println("Nome "+WinSelecionaEmpresa.cbEmpresa.getSelectedItem().toString());
+        
         initAction();
+        refresh();
     }
 
     private void initAction() {
@@ -47,7 +47,7 @@ public class WinEB extends javax.swing.JPanel {
             }
         });
         btCadastrarEB.addActionListener(getActionListener());
-        btAtualizarEB.addActionListener(getActionListener());
+        //   btAtualizarEB.addActionListener(getActionListener());
         btExcluirEB.addActionListener(getActionListener());
         tableEB.addMouseListener(new MouseAdapter() {
 
@@ -57,11 +57,11 @@ public class WinEB extends javax.swing.JPanel {
                 empresaEB = getEmpresaEBOfTable();
             }
         });
-        cbEmpresa.addItemListener(new ItemListener() {
+        WinSelecionaEmpresa.cbEmpresa.addItemListener(new ItemListener() {
 
             public void itemStateChanged(ItemEvent e) {
                 if (e.getStateChange() == ItemEvent.SELECTED) {
-                    refreshEB();
+                  
                 }
             }
         });
@@ -90,24 +90,23 @@ public class WinEB extends javax.swing.JPanel {
 
         String cmd = e.getActionCommand();
 
-        if (cbEmpresa.getSelectedIndex() > 0) {
-            if (cmd.equalsIgnoreCase("Cadastrar")) {
+        if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0) {
+            if (cmd.equalsIgnoreCase("Salvar")) {
                 if (empresaEB == null) {
                     empresaEB = getEmpresaEBOfPanel();
                     new DAOEmpresaEB().cadastrar(empresaEB);
                 } else {
-                    Mensagens.showMessageNaoCadastrar();
+                    empresaEB = getEmpresaEBOfPanel();
+                    new DAOEmpresaEB().atualizar(empresaEB);
                 }
             } else if (cmd.equalsIgnoreCase("Excluir")) {
                 empresaEB = getEmpresaEBOfPanel();
                 new DAOEmpresaEB().excluir(empresaEB);
             } else if (cmd.equalsIgnoreCase("Atualizar")) {
-                empresaEB = getEmpresaEBOfPanel();
-                new DAOEmpresaEB().atualizar(empresaEB);
             }
-            refreshEB();
+            refresh();
             MyUtil.FieldsClear(tabEspecieBeneficiada);
-            cbEmpresa.setSelectedIndex(0);
+            
             empresaEB = null;
         }
     }
@@ -136,7 +135,7 @@ public class WinEB extends javax.swing.JPanel {
 
             EmpresaEB b = new EmpresaEB();
             b.all(especie, terceiro, apetrecho, epocaAno,
-                    empresas.get(cbEmpresa.getSelectedIndex() - 1).getId());
+                    WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
             return b;
 
         } catch (Exception e) {
@@ -159,12 +158,12 @@ public class WinEB extends javax.swing.JPanel {
         }
     }
 
-    private void refreshEB() {
+    private void refresh() {
         empresasEBs = new ArrayList<EmpresaEB>();
-        if (cbEmpresa.getSelectedIndex() > 0) {
+        if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0) {
             empresasEBs = new DAOEmpresaEB().getListWithQuery("select * from " +
                     "EmpresaEB where empresaId = " +
-                    empresas.get(cbEmpresa.getSelectedIndex() - 1).getId());
+                    WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
         }
         refreshTableEB(empresasEBs);
     }
@@ -176,14 +175,11 @@ public class WinEB extends javax.swing.JPanel {
         tabEspecieBeneficiada = new javax.swing.JPanel();
         panelCrudEmpresa1 = new javax.swing.JPanel();
         btCadastrarEB = new javax.swing.JButton();
-        btAtualizarEB = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
         btExcluirEB = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         btNovoEB = new javax.swing.JButton();
-        cbEmpresa = new javax.swing.JComboBox();
-        jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableEB = new javax.swing.JTable();
@@ -200,22 +196,15 @@ public class WinEB extends javax.swing.JPanel {
 
         panelCrudEmpresa1.setBackground(new java.awt.Color(255, 255, 255));
 
-        btCadastrarEB.setText("Cadastrar");
+        btCadastrarEB.setText("Salvar");
         btCadastrarEB.setToolTipText("Realiza a Confirmação do Pagamento definindo exatamente o dia de pagamento."); // NOI18N
         btCadastrarEB.setFocusable(false);
         btCadastrarEB.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btCadastrarEB.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        btAtualizarEB.setText("Atualizar");
-        btAtualizarEB.setToolTipText("Atualiza Valor e Data de pagamento da mensalidade");
-
         btExcluirEB.setText("Excluir");
 
         btNovoEB.setText("Novo");
-
-        cbEmpresa.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel17.setText("Empresa");
 
         jLabel18.setFont(new java.awt.Font("Verdana", 1, 11));
         jLabel18.setText(" Produtos e Custos");
@@ -243,17 +232,11 @@ public class WinEB extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btCadastrarEB)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btAtualizarEB)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btExcluirEB)
-                        .addGap(91, 91, 91)
-                        .addComponent(jLabel17)
-                        .addGap(26, 26, 26)
-                        .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btExcluirEB))
                     .addGroup(panelCrudEmpresa1Layout.createSequentialGroup()
                         .addGap(302, 302, 302)
                         .addComponent(jLabel18)))
-                .addContainerGap(463, Short.MAX_VALUE))
+                .addContainerGap(713, Short.MAX_VALUE))
         );
         panelCrudEmpresa1Layout.setVerticalGroup(
             panelCrudEmpresa1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -268,12 +251,9 @@ public class WinEB extends javax.swing.JPanel {
                 .addComponent(jLabel18)
                 .addGap(18, 18, 18)
                 .addGroup(panelCrudEmpresa1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btExcluirEB)
-                    .addComponent(btAtualizarEB)
                     .addComponent(btCadastrarEB)
                     .addComponent(btNovoEB)
-                    .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17))
+                    .addComponent(btExcluirEB))
                 .addContainerGap())
         );
 
@@ -382,17 +362,14 @@ public class WinEB extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btAtualizarEB;
     private javax.swing.JButton btCadastrarEB;
     private javax.swing.JButton btExcluirEB;
     private javax.swing.JButton btNovoEB;
-    private javax.swing.JComboBox cbEmpresa;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel47;

@@ -98,12 +98,12 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel96" min="-2" max="-2" attributes="1"/>
-                      <EmptySpace pref="885" max="32767" attributes="0"/>
+                      <EmptySpace pref="3737" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane29" min="-2" pref="353" max="-2" attributes="1"/>
-                      <EmptySpace pref="627" max="32767" attributes="0"/>
+                      <EmptySpace pref="3479" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -111,7 +111,7 @@
                           <Component id="jLabel97" alignment="0" min="-2" max="-2" attributes="1"/>
                           <Component id="jScrollPane30" alignment="0" min="-2" pref="353" max="-2" attributes="1"/>
                       </Group>
-                      <EmptySpace pref="627" max="32767" attributes="0"/>
+                      <EmptySpace pref="3479" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -119,12 +119,12 @@
                           <Component id="jLabel98" alignment="0" min="-2" max="-2" attributes="1"/>
                           <Component id="jScrollPane31" alignment="0" min="-2" pref="353" max="-2" attributes="1"/>
                       </Group>
-                      <EmptySpace pref="627" max="32767" attributes="0"/>
+                      <EmptySpace pref="3479" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel99" min="-2" max="-2" attributes="1"/>
-                      <EmptySpace pref="980" max="32767" attributes="0"/>
+                      <EmptySpace pref="3832" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -149,11 +149,11 @@
                       <Component id="jRadioButton27" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jRadioButton28" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="613" max="32767" attributes="0"/>
+                      <EmptySpace pref="3465" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="panelCrudEmpresa8" min="-2" max="-2" attributes="1"/>
-                      <EmptySpace pref="90" max="32767" attributes="0"/>
+                      <EmptySpace pref="2942" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -254,15 +254,9 @@
                                           <Component id="jLabel75" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="btNovoQuestionario4" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btNovo" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="btCadastrarQuestionario4" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="btAtualizarQuestionario4" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                          <Component id="jLabel83" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="cbEmpresa" min="-2" pref="189" max="-2" attributes="0"/>
+                                          <Component id="btCadastrar" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -289,11 +283,8 @@
                           </Group>
                           <EmptySpace pref="16" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btAtualizarQuestionario4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btCadastrarQuestionario4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel83" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="cbEmpresa" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btNovoQuestionario4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btCadastrar" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btNovo" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -301,19 +292,13 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="btCadastrarQuestionario4">
+                <Component class="javax.swing.JButton" name="btCadastrar">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Cadastrar"/>
+                    <Property name="text" type="java.lang.String" value="Salvar"/>
                     <Property name="toolTipText" type="java.lang.String" value="Realiza a Confirma&#xe7;&#xe3;o do Pagamento definindo exatamente o dia de pagamento." noResource="true"/>
                     <Property name="focusable" type="boolean" value="false"/>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                     <Property name="verticalTextPosition" type="int" value="3"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JButton" name="btAtualizarQuestionario4">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Atualizar"/>
-                    <Property name="toolTipText" type="java.lang.String" value="Atualiza Valor e Data de pagamento da mensalidade"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel72">
@@ -322,26 +307,9 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel76">
                 </Component>
-                <Component class="javax.swing.JButton" name="btNovoQuestionario4">
+                <Component class="javax.swing.JButton" name="btNovo">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Novo"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel83">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Empresa"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="cbEmpresa">
-                  <Properties>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
-                      </StringArray>
-                    </Property>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel12">

@@ -36,14 +36,13 @@ public class WinImposto extends javax.swing.JPanel {
 
     private EmpresaImposto empresaImposto;
     private DefaultTableModel model;
-    private List<Empresa> empresas;
     private List<EmpresaImposto> empresaImpostos;
 
     public WinImposto() {
         initComponents();
-        empresas = new DAOEmpresa().getListWithQuery("select * from Empresa");
-        MyUtil.refresComboBox(empresas, cbEmpresaImposto);
         initAction();
+        refresh();
+
     }
 
     private EmpresaImposto getEmpresaImpostoOfPanel() {
@@ -58,13 +57,13 @@ public class WinImposto extends javax.swing.JPanel {
 
             if (empresaImposto != null) {
                 empresaImposto.all(imposto, anterior, anual, ano,
-                        empresas.get(cbEmpresaImposto.getSelectedIndex() - 1).getId());
+                        WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
                 return empresaImposto;
             }
 
             EmpresaImposto b = new EmpresaImposto();
             b.all(imposto, anterior, anual, ano,
-                    empresas.get(cbEmpresaImposto.getSelectedIndex() - 1).getId());
+                    WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
             return b;
         } catch (Exception e) {
             Mensagens.showMessageErroPreencherDados();
@@ -81,16 +80,18 @@ public class WinImposto extends javax.swing.JPanel {
         }
     }
 
-    private void actionImposto(ActionEvent e) {
+    private void action(ActionEvent e) {
 
         String cmd = e.getActionCommand();
-        if (cbEmpresaImposto.getSelectedIndex() > 0) {
-            if (cmd.equalsIgnoreCase("Cadastrar")) {
+        if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0) {
+            if (cmd.equalsIgnoreCase("Salvar")) {
                 if (empresaImposto == null) {
                     empresaImposto = getEmpresaImpostoOfPanel();
                     new DAOEmpresaImposto().cadastrar(empresaImposto);
                 } else {
-                    Mensagens.showMessageNaoCadastrar();
+                    empresaImposto = getEmpresaImpostoOfPanel();
+                    new DAOEmpresaImposto().atualizar(empresaImposto);
+                    //Mensagens.showMessageNaoCadastrar();
                 }
             } else if (cmd.equalsIgnoreCase("Excluir")) {
                 empresaImposto = getEmpresaImpostoOfPanel();
@@ -102,7 +103,7 @@ public class WinImposto extends javax.swing.JPanel {
             refreshEmpresaImposto();
             clearTab(tabEmpresaImposto);
             empresaImposto = null;
-            cbEmpresaImposto.setSelectedIndex(0);
+
         }
     }
 
@@ -110,11 +111,11 @@ public class WinImposto extends javax.swing.JPanel {
         MyUtil.FieldsClear(jPanel);
     }
 
-    private ActionListener getActionListenerEmpresaImposto() {
+    private ActionListener getActionListener() {
         return new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                actionImposto(e);
+                action(e);
             }
         };
     }
@@ -129,9 +130,9 @@ public class WinImposto extends javax.swing.JPanel {
                 empresaImposto = null;
             }
         });
-        btCadastrarImposto.addActionListener(getActionListenerEmpresaImposto());
-        btAtualizarImposto.addActionListener(getActionListenerEmpresaImposto());
-        btExcluirImposto.addActionListener(getActionListenerEmpresaImposto());
+        btCadastrarImposto.addActionListener(getActionListener());
+//        btAtualizarImposto.addActionListener(getActionListenerEmpresaImposto());
+        btExcluirImposto.addActionListener(getActionListener());
         tableImposto.addMouseListener(new MouseAdapter() {
 
             @Override
@@ -141,28 +142,25 @@ public class WinImposto extends javax.swing.JPanel {
                 setEmpresaImpostoOfPanel(empresaImposto);
             }
         });
-        cbEmpresaImposto.addItemListener(new ItemListener() {
 
-            public void itemStateChanged(ItemEvent e) {
-                if (e.getStateChange() == ItemEvent.SELECTED) {
-                    if (cbEmpresaImposto.getSelectedIndex() > 0) {
-                        refreshEmpresaImposto();
-                    } else {
-                        clearTable(tableImposto);
-                        clearTab(tabEmpresaImposto);
-                        empresaImposto = null;
-                    }
-                }
-            }
-        });
+    }
+
+    private void refresh() {
+        if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0) {
+            refreshEmpresaImposto();
+        } else {
+            clearTable(tableImposto);
+            clearTab(tabEmpresaImposto);
+            empresaImposto = null;
+        }
     }
 
     private void refreshEmpresaImposto() {
         empresaImpostos = new ArrayList<EmpresaImposto>();
-        if (cbEmpresaImposto.getSelectedIndex() > 0) {
+        if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0) {
             empresaImpostos = new DAOEmpresaImposto().getListWithQuery("select * from " +
                     "EmpresaImposto where empresaId = " +
-                    empresas.get(cbEmpresaImposto.getSelectedIndex() - 1).getId());
+                    WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
         }
         refreshTableImposto();
     }
@@ -204,14 +202,11 @@ public class WinImposto extends javax.swing.JPanel {
         tabEmpresaImposto = new javax.swing.JPanel();
         panelCrudEmpresa6 = new javax.swing.JPanel();
         btCadastrarImposto = new javax.swing.JButton();
-        btAtualizarImposto = new javax.swing.JButton();
         jLabel60 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
         btExcluirImposto = new javax.swing.JButton();
         jLabel62 = new javax.swing.JLabel();
         btNovoImposto = new javax.swing.JButton();
-        cbEmpresaImposto = new javax.swing.JComboBox();
-        jLabel63 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
         tfImposto = new javax.swing.JTextField();
@@ -228,24 +223,17 @@ public class WinImposto extends javax.swing.JPanel {
 
         panelCrudEmpresa6.setBackground(new java.awt.Color(255, 255, 255));
 
-        btCadastrarImposto.setText("Cadastrar");
+        btCadastrarImposto.setText("Salvar");
         btCadastrarImposto.setToolTipText(""); // NOI18N
         btCadastrarImposto.setFocusable(false);
         btCadastrarImposto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btCadastrarImposto.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        btAtualizarImposto.setText("Atualizar");
-        btAtualizarImposto.setToolTipText("");
 
         btExcluirImposto.setText("Excluir");
         btExcluirImposto.setToolTipText("");
 
         btNovoImposto.setText("Novo");
         btNovoImposto.setToolTipText("");
-
-        cbEmpresaImposto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel63.setText("Empresa");
 
         jLabel12.setFont(new java.awt.Font("Verdana", 1, 11));
         jLabel12.setText("Impostos -Parte 1");
@@ -269,21 +257,15 @@ public class WinImposto extends javax.swing.JPanel {
                                 .addComponent(btNovoImposto)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btCadastrarImposto)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btAtualizarImposto)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btExcluirImposto)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(panelCrudEmpresa6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(panelCrudEmpresa6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(panelCrudEmpresa6Layout.createSequentialGroup()
-                                        .addComponent(jLabel63)
-                                        .addGap(26, 26, 26))
+                                        .addGap(158, 158, 158)
+                                        .addComponent(jLabel12))
                                     .addGroup(panelCrudEmpresa6Layout.createSequentialGroup()
-                                        .addComponent(jLabel12)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                                .addComponent(cbEmpresaImposto, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btExcluirImposto))))
                             .addComponent(jLabel61))))
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addContainerGap(478, Short.MAX_VALUE))
         );
         panelCrudEmpresa6Layout.setVerticalGroup(
             panelCrudEmpresa6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -299,12 +281,9 @@ public class WinImposto extends javax.swing.JPanel {
                                 .addComponent(jLabel62)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                         .addGroup(panelCrudEmpresa6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btExcluirImposto)
-                            .addComponent(btAtualizarImposto)
                             .addComponent(btCadastrarImposto)
                             .addComponent(btNovoImposto)
-                            .addComponent(cbEmpresaImposto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel63))))
+                            .addComponent(btExcluirImposto))))
                 .addContainerGap())
         );
 
@@ -363,7 +342,7 @@ public class WinImposto extends javax.swing.JPanel {
                                 .addGap(84, 84, 84)
                                 .addComponent(tfAno, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 747, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(143, Short.MAX_VALUE))
             .addComponent(panelCrudEmpresa6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         tabEmpresaImpostoLayout.setVerticalGroup(
@@ -403,20 +382,17 @@ public class WinImposto extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(tabEmpresaImposto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btAtualizarImposto;
     private javax.swing.JButton btCadastrarImposto;
     private javax.swing.JButton btExcluirImposto;
     private javax.swing.JButton btNovoImposto;
-    private javax.swing.JComboBox cbEmpresaImposto;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
-    private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;

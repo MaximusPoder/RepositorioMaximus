@@ -35,16 +35,14 @@ public class WinEmpresaPescador extends javax.swing.JPanel {
 
     /** Creates new form WinEmpresaPescador */
     private DefaultTableModel model;
-    private List<Empresa> empresas;
+   
     private List<EmpresaPescador> edfs;
     private EmpresaPescador edf;
 
     public WinEmpresaPescador() {
-        initComponents();
-        empresas = new DAOEmpresa().getListWithQuery("select * from Empresa");
-        MyUtil.refresComboBox(empresas, cbEmpresa);
-        MyUtil.initiActionCmd(this);
+        initComponents();      
         initAction();
+        refresh();
     }
 
     private void initAction() {
@@ -62,11 +60,11 @@ public class WinEmpresaPescador extends javax.swing.JPanel {
 
             }
         });
-        cbEmpresa.addItemListener(new ItemListener() {
+        WinSelecionaEmpresa.cbEmpresa.addItemListener(new ItemListener() {
 
             public void itemStateChanged(ItemEvent e) {
                 if (e.getStateChange() == ItemEvent.SELECTED) {
-                    if (cbEmpresa.getSelectedIndex() > 0) {
+                    if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0) {
                         refresh();
                     } else {
                         clear();
@@ -80,11 +78,11 @@ public class WinEmpresaPescador extends javax.swing.JPanel {
     }
 
     private void refresh() {
-        if (cbEmpresa.getSelectedIndex() > 0) {
+        if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0) {
             edfs = new ArrayList<EmpresaPescador>();
             edfs = new DAOEmpresaPescador().getListWithQuery("select * from " +
                     "EmpresaPescador where empresaId = " +
-                    empresas.get(cbEmpresa.getSelectedIndex() - 1).getId());
+                    WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
 
             refreshTable(edfs);
         } else {
@@ -121,7 +119,7 @@ public class WinEmpresaPescador extends javax.swing.JPanel {
         edf.setCausaPerda(tfCausa.getText());
         edf.setEstimativaPerda(tfEstimativa.getText());
         edf.setDestinoPeixePerdido(tfDestino.getText());
-        edf.setEmpresaId(empresas.get(cbEmpresa.getSelectedIndex() - 1).getId());
+        edf.setEmpresaId(WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
         return edf;
     }
 
@@ -167,8 +165,8 @@ public class WinEmpresaPescador extends javax.swing.JPanel {
 
     private void clear() {
         MyUtil.FieldsClear(this);
-        MyUtil.clearTable(table);
-        cbEmpresa.setSelectedIndex(0);
+       // MyUtil.clearTable(table);
+        
       
     }
 
@@ -187,8 +185,6 @@ public class WinEmpresaPescador extends javax.swing.JPanel {
         jLabel47 = new javax.swing.JLabel();
         btExcluir = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
-        cbEmpresa = new javax.swing.JComboBox();
-        jLabel17 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
         tfEspecie = new javax.swing.JTextField();
@@ -214,10 +210,6 @@ public class WinEmpresaPescador extends javax.swing.JPanel {
 
         btExcluir.setText("Excluir");
 
-        cbEmpresa.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel17.setText("Empresa");
-
         jLabel13.setFont(new java.awt.Font("Verdana", 1, 11));
         jLabel13.setText("Perda de Pescado");
 
@@ -241,16 +233,13 @@ public class WinEmpresaPescador extends javax.swing.JPanel {
                                     .addGroup(panelCrudEmpresa1Layout.createSequentialGroup()
                                         .addComponent(btCadastrar)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btExcluir)
-                                        .addGap(239, 239, 239)
-                                        .addComponent(jLabel17)
-                                        .addGap(26, 26, 26)
-                                        .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel47)))))
+                                        .addComponent(btExcluir))
+                                    .addComponent(jLabel47))))
+                        .addGap(495, 495, 495))
                     .addGroup(panelCrudEmpresa1Layout.createSequentialGroup()
                         .addGap(299, 299, 299)
                         .addComponent(jLabel13)))
-                .addContainerGap(245, Short.MAX_VALUE))
+                .addContainerGap(235, Short.MAX_VALUE))
         );
         panelCrudEmpresa1Layout.setVerticalGroup(
             panelCrudEmpresa1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -264,8 +253,6 @@ public class WinEmpresaPescador extends javax.swing.JPanel {
                     .addComponent(jLabel13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelCrudEmpresa1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17)
                     .addComponent(btCadastrar)
                     .addComponent(btExcluir))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -326,8 +313,8 @@ public class WinEmpresaPescador extends javax.swing.JPanel {
                                 .addGap(84, 84, 84)
                                 .addComponent(tfDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 747, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(153, Short.MAX_VALUE))
-            .addComponent(panelCrudEmpresa1, javax.swing.GroupLayout.DEFAULT_SIZE, 910, Short.MAX_VALUE)
+                .addContainerGap(143, Short.MAX_VALUE))
+            .addComponent(panelCrudEmpresa1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -359,10 +346,8 @@ public class WinEmpresaPescador extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCadastrar;
     private javax.swing.JButton btExcluir;
-    private javax.swing.JComboBox cbEmpresa;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel64;

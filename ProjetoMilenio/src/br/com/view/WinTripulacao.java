@@ -36,17 +36,15 @@ public class WinTripulacao extends javax.swing.JPanel {
 
     /** Creates new form WinTripulacao */
     private DefaultTableModel model;
-    private List<Empresa> empresas;
     private List<EmpresaTripulacao> edfs;
     private EmpresaTripulacao edf;
 
     public WinTripulacao() {
         initComponents();
-        empresas = new DAOEmpresa().getListWithQuery("select * from Empresa");
-        MyUtil.refresComboBox(empresas, cbEmpresa);
-       
+
         initAction();
-         MyUtil.initiActionCmd(this);
+        MyUtil.initiActionCmd(this);
+        refresh();
     }
 
     private void initAction() {
@@ -70,11 +68,11 @@ public class WinTripulacao extends javax.swing.JPanel {
 
             }
         });
-        cbEmpresa.addItemListener(new ItemListener() {
+        WinSelecionaEmpresa.cbEmpresa.addItemListener(new ItemListener() {
 
             public void itemStateChanged(ItemEvent e) {
                 if (e.getStateChange() == ItemEvent.SELECTED) {
-                    if (cbEmpresa.getSelectedIndex() > 0) {
+                    if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0) {
                         refresh();
                     } else {
                         clear();
@@ -88,13 +86,14 @@ public class WinTripulacao extends javax.swing.JPanel {
     }
 
     private void refresh() {
-        if (cbEmpresa.getSelectedIndex() > 0) {
+        if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0) {
             edfs = new ArrayList<EmpresaTripulacao>();
             edfs = new DAOTripulacao().getListWithQuery("select * from " +
                     "EmpresaTripulacao where empresaId = " +
-                    empresas.get(cbEmpresa.getSelectedIndex() - 1).getId());
+                    WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
 
             refreshTable(edfs);
+          
         } else {
             clear();
         }
@@ -119,7 +118,17 @@ public class WinTripulacao extends javax.swing.JPanel {
 
         try {
 
-        if (edf != null) {
+            if (edf != null) {
+                edf.setRelacaoTrabalho(bgRelacaoTrabalho.getSelection().getActionCommand());
+                edf.setFrotaEspecie(tfFrota.getText());
+                edf.setFuncao(tfFuncao.getText());
+                edf.setNumero(tfNumero.getText());
+                edf.setCusto(tfCusto.getText());
+                edf.setLucro(tfLucro.getText());
+                edf.setSalario(tfSalario.getText());
+                return edf;
+            }
+            EmpresaTripulacao edf = new EmpresaTripulacao();
             edf.setRelacaoTrabalho(bgRelacaoTrabalho.getSelection().getActionCommand());
             edf.setFrotaEspecie(tfFrota.getText());
             edf.setFuncao(tfFuncao.getText());
@@ -127,18 +136,8 @@ public class WinTripulacao extends javax.swing.JPanel {
             edf.setCusto(tfCusto.getText());
             edf.setLucro(tfLucro.getText());
             edf.setSalario(tfSalario.getText());
+            edf.setEmpresaId(WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
             return edf;
-        }
-        EmpresaTripulacao edf = new EmpresaTripulacao();
-        edf.setRelacaoTrabalho(bgRelacaoTrabalho.getSelection().getActionCommand());
-        edf.setFrotaEspecie(tfFrota.getText());
-        edf.setFuncao(tfFuncao.getText());
-        edf.setNumero(tfNumero.getText());
-        edf.setCusto(tfCusto.getText());
-        edf.setLucro(tfLucro.getText());
-        edf.setSalario(tfSalario.getText());
-        edf.setEmpresaId(empresas.get(cbEmpresa.getSelectedIndex() - 1).getId());
-        return edf;
         } catch (Exception e) {
 
             Mensagens.showMessageErroPreencherDados();
@@ -172,21 +171,20 @@ public class WinTripulacao extends javax.swing.JPanel {
     private void action(ActionEvent e) {
 
         String cmd = e.getActionCommand();
-        if (cbEmpresa.getSelectedIndex() > 0) {
-            if (cmd.equalsIgnoreCase("Cadastrar")) {
-                edf = getEDFofPanel();
-                new DAOTripulacao().cadastrar(edf);
-            } else if (cmd.equalsIgnoreCase("Excluir")) {
+        if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0) {
+            if (cmd.equalsIgnoreCase("Adiciona")) {
+                if (edf == null) {
+                    edf = getEDFofPanel();
+                    new DAOTripulacao().cadastrar(edf);
+                } 
+            } else if (cmd.equalsIgnoreCase("Retira")) {
                 edf = getEDFofPanel();
                 new DAOTripulacao().excluir(edf);
-            } else if (cmd.equalsIgnoreCase("Atualizar")) {
-                edf = getEDFofPanel();
-                new DAOTripulacao().atualizar(edf);
-            }
+            } 
             refresh();
             clear();
-            MyUtil.clearTable(table);
-            cbEmpresa.setSelectedIndex(0);
+
+
             edf = null;
         }
     }
@@ -214,8 +212,6 @@ public class WinTripulacao extends javax.swing.JPanel {
         btExcluir = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         btNovo = new javax.swing.JButton();
-        cbEmpresa = new javax.swing.JComboBox();
-        jLabel17 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         tfFrota = new javax.swing.JTextField();
@@ -239,19 +235,15 @@ public class WinTripulacao extends javax.swing.JPanel {
 
         panelCrudEmpresa1.setBackground(new java.awt.Color(255, 255, 255));
 
-        btCadastrar.setText("Cadastrar");
+        btCadastrar.setText("Adiciona");
         btCadastrar.setToolTipText("Realiza a Confirmação do Pagamento definindo exatamente o dia de pagamento."); // NOI18N
         btCadastrar.setFocusable(false);
         btCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btCadastrar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        btExcluir.setText("Excluir");
+        btExcluir.setText("Retira");
 
         btNovo.setText("Novo");
-
-        cbEmpresa.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel17.setText("Empresa");
 
         jLabel13.setFont(new java.awt.Font("Verdana", 1, 11));
         jLabel13.setText("Tripulação");
@@ -278,16 +270,12 @@ public class WinTripulacao extends javax.swing.JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(btCadastrar)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btExcluir)
-                                        .addGap(172, 172, 172)
-                                        .addComponent(jLabel17)
-                                        .addGap(26, 26, 26)
-                                        .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(btExcluir))
                                     .addComponent(jLabel47)))))
                     .addGroup(panelCrudEmpresa1Layout.createSequentialGroup()
                         .addGap(336, 336, 336)
                         .addComponent(jLabel13)))
-                .addContainerGap(235, Short.MAX_VALUE))
+                .addContainerGap(495, Short.MAX_VALUE))
         );
         panelCrudEmpresa1Layout.setVerticalGroup(
             panelCrudEmpresa1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -303,8 +291,6 @@ public class WinTripulacao extends javax.swing.JPanel {
                 .addGroup(panelCrudEmpresa1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btCadastrar)
                     .addComponent(btNovo)
-                    .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17)
                     .addComponent(btExcluir))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
@@ -435,12 +421,10 @@ public class WinTripulacao extends javax.swing.JPanel {
     private javax.swing.JButton btCadastrar;
     private javax.swing.JButton btExcluir;
     private javax.swing.JButton btNovo;
-    private javax.swing.JComboBox cbEmpresa;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;

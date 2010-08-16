@@ -40,7 +40,6 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
 
     private EspecieProcessada ep;
     private DefaultTableModel model;
-    private List<Empresa> empresas;
     private List<EmpresaEB> empresasEBs;
     private List<EspecieProcessada> eps;
 
@@ -49,37 +48,40 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
         initComponents();
         init();
         initAction();
+        refresh();
+
     }
 
-    private ActionListener getActionListenerEspecieProcessada() {
+    private ActionListener getActionListener() {
         return new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                actionEspecieProcessada(e);
+                action(e);
             }
         };
     }
 
-    private void actionEspecieProcessada(ActionEvent e) {
+    private void action(ActionEvent e) {
 
         String cmd = e.getActionCommand();
 
-        if (cmd.equalsIgnoreCase("Cadastrar")) {
+        if (cmd.equalsIgnoreCase("Salvar")) {
             if (ep == null) {
                 ep = getEmpresaEspecieProcessadaOfPanel();
                 new DaoEspecieProcessada().cadastrar(ep);
             } else {
-                Mensagens.showMessageNaoCadastrar();
+                ep = getEmpresaEspecieProcessadaOfPanel();
+                new DaoEspecieProcessada().atualizar(ep);
             }
         } else if (cmd.equalsIgnoreCase("Excluir")) {
             ep = getEmpresaEspecieProcessadaOfPanel();
             new DaoEspecieProcessada().excluir(ep);
         } else if (cmd.equalsIgnoreCase("Atualizar")) {
-            ep = getEmpresaEspecieProcessadaOfPanel();
-            new DaoEspecieProcessada().atualizar(ep);
         }
-        refreshEspecieProcessada();
+        clearTable();
         clearTab(tabEspecieProcessada);
+        refresh();
+       
         ep = null;
     }
 
@@ -103,7 +105,7 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
 
             String quantidadeProduzida = tfQuantidade.getText();
             String precoVenda = tfVenda.getText();
-            Integer empresaId = empresas.get(cbEmpresaEspecieProcessada.getSelectedIndex() - 1).getId();
+            Integer empresaId = WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId();
             Integer especieId = empresasEBs.get(cbEspecie.getSelectedIndex() - 1).getId();
 
             if (ep != null) {
@@ -138,27 +140,23 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
 
     }
 
+    private void refresh() {
+        if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0) {
+            empresasEBs = new DAOEmpresaEB().getListWithQuery("select * from" +
+                    " EmpresaEB where empresaId = " +
+                    WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
+            MyUtil.refresComboBox(empresasEBs, cbEspecie);
+            if (!empresasEBs.isEmpty()) {//Especie for nao nullo
+                refreshEspecieProcessada();
+            } else {
+               
+            }
+        }
+    }
+
     private void initAction() {
 
-        cbEmpresaEspecieProcessada.addItemListener(new ItemListener() {
-
-            public void itemStateChanged(ItemEvent e) {
-                if (e.getStateChange() == ItemEvent.SELECTED) {
-                    if (cbEmpresaEspecieProcessada.getSelectedIndex() > 0) {
-                        empresasEBs = new DAOEmpresaEB().getListWithQuery("select * from" +
-                                " EmpresaEB where empresaId = " +
-                                empresas.get(cbEmpresaEspecieProcessada.getSelectedIndex() - 1).getId());
-                        MyUtil.refresComboBox(empresasEBs, cbEspecie);
-                        if (!empresasEBs.isEmpty()) {//Especie for nao nullo
-                            refreshEspecieProcessada();
-                        } else {
-                            clearTable();
-                        }
-                    }
-
-                }
-            }
-        });
+     
         cbEspecie.addItemListener(new ItemListener() {
 
             public void itemStateChanged(ItemEvent e) {
@@ -170,16 +168,16 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
                 }
             }
         });
-        btNovoEspecieProcessada.addActionListener(new ActionListener() {
+        btNovo.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
                 clearTab(tabEspecieProcessada);
                 ep = null;
             }
         });
-        btCadastrarEspecieProcessada.addActionListener(getActionListenerEspecieProcessada());
-        btAtualizarEspecieProcessada.addActionListener(getActionListenerEspecieProcessada());
-        btExcluirEspecieProcessada.addActionListener(getActionListenerEspecieProcessada());
+        btCadastrar.addActionListener(getActionListener());
+//        btAtualizarEspecieProcessada.addActionListener(getActionListenerEspecieProcessada());
+        btExcluir.addActionListener(getActionListener());
         tableEspecieProcessada.addMouseListener(new MouseAdapter() {
 
             @Override
@@ -194,11 +192,11 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
     private void refreshEspecieProcessada() {
         eps = new ArrayList<EspecieProcessada>();
         if (!empresasEBs.isEmpty()) {
-            if (cbEmpresaEspecieProcessada.getSelectedIndex() > 0 &&
+            if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0 &&
                     cbEspecie.getSelectedIndex() > 0) {
                 eps = new DaoEspecieProcessada().getListWithQuery("select * from " +
                         "EspecieProcessada where empresaId = " +
-                        empresas.get(cbEmpresaEspecieProcessada.getSelectedIndex() - 1).getId() +
+                        WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId() +
                         " and especieId = " + empresasEBs.get(cbEspecie.getSelectedIndex() - 1).getId());
             }
         }
@@ -229,15 +227,12 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
 
         tabEspecieProcessada = new javax.swing.JPanel();
         panelCrudEmpresa2 = new javax.swing.JPanel();
-        btCadastrarEspecieProcessada = new javax.swing.JButton();
-        btAtualizarEspecieProcessada = new javax.swing.JButton();
+        btCadastrar = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
-        btExcluirEspecieProcessada = new javax.swing.JButton();
+        btExcluir = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
-        btNovoEspecieProcessada = new javax.swing.JButton();
-        cbEmpresaEspecieProcessada = new javax.swing.JComboBox();
-        jLabel22 = new javax.swing.JLabel();
+        btNovo = new javax.swing.JButton();
         jLabel23 = new javax.swing.JLabel();
         cbEspecie = new javax.swing.JComboBox();
         jLabel19 = new javax.swing.JLabel();
@@ -254,28 +249,21 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
 
         panelCrudEmpresa2.setBackground(new java.awt.Color(255, 255, 255));
 
-        btCadastrarEspecieProcessada.setText("Cadastrar");
-        btCadastrarEspecieProcessada.setToolTipText("Realiza a Confirmação do Pagamento definindo exatamente o dia de pagamento."); // NOI18N
-        btCadastrarEspecieProcessada.setFocusable(false);
-        btCadastrarEspecieProcessada.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btCadastrarEspecieProcessada.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btCadastrar.setText("Salvar");
+        btCadastrar.setToolTipText("Realiza a Confirmação do Pagamento definindo exatamente o dia de pagamento."); // NOI18N
+        btCadastrar.setFocusable(false);
+        btCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btCadastrar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        btAtualizarEspecieProcessada.setText("Atualizar");
-        btAtualizarEspecieProcessada.setToolTipText("Atualiza Valor e Data de pagamento da mensalidade");
+        btExcluir.setText("Excluir");
 
-        btExcluirEspecieProcessada.setText("Excluir");
-
-        btNovoEspecieProcessada.setText("Novo");
-
-        cbEmpresaEspecieProcessada.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel22.setText("Empresa");
+        btNovo.setText("Novo");
 
         jLabel23.setText("Espécie");
 
         cbEspecie.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel19.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        jLabel19.setFont(new java.awt.Font("Verdana", 1, 11));
         jLabel19.setText("Espécies Processadas Pela Empresa");
 
         javax.swing.GroupLayout panelCrudEmpresa2Layout = new javax.swing.GroupLayout(panelCrudEmpresa2);
@@ -283,39 +271,31 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
         panelCrudEmpresa2Layout.setHorizontalGroup(
             panelCrudEmpresa2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCrudEmpresa2Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(panelCrudEmpresa2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelCrudEmpresa2Layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(83, 83, 83)
+                        .addComponent(jLabel21)
+                        .addGap(45, 45, 45)
+                        .addComponent(jLabel18))
+                    .addGroup(panelCrudEmpresa2Layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
                         .addGroup(panelCrudEmpresa2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelCrudEmpresa2Layout.createSequentialGroup()
-                                .addGap(83, 83, 83)
-                                .addComponent(jLabel21)
-                                .addGap(45, 45, 45)
-                                .addComponent(jLabel18))
-                            .addGroup(panelCrudEmpresa2Layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
+                                .addComponent(btNovo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btCadastrar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btExcluir)
+                                .addGap(160, 160, 160)
                                 .addGroup(panelCrudEmpresa2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(panelCrudEmpresa2Layout.createSequentialGroup()
-                                        .addComponent(btNovoEspecieProcessada)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btCadastrarEspecieProcessada)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btAtualizarEspecieProcessada)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btExcluirEspecieProcessada)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel22)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cbEmpresaEspecieProcessada, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel23)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(cbEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel48)))))
-                    .addGroup(panelCrudEmpresa2Layout.createSequentialGroup()
-                        .addGap(393, 393, 393)
-                        .addComponent(jLabel19)))
-                .addContainerGap(337, Short.MAX_VALUE))
+                                    .addComponent(jLabel19)))
+                            .addComponent(jLabel48))))
+                .addContainerGap(527, Short.MAX_VALUE))
         );
         panelCrudEmpresa2Layout.setVerticalGroup(
             panelCrudEmpresa2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -327,17 +307,20 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
                         .addComponent(jLabel48)
                         .addComponent(jLabel18))
                     .addComponent(jLabel19))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addGroup(panelCrudEmpresa2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btExcluirEspecieProcessada)
-                    .addComponent(btAtualizarEspecieProcessada)
-                    .addComponent(btCadastrarEspecieProcessada)
-                    .addComponent(btNovoEspecieProcessada)
-                    .addComponent(jLabel22)
-                    .addComponent(cbEmpresaEspecieProcessada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel23)
-                    .addComponent(cbEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addGroup(panelCrudEmpresa2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelCrudEmpresa2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                        .addGroup(panelCrudEmpresa2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btCadastrar)
+                            .addComponent(btNovo)
+                            .addComponent(btExcluir))
+                        .addContainerGap())
+                    .addGroup(panelCrudEmpresa2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(panelCrudEmpresa2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel23)
+                            .addComponent(cbEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())))
         );
 
         jLabel24.setText("Produto");
@@ -415,7 +398,7 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1138, Short.MAX_VALUE)
+            .addGap(0, 900, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -433,17 +416,14 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btAtualizarEspecieProcessada;
-    private javax.swing.JButton btCadastrarEspecieProcessada;
-    private javax.swing.JButton btExcluirEspecieProcessada;
-    private javax.swing.JButton btNovoEspecieProcessada;
-    private javax.swing.JComboBox cbEmpresaEspecieProcessada;
+    private javax.swing.JButton btCadastrar;
+    private javax.swing.JButton btExcluir;
+    private javax.swing.JButton btNovo;
     private javax.swing.JComboBox cbEspecie;
     private javax.swing.JComboBox cbProduto;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel26;
@@ -458,8 +438,6 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void init() {
-        empresas = new DAOEmpresa().getListWithQuery("select * from Empresa");
-        MyUtil.refresComboBox(empresas, cbEmpresaEspecieProcessada);
         empresasEBs = new ArrayList<EmpresaEB>();
         MyUtil.refresComboBox(empresasEBs, cbEspecie);
     }

@@ -35,15 +35,15 @@ public class WinEmpresaMercado extends javax.swing.JPanel {
 
     /** Creates new form WinEmpresaMercado */
     private DefaultTableModel model;
-    private List<Empresa> empresas;
+    
     private List<EmpresaMercado> edfs;
     private EmpresaMercado edf;
 
     public WinEmpresaMercado() {
         initComponents();
-        empresas = new DAOEmpresa().getListWithQuery("select * from Empresa");
-        MyUtil.refresComboBox(empresas, cbEmpresa);
+        
         initAction();
+        refresh();
     }
 
     private void initAction() {
@@ -53,7 +53,7 @@ public class WinEmpresaMercado extends javax.swing.JPanel {
             public void actionPerformed(ActionEvent e) {
                 clear();
                 edf = null;
-                cbEmpresa.setSelectedIndex(0);
+                
             }
         });
         btCadastrar.addActionListener(getActionListener());
@@ -68,11 +68,11 @@ public class WinEmpresaMercado extends javax.swing.JPanel {
 
             }
         });
-        cbEmpresa.addItemListener(new ItemListener() {
+        WinSelecionaEmpresa.cbEmpresa.addItemListener(new ItemListener() {
 
             public void itemStateChanged(ItemEvent e) {
                 if (e.getStateChange() == ItemEvent.SELECTED) {
-                    if (cbEmpresa.getSelectedIndex() > 0) {
+                    if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0) {
                         refresh();
                     } else {
                         clear();
@@ -86,11 +86,11 @@ public class WinEmpresaMercado extends javax.swing.JPanel {
     }
 
     private void refresh() {
-        if (cbEmpresa.getSelectedIndex() > 0) {
+        if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0) {
             edfs = new ArrayList<EmpresaMercado>();
             edfs = new DAOEmpresaMercado().getListWithQuery("select * from " +
                     "EmpresaMercado where empresaId = " +
-                    empresas.get(cbEmpresa.getSelectedIndex() - 1).getId());
+                    WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
 
             refreshTable(edfs);
         } else {
@@ -130,7 +130,7 @@ public class WinEmpresaMercado extends javax.swing.JPanel {
         edf.setDestino(tfDestino.getText());
         edf.setVolume(tfVolume.getText());
         edf.setValor(tfValor.getText());
-        edf.setEmpresaId(empresas.get(cbEmpresa.getSelectedIndex() - 1).getId());
+        edf.setEmpresaId(WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
         return edf;
     }
 
@@ -176,8 +176,8 @@ public class WinEmpresaMercado extends javax.swing.JPanel {
 
     private void clear() {
         MyUtil.FieldsClear(this);
-        cbEmpresa.setSelectedIndex(0);
-        MyUtil.limpaTabela(table);
+       
+     //   MyUtil.limpaTabela(table);
 
     }
 
@@ -197,8 +197,6 @@ public class WinEmpresaMercado extends javax.swing.JPanel {
         jLabel47 = new javax.swing.JLabel();
         btExcluir = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
-        cbEmpresa = new javax.swing.JComboBox();
-        jLabel17 = new javax.swing.JLabel();
         btNovo = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
@@ -228,10 +226,6 @@ public class WinEmpresaMercado extends javax.swing.JPanel {
 
         btExcluir.setText("Excluir");
 
-        cbEmpresa.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel17.setText("Empresa");
-
         btNovo.setText("Novo");
 
         jLabel13.setFont(new java.awt.Font("Verdana", 1, 11));
@@ -260,15 +254,11 @@ public class WinEmpresaMercado extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btCadastrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btExcluir)
-                        .addGap(237, 237, 237)
-                        .addComponent(jLabel17)
-                        .addGap(26, 26, 26)
-                        .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btExcluir))
                     .addGroup(panelCrudEmpresa1Layout.createSequentialGroup()
                         .addGap(361, 361, 361)
                         .addComponent(jLabel13)))
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addContainerGap(484, Short.MAX_VALUE))
         );
         panelCrudEmpresa1Layout.setVerticalGroup(
             panelCrudEmpresa1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -283,8 +273,6 @@ public class WinEmpresaMercado extends javax.swing.JPanel {
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelCrudEmpresa1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17)
                     .addComponent(btNovo)
                     .addComponent(btCadastrar)
                     .addComponent(btExcluir))
@@ -413,11 +401,9 @@ public class WinEmpresaMercado extends javax.swing.JPanel {
     private javax.swing.JButton btCadastrar;
     private javax.swing.JButton btExcluir;
     private javax.swing.JButton btNovo;
-    private javax.swing.JComboBox cbEmpresa;
     private javax.swing.JComboBox cbMercado;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel64;

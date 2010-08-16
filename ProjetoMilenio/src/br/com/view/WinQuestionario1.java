@@ -10,41 +10,27 @@
  */
 package br.com.view;
 
-import br.com.dao.DAOEmpresa;
 import br.com.dao.DAOQuestionario1;
-import br.com.pojo.Empresa;
 import br.com.pojo.EmpresaQuestionario1;
-import br.com.pojo.EspecieProcessada;
 import br.com.util.Mensagens;
 import br.com.util.MyUtil;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.util.List;
 import javax.swing.JPanel;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Elton
  */
 public class WinQuestionario1 extends javax.swing.JPanel {
-
-    private Empresa empresa;
-    private EspecieProcessada ep;
+   
     private EmpresaQuestionario1 empresaQuestionario1;
-    private DefaultTableModel model;
-    private List<Empresa> empresas;
-
     /** Creates new form WinQuestionario1 */
     public WinQuestionario1() {
         initComponents();
-        empresas = new DAOEmpresa().getListWithQuery("select * from Empresa");
-        MyUtil.refresComboBox(empresas, cbEmpresaQuestionario1);
-
         initAction();
+        refresh();
+
     }
 
     private void clearTab(JPanel jPanel) {
@@ -70,25 +56,25 @@ public class WinQuestionario1 extends javax.swing.JPanel {
 
         try {
             String questao8 = tfQuestao8.getText();
-        String questao9 = tfQuestao9.getText();
-        String questao10 = MyUtil.getSelected(ckFile, ckInteiros, ckOutros, ckPosta);
-        String questao11 = tfQuestao11.getText();
-        String questao12 = tfQuestao12.getText();
-        String questao13 = tfQuestao13.getText();
+            String questao9 = tfQuestao9.getText();
+            String questao10 = MyUtil.getSelected(ckFile, ckInteiros, ckOutros, ckPosta);
+            String questao11 = tfQuestao11.getText();
+            String questao12 = tfQuestao12.getText();
+            String questao13 = tfQuestao13.getText();
 
-        if (empresaQuestionario1 != null) {
+            if (empresaQuestionario1 != null) {
 
-            empresaQuestionario1.all(questao8, questao9,
-                    questao10, questao11, questao12, questao13, empresaQuestionario1.getEmpresaId());
-            return empresaQuestionario1;
-        }
+                empresaQuestionario1.all(questao8, questao9,
+                        questao10, questao11, questao12, questao13, empresaQuestionario1.getEmpresaId());
+                return empresaQuestionario1;
+            }
 
-        EmpresaQuestionario1 eq = new EmpresaQuestionario1();
-        eq.all(questao8, questao9, questao10, questao11,
-                questao12, questao13,
-                empresas.get(cbEmpresaQuestionario1.getSelectedIndex() - 1).getId());
+            EmpresaQuestionario1 eq = new EmpresaQuestionario1();
+            eq.all(questao8, questao9, questao10, questao11,
+                    questao12, questao13,
+                    WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
 
-        return eq;
+            return eq;
         } catch (Exception e) {
             Mensagens.showMessageErroPreencherDados();
         }
@@ -100,43 +86,40 @@ public class WinQuestionario1 extends javax.swing.JPanel {
 
         String cmd = e.getActionCommand();
 
-        if(cbEmpresaQuestionario1.getSelectedIndex()>0)
-        {
-            if (cmd.equalsIgnoreCase("Cadastrar")) {
-                if(empresaQuestionario1 == null){
-            empresaQuestionario1 = getQuestionario1OfPanel();
-            new DAOQuestionario1().cadastrar(empresaQuestionario1);}
-                else Mensagens.showMessageNaoCadastrar();
-        } else if (cmd.equalsIgnoreCase("Atualizar")) {
-            empresaQuestionario1 = getQuestionario1OfPanel();
-            new DAOQuestionario1().atualizar(empresaQuestionario1);
-        }
-        clearTab(tabQuestionario1);
-        MyUtil.clearCheckBox(tabQuestionario1);
-        empresaQuestionario1 = null;
-        cbEmpresaQuestionario1.setSelectedIndex(0);
+        if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0) {
+            if (cmd.equalsIgnoreCase("Salvar")) {
+                if (empresaQuestionario1 == null) {
+                    empresaQuestionario1 = getQuestionario1OfPanel();
+                    new DAOQuestionario1().cadastrar(empresaQuestionario1);
+                } else {
+                    empresaQuestionario1 = getQuestionario1OfPanel();
+                    new DAOQuestionario1().atualizar(empresaQuestionario1);
+                    //Mensagens.showMessageNaoCadastrar();
+                }
+            } else if (cmd.equalsIgnoreCase("Atualizar")) {
+            }
+           
+            empresaQuestionario1 = null;
+
         }
 
+    }
+
+    private void refresh() {
+        if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0) {
+            isExist();
+        } else {
+            clearTab(tabQuestionario1);
+            MyUtil.clearCheckBox(tabQuestionario1);
+            empresaQuestionario1 = null;
+        }
     }
 
     private void initAction() {
 
 
         /*quarto Tab*/
-        cbEmpresaQuestionario1.addItemListener(new ItemListener() {
 
-            public void itemStateChanged(ItemEvent e) {
-                if (e.getStateChange() == ItemEvent.SELECTED) {
-                    if (cbEmpresaQuestionario1.getSelectedIndex() > 0) {
-                        isExist();
-                    } else {
-                        clearTab(tabQuestionario1);
-                        MyUtil.clearCheckBox(tabQuestionario1);
-                        empresaQuestionario1 = null;
-                    }
-                }
-            }
-        });
         btNovoQuestionario1.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
@@ -149,18 +132,13 @@ public class WinQuestionario1 extends javax.swing.JPanel {
                 actionEmpresaQuestionario1(e);
             }
         });
-        btAtualizarQuestionario1.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent e) {
-                actionEmpresaQuestionario1(e);
-            }
-        });
     }
 
     private void isExist() {
         empresaQuestionario1 =
                 new DAOQuestionario1().getObjectWithQuery("select * from EmpresaQuestionario1 where empresaId = " +
-                empresas.get(cbEmpresaQuestionario1.getSelectedIndex() - 1).getId());
+                WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
         if (empresaQuestionario1 != null) {
             setQuestionario1ForPanel(empresaQuestionario1);
         } else {
@@ -182,13 +160,10 @@ public class WinQuestionario1 extends javax.swing.JPanel {
         tabQuestionario1 = new javax.swing.JPanel();
         panelCrudEmpresa3 = new javax.swing.JPanel();
         btCadastrarQuestionario1 = new javax.swing.JButton();
-        btAtualizarQuestionario1 = new javax.swing.JButton();
         jLabel25 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         btNovoQuestionario1 = new javax.swing.JButton();
-        jLabel35 = new javax.swing.JLabel();
-        cbEmpresaQuestionario1 = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
@@ -219,22 +194,15 @@ public class WinQuestionario1 extends javax.swing.JPanel {
 
         panelCrudEmpresa3.setBackground(new java.awt.Color(255, 255, 255));
 
-        btCadastrarQuestionario1.setText("Cadastrar");
+        btCadastrarQuestionario1.setText("Salvar");
         btCadastrarQuestionario1.setToolTipText("Realiza a Confirmação do Pagamento definindo exatamente o dia de pagamento."); // NOI18N
         btCadastrarQuestionario1.setFocusable(false);
         btCadastrarQuestionario1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btCadastrarQuestionario1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        btAtualizarQuestionario1.setText("Atualizar");
-        btAtualizarQuestionario1.setToolTipText("Atualiza Valor e Data de pagamento da mensalidade");
-
         btNovoQuestionario1.setText("Novo");
 
-        jLabel35.setText("Empresa");
-
-        cbEmpresaQuestionario1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel1.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Verdana", 1, 12));
         jLabel1.setText("Questionário");
 
         javax.swing.GroupLayout panelCrudEmpresa3Layout = new javax.swing.GroupLayout(panelCrudEmpresa3);
@@ -247,13 +215,7 @@ public class WinQuestionario1 extends javax.swing.JPanel {
                     .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
                         .addComponent(btNovoQuestionario1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btCadastrarQuestionario1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btAtualizarQuestionario1)
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel35)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbEmpresaQuestionario1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btCadastrarQuestionario1))
                     .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
                         .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
@@ -266,7 +228,7 @@ public class WinQuestionario1 extends javax.swing.JPanel {
                                 .addComponent(jLabel49)))
                         .addGap(147, 147, 147)
                         .addComponent(jLabel1)))
-                .addContainerGap(390, Short.MAX_VALUE))
+                .addContainerGap(520, Short.MAX_VALUE))
         );
         panelCrudEmpresa3Layout.setVerticalGroup(
             panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -285,11 +247,8 @@ public class WinQuestionario1 extends javax.swing.JPanel {
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)))
                 .addGroup(panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btAtualizarQuestionario1)
                     .addComponent(btCadastrarQuestionario1)
-                    .addComponent(btNovoQuestionario1)
-                    .addComponent(jLabel35)
-                    .addComponent(cbEmpresaQuestionario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btNovoQuestionario1))
                 .addContainerGap())
         );
 
@@ -412,10 +371,8 @@ public class WinQuestionario1 extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane ScrollQuestionario1;
-    private javax.swing.JButton btAtualizarQuestionario1;
     private javax.swing.JButton btCadastrarQuestionario1;
     private javax.swing.JButton btNovoQuestionario1;
-    private javax.swing.JComboBox cbEmpresaQuestionario1;
     private javax.swing.JCheckBox ckFile;
     private javax.swing.JCheckBox ckInteiros;
     private javax.swing.JCheckBox ckOutros;
@@ -429,7 +386,6 @@ public class WinQuestionario1 extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

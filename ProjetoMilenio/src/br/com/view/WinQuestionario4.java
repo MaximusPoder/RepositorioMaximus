@@ -26,25 +26,21 @@ public class WinQuestionario4 extends javax.swing.JPanel {
 
     /** Creates new form WinQuestionario4 */
     private EmpresaQuestionario4 empresaQuestionario4;
-    private DefaultTableModel model;
-    private List<Empresa> empresas;
-
+ 
     public WinQuestionario4() {
         initComponents();
-        empresas = new DAOEmpresa().getListWithQuery("select * from Empresa");
-        MyUtil.refresComboBox(empresas, cbEmpresa);
         initAction();
         MyUtil.initiActionCmd(tabQuestionario4);
-
+        refresh();
 
     }
 
-    private void isExist() {
-        if (cbEmpresa.getSelectedIndex() > 0) {
+    private void refresh() {
+        if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0) {
             empresaQuestionario4 =
                     new DAOQuestionario4().getObjectWithQuery("select * from EmpresaQuestionario4" +
                     " where empresaId = " +
-                    empresas.get(cbEmpresa.getSelectedIndex() - 1).getId());
+                    WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
             if (empresaQuestionario4 != null) {
                 setQuestionario4ForPanel(empresaQuestionario4);
             } else {
@@ -59,28 +55,28 @@ public class WinQuestionario4 extends javax.swing.JPanel {
 
         try {
 
-        String questao31 = tfQuestao31.getText();
-        String questao32 = bgQuestao32.getSelection().getActionCommand() + ";" + tfQuestao32.getText();
-        String questao33 = bgQuestao33.getSelection().getActionCommand();
-        String questao34 = tf34.getText();
-        String questao35 = tf35.getText();
-        String questao36 = tfQuestao36.getText();
-        String questao37 = tfQuestao37.getText();
-        String questao38 = tfQuestao38.getText();
-        String relacoesTrabalho = bgRelacaoTrabalho.getSelection().getActionCommand();
+            String questao31 = tfQuestao31.getText();
+            String questao32 = bgQuestao32.getSelection().getActionCommand() + ";" + tfQuestao32.getText();
+            String questao33 = bgQuestao33.getSelection().getActionCommand();
+            String questao34 = tf34.getText();
+            String questao35 = tf35.getText();
+            String questao36 = tfQuestao36.getText();
+            String questao37 = tfQuestao37.getText();
+            String questao38 = tfQuestao38.getText();
+            String relacoesTrabalho = bgRelacaoTrabalho.getSelection().getActionCommand();
 
-        if (empresaQuestionario4 != null) {
-            empresaQuestionario4.all(questao31, questao32, questao33, questao34, questao35,
+            if (empresaQuestionario4 != null) {
+                empresaQuestionario4.all(questao31, questao32, questao33, questao34, questao35,
+                        questao36, questao37, questao38, relacoesTrabalho,
+                        WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
+                return empresaQuestionario4;
+            }
+
+            EmpresaQuestionario4 eq = new EmpresaQuestionario4();
+            eq.all(questao31, questao32, questao33, questao34, questao35,
                     questao36, questao37, questao38, relacoesTrabalho,
-                    empresas.get(cbEmpresa.getSelectedIndex() - 1).getId());
-            return empresaQuestionario4;
-        }
-
-        EmpresaQuestionario4 eq = new EmpresaQuestionario4();
-        eq.all(questao31, questao32, questao33, questao34, questao35,
-                questao36, questao37, questao38, relacoesTrabalho,
-                empresas.get(cbEmpresa.getSelectedIndex() - 1).getId());
-        return eq;
+                    WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
+            return eq;
 
         } catch (Exception e) {
 
@@ -113,56 +109,56 @@ public class WinQuestionario4 extends javax.swing.JPanel {
     }
 
     /*Metodos Actions do 8° Tab = Questionario 3*/
-    private void actionEmpresaQuestionario4(ActionEvent e) {
+    private void action(ActionEvent e) {
 
 
         String cmd = e.getActionCommand();
-if(cbEmpresa.getSelectedIndex()>0){
-        if (cmd.equalsIgnoreCase("Cadastrar")) {
-            if(empresaQuestionario4==null){
-            empresaQuestionario4 = getQuestionario3OfPanel();
-            new DAOQuestionario4().cadastrar(empresaQuestionario4);}
-            else Mensagens.showMessageErroPreencherDados();
-        } else if (cmd.equalsIgnoreCase("Atualizar")) {
-            empresaQuestionario4 = getQuestionario3OfPanel();
-            new DAOQuestionario4().atualizar(empresaQuestionario4);
+        if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0) {
+            if (cmd.equalsIgnoreCase("Salvar")) {
+                if (empresaQuestionario4 == null) {
+                    empresaQuestionario4 = getQuestionario3OfPanel();
+                    new DAOQuestionario4().cadastrar(empresaQuestionario4);
+                } else {
+                       empresaQuestionario4 = getQuestionario3OfPanel();
+                new DAOQuestionario4().atualizar(empresaQuestionario4);
+                  //  Mensagens.showMessageErroPreencherDados();
+                }
+            } else if (cmd.equalsIgnoreCase("Atualizar")) {
+
+            }
+           // clearQuestionario3();
+
         }
-        clearQuestionario3();
-        cbEmpresa.setSelectedIndex(0);
-}
     }
 
     private void initAction() {
 
 
-        btNovoQuestionario4.addActionListener(new ActionListener() {
+        btNovo.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                actionEmpresaQuestionario4(e);
+                action(e);
             }
         });
-        cbEmpresa.addItemListener(new ItemListener() {
+        WinSelecionaEmpresa.cbEmpresa.addItemListener(new ItemListener() {
 
             public void itemStateChanged(ItemEvent e) {
                 if (e.getStateChange() == ItemEvent.SELECTED) {
-                    if(cbEmpresa.getSelectedIndex()>0)
-                    isExist();
-                    else clearQuestionario3();
+                    if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0) {
+                        refresh();
+                    } else {
+                        clearQuestionario3();
+                    }
                 }
             }
         });
-        btCadastrarQuestionario4.addActionListener(new ActionListener() {
+        btCadastrar.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                actionEmpresaQuestionario4(e);
+                action(e);
             }
         });
-        btAtualizarQuestionario4.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent e) {
-                actionEmpresaQuestionario4(e);
-            }
-        });
 
 
     }
@@ -182,14 +178,11 @@ if(cbEmpresa.getSelectedIndex()>0){
         ScrollQuestionario4 = new javax.swing.JScrollPane();
         tabQuestionario4 = new javax.swing.JPanel();
         panelCrudEmpresa8 = new javax.swing.JPanel();
-        btCadastrarQuestionario4 = new javax.swing.JButton();
-        btAtualizarQuestionario4 = new javax.swing.JButton();
+        btCadastrar = new javax.swing.JButton();
         jLabel72 = new javax.swing.JLabel();
         jLabel75 = new javax.swing.JLabel();
         jLabel76 = new javax.swing.JLabel();
-        btNovoQuestionario4 = new javax.swing.JButton();
-        jLabel83 = new javax.swing.JLabel();
-        cbEmpresa = new javax.swing.JComboBox();
+        btNovo = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jLabel84 = new javax.swing.JLabel();
         jLabel85 = new javax.swing.JLabel();
@@ -232,20 +225,13 @@ if(cbEmpresa.getSelectedIndex()>0){
 
         panelCrudEmpresa8.setBackground(new java.awt.Color(255, 255, 255));
 
-        btCadastrarQuestionario4.setText("Cadastrar");
-        btCadastrarQuestionario4.setToolTipText("Realiza a Confirmação do Pagamento definindo exatamente o dia de pagamento."); // NOI18N
-        btCadastrarQuestionario4.setFocusable(false);
-        btCadastrarQuestionario4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btCadastrarQuestionario4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btCadastrar.setText("Salvar");
+        btCadastrar.setToolTipText("Realiza a Confirmação do Pagamento definindo exatamente o dia de pagamento."); // NOI18N
+        btCadastrar.setFocusable(false);
+        btCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btCadastrar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        btAtualizarQuestionario4.setText("Atualizar");
-        btAtualizarQuestionario4.setToolTipText("Atualiza Valor e Data de pagamento da mensalidade");
-
-        btNovoQuestionario4.setText("Novo");
-
-        jLabel83.setText("Empresa");
-
-        cbEmpresa.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        btNovo.setText("Novo");
 
         jLabel12.setFont(new java.awt.Font("Verdana", 1, 11));
         jLabel12.setText("Equipamentos Tecnicos e Frota");
@@ -268,15 +254,9 @@ if(cbEmpresa.getSelectedIndex()>0){
                                 .addGap(16, 16, 16)
                                 .addComponent(jLabel75))
                             .addGroup(panelCrudEmpresa8Layout.createSequentialGroup()
-                                .addComponent(btNovoQuestionario4)
+                                .addComponent(btNovo)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btCadastrarQuestionario4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btAtualizarQuestionario4)
-                                .addGap(31, 31, 31)
-                                .addComponent(jLabel83)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(btCadastrar))))
                     .addGroup(panelCrudEmpresa8Layout.createSequentialGroup()
                         .addGap(331, 331, 331)
                         .addComponent(jLabel12)))
@@ -294,11 +274,8 @@ if(cbEmpresa.getSelectedIndex()>0){
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addGroup(panelCrudEmpresa8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btAtualizarQuestionario4)
-                    .addComponent(btCadastrarQuestionario4)
-                    .addComponent(jLabel83)
-                    .addComponent(cbEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btNovoQuestionario4))
+                    .addComponent(btCadastrar)
+                    .addComponent(btNovo))
                 .addContainerGap())
         );
 
@@ -531,29 +508,25 @@ if(cbEmpresa.getSelectedIndex()>0){
 
     private void jRadioButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton20ActionPerformed
         // TODO add your handling code here:
-         MyUtil.setEnableFields(Boolean.FALSE, tfQuestao32);
+        MyUtil.setEnableFields(Boolean.FALSE, tfQuestao32);
     }//GEN-LAST:event_jRadioButton20ActionPerformed
 
     private void jRadioButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton19ActionPerformed
         // TODO add your handling code here:
-         MyUtil.setEnableFields(Boolean.TRUE, tfQuestao32);
+        MyUtil.setEnableFields(Boolean.TRUE, tfQuestao32);
     }//GEN-LAST:event_jRadioButton19ActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane ScrollQuestionario4;
     private javax.swing.ButtonGroup bgQuestao32;
     private javax.swing.ButtonGroup bgQuestao33;
     private javax.swing.ButtonGroup bgRelacaoTrabalho;
-    private javax.swing.JButton btAtualizarQuestionario4;
-    private javax.swing.JButton btCadastrarQuestionario4;
-    private javax.swing.JButton btNovoQuestionario4;
-    private javax.swing.JComboBox cbEmpresa;
+    private javax.swing.JButton btCadastrar;
+    private javax.swing.JButton btNovo;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel76;
-    private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel88;

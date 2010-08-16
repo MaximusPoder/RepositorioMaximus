@@ -29,7 +29,7 @@ public class WinQuestionarioEmpresa extends javax.swing.JFrame {
 
     /** Creates new form WinQuestionarioEmpresa */
     private Integer index = 1;
-    private final int max = 16;
+    private final int max = 17;
     private final int min = 2;
 
     public WinQuestionarioEmpresa() {
@@ -201,67 +201,71 @@ public class WinQuestionarioEmpresa extends javax.swing.JFrame {
                 ChangePanel("Empresa", new WinBeanEmpresa());
                 break;
             }
-            case 2: {
-                ChangePanel("EmpresaEB", new WinEB());
+              case 2: {
+                ChangePanel("Empresa", new WinSelecionaEmpresa());
                 break;
             }
             case 3: {
-                ChangePanel("EmpresaEP", new WinEspecieProcessada());
+                ChangePanel("EmpresaEB", new WinEB());
                 break;
             }
             case 4: {
-                ChangePanel("Q1", new WinQuestionario1());
+                ChangePanel("EmpresaEP", new WinEspecieProcessada());
                 break;
             }
             case 5: {
-                ChangePanel("EmpresaEP", new WinProblemas());
+                ChangePanel("Q1", new WinQuestionario1());
                 break;
             }
             case 6: {
-                ChangePanel("EmpresaEP", new WinQuestionario2());
+                ChangePanel("EmpresaEP", new WinProblemas());
                 break;
             }
             case 7: {
-                ChangePanel("EmpresaEP", new WinImposto());
+                ChangePanel("EmpresaEP", new WinQuestionario2());
                 break;
             }
             case 8: {
-                ChangePanel("EmpresaEP", new WinQuestionario3());
+                ChangePanel("EmpresaEP", new WinImposto());
                 break;
             }
             case 9: {
-                ChangePanel("EmpresaEP", new WinQuestionario4());
+                ChangePanel("EmpresaEP", new WinQuestionario3());
                 break;
             }
             case 10: {
-                ChangePanel("EmpresaEP", new WinDetalheFrota());
+                ChangePanel("EmpresaEP", new WinQuestionario4());
                 break;
             }
             case 11: {
-                ChangePanel("EmpresaEP", new EmpresaMaterial());
+                ChangePanel("EmpresaEP", new WinDetalheFrota());
                 break;
             }
             case 12: {
-                ChangePanel("EmpresaEP", new WinTripulacao());
+                ChangePanel("EmpresaEP", new EmpresaMaterial());
                 break;
             }
             case 13: {
-                ChangePanel("EmpresaEP", new WinQuestionario5());
+                ChangePanel("EmpresaEP", new WinTripulacao());
                 break;
             }
             case 14: {
-                ChangePanel("EmpresaEP", new WinEmpresaPescador());
+                ChangePanel("EmpresaEP", new WinQuestionario5());
                 break;
             }
             case 15: {
-               ChangePanel("EmpresaEP", new WinQuestionario6());
+                ChangePanel("EmpresaEP", new WinEmpresaPescador());
                 break;
             }
             case 16: {
-                ChangePanel("EmpresaEP", new WinEmpresaMercado());
+               ChangePanel("EmpresaEP", new WinQuestionario6());
                 break;
             }
             case 17: {
+                ChangePanel("EmpresaEP", new WinEmpresaMercado());
+                break;
+            }
+            case 18: {
                 ChangePanel("EmpresaEP", new WinQuestionario7());
                 break;
             }

@@ -10,9 +10,7 @@
  */
 package br.com.view;
 
-import br.com.dao.DAOEmpresa;
 import br.com.dao.DAOQuestionario2;
-import br.com.pojo.Empresa;
 import br.com.pojo.EmpresaQuestionario2;
 import br.com.util.JMoneyField;
 import br.com.util.Mensagens;
@@ -20,13 +18,8 @@ import br.com.util.MyUtil;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.util.List;
-import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -35,15 +28,34 @@ import javax.swing.table.DefaultTableModel;
 public class WinQuestionario2 extends javax.swing.JPanel {
 
     private EmpresaQuestionario2 empresaQuestionario2;
-    private DefaultTableModel model;
-    private List<Empresa> empresas;
 
     public WinQuestionario2() {
         initComponents();
-        empresas = new DAOEmpresa().getListWithQuery("select * from Empresa");
-        MyUtil.refresComboBox(empresas, cbEmpresaQuestionario2);
         initAction();
         initiActionCmd(tabQuestionario2);
+        refresh();
+
+    }
+
+    private void refresh() {
+
+        if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0) {
+            empresaQuestionario2 =
+                    new DAOQuestionario2().getObjectWithQuery("select * from EmpresaQuestionario2" +
+                    " where empresaId = " +
+                    WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
+            if (empresaQuestionario2 != null) {
+                setQuestionario2ForPanel(empresaQuestionario2);
+            } else {
+                clearTab(tabQuestionario2);
+                bgQuestao15.clearSelection();
+                bgQuestao21.clearSelection();
+            }
+        } else {
+            clearTab(tabQuestionario2);
+            bgQuestao15.clearSelection();
+            bgQuestao21.clearSelection();
+        }
     }
 
     private void initiActionCmd(JPanel obj) {
@@ -61,30 +73,30 @@ public class WinQuestionario2 extends javax.swing.JPanel {
 
 
 
-         try {
+        try {
             String questao15 = bgQuestao15.getSelection().getActionCommand();
-        String questao16 = tfQuestao16.getText();
-        String questao17 = tfQuestao17.getText();
-        String questao18 = tfQuestao18.getText();
-        String questao19 = tfQuestao19.getText();
-        String questao20 = tfQuestao20.getText();
-        String questao21 = bgQuestao21.getSelection().getActionCommand();
-        String questao22 = tfQuestao22.getText();
+            String questao16 = tfQuestao16.getText();
+            String questao17 = tfQuestao17.getText();
+            String questao18 = tfQuestao18.getText();
+            String questao19 = tfQuestao19.getText();
+            String questao20 = tfQuestao20.getText();
+            String questao21 = bgQuestao21.getSelection().getActionCommand();
+            String questao22 = tfQuestao22.getText();
 
-        if (empresaQuestionario2 != null) {
+            if (empresaQuestionario2 != null) {
 
-            empresaQuestionario2.all(questao15, questao16, questao17, questao18,
+                empresaQuestionario2.all(questao15, questao16, questao17, questao18,
+                        questao19, questao20, questao21, questao22,
+                        WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
+                return empresaQuestionario2;
+            }
+
+            EmpresaQuestionario2 eq = new EmpresaQuestionario2();
+            eq.all(questao15, questao16, questao17, questao18,
                     questao19, questao20, questao21, questao22,
-                    empresas.get(cbEmpresaQuestionario2.getSelectedIndex()-1).getId());
-            return empresaQuestionario2;
-        }
+                    WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
 
-        EmpresaQuestionario2 eq = new EmpresaQuestionario2();
-        eq.all(questao15, questao16, questao17, questao18,
-                questao19, questao20, questao21, questao22,
-                empresas.get(cbEmpresaQuestionario2.getSelectedIndex()-1).getId());
-
-        return eq;
+            return eq;
         } catch (Exception e) {
 
             Mensagens.showMessageErroPreencherDados();
@@ -106,29 +118,27 @@ public class WinQuestionario2 extends javax.swing.JPanel {
 
     }
 
-    private void actionEmpresaQuestionario2(ActionEvent e) {
+    private void action(ActionEvent e) {
 
         String cmd = e.getActionCommand();
-        if(cbEmpresaQuestionario2.getSelectedIndex()>0){
-        if (cmd.equalsIgnoreCase("Cadastrar")) {
-            if(empresaQuestionario2==null){
-            empresaQuestionario2 = getQuestionario2OfPanel();
-            new DAOQuestionario2().cadastrar(empresaQuestionario2);}
-            else Mensagens.showMessageNaoCadastrar();
-        } else if (cmd.equalsIgnoreCase("Atualizar")) {
-            empresaQuestionario2 = getQuestionario2OfPanel();
-            new DAOQuestionario2().atualizar(empresaQuestionario2);
+        if (WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() > 0) {
+            if (cmd.equalsIgnoreCase("Salvar")) {
+                if (empresaQuestionario2 == null) {
+                    empresaQuestionario2 = getQuestionario2OfPanel();
+                    new DAOQuestionario2().cadastrar(empresaQuestionario2);
+                } else {
+                    empresaQuestionario2 = getQuestionario2OfPanel();
+                    new DAOQuestionario2().atualizar(empresaQuestionario2);
+                    // Mensagens.showMessageNaoCadastrar();
+                }
+            } else if (cmd.equalsIgnoreCase("Atualizar")) {
+            }
+          
+            empresaQuestionario2 = null;
+
         }
-        clearTab(tabQuestionario2);
-        bgQuestao15.clearSelection();
-        bgQuestao21.clearSelection();
-        empresaQuestionario2 = null;
-        cbEmpresaQuestionario2.setSelectedIndex(0);
-        }
-
-
-
     }
+
     private void clearTab(JPanel jPanel) {
         MyUtil.FieldsClear(jPanel);
     }
@@ -136,49 +146,19 @@ public class WinQuestionario2 extends javax.swing.JPanel {
     private void initAction() {
 
         /*6º TAB*/
-        cbEmpresaQuestionario2.addItemListener(new ItemListener() {
-
-            public void itemStateChanged(ItemEvent e) {
-                if (e.getStateChange() == ItemEvent.SELECTED) {
-                    if (cbEmpresaQuestionario2.getSelectedIndex() > 0) {
-                        empresaQuestionario2 =
-                                new DAOQuestionario2().getObjectWithQuery("select * from EmpresaQuestionario2" +
-                                " where empresaId = " +
-                                empresas.get(cbEmpresaQuestionario2.getSelectedIndex()-1).getId());
-                        if (empresaQuestionario2 != null) {
-                            setQuestionario2ForPanel(empresaQuestionario2);
-                        } else {
-                            clearTab(tabQuestionario2);
-                            bgQuestao15.clearSelection();
-                            bgQuestao21.clearSelection();
-                        }
-                    }else
-                     {
-                         clearTab(tabQuestionario2);
-                            bgQuestao15.clearSelection();
-                            bgQuestao21.clearSelection();
-                    }
-                }
-            }
-        });
         btNovoQuestionario2.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                actionEmpresaQuestionario2(e);
+                action(e);
             }
         });
         btCadastrarQuestionario2.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                actionEmpresaQuestionario2(e);
+                action(e);
             }
         });
-        btAtualizarQuestionario2.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent e) {
-                actionEmpresaQuestionario2(e);
-            }
-        });
     }
 
     /** This method is called from within the constructor to
@@ -196,13 +176,10 @@ public class WinQuestionario2 extends javax.swing.JPanel {
         tabQuestionario2 = new javax.swing.JPanel();
         panelCrudEmpresa5 = new javax.swing.JPanel();
         btCadastrarQuestionario2 = new javax.swing.JButton();
-        btAtualizarQuestionario2 = new javax.swing.JButton();
         jLabel43 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
         btNovoQuestionario2 = new javax.swing.JButton();
-        jLabel45 = new javax.swing.JLabel();
-        cbEmpresaQuestionario2 = new javax.swing.JComboBox();
         jLabel12 = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
@@ -234,20 +211,13 @@ public class WinQuestionario2 extends javax.swing.JPanel {
 
         panelCrudEmpresa5.setBackground(new java.awt.Color(255, 255, 255));
 
-        btCadastrarQuestionario2.setText("Cadastrar");
+        btCadastrarQuestionario2.setText("Salvar");
         btCadastrarQuestionario2.setToolTipText("Realiza a Confirmação do Pagamento definindo exatamente o dia de pagamento."); // NOI18N
         btCadastrarQuestionario2.setFocusable(false);
         btCadastrarQuestionario2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btCadastrarQuestionario2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        btAtualizarQuestionario2.setText("Atualizar");
-        btAtualizarQuestionario2.setToolTipText("Atualiza Valor e Data de pagamento da mensalidade");
-
         btNovoQuestionario2.setText("Novo");
-
-        jLabel45.setText("Empresa");
-
-        cbEmpresaQuestionario2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel12.setFont(new java.awt.Font("Verdana", 1, 11));
         jLabel12.setText("Fabrica de Gelo");
@@ -272,17 +242,11 @@ public class WinQuestionario2 extends javax.swing.JPanel {
                             .addGroup(panelCrudEmpresa5Layout.createSequentialGroup()
                                 .addComponent(btNovoQuestionario2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btCadastrarQuestionario2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btAtualizarQuestionario2)
-                                .addGap(31, 31, 31)
-                                .addComponent(jLabel45)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cbEmpresaQuestionario2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(btCadastrarQuestionario2))))
                     .addGroup(panelCrudEmpresa5Layout.createSequentialGroup()
                         .addGap(255, 255, 255)
                         .addComponent(jLabel12)))
-                .addContainerGap(383, Short.MAX_VALUE))
+                .addContainerGap(526, Short.MAX_VALUE))
         );
         panelCrudEmpresa5Layout.setVerticalGroup(
             panelCrudEmpresa5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -296,11 +260,8 @@ public class WinQuestionario2 extends javax.swing.JPanel {
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelCrudEmpresa5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btAtualizarQuestionario2)
                     .addComponent(btCadastrarQuestionario2)
-                    .addComponent(btNovoQuestionario2)
-                    .addComponent(jLabel45)
-                    .addComponent(cbEmpresaQuestionario2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btNovoQuestionario2))
                 .addContainerGap())
         );
 
@@ -480,14 +441,11 @@ public class WinQuestionario2 extends javax.swing.JPanel {
     private javax.swing.JScrollPane ScrollQuestionario2;
     private javax.swing.ButtonGroup bgQuestao15;
     private javax.swing.ButtonGroup bgQuestao21;
-    private javax.swing.JButton btAtualizarQuestionario2;
     private javax.swing.JButton btCadastrarQuestionario2;
     private javax.swing.JButton btNovoQuestionario2;
-    private javax.swing.JComboBox cbEmpresaQuestionario2;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;

@@ -174,13 +174,7 @@
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Component id="btCadastrarEmpresaProblema" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="btAtualizarEmpresaProblema" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Component id="btExcluirEmpresaProblema" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-                                              <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                              <Component id="cbEmpresaProblema" min="-2" pref="189" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="jLabel50" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -192,7 +186,7 @@
                               <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="235" max="32767" attributes="0"/>
+                      <EmptySpace pref="393" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -210,12 +204,9 @@
                       </Group>
                       <EmptySpace pref="7" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btExcluirEmpresaProblema" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btAtualizarEmpresaProblema" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btCadastrarEmpresaProblema" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btNovoEmpresaProblema" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cbEmpresaProblema" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel38" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btExcluirEmpresaProblema" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -225,17 +216,11 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="btCadastrarEmpresaProblema">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cadastrar"/>
+                <Property name="text" type="java.lang.String" value="Salvar"/>
                 <Property name="toolTipText" type="java.lang.String" value="Realiza a Confirma&#xe7;&#xe3;o do Pagamento definindo exatamente o dia de pagamento." noResource="true"/>
                 <Property name="focusable" type="boolean" value="false"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
                 <Property name="verticalTextPosition" type="int" value="3"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="btAtualizarEmpresaProblema">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Atualizar"/>
-                <Property name="toolTipText" type="java.lang.String" value="Atualiza Valor e Data de pagamento da mensalidade"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel36">
@@ -254,29 +239,12 @@
                 <Property name="text" type="java.lang.String" value="Novo"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="cbEmpresaProblema">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
-                  </StringArray>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel38">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Empresa"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel12">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Verdana" size="11" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Dados Empresa"/>
+                <Property name="text" type="java.lang.String" value="Question&#xe1;rio de Problemas"/>
               </Properties>
             </Component>
           </SubComponents>
