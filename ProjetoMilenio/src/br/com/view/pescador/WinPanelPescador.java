@@ -22,7 +22,6 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.List;
 import javax.swing.JOptionPane;
-import javax.swing.JPopupMenu;
 
 /**
  *
@@ -98,7 +97,7 @@ public class WinPanelPescador extends javax.swing.JPanel {
             } else if (cmd.equalsIgnoreCase("Atualizar")) {
                 pescador = getpescadorOfPanel();
                 new DAOPescador().atualizar(pescador);
-            } else {
+            } else  if (cmd.equalsIgnoreCase("Novo")){
                 MyUtil.enableButtom(btCadastrar);
                 MyUtil.disableButtom(btExcluir, btAtualizar);
             }
