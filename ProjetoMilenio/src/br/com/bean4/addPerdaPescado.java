@@ -93,13 +93,19 @@ public class addPerdaPescado extends javax.swing.JFrame {
 
         jLabel6.setText("Especie:");
 
+        cbEspecie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbEspecieActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
@@ -114,8 +120,7 @@ public class addPerdaPescado extends javax.swing.JFrame {
                             .addComponent(tfOutros, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tfDestinoPeixe, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tfEstimativa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                            .addComponent(jbPrincipaisPerdas))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE))
+                            .addComponent(jbPrincipaisPerdas)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addComponent(jLabel1)))
@@ -158,12 +163,12 @@ public class addPerdaPescado extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbPrincipaisPerdasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPrincipaisPerdasActionPerformed
-            try {
+        try {
             conexao.execute("select * FROM mercado_addespeciecomercializada ");
             cbEspecie.removeAllItems();
             while (conexao.resultSet.next()){
                 cbEspecie.addItem(conexao.resultSet.getString("especie"));
-                //System.out.println(conexao.resultSet.getString("nome"));
+                System.out.println(conexao.resultSet.getString("nome"));
             }
         }catch (SQLException ex) {
              System.out.println(ex);
@@ -171,7 +176,7 @@ public class addPerdaPescado extends javax.swing.JFrame {
          try {
             conexao.execute("select * from mercado_perdapescado");
             conexao.resultSet.first();
-           // System.out.println(conexao.resultSet.getString("nome"));
+            System.out.println(conexao.resultSet.getString("nome"));
         } catch (SQLException e) {
             System.out.println(e);
         }
@@ -194,6 +199,10 @@ public class addPerdaPescado extends javax.swing.JFrame {
             tfOutros.setEditable(false);
         }
     }//GEN-LAST:event_cbCausaPerdaItemStateChanged
+
+    private void cbEspecieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEspecieActionPerformed
+       
+    }//GEN-LAST:event_cbEspecieActionPerformed
 
     /**
     * @param args the command line arguments
