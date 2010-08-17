@@ -148,8 +148,6 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         jScrollPane7 = new javax.swing.JScrollPane();
         jbDadosEspecie = new javax.swing.JTable();
         jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        cbEspecie = new javax.swing.JComboBox();
         jLabel43 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
@@ -162,8 +160,6 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         jScrollPane10 = new javax.swing.JScrollPane();
         tpQuestao3 = new javax.swing.JTextArea();
         jLabel47 = new javax.swing.JLabel();
-        jScrollPane11 = new javax.swing.JScrollPane();
-        tpQuestao4 = new javax.swing.JEditorPane();
         jLabel48 = new javax.swing.JLabel();
         jScrollPane12 = new javax.swing.JScrollPane();
         tpQuestao5 = new javax.swing.JTextPane();
@@ -216,6 +212,8 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         jbAdd3 = new javax.swing.JButton();
         jbExcluir3 = new javax.swing.JButton();
         jbAtualizacao3 = new javax.swing.JButton();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        tpquestao4 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -335,13 +333,13 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
         jbOrigemProduto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "id", "Empresa ", "Pescadores diverso", "Cooperativa", "outros"
+                "id", "Produto", "Empresa ", "Pescadores diverso", "Cooperativa", "outros"
             }
         ));
         jScrollPane6.setViewportView(jbOrigemProduto);
@@ -371,8 +369,6 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
         jLabel41.setText("Quais as principais perdas de pescado em função da :");
 
-        jLabel42.setText("Espécie:");
-
         jLabel43.setFont(new java.awt.Font("Tahoma", 1, 24));
         jLabel43.setText("Percepção Ambiental e Perspectivas:");
 
@@ -391,8 +387,6 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         jScrollPane10.setViewportView(tpQuestao3);
 
         jLabel47.setText("Você acredita que as mudanças no clima podem influenciar nas pesca? Como?");
-
-        jScrollPane11.setViewportView(tpQuestao4);
 
         jLabel48.setText("O que está acontecendo com o tamanho e a quantidade de pescado ?");
 
@@ -523,23 +517,15 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
         jbPerdaPescado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "id Perda pescado", "Causa da Perda", "Estimativa de preço(%) ", "Destino do peixe perdido"
+                "id Perda pescado", "Especie", "Causa da Perda", "Estimativa de preço(%) ", "Destino do peixe perdido"
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                true, true, true, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         jScrollPane4.setViewportView(jbPerdaPescado);
 
         jbAdd1.setText("Add");
@@ -604,6 +590,10 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                 jbAtualizacao3ActionPerformed(evt);
             }
         });
+
+        tpquestao4.setColumns(20);
+        tpquestao4.setRows(5);
+        jScrollPane11.setViewportView(tpquestao4);
 
         javax.swing.GroupLayout AtualizarLayout = new javax.swing.GroupLayout(Atualizar);
         Atualizar.setLayout(AtualizarLayout);
@@ -813,10 +803,6 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                         .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel41)
                             .addGroup(AtualizarLayout.createSequentialGroup()
-                                .addComponent(jLabel42)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cbEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(AtualizarLayout.createSequentialGroup()
                                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -833,11 +819,9 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                     .addComponent(jLabel47)
                     .addComponent(jLabel48)
                     .addComponent(jLabel49)
-                    .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(AtualizarLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel50))
-                    .addComponent(jScrollPane14, javax.swing.GroupLayout.DEFAULT_SIZE, 22106, Short.MAX_VALUE)
                     .addGroup(AtualizarLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel51)
@@ -848,26 +832,30 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                         .addComponent(jLabel52))
                     .addGroup(AtualizarLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(AtualizarLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jLabel53))
-                    .addGroup(AtualizarLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel54)
-                    .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane10, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane11, javax.swing.GroupLayout.Alignment.LEADING, 0, 0, Short.MAX_VALUE)
-                        .addComponent(jScrollPane12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, AtualizarLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jScrollPane11))
+                        .addComponent(jScrollPane13, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, AtualizarLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jScrollPane16, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jScrollPane15, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jScrollPane14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE))))
                     .addGroup(AtualizarLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel44, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap())
+                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jScrollPane12, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jScrollPane10, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(jLabel44))))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
         AtualizarLayout.setVerticalGroup(
             AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1044,42 +1032,14 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                                 .addComponent(jbAtualizar2)))))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel41)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel42)
-                    .addComponent(cbEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(26, 26, 26)
                 .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AtualizarLayout.createSequentialGroup()
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel43)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel44)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel45)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel46)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel47)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel48)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel49)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel50))
+                        .addComponent(jLabel44))
                     .addGroup(AtualizarLayout.createSequentialGroup()
                         .addComponent(jbAdd3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1087,8 +1047,32 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                         .addGap(14, 14, 14)
                         .addComponent(jbAtualizacao3)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel45)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel46)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel47)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17)
+                .addComponent(jLabel48)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel49)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel50)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7)
                 .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel51)
                     .addComponent(ckbCriancaEnvolvidas))
@@ -1104,7 +1088,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                 .addComponent(jLabel54)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(96, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(Atualizar);
@@ -1113,13 +1097,13 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 792, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 792, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1624, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1624, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -1193,7 +1177,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
             tpQuestao1.setText("");
             tpQuestao2.setText("");
             tpQuestao3.setText("");
-            tpQuestao4.setText("");
+            tpquestao4.setText("");
             tpQuestao5.setText("");
             tpQuestao6.setText("");
             tpQuestao7.setText("");
@@ -1317,7 +1301,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
               tpQuestao1.getText()+"','"+
               tpQuestao2.getText()+"','"+
               tpQuestao3.getText()+"','"+
-              tpQuestao4.getText()+"','"+
+              tpquestao4.getText()+"','"+
               tpQuestao5.getText()+"','"+
               tpQuestao6.getText()+"','"+
               tpQuestao7.getText()+"','"+
@@ -1371,8 +1355,8 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
     private void btAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAddActionPerformed
        
-            
-            new addMaterial(id_mercado).setVisible(true);
+          
+                    new addMaterial(id_mercado).setVisible(true);
                
     }//GEN-LAST:event_btAddActionPerformed
 
@@ -1466,7 +1450,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
              "questao1='"+tpQuestao1.getText()+"','"+
              "questao2='"+tpQuestao2.getText()+"','"+
              "questao3='"+tpQuestao3.getText()+"','"+
-             "questao4='"+tpQuestao4.getText()+"','"+
+             "questao4='"+tpquestao4.getText()+"','"+
              "questao5='"+tpQuestao5.getText()+"','"+
              "questap6='"+tpQuestao6.getText()+"','"+
              "questao7='"+tpQuestao7.getText()+"','"+
@@ -1502,6 +1486,11 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                 if (conexao_jtable.salvar(sql)) {
                     System.out.println("Exclusão realizada com sucesso");
 
+                     conexao_jtable.execute("select * from mercado_addmaterial where id_mercado="
+                         +id_mercado);
+        preencher_jtable();
+
+
 //                    exibir_L_E_N_I(0);exibir_L_E_N_I(1);exibir_L_E_N_I(2);exibir_L_E_N_I(3);
 
                 }else{
@@ -1531,10 +1520,15 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
          
         String sql;
 
-        sql = "delete from mercado_addproduto Where id_produto =" + jtMaterialUtilizado.getValueAt(jtMaterialUtilizado.getSelectedRow(),0);
+        sql = "delete from mercado_addproduto Where id_produto =" + jbOrigemProduto.getValueAt(jbOrigemProduto.getSelectedRow(),0);
 
                 if (conexao_jtable.salvar(sql)) {
                     System.out.println("Exclusão realizada com sucesso");
+
+                      conexao_jtable.execute("select * from mercado_addproduto where id_mercado="
+                               +id_mercado);
+                     preencher_jbOrigemProduto();
+
 
 //                    exibir_L_E_N_I(0);exibir_L_E_N_I(1);exibir_L_E_N_I(2);exibir_L_E_N_I(3);
 
@@ -1547,10 +1541,10 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
     }//GEN-LAST:event_jbExcluir1ActionPerformed
 
     private void jbAtualizar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtualizar1ActionPerformed
-        conexao_jtable.execute("select * from mercado_addproduto where id_produto="
-                            +id_mercado);
-        preencher_jtable();
-        conexao_jtable.execute("select * from mercado_cadastro");
+        conexao_jtable.execute("select * from mercado_addproduto where id_mercado="
+                               +id_mercado);
+        preencher_jbOrigemProduto();
+       
     }//GEN-LAST:event_jbAtualizar1ActionPerformed
 
     private void jbAdd2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAdd2ActionPerformed
@@ -1560,10 +1554,13 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
     private void jbExcluir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluir2ActionPerformed
            String sql;
 
-        sql = "delete from mercado_addespeciecomercializada Where id_especies_comercializadas =" + jtMaterialUtilizado.getValueAt(jtMaterialUtilizado.getSelectedRow(),0);
+        sql = "delete from mercado_addespeciecomercializada Where id_especies_comercializadas =" +jbDadosEspecie.getValueAt(jbDadosEspecie.getSelectedRow(),0);
 
                 if (conexao_jtable.salvar(sql)) {
                     System.out.println("Exclusão realizada com sucesso");
+                     conexao_jtable.execute("select * from mercado_addespeciecomercializada where  id_mercado="
+                            +id_mercado);
+                    preencher_jbDadosEspecie();
 
 //                    exibir_L_E_N_I(0);exibir_L_E_N_I(1);exibir_L_E_N_I(2);exibir_L_E_N_I(3);
 
@@ -1575,10 +1572,10 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
     }//GEN-LAST:event_jbExcluir2ActionPerformed
 
     private void jbAtualizar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtualizar2ActionPerformed
-         conexao_jtable.execute("select * from mercado_addespeciecomercializada where  id_especies_comercializadas="
+         conexao_jtable.execute("select * from mercado_addespeciecomercializada where  id_mercado="
                             +id_mercado);
-        preencher_jtable();
-        conexao_jtable.execute("select * from mercado_addespeciecomercializada");
+        preencher_jbDadosEspecie();
+       
     }//GEN-LAST:event_jbAtualizar2ActionPerformed
 
     private void jbAdd3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAdd3ActionPerformed
@@ -1588,10 +1585,14 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
     private void jbExcluir3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluir3ActionPerformed
           String sql;
 
-        sql = "delete from mercado_addperdapescado Where id_perda_pescado =" + jtMaterialUtilizado.getValueAt(jtMaterialUtilizado.getSelectedRow(),0);
+        sql = "delete from mercado_addperdapescado Where id_perda_pescado =" + jbPerdaPescado.getValueAt(jbPerdaPescado.getSelectedRow(),0);
 
                 if (conexao_jtable.salvar(sql)) {
                     System.out.println("Exclusão realizada com sucesso");
+                      conexao_jtable.execute("select * from mercado_addperdapescado where  id_mercado="
+                            +id_mercado);
+                     preencher_jbPerdaPescado();
+
 
 //                    exibir_L_E_N_I(0);exibir_L_E_N_I(1);exibir_L_E_N_I(2);exibir_L_E_N_I(3);
 
@@ -1602,20 +1603,11 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
     }//GEN-LAST:event_jbExcluir3ActionPerformed
 
     private void jbAtualizacao3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtualizacao3ActionPerformed
-         conexao_jtable.execute("select * from mercado_addperdapescado where  id_perda_pescado="
+         conexao_jtable.execute("select * from mercado_addperdapescado where  id_mercado="
                             +id_mercado);
-        preencher_jtable();
-        conexao_jtable.execute("select * from mercado_addperdapescado");
-
-         try {
-            conexao.execute("select * FROM mercado_addespecie where pai='Pará'");
-            while (conexao.resultSet.next()){
-                cbEspecie.addItem(conexao.resultSet.getString("especie"));
-                //System.out.println(conexao.resultSet.getString("nome"));
-            }
-        }catch (SQLException ex) {
-             System.out.println(ex);
-        }
+        preencher_jbPerdaPescado();
+      
+    
 
     }//GEN-LAST:event_jbAtualizacao3ActionPerformed
 
@@ -1644,7 +1636,6 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
     private javax.swing.JButton btAtualizar;
     private javax.swing.JButton btExcluir;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JComboBox cbEspecie;
     private javax.swing.JComboBox cbEstadoCivil;
     private javax.swing.JComboBox cbLocalMoradia;
     private javax.swing.JComboBox cbMunicipio;
@@ -1695,7 +1686,6 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
@@ -1771,12 +1761,12 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
     private javax.swing.JTextPane tpQuestao10;
     private javax.swing.JEditorPane tpQuestao2;
     private javax.swing.JTextArea tpQuestao3;
-    private javax.swing.JEditorPane tpQuestao4;
     private javax.swing.JTextPane tpQuestao5;
     private javax.swing.JTextPane tpQuestao6;
     private javax.swing.JTextPane tpQuestao7;
     private javax.swing.JTextPane tpQuestao9;
     private javax.swing.JTextPane tpRendaFamiliar;
+    private javax.swing.JTextArea tpquestao4;
     private javax.swing.JTextPane tpquestao8;
     // End of variables declaration//GEN-END:variables
 
@@ -1808,7 +1798,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
             tpQuestao1.setText(conexao.resultSet.getString("Questao1"));
             tpQuestao2.setText(conexao.resultSet.getString("Questao2"));
             tpQuestao3.setText(conexao.resultSet.getString("Questao3"));
-            tpQuestao4.setText(conexao.resultSet.getString("Questao4"));
+            tpquestao4.setText(conexao.resultSet.getString("Questao4"));
             tpQuestao5.setText(conexao.resultSet.getString("Questao5"));
             tpQuestao6.setText(conexao.resultSet.getString("Questao6"));
             tpQuestao7.setText(conexao.resultSet.getString("Questao7"));
@@ -1897,15 +1887,16 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         }
 }
 
-     public void preencher_jbOrigemProduto(JTable table){
+     public void preencher_jbOrigemProduto(){
        jbOrigemProduto.getColumnModel().getColumn(0).setMaxWidth(0);
        jbOrigemProduto.getColumnModel().getColumn(0).setPreferredWidth(0);
        jbOrigemProduto.getColumnModel().getColumn(1).setPreferredWidth(40);
        jbOrigemProduto.getColumnModel().getColumn(2).setPreferredWidth(10);
        jbOrigemProduto.getColumnModel().getColumn(3).setPreferredWidth(10);
        jbOrigemProduto.getColumnModel().getColumn(4).setPreferredWidth(10);
+       jbOrigemProduto.getColumnModel().getColumn(5).setPreferredWidth(10);
 
-        DefaultTableModel modelo = (DefaultTableModel)table.getModel();
+        DefaultTableModel modelo = (DefaultTableModel)jbOrigemProduto.getModel();
         modelo.setNumRows(0);//limpa o JTable;
 
         try{
@@ -1926,7 +1917,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
     }
 
-          public void preencher_jbDadosEspecie(){
+        public void preencher_jbDadosEspecie(){
         jbDadosEspecie.getColumnModel().getColumn(0).setMaxWidth(0);
         jbDadosEspecie.getColumnModel().getColumn(0).setPreferredWidth(0);
         jbDadosEspecie.getColumnModel().getColumn(1).setPreferredWidth(10);
@@ -1943,6 +1934,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                 modelo.addRow(new Object[]{conexao_jtable.resultSet.getString("id_especies_comercializadas"),
                                            conexao_jtable.resultSet.getString("especie"),
                                            conexao_jtable.resultSet.getString("quantidade_fresco"),
+                                           conexao_jtable.resultSet.getString("quantidade_salgado"),
                                            conexao_jtable.resultSet.getString("preco_fresco"),
                                            conexao_jtable.resultSet.getString("preco_salgado")});
 
@@ -1951,6 +1943,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
            System.out.println(erro);
         }
     }
+
    public void preencher_jbPerdaPescado(){
         jbPerdaPescado.getColumnModel().getColumn(0).setMaxWidth(0);
         jbPerdaPescado.getColumnModel().getColumn(0).setPreferredWidth(0);
@@ -1964,7 +1957,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         try{
             while (conexao_jtable.resultSet.next())
                 modelo.addRow(new Object[]{conexao_jtable.resultSet.getString("id_perda_pescado"),
-                                           conexao_jtable.resultSet.getString("outros"),
+                                           conexao_jtable.resultSet.getString("especie"),
                                            conexao_jtable.resultSet.getString("causa_perda"),
                                            conexao_jtable.resultSet.getString("estimativa_da_perda"),
                                            conexao_jtable.resultSet.getString("destino_do_peixe_perdido")});
