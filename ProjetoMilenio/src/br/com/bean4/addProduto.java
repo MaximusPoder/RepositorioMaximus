@@ -65,7 +65,12 @@ public class addProduto extends javax.swing.JFrame {
 
         jLabel2.setText("Produto:");
 
-        cbProduto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Peixe Fresco", "Peixe Processado", "Peixe Salgado", "Outro" }));
+        cbProduto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Peixe Fresco", "Peixe Processado", "Peixe Salgado", "Outro Produto" }));
+        cbProduto.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbProdutoItemStateChanged(evt);
+            }
+        });
         cbProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbProdutoActionPerformed(evt);
@@ -74,6 +79,7 @@ public class addProduto extends javax.swing.JFrame {
 
         jLabel3.setText("Outro produto:");
 
+        tfOutroProduto.setEditable(false);
         tfOutroProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfOutroProdutoActionPerformed(evt);
@@ -205,11 +211,15 @@ public class addProduto extends javax.swing.JFrame {
     }//GEN-LAST:event_jbAddActionPerformed
 
     private void cbProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbProdutoActionPerformed
-        if (cbProduto.getSelectedItem()== "outros"){
-           tfOutroProduto.setEditable(true);
+        if (cbProduto.getSelectedItem()== "Outro Produto"){
+        tfOutroProduto.setEditable(true);
             }else
-                tfOutroProduto.setEditable(false);
+        tfOutroProduto.setEditable(false);
     }//GEN-LAST:event_cbProdutoActionPerformed
+
+    private void cbProdutoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbProdutoItemStateChanged
+
+    }//GEN-LAST:event_cbProdutoItemStateChanged
 
     /**
     * @param args the command line arguments

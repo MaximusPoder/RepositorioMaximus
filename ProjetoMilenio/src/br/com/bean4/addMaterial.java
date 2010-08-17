@@ -88,7 +88,7 @@ public class addMaterial extends javax.swing.JFrame {
 
         jLabel7.setText("Outro Mat.:");
 
-        cbMatMaterial.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Gelo", "Isopor", "Energia", "Taxa de Aluguel" }));
+        cbMatMaterial.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Gelo", "Isopor", "Energia", "Taxa de Aluguel", "Outros Materias" }));
         cbMatMaterial.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cbMatMaterialItemStateChanged(evt);
@@ -205,7 +205,7 @@ public class addMaterial extends javax.swing.JFrame {
     }//GEN-LAST:event_cbMatMaterialActionPerformed
 
     private void cbMatMaterialItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbMatMaterialItemStateChanged
-        if (cbMatMaterial.getSelectedItem() == "Outro") {
+        if (cbMatMaterial.getSelectedItem() == "Outros Materias") {
             tfMatOutroMat.setEditable(true);
         } else {
             tfMatOutroMat.setEditable(false);

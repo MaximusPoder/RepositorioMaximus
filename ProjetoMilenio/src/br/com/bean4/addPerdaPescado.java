@@ -25,13 +25,17 @@ public class addPerdaPescado extends javax.swing.JFrame {
 
 
     /** Creates new form addPerdaPescado */
-    public addPerdaPescado(String id_especies_comercializadas) {
+    public addPerdaPescado(String id_perda_pescado) {
         initComponents();
         conexao = new Conexao();
         conexao.conecta("mil_interface");
-        System.out.println("especies_comercializadas");
-        idd_perda_pescado =id_especies_comercializadas;
+        System.out.println("perda_pescado");
+        idd_perda_pescado =id_perda_pescado;
 
+    }
+
+    private addPerdaPescado() {
+        throw new UnsupportedOperationException("Not yet implemented");
     }
 
     /** This method is called from within the constructor to
@@ -51,10 +55,12 @@ public class addPerdaPescado extends javax.swing.JFrame {
         tfEstimativa = new javax.swing.JTextField();
         tfDestinoPeixe = new javax.swing.JTextField();
         jbPrincipaisPerdas = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        tfOutros = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24));
         jLabel1.setText("Principais Perdas de Pescado");
 
         jLabel2.setText("Causa da perda: ");
@@ -63,7 +69,12 @@ public class addPerdaPescado extends javax.swing.JFrame {
 
         jLabel4.setText("Destino do Peixe:");
 
-        cbCausaPerda.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Deteriorização", "Falta de Mercado", "Má conservação", "Transporte" }));
+        cbCausaPerda.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Deteriorização", "Falta de Mercado", "Má conservação", "Transporte", "Outras Perdas" }));
+        cbCausaPerda.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbCausaPerdaItemStateChanged(evt);
+            }
+        });
 
         jbPrincipaisPerdas.setText("Add");
         jbPrincipaisPerdas.addActionListener(new java.awt.event.ActionListener() {
@@ -71,6 +82,10 @@ public class addPerdaPescado extends javax.swing.JFrame {
                 jbPrincipaisPerdasActionPerformed(evt);
             }
         });
+
+        jLabel5.setText("Outros:");
+
+        tfOutros.setEditable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -85,18 +100,25 @@ public class addPerdaPescado extends javax.swing.JFrame {
                         .addGap(24, 24, 24)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addGap(18, 18, 18)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel3))
+                        .addGap(54, 54, 54)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfDestinoPeixe, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfEstimativa, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbCausaPerda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(18, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(294, Short.MAX_VALUE)
-                .addComponent(jbPrincipaisPerdas)
-                .addGap(73, 73, 73))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(tfDestinoPeixe, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(1, 1, 1))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(tfOutros, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addComponent(cbCausaPerda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(9, 9, 9))))
+                                .addGap(28, 28, 28)
+                                .addComponent(jbPrincipaisPerdas))
+                            .addComponent(tfEstimativa, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,17 +129,20 @@ public class addPerdaPescado extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(cbCausaPerda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfOutros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(tfEstimativa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfEstimativa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfDestinoPeixe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
-                    .addComponent(tfDestinoPeixe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jbPrincipaisPerdas)
-                .addContainerGap(21, Short.MAX_VALUE))
+                    .addComponent(jbPrincipaisPerdas))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
@@ -125,23 +150,30 @@ public class addPerdaPescado extends javax.swing.JFrame {
 
     private void jbPrincipaisPerdasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPrincipaisPerdasActionPerformed
             try {
-            conexao.execute("select * from mercado_addespeciecomercializada");
+            conexao.execute("select * from mercado_perdapescado");
             conexao.resultSet.first();
            // System.out.println(conexao.resultSet.getString("nome"));
         } catch (SQLException e) {
             System.out.println(e);
         }
 
-        String sqlinsert = "insert into mercado_addespeciecomercializada" + "(id_especies_comercializadas,especie,quantidade_fresco,quantidade_salgado,preco_fresco,preco_salgado) values ('" +
-               id_especies_comercializadas + "','" +
-               tfQuantidadeFresco.getText() + ",'" +
-               tfQualidadeSalgado.getText() + "','" +
-               tfPrecoFresco.getText() + "','" +
-               tfPrecoSalgado.getText() + "')";
-
+        String sqlinsert = "insert into mercado_perdapescado" + "(id_perda_pescado,outros,causa_perda,estimativa_da_perda,destino_do_peixe_perdido) values ('" +
+               idd_perda_pescado + "','" +
+               tfOutros.getText()+",'"+
+               tfEstimativa.getText() + ",'" +
+               tfDestinoPeixe.getText() + "')";
+               
         System.out.println(sqlinsert);
         conexao.salvar(sqlinsert);
     }//GEN-LAST:event_jbPrincipaisPerdasActionPerformed
+
+    private void cbCausaPerdaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbCausaPerdaItemStateChanged
+        if (cbCausaPerda.getSelectedItem() == "Outras Perdas") {
+            tfOutros.setEditable(true);
+        } else {
+            tfOutros.setEditable(false);
+        }
+    }//GEN-LAST:event_cbCausaPerdaItemStateChanged
 
     /**
     * @param args the command line arguments
@@ -160,9 +192,11 @@ public class addPerdaPescado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JButton jbPrincipaisPerdas;
     private javax.swing.JTextField tfDestinoPeixe;
     private javax.swing.JTextField tfEstimativa;
+    private javax.swing.JTextField tfOutros;
     // End of variables declaration//GEN-END:variables
 
 }

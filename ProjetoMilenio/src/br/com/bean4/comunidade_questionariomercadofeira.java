@@ -523,17 +523,24 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
         jbPerdaPescado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Causa da Perda", "Estimativa de preço(%) ", "Destino do peixe perdido"
+                "id Perda pescado", "Causa da Perda", "Estimativa de preço(%) ", "Destino do peixe perdido"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, true, true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane4.setViewportView(jbPerdaPescado);
-        jbPerdaPescado.getColumnModel().getColumn(2).setResizable(false);
 
         jbAdd1.setText("Add");
         jbAdd1.addActionListener(new java.awt.event.ActionListener() {
@@ -585,8 +592,18 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         });
 
         jbExcluir3.setText("Excluir");
+        jbExcluir3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbExcluir3ActionPerformed(evt);
+            }
+        });
 
         jbAtualizacao3.setText("Atualizar");
+        jbAtualizacao3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbAtualizacao3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout AtualizarLayout = new javax.swing.GroupLayout(Atualizar);
         Atualizar.setLayout(AtualizarLayout);
@@ -1356,9 +1373,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
        
             
             new addMaterial(id_mercado).setVisible(true);
-            
-        
-        
+               
     }//GEN-LAST:event_btAddActionPerformed
 
     private void botao_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_alterarActionPerformed
@@ -1528,9 +1543,6 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
 
                 }
-
-    
-
     
     }//GEN-LAST:event_jbExcluir1ActionPerformed
 
@@ -1570,8 +1582,42 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
     }//GEN-LAST:event_jbAtualizar2ActionPerformed
 
     private void jbAdd3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAdd3ActionPerformed
-        new addidEspeciesComercializadas(id_mercado).setVisible(true);
+        new addPerdaPescado(id_mercado).setVisible(true);
     }//GEN-LAST:event_jbAdd3ActionPerformed
+
+    private void jbExcluir3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluir3ActionPerformed
+          String sql;
+
+        sql = "delete from mercado_addperdapescado Where id_perda_pescado =" + jtMaterialUtilizado.getValueAt(jtMaterialUtilizado.getSelectedRow(),0);
+
+                if (conexao_jtable.salvar(sql)) {
+                    System.out.println("Exclusão realizada com sucesso");
+
+//                    exibir_L_E_N_I(0);exibir_L_E_N_I(1);exibir_L_E_N_I(2);exibir_L_E_N_I(3);
+
+                }else{
+                JOptionPane.showMessageDialog(null,"Erro na exclusão");
+
+        }
+    }//GEN-LAST:event_jbExcluir3ActionPerformed
+
+    private void jbAtualizacao3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtualizacao3ActionPerformed
+         conexao_jtable.execute("select * from mercado_addperdapescado where  id_perda_pescado="
+                            +id_mercado);
+        preencher_jtable();
+        conexao_jtable.execute("select * from mercado_addperdapescado");
+
+         try {
+            conexao.execute("select * FROM mercado_addespecie where pai='Pará'");
+            while (conexao.resultSet.next()){
+                cbEspecie.addItem(conexao.resultSet.getString("especie"));
+                //System.out.println(conexao.resultSet.getString("nome"));
+            }
+        }catch (SQLException ex) {
+             System.out.println(ex);
+        }
+
+    }//GEN-LAST:event_jbAtualizacao3ActionPerformed
 
     /**
     * @param args the command line arguments
@@ -1904,9 +1950,30 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         }catch (SQLException erro){
            System.out.println(erro);
         }
-       }
-//    }
-//
-//  
+    }
+   public void preencher_jbPerdaPescado(){
+        jbPerdaPescado.getColumnModel().getColumn(0).setMaxWidth(0);
+        jbPerdaPescado.getColumnModel().getColumn(0).setPreferredWidth(0);
+        jbPerdaPescado.getColumnModel().getColumn(1).setPreferredWidth(10);
+        jbPerdaPescado.getColumnModel().getColumn(2).setPreferredWidth(10);
+        jbPerdaPescado.getColumnModel().getColumn(3).setPreferredWidth(10);
 
+        DefaultTableModel modelo = (DefaultTableModel)jbPerdaPescado.getModel();
+        modelo.setNumRows(0);//limpa o JTable;
+
+        try{
+            while (conexao_jtable.resultSet.next())
+                modelo.addRow(new Object[]{conexao_jtable.resultSet.getString("id_perda_pescado"),
+                                           conexao_jtable.resultSet.getString("outros"),
+                                           conexao_jtable.resultSet.getString("causa_perda"),
+                                           conexao_jtable.resultSet.getString("estimativa_da_perda"),
+                                           conexao_jtable.resultSet.getString("destino_do_peixe_perdido")});
+
+            conexao_jtable.resultSet.first();
+        }catch (SQLException erro){
+           System.out.println(erro);
+}
+
+
+    }
 }
