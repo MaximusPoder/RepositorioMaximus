@@ -144,11 +144,12 @@
                 <StringItem index="0" value="Peixe Fresco"/>
                 <StringItem index="1" value="Peixe Processado"/>
                 <StringItem index="2" value="Peixe Salgado"/>
-                <StringItem index="3" value="Outro"/>
+                <StringItem index="3" value="Outro Produto"/>
               </StringArray>
             </Property>
           </Properties>
           <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cbProdutoItemStateChanged"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbProdutoActionPerformed"/>
           </Events>
         </Component>
@@ -158,6 +159,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfOutroProduto">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfOutroProdutoActionPerformed"/>
           </Events>
