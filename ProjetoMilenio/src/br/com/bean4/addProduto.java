@@ -196,16 +196,16 @@ public class addProduto extends javax.swing.JFrame {
             System.out.println(e);
         }
 
-        String sqlinsert = "insert into mercado_addproduto " + "(id_produto,produto,empresa,pescadores_diversos,cooperativa,outros ) values ('" +
+        String sqlinsert = "insert into mercado_addproduto " + "(id_mercado,produto,empresa,pescadores_diversos,cooperativa,outros) values ('" +
                 idd_produto + "','" +
-                registro_q_vai() + "'," +
-                tfEmpresa.getText() + ",'" +
+                registro_q_vai() + "','" +
+                tfEmpresa.getText() + "','" +
                 tfPescadoresDiversos.getText() + "','" +
                 tfCooperativa.getText() + "','" +
                 tfOutros.getText() + "')";
 
         System.out.println(sqlinsert);
-        boolean salvar = conexao.salvar(sqlinsert);
+        conexao.salvar(sqlinsert);
         //agora é hora de atualizar o resultset
         addProduto.this.dispose();
     }//GEN-LAST:event_jbAddActionPerformed

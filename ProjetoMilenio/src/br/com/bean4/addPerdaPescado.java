@@ -29,8 +29,8 @@ public class addPerdaPescado extends javax.swing.JFrame {
         initComponents();
         conexao = new Conexao();
         conexao.conecta("mil_interface");
-        System.out.println("perda_pescado");
-        idd_perda_pescado =id_perda_pescado;
+        System.out.println(id_perda_pescado);
+        idd_perda_pescado = id_perda_pescado;
 
     }
 
@@ -57,8 +57,10 @@ public class addPerdaPescado extends javax.swing.JFrame {
         jbPrincipaisPerdas = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         tfOutros = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        cbEspecie = new javax.swing.JComboBox();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24));
         jLabel1.setText("Principais Perdas de Pescado");
@@ -76,6 +78,8 @@ public class addPerdaPescado extends javax.swing.JFrame {
             }
         });
 
+        tfEstimativa.setText("0");
+
         jbPrincipaisPerdas.setText("Add");
         jbPrincipaisPerdas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,62 +91,67 @@ public class addPerdaPescado extends javax.swing.JFrame {
 
         tfOutros.setEditable(false);
 
+        jLabel6.setText("Especie:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
+                        .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel4)
+                            .addComponent(jLabel3)
                             .addComponent(jLabel5)
-                            .addComponent(jLabel3))
-                        .addGap(54, 54, 54)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(tfDestinoPeixe, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(1, 1, 1))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(tfOutros, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addComponent(cbCausaPerda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(9, 9, 9))))
-                                .addGap(28, 28, 28)
-                                .addComponent(jbPrincipaisPerdas))
-                            .addComponent(tfEstimativa, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(25, Short.MAX_VALUE))
+                            .addComponent(jLabel4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(cbEspecie, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbCausaPerda, javax.swing.GroupLayout.Alignment.LEADING, 0, 0, Short.MAX_VALUE)
+                            .addComponent(tfOutros, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfDestinoPeixe, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfEstimativa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                            .addComponent(jbPrincipaisPerdas))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(jLabel1)))
+                .addGap(64, 64, 64))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(cbCausaPerda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfOutros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfEstimativa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfDestinoPeixe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(jbPrincipaisPerdas))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel2)
+                        .addGap(22, 22, 22)
+                        .addComponent(jLabel5)
+                        .addGap(9, 9, 9)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addComponent(cbEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cbCausaPerda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(tfOutros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfEstimativa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfDestinoPeixe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jbPrincipaisPerdas)))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         pack();
@@ -150,6 +159,16 @@ public class addPerdaPescado extends javax.swing.JFrame {
 
     private void jbPrincipaisPerdasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPrincipaisPerdasActionPerformed
             try {
+            conexao.execute("select * FROM mercado_addespeciecomercializada ");
+            cbEspecie.removeAllItems();
+            while (conexao.resultSet.next()){
+                cbEspecie.addItem(conexao.resultSet.getString("especie"));
+                //System.out.println(conexao.resultSet.getString("nome"));
+            }
+        }catch (SQLException ex) {
+             System.out.println(ex);
+        }
+         try {
             conexao.execute("select * from mercado_perdapescado");
             conexao.resultSet.first();
            // System.out.println(conexao.resultSet.getString("nome"));
@@ -157,9 +176,10 @@ public class addPerdaPescado extends javax.swing.JFrame {
             System.out.println(e);
         }
 
-        String sqlinsert = "insert into mercado_perdapescado" + "(id_perda_pescado,outros,causa_perda,estimativa_da_perda,destino_do_peixe_perdido) values ('" +
+        String sqlinsert = "insert into mercado_addperdapescado" + "(especie,id_mercado,causa_perda,estimativa_da_perda,destino_do_peixe_perdido) values ('" +
+               cbEspecie.getSelectedItem()+"','"+
                idd_perda_pescado + "','" +
-               tfOutros.getText()+",'"+
+               registro_q_vai() + "'," +
                tfEstimativa.getText() + ",'" +
                tfDestinoPeixe.getText() + "')";
                
@@ -188,15 +208,24 @@ public class addPerdaPescado extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox cbCausaPerda;
+    private javax.swing.JComboBox cbEspecie;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JButton jbPrincipaisPerdas;
     private javax.swing.JTextField tfDestinoPeixe;
     private javax.swing.JTextField tfEstimativa;
     private javax.swing.JTextField tfOutros;
     // End of variables declaration//GEN-END:variables
+ public Object registro_q_vai() {
+        if (tfOutros.isEditable()) {
+            return tfOutros.getText();
+        } else {
+            return cbCausaPerda.getSelectedItem();
+        }
+    }
 
 }

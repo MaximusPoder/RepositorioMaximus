@@ -55,7 +55,7 @@ public class addEspecieComercializada extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         tfQuantidadeFresco = new javax.swing.JTextField();
-        tfQualidadeSalgado = new javax.swing.JTextField();
+        tfQuatidadeSalgado = new javax.swing.JTextField();
         tfPrecoFresco = new javax.swing.JTextField();
         tfPrecoSalgado = new javax.swing.JTextField();
         jbAdd = new javax.swing.JButton();
@@ -75,6 +75,14 @@ public class addEspecieComercializada extends javax.swing.JFrame {
         jLabel5.setText("Preço Fresco:");
 
         jLabel6.setText("Preço Salgado:");
+
+        tfQuantidadeFresco.setText("0");
+
+        tfQuatidadeSalgado.setText("0");
+
+        tfPrecoFresco.setText("0");
+
+        tfPrecoSalgado.setText("0");
 
         jbAdd.setText("ADD");
         jbAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +114,7 @@ public class addEspecieComercializada extends javax.swing.JFrame {
                             .addComponent(tfPrecoSalgado, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
                             .addComponent(tfQuantidadeFresco, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
                             .addComponent(tfPrecoFresco, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                            .addComponent(tfQualidadeSalgado, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE))
+                            .addComponent(tfQuatidadeSalgado, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE))
                         .addGap(59, 59, 59)
                         .addComponent(jbAdd)
                         .addGap(103, 103, 103))))
@@ -127,7 +135,7 @@ public class addEspecieComercializada extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(tfQualidadeSalgado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfQuatidadeSalgado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -163,10 +171,11 @@ public class addEspecieComercializada extends javax.swing.JFrame {
             System.out.println(ex);
         }
 
-        String sqlinsert = "insert into mercado_addespeciecomercializada " + "(especie,quantidade_fresco,quantidade_salgado,preco_fresco,preco_salgado) values ('" +
+        String sqlinsert = "insert into mercado_addespeciecomercializada (id_mercado,especie,quantidade_fresco,quantidade_salgado,preco_fresco,preco_salgado) values ('" +
                idd_especie_comercializada + "','" +
-               tfQuantidadeFresco.getText() + ",'" +
-               tfQualidadeSalgado.getText() + "','" +
+               tfEspecie.getText()+"',"+
+               tfQuantidadeFresco.getText() + "," +
+               tfQuatidadeSalgado.getText() + ",'" +
                tfPrecoFresco.getText() + "','" +
                tfPrecoSalgado.getText() + "')";
 
@@ -199,8 +208,8 @@ public class addEspecieComercializada extends javax.swing.JFrame {
     private javax.swing.JTextField tfEspecie;
     private javax.swing.JTextField tfPrecoFresco;
     private javax.swing.JTextField tfPrecoSalgado;
-    private javax.swing.JTextField tfQualidadeSalgado;
     private javax.swing.JTextField tfQuantidadeFresco;
+    private javax.swing.JTextField tfQuatidadeSalgado;
     // End of variables declaration//GEN-END:variables
 
    
