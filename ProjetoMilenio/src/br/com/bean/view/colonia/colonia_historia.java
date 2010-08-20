@@ -33,17 +33,17 @@ public class colonia_historia extends javax.swing.JFrame {
         //Insere nome no cbNomeAtravessador
                 try {
                     cbComunidade.removeAllItems();
-                    conexao.execute("select * from comunidade_cadastro");
+                    conexao.execute("select * from colonia_cadastro");
 
                     while (conexao.resultSet.next()){
-                        cbComunidade.addItem(conexao.resultSet.getString("id_comunidade")+
-                                                       " # "+ conexao.resultSet.getString("comunidade"));
+                        cbComunidade.addItem(conexao.resultSet.getString("id_colonia")+
+                                                       " # "+ conexao.resultSet.getString("colonia"));
                     }
                 }catch (SQLException ex) {
                     System.out.println(ex);
                 }
 
-        conexao.execute("select * from comunidade_historia");
+        conexao.execute("select * from colonia_historia");
         try {
             conexao.resultSet.first();
         } catch (SQLException ex) {
@@ -109,7 +109,7 @@ public class colonia_historia extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18));
-        jLabel1.setText("História de Vida/Entrevista semi estruturada?");
+        jLabel1.setText("Entrevista semi estruturada?");
 
         jLabel2.setText("Comunidade.:");
 
@@ -188,47 +188,46 @@ public class colonia_historia extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(42, 42, 42)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cbComunidade, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane2)
-                            .addComponent(jScrollPane3)
-                            .addComponent(jScrollPane4)
-                            .addComponent(jScrollPane5)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane6)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane7)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane8)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane9)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 617, Short.MAX_VALUE)
-                            .addComponent(jScrollPane10)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane11)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane12)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane13)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(btSalver)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btAtualizar))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(182, 182, 182)
-                        .addComponent(jLabel1)))
-                .addContainerGap(30, Short.MAX_VALUE))
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cbComunidade, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane3)
+                    .addComponent(jScrollPane4)
+                    .addComponent(jScrollPane5)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane6)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane7)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane8)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane9)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 617, Short.MAX_VALUE)
+                    .addComponent(jScrollPane10)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane11)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane12)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane13)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btSalver)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btAtualizar)))
+                .addContainerGap(33, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(306, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(258, 258, 258))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -302,7 +301,7 @@ public class colonia_historia extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 810, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 847, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -314,13 +313,11 @@ public class colonia_historia extends javax.swing.JFrame {
 
     private void btSalverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalverActionPerformed
         try {
-            String sqlinsert = "insert into comunidade_historia "
-                    + "(id_comunidade,questao1,questao2,questao3,questao4,questao5,"
+            String sqlinsert = "insert into colonia_historia "
+                    + "(id_colonia,questao1,questao2,questao3,questao4,questao5,"
                     + "questao6,questao7,questao8,questao9,questao10,"
-                    + "questao11,questao12,questao13,questao14,questao15,"
-                    + "questao16,questao17,questao18,questao19,questao20,"
-                    + "questao21,questao22,questao23,questao24,"
-                    + "questao25) values ("+
+                    + "questao11,"
+                    + "questao12) values ("+
                     pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString())+",'"+
                     questao1.getText()+"','"+
                     questao2.getText()+"','"+
@@ -333,27 +330,14 @@ public class colonia_historia extends javax.swing.JFrame {
                     questao9.getText()+"','"+
                     questao10.getText()+"','"+
                     questao11.getText()+"','"+
-                    questao12.getText()+"','"+
-                    questao13.getText()+"','"+
-                    questao14.getText()+"','"+
-                    questao15.getText()+"','"+
-                    questao16.getText()+"','"+
-                    questao17.getText()+"','"+
-                    questao18.getText()+"','"+
-                    questao19.getText()+"','"+
-                    questao20.getText()+"','"+
-                    questao21.getText()+"','"+
-                    questao22.getText()+"','"+
-                    questao23.getText()+"','"+
-                    questao24.getText()+"','"+
-                    questao25.getText()+"')";
+                    questao12.getText()+"')";
 
                     System.out.println(sqlinsert);
 
             if (conexao.salvar(sqlinsert)){
             //agora é hora de atualizar o resultset
             JOptionPane.showMessageDialog(null,"Cadastrado com sucesso");
-            conexao.execute("select * from comunidade_historia");
+            conexao.execute("select * from colonia_historia");
             conexao.resultSet.first(); //1º registro
             mostra_dados();
             cbComunidade.setSelectedIndex(0);
@@ -366,7 +350,7 @@ public class colonia_historia extends javax.swing.JFrame {
 
     private void btAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizarActionPerformed
         try{
-            String sql ="UPDATE comunidade_historia SET "+
+            String sql ="UPDATE colonia_historia SET "+
                           "questao1 = '"+questao1.getText()+"',"+
                           "questao2 = '"+questao2.getText()+"',"+
                           "questao3 = '"+questao3.getText()+"',"+
@@ -378,28 +362,16 @@ public class colonia_historia extends javax.swing.JFrame {
                           "questao9 = '"+questao9.getText()+"',"+
                           "questao10 = '"+questao10.getText()+"',"+
                           "questao11 = '"+questao11.getText()+"',"+
-                          "questao12 = '"+questao12.getText()+"',"+
-                          "questao13 = '"+questao13.getText()+"',"+
-                          "questao14 = '"+questao14.getText()+"',"+
-                          "questao15 = '"+questao15.getText()+"',"+
-                          "questao16 = '"+questao16.getText()+"',"+
-                          "questao17 = '"+questao17.getText()+"',"+
-                          "questao18 = '"+questao18.getText()+"',"+
-                          "questao19 = '"+questao19.getText()+"',"+
-                          "questao20 = '"+questao20.getText()+"',"+
-                          "questao21 = '"+questao21.getText()+"',"+
-                          "questao22 = '"+questao22.getText()+"',"+
-                          "questao23 = '"+questao23.getText()+"',"+
-                          "questao24 = '"+questao24.getText()+"',"+
-                          "questao25 = '"+questao25.getText()+"' "+
+                          "questao12 = '"+questao12.getText()+"' "+
+                          
 
-                          "where id_comunidade = "+pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString());
+                          "where id_colonia = "+pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString());
 
             System.out.println(sql);
             if (conexao.update(sql)){
             JOptionPane.showMessageDialog(null,"Alterado com sucesso");
             //Atualiza Resultset
-            conexao.execute("select * from comunidade_historia");
+            conexao.execute("select * from colonia_historia");
             conexao.resultSet.next();
             mostra_dados();
             cbComunidade.setSelectedIndex(0);
@@ -416,13 +388,13 @@ public class colonia_historia extends javax.swing.JFrame {
 
         if (inicia_combo == 1){
          try {
-            conexao.execute("select * from comunidade_historia");
+            conexao.execute("select * from colonia_historia");
             conexao.resultSet.first();
             String igual = "n"; //inicia dizendo que não localizou
             while(igual == "n") //diz que enquanto não localizar é para ir executando
             {
                 String id = pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString());
-                if (conexao.resultSet.getString("id_comunidade").equals(id)) {
+                if (conexao.resultSet.getString("id_colonia").equals(id)) {
                     igual = "s"; //incica que achou
                 } else
                     conexao.resultSet.next();
@@ -511,19 +483,7 @@ public class colonia_historia extends javax.swing.JFrame {
             questao10.setText(conexao.resultSet.getString("questao10"));
             questao11.setText(conexao.resultSet.getString("questao11"));
             questao12.setText(conexao.resultSet.getString("questao12"));
-            questao13.setText(conexao.resultSet.getString("questao13"));
-            questao14.setText(conexao.resultSet.getString("questao14"));
-            questao15.setText(conexao.resultSet.getString("questao15"));
-            questao16.setText(conexao.resultSet.getString("questao16"));
-            questao17.setText(conexao.resultSet.getString("questao17"));
-            questao18.setText(conexao.resultSet.getString("questao18"));
-            questao19.setText(conexao.resultSet.getString("questao19"));
-            questao20.setText(conexao.resultSet.getString("questao20"));
-            questao21.setText(conexao.resultSet.getString("questao21"));
-            questao22.setText(conexao.resultSet.getString("questao22"));
-            questao23.setText(conexao.resultSet.getString("questao23"));
-            questao24.setText(conexao.resultSet.getString("questao24"));
-            questao25.setText(conexao.resultSet.getString("questao25"));
+            
         } catch (Exception e) {
             limpar();
         }
@@ -542,19 +502,7 @@ public class colonia_historia extends javax.swing.JFrame {
             questao10.setText("");
             questao11.setText("");
             questao12.setText("");
-            questao13.setText("");
-            questao14.setText("");
-            questao15.setText("");
-            questao16.setText("");
-            questao17.setText("");
-            questao18.setText("");
-            questao19.setText("");
-            questao20.setText("");
-            questao21.setText("");
-            questao22.setText("");
-            questao23.setText("");
-            questao24.setText("");
-            questao25.setText("");
+            
     }
 
                public String pega_codigo_ou_nome(int n,String teste) { //Se entrar com 1 pega o Código, se não pega o Nome

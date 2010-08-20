@@ -216,8 +216,8 @@ public class addAtividades extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-                    String sqlinsert = "insert into comunidade_addatividade "
-                    + "(id_comunidade,tipo,"
+                    String sqlinsert = "insert into colonia_atividade "
+                    + "(id_colonia,tipo,"
                     + "jan,fev,mar,abr,mai,jun,jul,ago,sett,out,nov,dez) values ("+
 
                     idd_atravessador+",'"+

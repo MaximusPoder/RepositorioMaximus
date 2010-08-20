@@ -34,11 +34,11 @@ public class colonia_questionario extends javax.swing.JFrame {
 
                 //Insere nome no cbNomeAtravessador
                 try {
-                    cbComunidade.removeAllItems();
+                    cbColonia.removeAllItems();
                     conexao.execute("select * from colonia_cadastro");
 
                     while (conexao.resultSet.next()){
-                        cbComunidade.addItem(conexao.resultSet.getString("id_colonia")+
+                        cbColonia.addItem(conexao.resultSet.getString("id_colonia")+
                                                        " # "+ conexao.resultSet.getString("colonia"));
                     }
                 }catch (SQLException ex) {
@@ -52,8 +52,7 @@ public class colonia_questionario extends javax.swing.JFrame {
             System.out.println(ex+" linha 52");
         }
          mostra_dados();
-         preencher_jtableEspecie(pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString()));
-         preencher_jtableAtividade(pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString()));
+         preencher_jtableAtividade(pega_codigo_ou_nome(1,cbColonia.getSelectedItem().toString()));
     }
 
     /** This method is called from within the constructor to
@@ -69,7 +68,7 @@ public class colonia_questionario extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        cbComunidade = new javax.swing.JComboBox();
+        cbColonia = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -125,7 +124,7 @@ public class colonia_questionario extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         botao_salvar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        cb34 = new javax.swing.JComboBox();
+        cb35 = new javax.swing.JComboBox();
         cb37 = new javax.swing.JComboBox();
         jScrollPane9 = new javax.swing.JScrollPane();
         tp18QuantaseQuais = new javax.swing.JTextPane();
@@ -178,9 +177,9 @@ public class colonia_questionario extends javax.swing.JFrame {
 
         jLabel2.setText("Comunidade:");
 
-        cbComunidade.addActionListener(new java.awt.event.ActionListener() {
+        cbColonia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbComunidadeActionPerformed(evt);
+                cbColoniaActionPerformed(evt);
             }
         });
 
@@ -345,7 +344,7 @@ public class colonia_questionario extends javax.swing.JFrame {
             }
         });
 
-        cb34.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não", "Um pouco", "Mais ou Menos", "Bastante" }));
+        cb35.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não", "Um pouco", "Mais ou Menos", "Bastante" }));
 
         cb37.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não", "Um pouco", "Mais ou Menos", "Bastante" }));
 
@@ -365,7 +364,13 @@ public class colonia_questionario extends javax.swing.JFrame {
         });
 
         ckb19Sim.setText("Sim");
+        ckb19Sim.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ckb19SimItemStateChanged(evt);
+            }
+        });
 
+        tp20TipoConflito.setEditable(false);
         jScrollPane12.setViewportView(tp20TipoConflito);
 
         ckb21EntreEles.setText("Entre eles");
@@ -388,6 +393,13 @@ public class colonia_questionario extends javax.swing.JFrame {
         ckb21NaPolicia.setText("Na Polícia");
 
         ckb21Outro.setText("Outro");
+        ckb21Outro.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ckb21OutroItemStateChanged(evt);
+            }
+        });
+
+        tf21Outro.setEditable(false);
 
         jLabel56.setText("22. Existe associações, cooperativas ou outras formas de organização social?");
 
@@ -400,6 +412,7 @@ public class colonia_questionario extends javax.swing.JFrame {
 
         jLabel57.setText("22.1. Especifique:");
 
+        tp22.setEditable(false);
         jScrollPane2.setViewportView(tp22);
 
         jLabel58.setText("23. Nº de pescadores associados: Homens:");
@@ -454,7 +467,7 @@ public class colonia_questionario extends javax.swing.JFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel2)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cbComunidade, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(cbColonia, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel3)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -486,7 +499,7 @@ public class colonia_questionario extends javax.swing.JFrame {
                                         .addComponent(tf17Outro, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 199, Short.MAX_VALUE)
                                 .addComponent(jLabel5))
                             .addComponent(jLabel12)
                             .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -531,120 +544,114 @@ public class colonia_questionario extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(ckb19Sim))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel25)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tfInadiplentes, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel24)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tfPagantes, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel25)
+                                                .addComponent(jLabel21)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(tfInadiplentes, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(tf30GEL))
                                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel24)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(tfPagantes, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                                .addComponent(jLabel21)
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                .addComponent(tf30GEL))
-                                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                                .addComponent(jLabel16)
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(tf25MON, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                .addComponent(jLabel17)
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(tf26CAN, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                .addComponent(jLabel22)
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                .addComponent(tf31BIN)))
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(jLabel14)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(tf27CAM, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(jLabel18)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(tf28BPP))
-                                                    .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.LEADING))
+                                                .addComponent(jLabel16)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addComponent(jLabel20)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(tf29BMP, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addComponent(tfFno, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 692, Short.MAX_VALUE)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel26)
-                                                .addGap(11, 11, 11)
-                                                .addComponent(cb34, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel31)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(ckb36Defeso))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel32)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(cb37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(jLabel33, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel48)
-                                                .addGap(145, 145, 145))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(btAddAtividade)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(btExcluirAtividade)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(btAtualizarAtividade))
-                                            .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 692, Short.MAX_VALUE)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(botao_salvar)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jButton2))
-                                            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 692, Short.MAX_VALUE)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addComponent(ckb38Aposentadoria)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(ckb38SeguroDesemprego)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(ckb38BolsaFamilia))
-                                                    .addComponent(jLabel15)
-                                                    .addComponent(jLabel28)
-                                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 532, Short.MAX_VALUE)
-                                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addComponent(jLabel19)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(ckb40Sim))
-                                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                            .addComponent(jLabel29)
-                                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                .addComponent(jLabel30)
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(cb43Qualidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                            .addComponent(jLabel34))
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                            .addComponent(ckb42Sim)
-                                                            .addComponent(cb44Acompanha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(cb39AchaSuficiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(59, 59, 59)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel60)
+                                                .addComponent(tf25MON, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tf24NrEmbarc, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel17)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(tf26CAN, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel22)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(tf31BIN)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel14)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(tf27CAM, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel18)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(tf28BPP))
+                                    .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel20)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(tf29BMP, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(tfFno, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 811, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel26)
+                                .addGap(11, 11, 11)
+                                .addComponent(cb35, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel31)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ckb36Defeso))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel32)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cb37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel33)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel48)
+                                .addGap(145, 145, 145))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(btAddAtividade)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btExcluirAtividade)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btAtualizarAtividade))
+                            .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 811, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(botao_salvar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton2))
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 811, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(ckb38Aposentadoria)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ckb38SeguroDesemprego)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ckb38BolsaFamilia))
+                                    .addComponent(jLabel15)
+                                    .addComponent(jLabel28)
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 633, Short.MAX_VALUE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel19)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ckb40Sim))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel29)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel30)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(cb43Qualidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jLabel34))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(ckb42Sim)
+                                            .addComponent(cb44Acompanha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cb39AchaSuficiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(59, 59, 59))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel60)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tf24NrEmbarc, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(188, 188, 188)
                         .addComponent(jLabel1)))
@@ -663,7 +670,7 @@ public class colonia_questionario extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(cbComunidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cbColonia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
@@ -776,7 +783,7 @@ public class colonia_questionario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel26)
-                    .addComponent(cb34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cb35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31)
@@ -840,7 +847,7 @@ public class colonia_questionario extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 824, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 870, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -869,129 +876,80 @@ public class colonia_questionario extends javax.swing.JFrame {
     private void botao_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_salvarActionPerformed
         try {
             String sqlinsert = "insert into colonia_questionario "
-                    + "(id_colonia,tem_presidente,nome_presidente,"
-                    + "tem_eleicao_presidencial,descricao_eleicao,existe_igreja,"
-                    + "quant_igreja,existe_club,quant_club,"
-                    + "exite_assoc,especificar_associacao,nr_pescadores,"
-                    + "nr_embarcacoes,24mon,25can,"
-                    + "26cam,27bpp,28bmp,29gel,30bin,31fno,"
-                    + "sit_pagantes,sit_inadimplentes,34fin_adm_important,"
-                    + "princ_pesc_ordem_importancia,artes_pesc_ordem_importancia,existe_defeso,"
-                    + "e_respeitado,40rec_auxilio_renda,40rec_auxilio_aposentadoria,"                  
-                    + "40rec_auxilio_seguro,acha_suf_valor_recebido,45exite_monitoramento,"
-                    + "47tem_desembarque,48destino_consumo,48destino_venda,"
-                    + "49producao_feita_na,49producao_feita_na_outro,50ramal,"
-                    + "50estrada,50rio,50mangue,50outro,50outro_qual,"
-                    + "51onibus,51barco,51bicicleta,51pe,"
-                    + "52alvenaria,52madeira,52barro,52palha,"
-                    + "53telha_de_barro,53quant_telha_de_barro,53cavaco,"
-                    + "53quant_cavaco,53amianto,53quant_amianto,"
-                    + "54terra_batida,54quant_terra_batida,54cimentado,54quant_cimentado,54lajotado,54quant_lajotado,"
-                    + "55quant_mercearias,55quant_bares,"
-                    + "55quant_mercearia_bar,52alvenaria_qtd,52madeira_qtd,"
-                    + "52barro_qtd,52palha_qtd,"
-                    + "42houve_conflito,43conflito_tipo,"
-                    + "44entre_eles,44com_lideranca,44com_idosos_pessoas,"
-                    + "46quem_faz) values ("+
+                    + "(id_colonia,12tem_presidente,12nome_presidente,"
+                    + "13realiza_reunioes,15descricao_reunioes,16eleicao_e_em_reuniao,"
+                    + "17criterio_estar_quite,17criterio_ter_tempo,17criterio_outro,"
+                    + "17criterio_outro_qual,18quantas_fazem_part,19houve_conflito,"
+                    + "20tipo_conflito,21entre_eles,21com_lideranca,21com_idosos,"
+                    + "21com_justica,21com_ibama,21com_colonia,21outro,"
+                    + "21outro_qual,22existe_outras,22especificar,"
+                    + "23nr_pesc_h,23nr_pesc_m,24total,25mon,26can,27cam,28bpp,"
+                    + "29bmp,30gel,31bin,32fno,33sit_pagante,34sit_indadimplentes,"
+                    + "35opiniao_financiamento,36defeso,37defeso_respeitado,"
+                    + "38aposentadoria,38seguro,38bolsa_familia,39e_suficiente,"
+                    + "40existe_monitoramento,41quem_faz,42tem_local,43qualidade_local,"              
+                    + "44acompanha) values ("+
 
-                    pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString())+","+
+                    pega_codigo_ou_nome(1,cbColonia.getSelectedItem().toString())+","+
                     tachecado(ckb12TemPresidente) +",'"+ //tem presidente?
-                    tf12NomePresidente.getText()+"',"+
+                    tf12NomePresidente.getText()+"','"+
 
-                    tachecado(ckb14temeleicao)+",'"+ //tem_eleicao_presidencial?
-                    tp15descrever.getText()+"',"+ //,descricao_eleicao
-                    tachecado(ckb16)+","+ //,existe_igreja,"
-
-                    tf17Outro.getText()+","+//"quant_igreja
-                    tachecado(ckb18ExisteClube)+",'"+//,existe_club
-                    tp18QuantaseQuais.getText()+"',"+//,quant_club,"
-
-                    tachecado(ckb20ExisteAssociacao)+",'"+// "exite_assoc
-                    tp21Especificar.getText()+"',"+//especificar_associacao
-                    tf25MON.getText()+","+//nr_pescadores,"
-
-                    tf24NrEmbarc.getText()+","+//nr_embarcacoes
-                    tf26CAN.getText()+","+//24mon
-                    tf27CAM.getText()+","+//25can,"
-
-                    tf28BPP.getText()+","+//"26cam
-                    tf29BMP.getText()+","+//27bpp
-                    tf30GEL.getText()+","+//28bmp
-                    tfGel.getText()+","+//29gel
-                    tf31BIN.getText()+","+//30bin
-                    tfFno.getText()+",'"+//31fno
-
-                    tfPagantes.getText()+"','"+//"sit_pagantes
-                    tfInadiplentes.getText()+"','"+//,sit_inadimplentes
-                    cb34.getSelectedItem()+"','"+//,34fin_adm_important
-
-                    tp35.getText()+"','"+//+ "princ_pesc_ordem_importancia
-                    tp36.getText()+"',"+//,artes_pesc_ordem_importancia
-                    tachecado(ckb36Defeso)+",'"+//,existe_defeso,"
-
-                    cb37.getSelectedItem()+"',"+//+ "e_respeitado
-                    tachecado(ckb38Aposentadoria)+","+//,40rec_auxilio_renda
-                    tachecado(ckb38SeguroDesemprego)+","+//,40rec_auxilio_aposentadoria,"
-
-                    tachecado(ckb38BolsaFamilia)+",'"+// "40rec_auxilio_seguro
-                    cb41axasuf.getSelectedItem()+"',"+//,acha_suf_valor_recebido
-                    tachecado(ckb45Sim)+","+//,45exite_monitoramento,"
-
-                    tachecado(ckb47)+",'"+//"47tem_desembarque
-                    cb48Consumo.getSelectedItem()+"','"+//,44destino_consumo
-                    cb48Venda.getSelectedItem()+"','"+//,44destino_venda,"
-
-                    cb49ProducaoVenda.getSelectedItem()+"','"+//+ "45producao_feita_na
-                    tf49OutrasLocalidades.getText()+"',"+//,45producao_feita_na_outro
-                    tachecado(ckb50Ramal)+","+//,46ramal,"
-
-                    tachecado(ckb50Estrada)+","+//"46estrada
-                    tachecado(ckb50Riu)+","+//,46rio
-                    tachecado(ckb50Mangue)+","+//,46mangue
-                    tachecado(ckb50Outro)+",'"+//,46outro
-                    tf50Outro.getText()+"',"+//,46outro_qual,"
-
-                    tachecado(ckb51Onibus)+","+//"47onibus
-                    tachecado(ckb51Barco)+","+//,47barco
-                    tachecado(ckb51Bicicleta)+","+//47bicicleta
-                    tachecado(ckb51ape)+","+//,47pe,"
+                    cb13.getSelectedItem()+"','"+//"13realiza_reunioes
+                    tp15descrever.getText()+"',"+//,15descricao_reunioes
+                    tachecado(ckb16)+","+//,16eleicao_e_em_reuniao,"
                     
-                    tachecado(ckb52Alvenaria)+","+//"48alvenaria
-                    tachecado(ckb52Madeira)+","+//,48madeira
-                    tachecado(ckb52Barro)+","+//,48barro
-                    tachecado(ckb52Palha)+","+//,48palha,"
+                    tachecado(ckb17EstarQuite)+","+//"17criterio_estar_quite
+                    tachecado(ckb17TerTempo)+","+//,17criterio_ter_tempo
+                    tachecado(ckb17Outro)+",'"+//,17criterio_outro,"
                     
-                    tachecado(ckb53TelhadeBarro)+","+//"49telha_de_barro
-                    tf53TelhadeBarro.getText()+","+//,49quant_telha_de_barro
-                    tachecado(ckb53Cavaco)+","+//,49cavaco,"
+                    tf17Outro.getText()+"','"+//"17criterio_outro_qual
+                    tp18QuantaseQuais.getText()+"',"+//,18quantas_fazem_part
+                    tachecado(ckb19Sim)+",'"+//,19houve_conflito,"
                     
-                    tf53Cavaco.getText()+","+//"49quant_cavaco
-                    tachecado(ckb53Amianto)+","+//,49amianto
-                    tf53Amianto.getText()+","+//,49quant_amianto,"
+                    tp20TipoConflito.getText()+"',"+//"20tipo_conflito
+                    tachecado(ckb21EntreEles)+","+//,21entre_eles
+                    tachecado(ckb21ComLiderancas)+","+//,21com_lideranca
+                    tachecado(ckb21ComIdosos)+","+//,21com_idosos,"
                     
-                    tachecado(ckb54TerraBatida)+","+//"50terra_batida
-                    tf54TerraBatida.getText()+","+//,50quant_terra_batida
-                    tachecado(ckb54Cimentado)+","+//,50cimentado
-                    tf54Cimentado.getText()+","+//,50quant_cimentado
-                    tachecado(ckb54Lajotado)+","+//,50lajotado
-                    tf54Lajotado.getText()+","+//,50quant_lajotado,"
+                    tachecado(ckb21ComJustica)+","+//"21com_justica
+                    tachecado(ckb21ComIBAMA)+","+//,21com_ibama
+                    tachecado(ckb21ComColonia)+","+//,21com_colonia
+                    tachecado(ckb21Outro)+",'"+//,21outro,"
                     
-                    tf55mercearias.getText()+","+//51quant_mercearias
-                    tf55bares.getText()+","+//51quant_bares,"
-                    tf55merceariaEbar.getText()+","+//51quant_mercearia_bar
-
-            //a partir daqui não segue a ordem, é só as mudanças! Dane-se!
-            tf52Alvenaria.getText()+","+
-            tf52Madeira.getText()+","+
-            tf52Barro.getText()+","+
-            tf52Palha.getText()+","+
-
-            tachecado(ckb42sim)+",'"+//42houve_conflito
-            tp43ConflitoTipo.getText()+"',"+//43conflito_tipo,"
-            tachecado(ckb44EntreEles)+","+//44entre_eles,
-            tachecado(ckb44Lideranca)+","+//44com_lideranca,
-            tachecado(ckb44Idosos)+",'"+//44com_idosos_pessoas,"
-            tp46quemfaz.getText()+"')";//46quem_faz
+                    tf21Outro.getText()+"',"+//"21outro_qual
+                    tachecado(ckb22Sim)+",'"+//,22existe_outras
+                    tp22.getText()+"',"+//,22especificar,"
+                    
+                    tf23Homens.getText()+","+//"23nr_pesc_h
+                    tf23Mulheres.getText()+","+//,23nr_pesc_m
+                    tf24NrEmbarc.getText()+","+//,24total
+                    tf25MON.getText()+","+//,25mon
+                    tf26CAN.getText()+","+//,26can
+                    tf27CAM.getText()+","+//,27cam
+                    tf28BPP.getText()+","+//,28bpp,"
+                    
+                    tf29BMP.getText()+","+//"29bmp
+                    tf30GEL.getText()+","+//,30gel
+                    tf31BIN.getText()+","+//,31bin
+                    tfFno.getText()+",'"+//,32fno
+                    tfPagantes.getText()+"','"+//,33sit_pagante
+                    tfInadiplentes.getText()+"','"+//,34sit_indadimplentes,"
+                    
+                    cb35.getSelectedItem()+"',"+//"35opiniao_financiamento
+                    tachecado(ckb36Defeso)+",'"+//,36defeso
+                    cb37.getSelectedItem()+"',"+//,37defeso_respeitado,"
+                    
+                    tachecado(ckb38Aposentadoria)+","+//"38aposentadoria
+                    tachecado(ckb38SeguroDesemprego)+","+//,38seguro
+                    tachecado(ckb38BolsaFamilia)+",'"+//,38bolsa_familia
+                    cb39AchaSuficiente.getSelectedItem()+"',"+//,39e_suficiente,"
+                    
+                    tachecado(ckb40Sim)+",'"+//"40existe_monitoramento
+                    tp41Quem.getText()+"',"+//,41quem_faz
+                    tachecado(ckb42Sim)+",'"+//,42tem_local
+                    cb43Qualidade.getSelectedItem()+"','"+//,43qualidade_local,"
+                         
+                    cb44Acompanha.getSelectedItem()+"')";//46quem_faz
 
                     System.out.println(sqlinsert);
                     
@@ -1001,7 +959,7 @@ public class colonia_questionario extends javax.swing.JFrame {
             conexao.execute("select * from colonia_questionario");
             conexao.resultSet.first(); //1º registro
             mostra_dados();
-            cbComunidade.setSelectedIndex(0);
+            cbColonia.setSelectedIndex(0);
             }
 
         }catch (SQLException erro){
@@ -1009,7 +967,7 @@ public class colonia_questionario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botao_salvarActionPerformed
 
-    private void cbComunidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbComunidadeActionPerformed
+    private void cbColoniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbColoniaActionPerformed
 
         //Pesquisa automática do Combo Box Nome do atravessador
 
@@ -1020,7 +978,7 @@ public class colonia_questionario extends javax.swing.JFrame {
             String igual = "n"; //inicia dizendo que não localizou
             while(igual == "n") //diz que enquanto não localizar é para ir executando
             {
-                String id = pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString());
+                String id = pega_codigo_ou_nome(1,cbColonia.getSelectedItem().toString());
                 if (conexao.resultSet.getString("id_colonia").equals(id)) {
                     igual = "s"; //incica que achou
                 } else
@@ -1029,104 +987,86 @@ public class colonia_questionario extends javax.swing.JFrame {
             //nas linhas abaixo, mostra_conteudo_tabela();
              limpar_dados();
              mostra_dados();
-             preencher_jtableEspecie(pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString()));
-             preencher_jtableAtividade(pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString()));
+             
+             preencher_jtableAtividade(pega_codigo_ou_nome(1,cbColonia.getSelectedItem().toString()));
 
 
         } catch (SQLException ex) {
             limpar_dados();
-            preencher_jtableEspecie(pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString()));
-            preencher_jtableAtividade(pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString()));
+            
+            preencher_jtableAtividade(pega_codigo_ou_nome(1,cbColonia.getSelectedItem().toString()));
             System.out.println(ex+" Erro na troca do combobox");
             }
         }inicia_combo = 1;
-    }//GEN-LAST:event_cbComunidadeActionPerformed
+    }//GEN-LAST:event_cbColoniaActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
          try{
             String sql ="UPDATE colonia_questionario SET "+
-                          "tem_presidente = '"+tachecado(ckb12TemPresidente)+"',"+
-                          "nome_presidente = '"+ tf12NomePresidente.getText() +"',"+
-                          "tem_eleicao_presidencial = '"+ tachecado(ckb14temeleicao) +"',"+
-                          "descricao_eleicao = '"+ tp15descrever.getText() +"',"+
-                          "existe_igreja = '"+ tachecado(ckb16) +"',"+
-                          "quant_igreja = '"+ tf17Outro.getText() +"',"+
-                          "existe_club = '"+ tachecado(ckb18ExisteClube) +"',"+
-                          "quant_club = '"+ tp18QuantaseQuais.getText() +"',"+
-                          "exite_assoc = '"+ tachecado(ckb20ExisteAssociacao) +"',"+
-                          "especificar_associacao = '"+ tp21Especificar.getText() +"',"+
-                          "nr_pescadores = '"+ tf25MON.getText() +"',"+
-                          "nr_embarcacoes = '"+ tf24NrEmbarc.getText() +"',"+
-                          "24mon = '"+ tf26CAN.getText() +"',"+
-                          "25can = '"+ tf27CAM.getText() +"',"+
-                          "26cam = '"+ tf28BPP.getText() +"',"+
-                          "27bpp = '"+ tf29BMP.getText() +"',"+
-                          "28bmp = '"+ tf30GEL.getText() +"',"+
-                          "29gel = '"+ tfGel.getText() +"',"+
-                          "30bin = '"+ tf31BIN.getText() +"',"+
-                          "31fno = '"+ tfFno.getText() +"',"+
-                          "sit_pagantes = '"+ tfPagantes.getText() +"',"+
-                          "sit_inadimplentes = '"+ tfInadiplentes.getText() +"',"+
-                          "34fin_adm_important = '"+ cb34.getSelectedItem() +"',"+
-                          "princ_pesc_ordem_importancia = '"+ tp35.getText() +"',"+
-                          "artes_pesc_ordem_importancia = '"+ tp36.getText() +"',"+
-                          "existe_defeso = '"+ tachecado(ckb36Defeso) +"',"+
-                          "e_respeitado = '"+ cb37.getSelectedItem() +"',"+
-                          "40rec_auxilio_renda = '"+ tachecado(ckb38Aposentadoria) +"',"+
-                          "40rec_auxilio_aposentadoria = '"+ tachecado(ckb38SeguroDesemprego) +"',"+
+                          "12tem_presidente = '"+tachecado(ckb12TemPresidente)+"',"+
+                          
+                          "12nome_presidente = '"+tf12NomePresidente.getText()+"',"+
+                            
 
-                          "40rec_auxilio_seguro = '"+ tachecado(ckb38BolsaFamilia) +"',"+
-                          "acha_suf_valor_recebido = '"+ cb41axasuf.getSelectedItem() +"',"+
-                          "45exite_monitoramento = '"+ tachecado(ckb45Sim) +"',"+
-                          "47tem_desembarque = '"+ tachecado(ckb47) +"',"+
-                          "48destino_consumo = '"+ cb48Consumo.getSelectedItem() +"',"+
-                          "48destino_venda = '"+ cb48Venda.getSelectedItem() +"',"+
-                          "49producao_feita_na = '"+ cb49ProducaoVenda.getSelectedItem() +"',"+
-                          "49producao_feita_na_outro = '"+ tf49OutrasLocalidades.getText() +"',"+
-                          "50ramal = '"+ tachecado(ckb50Ramal) +"',"+
-                          "50estrada = '"+ tachecado(ckb50Estrada) +"',"+
-                          "50rio = '"+ tachecado(ckb50Riu) +"',"+
-                          "50mangue = '"+ tachecado(ckb50Mangue) +"',"+
-                          "50outro = '"+ tachecado(ckb50Outro) +"',"+
-                          "50outro_qual = '"+ tf50Outro.getText() +"',"+
-                          "51onibus = '"+ tachecado(ckb51Onibus) +"',"+
+                          "13realiza_reunioes ='"+cb13.getSelectedItem()+"',"+//"
+                    "15descricao_reunioes ='"+tp15descrever.getText()+"',"+//,
+                    "16eleicao_e_em_reuniao ='"+tachecado(ckb16)+"',"+//,,"
+                    
+                    "17criterio_estar_quite ='"+tachecado(ckb17EstarQuite)+"',"+//"17criterio_estar_quite
+                    "17criterio_ter_tempo ='"+tachecado(ckb17TerTempo)+"',"+//,
+                    "17criterio_outro ='"+tachecado(ckb17Outro)+"',"+//,,"
+                    
+                    "17criterio_outro_qual ='"+tf17Outro.getText()+"',"+//"
+                    "18quantas_fazem_part ='"+tp18QuantaseQuais.getText()+"',"+//,
+                    "19houve_conflito ='"+tachecado(ckb19Sim)+"',"+//,,"
+                    
+                    "20tipo_conflito ='"+tp20TipoConflito.getText()+"',"+//"
+                    "21entre_eles ='"+tachecado(ckb21EntreEles)+"',"+//,
+                    "21com_lideranca ='"+tachecado(ckb21ComLiderancas)+"',"+//,
+                    "21com_idosos ='"+tachecado(ckb21ComIdosos)+"',"+//,,"
+                    
+                    "21com_justica ='"+tachecado(ckb21ComJustica)+"',"+//"
+                    "21com_ibama ='"+tachecado(ckb21ComIBAMA)+"',"+//,
+                    "21com_colonia ='"+tachecado(ckb21ComColonia)+"',"+//,
+                    "21outro ='"+tachecado(ckb21Outro)+"',"+//,,"
+                    
+                    "21outro_qual ='"+tf21Outro.getText()+"',"+//"
+                    "22existe_outras ='"+tachecado(ckb22Sim)+"',"+//,
+                    "22especificar ='"+tp22.getText()+"',"+//,,"
+                    
+                    "23nr_pesc_h ='"+tf23Homens.getText()+"',"+//"
+                    "23nr_pesc_m ='"+tf23Mulheres.getText()+"',"+//,
+                    "24total ='"+tf24NrEmbarc.getText()+"',"+//,
+                    "25mon ='"+tf25MON.getText()+"',"+//,
+                    "26can ='"+tf26CAN.getText()+"',"+//,
+                    "27cam ='"+tf27CAM.getText()+"',"+//,
+                    "28bpp ='"+tf28BPP.getText()+"',"+//,,"
+                    
+                    "29bmp ='"+tf29BMP.getText()+"',"+//"
+                    "30gel ='"+tf30GEL.getText()+"',"+//,
+                    "31bin ='"+tf31BIN.getText()+"',"+//,
+                    "32fno ='"+tfFno.getText()+"',"+//,
+                    "33sit_pagante ='"+tfPagantes.getText()+"',"+//,
+                    "34sit_indadimplentes ='"+tfInadiplentes.getText()+"',"+//,,"
+                    
+                    "35opiniao_financiamento ='"+cb35.getSelectedItem()+"',"+//"
+                    "36defeso ='"+tachecado(ckb36Defeso)+"',"+//,
+                    "37defeso_respeitado ='"+cb37.getSelectedItem()+"',"+//,,"
+                    
+                    "38aposentadoria ='"+tachecado(ckb38Aposentadoria)+"',"+//"
+                    "38seguro ='"+tachecado(ckb38SeguroDesemprego)+"',"+//,
+                    "38bolsa_familia ='"+tachecado(ckb38BolsaFamilia)+"',"+//,
+                    "39e_suficiente ='"+cb39AchaSuficiente.getSelectedItem()+"',"+//,,"
+                    
+                    "40existe_monitoramento ='"+tachecado(ckb40Sim)+"',"+//"
+                    "41quem_faz ='"+tp41Quem.getText()+"',"+//,
+                    "42tem_local ='"+tachecado(ckb42Sim)+"',"+//,
+                    "43qualidade_local ='"+cb43Qualidade.getSelectedItem()+"',"+//,,"
+                         
+                    "44acompanha ='"+cb44Acompanha.getSelectedItem()+"' "+//
+                          
 
-                          "51barco = '"+ tachecado(ckb51Barco) +"',"+
-                          "51bicicleta = '"+ tachecado(ckb51Bicicleta) +"',"+
-                          "51pe = '"+ tachecado(ckb51ape) +"',"+
-                          "52alvenaria = '"+ tachecado(ckb52Alvenaria) +"',"+
-                          "52madeira = '"+ tachecado(ckb52Madeira) +"',"+
-                          "52barro = '"+ tachecado(ckb52Barro) +"',"+
-                          "52palha = '"+ tachecado(ckb52Palha) +"',"+
-                          "53telha_de_barro = '"+ tachecado(ckb53TelhadeBarro) +"',"+
-                          "53quant_telha_de_barro = '"+ tf53TelhadeBarro.getText() +"',"+
-                          "53cavaco = '"+ tachecado(ckb53Cavaco) +"',"+
-                          "53quant_cavaco = '"+ tf53Cavaco.getText() +"',"+
-
-                          "53amianto = '"+ tachecado(ckb53Amianto) +"',"+
-                          "53quant_amianto = '"+ tf53Amianto.getText() +"',"+
-                          "54terra_batida = '"+ tachecado(ckb54TerraBatida) +"',"+
-                          "54quant_terra_batida = '"+ tf54TerraBatida.getText() +"',"+
-                          "54cimentado = '"+ tachecado(ckb54Cimentado) +"',"+
-                          "54quant_cimentado = '"+ tf54Cimentado.getText() +"',"+
-                          "54lajotado = '"+ tachecado(ckb54Lajotado) +"',"+
-                          "54quant_lajotado = '"+ tf54Lajotado.getText() +"',"+
-                          "55quant_mercearias = '"+ tf55mercearias.getText() +"',"+
-                          "55quant_bares = '"+ tf55bares.getText() +"',"+
-                          "55quant_mercearia_bar = '"+ tf55merceariaEbar.getText() +"',"+
-                          "52alvenaria_qtd = '"+ tf52Alvenaria.getText() +"',"+
-                          "52madeira_qtd = '"+ tf52Madeira.getText() +"',"+
-                          "52barro_qtd = '"+ tf52Barro.getText() +"',"+
-                          "52palha_qtd = '"+ tf52Palha.getText() +"',"+
-
-                          "42houve_conflito = '"+ tachecado(ckb42sim)+"',"+
-                          "43conflito_tipo = '"+ tp43ConflitoTipo.getText()+"',"+
-                          "44entre_eles = '"+ tachecado(ckb44EntreEles)+"',"+
-                          "44com_lideranca = '"+ tachecado(ckb44Lideranca)+"',"+
-                          "44com_idosos_pessoas = '"+ tachecado(ckb44Idosos)+"',"+
-                          "46quem_faz = '"+ tp46quemfaz.getText()+"' "+
-
-                          "where id_colonia = "+pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString());
+                    "where id_colonia = "+pega_codigo_ou_nome(1,cbColonia.getSelectedItem().toString());
 
             System.out.println(sql);
             if (conexao.update(sql)){
@@ -1135,7 +1075,7 @@ public class colonia_questionario extends javax.swing.JFrame {
             conexao.execute("select * from colonia_questionario");
             conexao.resultSet.next();
             mostra_dados();
-            cbComunidade.setSelectedIndex(0);
+            cbColonia.setSelectedIndex(0);
             }
 
 
@@ -1145,11 +1085,11 @@ public class colonia_questionario extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btAtualizarAtividadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizarAtividadeActionPerformed
-        preencher_jtableAtividade(pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString()));
+        preencher_jtableAtividade(pega_codigo_ou_nome(1,cbColonia.getSelectedItem().toString()));
     }//GEN-LAST:event_btAtualizarAtividadeActionPerformed
 
     private void btAddAtividadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAddAtividadeActionPerformed
-        new addAtividades(pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString())).setVisible(true);
+        new addAtividades(pega_codigo_ou_nome(1,cbColonia.getSelectedItem().toString())).setVisible(true);
     }//GEN-LAST:event_btAddAtividadeActionPerformed
 
     private void btExcluirAtividadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirAtividadeActionPerformed
@@ -1158,12 +1098,12 @@ public class colonia_questionario extends javax.swing.JFrame {
         //.removeRow(jTable1.getSelectedRow());
                 String sql;
 
-            sql = "delete from colonia_addatividade Where id_atividade =" + jtAtividade.getValueAt(jtAtividade.getSelectedRow(),0);
+            sql = "delete from colonia_atividade Where id_atividade =" + jtAtividade.getValueAt(jtAtividade.getSelectedRow(),0);
 
                 if (conexao.salvar(sql)) {
                     System.out.println("Exclusão realizada com sucesso");
                     //exibe
-                    preencher_jtableAtividade(pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString()));
+                    preencher_jtableAtividade(pega_codigo_ou_nome(1,cbColonia.getSelectedItem().toString()));
 
                 }else{
                 JOptionPane.showMessageDialog(null,"Erro na exclusão");
@@ -1212,6 +1152,24 @@ public class colonia_questionario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ckb40SimItemStateChanged
 
+    private void ckb19SimItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ckb19SimItemStateChanged
+        if (ckb19Sim.isSelected())
+            tp20TipoConflito.setEditable(true);
+        else{
+            tp20TipoConflito.setEditable(false);
+            tp20TipoConflito.setText("");
+        }
+    }//GEN-LAST:event_ckb19SimItemStateChanged
+
+    private void ckb21OutroItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ckb21OutroItemStateChanged
+        if (ckb21Outro.isSelected())
+            tf21Outro.setEditable(true);
+        else{
+            tf21Outro.setEditable(false);
+            tf21Outro.setText("");
+        }
+    }//GEN-LAST:event_ckb21OutroItemStateChanged
+
     /**
     * @param args the command line arguments
     */
@@ -1229,12 +1187,12 @@ public class colonia_questionario extends javax.swing.JFrame {
     private javax.swing.JButton btAtualizarAtividade;
     private javax.swing.JButton btExcluirAtividade;
     private javax.swing.JComboBox cb13;
-    private javax.swing.JComboBox cb34;
+    private javax.swing.JComboBox cb35;
     private javax.swing.JComboBox cb37;
     private javax.swing.JComboBox cb39AchaSuficiente;
     private javax.swing.JComboBox cb43Qualidade;
     private javax.swing.JComboBox cb44Acompanha;
-    private javax.swing.JComboBox cbComunidade;
+    private javax.swing.JComboBox cbColonia;
     private javax.swing.JCheckBox ckb12TemPresidente;
     private javax.swing.JCheckBox ckb16;
     private javax.swing.JCheckBox ckb17EstarQuite;
@@ -1359,241 +1317,149 @@ public class colonia_questionario extends javax.swing.JFrame {
 
     private void mostra_dados() {
         try {
-            tf12NomePresidente.setText(conexao.resultSet.getString("nome_presidente"));
-            tp15descrever.setText(conexao.resultSet.getString("descricao_eleicao"));
-            tf17Outro.setText(conexao.resultSet.getString("quant_igreja"));
-            tp18QuantaseQuais.setText(conexao.resultSet.getString("quant_club"));
-            tp21Especificar.setText(conexao.resultSet.getString("especificar_associacao"));
+            tf12NomePresidente.setText(conexao.resultSet.getString("12nome_presidente"));
 
-            tf25MON.setText(conexao.resultSet.getString("nr_pescadores"));
-            tf24NrEmbarc.setText(conexao.resultSet.getString("nr_embarcacoes"));
-            tf26CAN.setText(conexao.resultSet.getString("24mon"));
-            tf27CAM.setText(conexao.resultSet.getString("25can"));
-            tf28BPP.setText(conexao.resultSet.getString("26cam"));
-            tf29BMP.setText(conexao.resultSet.getString("27bpp"));
-            tf30GEL.setText(conexao.resultSet.getString("28bmp"));
-            tfGel.setText(conexao.resultSet.getString("29gel"));
-            tf31BIN.setText(conexao.resultSet.getString("30bin"));
-            tfFno.setText(conexao.resultSet.getString("31fno"));
-            tfPagantes.setText(conexao.resultSet.getString("sit_pagantes"));
-            tfInadiplentes.setText(conexao.resultSet.getString("sit_inadimplentes"));
-
-            tp35.setText(conexao.resultSet.getString("princ_pesc_ordem_importancia"));
-            tp36.setText(conexao.resultSet.getString("artes_pesc_ordem_importancia"));
-
-            tf49OutrasLocalidades.setText(conexao.resultSet.getString("49producao_feita_na_outro"));
-
-            cb34.setSelectedItem(conexao.resultSet.getString("34fin_adm_important"));
-            cb37.setSelectedItem(conexao.resultSet.getString("e_respeitado"));
-            cb41axasuf.setSelectedItem(conexao.resultSet.getString("acha_suf_valor_recebido"));
-            cb48Consumo.setSelectedItem(conexao.resultSet.getString("48destino_consumo"));
-            cb48Venda.setSelectedItem(conexao.resultSet.getString("48destino_venda"));
-            cb49ProducaoVenda.setSelectedItem(conexao.resultSet.getString("49producao_feita_na"));
-            //CheckBoxes
-            if (conexao.resultSet.getString("tem_presidente").equals("1"))
+            if (conexao.resultSet.getString("12tem_presidente").equals("1"))
                    ckb12TemPresidente.setSelected(true);
             else
                    ckb12TemPresidente.setSelected(false);
 
-            if (conexao.resultSet.getString("tem_eleicao_presidencial").equals("1"))
-                   ckb14temeleicao.setSelected(true);
-            else
-                   ckb14temeleicao.setSelected(false);
+            cb13.setSelectedItem(conexao.resultSet.getString("13realiza_reunioes"));
+            tp15descrever.setText(conexao.resultSet.getString("15descricao_reunioes"));
 
-            if (conexao.resultSet.getString("existe_igreja").equals("1"))
+            if (conexao.resultSet.getString("16eleicao_e_em_reuniao").equals("1"))
                    ckb16.setSelected(true);
             else
                    ckb16.setSelected(false);
 
-            if (conexao.resultSet.getString("existe_club").equals("1"))
-                   ckb18ExisteClube.setSelected(true);
+            if (conexao.resultSet.getString("17criterio_estar_quite").equals("1"))
+                   ckb17EstarQuite.setSelected(true);
             else
-                   ckb18ExisteClube.setSelected(false);
+                   ckb17EstarQuite.setSelected(false);
 
-            if (conexao.resultSet.getString("exite_assoc").equals("1"))
-                   ckb20ExisteAssociacao.setSelected(true);
+            if (conexao.resultSet.getString("17criterio_ter_tempo").equals("1"))
+                   ckb17TerTempo.setSelected(true);
             else
-                   ckb20ExisteAssociacao.setSelected(false);
+                   ckb17TerTempo.setSelected(false);
 
-            //
-            if (conexao.resultSet.getString("existe_defeso").equals("1"))
+            if (conexao.resultSet.getString("17criterio_outro").equals("1"))
+                   ckb17Outro.setSelected(true);
+            else
+                   ckb17Outro.setSelected(false);
+
+            tf17Outro.setText(conexao.resultSet.getString("17criterio_outro_qual"));
+            tp18QuantaseQuais.setText(conexao.resultSet.getString("18quantas_fazem_part"));
+            
+            if (conexao.resultSet.getString("19houve_conflito").equals("1"))
+                   ckb19Sim.setSelected(true);
+            else
+                   ckb19Sim.setSelected(false);
+            
+            tp20TipoConflito.setText(conexao.resultSet.getString("20tipo_conflito"));
+            
+            if (conexao.resultSet.getString("21entre_eles").equals("1"))
+                   ckb21EntreEles.setSelected(true);
+            else
+                   ckb21EntreEles.setSelected(false);
+            
+            if (conexao.resultSet.getString("21com_lideranca").equals("1"))
+                   ckb21ComLiderancas.setSelected(true);
+            else
+                   ckb21ComLiderancas.setSelected(false);
+            
+            if (conexao.resultSet.getString("21com_idosos").equals("1"))
+                   ckb21ComIdosos.setSelected(true);
+            else
+                   ckb21ComIdosos.setSelected(false);
+            
+            if (conexao.resultSet.getString("21com_justica").equals("1"))
+                   ckb21ComJustica.setSelected(true);
+            else
+                   ckb21ComJustica.setSelected(false);
+            
+            if (conexao.resultSet.getString("21com_ibama").equals("1"))
+                   ckb21ComIBAMA.setSelected(true);
+            else
+                   ckb21ComIBAMA.setSelected(false);
+            
+            if (conexao.resultSet.getString("21com_colonia").equals("1"))
+                   ckb21ComColonia.setSelected(true);
+            else
+                   ckb21ComColonia.setSelected(false);
+            
+            if (conexao.resultSet.getString("21outro").equals("1"))
+                   ckb21Outro.setSelected(false);
+            else
+                   ckb21Outro.setSelected(false);
+            
+            tf21Outro.setText(conexao.resultSet.getString("21outro_qual"));
+            
+            if (conexao.resultSet.getString("22existe_outras").equals("1"))
+                   ckb22Sim.setSelected(true);
+            else
+                   ckb22Sim.setSelected(false);
+                    
+            tp22.setText(conexao.resultSet.getString("22especificar"));
+
+            tf23Homens.setText(conexao.resultSet.getString("23nr_pesc_h"));
+            tf23Mulheres.setText(conexao.resultSet.getString("23nr_pesc_m"));
+            tf24NrEmbarc.setText(conexao.resultSet.getString("24total"));
+            tf25MON.setText(conexao.resultSet.getString("25mon"));
+            tf26CAN.setText(conexao.resultSet.getString("26can"));
+            tf27CAM.setText(conexao.resultSet.getString("27cam"));
+            tf28BPP.setText(conexao.resultSet.getString("28bpp"));
+
+            tf29BMP.setText(conexao.resultSet.getString("29bmp"));
+            tf30GEL.setText(conexao.resultSet.getString("30gel"));
+            tf31BIN.setText(conexao.resultSet.getString("31bin"));
+            tfFno.setText(conexao.resultSet.getString("32fno"));
+            tfPagantes.setText(conexao.resultSet.getString("33sit_pagante"));
+            tfInadiplentes.setText(conexao.resultSet.getString("34sit_indadimplentes"));
+
+            cb35.setSelectedItem(conexao.resultSet.getString("35opiniao_financiamento"));
+            
+            if (conexao.resultSet.getString("36defeso").equals("1"))
                    ckb36Defeso.setSelected(true);
             else
                    ckb36Defeso.setSelected(false);
+            
+            cb37.setSelectedItem(conexao.resultSet.getString("37defeso_respeitado"));
 
-            //
-            if (conexao.resultSet.getString("40rec_auxilio_renda").equals("1"))
+            if (conexao.resultSet.getString("38aposentadoria").equals("1"))
                    ckb38Aposentadoria.setSelected(true);
             else
                    ckb38Aposentadoria.setSelected(false);
-
-            if (conexao.resultSet.getString("40rec_auxilio_aposentadoria").equals("1"))
+            
+            if (conexao.resultSet.getString("38seguro").equals("1"))
                    ckb38SeguroDesemprego.setSelected(true);
             else
                    ckb38SeguroDesemprego.setSelected(false);
-
-            if (conexao.resultSet.getString("40rec_auxilio_seguro").equals("1"))
+            
+            if (conexao.resultSet.getString("38bolsa_familia").equals("1"))
                    ckb38BolsaFamilia.setSelected(true);
             else
                    ckb38BolsaFamilia.setSelected(false);
+              
+            cb39AchaSuficiente.setSelectedItem(conexao.resultSet.getString("39e_suficiente"));
 
-            //
-            if (conexao.resultSet.getString("45exite_monitoramento").equals("1"))
-                   ckb45Sim.setSelected(true);
+            if (conexao.resultSet.getString("40existe_monitoramento").equals("1"))
+                   ckb40Sim.setSelected(true);
             else
-                   ckb45Sim.setSelected(false);
-
-            if (conexao.resultSet.getString("47tem_desembarque").equals("1"))
-                   ckb47.setSelected(true);
-            else
-                   ckb47.setSelected(false);
-
-
-            //estrutura da comunidade
-            if (conexao.resultSet.getString("50ramal").equals("1"))
-                   ckb50Ramal.setSelected(true);
-            else
-                   ckb50Ramal.setSelected(false);
-
-            if (conexao.resultSet.getString("50estrada").equals("1"))
-                   ckb50Estrada.setSelected(true);
-            else
-                   ckb50Estrada.setSelected(false);
-
-            if (conexao.resultSet.getString("50rio").equals("1"))
-                   ckb50Riu.setSelected(true);
-            else
-                   ckb50Riu.setSelected(false);
-
-            if (conexao.resultSet.getString("50mangue").equals("1"))
-                   ckb50Mangue.setSelected(true);
-            else
-                   ckb50Mangue.setSelected(false);
-
-            if (conexao.resultSet.getString("50outro").equals("1"))
-                   ckb50Outro.setSelected(true);
-            else
-                   ckb50Outro.setSelected(false);
-
-            tf50Outro.setText(conexao.resultSet.getString("50outro_qual"));
-
-            //ckb51
-            if (conexao.resultSet.getString("51onibus").equals("1"))
-                   ckb51Onibus.setSelected(true);
-            else
-                   ckb51Onibus.setSelected(false);
-
-            if (conexao.resultSet.getString("51barco").equals("1"))
-                   ckb51Barco.setSelected(true);
-            else
-                   ckb51Barco.setSelected(false);
-
-            if (conexao.resultSet.getString("51bicicleta").equals("1"))
-                   ckb51Bicicleta.setSelected(true);
-            else
-                   ckb51Bicicleta.setSelected(false);
-
-            if (conexao.resultSet.getString("51pe").equals("1"))
-                   ckb51ape.setSelected(true);
-            else
-                   ckb51ape.setSelected(false);
-
-            //ckb52
-            if (conexao.resultSet.getString("52alvenaria").equals("1"))
-                   ckb52Alvenaria.setSelected(true);
-            else
-                   ckb52Alvenaria.setSelected(false);
-
-            if (conexao.resultSet.getString("52madeira").equals("1"))
-                   ckb52Madeira.setSelected(true);
-            else
-                   ckb52Madeira.setSelected(false);
-
-            if (conexao.resultSet.getString("52barro").equals("1"))
-                   ckb52Barro.setSelected(true);
-            else
-                   ckb52Barro.setSelected(false);
-
-            if (conexao.resultSet.getString("52palha").equals("1"))
-                   ckb52Palha.setSelected(true);
-            else
-                   ckb52Palha.setSelected(false);
-
-            tf52Alvenaria.setText(conexao.resultSet.getString("52alvenaria_qtd"));
-            tf52Madeira.setText(conexao.resultSet.getString("52madeira_qtd"));
-            tf52Barro.setText(conexao.resultSet.getString("52barro_qtd"));
-            tf52Palha.setText(conexao.resultSet.getString("52palha_qtd"));
-
-            //49
-            if (conexao.resultSet.getString("53telha_de_barro").equals("1"))
-                   ckb53TelhadeBarro.setSelected(true);
-            else
-                   ckb53TelhadeBarro.setSelected(false);
-
-            if (conexao.resultSet.getString("53cavaco").equals("1"))
-                   ckb53Cavaco.setSelected(true);
-            else
-                   ckb53Cavaco.setSelected(false);
-
-            if (conexao.resultSet.getString("53amianto").equals("1"))
-                   ckb53Amianto.setSelected(true);
-            else
-                   ckb53Amianto.setSelected(false);
-
-            tf53TelhadeBarro.setText(conexao.resultSet.getString("53quant_telha_de_barro"));
-            tf53Cavaco.setText(conexao.resultSet.getString("53quant_cavaco"));
-            tf53Amianto.setText(conexao.resultSet.getString("53quant_amianto"));
-
-            //54
-            if (conexao.resultSet.getString("54terra_batida").equals("1"))
-                   ckb54TerraBatida.setSelected(true);
-            else
-                   ckb54TerraBatida.setSelected(false);
-
-            if (conexao.resultSet.getString("54cimentado").equals("1"))
-                   ckb54Cimentado.setSelected(true);
-            else
-                   ckb54Cimentado.setSelected(false);
-
-            if (conexao.resultSet.getString("54lajotado").equals("1"))
-                   ckb54Lajotado.setSelected(true);
-            else
-                   ckb54Lajotado.setSelected(false);
-
-            tf54TerraBatida.setText(conexao.resultSet.getString("54quant_terra_batida"));
-            tf54Cimentado.setText(conexao.resultSet.getString("54quant_cimentado"));
-            tf54Lajotado.setText(conexao.resultSet.getString("54quant_lajotado"));
-
-            //55
-            tf55mercearias.setText(conexao.resultSet.getString("55quant_mercearias"));
-            tf55bares.setText(conexao.resultSet.getString("55quant_bares"));
-            tf55merceariaEbar.setText(conexao.resultSet.getString("55quant_mercearia_bar"));
-
-            //exibindo os novos dados
-            if (conexao.resultSet.getString("42houve_conflito").equals("1"))
-                   ckb42sim.setSelected(true);
-            else
-                   ckb42sim.setSelected(false);
+                   ckb40Sim.setSelected(false);
             
-            if (conexao.resultSet.getString("44entre_eles").equals("1"))
-                   ckb44EntreEles.setSelected(true);
+            tp41Quem.setText(conexao.resultSet.getString("41quem_faz"));
+
+            if (conexao.resultSet.getString("42tem_local").equals("1"))
+                   ckb42Sim.setSelected(true);
             else
-                   ckb44EntreEles.setSelected(false);
+                   ckb42Sim.setSelected(false);
             
-            if (conexao.resultSet.getString("44com_lideranca").equals("1"))
-                   ckb44Lideranca.setSelected(true);
-            else
-                   ckb44Lideranca.setSelected(false);
-            
-            if (conexao.resultSet.getString("44com_idosos_pessoas").equals("1"))
-                   ckb44Idosos.setSelected(true);
-            else
-                   ckb44Idosos.setSelected(false);
-            
-            tp43ConflitoTipo.setText(conexao.resultSet.getString("43conflito_tipo"));
-            tp46quemfaz.setText(conexao.resultSet.getString("46quem_faz"));
+            cb43Qualidade.setSelectedItem(conexao.resultSet.getString("43qualidade_local"));
+
+            cb44Acompanha.setSelectedItem(conexao.resultSet.getString("44acompanha"));
 
         } catch (Exception e) {
+            System.out.println("Erro na exibição");
         }
 
     }
@@ -1611,105 +1477,68 @@ public class colonia_questionario extends javax.swing.JFrame {
                     ckb12TemPresidente.setSelected(false);
                     tf12NomePresidente.setText("");
 
-                    ckb14temeleicao.setSelected(false);
+                    cb13.setSelectedIndex(0);
                     tp15descrever.setText("");
                     ckb16.setSelected(false);
 
-                    tf17Outro.setText("0");
-                    ckb18ExisteClube.setSelected(false);
-                    tp18QuantaseQuais.setText("0");
+                    ckb17EstarQuite.setSelected(false);
+                    ckb17TerTempo.setSelected(false);
+                    ckb17Outro.setSelected(false);
 
-                    ckb20ExisteAssociacao.setSelected(false);
-                    tp21Especificar.setText("");
-                    tf25MON.setText("0");
+                    tf17Outro.setText("");
+                    tp18QuantaseQuais.setText("");
+                    ckb19Sim.setSelected(false);
 
+                    tp20TipoConflito.setText("");
+                    ckb21EntreEles.setSelected(false);
+                    ckb21ComLiderancas.setSelected(false);
+                    ckb21ComIdosos.setSelected(false);
+
+                    ckb21ComJustica.setSelected(false);
+                    ckb21ComIBAMA.setSelected(false);
+                    ckb21ComColonia.setSelected(false);
+                    ckb21Outro.setSelected(false);
+
+                    tf21Outro.setText("");
+                    ckb22Sim.setSelected(false);
+                    tp22.setText("");
+
+                    tf23Homens.setText("0");
+                    tf23Mulheres.setText("0");
                     tf24NrEmbarc.setText("0");
+                    tf25MON.setText("0");
                     tf26CAN.setText("0");
                     tf27CAM.setText("0");
-
                     tf28BPP.setText("0");
+
                     tf29BMP.setText("0");
                     tf30GEL.setText("0");
-                    tfGel.setText("0");
                     tf31BIN.setText("0");
                     tfFno.setText("0");
-
                     tfPagantes.setText("");
                     tfInadiplentes.setText("");
-                    cb34.setSelectedIndex(0);
 
-                    tp35.setText("");
-                    tp36.setText("");
+                    cb35.setSelectedIndex(0);
                     ckb36Defeso.setSelected(false);
-
                     cb37.setSelectedIndex(0);
+
                     ckb38Aposentadoria.setSelected(false);
                     ckb38SeguroDesemprego.setSelected(false);
-
                     ckb38BolsaFamilia.setSelected(false);
-                    cb41axasuf.setSelectedIndex(0);
-                    ckb45Sim.setSelected(false);
+                    cb39AchaSuficiente.setSelectedIndex(0);
 
-                    ckb47.setSelected(false);
-                    cb48Consumo.setSelectedIndex(0);
-                    cb48Venda.setSelectedIndex(0);
+                    ckb40Sim.setSelected(false);
+                    tp41Quem.setText("");
+                    ckb42Sim.setSelected(false);
+                    cb43Qualidade.setSelectedIndex(0);
 
-                    cb49ProducaoVenda.setSelectedIndex(0);
-                    tf49OutrasLocalidades.setText("");
-                    ckb50Ramal.setSelected(false);
-
-                    ckb50Estrada.setSelected(false);
-                    ckb50Riu.setSelected(false);
-                    ckb50Mangue.setSelected(false);
-                    ckb50Outro.setSelected(false);
-                    tf50Outro.setText("");
-
-                    ckb51Onibus.setSelected(false);
-                    ckb51Barco.setSelected(false);
-                    ckb51Bicicleta.setSelected(false);
-                    ckb51ape.setSelected(false);
-
-                    ckb52Alvenaria.setSelected(false);
-                    ckb52Madeira.setSelected(false);
-                    ckb52Barro.setSelected(false);
-                    ckb52Palha.setSelected(false);
-
-                    ckb53TelhadeBarro.setSelected(false);
-                    tf53TelhadeBarro.setText("0");
-                    ckb53Cavaco.setSelected(false);
-
-                    tf53Cavaco.setText("0");
-                    ckb53Amianto.setSelected(false);
-                    tf53Amianto.setText("0");
-
-                    ckb54TerraBatida.setSelected(false);
-                    tf54TerraBatida.setText("0");
-                    ckb54Cimentado.setSelected(false);
-                    tf54Cimentado.setText("0");
-                    ckb54Lajotado.setSelected(false);
-                    tf54Lajotado.setText("0");
-
-                    tf55mercearias.setText("0");
-                    tf55bares.setText("0");
-                    tf55merceariaEbar.setText("0");
-
-                    tf52Alvenaria.setText("0");
-                    tf52Madeira.setText("0");
-                    tf52Barro.setText("0");
-                    tf52Palha.setText("0");
-
-                    ckb42sim.setSelected(false);
-                    ckb44EntreEles.setSelected(false);
-                    ckb44Idosos.setSelected(false);
-                    ckb44Lideranca.setSelected(false);
-                    tp46quemfaz.setText("");
-                    tp43ConflitoTipo.setText("");
+                    cb44Acompanha.setSelectedIndex(0);
 
     }
 
 
         public void preencher_jtableAtividade(String id){
-        conexao.execute("select * from colonia_addatividade where id_colonia="+id);
+        conexao.execute("select * from colonia_atividade where id_colonia="+id);
 
         jtAtividade.getColumnModel().getColumn(0).setMaxWidth(0);
         jtAtividade.getColumnModel().getColumn(0).setPreferredWidth(0);
