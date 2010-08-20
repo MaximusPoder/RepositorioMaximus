@@ -50,16 +50,6 @@
                                       <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="ckb18ExisteClube" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="tf19Especificar" min="-2" pref="189" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="ckb20ExisteAssociacao" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
@@ -82,109 +72,116 @@
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="tf17numeroIgreja" min="-2" pref="189" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="jLabel27" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="tfInadiplentes" min="-2" pref="115" max="-2" attributes="0"/>
-                                          </Group>
                                           <Component id="jLabel28" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel26" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="1">
-                                                      <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="tfNrPescadores" min="-2" pref="91" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="tfNrEmbarcacoes" pref="171" max="32767" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                          <Group type="102" attributes="0">
-                                                              <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                              <Component id="tfMon" min="-2" pref="84" max="-2" attributes="0"/>
-                                                              <EmptySpace max="-2" attributes="0"/>
-                                                              <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace max="-2" attributes="0"/>
-                                                              <Component id="tfCan" min="-2" pref="132" max="-2" attributes="0"/>
-                                                          </Group>
-                                                          <Group type="102" attributes="1">
-                                                              <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                                              <Component id="tfBpp" min="-2" pref="90" max="-2" attributes="1"/>
-                                                              <EmptySpace max="-2" attributes="0"/>
-                                                              <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace max="32767" attributes="0"/>
-                                                              <Component id="tfBmp" min="-2" pref="120" max="-2" attributes="1"/>
-                                                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                                          </Group>
-                                                          <Group type="102" attributes="1">
-                                                              <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace max="-2" attributes="0"/>
-                                                              <Component id="tfBin" min="-2" pref="65" max="-2" attributes="0"/>
-                                                          </Group>
-                                                      </Group>
-                                                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                          <Group type="102" attributes="1">
-                                                              <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                              <Component id="tfCam" max="32767" attributes="0"/>
-                                                          </Group>
-                                                          <Group type="102" attributes="0">
-                                                              <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                              <Component id="tfGel" min="-2" pref="111" max="-2" attributes="1"/>
-                                                          </Group>
-                                                      </Group>
-                                                  </Group>
-                                              </Group>
-                                              <EmptySpace pref="3" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="jScrollPane2" alignment="0" max="32767" attributes="1"/>
-                                              <Group type="102" alignment="0" attributes="1">
-                                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="ckb12TemPresidente" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="tf13NomePresidente" max="32767" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jScrollPane7" min="-2" pref="453" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="1">
-                                                      <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="tfPagantes" max="32767" attributes="0"/>
-                                                  </Group>
-                                                  <Component id="jLabel23" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
+                                          <Group type="102" alignment="0" attributes="1">
+                                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="ckb12TemPresidente" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="tfFno" min="-2" pref="99" max="-2" attributes="0"/>
+                                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="tf13NomePresidente" pref="488" max="32767" attributes="0"/>
                                           </Group>
-                                      </Group>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace pref="230" max="-2" attributes="0"/>
-                                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jScrollPane7" min="-2" pref="453" max="-2" attributes="0"/>
                                           </Group>
-                                          <Group type="102" attributes="0">
+                                          <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="ckb20ExisteAssociacao" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="jScrollPane9" pref="457" max="32767" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="jLabel27" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Component id="tfInadiplentes" min="-2" pref="115" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="jLabel26" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Group type="103" groupAlignment="1" attributes="0">
+                                                          <Group type="102" alignment="0" attributes="1">
+                                                              <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="tfNrPescadores" min="-2" pref="91" max="-2" attributes="0"/>
+                                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                              <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="tfNrEmbarcacoes" pref="170" max="32767" attributes="0"/>
+                                                          </Group>
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                                  <Group type="102" alignment="0" attributes="0">
+                                                                      <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                                      <Component id="tfMon" min="-2" pref="84" max="-2" attributes="0"/>
+                                                                      <EmptySpace max="-2" attributes="0"/>
+                                                                      <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+                                                                      <EmptySpace max="-2" attributes="0"/>
+                                                                      <Component id="tfCan" min="-2" pref="132" max="-2" attributes="0"/>
+                                                                  </Group>
+                                                                  <Group type="102" alignment="0" attributes="1">
+                                                                      <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
+                                                                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                                                      <Component id="tfBpp" min="-2" pref="90" max="-2" attributes="1"/>
+                                                                      <EmptySpace max="-2" attributes="0"/>
+                                                                      <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
+                                                                      <EmptySpace max="32767" attributes="0"/>
+                                                                      <Component id="tfBmp" min="-2" pref="120" max="-2" attributes="1"/>
+                                                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                                                  </Group>
+                                                                  <Group type="102" alignment="0" attributes="1">
+                                                                      <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
+                                                                      <EmptySpace max="-2" attributes="0"/>
+                                                                      <Component id="tfBin" min="-2" pref="65" max="-2" attributes="0"/>
+                                                                  </Group>
+                                                              </Group>
+                                                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                                  <Group type="102" alignment="0" attributes="1">
+                                                                      <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
+                                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                                      <Component id="tfCam" max="32767" attributes="0"/>
+                                                                  </Group>
+                                                                  <Group type="102" alignment="0" attributes="0">
+                                                                      <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
+                                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                                      <Component id="tfGel" min="-2" pref="111" max="-2" attributes="1"/>
+                                                                  </Group>
+                                                              </Group>
+                                                          </Group>
+                                                      </Group>
+                                                      <EmptySpace pref="4" max="32767" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="jScrollPane2" alignment="0" pref="554" max="32767" attributes="1"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                          <Group type="102" alignment="0" attributes="1">
+                                                              <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                              <Component id="tfPagantes" max="32767" attributes="0"/>
+                                                          </Group>
+                                                          <Component id="jLabel23" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Component id="tfFno" min="-2" pref="99" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
                                               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                                               <Component id="cb34" min="-2" pref="157" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
+                                      <EmptySpace pref="31" max="-2" attributes="0"/>
+                                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                       <Component id="jScrollPane3" alignment="0" max="32767" attributes="1"/>
@@ -199,150 +196,34 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="btAtualizarEspecie" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                      <Group type="103" alignment="1" groupAlignment="1" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="ckb38Defeso" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="cb39" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="jLabel33" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="ckb40Renda" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="ckb40Aposentadoria" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="ckb40SeguroDesemprego" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="cb41axasuf" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="ckb38Defeso" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="cb39" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jLabel33" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="ckb40Renda" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="ckb40Aposentadoria" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="ckb40SeguroDesemprego" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="ckb42Sim" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="cb44Consumo" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                                  <Component id="cb44Venda" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="ckb43" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="cb41axasuf" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel40" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="cb45ProducaoVenda" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="tf45OutrasLocalidades" min="-2" pref="152" max="-2" attributes="0"/>
-                                              </Group>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <EmptySpace pref="2" max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jLabel42" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="ckb46Ramal" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="ckb46Estrada" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="ckb46Riu" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                          <Component id="ckb46Mangue" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="ckb46Outro" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="tf46Outro" min="-2" pref="122" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Component id="jLabel43" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="ckb47Onibus" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="ckb47Barco" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="ckb47Bicicleta" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="ckb47ape" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Component id="jLabel44" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="ckb48Alvenaria" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="tf48Alvenaria" min="-2" pref="27" max="-2" attributes="0"/>
-                                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                          <Component id="ckb48Madeira" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="tf48Madeira" min="-2" pref="27" max="-2" attributes="0"/>
-                                                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                                                          <Component id="ckb48Barro" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="tf48Barro" min="-2" pref="27" max="-2" attributes="0"/>
-                                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                          <Component id="ckb48Palha" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="tf48Palha" min="-2" pref="27" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Component id="jLabel45" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="ckb49TelhadeBarro" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="tf49TelhadeBarro" min="-2" pref="27" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="ckb49Cavaco" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="tf49Cavaco" min="-2" pref="27" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="ckb49Amianto" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="tf49Amianto" min="-2" pref="27" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Component id="jLabel46" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="ckb50TerraBatida" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="tf50TerraBatida" min="-2" pref="27" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="ckb50Cimentado" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="tf50Cimentado" min="-2" pref="27" max="-2" attributes="0"/>
-                                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                          <Component id="ckb50Lajotado" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="tf50Lajotado" min="-2" pref="27" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Component id="jLabel47" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="tf51mercearias" min="-2" pref="27" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="jLabel50" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="tf51bares" min="-2" pref="27" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="jLabel51" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="tf51merceariaEbar" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Component id="jScrollPane8" alignment="0" max="32767" attributes="1"/>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="jLabel48" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
-                                                      </Group>
                                                       <Group type="102" alignment="1" attributes="0">
                                                           <Component id="btAddAtividade" min="-2" max="-2" attributes="0"/>
                                                           <EmptySpace max="-2" attributes="0"/>
@@ -356,12 +237,147 @@
                                                           <EmptySpace max="-2" attributes="0"/>
                                                           <Component id="jButton2" min="-2" max="-2" attributes="0"/>
                                                       </Group>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="jLabel48" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="jScrollPane8" alignment="0" max="32767" attributes="1"/>
+                                                      <Component id="jLabel45" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="ckb53TelhadeBarro" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="tf53TelhadeBarro" min="-2" pref="27" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="ckb53Cavaco" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="tf53Cavaco" min="-2" pref="27" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="ckb53Amianto" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="tf53Amianto" min="-2" pref="27" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="jLabel46" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="ckb54TerraBatida" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="tf54TerraBatida" min="-2" pref="27" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="ckb54Cimentado" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="tf54Cimentado" min="-2" pref="27" max="-2" attributes="0"/>
+                                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                          <Component id="ckb54Lajotado" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="tf54Lajotado" min="-2" pref="27" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="jLabel47" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="tf55mercearias" min="-2" pref="27" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="jLabel50" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="tf55bares" min="-2" pref="27" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="jLabel51" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="tf55merceariaEbar" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="jLabel42" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="ckb50Ramal" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="ckb50Estrada" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="ckb50Riu" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                          <Component id="ckb50Mangue" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="ckb50Outro" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="tf50Outro" min="-2" pref="122" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="jLabel43" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="ckb51Onibus" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="ckb51Barco" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="ckb51Bicicleta" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="ckb51ape" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="jLabel44" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="ckb52Alvenaria" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="tf52Alvenaria" min="-2" pref="27" max="-2" attributes="0"/>
+                                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                          <Component id="ckb52Madeira" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="tf52Madeira" min="-2" pref="27" max="-2" attributes="0"/>
+                                                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                                                          <Component id="ckb52Barro" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="tf52Barro" min="-2" pref="27" max="-2" attributes="0"/>
+                                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                          <Component id="ckb52Palha" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="tf52Palha" min="-2" pref="27" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
+                                                          <Component id="jLabel41" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="jLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="cb48Consumo" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                                                          <Component id="cb48Venda" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="ckb47" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="jLabel40" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                          <Component id="cb49ProducaoVenda" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                          <Component id="tf49OutrasLocalidades" min="-2" pref="152" max="-2" attributes="0"/>
+                                                      </Group>
                                                   </Group>
                                               </Group>
+                                              <Component id="jLabel54" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="ckb44EntreEles" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="ckb44Lideranca" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="ckb44Idosos" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="ckb45Sim" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="jLabel55" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
-                                              <Component id="jLabel41" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel53" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="jScrollPane10" alignment="0" max="32767" attributes="1"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLabel52" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="ckb42sim" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="jScrollPane11" alignment="1" min="-2" pref="607" max="-2" attributes="1"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -422,10 +438,13 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="ckb18ExisteClube" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tf19Especificar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                          <Component id="jScrollPane9" min="-2" pref="44" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="ckb20ExisteAssociacao" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -468,7 +487,7 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
@@ -488,7 +507,7 @@
                           <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cb34" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane3" min="-2" pref="80" max="-2" attributes="0"/>
@@ -529,108 +548,129 @@
                           <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cb41axasuf" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel52" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckb42sim" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel53" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane10" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel54" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="ckb44EntreEles" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckb44Lideranca" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckb44Idosos" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ckb42Sim" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckb45Sim" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel55" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane11" pref="49" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ckb43" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckb47" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel38" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cb44Consumo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cb48Consumo" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel39" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cb44Venda" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cb48Venda" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel40" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cb45ProducaoVenda" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tf45OutrasLocalidades" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cb49ProducaoVenda" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tf49OutrasLocalidades" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel41" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel42" min="-2" pref="21" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="ckb46Ramal" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ckb46Estrada" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ckb46Riu" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ckb46Mangue" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ckb46Outro" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tf46Outro" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckb50Ramal" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckb50Estrada" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckb50Riu" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckb50Mangue" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckb50Outro" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tf50Outro" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="ckb47Onibus" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ckb47Barco" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ckb47Bicicleta" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ckb47ape" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckb51Onibus" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckb51Barco" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckb51Bicicleta" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckb51ape" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="ckb48Alvenaria" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ckb48Barro" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tf48Alvenaria" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ckb48Madeira" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tf48Madeira" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tf48Barro" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ckb48Palha" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tf48Palha" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckb52Alvenaria" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckb52Barro" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tf52Alvenaria" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckb52Madeira" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tf52Madeira" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tf52Barro" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckb52Palha" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tf52Palha" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="ckb49TelhadeBarro" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tf49TelhadeBarro" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ckb49Cavaco" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tf49Cavaco" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="ckb53TelhadeBarro" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf53TelhadeBarro" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="ckb53Cavaco" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf53Cavaco" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="ckb49Amianto" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tf49Amianto" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="ckb53Amianto" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf53Amianto" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="ckb50TerraBatida" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tf50TerraBatida" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ckb50Cimentado" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tf50Cimentado" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ckb50Lajotado" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tf50Lajotado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckb54TerraBatida" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tf54TerraBatida" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckb54Cimentado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tf54Cimentado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckb54Lajotado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tf54Lajotado" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel49" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tf51mercearias" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tf55mercearias" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel50" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tf51bares" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tf55bares" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel51" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tf51merceariaEbar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tf55merceariaEbar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel48" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane8" min="-2" pref="217" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jScrollPane8" min="-2" pref="176" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btAtualizarAtividade" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btExcluirAtividade" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -643,7 +683,7 @@
                           <Component id="botao_salvar" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -717,13 +757,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel11">
               <Properties>
-                <Property name="text" type="java.lang.String" value="19. Especificar"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="tf19Especificar">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-                <Property name="text" type="java.lang.String" value="0"/>
+                <Property name="text" type="java.lang.String" value="19. Especificar.:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel12">
@@ -950,22 +984,22 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel34">
               <Properties>
-                <Property name="text" type="java.lang.String" value="41. Voc&#xea; acha suficiente o valor recebido do governo durante o defeso ?"/>
+                <Property name="text" type="java.lang.String" value="41. Voc&#xea; acha suficiente o valor do seguro desemprego/seguro defeso recebido do governo durante o defeso ?"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel35">
               <Properties>
-                <Property name="text" type="java.lang.String" value="42. Nesta comunidade existe algum monitoramento para estimar a produ&#xe7;&#xe3;o ?"/>
+                <Property name="text" type="java.lang.String" value="45. Nesta comunidade existe algum monitoramento para estimar a produ&#xe7;&#xe3;o ?"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel36">
               <Properties>
-                <Property name="text" type="java.lang.String" value="43. Esta comunidade tem local espec&#xed;fico para o desembarque da produ&#xe7;&#xe3;o ?"/>
+                <Property name="text" type="java.lang.String" value="47. Esta comunidade tem local espec&#xed;fico para o desembarque da produ&#xe7;&#xe3;o ?"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel37">
               <Properties>
-                <Property name="text" type="java.lang.String" value="44. Destino da produ&#xe7;&#xe3;o para :"/>
+                <Property name="text" type="java.lang.String" value="48. Destino da produ&#xe7;&#xe3;o para :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel38">
@@ -980,10 +1014,10 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel40">
               <Properties>
-                <Property name="text" type="java.lang.String" value="45. A produ&#xe7;&#xe3;o, quando para venda, esta &#xe9; feita na :"/>
+                <Property name="text" type="java.lang.String" value="49. A produ&#xe7;&#xe3;o, quando para venda, esta &#xe9; feita na :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tf45OutrasLocalidades">
+            <Component class="javax.swing.JTextField" name="tf49OutrasLocalidades">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
               </Properties>
@@ -998,10 +1032,10 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel42">
               <Properties>
-                <Property name="text" type="java.lang.String" value="46. O acesso a comunidade &#xe9; feita por (m&#xfa;ltipla escolha) ? "/>
+                <Property name="text" type="java.lang.String" value="50. O acesso a comunidade &#xe9; feita por (m&#xfa;ltipla escolha) ? "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="cb44Consumo">
+            <Component class="javax.swing.JComboBox" name="cb48Consumo">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
@@ -1013,7 +1047,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="cb44Venda">
+            <Component class="javax.swing.JComboBox" name="cb48Venda">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
@@ -1025,7 +1059,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="cb45ProducaoVenda">
+            <Component class="javax.swing.JComboBox" name="cb49ProducaoVenda">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="3">
@@ -1036,34 +1070,34 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cb45ProducaoVendaItemStateChanged"/>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cb49ProducaoVendaItemStateChanged"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel43">
               <Properties>
-                <Property name="text" type="java.lang.String" value="47. Quais os principais meios e transporte usados para chegar &#xe0; comunidade ?"/>
+                <Property name="text" type="java.lang.String" value="51. Quais os principais meios e transporte usados para chegar &#xe0; comunidade ?"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel44">
               <Properties>
-                <Property name="text" type="java.lang.String" value="48. Quais e quantos tipos de moradia existem na comunidade (multipla resposta e em quantidade) ?"/>
+                <Property name="text" type="java.lang.String" value="52. Quais e quantos tipos de moradia existem na comunidade (multipla resposta e em quantidade) ?"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tf46Outro">
+            <Component class="javax.swing.JTextField" name="tf50Outro">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel45">
               <Properties>
-                <Property name="text" type="java.lang.String" value="49.Quais os tipos de cobertura das casas (m&#xfa;ltipla resposta e em quantidade) ?"/>
+                <Property name="text" type="java.lang.String" value="53.Quais os tipos de cobertura das casas (m&#xfa;ltipla resposta e em quantidade) ?"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel46">
               <Properties>
-                <Property name="text" type="java.lang.String" value="50. Quais os tipos de piso das casas(M&#xfa;ltiplas respostas e em quantidade) ?"/>
+                <Property name="text" type="java.lang.String" value="54. Quais os tipos de piso das casas(M&#xfa;ltiplas respostas e em quantidade) ?"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel47">
               <Properties>
-                <Property name="text" type="java.lang.String" value="51. Quantos pontos comerciais existem na comunidade ?"/>
+                <Property name="text" type="java.lang.String" value="55. Quantos pontos comerciais existem na comunidade ?"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel48">
@@ -1085,12 +1119,16 @@
               </Properties>
               <Events>
                 <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckb12TemPresidenteStateChanged"/>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="ckb12TemPresidenteItemStateChanged"/>
               </Events>
             </Component>
             <Component class="javax.swing.JCheckBox" name="ckb14temeleicao">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sim"/>
               </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckb14temeleicaoStateChanged"/>
+              </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane7">
               <AuxValues>
@@ -1100,6 +1138,9 @@
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
                 <Component class="javax.swing.JTextPane" name="tp15descrever">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -1183,199 +1224,202 @@
                 <Property name="text" type="java.lang.String" value="Seguro Desemprego"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="ckb42Sim">
+            <Component class="javax.swing.JCheckBox" name="ckb45Sim">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Sim"/>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="ckb45SimItemStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="ckb47">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sim"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="ckb43">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Sim"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="ckb46Ramal">
+            <Component class="javax.swing.JCheckBox" name="ckb50Ramal">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ramal"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="ckb46Estrada">
+            <Component class="javax.swing.JCheckBox" name="ckb50Estrada">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Estrada"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="ckb46Riu">
+            <Component class="javax.swing.JCheckBox" name="ckb50Riu">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Rio"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="ckb46Mangue">
+            <Component class="javax.swing.JCheckBox" name="ckb50Mangue">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Mangue"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="ckb46Outro">
+            <Component class="javax.swing.JCheckBox" name="ckb50Outro">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Outro"/>
               </Properties>
               <Events>
-                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckb46OutroStateChanged"/>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckb50OutroStateChanged"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="ckb47Onibus">
+            <Component class="javax.swing.JCheckBox" name="ckb51Onibus">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#xd4;nibus"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="ckb47Barco">
+            <Component class="javax.swing.JCheckBox" name="ckb51Barco">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Barco"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="ckb47Bicicleta">
+            <Component class="javax.swing.JCheckBox" name="ckb51Bicicleta">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Bicicleta"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="ckb47ape">
+            <Component class="javax.swing.JCheckBox" name="ckb51ape">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#xe0; p&#xe9;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="ckb48Alvenaria">
+            <Component class="javax.swing.JCheckBox" name="ckb52Alvenaria">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Alvenaria"/>
               </Properties>
               <Events>
-                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckb48AlvenariaStateChanged"/>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckb52AlvenariaStateChanged"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="ckb48Madeira">
+            <Component class="javax.swing.JCheckBox" name="ckb52Madeira">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Madeira"/>
               </Properties>
               <Events>
-                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckb48MadeiraStateChanged"/>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckb52MadeiraStateChanged"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="ckb48Barro">
+            <Component class="javax.swing.JCheckBox" name="ckb52Barro">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Barro"/>
               </Properties>
               <Events>
-                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckb48BarroStateChanged"/>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckb52BarroStateChanged"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="ckb48Palha">
+            <Component class="javax.swing.JCheckBox" name="ckb52Palha">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Palha"/>
               </Properties>
               <Events>
-                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckb48PalhaStateChanged"/>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckb52PalhaStateChanged"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="tf48Alvenaria">
+            <Component class="javax.swing.JTextField" name="tf52Alvenaria">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tf48Madeira">
+            <Component class="javax.swing.JTextField" name="tf52Madeira">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tf48Barro">
+            <Component class="javax.swing.JTextField" name="tf52Barro">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tf48Palha">
+            <Component class="javax.swing.JTextField" name="tf52Palha">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="ckb49TelhadeBarro">
+            <Component class="javax.swing.JCheckBox" name="ckb53TelhadeBarro">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Telha de Barro/Comum"/>
               </Properties>
               <Events>
-                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckb49TelhadeBarroStateChanged"/>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckb53TelhadeBarroStateChanged"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="tf49TelhadeBarro">
+            <Component class="javax.swing.JTextField" name="tf53TelhadeBarro">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="ckb49Cavaco">
+            <Component class="javax.swing.JCheckBox" name="ckb53Cavaco">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cavaco"/>
               </Properties>
               <Events>
-                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckb49CavacoStateChanged"/>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckb53CavacoStateChanged"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="tf49Cavaco">
+            <Component class="javax.swing.JTextField" name="tf53Cavaco">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="ckb49Amianto">
+            <Component class="javax.swing.JCheckBox" name="ckb53Amianto">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Amianto/Brasilit"/>
               </Properties>
               <Events>
-                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckb49AmiantoStateChanged"/>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckb53AmiantoStateChanged"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="tf49Amianto">
+            <Component class="javax.swing.JTextField" name="tf53Amianto">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="ckb50TerraBatida">
+            <Component class="javax.swing.JCheckBox" name="ckb54TerraBatida">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Terra Batida"/>
               </Properties>
               <Events>
-                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckb50TerraBatidaStateChanged"/>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckb54TerraBatidaStateChanged"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="tf50TerraBatida">
+            <Component class="javax.swing.JTextField" name="tf54TerraBatida">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="ckb50Cimentado">
+            <Component class="javax.swing.JCheckBox" name="ckb54Cimentado">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cimentado"/>
               </Properties>
               <Events>
-                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckb50CimentadoStateChanged"/>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckb54CimentadoStateChanged"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="tf50Cimentado">
+            <Component class="javax.swing.JTextField" name="tf54Cimentado">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="ckb50Lajotado">
+            <Component class="javax.swing.JCheckBox" name="ckb54Lajotado">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Lajotado"/>
               </Properties>
               <Events>
-                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckb50LajotadoStateChanged"/>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckb54LajotadoStateChanged"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="tf50Lajotado">
+            <Component class="javax.swing.JTextField" name="tf54Lajotado">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="0"/>
@@ -1523,12 +1567,12 @@
                 <Property name="text" type="java.lang.String" value="Bares.:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tf51mercearias">
+            <Component class="javax.swing.JTextField" name="tf55mercearias">
               <Properties>
                 <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tf51bares">
+            <Component class="javax.swing.JTextField" name="tf55bares">
               <Properties>
                 <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
@@ -1538,11 +1582,99 @@
                 <Property name="text" type="java.lang.String" value="Mercearia e bar.:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tf51merceariaEbar">
+            <Component class="javax.swing.JTextField" name="tf55merceariaEbar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
             </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane9">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTextPane" name="tp19Especificar">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="jLabel52">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="42. Nos &#xfa;ltimos 3 anos, houve algum tipo de conflito entre pescadores dentro desta comunidade?"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="ckb42sim">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Sim"/>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="ckb42simItemStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel53">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="43. Se sim, qual o tipo de conflito mais comum?"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane10">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTextPane" name="tp43ConflitoTipo">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="jLabel54">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="44. Como as pessoas resolvem os conflitos?"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="ckb44EntreEles">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Entre eles"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="ckb44Lideranca">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Com lideran&#xe7;as da comunidade"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ckb44LiderancaActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="ckb44Idosos">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Com os idosos/pessoas"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel55">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="46. Se sim, quem o faz:"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane11">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTextPane" name="tp46quemfaz">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
       </SubComponents>
