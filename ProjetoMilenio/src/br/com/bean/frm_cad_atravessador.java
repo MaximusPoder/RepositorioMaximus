@@ -12,6 +12,7 @@
 package br.com.bean;
 
 import br.com.Persistencia.Conexao;
+import br.com.util.JMoneyField;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -143,7 +144,7 @@ public class frm_cad_atravessador extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         tfTempoDiario = new javax.swing.JTextField();
         tfTempoAtividade = new javax.swing.JTextField();
-        tfRendaMensal = new javax.swing.JTextField();
+        tfRendaMensal = new JMoneyField();
         tfQualColonia = new javax.swing.JTextField();
         tfDesdeQuando = new javax.swing.JTextField();
         chbPossuiColonia = new javax.swing.JCheckBox();
