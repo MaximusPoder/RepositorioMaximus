@@ -2355,7 +2355,7 @@ public class comunidade_questionario extends javax.swing.JFrame {
 
             conexao.resultSet.first();
 
-        conexao.execute("select * from caminhoneiro_questionario");
+        //conexao.execute("select * from caminhoneiro_questionario");
         }catch (SQLException erro){
             System.out.println(erro);
         }
@@ -2402,7 +2402,7 @@ public class comunidade_questionario extends javax.swing.JFrame {
 
             conexao.resultSet.first();
 
-        conexao.execute("select * from caminhoneiro_questionario");
+        //conexao.execute("select * from caminhoneiro_questionario");
         }catch (SQLException erro){
             System.out.println(erro);
         }
