@@ -35,21 +35,21 @@ public class colonia_questionario extends javax.swing.JFrame {
                 //Insere nome no cbNomeAtravessador
                 try {
                     cbComunidade.removeAllItems();
-                    conexao.execute("select * from comunidade_cadastro");
+                    conexao.execute("select * from colonia_cadastro");
 
                     while (conexao.resultSet.next()){
-                        cbComunidade.addItem(conexao.resultSet.getString("id_comunidade")+
-                                                       " # "+ conexao.resultSet.getString("comunidade"));
+                        cbComunidade.addItem(conexao.resultSet.getString("id_colonia")+
+                                                       " # "+ conexao.resultSet.getString("colonia"));
                     }
                 }catch (SQLException ex) {
                     System.out.println(ex);
                 }
 
-        conexao.execute("select * from comunidade_questionario");
+        conexao.execute("select * from colonia_questionario");
         try {
             conexao.resultSet.first();
         } catch (SQLException ex) {
-            System.out.println(ex+" linha 49");
+            System.out.println(ex+" linha 52");
         }
          mostra_dados();
          preencher_jtableEspecie(pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString()));
@@ -82,24 +82,20 @@ public class colonia_questionario extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        tfNrPescadores = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        tfNrEmbarcacoes = new javax.swing.JTextField();
-        tfMon = new javax.swing.JTextField();
+        tf25MON = new javax.swing.JTextField();
+        tf24NrEmbarc = new javax.swing.JTextField();
+        tf26CAN = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        tfCan = new javax.swing.JTextField();
-        tfCam = new javax.swing.JTextField();
-        tfBpp = new javax.swing.JTextField();
-        tfBmp = new javax.swing.JTextField();
-        tfGel = new javax.swing.JTextField();
-        tfBin = new javax.swing.JTextField();
+        tf27CAM = new javax.swing.JTextField();
+        tf28BPP = new javax.swing.JTextField();
+        tf29BMP = new javax.swing.JTextField();
+        tf30GEL = new javax.swing.JTextField();
+        tf31BIN = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
         tfFno = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
@@ -108,121 +104,72 @@ public class colonia_questionario extends javax.swing.JFrame {
         tfInadiplentes = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jtEspecie = new javax.swing.JTable();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
-        tf49OutrasLocalidades = new javax.swing.JTextField();
-        jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        cb48Consumo = new javax.swing.JComboBox();
-        cb48Venda = new javax.swing.JComboBox();
-        cb49ProducaoVenda = new javax.swing.JComboBox();
-        jLabel43 = new javax.swing.JLabel();
-        jLabel44 = new javax.swing.JLabel();
-        tf50Outro = new javax.swing.JTextField();
-        jLabel45 = new javax.swing.JLabel();
-        jLabel46 = new javax.swing.JLabel();
-        jLabel47 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
         tf12NomePresidente = new javax.swing.JTextField();
         ckb12TemPresidente = new javax.swing.JCheckBox();
         jScrollPane7 = new javax.swing.JScrollPane();
         tp15descrever = new javax.swing.JTextPane();
         ckb16 = new javax.swing.JCheckBox();
-        ckb18ExisteClube = new javax.swing.JCheckBox();
-        ckb20ExisteAssociacao = new javax.swing.JCheckBox();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tp21Especificar = new javax.swing.JTextPane();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tp35 = new javax.swing.JTextPane();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        tp36 = new javax.swing.JTextPane();
-        ckb38Defeso = new javax.swing.JCheckBox();
-        ckb40Renda = new javax.swing.JCheckBox();
-        ckb40Aposentadoria = new javax.swing.JCheckBox();
-        ckb40SeguroDesemprego = new javax.swing.JCheckBox();
-        ckb45Sim = new javax.swing.JCheckBox();
-        ckb47 = new javax.swing.JCheckBox();
-        ckb50Ramal = new javax.swing.JCheckBox();
-        ckb50Estrada = new javax.swing.JCheckBox();
-        ckb50Riu = new javax.swing.JCheckBox();
-        ckb50Mangue = new javax.swing.JCheckBox();
-        ckb50Outro = new javax.swing.JCheckBox();
-        ckb51Onibus = new javax.swing.JCheckBox();
-        ckb51Barco = new javax.swing.JCheckBox();
-        ckb51Bicicleta = new javax.swing.JCheckBox();
-        ckb51ape = new javax.swing.JCheckBox();
-        ckb52Alvenaria = new javax.swing.JCheckBox();
-        ckb52Madeira = new javax.swing.JCheckBox();
-        ckb52Barro = new javax.swing.JCheckBox();
-        ckb52Palha = new javax.swing.JCheckBox();
-        tf52Alvenaria = new javax.swing.JTextField();
-        tf52Madeira = new javax.swing.JTextField();
-        tf52Barro = new javax.swing.JTextField();
-        tf52Palha = new javax.swing.JTextField();
-        ckb53TelhadeBarro = new javax.swing.JCheckBox();
-        tf53TelhadeBarro = new javax.swing.JTextField();
-        ckb53Cavaco = new javax.swing.JCheckBox();
-        tf53Cavaco = new javax.swing.JTextField();
-        ckb53Amianto = new javax.swing.JCheckBox();
-        tf53Amianto = new javax.swing.JTextField();
-        ckb54TerraBatida = new javax.swing.JCheckBox();
-        tf54TerraBatida = new javax.swing.JTextField();
-        ckb54Cimentado = new javax.swing.JCheckBox();
-        tf54Cimentado = new javax.swing.JTextField();
-        ckb54Lajotado = new javax.swing.JCheckBox();
-        tf54Lajotado = new javax.swing.JTextField();
+        ckb36Defeso = new javax.swing.JCheckBox();
+        ckb38Aposentadoria = new javax.swing.JCheckBox();
+        ckb38SeguroDesemprego = new javax.swing.JCheckBox();
+        ckb38BolsaFamilia = new javax.swing.JCheckBox();
         jScrollPane8 = new javax.swing.JScrollPane();
         jtAtividade = new javax.swing.JTable();
         btAtualizarAtividade = new javax.swing.JButton();
         btExcluirAtividade = new javax.swing.JButton();
         btAddAtividade = new javax.swing.JButton();
-        btAtualizarEspecie = new javax.swing.JButton();
-        btExcluirEspecie = new javax.swing.JButton();
-        btAddEspecie = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         botao_salvar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         cb34 = new javax.swing.JComboBox();
-        cb39 = new javax.swing.JComboBox();
-        cb41axasuf = new javax.swing.JComboBox();
-        jLabel49 = new javax.swing.JLabel();
-        jLabel50 = new javax.swing.JLabel();
-        tf55mercearias = new javax.swing.JTextField();
-        tf55bares = new javax.swing.JTextField();
-        jLabel51 = new javax.swing.JLabel();
-        tf55merceariaEbar = new javax.swing.JTextField();
+        cb37 = new javax.swing.JComboBox();
         jScrollPane9 = new javax.swing.JScrollPane();
-        tp19Especificar = new javax.swing.JTextPane();
-        jLabel52 = new javax.swing.JLabel();
-        ckb42sim = new javax.swing.JCheckBox();
-        jLabel53 = new javax.swing.JLabel();
-        jScrollPane10 = new javax.swing.JScrollPane();
-        tp43ConflitoTipo = new javax.swing.JTextPane();
-        jLabel54 = new javax.swing.JLabel();
-        ckb44EntreEles = new javax.swing.JCheckBox();
-        ckb44Lideranca = new javax.swing.JCheckBox();
-        ckb44Idosos = new javax.swing.JCheckBox();
-        jLabel55 = new javax.swing.JLabel();
-        jScrollPane11 = new javax.swing.JScrollPane();
-        tp46quemfaz = new javax.swing.JTextPane();
+        tp18QuantaseQuais = new javax.swing.JTextPane();
         cb13 = new javax.swing.JComboBox();
-        ckb17_1 = new javax.swing.JCheckBox();
-        ckb17_2 = new javax.swing.JCheckBox();
-        ckb17_3 = new javax.swing.JCheckBox();
+        ckb17EstarQuite = new javax.swing.JCheckBox();
+        ckb17TerTempo = new javax.swing.JCheckBox();
+        ckb17Outro = new javax.swing.JCheckBox();
+        ckb19Sim = new javax.swing.JCheckBox();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        tp20TipoConflito = new javax.swing.JTextPane();
+        ckb21EntreEles = new javax.swing.JCheckBox();
+        ckb21ComLiderancas = new javax.swing.JCheckBox();
+        ckb21ComIdosos = new javax.swing.JCheckBox();
+        ckb21ComJustica = new javax.swing.JCheckBox();
+        ckb21ComIBAMA = new javax.swing.JCheckBox();
+        ckb21ComColonia = new javax.swing.JCheckBox();
+        ckb21NaPolicia = new javax.swing.JCheckBox();
+        ckb21Outro = new javax.swing.JCheckBox();
+        tf21Outro = new javax.swing.JTextField();
+        jLabel56 = new javax.swing.JLabel();
+        ckb22Sim = new javax.swing.JCheckBox();
+        jLabel57 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tp22 = new javax.swing.JTextPane();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        tf23Homens = new javax.swing.JTextField();
+        tf23Mulheres = new javax.swing.JTextField();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel15 = new javax.swing.JLabel();
+        cb39AchaSuficiente = new javax.swing.JComboBox();
+        jLabel19 = new javax.swing.JLabel();
+        ckb40Sim = new javax.swing.JCheckBox();
+        jLabel28 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tp41Quem = new javax.swing.JTextPane();
+        jLabel29 = new javax.swing.JLabel();
+        ckb42Sim = new javax.swing.JCheckBox();
+        jLabel30 = new javax.swing.JLabel();
+        cb43Qualidade = new javax.swing.JComboBox();
+        jLabel34 = new javax.swing.JLabel();
+        cb44Acompanha = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -253,141 +200,68 @@ public class colonia_questionario extends javax.swing.JFrame {
 
         jLabel10.setText("18. Quantas e quais comunidades fazem parte da colônia? (Descrever).");
 
-        jLabel11.setText("19. Especificar.:");
+        jLabel11.setText("19. Nos ultimos 3 anos, houve algum tipo de conflito entre pescadores no qual a colônia tenha se envolvido?");
 
-        jLabel12.setText("20. Existem associações, cooperativas ou outras formas de organização social ?");
+        jLabel12.setText("20. Se sim, qual o tipo de conflito mais comum?");
 
-        jLabel13.setText("21. Especificar:");
+        jLabel13.setText("21. Como as pessoas resolvem os conflitos?");
 
-        jLabel14.setText("22. N° de Pescadores:");
+        tf25MON.setText("0");
 
-        tfNrPescadores.setText("0");
+        tf24NrEmbarc.setText("0");
 
-        jLabel15.setText("23. N° de Embarcações:");
-
-        tfNrEmbarcacoes.setText("0");
-
-        tfMon.setText("0");
-        tfMon.addActionListener(new java.awt.event.ActionListener() {
+        tf26CAN.setText("0");
+        tf26CAN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfMonActionPerformed(evt);
+                tf26CANActionPerformed(evt);
             }
         });
 
-        jLabel16.setText("24. MON");
+        jLabel16.setText("25. MON");
 
-        jLabel17.setText("25. CAN ");
+        jLabel17.setText("26. CAN ");
 
-        jLabel18.setText("26. CAM");
+        jLabel18.setText("28. BPP");
 
-        jLabel19.setText("27. BPP");
+        jLabel20.setText("29. BMP");
 
-        jLabel20.setText("28. BMP");
+        jLabel21.setText("30. GEL");
 
-        jLabel21.setText("29. GEL");
+        jLabel22.setText("31. BIN");
 
-        jLabel22.setText("30. BIN");
-
-        tfCan.setText("0");
-        tfCan.addActionListener(new java.awt.event.ActionListener() {
+        tf27CAM.setText("0");
+        tf27CAM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfCanActionPerformed(evt);
+                tf27CAMActionPerformed(evt);
             }
         });
 
-        tfCam.setText("0");
+        tf28BPP.setText("0");
 
-        tfBpp.setText("0");
+        tf29BMP.setText("0");
 
-        tfBmp.setText("0");
+        tf30GEL.setText("0");
 
-        tfGel.setText("0");
+        tf31BIN.setText("0");
 
-        tfBin.setText("0");
-
-        jLabel23.setText("31.Estimativa do número de embarcações financiadas pelo FNO:");
+        jLabel23.setText("32.Estimativa do número de embarcações financiadas pelo FNO:");
 
         tfFno.setText("0");
 
-        jLabel24.setText("32. Situação do financiamento: Pagantes");
+        jLabel24.setText("33. Situação do financiamento: Pagantes");
 
-        jLabel25.setText("33. Situação do Financiamento: Inadiplentes");
+        jLabel25.setText("34. Situação do Financiamento: Inadiplentes");
 
-        jLabel26.setText("34. Você acha os financiamentos da administrção pública importante para a atividade de pesca ?");
+        jLabel26.setText("35. A colônia acha os financiamentos da administrção pública importante para a atividade de pesca ?");
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 1, 24));
         jLabel27.setText("Caracterização da Pesca");
 
-        jLabel28.setText("35. Principais pesqueiros em ordem de importância");
+        jLabel31.setText("36. Na comunidade existem algum tipo de defeso?");
 
-        jLabel29.setText("36. Artes da pesca por ordem de importância.");
+        jLabel32.setText("37. Existindo defeso,ele é respeitado?");
 
-        jLabel30.setText("37.Períodos de safra as principais espécies capturadas em ordem de importância.");
-
-        jtEspecie.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "id_especie", "Espécie", "Inicio da safra (mês)", "Fim da Safra (mês)"
-            }
-        ));
-        jScrollPane6.setViewportView(jtEspecie);
-
-        jScrollPane5.setViewportView(jScrollPane6);
-
-        jLabel31.setText("38. Na comunidade existem algum tipo de defeso?");
-
-        jLabel32.setText("39. Existindo defeso,ele é respeitado?");
-
-        jLabel33.setText("40. Os pescadores recebem algum tipo de auxílio ?");
-
-        jLabel34.setText("41. Você acha suficiente o valor do seguro desemprego/seguro defeso recebido do governo durante o defeso ?");
-
-        jLabel35.setText("45. Nesta comunidade existe algum monitoramento para estimar a produção ?");
-
-        jLabel36.setText("47. Esta comunidade tem local específico para o desembarque da produção ?");
-
-        jLabel37.setText("48. Destino da produção para :");
-
-        jLabel38.setText("a) Consumo:");
-
-        jLabel39.setText("b) Venda:");
-
-        jLabel40.setText("49. A produção, quando para venda, esta é feita na :");
-
-        tf49OutrasLocalidades.setEditable(false);
-
-        jLabel41.setFont(new java.awt.Font("Tahoma", 1, 24));
-        jLabel41.setText("Infraestrutura da Comunidade");
-
-        jLabel42.setText("50. O acesso a comunidade é feita por (múltipla escolha) ? ");
-
-        cb48Consumo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Muito Pouco", "Pouco", "A Maior Parte", "Toda a Produção" }));
-
-        cb48Venda.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Muito Pouco", "Pouco", "A Maior Parte ", "Toda a Produção" }));
-
-        cb49ProducaoVenda.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cidade", "Para o Atravessador", "Em Outras Localidades" }));
-        cb49ProducaoVenda.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                cb49ProducaoVendaItemStateChanged(evt);
-            }
-        });
-
-        jLabel43.setText("51. Quais os principais meios e transporte usados para chegar à comunidade ?");
-
-        jLabel44.setText("52. Quais e quantos tipos de moradia existem na comunidade (multipla resposta e em quantidade) ?");
-
-        jLabel45.setText("53.Quais os tipos de cobertura das casas (múltipla resposta e em quantidade) ?");
-
-        jLabel46.setText("54. Quais os tipos de piso das casas(Múltiplas respostas e em quantidade) ?");
-
-        jLabel47.setText("55. Quantos pontos comerciais existem na comunidade ?");
+        jLabel33.setText("38. Os pescadores recebem algum tipo de auxílio ?");
 
         jLabel48.setFont(new java.awt.Font("Tahoma", 1, 24));
         jLabel48.setText("Atividades");
@@ -415,166 +289,13 @@ public class colonia_questionario extends javax.swing.JFrame {
             }
         });
 
-        ckb18ExisteClube.setText("Sim");
-        ckb18ExisteClube.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                ckb18ExisteClubeStateChanged(evt);
-            }
-        });
+        ckb36Defeso.setText("Sim");
 
-        ckb20ExisteAssociacao.setText("Sim");
-        ckb20ExisteAssociacao.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                ckb20ExisteAssociacaoStateChanged(evt);
-            }
-        });
+        ckb38Aposentadoria.setText("Aposentadoria");
 
-        tp21Especificar.setEditable(false);
-        jScrollPane2.setViewportView(tp21Especificar);
+        ckb38SeguroDesemprego.setText("Seguro desemprego/Seguro defeso");
 
-        jScrollPane3.setViewportView(tp35);
-
-        jScrollPane4.setViewportView(tp36);
-
-        ckb38Defeso.setText("Sim");
-
-        ckb40Renda.setText("Renda no defeso");
-
-        ckb40Aposentadoria.setText("Aposentadoria");
-
-        ckb40SeguroDesemprego.setText("Seguro Desemprego");
-
-        ckb45Sim.setText("Sim");
-        ckb45Sim.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                ckb45SimItemStateChanged(evt);
-            }
-        });
-
-        ckb47.setText("Sim");
-
-        ckb50Ramal.setText("Ramal");
-
-        ckb50Estrada.setText("Estrada");
-
-        ckb50Riu.setText("Rio");
-
-        ckb50Mangue.setText("Mangue");
-
-        ckb50Outro.setText("Outro");
-        ckb50Outro.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                ckb50OutroStateChanged(evt);
-            }
-        });
-
-        ckb51Onibus.setText("Ônibus");
-
-        ckb51Barco.setText("Barco");
-
-        ckb51Bicicleta.setText("Bicicleta");
-
-        ckb51ape.setText("à pé");
-
-        ckb52Alvenaria.setText("Alvenaria");
-        ckb52Alvenaria.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                ckb52AlvenariaStateChanged(evt);
-            }
-        });
-
-        ckb52Madeira.setText("Madeira");
-        ckb52Madeira.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                ckb52MadeiraStateChanged(evt);
-            }
-        });
-
-        ckb52Barro.setText("Barro");
-        ckb52Barro.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                ckb52BarroStateChanged(evt);
-            }
-        });
-
-        ckb52Palha.setText("Palha");
-        ckb52Palha.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                ckb52PalhaStateChanged(evt);
-            }
-        });
-
-        tf52Alvenaria.setEditable(false);
-        tf52Alvenaria.setText("0");
-
-        tf52Madeira.setEditable(false);
-        tf52Madeira.setText("0");
-
-        tf52Barro.setEditable(false);
-        tf52Barro.setText("0");
-
-        tf52Palha.setEditable(false);
-        tf52Palha.setText("0");
-
-        ckb53TelhadeBarro.setText("Telha de Barro/Comum");
-        ckb53TelhadeBarro.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                ckb53TelhadeBarroStateChanged(evt);
-            }
-        });
-
-        tf53TelhadeBarro.setEditable(false);
-        tf53TelhadeBarro.setText("0");
-
-        ckb53Cavaco.setText("Cavaco");
-        ckb53Cavaco.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                ckb53CavacoStateChanged(evt);
-            }
-        });
-
-        tf53Cavaco.setEditable(false);
-        tf53Cavaco.setText("0");
-
-        ckb53Amianto.setText("Amianto/Brasilit");
-        ckb53Amianto.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                ckb53AmiantoStateChanged(evt);
-            }
-        });
-
-        tf53Amianto.setEditable(false);
-        tf53Amianto.setText("0");
-
-        ckb54TerraBatida.setText("Terra Batida");
-        ckb54TerraBatida.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                ckb54TerraBatidaStateChanged(evt);
-            }
-        });
-
-        tf54TerraBatida.setEditable(false);
-        tf54TerraBatida.setText("0");
-
-        ckb54Cimentado.setText("Cimentado");
-        ckb54Cimentado.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                ckb54CimentadoStateChanged(evt);
-            }
-        });
-
-        tf54Cimentado.setEditable(false);
-        tf54Cimentado.setText("0");
-
-        ckb54Lajotado.setText("Lajotado");
-        ckb54Lajotado.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                ckb54LajotadoStateChanged(evt);
-            }
-        });
-
-        tf54Lajotado.setEditable(false);
-        tf54Lajotado.setText("0");
+        ckb38BolsaFamilia.setText("Bolsa família");
 
         jtAtividade.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -610,27 +331,6 @@ public class colonia_questionario extends javax.swing.JFrame {
             }
         });
 
-        btAtualizarEspecie.setText("Atualizar");
-        btAtualizarEspecie.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAtualizarEspecieActionPerformed(evt);
-            }
-        });
-
-        btExcluirEspecie.setText("Excluir");
-        btExcluirEspecie.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btExcluirEspecieActionPerformed(evt);
-            }
-        });
-
-        btAddEspecie.setText("Add");
-        btAddEspecie.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAddEspecieActionPerformed(evt);
-            }
-        });
-
         botao_salvar.setText("Salvar");
         botao_salvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -647,69 +347,98 @@ public class colonia_questionario extends javax.swing.JFrame {
 
         cb34.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não", "Um pouco", "Mais ou Menos", "Bastante" }));
 
-        cb39.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não", "Um pouco", "Mais ou Menos", "Bastante" }));
+        cb37.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não", "Um pouco", "Mais ou Menos", "Bastante" }));
 
-        cb41axasuf.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não", "Mais ou Menos", "Suficiente" }));
-
-        jLabel49.setText("Mercearias.:");
-
-        jLabel50.setText("Bares.:");
-
-        tf55mercearias.setText("0");
-
-        tf55bares.setText("0");
-
-        jLabel51.setText("Mercearia e bar.:");
-
-        tf55merceariaEbar.setText("0");
-
-        tp19Especificar.setEditable(false);
-        jScrollPane9.setViewportView(tp19Especificar);
-
-        jLabel52.setText("42. Nos últimos 3 anos, houve algum tipo de conflito entre pescadores dentro desta comunidade?");
-
-        ckb42sim.setText("Sim");
-        ckb42sim.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                ckb42simItemStateChanged(evt);
-            }
-        });
-
-        jLabel53.setText("43. Se sim, qual o tipo de conflito mais comum?");
-
-        tp43ConflitoTipo.setEditable(false);
-        jScrollPane10.setViewportView(tp43ConflitoTipo);
-
-        jLabel54.setText("44. Como as pessoas resolvem os conflitos?");
-
-        ckb44EntreEles.setText("Entre eles");
-
-        ckb44Lideranca.setText("Com lideranças da comunidade");
-        ckb44Lideranca.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ckb44LiderancaActionPerformed(evt);
-            }
-        });
-
-        ckb44Idosos.setText("Com os idosos/pessoas");
-
-        jLabel55.setText("46. Se sim, quem o faz:");
-
-        tp46quemfaz.setEditable(false);
-        jScrollPane11.setViewportView(tp46quemfaz);
+        jScrollPane9.setViewportView(tp18QuantaseQuais);
 
         cb13.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não realiza", "Realiza mensalmente", "Realiza trimestralmente", "Realiza", "Realiza ocasionalmente/raramente", "Outros" }));
 
-        ckb17_1.setText("Estar quite com a contribuição junto à colônia?");
+        ckb17EstarQuite.setText("Estar quite com a contribuição junto à colônia?");
 
-        ckb17_2.setText("Ter um tempo mínimo como associado?");
+        ckb17TerTempo.setText("Ter um tempo mínimo como associado?");
 
-        ckb17_3.setText("Outro");
-        ckb17_3.addItemListener(new java.awt.event.ItemListener() {
+        ckb17Outro.setText("Outro");
+        ckb17Outro.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                ckb17_3ItemStateChanged(evt);
+                ckb17OutroItemStateChanged(evt);
             }
         });
+
+        ckb19Sim.setText("Sim");
+
+        jScrollPane12.setViewportView(tp20TipoConflito);
+
+        ckb21EntreEles.setText("Entre eles");
+
+        ckb21ComLiderancas.setText("Com lideranças da comunidade");
+
+        ckb21ComIdosos.setText("Com os idosos/Mais velhos da comunidade");
+
+        ckb21ComJustica.setText("Com justiça");
+
+        ckb21ComIBAMA.setText("Com IBAMA");
+
+        ckb21ComColonia.setText("Com a colônia de pescadores");
+        ckb21ComColonia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ckb21ComColoniaActionPerformed(evt);
+            }
+        });
+
+        ckb21NaPolicia.setText("Na Polícia");
+
+        ckb21Outro.setText("Outro");
+
+        jLabel56.setText("22. Existe associações, cooperativas ou outras formas de organização social?");
+
+        ckb22Sim.setText("Sim");
+        ckb22Sim.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ckb22SimItemStateChanged(evt);
+            }
+        });
+
+        jLabel57.setText("22.1. Especifique:");
+
+        jScrollPane2.setViewportView(tp22);
+
+        jLabel58.setText("23. Nº de pescadores associados: Homens:");
+
+        jLabel59.setText("Mulheres:");
+
+        jLabel60.setText("24. Estimativa do total de embarcações dos associados (somatória de todos)");
+
+        jLabel14.setText("27. CAM");
+
+        jLabel15.setText("39. Você acha suficiente o valor do seguro desemprego/seguro defeso recebido do governo durante o defeso?");
+
+        cb39AchaSuficiente.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não", "Mais ou Menos", "Suficiente" }));
+
+        jLabel19.setText("40. Existe algum monitoramento para estimular a produção do município?");
+
+        ckb40Sim.setText("Sim");
+        ckb40Sim.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ckb40SimItemStateChanged(evt);
+            }
+        });
+
+        jLabel28.setText("41. Se sim, quem o faz?");
+
+        tp41Quem.setEditable(false);
+        jScrollPane3.setViewportView(tp41Quem);
+
+        jLabel29.setText("42. O Municipio tem um local especifico para o desembarque do pescado?");
+
+        ckb42Sim.setText("Sim");
+
+        jLabel30.setText("43. Havendo local, este é de qualidade?");
+
+        cb43Qualidade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não", "Parcialmente", "Sim" }));
+
+        jLabel34.setText("44. A colônia acompanha o período de defeso junto aos seus associados?");
+
+        cb44Acompanha.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não", "Parcialmente", "Sim" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -748,263 +477,174 @@ public class colonia_questionario extends javax.swing.JFrame {
                                         .addComponent(ckb16))
                                     .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(ckb17_1)
+                                        .addComponent(ckb17EstarQuite)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ckb17_2))
+                                        .addComponent(ckb17TerTempo))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(ckb17_3)
+                                        .addComponent(ckb17Outro)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(tf17Outro, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 182, Short.MAX_VALUE)
+                                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
                                 .addComponent(jLabel5))
+                            .addComponent(jLabel12)
+                            .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(ckb21EntreEles)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(btAddAtividade)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btExcluirAtividade)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btAtualizarAtividade))
-                                    .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 794, Short.MAX_VALUE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(botao_salvar)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton2))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel48)
-                                        .addGap(145, 145, 145))
-                                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 794, Short.MAX_VALUE)
-                                    .addComponent(jLabel45)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(ckb53TelhadeBarro)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tf53TelhadeBarro, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ckb53Cavaco)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tf53Cavaco, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ckb53Amianto)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tf53Amianto, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel46)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(ckb54TerraBatida)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tf54TerraBatida, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ckb54Cimentado)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tf54Cimentado, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(ckb54Lajotado)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tf54Lajotado, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel47)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel49)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tf55mercearias, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel50)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tf55bares, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel51)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tf55merceariaEbar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel42)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(ckb50Ramal)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ckb50Estrada)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ckb50Riu)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(ckb50Mangue)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ckb50Outro)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tf50Outro, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel43)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(ckb51Onibus)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ckb51Barco)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ckb51Bicicleta)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ckb51ape))
-                                    .addComponent(jLabel44)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(ckb52Alvenaria)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tf52Alvenaria, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(ckb52Madeira)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tf52Madeira, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(7, 7, 7)
-                                        .addComponent(ckb52Barro)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tf52Barro, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(ckb52Palha)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tf52Palha, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(170, 170, 170)
-                                        .addComponent(jLabel41))
-                                    .addComponent(jLabel37)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel38)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cb48Consumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel39)
-                                        .addGap(2, 2, 2)
-                                        .addComponent(cb48Venda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel36)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ckb47))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel40)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(cb49ProducaoVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(tf49OutrasLocalidades, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 607, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabel30, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 534, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(btAddEspecie)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btExcluirEspecie)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btAtualizarEspecie))
+                                .addComponent(ckb21ComLiderancas)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ckb21ComIdosos))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(ckb21ComJustica)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ckb21ComIBAMA)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ckb21ComColonia)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ckb21NaPolicia))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(ckb21Outro)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tf21Outro, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel56)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ckb22Sim))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel57)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel27)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel58)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tf23Homens, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel59)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tf23Mulheres, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ckb19Sim))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel31)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ckb38Defeso))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel32)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cb39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel33, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(ckb40Renda)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ckb40Aposentadoria)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ckb40SeguroDesemprego))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel34)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cb41axasuf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel54, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(ckb44EntreEles)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(ckb44Lideranca)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ckb44Idosos))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel35)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ckb45Sim))
-                                    .addComponent(jLabel55, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel53, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jScrollPane10, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel52)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(ckb42sim))))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel28, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(jLabel25)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                    .addComponent(tfInadiplentes, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(jLabel14)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(tfNrPescadores, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel25)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(tfInadiplentes, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel24)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(tfPagantes, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                                .addComponent(jLabel21)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                .addComponent(tf30GEL))
+                                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                                .addComponent(jLabel16)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(tf25MON, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addComponent(jLabel17)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(tf26CAN, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addComponent(jLabel22)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                .addComponent(tf31BIN)))
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jLabel14)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(tf27CAM, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jLabel18)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(tf28BPP))
+                                                    .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.LEADING))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(jLabel20)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(tf29BMP, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(tfFno, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 692, Short.MAX_VALUE)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel26)
+                                                .addGap(11, 11, 11)
+                                                .addComponent(cb34, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel31)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(ckb36Defeso))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel32)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(cb37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jLabel33, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel48)
+                                                .addGap(145, 145, 145))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(btAddAtividade)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(btExcluirAtividade)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(btAtualizarAtividade))
+                                            .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 692, Short.MAX_VALUE)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(botao_salvar)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jButton2))
+                                            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 692, Short.MAX_VALUE)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(ckb38Aposentadoria)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(ckb38SeguroDesemprego)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(ckb38BolsaFamilia))
                                                     .addComponent(jLabel15)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(tfNrEmbarcacoes, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                            .addComponent(jLabel16)
-                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                            .addComponent(tfMon, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                            .addComponent(jLabel17)
-                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                            .addComponent(tfCan, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                            .addComponent(jLabel19)
-                                                            .addGap(10, 10, 10)
-                                                            .addComponent(tfBpp, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                            .addComponent(jLabel20)
-                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                            .addComponent(tfBmp, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                            .addGap(6, 6, 6))
-                                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                            .addComponent(jLabel22)
-                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                            .addComponent(tfBin, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                    .addGap(12, 12, 12)
-                                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                            .addComponent(jLabel18)
-                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                            .addComponent(tfCam))
-                                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                            .addComponent(jLabel21)
-                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                            .addComponent(tfGel, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                            .addComponent(jLabel24)
-                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                            .addComponent(tfPagantes))
-                                                        .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.LEADING))
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                    .addComponent(tfFno, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                    .addGap(120, 120, 120)
-                                                    .addComponent(ckb18ExisteClube))
-                                                .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(jLabel12)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(ckb20ExisteAssociacao))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(jLabel11)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE))
-                                                .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE))
-                                            .addGap(11, 11, 11)
-                                            .addComponent(cb34, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGap(7, 7, 7))
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel29, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING))))
+                                                    .addComponent(jLabel28)
+                                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 532, Short.MAX_VALUE)
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(jLabel19)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(ckb40Sim))
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(jLabel29)
+                                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addComponent(jLabel30)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(cb43Qualidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                            .addComponent(jLabel34))
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(ckb42Sim)
+                                                            .addComponent(cb44Acompanha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(cb39AchaSuficiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(59, 59, 59)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel60)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(tf24NrEmbarc, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(188, 188, 188)
                         .addComponent(jLabel1)))
@@ -1046,229 +686,152 @@ public class colonia_questionario extends javax.swing.JFrame {
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ckb17_1)
-                    .addComponent(ckb17_2))
+                    .addComponent(ckb17EstarQuite)
+                    .addComponent(ckb17TerTempo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tf17Outro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ckb17_3))
+                    .addComponent(ckb17Outro))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-                .addComponent(ckb18ExisteClube)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(ckb20ExisteAssociacao))
+                    .addComponent(jLabel11)
+                    .addComponent(ckb19Sim))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ckb21EntreEles)
+                    .addComponent(ckb21ComLiderancas)
+                    .addComponent(ckb21ComIdosos))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ckb21ComJustica)
+                    .addComponent(ckb21ComIBAMA)
+                    .addComponent(ckb21ComColonia)
+                    .addComponent(ckb21NaPolicia))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ckb21Outro)
+                    .addComponent(tf21Outro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel56)
+                    .addComponent(ckb22Sim))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel57)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel27)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
-                    .addComponent(tfNrPescadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfNrEmbarcacoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jLabel58)
+                    .addComponent(tf23Homens, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel59)
+                    .addComponent(tf23Mulheres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfMon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel60)
+                    .addComponent(tf24NrEmbarc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
+                    .addComponent(tf25MON, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17)
+                    .addComponent(tf26CAN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14)
+                    .addComponent(tf27CAM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18)
-                    .addComponent(tfCam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfCan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel19)
-                    .addComponent(tfBpp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf28BPP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel20)
+                    .addComponent(tf29BMP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfGel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfBmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf30GEL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22)
+                    .addComponent(tf31BIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(tfFno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel24)
+                    .addComponent(tfPagantes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel22)
-                    .addComponent(tfBin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel23)
-                        .addGap(13, 13, 13)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel24)
-                            .addComponent(tfPagantes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tfInadiplentes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel25)))
-                    .addComponent(tfFno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
+                    .addComponent(tfInadiplentes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel25))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel26)
                     .addComponent(cb34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel28)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel29)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel30)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btAtualizarEspecie)
-                    .addComponent(btExcluirEspecie)
-                    .addComponent(btAddEspecie))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31)
-                    .addComponent(ckb38Defeso))
+                    .addComponent(ckb36Defeso))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32)
-                    .addComponent(cb39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cb37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel33)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ckb40Renda)
-                    .addComponent(ckb40Aposentadoria)
-                    .addComponent(ckb40SeguroDesemprego))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(ckb38Aposentadoria)
+                    .addComponent(ckb38SeguroDesemprego)
+                    .addComponent(ckb38BolsaFamilia))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(cb39AchaSuficiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(ckb40Sim))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29)
+                    .addComponent(ckb42Sim))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel30)
+                    .addComponent(cb43Qualidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel34)
-                    .addComponent(cb41axasuf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel52)
-                    .addComponent(ckb42sim))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel53)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel54)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ckb44EntreEles)
-                    .addComponent(ckb44Lideranca)
-                    .addComponent(ckb44Idosos))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel35)
-                    .addComponent(ckb45Sim))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel55)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel36)
-                    .addComponent(ckb47))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel37)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel38)
-                    .addComponent(cb48Consumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel39)
-                    .addComponent(cb48Venda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel40)
-                    .addComponent(cb49ProducaoVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tf49OutrasLocalidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel41)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ckb50Ramal)
-                    .addComponent(ckb50Estrada)
-                    .addComponent(ckb50Riu)
-                    .addComponent(ckb50Mangue)
-                    .addComponent(ckb50Outro)
-                    .addComponent(tf50Outro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel43)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ckb51Onibus)
-                    .addComponent(ckb51Barco)
-                    .addComponent(ckb51Bicicleta)
-                    .addComponent(ckb51ape))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel44)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ckb52Alvenaria)
-                    .addComponent(ckb52Barro)
-                    .addComponent(tf52Alvenaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ckb52Madeira)
-                    .addComponent(tf52Madeira, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tf52Barro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ckb52Palha)
-                    .addComponent(tf52Palha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel45)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(ckb53TelhadeBarro)
-                        .addComponent(tf53TelhadeBarro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ckb53Cavaco)
-                        .addComponent(tf53Cavaco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(ckb53Amianto)
-                        .addComponent(tf53Amianto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel46)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ckb54TerraBatida)
-                    .addComponent(tf54TerraBatida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ckb54Cimentado)
-                    .addComponent(tf54Cimentado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ckb54Lajotado)
-                    .addComponent(tf54Lajotado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel47)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel49)
-                    .addComponent(tf55mercearias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel50)
-                    .addComponent(tf55bares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel51)
-                    .addComponent(tf55merceariaEbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(cb44Acompanha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
                 .addComponent(jLabel48)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btAtualizarAtividade)
                     .addComponent(btExcluirAtividade)
-                    .addComponent(btAddAtividade))
+                    .addComponent(btAddAtividade)
+                    .addComponent(btAtualizarAtividade))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botao_salvar)
                     .addComponent(jButton2))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -1287,31 +850,13 @@ public class colonia_questionario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cb49ProducaoVendaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb49ProducaoVendaItemStateChanged
-        if (cb49ProducaoVenda.getSelectedItem().toString().equals("Em Outras Localidades")) {
-            tf49OutrasLocalidades.setEditable(true);
-        }else{
-            tf49OutrasLocalidades.setEditable(false);
-            tf49OutrasLocalidades.setText("");
-        }
-}//GEN-LAST:event_cb49ProducaoVendaItemStateChanged
-
-    private void tfCanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCanActionPerformed
+    private void tf27CAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf27CAMActionPerformed
         // TODO add your handling code here:
-}//GEN-LAST:event_tfCanActionPerformed
+}//GEN-LAST:event_tf27CAMActionPerformed
 
-    private void tfMonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfMonActionPerformed
+    private void tf26CANActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf26CANActionPerformed
         // TODO add your handling code here:
-}//GEN-LAST:event_tfMonActionPerformed
-
-    private void ckb50OutroStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ckb50OutroStateChanged
-        if (ckb50Outro.isSelected()){
-            tf50Outro.setEditable(true);
-        }else{
-            tf50Outro.setEditable(false);
-            tf50Outro.setText("");
-        }
-    }//GEN-LAST:event_ckb50OutroStateChanged
+}//GEN-LAST:event_tf26CANActionPerformed
 
     private void ckb12TemPresidenteStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ckb12TemPresidenteStateChanged
         
@@ -1321,118 +866,10 @@ public class colonia_questionario extends javax.swing.JFrame {
         
     }//GEN-LAST:event_ckb16StateChanged
 
-    private void ckb18ExisteClubeStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ckb18ExisteClubeStateChanged
-        if (ckb18ExisteClube.isSelected()){
-            tp19Especificar.setEditable(true);
-        }else{
-            tp19Especificar.setEditable(false);
-            tp19Especificar.setText("");
-        }
-    }//GEN-LAST:event_ckb18ExisteClubeStateChanged
-
-    private void ckb20ExisteAssociacaoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ckb20ExisteAssociacaoStateChanged
-        if (ckb20ExisteAssociacao.isSelected()){
-            tp21Especificar.setEditable(true);
-        }else{
-            tp21Especificar.setEditable(false);
-            tp21Especificar.setText("");
-        }
-    }//GEN-LAST:event_ckb20ExisteAssociacaoStateChanged
-
-    private void ckb52AlvenariaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ckb52AlvenariaStateChanged
-        if (ckb52Alvenaria.isSelected())
-            tf52Alvenaria.setEditable(true);
-        else{
-            tf52Alvenaria.setEditable(false);
-            tf52Alvenaria.setText("0");
-        }
-    }//GEN-LAST:event_ckb52AlvenariaStateChanged
-
-    private void ckb52MadeiraStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ckb52MadeiraStateChanged
-        if (ckb52Madeira.isSelected())
-            tf52Madeira.setEditable(true);
-        else{
-            tf52Madeira.setEditable(false);
-            tf52Madeira.setText("0");
-        }
-    }//GEN-LAST:event_ckb52MadeiraStateChanged
-
-    private void ckb52BarroStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ckb52BarroStateChanged
-        if (ckb52Barro.isSelected())
-            tf52Barro.setEditable(true);
-        else{
-            tf52Barro.setEditable(false);
-            tf52Barro.setText("0");
-        }
-    }//GEN-LAST:event_ckb52BarroStateChanged
-
-    private void ckb52PalhaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ckb52PalhaStateChanged
-        if (ckb52Palha.isSelected())
-            tf52Palha.setEditable(true);
-        else{
-            tf52Palha.setEditable(false);
-            tf52Palha.setText("0");
-        }
-    }//GEN-LAST:event_ckb52PalhaStateChanged
-
-    private void ckb53TelhadeBarroStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ckb53TelhadeBarroStateChanged
-        if (ckb53TelhadeBarro.isSelected())
-            tf53TelhadeBarro.setEditable(true);
-        else{
-            tf53TelhadeBarro.setEditable(false);
-            tf53TelhadeBarro.setText("0");
-        }
-    }//GEN-LAST:event_ckb53TelhadeBarroStateChanged
-
-    private void ckb53CavacoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ckb53CavacoStateChanged
-        if (ckb53Cavaco.isSelected())
-            tf53Cavaco.setEditable(true);
-        else{
-            tf53Cavaco.setEditable(false);
-            tf53Cavaco.setText("0");
-        }
-    }//GEN-LAST:event_ckb53CavacoStateChanged
-
-    private void ckb53AmiantoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ckb53AmiantoStateChanged
-        if (ckb53Amianto.isSelected())
-            tf53Amianto.setEditable(true);
-        else{
-            tf53Amianto.setEditable(false);
-            tf53Amianto.setText("0");
-        }
-    }//GEN-LAST:event_ckb53AmiantoStateChanged
-
-    private void ckb54TerraBatidaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ckb54TerraBatidaStateChanged
-        if (ckb54TerraBatida.isSelected())
-            tf54TerraBatida.setEditable(true);
-        else{
-            tf54TerraBatida.setEditable(false);
-            tf54TerraBatida.setText("0");
-        }
-    }//GEN-LAST:event_ckb54TerraBatidaStateChanged
-
-    private void ckb54CimentadoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ckb54CimentadoStateChanged
-        if (ckb54Cimentado.isSelected())
-            tf54Cimentado.setEditable(true);
-        else{
-            tf54Cimentado.setEditable(false);
-            tf54Cimentado.setText("0");
-        }
-    }//GEN-LAST:event_ckb54CimentadoStateChanged
-
-    private void ckb54LajotadoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ckb54LajotadoStateChanged
-        if (ckb54Lajotado.isSelected())
-            tf54Lajotado.setEditable(true);
-        else{
-            tf54Lajotado.setEditable(false);
-            tf54Lajotado.setText("0");
-        }
-    }//GEN-LAST:event_ckb54LajotadoStateChanged
-
     private void botao_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_salvarActionPerformed
         try {
-            String sqlinsert = "insert into comunidade_questionario "
-                    + "(id_comunidade,tem_presidente,nome_presidente,"
+            String sqlinsert = "insert into colonia_questionario "
+                    + "(id_colonia,tem_presidente,nome_presidente,"
                     + "tem_eleicao_presidencial,descricao_eleicao,existe_igreja,"
                     + "quant_igreja,existe_club,quant_club,"
                     + "exite_assoc,especificar_associacao,nr_pescadores,"
@@ -1467,21 +904,21 @@ public class colonia_questionario extends javax.swing.JFrame {
 
                     tf17Outro.getText()+","+//"quant_igreja
                     tachecado(ckb18ExisteClube)+",'"+//,existe_club
-                    tp19Especificar.getText()+"',"+//,quant_club,"
+                    tp18QuantaseQuais.getText()+"',"+//,quant_club,"
 
                     tachecado(ckb20ExisteAssociacao)+",'"+// "exite_assoc
                     tp21Especificar.getText()+"',"+//especificar_associacao
-                    tfNrPescadores.getText()+","+//nr_pescadores,"
+                    tf25MON.getText()+","+//nr_pescadores,"
 
-                    tfNrEmbarcacoes.getText()+","+//nr_embarcacoes
-                    tfMon.getText()+","+//24mon
-                    tfCan.getText()+","+//25can,"
+                    tf24NrEmbarc.getText()+","+//nr_embarcacoes
+                    tf26CAN.getText()+","+//24mon
+                    tf27CAM.getText()+","+//25can,"
 
-                    tfCam.getText()+","+//"26cam
-                    tfBpp.getText()+","+//27bpp
-                    tfBmp.getText()+","+//28bmp
+                    tf28BPP.getText()+","+//"26cam
+                    tf29BMP.getText()+","+//27bpp
+                    tf30GEL.getText()+","+//28bmp
                     tfGel.getText()+","+//29gel
-                    tfBin.getText()+","+//30bin
+                    tf31BIN.getText()+","+//30bin
                     tfFno.getText()+",'"+//31fno
 
                     tfPagantes.getText()+"','"+//"sit_pagantes
@@ -1490,13 +927,13 @@ public class colonia_questionario extends javax.swing.JFrame {
 
                     tp35.getText()+"','"+//+ "princ_pesc_ordem_importancia
                     tp36.getText()+"',"+//,artes_pesc_ordem_importancia
-                    tachecado(ckb38Defeso)+",'"+//,existe_defeso,"
+                    tachecado(ckb36Defeso)+",'"+//,existe_defeso,"
 
-                    cb39.getSelectedItem()+"',"+//+ "e_respeitado
-                    tachecado(ckb40Renda)+","+//,40rec_auxilio_renda
-                    tachecado(ckb40Aposentadoria)+","+//,40rec_auxilio_aposentadoria,"
+                    cb37.getSelectedItem()+"',"+//+ "e_respeitado
+                    tachecado(ckb38Aposentadoria)+","+//,40rec_auxilio_renda
+                    tachecado(ckb38SeguroDesemprego)+","+//,40rec_auxilio_aposentadoria,"
 
-                    tachecado(ckb40SeguroDesemprego)+",'"+// "40rec_auxilio_seguro
+                    tachecado(ckb38BolsaFamilia)+",'"+// "40rec_auxilio_seguro
                     cb41axasuf.getSelectedItem()+"',"+//,acha_suf_valor_recebido
                     tachecado(ckb45Sim)+","+//,45exite_monitoramento,"
 
@@ -1561,7 +998,7 @@ public class colonia_questionario extends javax.swing.JFrame {
             if (conexao.salvar(sqlinsert)){
             //agora é hora de atualizar o resultset
             JOptionPane.showMessageDialog(null,"Cadastrado com sucesso");
-            conexao.execute("select * from comunidade_questionario");
+            conexao.execute("select * from colonia_questionario");
             conexao.resultSet.first(); //1º registro
             mostra_dados();
             cbComunidade.setSelectedIndex(0);
@@ -1578,13 +1015,13 @@ public class colonia_questionario extends javax.swing.JFrame {
 
         if (inicia_combo == 1){
          try {
-            conexao.execute("select * from comunidade_questionario");
+            conexao.execute("select * from colonia_questionario");
             conexao.resultSet.first();
             String igual = "n"; //inicia dizendo que não localizou
             while(igual == "n") //diz que enquanto não localizar é para ir executando
             {
                 String id = pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString());
-                if (conexao.resultSet.getString("id_comunidade").equals(id)) {
+                if (conexao.resultSet.getString("id_colonia").equals(id)) {
                     igual = "s"; //incica que achou
                 } else
                     conexao.resultSet.next();
@@ -1607,7 +1044,7 @@ public class colonia_questionario extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
          try{
-            String sql ="UPDATE comunidade_questionario SET "+
+            String sql ="UPDATE colonia_questionario SET "+
                           "tem_presidente = '"+tachecado(ckb12TemPresidente)+"',"+
                           "nome_presidente = '"+ tf12NomePresidente.getText() +"',"+
                           "tem_eleicao_presidencial = '"+ tachecado(ckb14temeleicao) +"',"+
@@ -1615,30 +1052,30 @@ public class colonia_questionario extends javax.swing.JFrame {
                           "existe_igreja = '"+ tachecado(ckb16) +"',"+
                           "quant_igreja = '"+ tf17Outro.getText() +"',"+
                           "existe_club = '"+ tachecado(ckb18ExisteClube) +"',"+
-                          "quant_club = '"+ tp19Especificar.getText() +"',"+
+                          "quant_club = '"+ tp18QuantaseQuais.getText() +"',"+
                           "exite_assoc = '"+ tachecado(ckb20ExisteAssociacao) +"',"+
                           "especificar_associacao = '"+ tp21Especificar.getText() +"',"+
-                          "nr_pescadores = '"+ tfNrPescadores.getText() +"',"+
-                          "nr_embarcacoes = '"+ tfNrEmbarcacoes.getText() +"',"+
-                          "24mon = '"+ tfMon.getText() +"',"+
-                          "25can = '"+ tfCan.getText() +"',"+
-                          "26cam = '"+ tfCam.getText() +"',"+
-                          "27bpp = '"+ tfBpp.getText() +"',"+
-                          "28bmp = '"+ tfBmp.getText() +"',"+
+                          "nr_pescadores = '"+ tf25MON.getText() +"',"+
+                          "nr_embarcacoes = '"+ tf24NrEmbarc.getText() +"',"+
+                          "24mon = '"+ tf26CAN.getText() +"',"+
+                          "25can = '"+ tf27CAM.getText() +"',"+
+                          "26cam = '"+ tf28BPP.getText() +"',"+
+                          "27bpp = '"+ tf29BMP.getText() +"',"+
+                          "28bmp = '"+ tf30GEL.getText() +"',"+
                           "29gel = '"+ tfGel.getText() +"',"+
-                          "30bin = '"+ tfBin.getText() +"',"+
+                          "30bin = '"+ tf31BIN.getText() +"',"+
                           "31fno = '"+ tfFno.getText() +"',"+
                           "sit_pagantes = '"+ tfPagantes.getText() +"',"+
                           "sit_inadimplentes = '"+ tfInadiplentes.getText() +"',"+
                           "34fin_adm_important = '"+ cb34.getSelectedItem() +"',"+
                           "princ_pesc_ordem_importancia = '"+ tp35.getText() +"',"+
                           "artes_pesc_ordem_importancia = '"+ tp36.getText() +"',"+
-                          "existe_defeso = '"+ tachecado(ckb38Defeso) +"',"+
-                          "e_respeitado = '"+ cb39.getSelectedItem() +"',"+
-                          "40rec_auxilio_renda = '"+ tachecado(ckb40Renda) +"',"+
-                          "40rec_auxilio_aposentadoria = '"+ tachecado(ckb40Aposentadoria) +"',"+
+                          "existe_defeso = '"+ tachecado(ckb36Defeso) +"',"+
+                          "e_respeitado = '"+ cb37.getSelectedItem() +"',"+
+                          "40rec_auxilio_renda = '"+ tachecado(ckb38Aposentadoria) +"',"+
+                          "40rec_auxilio_aposentadoria = '"+ tachecado(ckb38SeguroDesemprego) +"',"+
 
-                          "40rec_auxilio_seguro = '"+ tachecado(ckb40SeguroDesemprego) +"',"+
+                          "40rec_auxilio_seguro = '"+ tachecado(ckb38BolsaFamilia) +"',"+
                           "acha_suf_valor_recebido = '"+ cb41axasuf.getSelectedItem() +"',"+
                           "45exite_monitoramento = '"+ tachecado(ckb45Sim) +"',"+
                           "47tem_desembarque = '"+ tachecado(ckb47) +"',"+
@@ -1689,13 +1126,13 @@ public class colonia_questionario extends javax.swing.JFrame {
                           "44com_idosos_pessoas = '"+ tachecado(ckb44Idosos)+"',"+
                           "46quem_faz = '"+ tp46quemfaz.getText()+"' "+
 
-                          "where id_comunidade = "+pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString());
+                          "where id_colonia = "+pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString());
 
             System.out.println(sql);
             if (conexao.update(sql)){
             JOptionPane.showMessageDialog(null,"Alterado com sucesso");
             //Atualiza Resultset
-            conexao.execute("select * from comunidade_questionario");
+            conexao.execute("select * from colonia_questionario");
             conexao.resultSet.next();
             mostra_dados();
             cbComunidade.setSelectedIndex(0);
@@ -1706,34 +1143,6 @@ public class colonia_questionario extends javax.swing.JFrame {
             System.out.println(e + "Erro no botão alterar");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void btAddEspecieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAddEspecieActionPerformed
-       new addCEspecie(pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString())).setVisible(true);
-    }//GEN-LAST:event_btAddEspecieActionPerformed
-
-    private void btAtualizarEspecieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizarEspecieActionPerformed
-        preencher_jtableEspecie(pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString()));
-    }//GEN-LAST:event_btAtualizarEspecieActionPerformed
-
-    private void btExcluirEspecieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirEspecieActionPerformed
-        // TODO add your handling code here:
-        System.out.println(jtEspecie.getValueAt(jtEspecie.getSelectedRow(),0));
-        //.removeRow(jTable1.getSelectedRow());
-                String sql;
-
-            sql = "delete from comunidade_addespecie Where id_especie =" + jtEspecie.getValueAt(jtEspecie.getSelectedRow(),0);
-
-                if (conexao.salvar(sql)) {
-                    System.out.println("Exclusão realizada com sucesso");
-                    //exibe
-                    preencher_jtableEspecie(pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString()));
-
-                }else{
-                JOptionPane.showMessageDialog(null,"Erro na exclusão");
-
-
-                }
-    }//GEN-LAST:event_btExcluirEspecieActionPerformed
 
     private void btAtualizarAtividadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizarAtividadeActionPerformed
         preencher_jtableAtividade(pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString()));
@@ -1749,7 +1158,7 @@ public class colonia_questionario extends javax.swing.JFrame {
         //.removeRow(jTable1.getSelectedRow());
                 String sql;
 
-            sql = "delete from comunidade_addatividade Where id_atividade =" + jtAtividade.getValueAt(jtAtividade.getSelectedRow(),0);
+            sql = "delete from colonia_addatividade Where id_atividade =" + jtAtividade.getValueAt(jtAtividade.getSelectedRow(),0);
 
                 if (conexao.salvar(sql)) {
                     System.out.println("Exclusão realizada com sucesso");
@@ -1772,36 +1181,36 @@ public class colonia_questionario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ckb12TemPresidenteItemStateChanged
 
-    private void ckb44LiderancaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckb44LiderancaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ckb44LiderancaActionPerformed
-
-    private void ckb42simItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ckb42simItemStateChanged
-        if (ckb42sim.isSelected())
-            tp43ConflitoTipo.setEditable(true);
-        else{
-            tp43ConflitoTipo.setEditable(false);
-            tp43ConflitoTipo.setText("");
-        }
-    }//GEN-LAST:event_ckb42simItemStateChanged
-
-    private void ckb45SimItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ckb45SimItemStateChanged
-        if (ckb45Sim.isSelected())
-            tp46quemfaz.setEditable(true);
-        else {
-            tp46quemfaz.setEditable(false);
-            tp46quemfaz.setText("");
-        }
-    }//GEN-LAST:event_ckb45SimItemStateChanged
-
-    private void ckb17_3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ckb17_3ItemStateChanged
-        if (ckb17_3.isSelected())
+    private void ckb17OutroItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ckb17OutroItemStateChanged
+        if (ckb17Outro.isSelected())
             tf17Outro.setEditable(true);
         else{
             tf17Outro.setEditable(false);
             tf17Outro.setText("");
         }
-    }//GEN-LAST:event_ckb17_3ItemStateChanged
+    }//GEN-LAST:event_ckb17OutroItemStateChanged
+
+    private void ckb21ComColoniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckb21ComColoniaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ckb21ComColoniaActionPerformed
+
+    private void ckb22SimItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ckb22SimItemStateChanged
+        if (ckb22Sim.isSelected())
+            tp22.setEditable(true);
+        else{
+            tp22.setEditable(false);
+            tp22.setText("");
+        }
+    }//GEN-LAST:event_ckb22SimItemStateChanged
+
+    private void ckb40SimItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ckb40SimItemStateChanged
+        if (ckb40Sim.isSelected())
+            tp41Quem.setEditable(true);
+        else{
+            tp41Quem.setEditable(false);
+            tp41Quem.setText("");
+        }
+    }//GEN-LAST:event_ckb40SimItemStateChanged
 
     /**
     * @param args the command line arguments
@@ -1817,55 +1226,36 @@ public class colonia_questionario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botao_salvar;
     private javax.swing.JButton btAddAtividade;
-    private javax.swing.JButton btAddEspecie;
     private javax.swing.JButton btAtualizarAtividade;
-    private javax.swing.JButton btAtualizarEspecie;
     private javax.swing.JButton btExcluirAtividade;
-    private javax.swing.JButton btExcluirEspecie;
     private javax.swing.JComboBox cb13;
     private javax.swing.JComboBox cb34;
-    private javax.swing.JComboBox cb39;
-    private javax.swing.JComboBox cb41axasuf;
-    private javax.swing.JComboBox cb48Consumo;
-    private javax.swing.JComboBox cb48Venda;
-    private javax.swing.JComboBox cb49ProducaoVenda;
+    private javax.swing.JComboBox cb37;
+    private javax.swing.JComboBox cb39AchaSuficiente;
+    private javax.swing.JComboBox cb43Qualidade;
+    private javax.swing.JComboBox cb44Acompanha;
     private javax.swing.JComboBox cbComunidade;
     private javax.swing.JCheckBox ckb12TemPresidente;
     private javax.swing.JCheckBox ckb16;
-    private javax.swing.JCheckBox ckb17_1;
-    private javax.swing.JCheckBox ckb17_2;
-    private javax.swing.JCheckBox ckb17_3;
-    private javax.swing.JCheckBox ckb18ExisteClube;
-    private javax.swing.JCheckBox ckb20ExisteAssociacao;
-    private javax.swing.JCheckBox ckb38Defeso;
-    private javax.swing.JCheckBox ckb40Aposentadoria;
-    private javax.swing.JCheckBox ckb40Renda;
-    private javax.swing.JCheckBox ckb40SeguroDesemprego;
-    private javax.swing.JCheckBox ckb42sim;
-    private javax.swing.JCheckBox ckb44EntreEles;
-    private javax.swing.JCheckBox ckb44Idosos;
-    private javax.swing.JCheckBox ckb44Lideranca;
-    private javax.swing.JCheckBox ckb45Sim;
-    private javax.swing.JCheckBox ckb47;
-    private javax.swing.JCheckBox ckb50Estrada;
-    private javax.swing.JCheckBox ckb50Mangue;
-    private javax.swing.JCheckBox ckb50Outro;
-    private javax.swing.JCheckBox ckb50Ramal;
-    private javax.swing.JCheckBox ckb50Riu;
-    private javax.swing.JCheckBox ckb51Barco;
-    private javax.swing.JCheckBox ckb51Bicicleta;
-    private javax.swing.JCheckBox ckb51Onibus;
-    private javax.swing.JCheckBox ckb51ape;
-    private javax.swing.JCheckBox ckb52Alvenaria;
-    private javax.swing.JCheckBox ckb52Barro;
-    private javax.swing.JCheckBox ckb52Madeira;
-    private javax.swing.JCheckBox ckb52Palha;
-    private javax.swing.JCheckBox ckb53Amianto;
-    private javax.swing.JCheckBox ckb53Cavaco;
-    private javax.swing.JCheckBox ckb53TelhadeBarro;
-    private javax.swing.JCheckBox ckb54Cimentado;
-    private javax.swing.JCheckBox ckb54Lajotado;
-    private javax.swing.JCheckBox ckb54TerraBatida;
+    private javax.swing.JCheckBox ckb17EstarQuite;
+    private javax.swing.JCheckBox ckb17Outro;
+    private javax.swing.JCheckBox ckb17TerTempo;
+    private javax.swing.JCheckBox ckb19Sim;
+    private javax.swing.JCheckBox ckb21ComColonia;
+    private javax.swing.JCheckBox ckb21ComIBAMA;
+    private javax.swing.JCheckBox ckb21ComIdosos;
+    private javax.swing.JCheckBox ckb21ComJustica;
+    private javax.swing.JCheckBox ckb21ComLiderancas;
+    private javax.swing.JCheckBox ckb21EntreEles;
+    private javax.swing.JCheckBox ckb21NaPolicia;
+    private javax.swing.JCheckBox ckb21Outro;
+    private javax.swing.JCheckBox ckb22Sim;
+    private javax.swing.JCheckBox ckb36Defeso;
+    private javax.swing.JCheckBox ckb38Aposentadoria;
+    private javax.swing.JCheckBox ckb38BolsaFamilia;
+    private javax.swing.JCheckBox ckb38SeguroDesemprego;
+    private javax.swing.JCheckBox ckb40Sim;
+    private javax.swing.JCheckBox ckb42Sim;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1895,84 +1285,50 @@ public class colonia_questionario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
-    private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane10;
-    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTable jtAtividade;
-    private javax.swing.JTable jtEspecie;
     private javax.swing.JTextField tf12NomePresidente;
     private javax.swing.JTextField tf17Outro;
-    private javax.swing.JTextField tf49OutrasLocalidades;
-    private javax.swing.JTextField tf50Outro;
-    private javax.swing.JTextField tf52Alvenaria;
-    private javax.swing.JTextField tf52Barro;
-    private javax.swing.JTextField tf52Madeira;
-    private javax.swing.JTextField tf52Palha;
-    private javax.swing.JTextField tf53Amianto;
-    private javax.swing.JTextField tf53Cavaco;
-    private javax.swing.JTextField tf53TelhadeBarro;
-    private javax.swing.JTextField tf54Cimentado;
-    private javax.swing.JTextField tf54Lajotado;
-    private javax.swing.JTextField tf54TerraBatida;
-    private javax.swing.JTextField tf55bares;
-    private javax.swing.JTextField tf55merceariaEbar;
-    private javax.swing.JTextField tf55mercearias;
-    private javax.swing.JTextField tfBin;
-    private javax.swing.JTextField tfBmp;
-    private javax.swing.JTextField tfBpp;
-    private javax.swing.JTextField tfCam;
-    private javax.swing.JTextField tfCan;
+    private javax.swing.JTextField tf21Outro;
+    private javax.swing.JTextField tf23Homens;
+    private javax.swing.JTextField tf23Mulheres;
+    private javax.swing.JTextField tf24NrEmbarc;
+    private javax.swing.JTextField tf25MON;
+    private javax.swing.JTextField tf26CAN;
+    private javax.swing.JTextField tf27CAM;
+    private javax.swing.JTextField tf28BPP;
+    private javax.swing.JTextField tf29BMP;
+    private javax.swing.JTextField tf30GEL;
+    private javax.swing.JTextField tf31BIN;
     private javax.swing.JTextField tfFno;
-    private javax.swing.JTextField tfGel;
     private javax.swing.JTextField tfInadiplentes;
-    private javax.swing.JTextField tfMon;
-    private javax.swing.JTextField tfNrEmbarcacoes;
-    private javax.swing.JTextField tfNrPescadores;
     private javax.swing.JTextField tfPagantes;
     private javax.swing.JTextPane tp15descrever;
-    private javax.swing.JTextPane tp19Especificar;
-    private javax.swing.JTextPane tp21Especificar;
-    private javax.swing.JTextPane tp35;
-    private javax.swing.JTextPane tp36;
-    private javax.swing.JTextPane tp43ConflitoTipo;
-    private javax.swing.JTextPane tp46quemfaz;
+    private javax.swing.JTextPane tp18QuantaseQuais;
+    private javax.swing.JTextPane tp20TipoConflito;
+    private javax.swing.JTextPane tp22;
+    private javax.swing.JTextPane tp41Quem;
     // End of variables declaration//GEN-END:variables
 
             public String pega_codigo_ou_nome(int n,String teste) { //Se entrar com 1 pega o Código, se não pega o Nome
@@ -2006,18 +1362,18 @@ public class colonia_questionario extends javax.swing.JFrame {
             tf12NomePresidente.setText(conexao.resultSet.getString("nome_presidente"));
             tp15descrever.setText(conexao.resultSet.getString("descricao_eleicao"));
             tf17Outro.setText(conexao.resultSet.getString("quant_igreja"));
-            tp19Especificar.setText(conexao.resultSet.getString("quant_club"));
+            tp18QuantaseQuais.setText(conexao.resultSet.getString("quant_club"));
             tp21Especificar.setText(conexao.resultSet.getString("especificar_associacao"));
 
-            tfNrPescadores.setText(conexao.resultSet.getString("nr_pescadores"));
-            tfNrEmbarcacoes.setText(conexao.resultSet.getString("nr_embarcacoes"));
-            tfMon.setText(conexao.resultSet.getString("24mon"));
-            tfCan.setText(conexao.resultSet.getString("25can"));
-            tfCam.setText(conexao.resultSet.getString("26cam"));
-            tfBpp.setText(conexao.resultSet.getString("27bpp"));
-            tfBmp.setText(conexao.resultSet.getString("28bmp"));
+            tf25MON.setText(conexao.resultSet.getString("nr_pescadores"));
+            tf24NrEmbarc.setText(conexao.resultSet.getString("nr_embarcacoes"));
+            tf26CAN.setText(conexao.resultSet.getString("24mon"));
+            tf27CAM.setText(conexao.resultSet.getString("25can"));
+            tf28BPP.setText(conexao.resultSet.getString("26cam"));
+            tf29BMP.setText(conexao.resultSet.getString("27bpp"));
+            tf30GEL.setText(conexao.resultSet.getString("28bmp"));
             tfGel.setText(conexao.resultSet.getString("29gel"));
-            tfBin.setText(conexao.resultSet.getString("30bin"));
+            tf31BIN.setText(conexao.resultSet.getString("30bin"));
             tfFno.setText(conexao.resultSet.getString("31fno"));
             tfPagantes.setText(conexao.resultSet.getString("sit_pagantes"));
             tfInadiplentes.setText(conexao.resultSet.getString("sit_inadimplentes"));
@@ -2028,7 +1384,7 @@ public class colonia_questionario extends javax.swing.JFrame {
             tf49OutrasLocalidades.setText(conexao.resultSet.getString("49producao_feita_na_outro"));
 
             cb34.setSelectedItem(conexao.resultSet.getString("34fin_adm_important"));
-            cb39.setSelectedItem(conexao.resultSet.getString("e_respeitado"));
+            cb37.setSelectedItem(conexao.resultSet.getString("e_respeitado"));
             cb41axasuf.setSelectedItem(conexao.resultSet.getString("acha_suf_valor_recebido"));
             cb48Consumo.setSelectedItem(conexao.resultSet.getString("48destino_consumo"));
             cb48Venda.setSelectedItem(conexao.resultSet.getString("48destino_venda"));
@@ -2061,25 +1417,25 @@ public class colonia_questionario extends javax.swing.JFrame {
 
             //
             if (conexao.resultSet.getString("existe_defeso").equals("1"))
-                   ckb38Defeso.setSelected(true);
+                   ckb36Defeso.setSelected(true);
             else
-                   ckb38Defeso.setSelected(false);
+                   ckb36Defeso.setSelected(false);
 
             //
             if (conexao.resultSet.getString("40rec_auxilio_renda").equals("1"))
-                   ckb40Renda.setSelected(true);
+                   ckb38Aposentadoria.setSelected(true);
             else
-                   ckb40Renda.setSelected(false);
+                   ckb38Aposentadoria.setSelected(false);
 
             if (conexao.resultSet.getString("40rec_auxilio_aposentadoria").equals("1"))
-                   ckb40Aposentadoria.setSelected(true);
+                   ckb38SeguroDesemprego.setSelected(true);
             else
-                   ckb40Aposentadoria.setSelected(false);
+                   ckb38SeguroDesemprego.setSelected(false);
 
             if (conexao.resultSet.getString("40rec_auxilio_seguro").equals("1"))
-                   ckb40SeguroDesemprego.setSelected(true);
+                   ckb38BolsaFamilia.setSelected(true);
             else
-                   ckb40SeguroDesemprego.setSelected(false);
+                   ckb38BolsaFamilia.setSelected(false);
 
             //
             if (conexao.resultSet.getString("45exite_monitoramento").equals("1"))
@@ -2261,21 +1617,21 @@ public class colonia_questionario extends javax.swing.JFrame {
 
                     tf17Outro.setText("0");
                     ckb18ExisteClube.setSelected(false);
-                    tp19Especificar.setText("0");
+                    tp18QuantaseQuais.setText("0");
 
                     ckb20ExisteAssociacao.setSelected(false);
                     tp21Especificar.setText("");
-                    tfNrPescadores.setText("0");
+                    tf25MON.setText("0");
 
-                    tfNrEmbarcacoes.setText("0");
-                    tfMon.setText("0");
-                    tfCan.setText("0");
+                    tf24NrEmbarc.setText("0");
+                    tf26CAN.setText("0");
+                    tf27CAM.setText("0");
 
-                    tfCam.setText("0");
-                    tfBpp.setText("0");
-                    tfBmp.setText("0");
+                    tf28BPP.setText("0");
+                    tf29BMP.setText("0");
+                    tf30GEL.setText("0");
                     tfGel.setText("0");
-                    tfBin.setText("0");
+                    tf31BIN.setText("0");
                     tfFno.setText("0");
 
                     tfPagantes.setText("");
@@ -2284,13 +1640,13 @@ public class colonia_questionario extends javax.swing.JFrame {
 
                     tp35.setText("");
                     tp36.setText("");
-                    ckb38Defeso.setSelected(false);
+                    ckb36Defeso.setSelected(false);
 
-                    cb39.setSelectedIndex(0);
-                    ckb40Renda.setSelected(false);
-                    ckb40Aposentadoria.setSelected(false);
+                    cb37.setSelectedIndex(0);
+                    ckb38Aposentadoria.setSelected(false);
+                    ckb38SeguroDesemprego.setSelected(false);
 
-                    ckb40SeguroDesemprego.setSelected(false);
+                    ckb38BolsaFamilia.setSelected(false);
                     cb41axasuf.setSelectedIndex(0);
                     ckb45Sim.setSelected(false);
 
@@ -2351,35 +1707,9 @@ public class colonia_questionario extends javax.swing.JFrame {
 
     }
 
-        public void preencher_jtableEspecie(String id){
-        conexao.execute("select * from comunidade_addespecie where id_comunidade="+id);
-
-        jtEspecie.getColumnModel().getColumn(0).setMaxWidth(0);
-        jtEspecie.getColumnModel().getColumn(0).setPreferredWidth(0);
-        jtEspecie.getColumnModel().getColumn(1).setPreferredWidth(10);
-        jtEspecie.getColumnModel().getColumn(2).setPreferredWidth(10);
-        jtEspecie.getColumnModel().getColumn(3).setPreferredWidth(10);
-
-        DefaultTableModel modelo = (DefaultTableModel)jtEspecie.getModel();
-        modelo.setNumRows(0);//limpa o JTable;
-
-        try{
-            while (conexao.resultSet.next())
-                modelo.addRow(new Object[]{conexao.resultSet.getString("id_especie"),
-                                           conexao.resultSet.getString("especie"),
-                                           conexao.resultSet.getString("inicio_safra"),
-                                           conexao.resultSet.getString("fim_safra")});
-
-            conexao.resultSet.first();
-
-        conexao.execute("select * from caminhoneiro_questionario");
-        }catch (SQLException erro){
-            System.out.println(erro);
-        }
-    }
 
         public void preencher_jtableAtividade(String id){
-        conexao.execute("select * from comunidade_addatividade where id_comunidade="+id);
+        conexao.execute("select * from colonia_addatividade where id_colonia="+id);
 
         jtAtividade.getColumnModel().getColumn(0).setMaxWidth(0);
         jtAtividade.getColumnModel().getColumn(0).setPreferredWidth(0);
@@ -2419,7 +1749,7 @@ public class colonia_questionario extends javax.swing.JFrame {
 
             conexao.resultSet.first();
 
-        conexao.execute("select * from caminhoneiro_questionario");
+        //conexao.execute("select * from caminhoneiro_questionario");
         }catch (SQLException erro){
             System.out.println(erro);
         }

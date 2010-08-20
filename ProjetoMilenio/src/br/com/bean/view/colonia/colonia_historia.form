@@ -61,7 +61,6 @@
                                   <Component id="jScrollPane5" alignment="0" max="32767" attributes="1"/>
                                   <Component id="jLabel7" alignment="0" max="32767" attributes="1"/>
                                   <Component id="jScrollPane6" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jLabel8" alignment="0" pref="617" max="32767" attributes="1"/>
                                   <Component id="jLabel9" alignment="0" max="32767" attributes="1"/>
                                   <Component id="jScrollPane7" alignment="0" max="32767" attributes="1"/>
                                   <Component id="jLabel10" alignment="0" max="32767" attributes="1"/>
@@ -77,33 +76,6 @@
                                   <Component id="jScrollPane12" alignment="0" max="32767" attributes="1"/>
                                   <Component id="jLabel16" alignment="0" max="32767" attributes="1"/>
                                   <Component id="jScrollPane13" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jLabel17" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jScrollPane14" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jLabel18" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jScrollPane15" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jLabel19" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jScrollPane16" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jLabel20" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jScrollPane17" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jLabel21" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jScrollPane18" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jLabel22" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jScrollPane19" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jLabel23" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jScrollPane20" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jLabel24" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jScrollPane21" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jLabel25" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jScrollPane22" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jLabel27" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jScrollPane24" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jLabel28" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jScrollPane25" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jLabel29" alignment="0" pref="617" max="32767" attributes="1"/>
-                                  <Component id="jLabel30" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jScrollPane26" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jLabel31" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jScrollPane27" alignment="0" max="32767" attributes="1"/>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="btSalver" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -116,7 +88,7 @@
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="59" max="32767" attributes="0"/>
+                      <EmptySpace pref="30" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -148,9 +120,7 @@
                       <Component id="jScrollPane5" min="-2" pref="62" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       <Component id="jScrollPane6" min="-2" pref="62" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
@@ -183,65 +153,11 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane13" min="-2" pref="62" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane14" min="-2" pref="62" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane15" min="-2" pref="62" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane16" min="-2" pref="62" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane17" min="-2" pref="62" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane18" min="-2" pref="62" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane19" min="-2" pref="62" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane20" min="-2" pref="62" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane21" min="-2" pref="62" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane22" min="-2" pref="62" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane24" min="-2" pref="62" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                      <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane25" min="-2" pref="62" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane26" min="-2" pref="62" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane27" min="-2" pref="62" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btAtualizar" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btSalver" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="24" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -272,7 +188,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="1. Conte-me quando e onde voc&#xea; nasceu?"/>
+                <Property name="text" type="java.lang.String" value="1. Qual a hist&#xf3;ria da associa&#xe7;&#xe3;o?"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane2">
@@ -288,7 +204,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
-                <Property name="text" type="java.lang.String" value="2. Quantos irm&#xe3;os teve? Onde est&#xe3;o agora?"/>
+                <Property name="text" type="java.lang.String" value="2. Quando e por que voc&#xea; se associou &#xe0; organiza&#xe7;&#xe3;o?"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane3">
@@ -304,7 +220,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
-                <Property name="text" type="java.lang.String" value="3. Seus pais j&#xe1; trabalhavam com pesca e ro&#xe7;a? E seus av&#xf3;s? (explorar semelhan&#xe7;as e diferen&#xe7;as)."/>
+                <Property name="text" type="java.lang.String" value="3. Como acontece o credenciamento para a obten&#xe7;&#xe3;o do seguro desemprego?"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane4">
@@ -320,7 +236,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel6">
               <Properties>
-                <Property name="text" type="java.lang.String" value="4. Voc&#xea; estudou? Onde? (conduzir at&#xe9; o casamento, explorando a mem&#xf3;ria sobre recursos naturais/pesca)."/>
+                <Property name="text" type="java.lang.String" value="4. Quais foram as lideran&#xe7;as mais importantes na hist&#xf3;ria da col&#xf4;nia?"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane5">
@@ -336,7 +252,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
-                <Property name="text" type="java.lang.String" value="5. Voc&#xea; pode descrever a casa e o lugar onde voc&#xea; nasceu e como era o momento das refei&#xe7;&#xf5;es?"/>
+                <Property name="text" type="java.lang.String" value="5. Qual o processo para um indiv&#xed;duo associar-se &#xe0; sua organiza&#xe7;&#xe3;o?"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane6">
@@ -350,14 +266,9 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="jLabel8">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="(explorar as atividades da m&#xe3;e na cozinha, tecendo rede, etc.)"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel9">
               <Properties>
-                <Property name="text" type="java.lang.String" value="6. E seu casamento? Voc&#xea; foi morar onde? (conduzir at&#xe9; o per&#xed;odo atual)."/>
+                <Property name="text" type="java.lang.String" value="6. Quais s&#xe3;o as outras organiza&#xe7;&#xf5;es (col&#xf4;nia, resex, associa&#xe7;&#xe3;o, secretarias, prefeituras, etc) ligadas &#xe0; pesca do munic&#xed;pio?"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane7">
@@ -373,7 +284,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel10">
               <Properties>
-                <Property name="text" type="java.lang.String" value="7. Voc&#xea; seguiu trabalhando com pesca, ro&#xe7;a, extra&#xe7;&#xe3;o? (explorar)."/>
+                <Property name="text" type="java.lang.String" value="7. O Munic&#xed;pio possui f&#xe1;bricas de gelo? Quais e quantas? Qual a rela&#xe7;&#xe3;o delas com as col&#xf4;nias?"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane8">
@@ -389,7 +300,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel11">
               <Properties>
-                <Property name="text" type="java.lang.String" value="8. Sua conunidade tem um padroeiro?"/>
+                <Property name="text" type="java.lang.String" value="8. O munic&#xed;pio possui frigor&#xed;ficos? Quais e quantos? De que forma eles contribuem ou se relacionam com a col&#xf4;nia de pescadores?"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane9">
@@ -405,7 +316,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel12">
               <Properties>
-                <Property name="text" type="java.lang.String" value="9. Quais s&#xe3;o as festas de sua comunidade? (explorar: mais importante, porque, o que h&#xe1; quando acontece,"/>
+                <Property name="text" type="java.lang.String" value="9. O munic&#xed;pio possui barcos de pesca comercial? Quantos? Contru&#xed;dos por quem? Antes, por favor defina o que &#xe9; barco de pesca"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane10">
@@ -421,12 +332,12 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel13">
               <Properties>
-                <Property name="text" type="java.lang.String" value="produtos envolvidos, etc)."/>
+                <Property name="text" type="java.lang.String" value="comercial."/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel14">
               <Properties>
-                <Property name="text" type="java.lang.String" value="10. Qual a que voc&#xea; mais gosta? Porque?"/>
+                <Property name="text" type="java.lang.String" value="10. O munic&#xed;pio possui estaleirosl? Quais, que tipos e quantos? Constru&#xed;dos por quem? Antes, por favor defina o que &#xe9; estaleiro."/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane11">
@@ -442,7 +353,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel15">
               <Properties>
-                <Property name="text" type="java.lang.String" value="11. Quando voc&#xea; n&#xe3;o est&#xe1; trabalhando o que voc&#xea; faz? E com seus pais era assim?"/>
+                <Property name="text" type="java.lang.String" value="11. O munic&#xed;pio possui portos naturais? Quantos e em que condi&#xe7;&#xf5;es de desembarque?"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane12">
@@ -458,7 +369,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel16">
               <Properties>
-                <Property name="text" type="java.lang.String" value="12. O munic&#xed;pio possui per&#xed;odo de defeso?"/>
+                <Property name="text" type="java.lang.String" value="12. O munic&#xed;pio possui Portos constru&#xed;dos? Quantos? Quem os construiu? Quais as condi&#xe7;&#xf5;es de desembarque?"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane13">
@@ -472,166 +383,6 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="jLabel17">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="13. Por que o per&#xed;odo de defeso foi criado?"/>
-              </Properties>
-            </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane14">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTextPane" name="questao13">
-                </Component>
-              </SubComponents>
-            </Container>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane15">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTextPane" name="questao14">
-                </Component>
-              </SubComponents>
-            </Container>
-            <Component class="javax.swing.JLabel" name="jLabel18">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="14. Que regras foram criadas no per&#xed;odo de defeso? E no tempo de seus pais como era?"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel19">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="15. O que voc&#xea; faz durante o per&#xed;odo de defeso? E no tempo de seus pais como era?"/>
-              </Properties>
-            </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane16">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTextPane" name="questao15">
-                </Component>
-              </SubComponents>
-            </Container>
-            <Component class="javax.swing.JLabel" name="jLabel20">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="16. As comunidades respeitam o per&#xed;odo de defeso?"/>
-              </Properties>
-            </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane17">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTextPane" name="questao16">
-                </Component>
-              </SubComponents>
-            </Container>
-            <Component class="javax.swing.JLabel" name="jLabel21">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="17. J&#xe1; foram registradas infra&#xe7;&#xf5;es ao per&#xed;odo de defeso?"/>
-              </Properties>
-            </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane18">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTextPane" name="questao17">
-                </Component>
-              </SubComponents>
-            </Container>
-            <Component class="javax.swing.JLabel" name="jLabel22">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="18. Quanto as pessoas da comunidade voc&#xea; acha que cumpre o per&#xed;odo de defeso?"/>
-              </Properties>
-            </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane19">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTextPane" name="questao18">
-                </Component>
-              </SubComponents>
-            </Container>
-            <Component class="javax.swing.JLabel" name="jLabel23">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="19. Voc&#xea; cumpre o per&#xed;odo de defeso? Porque? (explorar)"/>
-              </Properties>
-            </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane20">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTextPane" name="questao19">
-                </Component>
-              </SubComponents>
-            </Container>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane21">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTextPane" name="questao20">
-                </Component>
-              </SubComponents>
-            </Container>
-            <Component class="javax.swing.JLabel" name="jLabel24">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="20. Como voc&#xea; considera o impacto do per&#xed;odo de defeso. (explorar)"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel25">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="21. O per&#xed;odo de defeso tem atrapalhado a pesca da comunidade? Por que?"/>
-              </Properties>
-            </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane22">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTextPane" name="questao21">
-                </Component>
-              </SubComponents>
-            </Container>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane24">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTextPane" name="questao22">
-                </Component>
-              </SubComponents>
-            </Container>
-            <Component class="javax.swing.JLabel" name="jLabel27">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="22. O per&#xed;odo de defeso j&#xe1; gerou algum tipo de conflito entre os pescadores? Quais? Por que?"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JButton" name="btAtualizar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Atualizar"/>
@@ -648,59 +399,6 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btSalverActionPerformed"/>
               </Events>
             </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane25">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTextPane" name="questao23">
-                </Component>
-              </SubComponents>
-            </Container>
-            <Component class="javax.swing.JLabel" name="jLabel28">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="23. A quantidade de peixe que voc&#xea; pesca hoje, especialmente serra, gurijuba e pescada, corresponde &#xe0; "/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel29">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="mesma quantidade que se pescava no tempo de seus pais? Porque mudou ou continuou?"/>
-              </Properties>
-            </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane26">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTextPane" name="questao24">
-                </Component>
-              </SubComponents>
-            </Container>
-            <Component class="javax.swing.JLabel" name="jLabel30">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="24. Voc&#xea; acha justo o per&#xed;odo de defeso? Porque?"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel31">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="25. Voc&#xea; concordaria com a cria&#xe7;&#xe3;o de um per&#xed;odo de defeso para a pescada a gurijuba e a serra? Porque?  "/>
-              </Properties>
-            </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane27">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTextPane" name="questao25">
-                </Component>
-              </SubComponents>
-            </Container>
           </SubComponents>
         </Container>
       </SubComponents>
