@@ -62,10 +62,10 @@ public class addAtividades extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18));
         jLabel1.setText("Atividades");
 
-        cbNomeAtividade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Serra", "Pescada", "Gurijuba", "Gó", "Tainha", "Broca e Queima", "Plantio", "Capina", "Colheita", "Produção da Farinha", "Outro" }));
+        cbNomeAtividade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Serra", "Pescada Amarela", "Gurijuba", "Gó", "Tainha", "Outro" }));
         cbNomeAtividade.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cbNomeAtividadeItemStateChanged(evt);
@@ -129,7 +129,7 @@ public class addAtividades extends javax.swing.JFrame {
                             .addComponent(cbNomeAtividade, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(299, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(43, Short.MAX_VALUE)
+                .addContainerGap(111, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton1)
                     .addGroup(jPanel1Layout.createSequentialGroup()

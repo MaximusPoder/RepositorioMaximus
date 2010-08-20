@@ -81,7 +81,6 @@ public class colonia_historia extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
         questao5 = new javax.swing.JTextPane();
-        jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
         questao6 = new javax.swing.JTextPane();
@@ -104,48 +103,8 @@ public class colonia_historia extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jScrollPane13 = new javax.swing.JScrollPane();
         questao12 = new javax.swing.JTextPane();
-        jLabel17 = new javax.swing.JLabel();
-        jScrollPane14 = new javax.swing.JScrollPane();
-        questao13 = new javax.swing.JTextPane();
-        jScrollPane15 = new javax.swing.JScrollPane();
-        questao14 = new javax.swing.JTextPane();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jScrollPane16 = new javax.swing.JScrollPane();
-        questao15 = new javax.swing.JTextPane();
-        jLabel20 = new javax.swing.JLabel();
-        jScrollPane17 = new javax.swing.JScrollPane();
-        questao16 = new javax.swing.JTextPane();
-        jLabel21 = new javax.swing.JLabel();
-        jScrollPane18 = new javax.swing.JScrollPane();
-        questao17 = new javax.swing.JTextPane();
-        jLabel22 = new javax.swing.JLabel();
-        jScrollPane19 = new javax.swing.JScrollPane();
-        questao18 = new javax.swing.JTextPane();
-        jLabel23 = new javax.swing.JLabel();
-        jScrollPane20 = new javax.swing.JScrollPane();
-        questao19 = new javax.swing.JTextPane();
-        jScrollPane21 = new javax.swing.JScrollPane();
-        questao20 = new javax.swing.JTextPane();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jScrollPane22 = new javax.swing.JScrollPane();
-        questao21 = new javax.swing.JTextPane();
-        jScrollPane24 = new javax.swing.JScrollPane();
-        questao22 = new javax.swing.JTextPane();
-        jLabel27 = new javax.swing.JLabel();
         btAtualizar = new javax.swing.JButton();
         btSalver = new javax.swing.JButton();
-        jScrollPane25 = new javax.swing.JScrollPane();
-        questao23 = new javax.swing.JTextPane();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jScrollPane26 = new javax.swing.JScrollPane();
-        questao24 = new javax.swing.JTextPane();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
-        jScrollPane27 = new javax.swing.JScrollPane();
-        questao25 = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -160,97 +119,55 @@ public class colonia_historia extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("1. Conte-me quando e onde você nasceu?");
+        jLabel3.setText("1. Qual a história da associação?");
 
         jScrollPane2.setViewportView(questao1);
 
-        jLabel4.setText("2. Quantos irmãos teve? Onde estão agora?");
+        jLabel4.setText("2. Quando e por que você se associou à organização?");
 
         jScrollPane3.setViewportView(questao2);
 
-        jLabel5.setText("3. Seus pais já trabalhavam com pesca e roça? E seus avós? (explorar semelhanças e diferenças).");
+        jLabel5.setText("3. Como acontece o credenciamento para a obtenção do seguro desemprego?");
 
         jScrollPane4.setViewportView(questao3);
 
-        jLabel6.setText("4. Você estudou? Onde? (conduzir até o casamento, explorando a memória sobre recursos naturais/pesca).");
+        jLabel6.setText("4. Quais foram as lideranças mais importantes na história da colônia?");
 
         jScrollPane5.setViewportView(questao4);
 
-        jLabel7.setText("5. Você pode descrever a casa e o lugar onde você nasceu e como era o momento das refeições?");
+        jLabel7.setText("5. Qual o processo para um indivíduo associar-se à sua organização?");
 
         jScrollPane6.setViewportView(questao5);
 
-        jLabel8.setText("(explorar as atividades da mãe na cozinha, tecendo rede, etc.)");
-
-        jLabel9.setText("6. E seu casamento? Você foi morar onde? (conduzir até o período atual).");
+        jLabel9.setText("6. Quais são as outras organizações (colônia, resex, associação, secretarias, prefeituras, etc) ligadas à pesca do município?");
 
         jScrollPane7.setViewportView(questao6);
 
-        jLabel10.setText("7. Você seguiu trabalhando com pesca, roça, extração? (explorar).");
+        jLabel10.setText("7. O Município possui fábricas de gelo? Quais e quantas? Qual a relação delas com as colônias?");
 
         jScrollPane8.setViewportView(questao7);
 
-        jLabel11.setText("8. Sua conunidade tem um padroeiro?");
+        jLabel11.setText("8. O município possui frigoríficos? Quais e quantos? De que forma eles contribuem ou se relacionam com a colônia de pescadores?");
 
         jScrollPane9.setViewportView(questao8);
 
-        jLabel12.setText("9. Quais são as festas de sua comunidade? (explorar: mais importante, porque, o que há quando acontece,");
+        jLabel12.setText("9. O município possui barcos de pesca comercial? Quantos? Contruídos por quem? Antes, por favor defina o que é barco de pesca");
 
         jScrollPane10.setViewportView(questao9);
 
-        jLabel13.setText("produtos envolvidos, etc).");
+        jLabel13.setText("comercial.");
 
-        jLabel14.setText("10. Qual a que você mais gosta? Porque?");
+        jLabel14.setText("10. O município possui estaleirosl? Quais, que tipos e quantos? Construídos por quem? Antes, por favor defina o que é estaleiro.");
 
         jScrollPane11.setViewportView(questao10);
 
-        jLabel15.setText("11. Quando você não está trabalhando o que você faz? E com seus pais era assim?");
+        jLabel15.setText("11. O município possui portos naturais? Quantos e em que condições de desembarque?");
 
         jScrollPane12.setViewportView(questao11);
 
-        jLabel16.setText("12. O município possui período de defeso?");
+        jLabel16.setText("12. O município possui Portos construídos? Quantos? Quem os construiu? Quais as condições de desembarque?");
 
         jScrollPane13.setViewportView(questao12);
-
-        jLabel17.setText("13. Por que o período de defeso foi criado?");
-
-        jScrollPane14.setViewportView(questao13);
-
-        jScrollPane15.setViewportView(questao14);
-
-        jLabel18.setText("14. Que regras foram criadas no período de defeso? E no tempo de seus pais como era?");
-
-        jLabel19.setText("15. O que você faz durante o período de defeso? E no tempo de seus pais como era?");
-
-        jScrollPane16.setViewportView(questao15);
-
-        jLabel20.setText("16. As comunidades respeitam o período de defeso?");
-
-        jScrollPane17.setViewportView(questao16);
-
-        jLabel21.setText("17. Já foram registradas infrações ao período de defeso?");
-
-        jScrollPane18.setViewportView(questao17);
-
-        jLabel22.setText("18. Quanto as pessoas da comunidade você acha que cumpre o período de defeso?");
-
-        jScrollPane19.setViewportView(questao18);
-
-        jLabel23.setText("19. Você cumpre o período de defeso? Porque? (explorar)");
-
-        jScrollPane20.setViewportView(questao19);
-
-        jScrollPane21.setViewportView(questao20);
-
-        jLabel24.setText("20. Como você considera o impacto do período de defeso. (explorar)");
-
-        jLabel25.setText("21. O período de defeso tem atrapalhado a pesca da comunidade? Por que?");
-
-        jScrollPane22.setViewportView(questao21);
-
-        jScrollPane24.setViewportView(questao22);
-
-        jLabel27.setText("22. O período de defeso já gerou algum tipo de conflito entre os pescadores? Quais? Por que?");
 
         btAtualizar.setText("Atualizar");
         btAtualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -265,20 +182,6 @@ public class colonia_historia extends javax.swing.JFrame {
                 btSalverActionPerformed(evt);
             }
         });
-
-        jScrollPane25.setViewportView(questao23);
-
-        jLabel28.setText("23. A quantidade de peixe que você pesca hoje, especialmente serra, gurijuba e pescada, corresponde à ");
-
-        jLabel29.setText("mesma quantidade que se pescava no tempo de seus pais? Porque mudou ou continuou?");
-
-        jScrollPane26.setViewportView(questao24);
-
-        jLabel30.setText("24. Você acha justo o período de defeso? Porque?");
-
-        jLabel31.setText("25. Você concordaria com a criação de um período de defeso para a pescada a gurijuba e a serra? Porque?  ");
-
-        jScrollPane27.setViewportView(questao25);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -303,7 +206,6 @@ public class colonia_historia extends javax.swing.JFrame {
                             .addComponent(jScrollPane5)
                             .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jScrollPane6)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 617, Short.MAX_VALUE)
                             .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jScrollPane7)
                             .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -319,33 +221,6 @@ public class colonia_historia extends javax.swing.JFrame {
                             .addComponent(jScrollPane12)
                             .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jScrollPane13)
-                            .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane14)
-                            .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane15)
-                            .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane16)
-                            .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane17)
-                            .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane18)
-                            .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane19)
-                            .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane20)
-                            .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane21)
-                            .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane22)
-                            .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane24)
-                            .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane25)
-                            .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, 617, Short.MAX_VALUE)
-                            .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane26)
-                            .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane27)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(btSalver)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -353,7 +228,7 @@ public class colonia_historia extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(182, 182, 182)
                         .addComponent(jLabel1)))
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -382,9 +257,7 @@ public class colonia_historia extends javax.swing.JFrame {
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
-                .addGap(4, 4, 4)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(24, 24, 24)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
@@ -417,64 +290,10 @@ public class colonia_historia extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel19)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel20)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel21)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel22)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel23)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel24)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel25)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel27)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel28)
-                .addGap(3, 3, 3)
-                .addComponent(jLabel29)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel30)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane26, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel31)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btAtualizar)
                     .addComponent(btSalver))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -643,27 +462,12 @@ public class colonia_historia extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -671,20 +475,7 @@ public class colonia_historia extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
-    private javax.swing.JScrollPane jScrollPane14;
-    private javax.swing.JScrollPane jScrollPane15;
-    private javax.swing.JScrollPane jScrollPane16;
-    private javax.swing.JScrollPane jScrollPane17;
-    private javax.swing.JScrollPane jScrollPane18;
-    private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane20;
-    private javax.swing.JScrollPane jScrollPane21;
-    private javax.swing.JScrollPane jScrollPane22;
-    private javax.swing.JScrollPane jScrollPane24;
-    private javax.swing.JScrollPane jScrollPane25;
-    private javax.swing.JScrollPane jScrollPane26;
-    private javax.swing.JScrollPane jScrollPane27;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -696,20 +487,7 @@ public class colonia_historia extends javax.swing.JFrame {
     private javax.swing.JTextPane questao10;
     private javax.swing.JTextPane questao11;
     private javax.swing.JTextPane questao12;
-    private javax.swing.JTextPane questao13;
-    private javax.swing.JTextPane questao14;
-    private javax.swing.JTextPane questao15;
-    private javax.swing.JTextPane questao16;
-    private javax.swing.JTextPane questao17;
-    private javax.swing.JTextPane questao18;
-    private javax.swing.JTextPane questao19;
     private javax.swing.JTextPane questao2;
-    private javax.swing.JTextPane questao20;
-    private javax.swing.JTextPane questao21;
-    private javax.swing.JTextPane questao22;
-    private javax.swing.JTextPane questao23;
-    private javax.swing.JTextPane questao24;
-    private javax.swing.JTextPane questao25;
     private javax.swing.JTextPane questao3;
     private javax.swing.JTextPane questao4;
     private javax.swing.JTextPane questao5;
