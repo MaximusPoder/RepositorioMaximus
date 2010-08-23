@@ -16,7 +16,9 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.print.DocFlavor.STRING;
+import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -172,7 +174,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         jLabel51 = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
         jScrollPane15 = new javax.swing.JScrollPane();
-        tpquestao8 = new javax.swing.JTextPane();
+        tpQuestao8 = new javax.swing.JTextPane();
         jLabel53 = new javax.swing.JLabel();
         jScrollPane16 = new javax.swing.JScrollPane();
         tpQuestao9 = new javax.swing.JTextPane();
@@ -214,6 +216,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         jbAtualizacao3 = new javax.swing.JButton();
         jScrollPane11 = new javax.swing.JScrollPane();
         tpquestao4 = new javax.swing.JTextArea();
+        jLabel42 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -242,6 +245,8 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         cbSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "FEMININO", "MASCULINO" }));
 
         jLabel8.setText("Idade:");
+
+        tfIdade.setText("0");
 
         jLabel9.setText("Atividade principal de renda :");
 
@@ -285,9 +290,13 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
         jLabel24.setText("Qual :");
 
+        tfAlgumaAssociacao.setEditable(false);
+
         jLabel25.setText("Possui carteira de Pescador ?");
 
         jLabel26.setText("Qual Orgão?");
+
+        tfOrgaoCarteiraPescado.setEditable(false);
 
         jLabel27.setText("Relação de Trabalho:");
 
@@ -307,7 +316,16 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
         jLabel36.setText("Quanto o tempo diário que passam trabalhando ?");
 
+        tfTempoTrabalho.setText("0");
+        tfTempoTrabalho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfTempoTrabalhoActionPerformed(evt);
+            }
+        });
+
         jLabel37.setText("Quanto tempo esta na atividade ?");
+
+        tfTempoAtividade.setText("0");
 
         jScrollPane2.setViewportView(tpPlanoSaude);
 
@@ -372,45 +390,47 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         jLabel43.setFont(new java.awt.Font("Tahoma", 1, 24));
         jLabel43.setText("Percepção Ambiental e Perspectivas:");
 
-        jLabel44.setText("Existe alguma interação entre os vendedores em relaçãoa troca ou cooperação dos produtos, etc ?");
+        jLabel44.setText("01_Existe alguma interação entre os vendedores em relaçãoa troca ou cooperação dos produtos, etc ?");
 
         jScrollPane8.setViewportView(tpQuestao1);
 
-        jLabel45.setText("Qual o grau de competitividade/rivalidade entre os atravesadores ? ");
+        tfQualColonia.setEditable(false);
+
+        jLabel45.setText("02_Qual o grau de competitividade/rivalidade entre os atravesadores ? ");
 
         jScrollPane9.setViewportView(tpQuestao2);
 
-        jLabel46.setText("A sazonalidade influencia na disponibilidade do pescador para a venda ?");
+        jLabel46.setText("03_A sazonalidade influencia na disponibilidade do pescador para a venda ?");
 
         tpQuestao3.setColumns(20);
         tpQuestao3.setRows(5);
         jScrollPane10.setViewportView(tpQuestao3);
 
-        jLabel47.setText("Você acredita que as mudanças no clima podem influenciar nas pesca? Como?");
+        jLabel47.setText("04_Você acredita que as mudanças no clima podem influenciar nas pesca? Como?");
 
-        jLabel48.setText("O que está acontecendo com o tamanho e a quantidade de pescado ?");
+        jLabel48.setText("05_O que está acontecendo com o tamanho e a quantidade de pescado ?");
 
         jScrollPane12.setViewportView(tpQuestao5);
 
-        jLabel49.setText("Você sabe informar quais os motivos responsáveis pela diminuição ?");
+        jLabel49.setText("06_Você sabe informar quais os motivos responsáveis pela diminuição ?");
 
         jScrollPane13.setViewportView(tpQuestao6);
 
-        jLabel50.setText("Caso ocorra odesaparecimento do pescado, como você sustentaria a sua familia ?");
+        jLabel50.setText("07_Caso ocorra odesaparecimento do pescado, como você sustentaria a sua familia ?");
 
         jScrollPane14.setViewportView(tpQuestao7);
 
-        jLabel51.setText("Existem crianças envolvidas nessa pesca ?");
+        jLabel51.setText("08_Existem crianças envolvidas nessa pesca ?");
 
-        jLabel52.setText("Você deseja que seus filhos também sejam comerciantes ? Por que? (pespectiva do pescador quanto ao futuro dos filhos)");
+        jLabel52.setText("09_Você deseja que seus filhos também sejam comerciantes ? Por que? (pespectiva do pescador quanto ao futuro dos filhos)");
 
-        jScrollPane15.setViewportView(tpquestao8);
+        jScrollPane15.setViewportView(tpQuestao8);
 
-        jLabel53.setText("Existe algum comflito entre os comerciantes na feira/mercado ?");
+        jLabel53.setText("10_Existe algum comflito entre os comerciantes na feira/mercado ?");
 
         jScrollPane16.setViewportView(tpQuestao9);
 
-        jLabel54.setText("Quais as dificuldades (gargalos) encontradas para manter a atividade de venda ? Quais as possiveis soluções(demanda) para melhorar o seu trabalhos ?");
+        jLabel54.setText("11_Quais as dificuldades (gargalos) encontradas para manter a atividade de venda ? ");
 
         jScrollPane17.setViewportView(tpQuestao10);
 
@@ -453,10 +473,25 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         ckbInss.setText("SIm");
 
         ckbColonia.setText("Sim");
+        ckbColonia.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ckbColoniaItemStateChanged(evt);
+            }
+        });
 
         ckbAlgumaAssociacao.setText("Sim");
+        ckbAlgumaAssociacao.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ckbAlgumaAssociacaoItemStateChanged(evt);
+            }
+        });
 
         ckbCarteiraPescado.setText("Sim");
+        ckbCarteiraPescado.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ckbCarteiraPescadoItemStateChanged(evt);
+            }
+        });
 
         botao_limpar.setText("Limpar");
         botao_limpar.addActionListener(new java.awt.event.ActionListener() {
@@ -595,6 +630,8 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         tpquestao4.setRows(5);
         jScrollPane11.setViewportView(tpquestao4);
 
+        jLabel42.setText("Quais as possiveis soluções(demanda) para melhorar o seu trabalhos ?");
+
         javax.swing.GroupLayout AtualizarLayout = new javax.swing.GroupLayout(Atualizar);
         Atualizar.setLayout(AtualizarLayout);
         AtualizarLayout.setHorizontalGroup(
@@ -693,7 +730,9 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                                     .addComponent(tfComposicaoFamilia))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, AtualizarLayout.createSequentialGroup()
                                     .addComponent(jLabel15)
-                                    .addGap(178, 178, 178)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tfEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(16, 16, 16)
                                     .addComponent(jLabel16)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(tfPorQueParou, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -757,14 +796,11 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                                     .addComponent(jbExcluir1)
                                     .addComponent(jbAdd1)))
                             .addGroup(AtualizarLayout.createSequentialGroup()
-                                .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(tfEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(AtualizarLayout.createSequentialGroup()
-                                        .addComponent(jLabel17)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(cbLocalMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel18)))
+                                .addComponent(jLabel17)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cbLocalMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel18)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(cbQualidadeMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(AtualizarLayout.createSequentialGroup()
@@ -815,10 +851,6 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                     .addGroup(AtualizarLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel45))
-                    .addComponent(jLabel46)
-                    .addComponent(jLabel47)
-                    .addComponent(jLabel48)
-                    .addComponent(jLabel49)
                     .addGroup(AtualizarLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel50))
@@ -833,34 +865,51 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                     .addGroup(AtualizarLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel53))
-                    .addComponent(jLabel54)
-                    .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, AtualizarLayout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jScrollPane11))
-                        .addComponent(jScrollPane13, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, AtualizarLayout.createSequentialGroup()
-                            .addContainerGap()
-                            .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jScrollPane16, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane15, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE))))
                     .addGroup(AtualizarLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane12, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane10, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addComponent(jLabel44))))
-                .addContainerGap(108, Short.MAX_VALUE))
+                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane16, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane15, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE)))
+                    .addGroup(AtualizarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(AtualizarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel42))
+                    .addGroup(AtualizarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel54))
+                    .addGroup(AtualizarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane11)
+                            .addComponent(jScrollPane10, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel44, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane12, javax.swing.GroupLayout.Alignment.LEADING)))
+                    .addGroup(AtualizarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(AtualizarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel49))
+                    .addGroup(AtualizarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel48))
+                    .addGroup(AtualizarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel46))
+                    .addGroup(AtualizarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel47)))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
         AtualizarLayout.setVerticalGroup(
             AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AtualizarLayout.createSequentialGroup()
-                .addGap(11, 11, 11)
+                .addGap(29, 29, 29)
                 .addComponent(jLabel1)
                 .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AtualizarLayout.createSequentialGroup()
@@ -922,10 +971,9 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                         .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15)
                             .addComponent(jLabel16)
-                            .addComponent(tfPorQueParou, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tfPorQueParou, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(32, 32, 32)
                         .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel17)
                             .addGroup(AtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1054,10 +1102,10 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel46)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(11, 11, 11)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel47)
+                .addGap(11, 11, 11)
+                .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17)
@@ -1068,7 +1116,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                 .addComponent(jLabel49)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(11, 11, 11)
                 .addComponent(jLabel50)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1086,9 +1134,11 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                 .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel54)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel42)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jScrollPane1.setViewportView(Atualizar);
@@ -1097,13 +1147,11 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 792, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 882, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1624, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -1154,11 +1202,11 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
             tfNome.setText("");
             tfApelido.setText("");
             tfNaturalidade.setText("");
-            tfIdade.setText("");
+            tfIdade.setText("0");
             tfAtividadePrincipal.setText("");
             tfAtividadeSecundaria.setText("");
-            tfBoxes.setText("");
-            tfQuantosPossui.setText("");
+            tfBoxes.setText("0");
+            tfQuantosPossui.setText("0");
             tfComposicaoFamilia.setText("");
             tfEscolaridade.setText("");
             tfPorQueParou.setText("");
@@ -1181,7 +1229,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
             tpQuestao5.setText("");
             tpQuestao6.setText("");
             tpQuestao7.setText("");
-            tpquestao8.setText("");
+            tpQuestao8.setText("");
             tpQuestao9.setText("");
             tpQuestao10.setText("");
             cbMunicipio.setSelectedIndex(0);
@@ -1204,51 +1252,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
     private void botao_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_cadastrarActionPerformed
         // Para Gravar no banco de dados
-      int[] ckb = new int[11];
-      if (ckbInss.isSelected()){
-        ckb[0]=1;
-      } else
-        ckb[0]=0;
-    if (ckbColonia.isSelected()){
-          ckb[1]=1;
-      }else
-          ckb[1]=0;
-    if (ckbAlgumaAssociacao.isSelected()){
-          ckb[2]=1;
-      }else
-          ckb[2]=0;
-    if(ckbCarteiraPescado.isSelected()){
-           ckb[3]=1;
-       }else
-           ckb[3]=0;
-    if (ckbCriancaEnvolvidas.isSelected()){
-          ckb[4]=1;
-      }else
-          ckb[4]=0;
-     if(rbMercado.isSelected()){
-           ckb[5]=1;
-       }else
-           ckb[5]=0;
-     if(rbFeiraLivre.isSelected()){
-          ckb[6]=1;
-       }else
-          ckb[6]=0;
-      if (ckbFamiliar.isSelected()){
-           ckb[7]=1;
-      }else
-          ckb[7]=0;
-       if (ckbArtesanalComVizinho.isSelected()){
-            ckb[8]=1;
-       }else
-           ckb[8]=0;
-       if (ckbArmadorEmbarcacao.isSelected()){
-            ckb[9]=1;
-        }else
-            ckb[9]=0;
-        if (ckbAssalariado.isSelected()){
-            ckb[10]=1;
-        }else
-            ckb[10]=0;
+     
         try {
           String sqlinsert = "insert into mercado_questionario"
              + "(nome_municipio,e_mercado,e_fera_livre,nome,apelido,naturalidade,"
@@ -1259,55 +1263,56 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
              + "alguma_associacao,qual_associacao,carteira_pescador,orgao_carteira_pesca,relacao_trab_familiar"
              + ",relacao_trab_artesanal,relacao_trab_armador,relacao_trab_assalariado,plano_saude,atividade_renda_familiar,entrevistado,esposa,filhos,"
              + "netos,tempo_diario_trabalho,periodo_atividade,periodo_atividade"
-             + "questao1,questao2,questao3,questao4,questao5,questao6,questao7,questao8,questao9,questao9,questao10,questao11 ) values('" +
-              cbMunicipio.getSelectedItem()+"',"+
-              ckb[5]+","+
-              ckb[6]+",'"+
-              tfNome.getText()+"','"+
-              tfApelido.getText()+"','"+
-              tfNaturalidade.getText()+"','"+
-              cbSexo.getSelectedIndex()+"',"+
-              tfIdade.getText()+",'"+
-              tfAtividadePrincipal.getText()+"','"+
-              tfAtividadeSecundaria.getText()+"',"+
-              tfBoxes.getText()+","+
-              tfQuantosPossui.getText()+",'"+
-              cbEstadoCivil.getSelectedIndex()+"','"+
-              tfComposicaoFamilia.getText()+"',"+
-              tfEscolaridade.getText()+",'"+
-              tfPorQueParou.getText()+"','"+
-              cbLocalMoradia.getSelectedIndex()+"','"+
-              cbQualidadeMoradia.getSelectedIndex()+"','"+
-              tfTipoConstrucao.getText()+"',"+
-              ckb[0]+","+
-              ckb[1]+",'"+
-              tfQualColonia.getText()+"','"+
-              ckb[2]+",'"+
-              tfAlgumaAssociacao.getText()+"',"+
-              ckb[3]+",'"+
-              tfOrgaoCarteiraPescado.getText()+"',"+
-              ckb[7]+","+
-              ckb[8]+","+
-              ckb[9]+","+
-              ckb[10]+",'"+
-              tpPlanoSaude.getText()+"','"+
-              tpRendaFamiliar.getText()+"','"+
-              tfEntrevistado.getText()+"','"+
-              tfEsposa.getText()+"','"+
-              tfFilhos.getText()+"','"+
-              tfNetos.getText()+"',"+
-              tfTempoTrabalho.getText()+","+
-              tfTempoAtividade.getText()+","+
-              tpQuestao1.getText()+"','"+
-              tpQuestao2.getText()+"','"+
-              tpQuestao3.getText()+"','"+
-              tpquestao4.getText()+"','"+
-              tpQuestao5.getText()+"','"+
-              tpQuestao6.getText()+"','"+
-              tpQuestao7.getText()+"','"+
-              ckb[4]+
-              tpQuestao9.getText()+"','"+
-              tpQuestao10.getText()+"','"+")";
+             + "questao1,questao2,questao3,questao4,questao5,questao6,questao7,questao9,questao10,questao11 ) values('" +
+              cbMunicipio.getSelectedItem()+"',"+//nome_municipio
+              tachecado2(rbMercado)+","+//e_mercado
+              tachecado2(rbFeiraLivre)+",'"+//,e_fera_livre
+              tfNome.getText()+"','"+//nome
+              tfApelido.getText()+"','"+//apelido
+              tfNaturalidade.getText()+"','"+//naturalidade
+              cbSexo.getSelectedItem()+"',"+//sexo
+              tfIdade.getText()+",'"+//idade
+              tfAtividadePrincipal.getText()+"','"+//,atividade_principal
+              tfAtividadeSecundaria.getText()+"',"+//atividade_secundaria
+              tfBoxes.getText()+","+//boxe_local
+              tfQuantosPossui.getText()+",'"+//quantos_possui
+              cbEstadoCivil.getSelectedItem()+"','"+//estado_civil
+              tfComposicaoFamilia.getText()+"','"+//composicao_familiar
+              tfEscolaridade.getText()+"','"+//escolaridade
+              tfPorQueParou.getText()+"','"+//pq_parou
+              cbLocalMoradia.getSelectedItem()+"','"+//local_moradia
+              cbQualidadeMoradia.getSelectedItem()+"','"+//qualidade_moradia
+              tfTipoConstrucao.getText()+"',"+//tipo_construcao
+              tachecado(ckbInss)+","+//inss
+              tachecado(ckbColonia)+",'"+//na_colonia
+              tfQualColonia.getText()+"','"+//qual_colonia
+              tachecado(ckbAlgumaAssociacao)+",'"+//alguma_associacao
+              tfAlgumaAssociacao.getText()+"',"+//qual_associacao
+              tachecado(ckbCarteiraPescado)+",'"+//carteira_pescador
+              tfOrgaoCarteiraPescado.getText()+"',"+//orgao_carteira_pesca
+              tachecado(ckbFamiliar)+","+//relacao_trab_familiar
+              tachecado(ckbArtesanalComVizinho)+","+//relacao_trab_artesanal
+              tachecado(ckbArmadorEmbarcacao)+","+//relacao_trab_armador
+              tachecado(ckbAssalariado)+",'"+//relacao_trab_assalariado
+              tpPlanoSaude.getText()+"','"+//plano_saude
+              tpRendaFamiliar.getText()+"','"+//atividade_renda_familiar
+              tfEntrevistado.getText()+"','"+//entrevistado
+              tfEsposa.getText()+"','"+//esposa
+              tfFilhos.getText()+"','"+//filhos
+              tfNetos.getText()+"',"+//netos
+              tfTempoTrabalho.getText()+","+//tempo_diario_trabalho
+              tfTempoAtividade.getText()+","+//periodo_atividade
+              tpQuestao1.getText()+"','"+//questao1
+              tpQuestao2.getText()+"','"+//questao2
+              tpQuestao3.getText()+"','"+//questao3
+              tpquestao4.getText()+"','"+//questao4
+              tpQuestao5.getText()+"','"+//questao5
+              tpQuestao6.getText()+"','"+//questao6
+              tpQuestao7.getText()+"','"+//questao7
+              tachecado(ckbCriancaEnvolvidas)+//questao8
+              tpQuestao8.getText()+"','"+//questao9
+              tpQuestao9.getText()+"','"+//questao10
+              tpQuestao10.getText()+"')";//questao11
 
             System.out.println(sqlinsert);
             if (conexao.salvar(sqlinsert)) {
@@ -1406,7 +1411,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
             ckb[10]=1;
         }else
             ckb[10]=0;
-
+// update nm set (coluna = 'oq vai dentro',coluna2 = 'oq vai  '  )
         try {
             String sql= "UPDATE mercado_questionario SET "+
              "nome_municipio= '" +cbMunicipio.getSelectedItem()+"',"+
@@ -1415,48 +1420,49 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
              "nome= '"+tfNome.getText()+"',"+
              "apelido='"+tfApelido.getText()+"'," +
              "naturalidade='"+tfNaturalidade.getText()+"',"+
-             "sexo = '"+cbSexo.getSelectedIndex()+"',"+
+             "sexo = '"+cbSexo.getSelectedItem()+"',"+
              "idade= '"+tfIdade.getText()+"',"+
              "atividade_principal ='"+tfAtividadePrincipal.getText()+"',"+
              "atividade_secundaria='"+tfAtividadeSecundaria.getText()+"',"+
              "boxe_local='"+tfBoxes.getText()+"',"+
              "quantos_possui='"+tfQuantosPossui.getText()+"',"+
-             "estado_civil='"+cbEstadoCivil.getSelectedIndex()+"',"+
+             "estado_civil='"+cbEstadoCivil.getSelectedItem()+"',"+
              "composicao_familia='"+tfComposicaoFamilia.getText()+"',"+
              "escolaridade='"+tfEscolaridade.getText()+"',"+
              "pq_parou='"+tfPorQueParou.getText()+"',"+
-             "local-moradia='"+cbLocalMoradia.getSelectedIndex()+"',"+
-             "qualidade_moradia ='"+cbQualidadeMoradia.getSelectedIndex()+"',"+
+             "local-moradia='"+cbLocalMoradia.getSelectedItem()+"',"+
+             "qualidade_moradia ='"+cbQualidadeMoradia.getSelectedItem()+"',"+
              "tipo_construcao='" +tfTipoConstrucao.getText()+"',"+
-             "inss='"+ckb[0]+","+
-             "na_colonia='"+ckb[1]+",'"+
-             "qual_colonia='"+tfQualColonia.getText()+"','"+
-             "alguma_associacao='"+ckb[2]+",'"+
+             "inss='"+ckb[0]+"',"+
+             "na_colonia='"+ckb[1]+"',"+
+             "qual_colonia='"+tfQualColonia.getText()+"',"+
+             "alguma_associacao='"+ckb[2]+"',"+
              "qual_associacao='"+tfAlgumaAssociacao.getText()+"',"+
-             "carteira_pescador='"+ckb[3]+","+
+             "carteira_pescador='"+ckb[3]+"',"+
              "orgao_carteira_pesca='"+tfOrgaoCarteiraPescado.getText()+"',"+
-             "relacao_trab_familiar='"+ckb[7]+","+
-             "relcao_trab_artesanal='"+ ckb[8]+","+
-             "relacao_trab_armador='"+ ckb[9]+","+
-             "relacao_trab_assalariado='"+ ckb[10]+","+
-             "plano_saude='"+tpPlanoSaude.getText()+"','"+
-             "atividadde_renda_familiar='"+tpRendaFamiliar.getText()+"','"+
-             "entrevistado='"+tfEntrevistado.getText()+"','"+
-             "esposa='"+tfEsposa.getText()+"','"+
-             "filhos='"+tfFilhos.getText()+"','"+
+             "relacao_trab_familiar='"+ckb[7]+"',"+
+             "relcao_trab_artesanal='"+ ckb[8]+"',"+
+             "relacao_trab_armador='"+ ckb[9]+"',"+
+             "relacao_trab_assalariado='"+ ckb[10]+"',"+
+             "plano_saude='"+tpPlanoSaude.getText()+"',"+
+             "atividadde_renda_familiar='"+tpRendaFamiliar.getText()+"',"+
+             "entrevistado='"+tfEntrevistado.getText()+"',"+
+             "esposa='"+tfEsposa.getText()+"',"+
+             "filhos='"+tfFilhos.getText()+"',"+
              "netos='"+tfNetos.getText()+"',"+
-             "tempo_diario_trabalho='"+tfTempoTrabalho.getText()+","+
-             "periodo_atividade='"+tfTempoAtividade.getText()+","+
-             "questao1='"+tpQuestao1.getText()+"','"+
-             "questao2='"+tpQuestao2.getText()+"','"+
-             "questao3='"+tpQuestao3.getText()+"','"+
-             "questao4='"+tpquestao4.getText()+"','"+
-             "questao5='"+tpQuestao5.getText()+"','"+
-             "questap6='"+tpQuestao6.getText()+"','"+
-             "questao7='"+tpQuestao7.getText()+"','"+
+             "tempo_diario_trabalho='"+tfTempoTrabalho.getText()+"',"+
+             "periodo_atividade='"+tfTempoAtividade.getText()+"',"+
+             "questao1='"+tpQuestao1.getText()+"',"+
+             "questao2='"+tpQuestao2.getText()+"',"+
+             "questao3='"+tpQuestao3.getText()+"',"+
+             "questao4='"+tpquestao4.getText()+"',"+
+             "questao5='"+tpQuestao5.getText()+"',"+
+             "questap6='"+tpQuestao6.getText()+"',"+
+             "questao7='"+tpQuestao7.getText()+"',"+
              "questao8='"+ckb[4]+"',"+
-             "questao9='"+tpQuestao9.getText()+"','"+
-             "questoa10='"+tpQuestao10.getText()+"','"+
+             "questao9='"+tpQuestao8.getText()+"',"+
+             "questoa10='"+tpQuestao9.getText()+"',' "+
+             "questao11='"+tpQuestao10.getText()+"'"+
 
              "where id_mercado = "+conexao.resultSet.getString("id_mercado");
 
@@ -1464,7 +1470,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
             if (conexao.update(sql)){
             JOptionPane.showMessageDialog(null,"Alterado com sucesso");
             //Atualiza Resultset
-            conexao.execute("select * from quetionario_mercado");
+            conexao.execute("select * from mercado_questionario");
             conexao.resultSet.next();
             exibir_dados();
             }
@@ -1611,6 +1617,40 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jbAtualizacao3ActionPerformed
 
+    private void ckbColoniaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ckbColoniaItemStateChanged
+       if (ckbColonia.isSelected())
+           tfQualColonia.setEditable(true);
+       else{
+           tfQualColonia.setEditable(false);
+           tfQualColonia.setText("");
+       }
+
+    }//GEN-LAST:event_ckbColoniaItemStateChanged
+
+    private void ckbAlgumaAssociacaoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ckbAlgumaAssociacaoItemStateChanged
+       if (ckbAlgumaAssociacao.isSelected())
+           tfAlgumaAssociacao.setEditable(true);
+       else{
+           tfAlgumaAssociacao.setEditable(false);
+           tfAlgumaAssociacao.setText("");
+       }
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ckbAlgumaAssociacaoItemStateChanged
+
+    private void ckbCarteiraPescadoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ckbCarteiraPescadoItemStateChanged
+       if (ckbCarteiraPescado.isSelected())
+          tfOrgaoCarteiraPescado.setEditable(true);
+       else{
+          tfOrgaoCarteiraPescado.setEditable(false);
+          tfOrgaoCarteiraPescado.setText("");
+       }
+    }//GEN-LAST:event_ckbCarteiraPescadoItemStateChanged
+
+    private void tfTempoTrabalhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfTempoTrabalhoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfTempoTrabalhoActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -1686,6 +1726,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
@@ -1764,10 +1805,10 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
     private javax.swing.JTextPane tpQuestao5;
     private javax.swing.JTextPane tpQuestao6;
     private javax.swing.JTextPane tpQuestao7;
+    private javax.swing.JTextPane tpQuestao8;
     private javax.swing.JTextPane tpQuestao9;
     private javax.swing.JTextPane tpRendaFamiliar;
     private javax.swing.JTextArea tpquestao4;
-    private javax.swing.JTextPane tpquestao8;
     // End of variables declaration//GEN-END:variables
 
     private void exibir_dados() {
@@ -1802,9 +1843,9 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
             tpQuestao5.setText(conexao.resultSet.getString("Questao5"));
             tpQuestao6.setText(conexao.resultSet.getString("Questao6"));
             tpQuestao7.setText(conexao.resultSet.getString("Questao7"));
-            tpquestao8.setText(conexao.resultSet.getString("Questao8"));
-            tpQuestao9.setText(conexao.resultSet.getString("Questao9"));
-            tpQuestao10.setText(conexao.resultSet.getString("Questao10"));
+            tpQuestao8.setText(conexao.resultSet.getString("Questao9"));
+            tpQuestao9.setText(conexao.resultSet.getString("Questao10"));
+            tpQuestao10.setText(conexao.resultSet.getString("Questao11"));
             
 
 
@@ -1819,7 +1860,47 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
             else
                    rbFeiraLivre.setSelected(false);
 
-            if (conexao.resultSet.getString("questao8").equals("1"))
+            if (conexao.resultSet.getString("inss").equals("1"))
+                ckbInss.setSelected(true);
+            else
+                ckbInss.setSelected(false);
+
+            if(conexao.resultSet.getString("na_colonia").equals("1"))
+                ckbColonia.setSelected(true);
+            else
+                ckbColonia.setSelected(false);
+
+            if (conexao.resultSet.getString("alguma_associacao").equals("1"))
+                ckbAlgumaAssociacao.setSelected(true);
+            else
+                ckbAlgumaAssociacao.setSelected(false);
+
+            if (conexao.resultSet.getString("carteira_pescador").equals("1"))
+                ckbCarteiraPescado.setSelected(true);
+            else
+                ckbCarteiraPescado.setSelected(false);
+
+            if(conexao.resultSet.getString("relacao_trab_familiar").equals("1"))
+                ckbFamiliar.setSelected(true);
+            else
+                ckbFamiliar.setSelected(false);
+
+            if (conexao.resultSet.getString("relacao_trab_artesanal").equals("1"))
+                ckbArtesanalComVizinho.setSelected(true);
+            else
+                ckbArtesanalComVizinho.setSelected(false);
+
+            if(conexao.resultSet.getString("relacao_trab_armador").equals("1"))
+                ckbArmadorEmbarcacao.setSelected(true);
+            else
+                ckbArmadorEmbarcacao.setSelected(false);
+
+            if (conexao.resultSet.getString("relacao_trab_assalariado").equals("1"))
+                ckbAssalariado.setSelected(true);
+            else
+                ckbAssalariado.setSelected(false);
+
+           if (conexao.resultSet.getString("questao8").equals("1"))
                    ckbCriancaEnvolvidas.setSelected(true);
             else
                    ckbCriancaEnvolvidas.setSelected(false);
@@ -1969,4 +2050,25 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
 
     }
+
+
+
+    private int tachecado(JCheckBox ckb) {
+        if (ckb.isSelected()){
+            return 1;
+        }else
+            return 0;
+    }
+
+     private int tachecado2(JRadioButton ckb) {
+        if (ckb.isSelected()){
+            return 1;
+        }else
+            return 0;
+    }
+
 }
+
+
+
+
