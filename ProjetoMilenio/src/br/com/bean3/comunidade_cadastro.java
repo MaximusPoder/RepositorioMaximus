@@ -98,6 +98,11 @@ public class comunidade_cadastro extends javax.swing.JFrame {
         botao_alterar3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel1.setText("     Questionário Piloto 1- comunidade (Aspectos sócio-culturais da Pesca)");
@@ -222,7 +227,7 @@ public class comunidade_cadastro extends javax.swing.JFrame {
                         .addComponent(botao_proximo3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botao_ultimo3)))
-                .addContainerGap(285, Short.MAX_VALUE))
+                .addContainerGap(337, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -266,11 +271,11 @@ public class comunidade_cadastro extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addGap(18, 18, 18)
-                                .addComponent(tfNomeEntrevistado, javax.swing.GroupLayout.DEFAULT_SIZE, 455, Short.MAX_VALUE))
+                                .addComponent(tfNomeEntrevistado, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(tfNomeEntrevistador, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE))
+                                .addComponent(tfNomeEntrevistador, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
@@ -350,7 +355,7 @@ public class comunidade_cadastro extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(tfEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -547,6 +552,10 @@ public class comunidade_cadastro extends javax.swing.JFrame {
         }
 }//GEN-LAST:event_botao_alterar3ActionPerformed
 
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        conexao.desconecta();
+    }//GEN-LAST:event_formWindowClosed
+
     /**
     * @param args the command line arguments
     */
@@ -559,37 +568,13 @@ public class comunidade_cadastro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Cadastrar;
-    private javax.swing.JButton Cadastrar1;
-    private javax.swing.JButton Cadastrar2;
     private javax.swing.JButton Cadastrar3;
-    private javax.swing.JButton botao_alterar;
-    private javax.swing.JButton botao_alterar1;
-    private javax.swing.JButton botao_alterar2;
     private javax.swing.JButton botao_alterar3;
-    private javax.swing.JButton botao_anterior;
-    private javax.swing.JButton botao_anterior1;
-    private javax.swing.JButton botao_anterior2;
     private javax.swing.JButton botao_anterior3;
-    private javax.swing.JButton botao_excluir;
-    private javax.swing.JButton botao_excluir1;
-    private javax.swing.JButton botao_excluir2;
     private javax.swing.JButton botao_excluir3;
-    private javax.swing.JButton botao_novo;
-    private javax.swing.JButton botao_novo1;
-    private javax.swing.JButton botao_novo2;
     private javax.swing.JButton botao_novo3;
-    private javax.swing.JButton botao_primeiro;
-    private javax.swing.JButton botao_primeiro1;
-    private javax.swing.JButton botao_primeiro2;
     private javax.swing.JButton botao_primeiro3;
-    private javax.swing.JButton botao_proximo;
-    private javax.swing.JButton botao_proximo1;
-    private javax.swing.JButton botao_proximo2;
     private javax.swing.JButton botao_proximo3;
-    private javax.swing.JButton botao_ultimo;
-    private javax.swing.JButton botao_ultimo1;
-    private javax.swing.JButton botao_ultimo2;
     private javax.swing.JButton botao_ultimo3;
     private javax.swing.JComboBox cbEstadoCivil;
     private javax.swing.JComboBox cbMunicipio;
@@ -608,9 +593,6 @@ public class comunidade_cadastro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField tfComunidade;
