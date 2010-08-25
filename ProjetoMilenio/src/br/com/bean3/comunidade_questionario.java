@@ -235,6 +235,11 @@ public class comunidade_questionario extends javax.swing.JFrame {
         tf54Madeira = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24));
         jLabel1.setText("Forma de Organização da Comunidade");
@@ -1947,6 +1952,10 @@ public class comunidade_questionario extends javax.swing.JFrame {
             tf54Madeira.setText("0");
         }
     }//GEN-LAST:event_ckb54MadeiraItemStateChanged
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        conexao.desconecta();
+    }//GEN-LAST:event_formWindowClosed
 
     /**
     * @param args the command line arguments
