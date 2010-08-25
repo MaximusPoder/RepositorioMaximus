@@ -172,6 +172,11 @@ public class colonia_questionario extends javax.swing.JFrame {
         ckb38NaoSeAplica = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24));
         jLabel1.setText("Forma de Organização da Colonia");
@@ -1183,6 +1188,10 @@ public class colonia_questionario extends javax.swing.JFrame {
             tf21Outro.setText("");
         }
     }//GEN-LAST:event_ckb21OutroItemStateChanged
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        conexao.desconecta();
+    }//GEN-LAST:event_formWindowClosed
 
     /**
     * @param args the command line arguments
