@@ -113,6 +113,11 @@ public class colonia_cadastro extends javax.swing.JFrame {
         tf15Email = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel1.setText("Questionário Piloto 1- comunidade (Aspectos sócio-culturais da Pesca)");
@@ -237,7 +242,7 @@ public class colonia_cadastro extends javax.swing.JFrame {
                         .addComponent(botao_proximo3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botao_ultimo3)))
-                .addContainerGap(285, Short.MAX_VALUE))
+                .addContainerGap(296, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -363,7 +368,7 @@ public class colonia_cadastro extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(79, 79, 79)
                         .addComponent(jLabel1)))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -647,6 +652,10 @@ public class colonia_cadastro extends javax.swing.JFrame {
             System.out.println(e + "Erro no botão alterar");
         }
 }//GEN-LAST:event_botao_alterar3ActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+       conexao.desconecta();
+    }//GEN-LAST:event_formWindowClosed
 
     /**
     * @param args the command line arguments
