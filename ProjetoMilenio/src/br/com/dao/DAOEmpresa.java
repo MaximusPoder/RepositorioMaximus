@@ -140,7 +140,9 @@ public class DAOEmpresa implements IOperationBean<Empresa> {
             while (set.next()) {
                 String estado = set.getString("pai");
                
-                if(estado.equalsIgnoreCase("Par?") || estado.equalsIgnoreCase("Pará")){
+                if(estado.equalsIgnoreCase("Par?") || estado.equalsIgnoreCase("Pará")
+                   || estado.equalsIgnoreCase("Amapá") || estado.equalsIgnoreCase("Amap?")
+                   || estado.equalsIgnoreCase("Maranhão") || estado.equalsIgnoreCase("Maranh?")){
                 String nome = set.getString("nome");
                 empresas.add(nome);
                 }

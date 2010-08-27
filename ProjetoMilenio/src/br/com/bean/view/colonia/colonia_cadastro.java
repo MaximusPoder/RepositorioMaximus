@@ -32,7 +32,7 @@ public class colonia_cadastro extends javax.swing.JFrame {
         conexao.conecta("mil_interface");
         //Insere nomes do município no cbMunicipio
         try {
-            conexao.execute("select * FROM tab_local where pai='Pará'");
+            conexao.execute("select * FROM tab_local where pai='Pará' or pai='Maranhão' or pai='Amapá' ");
             while (conexao.resultSet.next()){
                 cbMunicipio.addItem(conexao.resultSet.getString("nome"));
                 //System.out.println(conexao.resultSet.getString("nome"));

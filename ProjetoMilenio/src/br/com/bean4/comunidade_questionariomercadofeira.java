@@ -41,7 +41,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         conexao_jtable.conecta("mil_interface");
         // adiciona o municipio no combobox//
          try {
-            conexao.execute("select * FROM tab_local where pai='Pará'");
+            conexao.execute("select * FROM tab_local where pai='Pará' or pai='Maranhão' or pai='Amapá' ");
             while (conexao.resultSet.next()){
                 cbMunicipio.addItem(conexao.resultSet.getString("nome"));
                 //System.out.println(conexao.resultSet.getString("nome"));
@@ -55,7 +55,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         try {
             conexao.resultSet.first();
             exibir_dados();
-            id_mercado =   conexao.resultSet.getString("id_mercado");
+            id_mercado =conexao.resultSet.getString("id_mercado");
         } catch (Exception e) {
         }
         System.out.println(id_mercado);
@@ -235,6 +235,12 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         jLabel3.setText("Dados Pessoais ");
 
         jLabel4.setText("Nome :");
+
+        tfNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfNomeActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Apelido:");
 
@@ -1260,10 +1266,10 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
              + "boxe_local,quantos_possui,estado_civil,composicao_familiar,"
              + "escolaridade,pq_parou,local_moradia,qualidade_moradia,"
              + "tipo_construcao,inss,na_colonia,qual_colonia,"
-             + "alguma_associacao,qual_associacao,carteira_pescador,orgao_carteira_pesca,relacao_trab_familiar"
-             + ",relacao_trab_artesanal,relacao_trab_armador,relacao_trab_assalariado,plano_saude,atividade_renda_familiar,entrevistado,esposa,filhos,"
-             + "netos,tempo_diario_trabalho,periodo_atividade,periodo_atividade"
-             + "questao1,questao2,questao3,questao4,questao5,questao6,questao7,questao9,questao10,questao11 ) values('" +
+             + "alguma_associacao,qual_associacao,carteira_pescador,orgao_carteira_pescador,relacao_trab_familiar,"
+             + "relacao_trab_artesanal,relacao_trab_armador,relacao_trab_assalariado,plano_saude,atividade_renda_familiar,entrevistado,esposa,filhos,"
+             + "netos,tempo_diario_trabalho,periodo_atividade,"
+             + "questao1,questao2,questao3,questao4,questao5,questao6,questao7,questao8,questao9,questao10,questao11 ) values('" +
               cbMunicipio.getSelectedItem()+"',"+//nome_municipio
               tachecado2(rbMercado)+","+//e_mercado
               tachecado2(rbFeiraLivre)+",'"+//,e_fera_livre
@@ -1273,7 +1279,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
               cbSexo.getSelectedItem()+"',"+//sexo
               tfIdade.getText()+",'"+//idade
               tfAtividadePrincipal.getText()+"','"+//,atividade_principal
-              tfAtividadeSecundaria.getText()+"',"+//atividade_secundaria
+              tfAtividadeSecundaria.getText()+"','"+//atividade_secundaria
               tfBoxes.getText()+","+//boxe_local
               tfQuantosPossui.getText()+",'"+//quantos_possui
               cbEstadoCivil.getSelectedItem()+"','"+//estado_civil
@@ -1301,7 +1307,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
               tfFilhos.getText()+"','"+//filhos
               tfNetos.getText()+"',"+//netos
               tfTempoTrabalho.getText()+","+//tempo_diario_trabalho
-              tfTempoAtividade.getText()+","+//periodo_atividade
+              tfTempoAtividade.getText()+"','"+//periodo_atividade
               tpQuestao1.getText()+"','"+//questao1
               tpQuestao2.getText()+"','"+//questao2
               tpQuestao3.getText()+"','"+//questao3
@@ -1309,7 +1315,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
               tpQuestao5.getText()+"','"+//questao5
               tpQuestao6.getText()+"','"+//questao6
               tpQuestao7.getText()+"','"+//questao7
-              tachecado(ckbCriancaEnvolvidas)+//questao8
+              tachecado(ckbCriancaEnvolvidas)+",'"+//questao8
               tpQuestao8.getText()+"','"+//questao9
               tpQuestao9.getText()+"','"+//questao10
               tpQuestao10.getText()+"')";//questao11
@@ -1413,7 +1419,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
             ckb[10]=0;
 // update nm set (coluna = 'oq vai dentro',coluna2 = 'oq vai  '  )
         try {
-            String sql= "UPDATE mercado_questionario SET "+
+            String sql= "UPDATE mercado_questionario SET " +
              "nome_municipio= '" +cbMunicipio.getSelectedItem()+"',"+
              "e_mercado= '"+ckb[5]+"',"+
              "e_fera_livre='"+ckb[6]+"',"+
@@ -1650,6 +1656,10 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
     private void tfTempoTrabalhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfTempoTrabalhoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfTempoTrabalhoActionPerformed
+
+    private void tfNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfNomeActionPerformed
 
     /**
     * @param args the command line arguments

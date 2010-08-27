@@ -283,15 +283,15 @@
                                               </Group>
                                               <Component id="jLabel47" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="ckb55Mercearias" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="tf55mercearias" min="-2" pref="27" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jLabel50" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="ckb55Bares" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="tf55bares" min="-2" pref="27" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jLabel51" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="ckb55MerceariaEBar" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="tf55merceariaEbar" min="-2" pref="25" max="-2" attributes="0"/>
                                               </Group>
@@ -593,7 +593,7 @@
                           <Component id="ckb44Lideranca" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="ckb44Idosos" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="1" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="ckb44ComJustica" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="ckb44ComIBAMA" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -706,11 +706,11 @@
                       <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel49" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckb55Mercearias" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="tf55mercearias" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel50" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckb55Bares" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="tf55bares" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel51" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckb55MerceariaEBar" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="tf55merceariaEbar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -1608,16 +1608,6 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel49">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Mercearias.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel50">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Bares.:"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JTextField" name="tf55mercearias">
               <Properties>
                 <Property name="text" type="java.lang.String" value="0"/>
@@ -1626,11 +1616,6 @@
             <Component class="javax.swing.JTextField" name="tf55bares">
               <Properties>
                 <Property name="text" type="java.lang.String" value="0"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel51">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Mercearia e bar.:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tf55merceariaEbar">
@@ -1798,6 +1783,21 @@
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="ckb55Mercearias">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Mercearias.:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="ckb55Bares">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Bares.:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="ckb55MerceariaEBar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Mercearia e bar.:"/>
               </Properties>
             </Component>
           </SubComponents>

@@ -200,11 +200,8 @@ public class comunidade_questionario extends javax.swing.JFrame {
         cb34 = new javax.swing.JComboBox();
         cb39 = new javax.swing.JComboBox();
         cb41axasuf = new javax.swing.JComboBox();
-        jLabel49 = new javax.swing.JLabel();
-        jLabel50 = new javax.swing.JLabel();
         tf55mercearias = new javax.swing.JTextField();
         tf55bares = new javax.swing.JTextField();
-        jLabel51 = new javax.swing.JLabel();
         tf55merceariaEbar = new javax.swing.JTextField();
         jScrollPane9 = new javax.swing.JScrollPane();
         tp19Especificar = new javax.swing.JTextPane();
@@ -233,6 +230,9 @@ public class comunidade_questionario extends javax.swing.JFrame {
         ckb53Palha = new javax.swing.JCheckBox();
         ckb54Madeira = new javax.swing.JCheckBox();
         tf54Madeira = new javax.swing.JTextField();
+        ckb55Mercearias = new javax.swing.JCheckBox();
+        ckb55Bares = new javax.swing.JCheckBox();
+        ckb55MerceariaEBar = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -675,15 +675,9 @@ public class comunidade_questionario extends javax.swing.JFrame {
 
         cb41axasuf.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não", "Mais ou Menos", "Suficiente", "Não Se aplica" }));
 
-        jLabel49.setText("Mercearias.:");
-
-        jLabel50.setText("Bares.:");
-
         tf55mercearias.setText("0");
 
         tf55bares.setText("0");
-
-        jLabel51.setText("Mercearia e bar.:");
 
         tf55merceariaEbar.setText("0");
 
@@ -771,6 +765,12 @@ public class comunidade_questionario extends javax.swing.JFrame {
 
         tf54Madeira.setEditable(false);
         tf54Madeira.setText("0");
+
+        ckb55Mercearias.setText("Mercearias.:");
+
+        ckb55Bares.setText("Bares.:");
+
+        ckb55MerceariaEBar.setText("Mercearia e bar.:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -977,15 +977,15 @@ public class comunidade_questionario extends javax.swing.JFrame {
                                             .addComponent(tf54Madeira, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addComponent(jLabel47)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel49)
+                                            .addComponent(ckb55Mercearias)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(tf55mercearias, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel50)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(ckb55Bares)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(tf55bares, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel51)
+                                            .addComponent(ckb55MerceariaEBar)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(tf55merceariaEbar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addComponent(jLabel42)
@@ -1237,7 +1237,7 @@ public class comunidade_questionario extends javax.swing.JFrame {
                     .addComponent(ckb44EntreEles)
                     .addComponent(ckb44Lideranca)
                     .addComponent(ckb44Idosos))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ckb44ComJustica)
                     .addComponent(ckb44ComIBAMA)
@@ -1337,11 +1337,11 @@ public class comunidade_questionario extends javax.swing.JFrame {
                 .addComponent(jLabel47)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel49)
+                    .addComponent(ckb55Mercearias)
                     .addComponent(tf55mercearias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel50)
+                    .addComponent(ckb55Bares)
                     .addComponent(tf55bares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel51)
+                    .addComponent(ckb55MerceariaEBar)
                     .addComponent(tf55merceariaEbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel48)
@@ -1547,7 +1547,8 @@ public class comunidade_questionario extends javax.swing.JFrame {
                     + "44entre_eles,44com_lideranca,44com_idosos_pessoas,"
                     + "46quem_faz,44com_justica,44com_ibama,44com_colonia,"
                     + "44outro,44outro_qual,47qual,51moto,"
-                    + "53palha,53quant_palha,54madeira,54quant_madeira) values ("+
+                    + "53palha,53quant_palha,54madeira,54quant_madeira,"
+                    + "55tem_mercearia,55tem_bar,55tem_mercearia_e_bar) values ("+
 
                     pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString())+","+
                     tachecado(ckb12TemPresidente) +",'"+ //tem presidente?
@@ -1659,7 +1660,11 @@ public class comunidade_questionario extends javax.swing.JFrame {
             tachecado(ckb53Palha)+","+//53palha
             tf53Palha.getText()+","+//53quant_palha
             tachecado(ckb54Madeira)+","+//54madeira
-            tf54Madeira.getText()+")";//54quant_madeira
+            tf54Madeira.getText()+","+//54quant_madeira
+
+            tachecado(ckb55Mercearias)+","+//tem_mercearia
+            tachecado(ckb55Bares)+","+//tem_bar
+            tachecado(ckb55MerceariaEBar)+")";//tem_mercearia_e_bar
 
                     System.out.println(sqlinsert);
                     
@@ -1807,7 +1812,11 @@ public class comunidade_questionario extends javax.swing.JFrame {
                           "53palha = '"+ tachecado(ckb53Palha)+"',"+
                           "53quant_palha = '"+ tf53Palha.getText()+"',"+
                           "54madeira = '"+ tachecado(ckb54Madeira)+"',"+
-                          "54quant_madeira = '"+ tf54Madeira.getText()+"' "+
+                          "54quant_madeira = '"+ tf54Madeira.getText()+"',"+
+
+                          "55tem_mercearia = '"+ tachecado(ckb55Mercearias)+"',"+
+                          "55tem_bar = '"+ tachecado(ckb55Bares)+"',"+
+                          "55tem_mercearia_e_bar = '"+ tachecado(ckb55MerceariaEBar)+"' "+
 
                           "where id_comunidade = "+pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString());
 
@@ -2025,6 +2034,9 @@ public class comunidade_questionario extends javax.swing.JFrame {
     private javax.swing.JCheckBox ckb54Lajotado;
     private javax.swing.JCheckBox ckb54Madeira;
     private javax.swing.JCheckBox ckb54TerraBatida;
+    private javax.swing.JCheckBox ckb55Bares;
+    private javax.swing.JCheckBox ckb55MerceariaEBar;
+    private javax.swing.JCheckBox ckb55Mercearias;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -2069,10 +2081,7 @@ public class comunidade_questionario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
@@ -2444,6 +2453,21 @@ public class comunidade_questionario extends javax.swing.JFrame {
 
             tf54Madeira.setText(conexao.resultSet.getString("54quant_madeira"));
 
+            if (conexao.resultSet.getString("55tem_mercearia").equals("1"))
+                   ckb55Mercearias.setSelected(true);
+            else
+                   ckb55Mercearias.setSelected(false);
+
+            if (conexao.resultSet.getString("55tem_bar").equals("1"))
+                   ckb55Bares.setSelected(true);
+            else
+                   ckb55Bares.setSelected(false);
+
+            if (conexao.resultSet.getString("55tem_mercearia_e_bar").equals("1"))
+                   ckb55MerceariaEBar.setSelected(true);
+            else
+                   ckb55MerceariaEBar.setSelected(false);
+
 
         } catch (Exception e) {
         }
@@ -2569,6 +2593,10 @@ public class comunidade_questionario extends javax.swing.JFrame {
                     tf53Palha.setText("0");
                     ckb54Madeira.setSelected(false);
                     tf54Madeira.setText("0");
+
+                    ckb55Mercearias.setSelected(false);
+                    ckb55Bares.setSelected(false);
+                    ckb55MerceariaEBar.setSelected(false);
     }
 
         public void preencher_jtableEspecie(String id){
