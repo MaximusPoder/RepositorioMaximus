@@ -1263,12 +1263,12 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
           String sqlinsert = "insert into mercado_questionario"
              + "(nome_municipio,e_mercado,e_fera_livre,nome,apelido,naturalidade,"
              + "sexo,idade,atividade_principal,atividade_secundaria,"
-             + "boxe_local,quantos_possui,estado_civil,composicao_familiar,"
+             + "boxes_local,quantos_possui,estado_civil,composicao_familiar,"
              + "escolaridade,pq_parou,local_moradia,qualidade_moradia,"
              + "tipo_construcao,inss,na_colonia,qual_colonia,"
              + "alguma_associacao,qual_associacao,carteira_pescador,orgao_carteira_pescador,relacao_trab_familiar,"
              + "relacao_trab_artesanal,relacao_trab_armador,relacao_trab_assalariado,plano_saude,atividade_renda_familiar,entrevistado,esposa,filhos,"
-             + "netos,tempo_diario_trabalho,periodo_atividade,"
+             + "netos,tempo_diario_trabalhando,periodo_atividade,"
              + "questao1,questao2,questao3,questao4,questao5,questao6,questao7,questao8,questao9,questao10,questao11 ) values('" +
               cbMunicipio.getSelectedItem()+"',"+//nome_municipio
               tachecado2(rbMercado)+","+//e_mercado
@@ -1279,8 +1279,8 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
               cbSexo.getSelectedItem()+"',"+//sexo
               tfIdade.getText()+",'"+//idade
               tfAtividadePrincipal.getText()+"','"+//,atividade_principal
-              tfAtividadeSecundaria.getText()+"','"+//atividade_secundaria
-              tfBoxes.getText()+","+//boxe_local
+              tfAtividadeSecundaria.getText()+"',"+//atividade_secundaria
+              tfBoxes.getText()+","+//boxes_local
               tfQuantosPossui.getText()+",'"+//quantos_possui
               cbEstadoCivil.getSelectedItem()+"','"+//estado_civil
               tfComposicaoFamilia.getText()+"','"+//composicao_familiar
@@ -1291,7 +1291,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
               tfTipoConstrucao.getText()+"',"+//tipo_construcao
               tachecado(ckbInss)+","+//inss
               tachecado(ckbColonia)+",'"+//na_colonia
-              tfQualColonia.getText()+"','"+//qual_colonia
+              tfQualColonia.getText()+"',"+//qual_colonia
               tachecado(ckbAlgumaAssociacao)+",'"+//alguma_associacao
               tfAlgumaAssociacao.getText()+"',"+//qual_associacao
               tachecado(ckbCarteiraPescado)+",'"+//carteira_pescador
@@ -1305,8 +1305,8 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
               tfEntrevistado.getText()+"','"+//entrevistado
               tfEsposa.getText()+"','"+//esposa
               tfFilhos.getText()+"','"+//filhos
-              tfNetos.getText()+"',"+//netos
-              tfTempoTrabalho.getText()+","+//tempo_diario_trabalho
+              tfNetos.getText()+"','"+//netos
+              tfTempoTrabalho.getText()+"','"+//tempo_diario_trabalho
               tfTempoAtividade.getText()+"','"+//periodo_atividade
               tpQuestao1.getText()+"','"+//questao1
               tpQuestao2.getText()+"','"+//questao2
@@ -1314,7 +1314,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
               tpquestao4.getText()+"','"+//questao4
               tpQuestao5.getText()+"','"+//questao5
               tpQuestao6.getText()+"','"+//questao6
-              tpQuestao7.getText()+"','"+//questao7
+              tpQuestao7.getText()+"',"+//questao7
               tachecado(ckbCriancaEnvolvidas)+",'"+//questao8
               tpQuestao8.getText()+"','"+//questao9
               tpQuestao9.getText()+"','"+//questao10
