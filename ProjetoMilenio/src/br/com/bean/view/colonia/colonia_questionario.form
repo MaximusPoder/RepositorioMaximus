@@ -94,7 +94,7 @@
                                           <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="jScrollPane9" alignment="0" pref="481" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="244" max="32767" attributes="0"/>
+                                      <EmptySpace pref="288" max="32767" attributes="0"/>
                                       <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -240,7 +240,7 @@
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jButton2" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="jSeparator1" alignment="0" pref="631" max="32767" attributes="0"/>
+                                          <Component id="jSeparator1" alignment="0" pref="675" max="32767" attributes="0"/>
                                           <Group type="102" alignment="1" attributes="0">
                                               <Component id="btAddAtividade" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
@@ -284,8 +284,8 @@
                                                   <Component id="cb44Acompanha" alignment="0" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <Component id="jScrollPane8" alignment="0" pref="631" max="32767" attributes="1"/>
-                                          <Component id="jScrollPane3" alignment="0" pref="631" max="32767" attributes="1"/>
+                                          <Component id="jScrollPane8" alignment="0" pref="675" max="32767" attributes="1"/>
+                                          <Component id="jScrollPane3" alignment="0" pref="675" max="32767" attributes="1"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
                                   </Group>
@@ -867,11 +867,12 @@
             <Component class="javax.swing.JComboBox" name="cb35">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
+                  <StringArray count="5">
                     <StringItem index="0" value="N&#xe3;o"/>
                     <StringItem index="1" value="Um pouco"/>
                     <StringItem index="2" value="Mais ou Menos"/>
                     <StringItem index="3" value="Bastante"/>
+                    <StringItem index="4" value="N&#xe3;o se aplica"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -903,13 +904,14 @@
             <Component class="javax.swing.JComboBox" name="cb13">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="6">
+                  <StringArray count="7">
                     <StringItem index="0" value="N&#xe3;o realiza"/>
                     <StringItem index="1" value="Realiza mensalmente"/>
                     <StringItem index="2" value="Realiza trimestralmente"/>
                     <StringItem index="3" value="Realiza"/>
                     <StringItem index="4" value="Realiza ocasionalmente/raramente"/>
                     <StringItem index="5" value="Outros"/>
+                    <StringItem index="6" value="N&#xe3;o se aplica"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -1130,10 +1132,11 @@
             <Component class="javax.swing.JComboBox" name="cb43Qualidade">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="3">
+                  <StringArray count="4">
                     <StringItem index="0" value="N&#xe3;o"/>
                     <StringItem index="1" value="Parcialmente"/>
                     <StringItem index="2" value="Sim"/>
+                    <StringItem index="3" value="N&#xe3;o se aplica"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -1146,10 +1149,11 @@
             <Component class="javax.swing.JComboBox" name="cb44Acompanha">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="3">
+                  <StringArray count="4">
                     <StringItem index="0" value="N&#xe3;o"/>
                     <StringItem index="1" value="Parcialmente"/>
                     <StringItem index="2" value="Sim"/>
+                    <StringItem index="3" value="N&#xe3;o se aplica"/>
                   </StringArray>
                 </Property>
               </Properties>

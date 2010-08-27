@@ -350,13 +350,13 @@ public class colonia_questionario extends javax.swing.JFrame {
             }
         });
 
-        cb35.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não", "Um pouco", "Mais ou Menos", "Bastante" }));
+        cb35.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não", "Um pouco", "Mais ou Menos", "Bastante", "Não se aplica" }));
 
         cb37.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não", "Um pouco", "Mais ou Menos", "Bastante", "Não se aplica" }));
 
         jScrollPane9.setViewportView(tp18QuantaseQuais);
 
-        cb13.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não realiza", "Realiza mensalmente", "Realiza trimestralmente", "Realiza", "Realiza ocasionalmente/raramente", "Outros" }));
+        cb13.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não realiza", "Realiza mensalmente", "Realiza trimestralmente", "Realiza", "Realiza ocasionalmente/raramente", "Outros", "Não se aplica" }));
 
         ckb17EstarQuite.setText("Estar quite com a contribuição junto à colônia?");
 
@@ -453,11 +453,11 @@ public class colonia_questionario extends javax.swing.JFrame {
 
         jLabel30.setText("43. Havendo local, este é de qualidade?");
 
-        cb43Qualidade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não", "Parcialmente", "Sim" }));
+        cb43Qualidade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não", "Parcialmente", "Sim", "Não se aplica" }));
 
         jLabel34.setText("44. A colônia acompanha o período de defeso junto aos seus associados?");
 
-        cb44Acompanha.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não", "Parcialmente", "Sim" }));
+        cb44Acompanha.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não", "Parcialmente", "Sim", "Não se aplica" }));
 
         ckb38NaoSeAplica.setText("Não se aplica");
 
@@ -507,7 +507,7 @@ public class colonia_questionario extends javax.swing.JFrame {
                                         .addComponent(tf17Outro, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 244, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 288, Short.MAX_VALUE)
                                 .addComponent(jLabel5))
                             .addComponent(jLabel12)
                             .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -625,7 +625,7 @@ public class colonia_questionario extends javax.swing.JFrame {
                                         .addComponent(botao_salvar)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jButton2))
-                                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 631, Short.MAX_VALUE)
+                                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(btAddAtividade)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -661,8 +661,8 @@ public class colonia_questionario extends javax.swing.JFrame {
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(ckb42Sim)
                                             .addComponent(cb44Acompanha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 631, Short.MAX_VALUE)
-                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 631, Short.MAX_VALUE))
+                                    .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE))
                                 .addGap(142, 142, 142))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(188, 188, 188)
