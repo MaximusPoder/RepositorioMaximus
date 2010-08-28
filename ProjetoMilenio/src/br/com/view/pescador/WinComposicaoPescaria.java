@@ -39,7 +39,6 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
         initComponents();
         initAction();
         MyUtil.initiActionCmd(panel);
-        System.out.println("Nome.: "+WinSelecionaPescador.cbPescador.getSelectedItem().toString());
         refresh();
         refreshMaterial();
     }
@@ -237,8 +236,7 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
         for (int i = 0; i < list.size(); i++) {
             PescadorMaterial e = list.get(i);
             Object[] objeto = {e.getMaterial(), e.getTipo(), e.getQuantidade(),
-                e.getCusto(), e.getOutros(),
-                e.getFrequencia()};
+                 e.getOutros(), e.getFrequencia()};
             model.addRow(objeto);
         }
     }

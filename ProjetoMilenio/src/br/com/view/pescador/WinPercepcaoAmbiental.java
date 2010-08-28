@@ -11,18 +11,9 @@
 package br.com.view.pescador;
 
 import br.com.dao.DAOPercepcaoAmbiental;
-import br.com.dao.DAOPescador;
-import br.com.dao.DAOPescadorDadosEmbarcacao;
-import br.com.pojo.Pescador;
 import br.com.pojo.PescadorPersPectiva;
-import br.com.pojo.PescadorPersPectiva;
-import br.com.util.Mensagens;
-import br.com.util.MyUtil;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.util.List;
 
 /**
  *
@@ -34,7 +25,6 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
     private PescadorPersPectiva pde;
 
     public WinPercepcaoAmbiental() {
-        initComponents();
         initComponents();
         initAction();
         refresh();
@@ -237,8 +227,6 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(1035, 806));
 
-        jScrollPane6.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-
         jLabel1.setText("Existe alguma interação entre os pescadores em relação à troca ou cooperação dos produtos?");
 
         tfQuestao4.setColumns(20);
@@ -291,12 +279,11 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
                                         .addComponent(btNovo)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(btCadastrar))
-                                    .addComponent(jLabel49))))
-                        .addGap(504, 504, 504))
+                                    .addComponent(jLabel49)))))
                     .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
                         .addGap(424, 424, 424)
                         .addComponent(jLabel36)))
-                .addContainerGap(566, Short.MAX_VALUE))
+                .addContainerGap(655, Short.MAX_VALUE))
         );
         panelCrudEmpresa3Layout.setVerticalGroup(
             panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -550,7 +537,7 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 806, Short.MAX_VALUE)
+            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 867, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
