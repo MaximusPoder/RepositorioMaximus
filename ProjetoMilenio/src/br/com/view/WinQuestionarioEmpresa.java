@@ -36,7 +36,7 @@ public class WinQuestionarioEmpresa extends javax.swing.JFrame {
         initLookAndfeel();
         initComponents();
         btAnterior.setEnabled(false);
-         ChangePanel("Empresa", new WinBeanEmpresa());
+        ChangePanel("Empresa", new WinBeanEmpresa());
         Insets in = Toolkit.getDefaultToolkit().getScreenInsets(this.getGraphicsConfiguration());
         Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
         int width = d.width - (in.left + in.top);
@@ -45,6 +45,14 @@ public class WinQuestionarioEmpresa extends javax.swing.JFrame {
         setLocation(in.left, in.top);
 
     }
+//
+//          public static void main(String args[]) {
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new WinQuestionarioEmpresa().setVisible(true);
+//            }
+//        });
+//    }
 
     private void initLookAndfeel() {
         try {

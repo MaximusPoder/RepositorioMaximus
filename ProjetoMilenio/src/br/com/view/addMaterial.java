@@ -189,7 +189,22 @@ public class addMaterial extends javax.swing.JFrame {
 
     private void Action(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Action
 
-       String sqlinsert = "insert into " +bean +
+         String sqlinsert;
+        if(cbMatMaterial.getSelectedItem().toString().equalsIgnoreCase("Outro"))
+        {
+            sqlinsert = "insert into " +bean +
+                " (material,tipo,quantidade," +
+                "custo,outros,frequencia,"+chave+") values ('"+
+                cbMatMaterial.getSelectedItem().toString() + "','" +
+                tfMatTipo.getText() + "','" +
+                tfMatQuantidade.getText() + "','" +
+                tfMatCusto.getText() + "','" +
+                tfMatOutroMat.getText() + "','" +
+                tfMatFrequencia.getText() + "'," +
+                id+")";
+        }else
+        {
+             sqlinsert = "insert into " +bean +
                 " (material,tipo,quantidade," +
                 "custo,outros,frequencia,"+chave+") values ('"+
                 cbMatMaterial.getSelectedItem().toString() + "','" +
@@ -199,8 +214,7 @@ public class addMaterial extends javax.swing.JFrame {
                 tfMatOutros.getText() + "','" +
                 tfMatFrequencia.getText() + "'," +
                 id+")";
-
-        
+        }        
         conexao.salvar(sqlinsert);
         //agora é hora de atualizar o resultset
         this.dispose();

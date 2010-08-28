@@ -27,12 +27,13 @@ public class DAOPercepcaoAmbiental implements IOperationBean<PescadorPersPectiva
 
     public boolean cadastrar(PescadorPersPectiva bean) {
         String query = "insert     into         PescadorPersPectiva    " +
-                "     (questao1,questao2,questao3,questao4,questao5," +
+                "     (questao0,questao1,questao2,questao3,questao4,questao5," +
                 "      questao6,questao7,questao8,questao9,questao10," +
                 "      questao11,questao12,questao13,questao14,questao15, questao16, questao17, " +
                 "      questao18,pescadorId)" +
                 " values  " +
                 " (" +
+                " '" + bean.getQuestao0() + "'," +
                 " '" + bean.getQuestao1() + "'," +
                 " '" + bean.getQuestao2() + "'," +
                 " '" + bean.getQuestao3() + "'," +
@@ -83,6 +84,7 @@ public class DAOPercepcaoAmbiental implements IOperationBean<PescadorPersPectiva
             conexao = new Conexao();
             conexao.conecta("mil_interface");
             String query = "update         PescadorPersPectiva     set    " +
+                    "    questao0='" + bean.getQuestao0() + "',     " +
                     "    questao1='" + bean.getQuestao1() + "',     " +
                     "    questao2='" + bean.getQuestao2() + "',     " +
                     "    questao3='" + bean.getQuestao3() + "',     " +
@@ -126,6 +128,7 @@ public class DAOPercepcaoAmbiental implements IOperationBean<PescadorPersPectiva
                 int index = 0;
                 PescadorPersPectiva e = new PescadorPersPectiva();
                 e.setId(set.getInt(fields[index++]));
+                e.setQuestao0(set.getString(fields[index++]));
                 e.setQuestao1(set.getString(fields[index++]));
                 e.setQuestao2(set.getString(fields[index++]));
                 e.setQuestao3(set.getString(fields[index++]));
@@ -171,6 +174,7 @@ public class DAOPercepcaoAmbiental implements IOperationBean<PescadorPersPectiva
                 int index = 0;
                 es = new PescadorPersPectiva();
                 es.setId(set.getInt(fields[index++]));
+                es.setQuestao0(set.getString(fields[index++]));
                 es.setQuestao1(set.getString(fields[index++]));
                 es.setQuestao2(set.getString(fields[index++]));
                 es.setQuestao3(set.getString(fields[index++]));

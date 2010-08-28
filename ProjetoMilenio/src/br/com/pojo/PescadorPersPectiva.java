@@ -26,6 +26,8 @@ public class PescadorPersPectiva implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column
+    private String questao0;
+    @Column
     private String questao1;
     @Column
     private String questao2;
@@ -64,7 +66,8 @@ public class PescadorPersPectiva implements Serializable {
     @Column
     private Integer pescadorId;
 
-    public void all(String questao1, String questao2, String questao3, String questao4, String questao5, String questao6, String questao7, String questao8, String questao9, String questao10, String questao11, String questao12, String questao13, String questao14, String questao15, String questao16, String questao17, String questao18, Integer pescadorId) {
+    public void all(String questao0,String questao1, String questao2, String questao3, String questao4, String questao5, String questao6, String questao7, String questao8, String questao9, String questao10, String questao11, String questao12, String questao13, String questao14, String questao15, String questao16, String questao17, String questao18, Integer pescadorId) {
+        this.questao0 = questao0;
         this.questao1 = questao1;
         this.questao2 = questao2;
         this.questao3 = questao3;
@@ -85,6 +88,16 @@ public class PescadorPersPectiva implements Serializable {
         this.questao18 = questao18;
         this.pescadorId = pescadorId;
     }
+
+    public String getQuestao0() {
+        return questao0;
+    }
+
+    public void setQuestao0(String questao0) {
+        this.questao0 = questao0;
+    }
+
+    
 
     public Integer getId() {
         return id;
