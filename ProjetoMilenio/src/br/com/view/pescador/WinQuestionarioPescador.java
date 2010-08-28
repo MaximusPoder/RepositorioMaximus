@@ -36,7 +36,8 @@ public class WinQuestionarioPescador extends javax.swing.JFrame {
         initLookAndfeel();
         initComponents();
         btAnterior.setEnabled(false);
-        ChangePanel("", new WinPanelPescador());
+       // ChangePanel("", new WinPanelPescador());
+        ChangePanel("", new WinComposicaoPescaria());
         Insets in = Toolkit.getDefaultToolkit().getScreenInsets(this.getGraphicsConfiguration());
         Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
         int width = d.width - (in.left + in.top);
@@ -91,6 +92,15 @@ public class WinQuestionarioPescador extends javax.swing.JFrame {
         } catch (Exception e) {
         }
     }
+
+//      public static void main(String args[]) {
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new WinQuestionarioPescador().setVisible(true);
+//            }
+//        });
+//    }
+
 
      private void updatePanel(Integer index) {
         switch (index) {
