@@ -176,13 +176,15 @@
     <Component class="javax.swing.JComboBox" name="cbMatMaterial">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="6">
+          <StringArray count="8">
             <StringItem index="0" value="Combust&#xed;vel"/>
             <StringItem index="1" value="Lubrificante"/>
             <StringItem index="2" value="Gelo"/>
             <StringItem index="3" value="Rancho"/>
             <StringItem index="4" value="Pagamento de pescador"/>
-            <StringItem index="5" value="Outro"/>
+            <StringItem index="5" value="Manuten&#xe7;&#xe3;o da rede"/>
+            <StringItem index="6" value="Manuten&#xe7;&#xe3;o do barco"/>
+            <StringItem index="7" value="Outro"/>
           </StringArray>
         </Property>
       </Properties>
