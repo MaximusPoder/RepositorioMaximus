@@ -236,6 +236,7 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
         for (int i = 0; i < list.size(); i++) {
             PescadorMaterial e = list.get(i);
             Object[] objeto = {e.getMaterial(), e.getTipo(), e.getQuantidade(),
+            e.getCusto(),
                  e.getOutros(), e.getFrequencia()};
             model.addRow(objeto);
         }
@@ -493,7 +494,7 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Material", "Tipo", "Quantidade", "Outros", "Frequencia"
+                "Material", "Tipo", "Quantidade", "Custo", "Outros", "Frequencia"
             }
         ));
         jScrollPane2.setViewportView(table);

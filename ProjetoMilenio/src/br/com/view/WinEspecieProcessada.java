@@ -86,8 +86,7 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
 
     private void clearTab(JPanel jPanel) {
         MyUtil.FieldsClear(jPanel);
-        tfOutro.setEnabled(false);
-    
+        tfOutro.setEnabled(false);    
         cbProduto.setSelectedIndex(0);
     }
 
@@ -109,7 +108,7 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
             } else {
                 produto = tfOutro.getText();
             }
-            String quantidadeProduzida = tfOutro.getText();
+            String quantidadeProduzida = tfQuantidade.getText();
             String precoVenda = tfVenda.getText();
             Integer empresaId = WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId();
             Integer especieId = empresasEBs.get(cbEspecie.getSelectedIndex() - 1).getId();
@@ -143,20 +142,18 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
     private void setEspecieProcessadaForPanel(EspecieProcessada ep) {
 
         SetValueComBoBoxProduto(ep);
-        tfOutro.setText(ep.getQuantidadeProduzida());
+        tfQuantidade.setText(ep.getQuantidadeProduzida());
         tfVenda.setText(ep.getPrecoVenda());
 
     }
 
     private EspecieProcessada getEspecieProcessadaOfTable() {
-        EspecieProcessada ep = eps.get(tableEspecieProcessada.getSelectedRow());
 
+        EspecieProcessada ep = eps.get(tableEspecieProcessada.getSelectedRow());
         SetValueComBoBoxProduto(ep);
-        tfOutro.setText(ep.getQuantidadeProduzida());
+        tfQuantidade.setText(ep.getQuantidadeProduzida());
         tfVenda.setText(ep.getPrecoVenda());
         return ep;
-
-
     }
 
     private void refresh() {
@@ -276,6 +273,7 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
         tfVenda = new JMoneyField();
         cbProduto = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
+        tfQuantidade = new javax.swing.JTextField();
 
         setPreferredSize(new java.awt.Dimension(900, 1300));
 
@@ -400,7 +398,10 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
                     .addComponent(tfOutro, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(61, 61, 61)
                 .addGroup(tabEspecieProcessadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel27)
+                    .addGroup(tabEspecieProcessadaLayout.createSequentialGroup()
+                        .addComponent(jLabel27)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tfQuantidade))
                     .addGroup(tabEspecieProcessadaLayout.createSequentialGroup()
                         .addComponent(jLabel26)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -420,7 +421,8 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
                 .addGroup(tabEspecieProcessadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel27)
                     .addComponent(jLabel24)
-                    .addComponent(cbProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(tabEspecieProcessadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(tabEspecieProcessadaLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -478,6 +480,7 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
     private javax.swing.JPanel tabEspecieProcessada;
     private javax.swing.JTable tableEspecieProcessada;
     private javax.swing.JTextField tfOutro;
+    private javax.swing.JTextField tfQuantidade;
     public static javax.swing.JTextField tfVenda;
     // End of variables declaration//GEN-END:variables
 
