@@ -31,6 +31,7 @@ public class WinSelecionaEmpresa extends javax.swing.JPanel {
         empresas = new DAOEmpresa().getListWithQuery("select * from Empresa");
         MyUtil.refresComboBox(empresas, cbEmpresa);
         initAction();
+         WinQuestionarioEmpresa.btProximo.setEnabled(false);
     }
 
     /** This method is called from within the constructor to
