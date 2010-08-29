@@ -31,6 +31,7 @@ public class WinSelecionaPescador extends javax.swing.JPanel {
         pescadors = new DAOPescador().getListWithQuery("select * from Pescador");
         MyUtil.refresComboBox(pescadors, cbPescador);
         initiAction();
+        WinQuestionarioPescador.btProximo.setEnabled(false);
     }
 
     /** This method is called from within the constructor to
