@@ -172,8 +172,8 @@ public class WinQuestionarioEmpresa extends javax.swing.JFrame {
       
     }//GEN-LAST:event_btProximoActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btAnterior;
-    private javax.swing.JButton btProximo;
+    protected static javax.swing.JButton btAnterior;
+    protected static javax.swing.JButton btProximo;
     private javax.swing.JPanel panelDireito;
     // End of variables declaration//GEN-END:variables
 

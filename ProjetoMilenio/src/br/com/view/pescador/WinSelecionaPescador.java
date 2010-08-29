@@ -13,6 +13,8 @@ package br.com.view.pescador;
 import br.com.dao.DAOPescador;
 import br.com.pojo.Pescador;
 import br.com.util.MyUtil;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.util.List;
 
 /**
@@ -28,6 +30,7 @@ public class WinSelecionaPescador extends javax.swing.JPanel {
         initComponents();
         pescadors = new DAOPescador().getListWithQuery("select * from Pescador");
         MyUtil.refresComboBox(pescadors, cbPescador);
+        initiAction();
     }
 
     /** This method is called from within the constructor to
@@ -124,4 +127,22 @@ public class WinSelecionaPescador extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel49;
     private javax.swing.JPanel panelCrudEmpresa3;
     // End of variables declaration//GEN-END:variables
+
+    private void initiAction() {
+       cbPescador.addItemListener(new ItemListener() {
+
+            public void itemStateChanged(ItemEvent e) {
+                if(e.SELECTED == ItemEvent.SELECTED)
+                {
+                    if(cbPescador.getSelectedIndex() == 0)
+                    {
+                        WinQuestionarioPescador.btProximo.setEnabled(false);
+                    }else
+                    {
+                        WinQuestionarioPescador.btProximo.setEnabled(true);
+                    }
+                }
+            }
+        });
+    }
 }
