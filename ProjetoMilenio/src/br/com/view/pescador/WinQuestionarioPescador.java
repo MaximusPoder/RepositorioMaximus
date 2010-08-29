@@ -28,7 +28,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 public class WinQuestionarioPescador extends javax.swing.JFrame {
 
     /** Creates new form WinQuestionarioPescador */
-     private Integer index = 1;
+    private Integer index = 1;
     private final int max = 5;
     private final int min = 2;
 
@@ -206,11 +206,9 @@ public class WinQuestionarioPescador extends javax.swing.JFrame {
         if (index-- == min) {
             updatePanel(index);
             btAnterior.setEnabled(false);
-
         } else {
             updatePanel(index);
         }
-
         btProximo.setEnabled(true);
 }//GEN-LAST:event_btAnteriorActionPerformed
 
@@ -220,17 +218,15 @@ public class WinQuestionarioPescador extends javax.swing.JFrame {
         if (index++ == max) {
             updatePanel(index);
             btProximo.setEnabled(false);
-
         } else {
-
             updatePanel(index);
         }
         btAnterior.setEnabled(true);
     }//GEN-LAST:event_btProximoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btAnterior;
-    private javax.swing.JButton btProximo;
+    protected static javax.swing.JButton btAnterior;
+    protected static javax.swing.JButton btProximo;
     private javax.swing.JPanel panelDireito;
     // End of variables declaration//GEN-END:variables
 }

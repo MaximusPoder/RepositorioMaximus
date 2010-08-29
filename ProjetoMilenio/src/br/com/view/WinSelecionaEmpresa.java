@@ -14,6 +14,8 @@ package br.com.view;
 import br.com.dao.DAOEmpresa;
 import br.com.pojo.Empresa;
 import br.com.util.MyUtil;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.util.List;
 
 /**
@@ -28,6 +30,7 @@ public class WinSelecionaEmpresa extends javax.swing.JPanel {
         initComponents();
         empresas = new DAOEmpresa().getListWithQuery("select * from Empresa");
         MyUtil.refresComboBox(empresas, cbEmpresa);
+        initAction();
     }
 
     /** This method is called from within the constructor to
@@ -141,5 +144,23 @@ public class WinSelecionaEmpresa extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel panelCrudEmpresa7;
     // End of variables declaration//GEN-END:variables
+
+    private void initAction() {
+        cbEmpresa.addItemListener(new ItemListener() {
+
+            public void itemStateChanged(ItemEvent e) {
+                  if(e.SELECTED == ItemEvent.SELECTED)
+                {
+                    if(cbEmpresa.getSelectedIndex() == 0)
+                    {
+                        WinQuestionarioEmpresa.btProximo.setEnabled(false);
+                    }else
+                    {
+                        WinQuestionarioEmpresa.btProximo.setEnabled(true);
+                    }
+                }
+            }
+        });
+    }
 
 }
