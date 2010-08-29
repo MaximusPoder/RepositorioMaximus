@@ -671,7 +671,7 @@ public class comunidade_questionario extends javax.swing.JFrame {
 
         cb34.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não", "Um pouco", "Mais ou Menos", "Bastante", "Não se aplica" }));
 
-        cb39.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não", "Um pouco", "Mais ou Menos", "Bastante" }));
+        cb39.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não", "Um pouco", "Mais ou Menos", "Não se aplica", "Bastante" }));
 
         cb41axasuf.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não", "Mais ou Menos", "Suficiente", "Não Se aplica" }));
 
