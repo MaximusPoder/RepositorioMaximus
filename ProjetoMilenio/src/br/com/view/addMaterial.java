@@ -195,7 +195,7 @@ public class addMaterial extends javax.swing.JFrame {
             sqlinsert = "insert into " +bean +
                 " (material,tipo,quantidade," +
                 "custo,outros,frequencia,"+chave+") values ('"+
-                tfMatOutroMat + "','" +
+                tfMatOutroMat.getText() + "','" +
                 tfMatTipo.getText() + "','" +
                 tfMatQuantidade.getText() + "','" +
                 tfMatCusto.getText() + "','" +
