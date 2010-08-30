@@ -36,7 +36,7 @@ public class WinQuestionarioPescador extends javax.swing.JFrame {
         initLookAndfeel();
         initComponents();
         btAnterior.setEnabled(false);
-        ChangePanel("", new WinSelecionaPescador());
+        ChangePanel("", new WinPanelPescador());
         Insets in = Toolkit.getDefaultToolkit().getScreenInsets(this.getGraphicsConfiguration());
         Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
         int width = d.width - (in.left + in.top);
