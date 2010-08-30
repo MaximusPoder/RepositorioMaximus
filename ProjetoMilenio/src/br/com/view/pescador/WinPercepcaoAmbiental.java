@@ -28,7 +28,6 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
         initComponents();
         initAction();
         refresh();
-
     }
 
     private void initAction() {
@@ -40,8 +39,7 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
             }
         });
         btCadastrar.addActionListener(getActionListener());
-        //btAtualizar.addActionListener(getActionListener());
-        //  btExcluir.addActionListener(getActionListener());
+      
     }
 
     private ActionListener getActionListener() {
@@ -67,11 +65,8 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
         } else if (cmd.equalsIgnoreCase("Excluir")) {
             pde = getpescadorOfPanel();
             new DAOPercepcaoAmbiental().excluir(pde);
-        } else if (cmd.equalsIgnoreCase("Atualizar")) {
-          
         }
-        clear();
-    
+        clear();    
     }
 
     private void setpescadorComposicaoForPanel(PescadorPersPectiva p) {
@@ -137,9 +132,7 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
         return pescador;
     }
 
-    private void clear() {
-
-      
+    private void clear() {     
         pde = null;
     }
 
@@ -151,7 +144,6 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
         if (pde != null) {
             setpescadorComposicaoForPanel(pde);
         }
-
     }
 
     /** This method is called from within the constructor to

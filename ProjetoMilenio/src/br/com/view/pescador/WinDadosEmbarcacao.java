@@ -95,8 +95,7 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
         } else if (cmd.equalsIgnoreCase("Excluir")) {
             pde = getpescadorOfPanel();
             new DAOPescadorDadosEmbarcacao().excluir(pde);
-        } else if (cmd.equalsIgnoreCase("Atualizar")) {
-        }
+        } 
         clear();
 
     }
