@@ -32,9 +32,9 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="botao_add_especie" alignment="1" min="-2" pref="77" max="-2" attributes="0"/>
-                  <Component id="tfEspecie" alignment="0" pref="182" max="32767" attributes="1"/>
-                  <Component id="tfIniciodeSafra" alignment="1" pref="182" max="32767" attributes="1"/>
-                  <Component id="tfFimDeSafra" alignment="0" pref="182" max="32767" attributes="1"/>
+                  <Component id="tfEspecie" alignment="0" pref="205" max="32767" attributes="1"/>
+                  <Component id="tfIniciodeSafra" alignment="1" pref="205" max="32767" attributes="1"/>
+                  <Component id="tfFimDeSafra" alignment="0" pref="205" max="32767" attributes="1"/>
               </Group>
               <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
           </Group>
