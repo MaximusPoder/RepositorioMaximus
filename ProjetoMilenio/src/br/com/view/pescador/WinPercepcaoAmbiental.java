@@ -144,6 +144,7 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
         if (pde != null) {
             setpescadorComposicaoForPanel(pde);
         }
+        
     }
 
     /** This method is called from within the constructor to
