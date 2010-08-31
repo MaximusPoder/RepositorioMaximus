@@ -221,9 +221,9 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24));
-        jLabel1.setText("Questionário-Mercado/Feira");
+        jLabel1.setText("Question\u00e1rio-Mercado/Feira");
 
-        jLabel2.setText("Município:");
+        jLabel2.setText("Munic\u00edpio:");
 
         cbMunicipio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -256,13 +256,13 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
         jLabel9.setText("Atividade principal de renda :");
 
-        jLabel10.setText("Atividade secundária:");
+        jLabel10.setText("Atividade secund\u00e1ria:");
 
-        jLabel11.setText("Número total de boxes no local ?");
+        jLabel11.setText("N\u00famero total de boxes no local ?");
 
         tfBoxes.setText("0");
 
-        jLabel12.setText("Quantos você possui ?");
+        jLabel12.setText("Quantos voc\u00ea possui ?");
 
         tfQuantosPossui.setText("0");
 
@@ -270,7 +270,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
         cbEstadoCivil.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SOLTEIRO", "CASADO", "UNIÃO ESTÁVEL" }));
 
-        jLabel14.setText("Composição Familiar:");
+        jLabel14.setText("Composi\u00e7\u00e3o Familiar:");
 
         jLabel15.setText("Escolaridade:");
 
@@ -284,15 +284,15 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
         cbQualidadeMoradia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Péssima", "Ruim", "Regular", "Boa", "òtima" }));
 
-        jLabel19.setText("Tipo de Construçao:");
+        jLabel19.setText("Tipo de Constru\u00e7ao:");
 
         jLabel20.setText("Possui Regristo no INSS ?");
 
-        jLabel21.setText("Na Colônia?");
+        jLabel21.setText("Na Col\u00f4nia?");
 
         jLabel22.setText("Qual colonia?");
 
-        jLabel23.setText("Em Alguma Associação:");
+        jLabel23.setText("Em Alguma Associa\u00e7\u00e3o:");
 
         jLabel24.setText("Qual :");
 
@@ -300,17 +300,17 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
         jLabel25.setText("Possui carteira de Pescador ?");
 
-        jLabel26.setText("Qual Orgão?");
+        jLabel26.setText("Qual Org\u00e3o?");
 
         tfOrgaoCarteiraPescado.setEditable(false);
 
-        jLabel27.setText("Relação de Trabalho:");
+        jLabel27.setText("Rela\u00e7\u00e3o de Trabalho:");
 
-        jLabel28.setText("Possui assisência ao plano de saúde.Especificar:");
+        jLabel28.setText("Possui assis\u00eancia ao plano de sa\u00fade.Especificar:");
 
-        jLabel29.setText("Quais as atividades geram renda para sua família ?");
+        jLabel29.setText("Quais as atividades geram renda para sua fam\u00edlia ?");
 
-        jLabel30.setText("Quem na sua família trabalha ? E com qual atividade?");
+        jLabel30.setText("Quem na sua fam\u00edlia trabalha ? E com qual atividade?");
 
         jLabel31.setText("Entrevistado:");
 
@@ -320,7 +320,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
         jLabel35.setText("Netos:");
 
-        jLabel36.setText("Quanto o tempo diário que passam trabalhando ?");
+        jLabel36.setText("Quanto o tempo di\u00e1rio que passam trabalhando ?");
 
         tfTempoTrabalho.setText("0");
         tfTempoTrabalho.addActionListener(new java.awt.event.ActionListener() {
@@ -337,7 +337,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
         jScrollPane3.setViewportView(tpRendaFamiliar);
 
-        jLabel38.setText("Quais são os gastos com material utilizado na atividade (estimar em frênquencia dos gastos- 1x por semana,por viagem, por mês, etc ).");
+        jLabel38.setText("Quais s\u00e3o os gastos com material utilizado na atividade (estimar em fr\u00eanquencia dos gastos- 1x por semana,por viagem, por m\u00eas, etc ).");
 
         jtMaterialUtilizado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -391,12 +391,12 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         });
         jScrollPane7.setViewportView(jbDadosEspecie);
 
-        jLabel41.setText("Quais as principais perdas de pescado em função da :");
+        jLabel41.setText("Quais as principais perdas de pescado em fun\u00e7\u00e3o da :");
 
         jLabel43.setFont(new java.awt.Font("Tahoma", 1, 24));
-        jLabel43.setText("Percepção Ambiental e Perspectivas:");
+        jLabel43.setText("Percep\u00e7\u00e3o Ambiental e Perspectivas:");
 
-        jLabel44.setText("01_Existe alguma interação entre os vendedores em relaçãoa troca ou cooperação dos produtos, etc ?");
+        jLabel44.setText("01_Existe alguma intera\u00e7\u00e3o entre os vendedores em rela\u00e7\u00e3oa troca ou coopera\u00e7\u00e3o dos produtos, etc ?");
 
         jScrollPane8.setViewportView(tpQuestao1);
 
@@ -412,23 +412,23 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         tpQuestao3.setRows(5);
         jScrollPane10.setViewportView(tpQuestao3);
 
-        jLabel47.setText("04_Você acredita que as mudanças no clima podem influenciar nas pesca? Como?");
+        jLabel47.setText("04_Voc\u00ea acredita que as mudan\u00e7as no clima podem influenciar nas pesca? Como?");
 
-        jLabel48.setText("05_O que está acontecendo com o tamanho e a quantidade de pescado ?");
+        jLabel48.setText("05_O que est\u00e1 acontecendo com o tamanho e a quantidade de pescado ?");
 
         jScrollPane12.setViewportView(tpQuestao5);
 
-        jLabel49.setText("06_Você sabe informar quais os motivos responsáveis pela diminuição ?");
+        jLabel49.setText("06_Voc\u00ea sabe informar quais os motivos respons\u00e1veis pela diminui\u00e7\u00e3o ?");
 
         jScrollPane13.setViewportView(tpQuestao6);
 
-        jLabel50.setText("07_Caso ocorra odesaparecimento do pescado, como você sustentaria a sua familia ?");
+        jLabel50.setText("07_Caso ocorra odesaparecimento do pescado, como voc\u00ea sustentaria a sua familia ?");
 
         jScrollPane14.setViewportView(tpQuestao7);
 
-        jLabel51.setText("08_Existem crianças envolvidas nessa pesca ?");
+        jLabel51.setText("08_Existem crian\u00e7as envolvidas nessa pesca ?");
 
-        jLabel52.setText("09_Você deseja que seus filhos também sejam comerciantes ? Por que? (pespectiva do pescador quanto ao futuro dos filhos)");
+        jLabel52.setText("09_Voc\u00ea deseja que seus filhos tamb\u00e9m sejam comerciantes ? Por que? (pespectiva do pescador quanto ao futuro dos filhos)");
 
         jScrollPane15.setViewportView(tpQuestao8);
 
@@ -442,9 +442,19 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
         buttonGroup1.add(rbMercado);
         rbMercado.setText("Mercado");
+        rbMercado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbMercadoActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(rbFeiraLivre);
         rbFeiraLivre.setText("Feira Livre");
+        rbFeiraLivre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbFeiraLivreActionPerformed(evt);
+            }
+        });
 
         botao_primeiro.setText("<<");
         botao_primeiro.addActionListener(new java.awt.event.ActionListener() {
@@ -538,7 +548,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
         ckbArtesanalComVizinho.setText("Artesanal com vizinho, amigos,etc");
 
-        ckbArmadorEmbarcacao.setText("Armador ou Embarcação");
+        ckbArmadorEmbarcacao.setText("Armador ou Embarca\u00e7\u00e3o");
 
         ckbAssalariado.setText("Assalariado");
 
@@ -636,7 +646,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         tpquestao4.setRows(5);
         jScrollPane11.setViewportView(tpquestao4);
 
-        jLabel42.setText("Quais as possiveis soluções(demanda) para melhorar o seu trabalhos ?");
+        jLabel42.setText("Quais as possiveis solu\u00e7\u00f5es(demanda) para melhorar o seu trabalhos ?");
 
         javax.swing.GroupLayout AtualizarLayout = new javax.swing.GroupLayout(Atualizar);
         Atualizar.setLayout(AtualizarLayout);
@@ -1345,7 +1355,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
            int opcao_escolha=JOptionPane.showConfirmDialog(null,name,"Exclusão",JOptionPane.YES_NO_OPTION );
            if (opcao_escolha == JOptionPane.YES_OPTION)
            {
-                sql = "DELETE FROM mercado_questionario Where id_mercado ="+conexao.resultSet.getString("id_mercado");
+                sql = "DELETE from mercado_questionario where id_mercado="+conexao.resultSet.getString("id_mercado");
                 if (conexao.salvar(sql)) {
                         JOptionPane.showMessageDialog(null,"Exclusão realizada com sucesso");
                         //atualiza o ResultSet
@@ -1661,6 +1671,14 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfNomeActionPerformed
 
+    private void rbMercadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbMercadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbMercadoActionPerformed
+
+    private void rbFeiraLivreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbFeiraLivreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbFeiraLivreActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -1918,6 +1936,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
 
         } catch (Exception e) {
+            
         }
     }
 
