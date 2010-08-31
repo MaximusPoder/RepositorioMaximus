@@ -170,8 +170,7 @@ public class DAOPercepcaoAmbiental implements IOperationBean<PescadorPersPectiva
             String[] fields = MyUtil.getField(new PescadorPersPectiva());
 
             PescadorPersPectiva es = null;
-            if(set.getRow() == 0)
-                return null;
+           
             while (set.next()) {
                 int index = 0;
                 es = new PescadorPersPectiva();
