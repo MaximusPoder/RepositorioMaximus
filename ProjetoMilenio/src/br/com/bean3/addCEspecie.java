@@ -143,9 +143,9 @@ public class addCEspecie extends javax.swing.JFrame {
                     + "(id_comunidade,especie,inicio_safra,"
                     + "fim_safra) values ("+
                     idd_atravessador+",'"+
-                    tfEspecie.getText()+"',"+
-                    tfIniciodeSafra.getText()+","+
-                    tfFimDeSafra.getText()+")";
+                    tfEspecie.getText()+"','"+
+                    tfIniciodeSafra.getText()+"','"+
+                    tfFimDeSafra.getText()+"')";
 
                     System.out.println(sqlinsert);
                     if (conexao.salvar(sqlinsert)){
