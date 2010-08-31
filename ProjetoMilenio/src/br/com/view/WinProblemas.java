@@ -19,10 +19,13 @@ import br.com.util.ToMoney;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTable;
@@ -60,6 +63,7 @@ public class WinProblemas extends javax.swing.JPanel {
 
     private void initAction() {
 
+        actions(cbFinanciamento,cbProducao,cbQualificacao,cbTransporte);
         btNovoEmpresaProblema.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
@@ -156,15 +160,27 @@ public class WinProblemas extends javax.swing.JPanel {
             String tipo;
             String obs;
             if (problema.equals("Transporte")) {
+                if(cbTransporte.getSelectedItem().toString().equalsIgnoreCase("Outros"))
+                    tipo = tfOutro.getText();
+                else
                 tipo = cbTransporte.getSelectedItem().toString();
                 obs = tfTransporte.getText();
             } else if (problema.equals("Financiamento")) {
+                if(cbFinanciamento.getSelectedItem().toString().equalsIgnoreCase("Outros"))
+                    tipo = tfOutro.getText();
+                else
                 tipo = cbFinanciamento.getSelectedItem().toString();
                 obs = tfFinanciamento.getText();
             } else if (problema.equals("Produção")) {
+                  if(cbProducao.getSelectedItem().toString().equalsIgnoreCase("Outros"))
+                    tipo = tfOutro.getText();
+                else
                 tipo = cbProducao.getSelectedItem().toString();
                 obs = tfProducao.getText();
             } else {
+                  if(cbQualificacao.getSelectedItem().toString().equalsIgnoreCase("Outros"))
+                    tipo = tfOutro.getText();
+                else
                 tipo = cbQualificacao.getSelectedItem().toString();
                 obs = tfQualificacao.getText();
             }
@@ -187,18 +203,47 @@ public class WinProblemas extends javax.swing.JPanel {
     private void setEmpresaProblemaOfTable() {
         empresaProblema = empresaProblemas.get(tableProblemas.getSelectedRow());
 
+        tfOutro.setEnabled(false);
         MyUtil.setSelected(empresaProblema.getProblema(), bgEmpresaProblemas);
         if (empresaProblema.getProblema().equals("Transporte")) {
-            cbTransporte.setSelectedItem(empresaProblema.getTipo());
+             if(IsSelected(cbTransporte,empresaProblema.getTipo()))
+                  cbTransporte.setSelectedItem(empresaProblema.getTipo());
+             else
+             {
+                 cbTransporte.setSelectedItem("Outros");
+                 tfOutro.setEnabled(true);
+                 tfOutro.setText(empresaProblema.getTipo());
+             }
             tfTransporte.setText(empresaProblema.getObs());
         } else if (empresaProblema.getProblema().equals("Financiamento")) {
-            cbFinanciamento.setSelectedItem(empresaProblema.getTipo());
+            if(IsSelected(cbFinanciamento,empresaProblema.getTipo()))
+                  cbTransporte.setSelectedItem(empresaProblema.getTipo());
+             else
+             {
+                cbTransporte.setSelectedItem("Outros");
+                 tfOutro.setEnabled(true);
+                 tfOutro.setText(empresaProblema.getTipo());
+             }
             tfFinanciamento.setText(empresaProblema.getObs());
         } else if (empresaProblema.getProblema().equals("Produção")) {
-            cbProducao.setSelectedItem(empresaProblema.getTipo());
+            if(IsSelected(cbProducao,empresaProblema.getTipo()))
+                  cbTransporte.setSelectedItem(empresaProblema.getTipo());
+             else
+             {
+                cbTransporte.setSelectedItem("Outros");
+                 tfOutro.setEnabled(true);
+                 tfOutro.setText(empresaProblema.getTipo());
+             }
             tfProducao.setText(empresaProblema.getObs());
         } else {
-            cbQualificacao.setSelectedItem(empresaProblema.getTipo());
+            if(IsSelected(cbQualificacao,empresaProblema.getTipo()))
+                  cbTransporte.setSelectedItem(empresaProblema.getTipo());
+             else
+             {
+                cbTransporte.setSelectedItem("Outros");
+                 tfOutro.setEnabled(true);
+                 tfOutro.setText(empresaProblema.getTipo());
+             }
             tfQualificacao.setText(empresaProblema.getObs());
         }
 
@@ -268,6 +313,8 @@ public class WinProblemas extends javax.swing.JPanel {
         tfProducao = new JMoneyField();
         jScrollPane5 = new javax.swing.JScrollPane();
         tableProblemas = new javax.swing.JTable();
+        tfOutro = new javax.swing.JTextField();
+        jLabel43 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(900, 1300));
 
@@ -335,7 +382,7 @@ public class WinProblemas extends javax.swing.JPanel {
 
         cbTransporte.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Transporte Estadual", "Transporte Federal", "Transporte Aéreo", "Outros" }));
 
-        cbQualificacao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Produção", "Administração", "Outro" }));
+        cbQualificacao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Produção", "Administração", "Outros" }));
 
         cbProducao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Regulamentação", "Problemas Climáticos", "Problemas bacteriológicos", "Outros" }));
 
@@ -382,6 +429,10 @@ public class WinProblemas extends javax.swing.JPanel {
         });
         jScrollPane5.setViewportView(tableProblemas);
 
+        tfOutro.setEnabled(false);
+
+        jLabel43.setText("Outros");
+
         javax.swing.GroupLayout tabEmpresaProblemaLayout = new javax.swing.GroupLayout(tabEmpresaProblema);
         tabEmpresaProblema.setLayout(tabEmpresaProblemaLayout);
         tabEmpresaProblemaLayout.setHorizontalGroup(
@@ -392,17 +443,20 @@ public class WinProblemas extends javax.swing.JPanel {
                 .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 788, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(tabEmpresaProblemaLayout.createSequentialGroup()
-                        .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rbTransporte)
-                            .addComponent(rbQualificacao)
-                            .addComponent(rbFinanciamento)
-                            .addComponent(rbProducao))
-                        .addGap(28, 28, 28)
-                        .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(cbProducao, javax.swing.GroupLayout.Alignment.LEADING, 0, 0, Short.MAX_VALUE)
-                            .addComponent(cbQualificacao, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cbFinanciamento, javax.swing.GroupLayout.Alignment.LEADING, 0, 141, Short.MAX_VALUE)
-                            .addComponent(cbTransporte, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(tabEmpresaProblemaLayout.createSequentialGroup()
+                                .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(rbTransporte)
+                                    .addComponent(rbQualificacao)
+                                    .addComponent(rbFinanciamento)
+                                    .addComponent(rbProducao))
+                                .addGap(28, 28, 28)
+                                .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(cbProducao, javax.swing.GroupLayout.Alignment.LEADING, 0, 0, Short.MAX_VALUE)
+                                    .addComponent(cbQualificacao, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cbFinanciamento, javax.swing.GroupLayout.Alignment.LEADING, 0, 141, Short.MAX_VALUE)
+                                    .addComponent(cbTransporte, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jLabel43))
                         .addGap(46, 46, 46)
                         .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(tabEmpresaProblemaLayout.createSequentialGroup()
@@ -421,8 +475,9 @@ public class WinProblemas extends javax.swing.JPanel {
                                 .addGroup(tabEmpresaProblemaLayout.createSequentialGroup()
                                     .addComponent(jLabel40)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(tfFinanciamento, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addGap(31, 31, 31))
+                                    .addComponent(tfFinanciamento, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(tfOutro, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(89, 89, 89))
         );
         tabEmpresaProblemaLayout.setVerticalGroup(
             tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -459,9 +514,13 @@ public class WinProblemas extends javax.swing.JPanel {
                     .addComponent(cbProducao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel42)
                     .addComponent(tfProducao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
+                .addGap(18, 18, 18)
+                .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfOutro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel43))
+                .addGap(83, 83, 83)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1331, Short.MAX_VALUE))
+                .addContainerGap(1254, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -474,7 +533,7 @@ public class WinProblemas extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(tabEmpresaProblema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -493,6 +552,7 @@ public class WinProblemas extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JPanel panelCrudEmpresa4;
@@ -503,6 +563,7 @@ public class WinProblemas extends javax.swing.JPanel {
     private javax.swing.JPanel tabEmpresaProblema;
     private javax.swing.JTable tableProblemas;
     private javax.swing.JTextField tfFinanciamento;
+    private javax.swing.JTextField tfOutro;
     private javax.swing.JTextField tfProducao;
     private javax.swing.JTextField tfQualificacao;
     private javax.swing.JTextField tfTransporte;
@@ -521,5 +582,40 @@ public class WinProblemas extends javax.swing.JPanel {
         cbProducao.setSelectedIndex(0);
         cbQualificacao.setSelectedIndex(0);
         cbTransporte.setSelectedIndex(0);
+    }
+
+    private void actions(JComboBox... cb) {
+        for (final JComboBox jComboBox : cb) {
+
+            jComboBox.addItemListener(new ItemListener() {
+
+                public void itemStateChanged(ItemEvent e) {
+                    if(e.SELECTED == ItemEvent.SELECTED)
+                    {
+                        if(jComboBox.getSelectedItem().toString().equalsIgnoreCase("Outros"))
+                        {
+                            tfOutro.setText("");
+                            tfOutro.setEnabled(true);
+                        }
+                        else{
+                            tfOutro.setText("");
+                            tfOutro.setEnabled(false);
+                    }
+                    }
+                }
+            });
+        }
+    }
+
+    private boolean IsSelected(JComboBox cb,String opcao) {
+
+        int count = cb.getItemCount();
+        for (int i = 0; i < count; i++) {
+         Object objeto = cb.getItemAt(i);
+         if(opcao.equals(objeto.toString()))
+             return true;
+
+        }
+        return false;
     }
 }
