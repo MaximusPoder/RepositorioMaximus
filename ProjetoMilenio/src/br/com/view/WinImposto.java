@@ -10,16 +10,12 @@
  */
 package br.com.view;
 
-import br.com.dao.DAOEmpresa;
 import br.com.dao.DAOEmpresaImposto;
-import br.com.pojo.Empresa;
 import br.com.pojo.EmpresaImposto;
 import br.com.util.Mensagens;
 import br.com.util.MyUtil;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -100,9 +96,10 @@ public class WinImposto extends javax.swing.JPanel {
                 empresaImposto = getEmpresaImpostoOfPanel();
                 new DAOEmpresaImposto().atualizar(empresaImposto);
             }
+            empresaImposto = null;
             refreshEmpresaImposto();
             clearTab(tabEmpresaImposto);
-            empresaImposto = null;
+            
 
         }
     }

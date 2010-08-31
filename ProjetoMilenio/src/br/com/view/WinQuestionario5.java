@@ -467,6 +467,7 @@ public class WinQuestionario5 extends javax.swing.JPanel {
         } else if (cmd.equalsIgnoreCase("Atualizar")) {
            
         }
+        refresh();
         //clearQuestionario();
 
     }

@@ -10,12 +10,8 @@
  */
 package br.com.view;
 
-import br.com.dao.DAOEmpresa;
 import br.com.dao.DAOEmpresaPescador;
-import br.com.pojo.Empresa;
 import br.com.pojo.EmpresaPescador;
-import br.com.pojo.EmpresaPescador;
-import br.com.util.ToMoney;
 import br.com.util.MyUtil;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -158,9 +154,10 @@ public class WinEmpresaPescador extends javax.swing.JPanel {
 //            edf = getEDFofPanel();
 //            new DAOEmpresaPescador().atualizar(edf);
 //        }
+        
+        edf = null;
         refresh();
         clear();
-        edf = null;
     }
 
     private void clear() {
