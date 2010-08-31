@@ -6,7 +6,6 @@
 package br.com.view;
 
 import br.com.dao.DAOQuestionario6;
-import br.com.pojo.Empresa;
 import br.com.pojo.EmpresaQuestionario6;
 import br.com.util.Mensagens;
 import br.com.util.MyUtil;
@@ -14,7 +13,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.util.List;
 
 /**
  *
@@ -117,6 +115,7 @@ public class WinQuestionario6 extends javax.swing.JPanel {
             }
         } else if (cmd.equalsIgnoreCase("Atualizar")) {
         }
+        refresh();
        // clearQuestionario();
 
     }

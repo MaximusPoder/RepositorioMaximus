@@ -100,7 +100,7 @@ public class WinQuestionario1 extends javax.swing.JPanel {
             }
            
             empresaQuestionario1 = null;
-
+            refresh();
         }
 
     }

@@ -11,7 +11,6 @@
 package br.com.view;
 
 import br.com.dao.DAOEmpresaProblema;
-import br.com.pojo.Empresa;
 import br.com.pojo.EmpresaProblema;
 import br.com.util.JMoneyField;
 import br.com.util.Mensagens;
@@ -20,8 +19,6 @@ import br.com.util.ToMoney;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -141,9 +138,10 @@ public class WinProblemas extends javax.swing.JPanel {
                 new DAOEmpresaProblema().excluir(empresaProblema);
             } else if (cmd.equalsIgnoreCase("Atualizar")) {
             }
-            refreshEmpresaProblema();
+            
             clear();
             setCB();
+            refreshEmpresaProblema();
         }
 
     }

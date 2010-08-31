@@ -5,9 +5,7 @@
  */
 package br.com.view;
 
-import br.com.dao.DAOEmpresa;
 import br.com.dao.DAOQuestionario4;
-import br.com.pojo.Empresa;
 import br.com.pojo.EmpresaQuestionario4;
 import br.com.util.Mensagens;
 import br.com.util.MyUtil;
@@ -15,8 +13,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.util.List;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -126,6 +122,7 @@ public class WinQuestionario4 extends javax.swing.JPanel {
             } else if (cmd.equalsIgnoreCase("Atualizar")) {
 
             }
+            refresh();
            // clearQuestionario3();
 
         }

@@ -10,9 +10,7 @@
  */
 package br.com.view;
 
-import br.com.dao.DAOEmpresa;
 import br.com.dao.DAOEmpresaMercado;
-import br.com.pojo.Empresa;
 import br.com.pojo.EmpresaMercado;
 import br.com.util.JMoneyField;
 import br.com.util.ToMoney;
@@ -169,9 +167,10 @@ public class WinEmpresaMercado extends javax.swing.JPanel {
             edf = getEDFofPanel();
             new DAOEmpresaMercado().atualizar(edf);
         }
+        
+        edf = null;
         refresh();
         clear();
-        edf = null;
     }
 
     private void clear() {

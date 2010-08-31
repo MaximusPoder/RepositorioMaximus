@@ -1,8 +1,6 @@
 package br.com.view;
 
-import br.com.dao.DAOEmpresa;
 import br.com.dao.DAOEmpresaEB;
-import br.com.pojo.Empresa;
 import br.com.pojo.EmpresaEB;
 import br.com.util.Mensagens;
 import br.com.util.MyUtil;
@@ -104,10 +102,11 @@ public class WinEB extends javax.swing.JPanel {
                 new DAOEmpresaEB().excluir(empresaEB);
             } else if (cmd.equalsIgnoreCase("Atualizar")) {
             }
-            refresh();
+            
             MyUtil.FieldsClear(tabEspecieBeneficiada);
             
             empresaEB = null;
+            refresh();
         }
     }
 

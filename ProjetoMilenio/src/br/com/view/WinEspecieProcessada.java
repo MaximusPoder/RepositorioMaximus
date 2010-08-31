@@ -10,10 +10,8 @@
  */
 package br.com.view;
 
-import br.com.dao.DAOEmpresa;
 import br.com.dao.DAOEmpresaEB;
 import br.com.dao.DaoEspecieProcessada;
-import br.com.pojo.Empresa;
 import br.com.pojo.EmpresaEB;
 import br.com.pojo.EspecieProcessada;
 import br.com.util.JMoneyField;
@@ -77,11 +75,12 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
             new DaoEspecieProcessada().excluir(ep);
         } else if (cmd.equalsIgnoreCase("Atualizar")) {
         }
+        ep = null;
         clearTable();
         clearTab(tabEspecieProcessada);
         refresh();
 
-        ep = null;
+        
     }
 
     private void clearTab(JPanel jPanel) {

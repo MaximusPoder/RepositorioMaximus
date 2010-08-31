@@ -123,6 +123,7 @@ public class WinQuestionario7 extends javax.swing.JPanel {
             }
         } else if (cmd.equalsIgnoreCase("Atualizar")) {
         }
+        refresh();
        // clearQuestionario7();
 
     }
