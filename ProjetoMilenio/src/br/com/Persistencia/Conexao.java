@@ -32,6 +32,7 @@ public class Conexao {
             Class.forName(driver);
 
             connection = DriverManager.getConnection(url + nome, userName, password);
+            
             return result;
 
         } catch (ClassNotFoundException exception) {

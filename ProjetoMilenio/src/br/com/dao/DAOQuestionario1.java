@@ -1,7 +1,6 @@
 package br.com.dao;
 
 import br.com.Persistencia.Conexao;
-import br.com.pojo.EmpresaEB;
 import br.com.pojo.EmpresaQuestionario1;
 import br.com.util.MyUtil;
 import java.sql.ResultSet;
@@ -12,21 +11,61 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Elton
+ *
+10file,
+10posta,
+10inteiro,
+10outros,
  */
-public class DAOQuestionario1 implements IOperationBean<EmpresaQuestionario1>{
+public class DAOQuestionario1 implements IOperationBean<EmpresaQuestionario1> {
 
     private Conexao conexao;
-    
+
     public boolean cadastrar(EmpresaQuestionario1 bean) {
 
         String query = "insert     into         EmpresaQuestionario1    " +
-               "     (empresaId, questao10, questao11, questao12, questao13, questao8, questao9)    " +
-               " values  " +
-               " ("+bean.getEmpresaId()+",'"+bean.getQuestao10()+"'," +
-               " '"+bean.getQuestao11()+"', '"+bean.getQuestao12()+"'," +
-               " '"+bean.getQuestao13()+"', '"+bean.getQuestao8()+"'," +
-               " '"+bean.getQuestao9()+"')";
+                "     (empresaId, 10file,10posta,10inteiro,10outros," +
+                " questao11, questao12, questao13, questao8, " +
+                "9recepcao," +
+                "9inspecao," +
+                "9deposito_com_gelo_em_camara," +
+                "9lavagem_e_classificacao," +
+                "9passagem," +
+                "9escamacao," +
+                "9evisceracao_e_filamento," +
+                "9lavagem," +
+                "9inspecao2," +
+                "9empacotamento_e_pesagem," +
+                "9acondicionamento," +
+                "9congelamento," +
+                "9embalagem," +
+                "9estocagem," +
+                "9expedicao)    " +
+                " values  " +
+                "(" + bean.getEmpresaId() + "," +
+                "'" + bean.getQuestao10_1() + "'," +
+                "'" + bean.getQuestao10_2() + "'," +
+                "'" + bean.getQuestao10_3() + "'," +
+                "'" + bean.getQuestao10_4() + "'," +
+                "'" + bean.getQuestao11() + "'," +
+                "'" + bean.getQuestao12() + "'," +
+                "'" + bean.getQuestao13() + "'," +
+                "'" + bean.getQuestao8() + "'," +
+                "'" + bean.getQuestao9_1() + "'," +
+                "'" + bean.getQuestao9_2() + "'," +
+                "'" + bean.getQuestao9_3() + "'," +
+                "'" + bean.getQuestao9_4() + "'," +
+                "'" + bean.getQuestao9_5() + "'," +
+                "'" + bean.getQuestao9_6() + "'," +
+                "'" + bean.getQuestao9_7() + "'," +
+                "'" + bean.getQuestao9_8() + "'," +
+                "'" + bean.getQuestao9_9() + "'," +
+                "'" + bean.getQuestao9_10() + "'," +
+                "'" + bean.getQuestao9_11() + "'," +
+                "'" + bean.getQuestao9_12() + "'," +
+                "'" + bean.getQuestao9_13() + "'," +
+                "'" + bean.getQuestao9_14() + "'," +
+                "'" + bean.getQuestao9_15() + "')";
         try {
             conexao = new Conexao();
             conexao.conecta("mil_interface");
@@ -40,7 +79,7 @@ public class DAOQuestionario1 implements IOperationBean<EmpresaQuestionario1>{
     }
 
     public boolean excluir(EmpresaQuestionario1 bean) {
-          try {
+        try {
             conexao = new Conexao();
             conexao.conecta("mil_interface");
             String query = " delete     from        EmpresaQuestionario1   where  " +
@@ -53,19 +92,43 @@ public class DAOQuestionario1 implements IOperationBean<EmpresaQuestionario1>{
         return false;
     }
 
+    /**
+    9estocagem
+
+     * @param bean
+     * @return
+     */
     public boolean atualizar(EmpresaQuestionario1 bean) {
-         try {
+        try {
             conexao = new Conexao();
             conexao.conecta("mil_interface");
             String query = "update         EmpresaQuestionario1     set    " +
-                    "     empresaId="+bean.getEmpresaId()+",    " +
-                    "    questao10='"+bean.getQuestao10()+"',     " +
-                    "    questao11='"+bean.getQuestao11()+"',    " +
-                    "    questao12='"+bean.getQuestao12()+"',    " +
-                    "     questao13='"+bean.getQuestao13()+"',    " +
-                    "     questao8='"+bean.getQuestao8()+"',   " +
-                    "      questao9='"+bean.getQuestao9()+"'    " +
-                    "       where         id= "+bean.getId();
+                    "     empresaId=" + bean.getEmpresaId() + ",    " +
+                    "     10file='" + bean.getQuestao10_1() + "',     " +
+                    "     10posta='" + bean.getQuestao10_2() + "',     " +
+                    "     10inteiro='" + bean.getQuestao10_3() + "',     " +
+                    "     10outros='" + bean.getQuestao10_4() + "',     " +
+                    "     questao11='" + bean.getQuestao11() + "',    " +
+                    "     questao12='" + bean.getQuestao12() + "',    " +
+                    "     questao13='" + bean.getQuestao13() + "',    " +
+                    "     questao8='" + bean.getQuestao8() + "',   " +
+                
+                    "     9recepcao='" + bean.getQuestao9_1() + "',   " +
+                    "     9inspecao='" + bean.getQuestao9_2() + "',   " +
+                    "     9deposito_com_gelo_em_camara='" + bean.getQuestao9_3() + "',   " +
+                    "     9lavagem_e_classificacao='" + bean.getQuestao9_4() + "',   " +
+                    "     9passagem='" + bean.getQuestao9_5() + "',   " +
+                    "     9escamacao='" + bean.getQuestao9_6() + "',   " +
+                    "     9evisceracao_e_filamento='" + bean.getQuestao9_7() + "',   " +
+                    "     9lavagem='" + bean.getQuestao9_8() + "',   " +
+                    "     9inspecao2='" + bean.getQuestao9_9() + "',   " +
+                    "     9empacotamento_e_pesagem='" + bean.getQuestao9_10() + "',   " +
+                    "     9acondicionamento='" + bean.getQuestao9_11() + "',   " +
+                    "     9congelamento='" + bean.getQuestao9_12() + "',   " +
+                    "     9embalagem='" + bean.getQuestao9_13() + "',   " +
+                    "     9estocagem='" + bean.getQuestao9_14() + "',   " +
+                    "    9expedicao='" + bean.getQuestao9_15() + "'    " +
+                    "       where         id= " + bean.getId();
 
             return conexao.update(query);
         } catch (Exception e) {
@@ -80,7 +143,7 @@ public class DAOQuestionario1 implements IOperationBean<EmpresaQuestionario1>{
     }
 
     public EmpresaQuestionario1 getObjectWithQuery(String query) {
-         try {
+        try {
             conexao = new Conexao();
             conexao.conecta("mil_interface");
             conexao.execute(query);
@@ -92,14 +155,32 @@ public class DAOQuestionario1 implements IOperationBean<EmpresaQuestionario1>{
             while (set.next()) {
                 e = new EmpresaQuestionario1();
                 int index = 0;
-                e.setId(set.getInt(fields[index++]));
-                e.setQuestao8(set.getString(fields[index++]));
-                e.setQuestao9(set.getString(fields[index++]));
-                e.setQuestao10(set.getString(fields[index++]));
-                e.setQuestao11(set.getString(fields[index++]));
-                e.setQuestao12(set.getString(fields[index++]));
-                e.setQuestao13(set.getString(fields[index++]));
-                e.setEmpresaId(set.getInt(fields[index++]));
+                e.setId(set.getInt("id"));
+                e.setQuestao8(set.getString("questao8"));
+                e.setQuestao9_1(set.getString("9recepcao"));
+                e.setQuestao9_2(set.getString("9Inspecao"));
+                e.setQuestao9_3(set.getString("9deposito_com_gelo_em_camara"));
+                e.setQuestao9_4(set.getString("9lavagem_e_classificacao"));
+                e.setQuestao9_5(set.getString("9passagem"));
+                e.setQuestao9_6(set.getString("9escamacao"));
+                e.setQuestao9_7(set.getString("9evisceracao_e_filamento"));
+                e.setQuestao9_8(set.getString("9lavagem"));
+                e.setQuestao9_9(set.getString("9inspecao2"));
+                e.setQuestao9_10(set.getString("9empacotamento_e_pesagem"));
+                e.setQuestao9_11(set.getString("9acondicionamento"));
+                e.setQuestao9_12(set.getString("9congelamento"));
+                e.setQuestao9_13(set.getString("9embalagem"));
+                e.setQuestao9_14(set.getString("9estocagem"));
+                e.setQuestao9_15(set.getString("9expedicao"));
+
+                e.setQuestao10_1(set.getString("10file"));
+                e.setQuestao10_2(set.getString("10posta"));
+                e.setQuestao10_3(set.getString("10inteiro"));
+                e.setQuestao10_4(set.getString("10outros"));
+                e.setQuestao11(set.getString("questao11"));
+                e.setQuestao12(set.getString("questao11"));
+                e.setQuestao13(set.getString("questao11"));
+                e.setEmpresaId(set.getInt("empresaId"));
             }
 
             return e;
@@ -110,5 +191,4 @@ public class DAOQuestionario1 implements IOperationBean<EmpresaQuestionario1>{
         }
         return null;
     }
-
 }
