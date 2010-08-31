@@ -267,7 +267,7 @@ public class EmpresaMaterial extends javax.swing.JPanel {
         for (int i = 0; i < list.size(); i++) {
             br.com.pojo.EmpresaMaterial e = list.get(i);
             Object[] objeto = {e.getMaterial(), e.getTipo(), e.getQuantidade(),e.getCusto(),
-                e.getCusto(), e.getOutros(),
+                 e.getOutros(),
                 e.getFrequencia()};
             model.addRow(objeto);
         }

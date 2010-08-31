@@ -25,4 +25,8 @@ public class Mensagens {
 
     }
 
+    public static void showMessageNaoAtualizar() {
+       JOptionPane.showMessageDialog(null, "Objeto nao pode ser atualizado", "Erro", JOptionPane.ERROR_MESSAGE);
+    }
+
 }

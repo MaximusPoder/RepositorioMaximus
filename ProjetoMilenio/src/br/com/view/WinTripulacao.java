@@ -10,9 +10,7 @@
  */
 package br.com.view;
 
-import br.com.dao.DAOEmpresa;
 import br.com.dao.DAOTripulacao;
-import br.com.pojo.Empresa;
 import br.com.pojo.EmpresaTripulacao;
 import br.com.util.JMoneyField;
 import br.com.util.Mensagens;
@@ -106,7 +104,7 @@ public class WinTripulacao extends javax.swing.JPanel {
         MyUtil.clearTable(table);
         for (int i = 0; i < list.size(); i++) {
             EmpresaTripulacao e = list.get(i);
-            Object[] objeto = {e.getFrotaEspecie(), e.getFuncao(),
+            Object[] objeto = {e.getRelacaoTrabalho(),e.getFrotaEspecie(), e.getFuncao(),
                 e.getNumero(), "R$ " + ToMoney.StringtoMoney(e.getSalario()), "R$ " + ToMoney.StringtoMoney(e.getCusto()),
                 "R$ " + ToMoney.StringtoMoney(e.getLucro())};
             model.addRow(objeto);
@@ -176,15 +174,13 @@ public class WinTripulacao extends javax.swing.JPanel {
                 if (edf == null) {
                     edf = getEDFofPanel();
                     new DAOTripulacao().cadastrar(edf);
-                } 
+                } else Mensagens.showMessageNaoAtualizar();
             } else if (cmd.equalsIgnoreCase("Retira")) {
                 edf = getEDFofPanel();
                 new DAOTripulacao().excluir(edf);
             } 
             refresh();
             clear();
-
-
             edf = null;
         }
     }
@@ -312,11 +308,11 @@ public class WinTripulacao extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Frota / Especie", "Funcao", "Numero", "Sálario", "Custo R$/Kg", "Lucro R$/Kg"
+                "Relacao de Trabalho", "Frota / Especie", "Funcao", "Numero", "Sálario", "Custo R$/Kg", "Lucro R$/Kg"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
