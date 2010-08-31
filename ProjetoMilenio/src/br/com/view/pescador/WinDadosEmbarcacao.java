@@ -165,7 +165,7 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
     private void clear() {
 
         pde = null;
-
+        refresh();
     }
 
     private void refresh() {
