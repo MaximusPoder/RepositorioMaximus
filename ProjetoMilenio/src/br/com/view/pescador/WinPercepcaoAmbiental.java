@@ -143,7 +143,7 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
                 WinSelecionaPescador.pescadors.get(WinSelecionaPescador.cbPescador.getSelectedIndex() - 1).getId());
         if (pde != null) {
             setpescadorComposicaoForPanel(pde);
-        }
+        }else pde = null;
     }
 
     /** This method is called from within the constructor to
