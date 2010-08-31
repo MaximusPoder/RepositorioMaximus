@@ -56,9 +56,11 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
 
         if (cmd.equalsIgnoreCase("Salvar")) {
             if (pde == null) {
+                System.out.println("salvar");
                 pde = getpescadorOfPanel();
                 new DAOPercepcaoAmbiental().cadastrar(pde);
             } else {
+                System.out.println("Atualizar");
                 pde = getpescadorOfPanel();
                 new DAOPercepcaoAmbiental().atualizar(pde);
             }
@@ -134,6 +136,7 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
 
     private void clear() {     
         pde = null;
+        refresh();
     }
 
     private void refresh() {
