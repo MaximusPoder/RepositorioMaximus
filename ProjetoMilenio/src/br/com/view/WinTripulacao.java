@@ -226,6 +226,9 @@ public class WinTripulacao extends javax.swing.JPanel {
         tfCusto = new JMoneyField();
         tfLucro = new JMoneyField();
         tfSalario = new JMoneyField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tfObs = new javax.swing.JTextPane();
+        jLabel11 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(900, 1700));
 
@@ -329,6 +332,10 @@ public class WinTripulacao extends javax.swing.JPanel {
         bgRelacaoTrabalho.add(jRadioButton6);
         jRadioButton6.setText("Assalariado (Empresarial)");
 
+        jScrollPane3.setViewportView(tfObs);
+
+        jLabel11.setText("Observação:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -370,12 +377,18 @@ public class WinTripulacao extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tfCusto, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tfLucro, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(375, Short.MAX_VALUE))
+                .addContainerGap(341, Short.MAX_VALUE))
             .addComponent(panelCrudEmpresa1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 876, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING))
+                .addContainerGap(524, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -405,7 +418,11 @@ public class WinTripulacao extends javax.swing.JPanel {
                     .addComponent(tfSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(56, 56, 56)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1313, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1199, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -413,6 +430,7 @@ public class WinTripulacao extends javax.swing.JPanel {
     private javax.swing.JButton btCadastrar;
     private javax.swing.JButton btExcluir;
     private javax.swing.JButton btNovo;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -427,6 +445,7 @@ public class WinTripulacao extends javax.swing.JPanel {
     private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JPanel panelCrudEmpresa1;
     private javax.swing.JTable table;
     public static javax.swing.JTextField tfCusto;
@@ -434,6 +453,7 @@ public class WinTripulacao extends javax.swing.JPanel {
     private javax.swing.JTextField tfFuncao;
     public static javax.swing.JTextField tfLucro;
     private javax.swing.JTextField tfNumero;
+    private javax.swing.JTextPane tfObs;
     public static javax.swing.JTextField tfSalario;
     // End of variables declaration//GEN-END:variables
 }

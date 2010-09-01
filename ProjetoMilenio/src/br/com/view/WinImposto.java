@@ -215,6 +215,9 @@ public class WinImposto extends javax.swing.JPanel {
         tfAtual = new javax.swing.JTextField();
         jLabel66 = new javax.swing.JLabel();
         jLabel67 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tfObs = new javax.swing.JTextPane();
+        jLabel2 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(900, 1300));
 
@@ -262,7 +265,7 @@ public class WinImposto extends javax.swing.JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(btExcluirImposto))))
                             .addComponent(jLabel61))))
-                .addContainerGap(478, Short.MAX_VALUE))
+                .addContainerGap(466, Short.MAX_VALUE))
         );
         panelCrudEmpresa6Layout.setVerticalGroup(
             panelCrudEmpresa6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -310,6 +313,10 @@ public class WinImposto extends javax.swing.JPanel {
 
         jLabel67.setText("A partir de (Ano)");
 
+        jScrollPane3.setViewportView(tfObs);
+
+        jLabel2.setText("Observação:");
+
         javax.swing.GroupLayout tabEmpresaImpostoLayout = new javax.swing.GroupLayout(tabEmpresaImposto);
         tabEmpresaImposto.setLayout(tabEmpresaImpostoLayout);
         tabEmpresaImpostoLayout.setHorizontalGroup(
@@ -339,8 +346,14 @@ public class WinImposto extends javax.swing.JPanel {
                                 .addGap(84, 84, 84)
                                 .addComponent(tfAno, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 747, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addContainerGap(141, Short.MAX_VALUE))
             .addComponent(panelCrudEmpresa6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(tabEmpresaImpostoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(tabEmpresaImpostoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addContainerGap(524, Short.MAX_VALUE))
         );
         tabEmpresaImpostoLayout.setVerticalGroup(
             tabEmpresaImpostoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -366,7 +379,11 @@ public class WinImposto extends javax.swing.JPanel {
                             .addComponent(jLabel67))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1219, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1123, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -387,6 +404,7 @@ public class WinImposto extends javax.swing.JPanel {
     private javax.swing.JButton btExcluirImposto;
     private javax.swing.JButton btNovoImposto;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
@@ -395,6 +413,7 @@ public class WinImposto extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
     private javax.swing.JScrollPane jScrollPane14;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JPanel panelCrudEmpresa6;
     private javax.swing.JPanel tabEmpresaImposto;
     private javax.swing.JTable tableImposto;
@@ -402,5 +421,6 @@ public class WinImposto extends javax.swing.JPanel {
     private javax.swing.JTextField tfAnterior;
     private javax.swing.JTextField tfAtual;
     private javax.swing.JTextField tfImposto;
+    private javax.swing.JTextPane tfObs;
     // End of variables declaration//GEN-END:variables
 }

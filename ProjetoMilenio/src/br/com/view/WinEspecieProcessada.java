@@ -273,6 +273,9 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
         cbProduto = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
         tfQuantidade = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tfObs = new javax.swing.JTextPane();
+        jLabel2 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(900, 1300));
 
@@ -324,7 +327,7 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
                                         .addComponent(cbEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel19)))
                             .addComponent(jLabel48))))
-                .addContainerGap(527, Short.MAX_VALUE))
+                .addContainerGap(128, Short.MAX_VALUE))
         );
         panelCrudEmpresa2Layout.setVerticalGroup(
             panelCrudEmpresa2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -382,6 +385,10 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
 
         jLabel1.setText("Outros");
 
+        jScrollPane3.setViewportView(tfObs);
+
+        jLabel2.setText("Observação:");
+
         javax.swing.GroupLayout tabEspecieProcessadaLayout = new javax.swing.GroupLayout(tabEspecieProcessada);
         tabEspecieProcessada.setLayout(tabEspecieProcessadaLayout);
         tabEspecieProcessadaLayout.setHorizontalGroup(
@@ -405,12 +412,20 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
                         .addComponent(jLabel26)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(tfVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(675, Short.MAX_VALUE))
-            .addComponent(panelCrudEmpresa2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(360, Short.MAX_VALUE))
             .addGroup(tabEspecieProcessadaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 747, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(381, Short.MAX_VALUE))
+                .addGroup(tabEspecieProcessadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addContainerGap(471, Short.MAX_VALUE))
+            .addGroup(tabEspecieProcessadaLayout.createSequentialGroup()
+                .addGroup(tabEspecieProcessadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(panelCrudEmpresa2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tabEspecieProcessadaLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 747, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
         tabEspecieProcessadaLayout.setVerticalGroup(
             tabEspecieProcessadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -435,28 +450,24 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
                             .addComponent(tfOutro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(39, 39, 39)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1139, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(439, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1138, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(tabEspecieProcessada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addComponent(tabEspecieProcessada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1508, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(tabEspecieProcessada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(tabEspecieProcessada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -468,6 +479,7 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -475,9 +487,11 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JPanel panelCrudEmpresa2;
     private javax.swing.JPanel tabEspecieProcessada;
     private javax.swing.JTable tableEspecieProcessada;
+    private javax.swing.JTextPane tfObs;
     private javax.swing.JTextField tfOutro;
     private javax.swing.JTextField tfQuantidade;
     public static javax.swing.JTextField tfVenda;

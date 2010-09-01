@@ -287,6 +287,9 @@ public class WinQuestionario3 extends javax.swing.JPanel {
         tfQuestao28_1 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         tfQuestao28_2 = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tfObs = new javax.swing.JTextPane();
+        jLabel11 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(900, 1300));
         setPreferredSize(new java.awt.Dimension(900, 1700));
@@ -331,7 +334,7 @@ public class WinQuestionario3 extends javax.swing.JPanel {
                         .addComponent(btCadastrarQuestionario3)
                         .addGap(159, 159, 159)
                         .addComponent(jLabel12)))
-                .addContainerGap(470, Short.MAX_VALUE))
+                .addContainerGap(457, Short.MAX_VALUE))
         );
         panelCrudEmpresa7Layout.setVerticalGroup(
             panelCrudEmpresa7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -347,7 +350,7 @@ public class WinQuestionario3 extends javax.swing.JPanel {
                 .addGroup(panelCrudEmpresa7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btCadastrarQuestionario3)
                     .addComponent(btNovoQuestionario3))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel73.setText("24 - Como você avalia os incentivos fisais para a melhoria do rendimento da indústria?");
@@ -485,6 +488,10 @@ public class WinQuestionario3 extends javax.swing.JPanel {
 
         jLabel10.setText("Por que?");
 
+        jScrollPane3.setViewportView(tfObs);
+
+        jLabel11.setText("Observação:");
+
         javax.swing.GroupLayout tabQuestionario3Layout = new javax.swing.GroupLayout(tabQuestionario3);
         tabQuestionario3.setLayout(tabQuestionario3Layout);
         tabQuestionario3Layout.setHorizontalGroup(
@@ -501,18 +508,18 @@ public class WinQuestionario3 extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel86))
                             .addComponent(jLabel78))
-                        .addContainerGap(842, Short.MAX_VALUE))
+                        .addContainerGap(809, Short.MAX_VALUE))
                     .addGroup(tabQuestionario3Layout.createSequentialGroup()
                         .addComponent(jLabel73)
-                        .addContainerGap(579, Short.MAX_VALUE))
+                        .addContainerGap(492, Short.MAX_VALUE))
                     .addGroup(tabQuestionario3Layout.createSequentialGroup()
                         .addComponent(jLabel79)
-                        .addContainerGap(254, Short.MAX_VALUE))
+                        .addContainerGap(106, Short.MAX_VALUE))
                     .addGroup(tabQuestionario3Layout.createSequentialGroup()
                         .addComponent(btAddLinhaQ3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btRetiraQ3)
-                        .addContainerGap(816, Short.MAX_VALUE))
+                        .addContainerGap(791, Short.MAX_VALUE))
                     .addGroup(tabQuestionario3Layout.createSequentialGroup()
                         .addGroup(tabQuestionario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel102)
@@ -538,7 +545,7 @@ public class WinQuestionario3 extends javax.swing.JPanel {
                             .addComponent(tfPrestacao, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tfPagou, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tfDia, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(503, Short.MAX_VALUE))
+                        .addContainerGap(450, Short.MAX_VALUE))
                     .addGroup(tabQuestionario3Layout.createSequentialGroup()
                         .addGroup(tabQuestionario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(tabQuestionario3Layout.createSequentialGroup()
@@ -558,12 +565,12 @@ public class WinQuestionario3 extends javax.swing.JPanel {
                     .addGroup(tabQuestionario3Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfQuestao25_0, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                        .addComponent(tfQuestao25_0, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
                         .addGap(13947, 13947, 13947))
                     .addGroup(tabQuestionario3Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfQuestao25_2, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
+                        .addComponent(tfQuestao25_2, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
                         .addGap(13845, 13845, 13845))
                     .addGroup(tabQuestionario3Layout.createSequentialGroup()
                         .addGroup(tabQuestionario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -571,13 +578,13 @@ public class WinQuestionario3 extends javax.swing.JPanel {
                                 .addGap(47, 47, 47)
                                 .addComponent(tfQuestao25_1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel3))
-                        .addContainerGap(851, Short.MAX_VALUE))
+                        .addContainerGap(849, Short.MAX_VALUE))
                     .addGroup(tabQuestionario3Layout.createSequentialGroup()
                         .addGroup(tabQuestionario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(tabQuestionario3Layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfQuestao26_2, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE))
+                                .addComponent(tfQuestao26_2, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE))
                             .addGroup(tabQuestionario3Layout.createSequentialGroup()
                                 .addGroup(tabQuestionario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6)
@@ -591,32 +598,32 @@ public class WinQuestionario3 extends javax.swing.JPanel {
                     .addGroup(tabQuestionario3Layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfQuestao26_3, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
+                        .addComponent(tfQuestao26_3, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
                         .addGap(13845, 13845, 13845))
                     .addGroup(tabQuestionario3Layout.createSequentialGroup()
                         .addGroup(tabQuestionario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(tabQuestionario3Layout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfQuestao28_0, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                                .addComponent(tfQuestao28_0, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
                                 .addGap(102, 102, 102))
                             .addGroup(tabQuestionario3Layout.createSequentialGroup()
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfQuestao28_2, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE))
+                                .addComponent(tfQuestao28_2, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE))
                             .addGroup(tabQuestionario3Layout.createSequentialGroup()
                                 .addGroup(tabQuestionario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(tabQuestionario3Layout.createSequentialGroup()
                                         .addGap(47, 47, 47)
                                         .addComponent(tfQuestao28_1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel9))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(13845, 13845, 13845))
                     .addGroup(tabQuestionario3Layout.createSequentialGroup()
                         .addGroup(tabQuestionario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel80)
                             .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 598, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(310, Short.MAX_VALUE))
+                        .addContainerGap(175, Short.MAX_VALUE))
                     .addGroup(tabQuestionario3Layout.createSequentialGroup()
                         .addGroup(tabQuestionario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(tabQuestionario3Layout.createSequentialGroup()
@@ -627,18 +634,24 @@ public class WinQuestionario3 extends javax.swing.JPanel {
                                 .addComponent(jLabel90))
                             .addComponent(jLabel82)
                             .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 598, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(392, Short.MAX_VALUE))
+                        .addContainerGap(390, Short.MAX_VALUE))
                     .addGroup(tabQuestionario3Layout.createSequentialGroup()
                         .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 721, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(269, Short.MAX_VALUE))))
+                        .addContainerGap(267, Short.MAX_VALUE))))
             .addGroup(tabQuestionario3Layout.createSequentialGroup()
                 .addComponent(panelCrudEmpresa7, javax.swing.GroupLayout.PREFERRED_SIZE, 883, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13247, Short.MAX_VALUE))
+                .addContainerGap(117, Short.MAX_VALUE))
+            .addGroup(tabQuestionario3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(tabQuestionario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
+                .addContainerGap(624, Short.MAX_VALUE))
         );
         tabQuestionario3Layout.setVerticalGroup(
             tabQuestionario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabQuestionario3Layout.createSequentialGroup()
-                .addComponent(panelCrudEmpresa7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panelCrudEmpresa7, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel73)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -756,7 +769,11 @@ public class WinQuestionario3 extends javax.swing.JPanel {
                     .addComponent(jLabel90))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(870, 870, 870))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(213, 213, 213))
         );
 
         ScrollQuestionario3.setViewportView(tabQuestionario3);
@@ -830,6 +847,7 @@ public class WinQuestionario3 extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel105;
     private javax.swing.JLabel jLabel106;
     private javax.swing.JLabel jLabel107;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -864,6 +882,7 @@ public class WinQuestionario3 extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane22;
     private javax.swing.JScrollPane jScrollPane24;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JPanel panelCrudEmpresa7;
     private javax.swing.JPanel tabQuestionario3;
     private javax.swing.JTable tableQuestao27;
@@ -873,6 +892,7 @@ public class WinQuestionario3 extends javax.swing.JPanel {
     private javax.swing.JTextField tfDataEmprestimo;
     private javax.swing.JTextField tfDia;
     private javax.swing.JTextField tfFinalidade;
+    private javax.swing.JTextPane tfObs;
     private javax.swing.JTextField tfPagou;
     private javax.swing.JTextField tfPrestacao;
     private javax.swing.JTextArea tfQuestao24;
