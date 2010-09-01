@@ -191,6 +191,9 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
         botao_excluir_jtable1 = new javax.swing.JButton();
         botao_excluir_mercadoria = new javax.swing.JButton();
         botao_excluir_especie = new javax.swing.JButton();
+        jLabel23 = new javax.swing.JLabel();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        tpObservacao = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -637,6 +640,10 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
             }
         });
 
+        jLabel23.setText("Observações:");
+
+        jScrollPane14.setViewportView(tpObservacao);
+
         javax.swing.GroupLayout jpPescadoSubprodutoLayout = new javax.swing.GroupLayout(jpPescadoSubproduto);
         jpPescadoSubproduto.setLayout(jpPescadoSubprodutoLayout);
         jpPescadoSubprodutoLayout.setHorizontalGroup(
@@ -834,6 +841,14 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 856, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(94, Short.MAX_VALUE))
+            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel23)
+                .addContainerGap(872, Short.MAX_VALUE))
+            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(537, Short.MAX_VALUE))
         );
         jpPescadoSubprodutoLayout.setVerticalGroup(
             jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1009,11 +1024,15 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
                 .addComponent(jLabel40)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botao_alterar)
                     .addComponent(botao_salvar_questionario))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jScrollPane1.setViewportView(jpPescadoSubproduto);
@@ -1513,6 +1532,7 @@ int[] ckb = new int[9];
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
@@ -1543,6 +1563,7 @@ int[] ckb = new int[9];
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane16;
     private javax.swing.JScrollPane jScrollPane17;
@@ -1591,6 +1612,7 @@ int[] ckb = new int[9];
     private javax.swing.JTextPane tpExisteIteracao;
     private javax.swing.JTextPane tpGrauCompetitividade;
     private javax.swing.JTextPane tpNumeroFornecedoresAumentou;
+    private javax.swing.JTextPane tpObservacao;
     private javax.swing.JTextPane tpPerspectiva;
     private javax.swing.JTextPane tpSempreMesmoCompradores;
     private javax.swing.JTextPane tpSitObrigaEntregar;

@@ -146,6 +146,9 @@ public class comunidade_historia extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         jScrollPane27 = new javax.swing.JScrollPane();
         questao25 = new javax.swing.JTextPane();
+        jScrollPane23 = new javax.swing.JScrollPane();
+        tpObservacao = new javax.swing.JTextPane();
+        jLabel42 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -285,6 +288,10 @@ public class comunidade_historia extends javax.swing.JFrame {
 
         jScrollPane27.setViewportView(questao25);
 
+        jScrollPane23.setViewportView(tpObservacao);
+
+        jLabel42.setText("Observações:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -354,7 +361,11 @@ public class comunidade_historia extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(btSalver)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btAtualizar))))
+                                .addComponent(btAtualizar))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel42)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 548, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(182, 182, 182)
                         .addComponent(jLabel1)))
@@ -475,11 +486,15 @@ public class comunidade_historia extends javax.swing.JFrame {
                 .addComponent(jLabel31)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel42)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btAtualizar)
                     .addComponent(btSalver))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -669,6 +684,7 @@ public class comunidade_historia extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -690,6 +706,7 @@ public class comunidade_historia extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane20;
     private javax.swing.JScrollPane jScrollPane21;
     private javax.swing.JScrollPane jScrollPane22;
+    private javax.swing.JScrollPane jScrollPane23;
     private javax.swing.JScrollPane jScrollPane24;
     private javax.swing.JScrollPane jScrollPane25;
     private javax.swing.JScrollPane jScrollPane26;
@@ -726,6 +743,7 @@ public class comunidade_historia extends javax.swing.JFrame {
     private javax.swing.JTextPane questao7;
     private javax.swing.JTextPane questao8;
     private javax.swing.JTextPane questao9;
+    private javax.swing.JTextPane tpObservacao;
     // End of variables declaration//GEN-END:variables
 
     private void mostra_dados() {
