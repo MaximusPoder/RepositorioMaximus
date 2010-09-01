@@ -315,6 +315,9 @@ public class WinProblemas extends javax.swing.JPanel {
         tableProblemas = new javax.swing.JTable();
         tfOutro = new javax.swing.JTextField();
         jLabel43 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tfObs = new javax.swing.JTextPane();
+        jLabel2 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(900, 1300));
 
@@ -433,6 +436,10 @@ public class WinProblemas extends javax.swing.JPanel {
 
         jLabel43.setText("Outros");
 
+        jScrollPane3.setViewportView(tfObs);
+
+        jLabel2.setText("Observação:");
+
         javax.swing.GroupLayout tabEmpresaProblemaLayout = new javax.swing.GroupLayout(tabEmpresaProblema);
         tabEmpresaProblema.setLayout(tabEmpresaProblemaLayout);
         tabEmpresaProblemaLayout.setHorizontalGroup(
@@ -441,6 +448,8 @@ public class WinProblemas extends javax.swing.JPanel {
             .addGroup(tabEmpresaProblemaLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 788, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(tabEmpresaProblemaLayout.createSequentialGroup()
                         .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -520,7 +529,11 @@ public class WinProblemas extends javax.swing.JPanel {
                     .addComponent(jLabel43))
                 .addGap(83, 83, 83)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1254, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1152, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -533,7 +546,7 @@ public class WinProblemas extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(tabEmpresaProblema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -546,6 +559,7 @@ public class WinProblemas extends javax.swing.JPanel {
     private javax.swing.JComboBox cbQualificacao;
     private javax.swing.JComboBox cbTransporte;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel39;
@@ -554,6 +568,7 @@ public class WinProblemas extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel50;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JPanel panelCrudEmpresa4;
     private javax.swing.JRadioButton rbFinanciamento;
@@ -563,6 +578,7 @@ public class WinProblemas extends javax.swing.JPanel {
     private javax.swing.JPanel tabEmpresaProblema;
     private javax.swing.JTable tableProblemas;
     private javax.swing.JTextField tfFinanciamento;
+    private javax.swing.JTextPane tfObs;
     private javax.swing.JTextField tfOutro;
     private javax.swing.JTextField tfProducao;
     private javax.swing.JTextField tfQualificacao;

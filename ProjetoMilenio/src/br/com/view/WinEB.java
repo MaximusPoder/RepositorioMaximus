@@ -190,6 +190,9 @@ public class WinEB extends javax.swing.JPanel {
         tfApetrecho = new javax.swing.JTextField();
         tfTerceiro = new javax.swing.JTextField();
         tfEpocaAno = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tfObs = new javax.swing.JTextPane();
+        jLabel1 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(900, 1300));
 
@@ -235,7 +238,7 @@ public class WinEB extends javax.swing.JPanel {
                     .addGroup(panelCrudEmpresa1Layout.createSequentialGroup()
                         .addGap(302, 302, 302)
                         .addComponent(jLabel18)))
-                .addContainerGap(713, Short.MAX_VALUE))
+                .addContainerGap(403, Short.MAX_VALUE))
         );
         panelCrudEmpresa1Layout.setVerticalGroup(
             panelCrudEmpresa1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -282,6 +285,10 @@ public class WinEB extends javax.swing.JPanel {
 
         jLabel16.setText("Época do Ano");
 
+        jScrollPane3.setViewportView(tfObs);
+
+        jLabel1.setText("Observação:");
+
         javax.swing.GroupLayout tabEspecieBeneficiadaLayout = new javax.swing.GroupLayout(tabEspecieBeneficiada);
         tabEspecieBeneficiada.setLayout(tabEspecieBeneficiadaLayout);
         tabEspecieBeneficiadaLayout.setHorizontalGroup(
@@ -289,7 +296,7 @@ public class WinEB extends javax.swing.JPanel {
             .addGroup(tabEspecieBeneficiadaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 747, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(379, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
             .addGroup(tabEspecieBeneficiadaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(tabEspecieBeneficiadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -309,8 +316,14 @@ public class WinEB extends javax.swing.JPanel {
                         .addComponent(jLabel16)
                         .addGap(18, 18, 18)
                         .addComponent(tfEpocaAno, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(620, Short.MAX_VALUE))
+                .addContainerGap(285, Short.MAX_VALUE))
             .addComponent(panelCrudEmpresa1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(tabEspecieBeneficiadaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(tabEspecieBeneficiadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addContainerGap(450, Short.MAX_VALUE))
         );
         tabEspecieBeneficiadaLayout.setVerticalGroup(
             tabEspecieBeneficiadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -336,34 +349,31 @@ public class WinEB extends javax.swing.JPanel {
                             .addComponent(tfEpocaAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1172, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(124, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1136, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(tabEspecieBeneficiada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addComponent(tabEspecieBeneficiada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1502, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(tabEspecieBeneficiada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(tabEspecieBeneficiada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(139, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCadastrarEB;
     private javax.swing.JButton btExcluirEB;
     private javax.swing.JButton btNovoEB;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -373,12 +383,14 @@ public class WinEB extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JPanel panelCrudEmpresa1;
     private javax.swing.JPanel tabEspecieBeneficiada;
     private javax.swing.JTable tableEB;
     private javax.swing.JTextField tfApetrecho;
     private javax.swing.JTextField tfEpocaAno;
     private javax.swing.JTextField tfEspecie;
+    private javax.swing.JTextPane tfObs;
     private javax.swing.JTextField tfTerceiro;
     // End of variables declaration//GEN-END:variables
 }
