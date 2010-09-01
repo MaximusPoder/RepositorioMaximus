@@ -315,6 +315,9 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tfObs = new javax.swing.JTextPane();
 
         setPreferredSize(new java.awt.Dimension(1035, 806));
 
@@ -360,7 +363,7 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
                                     .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(btExcluir)))))))
-                .addContainerGap(467, Short.MAX_VALUE))
+                .addContainerGap(496, Short.MAX_VALUE))
         );
         panelCrudEmpresa3Layout.setVerticalGroup(
             panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -469,7 +472,7 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
                         .addComponent(btAdd)
                         .addGap(18, 18, 18)
                         .addComponent(btRemove)))
-                .addContainerGap(825, Short.MAX_VALUE))
+                .addContainerGap(850, Short.MAX_VALUE))
         );
         panelCrudEmpresa7Layout.setVerticalGroup(
             panelCrudEmpresa7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -498,6 +501,10 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
             }
         ));
         jScrollPane2.setViewportView(table);
+
+        jLabel2.setText("Observação.:");
+
+        jScrollPane4.setViewportView(tfObs);
 
         javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
         panel.setLayout(panelLayout);
@@ -594,7 +601,9 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
                         .addGap(33, 33, 33)
                         .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 681, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))))
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(296, Short.MAX_VALUE))
             .addComponent(panelCrudEmpresa7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(panelCrudEmpresa3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -681,7 +690,11 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(353, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(239, Short.MAX_VALUE))
         );
 
         jScrollPane3.setViewportView(panel);
@@ -718,6 +731,7 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -746,10 +760,12 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JPanel panel;
     private javax.swing.JPanel panelCrudEmpresa3;
     private javax.swing.JPanel panelCrudEmpresa7;
     private javax.swing.JTable table;
+    private javax.swing.JTextPane tfObs;
     private javax.swing.JTextField tfQuestao1;
     private javax.swing.JTextField tfQuestao10;
     private javax.swing.JTextField tfQuestao11;
