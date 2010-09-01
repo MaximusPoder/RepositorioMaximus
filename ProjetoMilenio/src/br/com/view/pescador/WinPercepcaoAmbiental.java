@@ -225,6 +225,9 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
         jScrollPane5 = new javax.swing.JScrollPane();
         tfQuestao0 = new javax.swing.JTextArea();
         jLabel5 = new javax.swing.JLabel();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        tfObs = new javax.swing.JTextPane();
+        jLabel37 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1035, 806));
 
@@ -284,7 +287,7 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
                     .addGroup(panelCrudEmpresa3Layout.createSequentialGroup()
                         .addGap(424, 424, 424)
                         .addComponent(jLabel36)))
-                .addContainerGap(655, Short.MAX_VALUE))
+                .addContainerGap(799, Short.MAX_VALUE))
         );
         panelCrudEmpresa3Layout.setVerticalGroup(
             panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -399,6 +402,10 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
 
         jLabel5.setText("Existem muitos pescadores no mesmo local em que você pesca?Estimativa");
 
+        jScrollPane12.setViewportView(tfObs);
+
+        jLabel37.setText("Observação.:");
+
         javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
         panel.setLayout(panelLayout);
         panelLayout.setHorizontalGroup(
@@ -441,43 +448,41 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
             .addGroup(panelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1294, Short.MAX_VALUE))
+                .addContainerGap(1436, Short.MAX_VALUE))
             .addGroup(panelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4)
-                .addContainerGap(1298, Short.MAX_VALUE))
+                .addContainerGap(1348, Short.MAX_VALUE))
             .addGroup(panelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panelLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1294, Short.MAX_VALUE))
+                    .addComponent(jLabel3))
+                .addContainerGap(1436, Short.MAX_VALUE))
             .addGroup(panelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panelLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1294, Short.MAX_VALUE))
+                    .addComponent(jLabel2))
+                .addContainerGap(1436, Short.MAX_VALUE))
             .addGroup(panelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addContainerGap(1284, Short.MAX_VALUE))
+                .addContainerGap(1338, Short.MAX_VALUE))
             .addGroup(panelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelLayout.createSequentialGroup()
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addContainerGap(1294, Short.MAX_VALUE))
+                .addContainerGap(1436, Short.MAX_VALUE))
+            .addGroup(panelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel37)
+                    .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(1512, Short.MAX_VALUE))
         );
         panelLayout.setVerticalGroup(
             panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -559,7 +564,11 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
                 .addComponent(jLabel21)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(255, 255, 255))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel37)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(147, 147, 147))
         );
 
         jScrollPane6.setViewportView(panel);
@@ -594,6 +603,7 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
@@ -604,6 +614,7 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
@@ -623,6 +634,7 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
     private javax.swing.JPanel panel;
     private javax.swing.JPanel panelCrudEmpresa3;
     private javax.swing.JScrollPane sc;
+    private javax.swing.JTextPane tfObs;
     private javax.swing.JTextArea tfQuestao0;
     private javax.swing.JTextArea tfQuestao1;
     private javax.swing.JTextArea tfQuestao10;
