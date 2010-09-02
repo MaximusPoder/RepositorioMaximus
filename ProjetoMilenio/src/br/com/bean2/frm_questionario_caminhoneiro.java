@@ -12,6 +12,7 @@ package br.com.bean2;
 
 import br.com.bean.*;
 import br.com.Persistencia.Conexao;
+import br.com.util.JMoneyField;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -190,7 +191,7 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
         botao_excluir_mercadoria = new javax.swing.JButton();
         botao_excluir_especie = new javax.swing.JButton();
         tfOutrasFormasDeComercializacaoPeixe = new javax.swing.JTextField();
-        tfFrete = new javax.swing.JTextField();
+        tfFrete = new JMoneyField();
         jScrollPane14 = new javax.swing.JScrollPane();
         tpObservacao = new javax.swing.JTextPane();
         jLabel42 = new javax.swing.JLabel();
@@ -1164,7 +1165,7 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
                     + "existe_interacao,grau_competitividade,atuacao_instituicoes_sua_relacao,"
                     + "pescado_diminuindo_mot_mudanca,"
                     + "numero_aumentou_o_que_acha,perspectiva,pretende_continuar,sempre_dos_mesmos_pesc_quais,valor_frete,"
-                    + "desejo_para_filhos) values ("+
+                    + "desejo_para_filhos,observacao) values ("+
                     pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+",'"+
                     pega_codigo_ou_nome(0,cbNomeAtravessador.getSelectedItem().toString())+"','"+
                     taOrigemProduto.getText()+"',"+
@@ -1196,9 +1197,12 @@ public class frm_questionario_caminhoneiro extends javax.swing.JFrame {
                     tpNumeroFornecedoresAumentou.getText()+"','"+
                     tpPerspectiva.getText()+"','"+
                     tpContinuarAtividade.getText()+"','"+
-                    tfOutrasFormasDeComercializacaoPeixe.getText()+"',"+
-                    tfFrete.getText()+",'"+
-                    tpDesejoFilhos.getText()+"')";
+                    tfOutrasFormasDeComercializacaoPeixe.getText()+"','"+
+                    tfFrete.getText()+"','"+
+                    tpDesejoFilhos.getText()+"','"+
+                       //mudancas
+                    tpObservacao.getText()+"')";//observacao
+                    
 
                     System.out.println(sqlinsert);
 
@@ -1343,8 +1347,10 @@ int[] ckb = new int[9];
                           "pretende_continuar = '"+ tpContinuarAtividade.getText() +"',"+
                           "desejo_para_filhos = '"+ tpDesejoFilhos.getText() +"',"+
                           "sempre_dos_mesmos_pesc_quais ='"+ tfOutrasFormasDeComercializacaoPeixe.getText() +"',"+
-                          "valor_frete ='"+ tfFrete.getText() +"' "+
+                          "valor_frete ='"+ tfFrete.getText() +"',"+
 
+                          //mudancas
+                          "observacao ='"+ tpObservacao.getText()+"' "+
 
                           "where id_caminhoneiro = "+pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString());
 
@@ -1747,6 +1753,10 @@ int[] ckb = new int[9];
             tfOutros_principaisClientes.setEditable(false);
 
 
+           //mudancas
+
+           tpObservacao.setText(conexao.resultSet.getString("observacao"));
+
 
 
 
@@ -1792,6 +1802,9 @@ int[] ckb = new int[9];
             tfFrete.setText("0");
             ckbSempreDosMesmos.setSelected(false);
             ckbPeixeInteiro.setSelected(false);
+
+            //mudancas
+            tpObservacao.setText("");
 
     }
 

@@ -1569,7 +1569,7 @@ public class comunidade_questionario extends javax.swing.JFrame {
                     + "46quem_faz,44com_justica,44com_ibama,44com_colonia,"
                     + "44outro,44outro_qual,47qual,51moto,"
                     + "53palha,53quant_palha,54madeira,54quant_madeira,"
-                    + "55tem_mercearia,55tem_bar,55tem_mercearia_e_bar) values ("+
+                    + "55tem_mercearia,55tem_bar,55tem_mercearia_e_bar,observacao) values ("+
 
                     pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString())+","+
                     tachecado(ckb12TemPresidente) +",'"+ //tem presidente?
@@ -1579,8 +1579,8 @@ public class comunidade_questionario extends javax.swing.JFrame {
                     tp15descrever.getText()+"',"+ //,descricao_eleicao
                     tachecado(ckb16ExisteIgreja)+",'"+ //,existe_igreja,"
 
-                    tf17numeroIgreja.getText()+"',"+//"quant_igreja
-                    tachecado(ckb18ExisteClube)+",'"+//,existe_club
+                    tf17numeroIgreja.getText()+"','"+//"quant_igreja
+                    tachecado(ckb18ExisteClube)+"','"+//,existe_club
                     tp19Especificar.getText()+"',"+//,quant_club,"
 
                     tachecado(ckb20ExisteAssociacao)+",'"+// "exite_assoc
@@ -1685,7 +1685,9 @@ public class comunidade_questionario extends javax.swing.JFrame {
 
             tachecado(ckb55Mercearias)+","+//tem_mercearia
             tachecado(ckb55Bares)+","+//tem_bar
-            tachecado(ckb55MerceariaEBar)+")";//tem_mercearia_e_bar
+            tachecado(ckb55MerceariaEBar)+",'"+//tem_mercearia_e_bar
+
+            tpObservacao.getText()+"')";//observacao
 
                     System.out.println(sqlinsert);
                     
@@ -1837,7 +1839,9 @@ public class comunidade_questionario extends javax.swing.JFrame {
 
                           "55tem_mercearia = '"+ tachecado(ckb55Mercearias)+"',"+
                           "55tem_bar = '"+ tachecado(ckb55Bares)+"',"+
-                          "55tem_mercearia_e_bar = '"+ tachecado(ckb55MerceariaEBar)+"' "+
+                          "55tem_mercearia_e_bar = '"+ tachecado(ckb55MerceariaEBar)+"',"+
+
+                          "observacao = '"+tpObservacao.getText()+"' "+
 
                           "where id_comunidade = "+pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString());
 
@@ -2492,6 +2496,8 @@ public class comunidade_questionario extends javax.swing.JFrame {
             else
                    ckb55MerceariaEBar.setSelected(false);
 
+            tpObservacao.setText(conexao.resultSet.getString("observacao"));
+
 
         } catch (Exception e) {
         }
@@ -2621,6 +2627,8 @@ public class comunidade_questionario extends javax.swing.JFrame {
                     ckb55Mercearias.setSelected(false);
                     ckb55Bares.setSelected(false);
                     ckb55MerceariaEBar.setSelected(false);
+
+                    tpObservacao.setText("");
     }
 
         public void preencher_jtableEspecie(String id){

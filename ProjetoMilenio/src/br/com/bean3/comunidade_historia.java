@@ -521,7 +521,7 @@ public class comunidade_historia extends javax.swing.JFrame {
                     + "questao11,questao12,questao13,questao14,questao15,"
                     + "questao16,questao17,questao18,questao19,questao20,"
                     + "questao21,questao22,questao23,questao24,"
-                    + "questao25) values ("+
+                    + "questao25,observacao) values ("+
                     pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString())+",'"+
                     questao1.getText()+"','"+
                     questao2.getText()+"','"+
@@ -547,7 +547,8 @@ public class comunidade_historia extends javax.swing.JFrame {
                     questao22.getText()+"','"+
                     questao23.getText()+"','"+
                     questao24.getText()+"','"+
-                    questao25.getText()+"')";
+                    questao25.getText()+"','"+
+                    tpObservacao.getText()+"')";
 
                     System.out.println(sqlinsert);
 
@@ -592,7 +593,9 @@ public class comunidade_historia extends javax.swing.JFrame {
                           "questao22 = '"+questao22.getText()+"',"+
                           "questao23 = '"+questao23.getText()+"',"+
                           "questao24 = '"+questao24.getText()+"',"+
-                          "questao25 = '"+questao25.getText()+"' "+
+                          "questao25 = '"+questao25.getText()+"',"+
+
+                          "observacao = '"+tpObservacao.getText()+"' "+
 
                           "where id_comunidade = "+pega_codigo_ou_nome(1,cbComunidade.getSelectedItem().toString());
 
@@ -773,6 +776,7 @@ public class comunidade_historia extends javax.swing.JFrame {
             questao23.setText(conexao.resultSet.getString("questao23"));
             questao24.setText(conexao.resultSet.getString("questao24"));
             questao25.setText(conexao.resultSet.getString("questao25"));
+            tpObservacao.setText(conexao.resultSet.getString("observacao"));
         } catch (Exception e) {
             limpar();
         }
@@ -804,6 +808,7 @@ public class comunidade_historia extends javax.swing.JFrame {
             questao23.setText("");
             questao24.setText("");
             questao25.setText("");
+            tpObservacao.setText("");
     }
 
                public String pega_codigo_ou_nome(int n,String teste) { //Se entrar com 1 pega o Código, se não pega o Nome
