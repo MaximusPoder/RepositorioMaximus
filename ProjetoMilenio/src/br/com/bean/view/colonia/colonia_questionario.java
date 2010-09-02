@@ -929,7 +929,7 @@ public class colonia_questionario extends javax.swing.JFrame {
                     + "35opiniao_financiamento,36defeso,37defeso_respeitado,"
                     + "38aposentadoria,38seguro,38bolsa_familia,39e_suficiente,"
                     + "40existe_monitoramento,41quem_faz,42tem_local,43qualidade_local,"              
-                    + "44acompanha,38nao_se_aplica) values ("+
+                    + "44acompanha,38nao_se_aplica,observacao) values ("+
 
                     pega_codigo_ou_nome(1,cbColonia.getSelectedItem().toString())+","+
                     tachecado(ckb12TemPresidente) +",'"+ //tem presidente?
@@ -993,7 +993,9 @@ public class colonia_questionario extends javax.swing.JFrame {
                     cb44Acompanha.getSelectedItem()+"',"+//46quem_faz
                     
                     //novos
-                    tachecado(ckb38NaoSeAplica)+")";//38nao_se_aplica
+                    tachecado(ckb38NaoSeAplica)+",'"+//38nao_se_aplica
+
+                    tpObservacao.getText()+"')";//observacao
 
                     System.out.println(sqlinsert);
                     
@@ -1110,7 +1112,9 @@ public class colonia_questionario extends javax.swing.JFrame {
                     "44acompanha ='"+cb44Acompanha.getSelectedItem()+"',"+//
 
                     //novos
-                    "38nao_se_aplica ='"+ tachecado(ckb38NaoSeAplica) +"' "+
+                    "38nao_se_aplica ='"+ tachecado(ckb38NaoSeAplica) +"',"+
+
+                    "observacao = '"+tpObservacao.getText()+"' "+
                           
 
                     "where id_colonia = "+pega_codigo_ou_nome(1,cbColonia.getSelectedItem().toString());
@@ -1518,6 +1522,8 @@ public class colonia_questionario extends javax.swing.JFrame {
             else
                    ckb38NaoSeAplica.setSelected(false);
 
+            tpObservacao.setText(conexao.resultSet.getString("observacao"));
+
         } catch (Exception e) {
             System.out.println("Erro na exibição");
         }
@@ -1594,6 +1600,8 @@ public class colonia_questionario extends javax.swing.JFrame {
                     cb43Qualidade.setSelectedIndex(0);
 
                     cb44Acompanha.setSelectedIndex(0);
+
+                    tpObservacao.setText("");
 
     }
 

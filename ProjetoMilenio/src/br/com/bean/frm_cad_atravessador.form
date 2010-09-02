@@ -196,16 +196,15 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="tfTempoDiario" min="-2" pref="81" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Group type="102" alignment="0" attributes="1">
-                                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="tfTempoAtividade" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="tfRendaMensal" min="-2" pref="84" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="tfTempoAtividade" alignment="0" max="32767" attributes="1"/>
+                                          <Component id="tfRendaMensal" alignment="0" pref="84" max="32767" attributes="1"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
@@ -672,12 +671,12 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Qual o tempo di&#xe1;rio que passam trabalhando (horas)?"/>
+                <Property name="text" type="java.lang.String" value="Qual o tempo di&#xe1;rio que passam trabalhando?"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Quando tempo est&#xe1; na atividade (m&#xea;ses)?"/>
+                <Property name="text" type="java.lang.String" value="Quando tempo est&#xe1; na atividade?"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
