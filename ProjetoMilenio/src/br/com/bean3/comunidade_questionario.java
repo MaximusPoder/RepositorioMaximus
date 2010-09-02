@@ -605,16 +605,25 @@ public class comunidade_questionario extends javax.swing.JFrame {
 
         jtAtividade.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "id_atividade", "Nome da Atividade", "Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"
+                "id_atividade", "Arte de pesca", "Nome da Atividade", "Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true, true, true, true, true, true, true, true, true, true, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane8.setViewportView(jtAtividade);
+        jtAtividade.getColumnModel().getColumn(0).setResizable(false);
 
         btAtualizarAtividade.setText("Atualizar");
         btAtualizarAtividade.addActionListener(new java.awt.event.ActionListener() {
@@ -1095,11 +1104,9 @@ public class comunidade_questionario extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel49)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 335, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel49)
                             .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2661,6 +2668,7 @@ public class comunidade_questionario extends javax.swing.JFrame {
         jtAtividade.getColumnModel().getColumn(11).setPreferredWidth(10);
         jtAtividade.getColumnModel().getColumn(12).setPreferredWidth(10);
         jtAtividade.getColumnModel().getColumn(13).setPreferredWidth(10);
+        jtAtividade.getColumnModel().getColumn(14).setPreferredWidth(10);
 
         DefaultTableModel modelo = (DefaultTableModel)jtAtividade.getModel();
         modelo.setNumRows(0);//limpa o JTable;
@@ -2668,6 +2676,7 @@ public class comunidade_questionario extends javax.swing.JFrame {
         try{
             while (conexao.resultSet.next())
                 modelo.addRow(new Object[]{conexao.resultSet.getString("id_atividade"),
+                                           conexao.resultSet.getString("arte_pesca"),
                                            conexao.resultSet.getString("tipo"),
                                           sim_nao( conexao.resultSet.getString("jan") ),
                                           sim_nao( conexao.resultSet.getString("fev") ),

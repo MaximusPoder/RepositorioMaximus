@@ -193,8 +193,8 @@ public class addMaterial extends javax.swing.JFrame {
         String sqlinsert = "insert into atravessador_addmaterial " + "(id_atravessador,nome,tipo,quantidade," + "custo,outros,frequencia) values ('" +
                 idd_atravessador + "','" +
                 registro_q_vai() + "','" +
-                tfMatTipo.getText() + "'," +
-                tfMatQuantidade.getText() + ",'" +
+                tfMatTipo.getText() + "','" +
+                tfMatQuantidade.getText() + "','" +
                 tfMatCusto.getText() + "','" +
                 tfMatOutros.getText() + "','" +
                 tfMatFrequencia.getText() + "')";
