@@ -196,8 +196,8 @@ public class addCMaterial extends javax.swing.JFrame {
                     + "custo,outros,frequencia) values ('"+
                     idd_atravessador+"','"+
                     registro_q_vai()+"','"+
-                    tfMatTipo.getText()+"',"+
-                    tfMatQuantidade.getText()+",'"+
+                    tfMatTipo.getText()+"','"+
+                    tfMatQuantidade.getText()+"','"+
                     tfMatCusto.getText()+"','"+
                     tfMatOutros.getText()+"','"+
                     tfMatFrequencia.getText()+"')";
