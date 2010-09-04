@@ -156,9 +156,10 @@ public class WinProblemas extends javax.swing.JPanel {
 
         try {
             EmpresaProblema ep = new EmpresaProblema();
+            String observacao = tfObs.getText();
             String problema = bgEmpresaProblemas.getSelection().getActionCommand();
             String tipo;
-            String obs;
+            String obs ;
             if (problema.equals("Transporte")) {
                 if(cbTransporte.getSelectedItem().toString().equalsIgnoreCase("Outros"))
                     tipo = tfOutro.getText();
@@ -186,10 +187,12 @@ public class WinProblemas extends javax.swing.JPanel {
             }
 
             if (this.empresaProblema != null) {
+                empresaProblema.setObservacao(observacao);
                 empresaProblema.all(problema, tipo, obs,
                         WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
                 return empresaProblema;
             }
+            ep.setObservacao(observacao);
             ep.all(problema, tipo, obs,
                     WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
             return ep;
@@ -204,6 +207,7 @@ public class WinProblemas extends javax.swing.JPanel {
         empresaProblema = empresaProblemas.get(tableProblemas.getSelectedRow());
 
         tfOutro.setEnabled(false);
+        tfObs.setText(empresaProblema.getObservacao());
         MyUtil.setSelected(empresaProblema.getProblema(), bgEmpresaProblemas);
         if (empresaProblema.getProblema().equals("Transporte")) {
              if(IsSelected(cbTransporte,empresaProblema.getTipo()))
@@ -269,7 +273,7 @@ public class WinProblemas extends javax.swing.JPanel {
         for (int i = 0; i < list.size(); i++) {
             EmpresaProblema e = list.get(i);
             Object[] objeto = {e.getProblema(),
-                e.getTipo(), "R$ " + ToMoney.StringtoMoney(e.getObs())
+                e.getTipo(), "R$ " + ToMoney.StringtoMoney(e.getObs()),e.getObservacao()
             };
 
             model.addRow(objeto);
@@ -413,17 +417,17 @@ public class WinProblemas extends javax.swing.JPanel {
 
         tableProblemas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Problema", "Tipo", "Quais os Custos ?"
+                "Problema", "Tipo", "Quais os Custos ?", "Observacao"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -448,25 +452,26 @@ public class WinProblemas extends javax.swing.JPanel {
             .addGroup(tabEmpresaProblemaLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 788, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 788, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(tabEmpresaProblemaLayout.createSequentialGroup()
-                        .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(tabEmpresaProblemaLayout.createSequentialGroup()
-                                .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rbTransporte)
-                                    .addComponent(rbQualificacao)
-                                    .addComponent(rbFinanciamento)
-                                    .addComponent(rbProducao))
-                                .addGap(28, 28, 28)
-                                .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(cbProducao, javax.swing.GroupLayout.Alignment.LEADING, 0, 0, Short.MAX_VALUE)
-                                    .addComponent(cbQualificacao, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cbFinanciamento, javax.swing.GroupLayout.Alignment.LEADING, 0, 141, Short.MAX_VALUE)
-                                    .addComponent(cbTransporte, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(jLabel43))
-                        .addGap(46, 46, 46)
+                        .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rbTransporte)
+                            .addComponent(rbQualificacao)
+                            .addComponent(rbFinanciamento)
+                            .addComponent(rbProducao))
+                        .addGap(28, 28, 28)
+                        .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(cbProducao, javax.swing.GroupLayout.Alignment.LEADING, 0, 0, Short.MAX_VALUE)
+                            .addComponent(cbQualificacao, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbFinanciamento, javax.swing.GroupLayout.Alignment.LEADING, 0, 141, Short.MAX_VALUE)
+                            .addComponent(cbTransporte, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tabEmpresaProblemaLayout.createSequentialGroup()
+                                .addComponent(jLabel43)
+                                .addGap(46, 46, 46)
+                                .addComponent(tfOutro, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(tabEmpresaProblemaLayout.createSequentialGroup()
                                 .addComponent(jLabel42)
@@ -484,8 +489,7 @@ public class WinProblemas extends javax.swing.JPanel {
                                 .addGroup(tabEmpresaProblemaLayout.createSequentialGroup()
                                     .addComponent(jLabel40)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(tfFinanciamento, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(tfOutro, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(tfFinanciamento, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addGap(89, 89, 89))
         );
         tabEmpresaProblemaLayout.setVerticalGroup(
@@ -527,9 +531,9 @@ public class WinProblemas extends javax.swing.JPanel {
                 .addGroup(tabEmpresaProblemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfOutro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel43))
-                .addGap(83, 83, 83)
+                .addGap(40, 40, 40)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(54, 54, 54)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)

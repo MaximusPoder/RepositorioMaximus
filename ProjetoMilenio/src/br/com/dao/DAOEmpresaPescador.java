@@ -22,12 +22,14 @@ public class DAOEmpresaPescador implements IOperationBean<EmpresaPescador>{
     public boolean cadastrar(EmpresaPescador bean) {
          String query = " insert     into         EmpresaPescador " +
                  "        (EstimativaPerda, causaPerda, destinoPeixePerdido, " +
-                 " empresaId, especie) " +
+                 " empresaId,observacao, especie) " +
                  "    values    " +
-                 "     ('"+bean.getEstimativaPerda()+"'," +
-                 " '"+bean.getCausaPerda()+"'," +
-                 " '"+bean.getDestinoPeixePerdido()+"',"+bean.getEmpresaId()+"," +
-                 "'"+bean.getEspecie()+"')";
+                 "('"+bean.getEstimativaPerda()+"','"+
+                     bean.getCausaPerda()+"','" +
+                     bean.getDestinoPeixePerdido()+"',"+
+                     bean.getEmpresaId()+",'" +
+                     bean.getObservacao()+"','"+
+                     bean.getEspecie()+"')";
         try {
             conexao = new Conexao();
             conexao.conecta("mil_interface");
@@ -77,9 +79,9 @@ public class DAOEmpresaPescador implements IOperationBean<EmpresaPescador>{
                 e.setEspecie(set.getString(fields[index++]));
                 e.setCausaPerda(set.getString(fields[index++]));
                 e.setEstimativaPerda(set.getString(fields[index++]));
-                e.setDestinoPeixePerdido(set.getString(fields[index++]));
-                
+                e.setDestinoPeixePerdido(set.getString(fields[index++]));                
                 e.setEmpresaId(set.getInt(fields[index++]));
+                e.setObservacao(set.getString(fields[index++]));
 
                 empresas.add(e);
             }

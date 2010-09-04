@@ -42,22 +42,22 @@ public class WinImposto extends javax.swing.JPanel {
     }
 
     private EmpresaImposto getEmpresaImpostoOfPanel() {
-
-
-
         try {
+            String obs = tfObs.getText();
             String imposto = tfImposto.getText();
             String anterior = tfAnterior.getText();
             String ano = tfAno.getText();
             String anual = tfAtual.getText();
 
             if (empresaImposto != null) {
+                empresaImposto.setObservacao(obs);
                 empresaImposto.all(imposto, anterior, anual, ano,
                         WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
                 return empresaImposto;
             }
 
             EmpresaImposto b = new EmpresaImposto();
+            b.setObservacao(obs);
             b.all(imposto, anterior, anual, ano,
                     WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
             return b;
@@ -170,7 +170,7 @@ public class WinImposto extends javax.swing.JPanel {
         for (int i = 0; i < empresaImpostos.size(); i++) {
             EmpresaImposto e = empresaImpostos.get(i);
             Object[] objeto = {e.getImposto(),
-                e.getAnterior(), e.getAtual(), e.getAno()};
+                e.getAnterior(), e.getAtual(), e.getAno(),e.getObservacao()};
 
             model.addRow(objeto);
         }
@@ -181,6 +181,7 @@ public class WinImposto extends javax.swing.JPanel {
         tfAnterior.setText(e.getAnterior());
         tfAtual.setText(e.getAtual());
         tfAno.setText(e.getAno());
+        tfObs.setText(e.getObservacao());
     }
 
     private EmpresaImposto getEmpresaImpostofTable() {
@@ -265,7 +266,7 @@ public class WinImposto extends javax.swing.JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(btExcluirImposto))))
                             .addComponent(jLabel61))))
-                .addContainerGap(466, Short.MAX_VALUE))
+                .addContainerGap(478, Short.MAX_VALUE))
         );
         panelCrudEmpresa6Layout.setVerticalGroup(
             panelCrudEmpresa6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -296,11 +297,11 @@ public class WinImposto extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Imposto", "Anterior (%)", "Atual (%)", "A partir de (Ano)"
+                "Imposto", "Anterior (%)", "Atual (%)", "A partir de (Ano)", "Observacao"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -346,14 +347,14 @@ public class WinImposto extends javax.swing.JPanel {
                                 .addGap(84, 84, 84)
                                 .addComponent(tfAno, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 747, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addContainerGap(143, Short.MAX_VALUE))
             .addComponent(panelCrudEmpresa6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(tabEmpresaImpostoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(tabEmpresaImpostoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addContainerGap(524, Short.MAX_VALUE))
+                .addContainerGap(526, Short.MAX_VALUE))
         );
         tabEmpresaImpostoLayout.setVerticalGroup(
             tabEmpresaImpostoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

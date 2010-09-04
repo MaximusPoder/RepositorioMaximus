@@ -1,12 +1,6 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package br.com.dao;
 
 import br.com.Persistencia.Conexao;
-import br.com.pojo.PescadorPersPectiva;
 import br.com.pojo.PescadorPersPectiva;
 import br.com.util.MyUtil;
 import java.sql.ResultSet;
@@ -198,8 +192,9 @@ public class DAOPercepcaoAmbiental implements IOperationBean<PescadorPersPectiva
                 es.setQuestao16(set.getString(fields[index++]));
                 es.setQuestao17(set.getString(fields[index++]));
                 es.setQuestao18(set.getString(fields[index++]));
-                es.setObservacao(set.getString(fields[index++]));
+                
                 es.setPescadorId(set.getInt(fields[index++]));
+                es.setObservacao(set.getString(fields[index++]));
 
             }
 

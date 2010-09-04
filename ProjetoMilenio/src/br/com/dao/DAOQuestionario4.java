@@ -26,7 +26,7 @@ public class DAOQuestionario4 implements IOperationBean<EmpresaQuestionario4>{
 
         String query = "insert     into         EmpresaQuestionario4    " +
                "     (empresaId, questao31, questao32, questao33, questao34," +
-               " questao35, questao36,questao37,questao38,relacaoTrabalho)" +
+               " questao35, questao36,questao37,questao38,observacao,relacaoTrabalho)" +
                " values  " +
                " ("+bean.getEmpresaId()+"," +
                " '"+bean.getQuestao31()+"'," +
@@ -37,6 +37,7 @@ public class DAOQuestionario4 implements IOperationBean<EmpresaQuestionario4>{
                " '"+bean.getQuestao36()+"'," +
                " '"+bean.getQuestao37()+"'," +
                " '"+bean.getQuestao38()+"'," +
+               " '"+bean.getObservacao()+"'," +
                " '"+bean.getRelacaoTrabalho()+"')";
         try {
             conexao = new Conexao();
@@ -78,6 +79,7 @@ public class DAOQuestionario4 implements IOperationBean<EmpresaQuestionario4>{
                     "    questao36='"+bean.getQuestao36()+"',    " +
                     "    questao37='"+bean.getQuestao37()+"',    " +
                     "    questao38='"+bean.getQuestao38()+"',    " +
+                     "   observacao='"+bean.getObservacao()+"',    " +
                     "    relacaoTrabalho='"+bean.getRelacaoTrabalho()+"'    " +
                     "       where         id= "+bean.getId();
 
@@ -117,6 +119,7 @@ public class DAOQuestionario4 implements IOperationBean<EmpresaQuestionario4>{
                 e.setQuestao38(set.getString(fields[index++]));
                 e.setRelacaoTrabalho(set.getString(fields[index++]));
                 e.setEmpresaId(set.getInt(fields[index++]));
+                 e.setObservacao(set.getString(fields[index++]));
             }
 
             return e;

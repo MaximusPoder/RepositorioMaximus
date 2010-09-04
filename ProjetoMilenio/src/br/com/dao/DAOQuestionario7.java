@@ -24,8 +24,20 @@ public class DAOQuestionario7 implements IOperationBean<EmpresaQuestionario7> {
     public boolean cadastrar(EmpresaQuestionario7 bean) {
 
         String query = "insert     into         EmpresaQuestionario7    " +
-                "     (empresaId,questao55,questao56,questao57,questao58,questao59,questao60," +
-                "        questao61,questao62,questao63,questao64,questao65,questao66)" +
+                "(empresaId,"
+                + "questao55,"
+                + "questao56,"
+                + "questao57,"
+                + "questao58,"
+                + "questao59,"
+                + "questao60,"
+                +" questao61,"
+                + "questao62,"
+                + "questao63,"
+                + "questao64,"
+                + "questao65,"
+                + "observacao,"
+                + "questao66)" +
                 " values  " +
                 " (" + bean.getEmpresaId() + "," +
                 " '" + bean.getQuestao55() + "'," +
@@ -35,10 +47,11 @@ public class DAOQuestionario7 implements IOperationBean<EmpresaQuestionario7> {
                 " '" + bean.getQuestao59() + "'," +
                 " '" + bean.getQuestao60() + "'," +
                 " '" + bean.getQuestao61() + "'," +
-                " '" + bean.getQuestao61() + "'," +
+                " '" + bean.getQuestao62() + "'," +
                 " '" + bean.getQuestao63() + "'," +
                 " '" + bean.getQuestao64() + "'," +
                 " '" + bean.getQuestao65() + "'," +
+                " '" + bean.getObservacao() + "'," +
                 " '" + bean.getQuestao66() + "')";
         try {
             conexao = new Conexao();
@@ -83,6 +96,7 @@ public class DAOQuestionario7 implements IOperationBean<EmpresaQuestionario7> {
                     "    questao63='" + bean.getQuestao63() + "',   " +
                     "    questao64='" + bean.getQuestao64() + "',   " +
                     "    questao65='" + bean.getQuestao65() + "',   " +
+                    "    observacao='" + bean.getObservacao() + "',   " +
                     "    questao66='" + bean.getQuestao66() + "'    " +
                     "       where         id= " + bean.getId();
 
@@ -126,6 +140,7 @@ public class DAOQuestionario7 implements IOperationBean<EmpresaQuestionario7> {
                 e.setQuestao66(set.getString(fields[index++]));
 
                 e.setEmpresaId(set.getInt(fields[index++]));
+                e.setObservacao(set.getString(fields[index++]));
             }
 
             return e;

@@ -3,6 +3,7 @@ package br.com.dao;
 
 import br.com.Persistencia.Conexao;
 import br.com.pojo.EspecieProcessada;
+import br.com.util.MyUtil;
 import java.lang.reflect.Field;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,9 +23,14 @@ public class DaoEspecieProcessada implements IOperationBean<EspecieProcessada>{
     public boolean cadastrar(EspecieProcessada bean) {
 
          String query = "insert     into         EspecieProcessada       " +
-                 "  (empresaId, especieId, precoVenda, produto, quantidadeProduzida)" +
-                 "     values   ("+bean.getEmpresaId()+", "+bean.getEspecieId()+"," +
-                 "   '"+bean.getPrecoVenda()+"','"+bean.getProduto()+"','"+bean.getQuantidadeProduzida()+"')";
+                 "  (empresaId, especieId, precoVenda, produto,observacao, quantidadeProduzida)" +
+                 "     values "
+                 + "  ("+bean.getEmpresaId()+", "+
+                 bean.getEspecieId()+",'" +
+                 bean.getPrecoVenda()+"','"+
+                 bean.getProduto()+"','"+
+                 bean.getObservacao()+"','"+
+                 bean.getQuantidadeProduzida()+"')";
         try {
             conexao = new Conexao();
             conexao.conecta("mil_interface");
@@ -59,6 +65,7 @@ public class DaoEspecieProcessada implements IOperationBean<EspecieProcessada>{
                     "   empresaId="+bean.getEmpresaId()+",         especieId="+bean.getEspecieId()+",   " +
                     "      precoVenda='"+bean.getPrecoVenda()+"',     " +
                     "    produto='"+bean.getProduto()+"',       " +
+                    "    observacao='"+bean.getObservacao()+"',       " +
                     "  quantidadeProduzida='"+bean.getQuantidadeProduzida()+"'  " +
                     "   where         id="+bean.getId();
 
@@ -77,7 +84,7 @@ public class DaoEspecieProcessada implements IOperationBean<EspecieProcessada>{
             conexao.execute(query);
 
             ResultSet set = conexao.getResultSet();
-            String[] fields = getField();
+            String[] fields =  MyUtil.getField(new EspecieProcessada());
 
             List<EspecieProcessada> list = new ArrayList<EspecieProcessada>();
             while (set.next()) {
@@ -89,6 +96,7 @@ public class DaoEspecieProcessada implements IOperationBean<EspecieProcessada>{
                 e.setPrecoVenda(set.getString(fields[index++]));
                 e.setEspecieId(set.getInt(fields[index++]));
                 e.setEmpresaId(set.getInt(fields[index++]));
+                e.setObservacao(set.getString(fields[index++]));
 
                 list.add(e);
             }
@@ -109,7 +117,7 @@ public class DaoEspecieProcessada implements IOperationBean<EspecieProcessada>{
             conexao.execute(query);
 
             ResultSet set = conexao.getResultSet();
-            String[] fields = getField();
+           String[] fields =  MyUtil.getField(new EspecieProcessada());
 
             EspecieProcessada e = new EspecieProcessada();
             while (set.next()) {
@@ -120,6 +128,7 @@ public class DaoEspecieProcessada implements IOperationBean<EspecieProcessada>{
                 e.setPrecoVenda(set.getString(fields[index++]));
                 e.setEspecieId(set.getInt(fields[index++]));
                 e.setEmpresaId(set.getInt(fields[index++]));
+                 e.setObservacao(set.getString(fields[index++]));
             }
 
             return e;
@@ -130,19 +139,5 @@ public class DaoEspecieProcessada implements IOperationBean<EspecieProcessada>{
         }
         return null;
     }
-
-    private String[] getField() {
-        EspecieProcessada e = new EspecieProcessada();
-
-        Field[] fields = e.getClass().getDeclaredFields();
-
-        String[] strings = new String[fields.length];
-        for (int i = 0; i < fields.length; i++) {
-            Field field = fields[i];
-            strings[i] = field.getName();
-        }
-
-        return strings;
-    }
-
+   
 }

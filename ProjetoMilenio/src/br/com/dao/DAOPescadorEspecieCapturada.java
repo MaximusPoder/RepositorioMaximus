@@ -1,33 +1,3 @@
-/*
-Hibernate:
-insert
-into
-PescadorEspecieCapturada
-(empresaId, fimSafra, inicioSafra, ssp, id)
-values
-(?, ?, ?, ?, ?)
-Hibernate:
-select
-pescadores0_.id as id23_,
-pescadores0_.empresaId as empresaId23_,
-pescadores0_.fimSafra as fimSafra23_,
-pescadores0_.inicioSafra as inicioSa4_23_,
-pescadores0_.ssp as ssp23_
-from
-PescadorEspecieCapturada pescadores0_
-
-Hibernate:
-update
-PescadorEspecieCapturada
-set
-empresaId=?,
-fimSafra=?,
-inicioSafra=?,
-ssp=?
-where
-id=?
-
- */
 package br.com.dao;
 
 import br.com.Persistencia.Conexao;

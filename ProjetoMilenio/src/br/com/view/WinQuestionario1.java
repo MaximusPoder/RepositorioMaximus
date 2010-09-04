@@ -41,7 +41,7 @@ public class WinQuestionario1 extends javax.swing.JPanel {
     private void setQuestionario1ForPanel(EmpresaQuestionario1 eq) {
 
         tfQuestao8.setText(eq.getQuestao8());
-
+        tfObs.setText(eq.getObservacao());
         tfQuestao9_1.setText(eq.getQuestao9_1());
         tfQuestao9_2.setText(eq.getQuestao9_2());
         tfQuestao9_3.setText(eq.getQuestao9_3());
@@ -75,7 +75,7 @@ public class WinQuestionario1 extends javax.swing.JPanel {
 
         try {
             String questao8 = tfQuestao8.getText();
-
+            String obs = tfObs.getText();
             String questao9_1 = tfQuestao9_1.getText();
             String questao9_2 = tfQuestao9_2.getText();
             String questao9_3 = tfQuestao9_3.getText();
@@ -101,7 +101,7 @@ public class WinQuestionario1 extends javax.swing.JPanel {
             String questao13 = tfQuestao13.getText();
 
             if (empresaQuestionario1 != null) {
-
+                empresaQuestionario1.setObservacao(obs);
                 empresaQuestionario1.all(questao8, questao9_1, questao9_2, questao9_3, questao9_4,
                         questao9_5, questao9_6, questao9_7, questao9_8, questao9_9,
                         questao9_10, questao9_11, questao9_12, questao9_13, questao9_14,
@@ -113,6 +113,7 @@ public class WinQuestionario1 extends javax.swing.JPanel {
             }
 
             EmpresaQuestionario1 eq = new EmpresaQuestionario1();
+            eq.setObservacao(obs);
             eq.all(questao8, questao9_1, questao9_2, questao9_3, questao9_4,
                         questao9_5, questao9_6, questao9_7, questao9_8, questao9_9,
                         questao9_10, questao9_11, questao9_12, questao9_13, questao9_14,

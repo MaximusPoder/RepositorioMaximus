@@ -61,7 +61,7 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
     private void action(ActionEvent e) {
 
         String cmd = e.getActionCommand();
-
+if(cbEspecie.getSelectedIndex()>0){
         if (cmd.equalsIgnoreCase("Salvar")) {
             if (ep == null) {
                 ep = getEmpresaEspecieProcessadaOfPanel();
@@ -73,12 +73,12 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
         } else if (cmd.equalsIgnoreCase("Excluir")) {
             ep = getEmpresaEspecieProcessadaOfPanel();
             new DaoEspecieProcessada().excluir(ep);
-        } else if (cmd.equalsIgnoreCase("Atualizar")) {
-        }
+        } 
         ep = null;
         clearTable();
         clearTab(tabEspecieProcessada);
         refresh();
+}else Mensagens.showMessageErroPreencherDados();
 
         
     }
@@ -111,13 +111,15 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
             String precoVenda = tfVenda.getText();
             Integer empresaId = WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId();
             Integer especieId = empresasEBs.get(cbEspecie.getSelectedIndex() - 1).getId();
-
+            String obs = tfObs.getText();
             if (ep != null) {
+                ep.setObservacao(obs);
                 ep.all(produto, quantidadeProduzida, precoVenda, especieId, empresaId);
                 return ep;
             }
 
             EspecieProcessada ep = new EspecieProcessada();
+              ep.setObservacao(obs);
             ep.all(produto, quantidadeProduzida, precoVenda, especieId, empresaId);
             return ep;
         } catch (Exception e) {
@@ -143,6 +145,7 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
         SetValueComBoBoxProduto(ep);
         tfQuantidade.setText(ep.getQuantidadeProduzida());
         tfVenda.setText(ep.getPrecoVenda());
+        tfObs.setText(ep.getObservacao());
 
     }
 
@@ -152,6 +155,7 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
         SetValueComBoBoxProduto(ep);
         tfQuantidade.setText(ep.getQuantidadeProduzida());
         tfVenda.setText(ep.getPrecoVenda());
+        tfObs.setText(ep.getObservacao());
         return ep;
     }
 
@@ -178,6 +182,11 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
                     if (cbEspecie.getSelectedIndex() > 0) {
                         clearTable();
                         refreshEspecieProcessada();
+                    }else
+                    {
+                         clearTable();
+                          clearTab(tabEspecieProcessada);
+                         ep = null;
                     }
                 }
             }
@@ -237,7 +246,7 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
             EspecieProcessada e = list.get(i);
             Object[] objeto = {e.getProduto(),
                 e.getQuantidadeProduzida(),
-                "R$ " + ToMoney.StringtoMoney(e.getPrecoVenda())};
+                "R$ " + ToMoney.StringtoMoney(e.getPrecoVenda()),e.getObservacao()};
 
             model.addRow(objeto);
         }
@@ -327,7 +336,7 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
                                         .addComponent(cbEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel19)))
                             .addComponent(jLabel48))))
-                .addContainerGap(128, Short.MAX_VALUE))
+                .addContainerGap(289, Short.MAX_VALUE))
         );
         panelCrudEmpresa2Layout.setVerticalGroup(
             panelCrudEmpresa2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -362,11 +371,11 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Produto", "Quantidade", "Preço de Venda (R$)"
+                "Produto", "Quantidade", "Preço de Venda (R$)", "Observacao"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -394,38 +403,36 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
         tabEspecieProcessadaLayout.setHorizontalGroup(
             tabEspecieProcessadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabEspecieProcessadaLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(tabEspecieProcessadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel24)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabEspecieProcessadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cbProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfOutro, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(61, 61, 61)
-                .addGroup(tabEspecieProcessadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(tabEspecieProcessadaLayout.createSequentialGroup()
-                        .addComponent(jLabel27)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(tfQuantidade))
+                        .addGap(23, 23, 23)
+                        .addGroup(tabEspecieProcessadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel24)
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(tabEspecieProcessadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfOutro, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(61, 61, 61)
+                        .addGroup(tabEspecieProcessadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(tabEspecieProcessadaLayout.createSequentialGroup()
+                                .addComponent(jLabel27)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tfQuantidade))
+                            .addGroup(tabEspecieProcessadaLayout.createSequentialGroup()
+                                .addComponent(jLabel26)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tfVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(tabEspecieProcessadaLayout.createSequentialGroup()
-                        .addComponent(jLabel26)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(tfVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(360, Short.MAX_VALUE))
-            .addGroup(tabEspecieProcessadaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(tabEspecieProcessadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addContainerGap(471, Short.MAX_VALUE))
-            .addGroup(tabEspecieProcessadaLayout.createSequentialGroup()
-                .addGroup(tabEspecieProcessadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(panelCrudEmpresa2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tabEspecieProcessadaLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(tabEspecieProcessadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2)))
+                    .addGroup(tabEspecieProcessadaLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 747, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(143, Short.MAX_VALUE))
+            .addComponent(panelCrudEmpresa2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         tabEspecieProcessadaLayout.setVerticalGroup(
             tabEspecieProcessadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -467,7 +474,7 @@ public class WinEspecieProcessada extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(tabEspecieProcessada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(388, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
