@@ -25,7 +25,8 @@ public class DAOEmpresaMercado implements IOperationBean<EmpresaMercado> {
     public boolean cadastrar(EmpresaMercado bean) {
 
         String query = " insert     into         EmpresaMercado     " +
-                "    (destino, empresaId, especie, mercado, produto, valor, volume)  " +
+                "    (destino, empresaId, especie, mercado, produto, valor,"
+                + "observacao, volume)  " +
                 "   values   " +
                 "('" + bean.getDestino() + "'," +
                 "  " + bean.getEmpresaId() + "," +
@@ -33,6 +34,7 @@ public class DAOEmpresaMercado implements IOperationBean<EmpresaMercado> {
                 " '" + bean.getMercado() + "'," +
                 " '" + bean.getProduto() + "'," +
                 " '" + bean.getValor() + "'," +
+                 " '" + bean.getObservacao()+ "'," +
                 " '" + bean.getVolume() + "')";
                 
         try {
@@ -88,7 +90,7 @@ public class DAOEmpresaMercado implements IOperationBean<EmpresaMercado> {
                 e.setVolume(set.getString(fields[index++]));
                 e.setValor(set.getString(fields[index++]));
                 e.setEmpresaId(set.getInt(fields[index++]));
-
+                e.setObservacao(set.getString(fields[index++]));
                 empresas.add(e);
             }
 
