@@ -104,7 +104,8 @@ public class WinEmpresaMercado extends javax.swing.JPanel {
         for (int i = 0; i < list.size(); i++) {
             EmpresaMercado e = list.get(i);
             Object[] objeto = {e.getMercado(), e.getEspecie(),
-                e.getProduto(), e.getDestino(), e.getVolume(), "R$ " + ToMoney.StringtoMoney(e.getValor())};
+                e.getProduto(), e.getDestino(), e.getVolume(),
+                "R$ " + ToMoney.StringtoMoney(e.getValor()),e.getObservacao()};
             model.addRow(objeto);
         }
     }
@@ -112,6 +113,7 @@ public class WinEmpresaMercado extends javax.swing.JPanel {
     private EmpresaMercado getEDFofPanel() {
 
         if (edf != null) {
+            edf.setObservacao(tfObs.getText());
             edf.setMercado(cbMercado.getSelectedItem().toString());
             edf.setEspecie(tfEspecie.getText());
             edf.setProduto(tfProduto.getText());
@@ -121,7 +123,7 @@ public class WinEmpresaMercado extends javax.swing.JPanel {
             return edf;
         }
         EmpresaMercado edf = new EmpresaMercado();
-
+        edf.setObservacao(tfObs.getText());
         edf.setMercado(cbMercado.getSelectedItem().toString());
         edf.setEspecie(tfEspecie.getText());
         edf.setProduto(tfProduto.getText());
@@ -136,6 +138,7 @@ public class WinEmpresaMercado extends javax.swing.JPanel {
 
         EmpresaMercado e = edfs.get(table.getSelectedRow());
         cbMercado.setSelectedItem(e.getMercado());
+        tfObs.setText(e.getObservacao());
         tfEspecie.setText(e.getEspecie());
         tfProduto.setText(e.getProduto());
         tfDestino.setText(e.getDestino());
@@ -288,11 +291,11 @@ public class WinEmpresaMercado extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Mercado", "Espécie", "Produto", "Destino", "Volume", "Valor"
+                "Mercado", "Espécie", "Produto", "Destino", "Volume", "Valor", "Observacao"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                true, false, false, false, false, true
+                true, false, false, false, false, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -406,7 +409,7 @@ public class WinEmpresaMercado extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1157, Short.MAX_VALUE))
+                .addContainerGap(1174, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
