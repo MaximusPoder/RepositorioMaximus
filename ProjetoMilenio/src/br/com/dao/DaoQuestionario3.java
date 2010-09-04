@@ -2,7 +2,6 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package br.com.dao;
 
 import br.com.Persistencia.Conexao;
@@ -18,25 +17,32 @@ import java.util.logging.Logger;
  *
  * @author Elton
  */
-public class DaoQuestionario3 implements IOperationBean<EmpresaQuestionario3>{
+public class DaoQuestionario3 implements IOperationBean<EmpresaQuestionario3> {
 
     private Conexao conexao;
 
     public boolean cadastrar(EmpresaQuestionario3 bean) {
 
-        String query = "insert     into         EmpresaQuestionario3    " +
-               "     (empresaId, questao24, questao25, questao26, questao27," +
-               " questao28, questao29,observacao,questao30)" +
-               " values  " +
-               " ("+bean.getEmpresaId()+"," +
-               " '"+bean.getQuestao24()+"'," +
-               " '"+bean.getQuestao25()+"'," +
-               " '"+bean.getQuestao26()+"'," +
-               " '"+bean.getQuestao27()+"'," +
-               " '"+bean.getQuestao28()+"'," +
-               " '"+bean.getQuestao29()+"'," +
-               " '"+bean.getObservacao()+"'," +
-               " '"+bean.getQuestao30()+"')";
+        String query = "insert     into         EmpresaQuestionario3    "
+                + "     (empresaId, questao24, questao25Qual,questao25Quando,"
+                + "questao25Porque, questao26DesdeQuando,questao26QuantosBarcos,"
+                + "questao26QuantosLitros,questao26Porque, questao27,"
+                + " questao28, questao29,observacao,questao30)"
+                + " values  "
+                + " (" + bean.getEmpresaId() + ","
+                + " '" + bean.getQuestao24() + "',"
+                + " '" + bean.getQuestao25Qual() + "',"
+                + " '" + bean.getQuestao25Quando() + "',"
+                + " '" + bean.getQuestao25Porque() + "',"
+                + " '" + bean.getQuestao26DesdeQuando() + "',"
+                + " '" + bean.getQuestao26QuantosBarcos() + "',"
+                + " '" + bean.getQuestao26QuantosBarcos() + "',"
+                + " '" + bean.getQuestao26Porque() + "',"
+                + " '" + bean.getQuestao27() + "',"
+                + " '" + bean.getQuestao28() + "',"
+                + " '" + bean.getQuestao29() + "',"
+                + " '" + bean.getObservacao() + "',"
+                + " '" + bean.getQuestao30() + "')";
         try {
             conexao = new Conexao();
             conexao.conecta("mil_interface");
@@ -50,11 +56,11 @@ public class DaoQuestionario3 implements IOperationBean<EmpresaQuestionario3>{
     }
 
     public boolean excluir(EmpresaQuestionario3 bean) {
-          try {
+        try {
             conexao = new Conexao();
             conexao.conecta("mil_interface");
-            String query = " delete     from        EmpresaQuestionario3   where  " +
-                    "       id = " + bean.getId();
+            String query = " delete     from        EmpresaQuestionario3   where  "
+                    + "       id = " + bean.getId();
             return conexao.update(query);
         } catch (Exception e) {
         } finally {
@@ -64,20 +70,25 @@ public class DaoQuestionario3 implements IOperationBean<EmpresaQuestionario3>{
     }
 
     public boolean atualizar(EmpresaQuestionario3 bean) {
-         try {
+        try {
             conexao = new Conexao();
             conexao.conecta("mil_interface");
-            String query = "update         EmpresaQuestionario3     set    " +
-                    "     empresaId="+bean.getEmpresaId()+",    " +
-                    "    questao24='"+bean.getQuestao24()+"',     " +
-                    "    questao25='"+bean.getQuestao25()+"',    " +
-                    "    questao26='"+bean.getQuestao26()+"',    " +
-                    "    questao27='"+bean.getQuestao27()+"',    " +
-                    "    questao28='"+bean.getQuestao28()+"',   " +
-                    "    questao29='"+bean.getQuestao29()+"',    " +
-                    "    observacao='"+bean.getObservacao()+"',    " +
-                    "    questao30='"+bean.getQuestao30()+"'    " +
-                    "       where         id= "+bean.getId();
+            String query = "update         EmpresaQuestionario3     set    "
+                    + "     empresaId=" + bean.getEmpresaId() + ",    "
+                    + "    questao24='" + bean.getQuestao24() + "',     "
+                    + "    questao25Porque='" + bean.getQuestao25Porque() + "',    "
+                    + "    questao25Qual='" + bean.getQuestao25Qual() + "',    "
+                    + "    questao25Quando='" + bean.getQuestao25Quando() + "',    "
+                    + "    questao26DesdeQuando='" + bean.getQuestao26DesdeQuando() + "',    "
+                    + "    questao26Porque='" + bean.getQuestao26Porque() + "',    "
+                    + "    questao26QuantosBarcos='" + bean.getQuestao26QuantosBarcos() + "',    "
+                    + "    questao26QuantosLitros='" + bean.getQuestao26QuantosLitros() + "',    "
+                    + "    questao27='" + bean.getQuestao27() + "',    "
+                    + "    questao28='" + bean.getQuestao28() + "',   "
+                    + "    questao29='" + bean.getQuestao29() + "',    "
+                    + "    observacao='" + bean.getObservacao() + "',    "
+                    + "    questao30='" + bean.getQuestao30() + "'    "
+                    + "       where         id= " + bean.getId();
 
             return conexao.update(query);
         } catch (Exception e) {
@@ -92,7 +103,7 @@ public class DaoQuestionario3 implements IOperationBean<EmpresaQuestionario3>{
     }
 
     public EmpresaQuestionario3 getObjectWithQuery(String query) {
-         try {
+        try {
             conexao = new Conexao();
             conexao.conecta("mil_interface");
             conexao.execute(query);
@@ -106,8 +117,16 @@ public class DaoQuestionario3 implements IOperationBean<EmpresaQuestionario3>{
                 int index = 0;
                 e.setId(set.getInt(fields[index++]));
                 e.setQuestao24(set.getString(fields[index++]));
-                e.setQuestao25(set.getString(fields[index++]));
-                e.setQuestao26(set.getString(fields[index++]));
+
+                e.setQuestao25Qual(set.getString(fields[index++]));
+                e.setQuestao25Quando(set.getString(fields[index++]));
+                e.setQuestao25Porque(set.getString(fields[index++]));
+
+                e.setQuestao26DesdeQuando(set.getString(fields[index++]));
+                e.setQuestao26QuantosBarcos(set.getString(fields[index++]));
+                e.setQuestao26QuantosLitros(set.getString(fields[index++]));
+                e.setQuestao26Porque(set.getString(fields[index++]));
+
                 e.setQuestao27(set.getString(fields[index++]));
                 e.setQuestao28(set.getString(fields[index++]));
                 e.setQuestao29(set.getString(fields[index++]));
@@ -124,6 +143,4 @@ public class DaoQuestionario3 implements IOperationBean<EmpresaQuestionario3>{
         }
         return null;
     }
-
 }
-

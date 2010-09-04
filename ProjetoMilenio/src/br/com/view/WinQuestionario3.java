@@ -27,11 +27,10 @@ public class WinQuestionario3 extends javax.swing.JPanel {
     /** Creates new form WinQuestionario3 */
     private EmpresaQuestionario3 eq;
     private DefaultTableModel model;
-   
 
     public WinQuestionario3() {
         initComponents();
-        clearQuestionario3();
+        clearQuestionario();
         initAction();
         iniciaModeloTable27();
         initiActionCmd(tabQuestionario3);
@@ -54,34 +53,46 @@ public class WinQuestionario3 extends javax.swing.JPanel {
 
     private EmpresaQuestionario3 getQuestionario3OfPanel() {
 
+
         try {
             String obs = tfObs.getText();
             String questao24 = tfQuestao24.getText();
-            String questao25 = bgQuestao25.getSelection().getActionCommand() + ";" +
-                    MyUtil.getStringOfFields(tfQuestao25_0, tfQuestao25_1, tfQuestao25_2);
-            String questao26 = bgQuestao26.getSelection().getActionCommand() + ";" +
-                    MyUtil.getStringOfFields(tfQuestao26_0, tfQuestao26_1, tfQuestao26_2, tfQuestao26_3);
-            String questao27 = bgQuestao27.getSelection().getActionCommand() + "/" +
-                    MyUtil.getStringTable(tableQuestao27);
+            String questao25Qual = tfQuestao25_0.getText();
+            String questao25Quando = tfQuestao25_1.getText();
+            String questao25Porque = tfQuestao25_2.getText();
+
+            String questao26DesdeQuando = tfQuestao26_0.getText();
+            String questao26QuantoBarcos = tfQuestao26_1.getText();
+            String questao26QuantosLitros = tfQuestao26_2.getText();
+            String questao26Porque = tfQuestao26_3.getText();
+
+
+
+            String questao27 = bgQuestao27.getSelection().getActionCommand() + "/"
+                    + MyUtil.getStringTable(tableQuestao27);
             String questao28 = MyUtil.getStringOfFields(tfQuestao28_0, tfQuestao28_1, tfQuestao28_2);
             String questao29 = tfQuestao29.getText();
             String questao30 = bgQuestao30.getSelection().getActionCommand() + ";" + tfQuestao30.getText();
 
-
+            int empresaId = WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId();
             if (eq != null) {
                 eq.setObservacao(obs);
-                eq.all(questao24, questao25, questao26, questao27,
-                        questao28, questao29, questao30,
-                        WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
+                eq.all(questao24, questao25Qual, questao25Quando,
+                        questao25Porque, questao26DesdeQuando,
+                        questao26QuantoBarcos,
+                        questao26QuantosLitros, questao26Porque,
+                        questao27, questao28, questao29, questao30, empresaId);
 
                 return eq;
             }
 
             EmpresaQuestionario3 eq = new EmpresaQuestionario3();
             eq.setObservacao(obs);
-            eq.all(questao24, questao25, questao26, questao27,
-                    questao28, questao29, questao30,
-                    WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
+            eq.all(questao24, questao25Qual, questao25Quando,
+                    questao25Porque, questao26DesdeQuando,
+                    questao26QuantoBarcos,
+                    questao26QuantosLitros, questao26Porque,
+                    questao27, questao28, questao29, questao30, empresaId);
             return eq;
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro no cacastro, verifique todos os campos",
@@ -91,12 +102,20 @@ public class WinQuestionario3 extends javax.swing.JPanel {
 
     }
 
-    private void setQuestionario3ForPanel(EmpresaQuestionario3 eq) {
+    private void setQuestionarioForPanel(EmpresaQuestionario3 eq) {
 
         tfQuestao24.setText(eq.getQuestao24());
         tfObs.setText(eq.getObservacao());
-        MyUtil.setStringsToFields(bgQuestao25, eq.getQuestao25(), tfQuestao25_0, tfQuestao25_1, tfQuestao25_2);
-        MyUtil.setStringsToFields(bgQuestao26, eq.getQuestao26(), tfQuestao26_0, tfQuestao26_1, tfQuestao26_2, tfQuestao26_3);
+
+        tfQuestao25_0.setText(eq.getQuestao25Qual());
+        tfQuestao25_1.setText(eq.getQuestao25Quando());
+        tfQuestao25_2.setText(eq.getQuestao25Porque());
+
+        tfQuestao26_0.setText(eq.getQuestao26DesdeQuando());
+        tfQuestao26_1.setText(eq.getQuestao26QuantosBarcos());
+        tfQuestao26_2.setText(eq.getQuestao26QuantosLitros());
+        tfQuestao26_3.setText(eq.getQuestao26Porque());
+
         String[] strings = eq.getQuestao27().split("/");
         String table = "";
         for (int i = 1; i < strings.length; i++) {
@@ -111,7 +130,7 @@ public class WinQuestionario3 extends javax.swing.JPanel {
         MyUtil.setOpcaoWithResponse(bgQuestao30, eq.getQuestao30(), tfQuestao30);
     }
 
-    private void clearQuestionario3() {
+    private void clearQuestionario() {
 
         clearTab(tabQuestionario3);
         MyUtil.limpaTabela(tableQuestao27);
@@ -131,16 +150,15 @@ public class WinQuestionario3 extends javax.swing.JPanel {
                     eq = getQuestionario3OfPanel();
                     new DaoQuestionario3().cadastrar(eq);
                 } else {
-                      eq = getQuestionario3OfPanel();
-                new DaoQuestionario3().atualizar(eq);
-                 //   Mensagens.showMessageNaoCadastrar();
+                    eq = getQuestionario3OfPanel();
+                    new DaoQuestionario3().atualizar(eq);
+                    //   Mensagens.showMessageNaoCadastrar();
                 }
             } else if (cmd.equalsIgnoreCase("Atualizar")) {
-              
             }
             refresh();
-           // clearQuestionario3();
-            
+            // clearQuestionario3();
+
         }
     }
 
@@ -169,25 +187,25 @@ public class WinQuestionario3 extends javax.swing.JPanel {
                 action(e);
             }
         });
-     
+
         btCadastrarQuestionario3.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
                 action(e);
             }
         });
-      
+
     }
 
     private void refresh() {
         eq =
-                new DaoQuestionario3().getObjectWithQuery("select * from EmpresaQuestionario3" +
-                " where empresaId = " +
-                WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
+                new DaoQuestionario3().getObjectWithQuery("select * from EmpresaQuestionario3"
+                + " where empresaId = "
+                + WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
         if (eq != null) {
-            setQuestionario3ForPanel(eq);
+            setQuestionarioForPanel(eq);
         } else {
-            clearQuestionario3();
+            clearQuestionario();
         }
     }
 
@@ -800,38 +818,37 @@ public class WinQuestionario3 extends javax.swing.JPanel {
 
     private void jRadioButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton10ActionPerformed
         // TODO add your handling code here:
-      
+
         MyUtil.setEnableFields(Boolean.FALSE, tfQuestao25_0, tfQuestao25_1, tfQuestao25_2);
 
     }//GEN-LAST:event_jRadioButton10ActionPerformed
 
     private void jRadioButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton9ActionPerformed
         // TODO add your handling code here:
-         MyUtil.setEnableFields(Boolean.TRUE, tfQuestao25_0, tfQuestao25_1, tfQuestao25_2);
+        MyUtil.setEnableFields(Boolean.TRUE, tfQuestao25_0, tfQuestao25_1, tfQuestao25_2);
     }//GEN-LAST:event_jRadioButton9ActionPerformed
 
     private void jRadioButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton13ActionPerformed
         // TODO add your handling code here:
-         MyUtil.setEnableFields(Boolean.TRUE, tfQuestao26_0, tfQuestao26_1, tfQuestao26_2);
-         MyUtil.setEnableFields(Boolean.FALSE, tfQuestao26_3);
+        MyUtil.setEnableFields(Boolean.TRUE, tfQuestao26_0, tfQuestao26_1, tfQuestao26_2);
+        MyUtil.setEnableFields(Boolean.FALSE, tfQuestao26_3);
     }//GEN-LAST:event_jRadioButton13ActionPerformed
 
     private void jRadioButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton14ActionPerformed
         // TODO add your handling code here:
         MyUtil.setEnableFields(Boolean.FALSE, tfQuestao26_0, tfQuestao26_1, tfQuestao26_2);
-         MyUtil.setEnableFields(Boolean.TRUE, tfQuestao26_3);
+        MyUtil.setEnableFields(Boolean.TRUE, tfQuestao26_3);
     }//GEN-LAST:event_jRadioButton14ActionPerformed
 
     private void jRadioButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton16ActionPerformed
         // TODO add your handling code here:
-         MyUtil.setEnableFields(false, tfQuestao30);
+        MyUtil.setEnableFields(false, tfQuestao30);
     }//GEN-LAST:event_jRadioButton16ActionPerformed
 
     private void jRadioButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton15ActionPerformed
         // TODO add your handling code here:
-         MyUtil.setEnableFields(Boolean.TRUE, tfQuestao30);
+        MyUtil.setEnableFields(Boolean.TRUE, tfQuestao30);
     }//GEN-LAST:event_jRadioButton15ActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane ScrollQuestionario3;
     private javax.swing.ButtonGroup bgQuestao25;
