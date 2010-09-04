@@ -10,9 +10,7 @@
  */
 package br.com.view;
 
-import br.com.dao.DAOEmpresa;
 import br.com.dao.DAOEmpresaMaterial;
-import br.com.pojo.Empresa;
 import br.com.util.MyUtil;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

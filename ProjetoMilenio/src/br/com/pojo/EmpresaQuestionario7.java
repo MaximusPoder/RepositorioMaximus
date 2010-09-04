@@ -67,6 +67,16 @@ public class EmpresaQuestionario7 implements Serializable {
         this.empresaId = empresaId;
     }
 
+     @Column
+    private String observacao;
+
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
     public Integer getEmpresaId() {
         return empresaId;
     }

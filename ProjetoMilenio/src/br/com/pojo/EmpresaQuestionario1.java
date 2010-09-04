@@ -78,6 +78,16 @@ public class EmpresaQuestionario1 implements Serializable {
         return questao9_14;
     }
 
+     @Column
+    private String observacao;
+
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
     public void all(String questao8, String questao9_1, String questao9_2, String questao9_3, String questao9_4, String questao9_5, String questao9_6, String questao9_7, String questao9_8, String questao9_9, String questao9_10, String questao9_11, String questao9_12, String questao9_13, String questao9_14, String questao9_15, String questao10_1, String questao10_2, String questao10_3, String questao10_4, String questao11, String questao12, String questao13, Integer empresaId) {
         this.questao8 = questao8;
         this.questao9_1 = questao9_1;

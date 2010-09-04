@@ -30,7 +30,7 @@ public class DAOPescador implements IOperationBean<Pescador> {
                 "      questao11,questao12,questao13,questao14,questao15, questao16, questao17, " +
                 "      questao18, questao19, " +
                 "      questao20,questao21,questao22,questao23,questao24," +
-                " questao25,questao26)" +
+                " questao25,observacao,questao26)" +
                 " values  " +
                 " (" +
                 " '" + bean.getQuestao1() + "'," +
@@ -60,6 +60,7 @@ public class DAOPescador implements IOperationBean<Pescador> {
                 " '" + bean.getQuestao23() + "'," +
                 " '" + bean.getQuestao24() + "'," +
                 " '" + bean.getQuestao25() + "'," +
+                " '" + bean.getObservacao() + "'," +
                 " '" + bean.getQuestao26() + "')";
         try {
             conexao = new Conexao();
@@ -113,6 +114,7 @@ public class DAOPescador implements IOperationBean<Pescador> {
                     "    questao23='" + bean.getQuestao23() + "',    " +
                     "    questao24='" + bean.getQuestao24() + "',    " +
                     "    questao25='" + bean.getQuestao25() + "',    " +
+                    "    observacao='" + bean.getObservacao() + "',    " +
                     "    questao26='" + bean.getQuestao26() + "'    " +
                     "       where         id= " + bean.getId();
 
@@ -164,6 +166,7 @@ public class DAOPescador implements IOperationBean<Pescador> {
                 e.setQuestao24(set.getString(fields[index++]));
                 e.setQuestao25(set.getString(fields[index++]));
                 e.setQuestao26(set.getString(fields[index++]));
+                e.setObservacao(set.getString(fields[index++]));
 
 
                 es.add(e);

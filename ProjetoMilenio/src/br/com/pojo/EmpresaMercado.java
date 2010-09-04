@@ -43,7 +43,16 @@ public class EmpresaMercado implements Serializable {
 
     public EmpresaMercado() {
     }
+ @Column
+    private String observacao;
 
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
     public EmpresaMercado(String mercado, String especie, String produto, String destino, String volume, String valor, Integer empresaId) {
         this.mercado = mercado;
         this.especie = especie;

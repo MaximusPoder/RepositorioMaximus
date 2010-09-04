@@ -81,6 +81,7 @@ public class WinEB extends javax.swing.JPanel {
         tfApetrecho.setText(b.getApetrecho());
         tfEpocaAno.setText(b.getEpocaAno());
         tfTerceiro.setText(b.getTerceiro());
+        tfObs.setText(b.getObservacao());
         return b;
     }
 
@@ -126,13 +127,15 @@ public class WinEB extends javax.swing.JPanel {
             String apetrecho = tfApetrecho.getText();
             String terceiro = tfTerceiro.getText();
             String epocaAno = tfEpocaAno.getText();
-
+            String obs = tfObs.getText();
             if (empresaEB != null) {
+                empresaEB.setObservacao(obs);
                 empresaEB.all(especie, terceiro, apetrecho, epocaAno, empresaEB.getEmpresaId());
                 return empresaEB;
             }
 
             EmpresaEB b = new EmpresaEB();
+            b.setObservacao(obs);
             b.all(especie, terceiro, apetrecho, epocaAno,
                     WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
             return b;
@@ -151,7 +154,7 @@ public class WinEB extends javax.swing.JPanel {
         for (int i = 0; i < list.size(); i++) {
             EmpresaEB e = list.get(i);
             Object[] objeto = {e.getEspecie(),
-                e.getTerceiro(), e.getApetrecho(), e.getEpocaAno()};
+                e.getTerceiro(), e.getApetrecho(), e.getEpocaAno(),e.getObservacao()};
 
             model.addRow(objeto);
         }
@@ -264,11 +267,11 @@ public class WinEB extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Espécie", "Próprio/Terceiro", "Apetrecho", "Época do Ano"
+                "Espécie", "Próprio/Terceiro", "Apetrecho", "Época do Ano", "Obs"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -296,7 +299,7 @@ public class WinEB extends javax.swing.JPanel {
             .addGroup(tabEspecieBeneficiadaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 747, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
             .addGroup(tabEspecieBeneficiadaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(tabEspecieBeneficiadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -316,14 +319,14 @@ public class WinEB extends javax.swing.JPanel {
                         .addComponent(jLabel16)
                         .addGap(18, 18, 18)
                         .addComponent(tfEpocaAno, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(285, Short.MAX_VALUE))
+                .addContainerGap(310, Short.MAX_VALUE))
             .addComponent(panelCrudEmpresa1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(tabEspecieBeneficiadaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(tabEspecieBeneficiadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addContainerGap(450, Short.MAX_VALUE))
+                .addContainerGap(452, Short.MAX_VALUE))
         );
         tabEspecieBeneficiadaLayout.setVerticalGroup(
             tabEspecieBeneficiadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -366,7 +369,7 @@ public class WinEB extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(tabEspecieBeneficiada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addContainerGap(754, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables

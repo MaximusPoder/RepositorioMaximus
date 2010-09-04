@@ -41,6 +41,16 @@ public class EmpresaQuestionario3 implements Serializable {
     @Column
     private Integer empresaId;
 
+     @Column
+    private String observacao;
+
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
     public void all(String questao24, String questao25, String questao26,
             String questao27, String questao28, String questao29, String questao30,
              Integer empresaId) {

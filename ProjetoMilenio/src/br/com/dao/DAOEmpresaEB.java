@@ -25,10 +25,14 @@ public class DAOEmpresaEB implements IOperationBean<EmpresaEB> {
 
     public boolean cadastrar(EmpresaEB bean) {
         String query = " insert     into         EmpresaEB        " +
-                " (apetrecho, empresaId, epocaAno, especie, terceiro)    " +
+                " (apetrecho, empresaId, epocaAno, especie,observacao, terceiro)    " +
                 " values" +
-                "('" + bean.getApetrecho() + "'," + bean.getEmpresaId() + "," +
-                "'" + bean.getEpocaAno() + "','" + bean.getEspecie() + "','" + bean.getTerceiro() + "')";
+                "('" + bean.getApetrecho() +
+                "'," + bean.getEmpresaId() +
+                ",'" + bean.getEpocaAno() +
+                "','" + bean.getEspecie() +
+                "','" + bean.getObservacao() +
+                "','" + bean.getTerceiro() + "')";
         try {
             conexao = new Conexao();
             conexao.conecta("mil_interface");
@@ -63,6 +67,7 @@ public class DAOEmpresaEB implements IOperationBean<EmpresaEB> {
             String query = "update         EmpresaEB     set apetrecho='" + bean.getApetrecho() + "'," +
                     "   empresaId=" + bean.getEmpresaId() + ", epocaAno='" + bean.getEpocaAno() + "'," +
                     "   especie='" + bean.getEspecie() + "',  " +
+                    "   observacao='" + bean.getObservacao() + "',  " +
                     "   terceiro='" + bean.getTerceiro() + "'     where  id=" + bean.getId();
 
             return conexao.update(query);
@@ -93,6 +98,7 @@ public class DAOEmpresaEB implements IOperationBean<EmpresaEB> {
                 e.setApetrecho(set.getString(fields[index++]));
                 e.setEpocaAno(set.getString(fields[index++]));
                 e.setEmpresaId(set.getInt(fields[index++]));
+                e.setObservacao(set.getString(fields[index++]));
 
                 empresas.add(e);
             }

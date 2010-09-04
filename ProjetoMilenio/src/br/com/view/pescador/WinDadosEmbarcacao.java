@@ -120,6 +120,7 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
         tfQuestao15.setText(p.getQuestao15());
         tfQuestao16.setText(p.getQuestao16());
         tfQuestao17.setText(p.getQuestao17());
+        tfObs.setText(p.getObservacao());
 
     }
 
@@ -142,6 +143,7 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
         String questao15 = tfQuestao15.getText();
         String questao16 = tfQuestao16.getText();
         String questao17 = tfQuestao17.getText();
+        String observacao = tfObs.getText();
 
 
         if (this.pde != null) {
@@ -149,10 +151,12 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
                     questao6, questao7, questao8, questao9, questao10,
                     questao11, questao12, questao13, questao14, questao15,
                     questao16, questao17, pde.getPescadorId());
+            pde.setObservacao(observacao);
             return pde;
         }
 
         PescadorDadosEmbarcacao pescador = new PescadorDadosEmbarcacao();
+        pescador.setObservacao(observacao);
         pescador.all(questao1, questao2, questao3, questao4,
                 questao5, questao6, questao7, questao8, questao9,
                 questao10, questao11, questao12, questao13, questao14,

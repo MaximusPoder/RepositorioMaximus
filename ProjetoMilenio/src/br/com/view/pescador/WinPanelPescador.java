@@ -140,6 +140,7 @@ public class WinPanelPescador extends javax.swing.JPanel {
         tfQuestao24.setText(p.getQuestao24());
         tfQuestao25.setText(p.getQuestao25());
         tfQuestao26.setText(p.getQuestao26());
+        tfObs.setText(p.getObservacao());
 
     }
 
@@ -148,6 +149,7 @@ public class WinPanelPescador extends javax.swing.JPanel {
 
 
         try {
+            String observacao = tfObs.getText();
             String questao1 = cbMunicipioQuestao1.getSelectedItem().toString();
             String questao2 = tfQuestao2.getText();
             String questao3 = tfQuestao3.getText();
@@ -177,6 +179,7 @@ public class WinPanelPescador extends javax.swing.JPanel {
             String questao25 = tfQuestao25.getText();
             String questao26 = tfQuestao26.getText();
             if (this.pescador != null) {
+                pescador.setObservacao(observacao);
                 pescador.all(questao1, questao2, questao3, questao4,
                         questao5, questao6, questao7, questao8, questao9,
                         questao10, questao11, questao12, questao13,
@@ -187,6 +190,7 @@ public class WinPanelPescador extends javax.swing.JPanel {
             }
 
             Pescador pescador = new Pescador();
+            pescador.setObservacao(observacao);
             pescador.all(questao1, questao2, questao3, questao4,
                     questao5, questao6, questao7, questao8, questao9,
                     questao10, questao11, questao12, questao13, questao14,

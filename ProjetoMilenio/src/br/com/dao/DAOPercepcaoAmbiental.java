@@ -29,8 +29,9 @@ public class DAOPercepcaoAmbiental implements IOperationBean<PescadorPersPectiva
         String query = "insert     into         PescadorPersPectiva    " +
                 "     (questao0,questao1,questao2,questao3,questao4,questao5," +
                 "      questao6,questao7,questao8,questao9,questao10," +
-                "      questao11,questao12,questao13,questao14,questao15, questao16, questao17, " +
-                "      questao18,pescadorId)" +
+                "      questao11,questao12,questao13,questao14,questao15, " +
+                "      questao16, questao17, " +
+                "      questao18,observacao,pescadorId)" +
                 " values  " +
                 " (" +
                 " '" + bean.getQuestao0() + "'," +
@@ -52,6 +53,7 @@ public class DAOPercepcaoAmbiental implements IOperationBean<PescadorPersPectiva
                 " '" + bean.getQuestao16() + "'," +
                 " '" + bean.getQuestao17() + "'," +
                 " '" + bean.getQuestao18() + "'," +
+                " '" + bean.getObservacao() + "'," +
                 "  " + bean.getPescadorId() + ")";
         try {
             conexao = new Conexao();
@@ -103,6 +105,7 @@ public class DAOPercepcaoAmbiental implements IOperationBean<PescadorPersPectiva
                     "    questao16='" + bean.getQuestao16() + "',    " +
                     "    questao17='" + bean.getQuestao17() + "',    " +
                     "    questao18='" + bean.getQuestao18() + "',    " +
+                    "    observacao='" + bean.getObservacao() + "',    " +
                     "    pescadorId=" + bean.getPescadorId() + "    " +
                     "       where         id= " + bean.getId();
 
@@ -148,6 +151,7 @@ public class DAOPercepcaoAmbiental implements IOperationBean<PescadorPersPectiva
                 e.setQuestao17(set.getString(fields[index++]));
                 e.setQuestao18(set.getString(fields[index++]));
                 e.setPescadorId(set.getInt(fields[index++]));
+                e.setObservacao(set.getString(fields[index++]));
                 es.add(e);
             }
 
@@ -194,6 +198,7 @@ public class DAOPercepcaoAmbiental implements IOperationBean<PescadorPersPectiva
                 es.setQuestao16(set.getString(fields[index++]));
                 es.setQuestao17(set.getString(fields[index++]));
                 es.setQuestao18(set.getString(fields[index++]));
+                es.setObservacao(set.getString(fields[index++]));
                 es.setPescadorId(set.getInt(fields[index++]));
 
             }

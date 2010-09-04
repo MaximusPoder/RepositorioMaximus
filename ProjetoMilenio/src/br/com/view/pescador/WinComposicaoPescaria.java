@@ -158,13 +158,16 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
         tfQuestao15.setText(p.getQuestao15());
         tfQuestao16.setText(p.getQuestao16());
         tfQuestao17.setText(p.getQuestao17());
+        tfObs.setText(p.getObservacao());
         MyUtil.setOpcaoWithResponse(bgQuestao18, p.getQuestao18(), tfQuestao18);
     }
 
     private PescadorComposicao getpescadorComposicaoOfPanel() {
 
         try {
-            String questao1 = tfQuestao1.getText();
+      
+        String observacao = tfObs.getText();
+        String questao1 = tfQuestao1.getText();
         String questao2 = tfQuestao2.getText();
         String questao3 = tfQuestao3.getText();
         String questao4 = tfQuestao4.getText();
@@ -188,6 +191,7 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
                     questao5, questao6, questao7, questao8, questao9, questao10,
                     questao11, questao12, questao13, questao14, questao15, questao16,
                     questao17, questao18, pescadorComposicao.getPescadorId());
+            pescadorComposicao.setObservacao(observacao);
             return pescadorComposicao;
         }
 
@@ -196,7 +200,7 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
                 questao7, questao8, questao9, questao10, questao11, questao12,
                 questao13, questao14, questao15, questao16, questao17, questao18,
                 WinSelecionaPescador.pescadors.get(WinSelecionaPescador.cbPescador.getSelectedIndex() - 1).getId());
-
+            pescador.setObservacao(observacao);
         return pescador;
         } catch (Exception e) {
             Mensagens.showMessageErroPreencherDados();
@@ -472,7 +476,7 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
                         .addComponent(btAdd)
                         .addGap(18, 18, 18)
                         .addComponent(btRemove)))
-                .addContainerGap(850, Short.MAX_VALUE))
+                .addContainerGap(854, Short.MAX_VALUE))
         );
         panelCrudEmpresa7Layout.setVerticalGroup(
             panelCrudEmpresa7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -604,7 +608,7 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(296, Short.MAX_VALUE))
+                .addContainerGap(325, Short.MAX_VALUE))
             .addComponent(panelCrudEmpresa7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(panelCrudEmpresa3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -707,7 +711,7 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 806, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

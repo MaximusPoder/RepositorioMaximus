@@ -47,7 +47,16 @@ public class EmpresaImposto implements Serializable{
         this.empresaId = empresaId;
     }
 
+ @Column
+    private String observacao;
 
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
 
     public String getAno() {
         return ano;

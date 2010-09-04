@@ -66,6 +66,16 @@ public class PescadorPersPectiva implements Serializable {
     @Column
     private Integer pescadorId;
 
+     @Column
+    private String observacao;
+
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
     public void all(String questao0,String questao1, String questao2, String questao3, String questao4, String questao5, String questao6, String questao7, String questao8, String questao9, String questao10, String questao11, String questao12, String questao13, String questao14, String questao15, String questao16, String questao17, String questao18, Integer pescadorId) {
         this.questao0 = questao0;
         this.questao1 = questao1;

@@ -44,7 +44,16 @@ public class PescadorEspecies implements Serializable {
         this.pescadorId = pescadorId;
     }
 
+ @Column
+    private String observacao;
 
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
     public Integer getId() {
         return id;
     }

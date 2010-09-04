@@ -42,6 +42,16 @@ public class EmpresaTripulacao implements Serializable {
     @Column
     private Integer empresaId;
 
+     @Column
+    private String observacao;
+
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
     public Integer getId() {
         return id;
     }

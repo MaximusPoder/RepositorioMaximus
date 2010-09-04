@@ -37,6 +37,16 @@ public class PescadorMaterial implements Serializable {
     @Column
     private String frequencia;
 
+     @Column
+    private String observacao;
+
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
 
     @Column
     private Integer pescadorId;

@@ -91,11 +91,13 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
         tfQuestao15.setText(p.getQuestao15());
         tfQuestao16.setText(p.getQuestao16());
         tfQuestao17.setText(p.getQuestao17());
+        tfObs.setText(p.getObservacao());
 
     }
 
     private PescadorPersPectiva getpescadorOfPanel() {
 
+        String obs = tfObs.getText();
         String questao0 = tfQuestao0.getText();
         String questao1 = tfQuestao1.getText();
         String questao2 = tfQuestao2.getText();
@@ -117,6 +119,7 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
 
 
         if (this.pde != null) {
+            pde.setObservacao(obs);
             pde.all(questao0,questao1, questao2, questao3, questao4,
                     questao5, questao6, questao7, questao8, questao9,
                     questao10, questao11, questao12, questao13, questao14,
@@ -125,6 +128,7 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
         }
 
         PescadorPersPectiva pescador = new PescadorPersPectiva();
+        pescador.setObservacao(obs);
         pescador.all(questao0,questao1, questao2, questao3, questao4,
                 questao5, questao6, questao7, questao8, questao9,
                 questao10, questao11, questao12, questao13, questao14,
