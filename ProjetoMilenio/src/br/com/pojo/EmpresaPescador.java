@@ -35,7 +35,16 @@ public class EmpresaPescador implements Serializable {
     private String destinoPeixePerdido;
     @Column
     private Integer empresaId;
+ @Column
+    private String observacao;
 
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
     public void all(String especie, String causaPerda, String EstimativaPerda, String destinoPeixePerdido, Integer empresaId) {
         this.especie = especie;
         this.causaPerda = causaPerda;

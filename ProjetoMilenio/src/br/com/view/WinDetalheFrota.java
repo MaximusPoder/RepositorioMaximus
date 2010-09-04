@@ -481,6 +481,7 @@ public class WinDetalheFrota extends javax.swing.JPanel {
     private EmpresaDetalhaFrota getEDFofPanel() {
 
         if (edf != null) {
+            edf.setObservacao(tfObs.getText());
             edf.setFrotaEspecie(tfFrota.getText());
             edf.setCompMedio(tfCompMedio.getText());
             edf.setCapEstocagem(tfEstocagem.getText());
@@ -498,6 +499,8 @@ public class WinDetalheFrota extends javax.swing.JPanel {
             return edf;
         }
         EmpresaDetalhaFrota e = new EmpresaDetalhaFrota();
+       
+        e.setObservacao(tfObs.getText());
         e.setFrotaEspecie(tfFrota.getText());
         e.setCompMedio(tfCompMedio.getText());
         e.setCapEstocagem(tfEstocagem.getText());
@@ -518,6 +521,7 @@ public class WinDetalheFrota extends javax.swing.JPanel {
     private EmpresaDetalhaFrota getEDFofTable() {
 
         EmpresaDetalhaFrota e = edfs.get(table.getSelectedRow());
+        tfObs.setText(e.getObservacao());
         tfFrota.setText(e.getFrotaEspecie());
         tfCompMedio.setText(e.getCompMedio());
         tfEstocagem.setText(e.getCapEstocagem());

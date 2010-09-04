@@ -53,6 +53,8 @@ public class EmpresaDetalhaFrota implements Serializable{
     @Column
     private String producao;
     @Column
+    private String observacao;
+    @Column
     private Integer empresaId;
 
     public void all(String frotaEspecie, String compMedio, String capEstocagem, String potenciaMotor, String gps, String ecos, String radar, String sonar, String guincho, String powerBlock, String duracao, String freq, String producao, Integer empresaId) {
@@ -71,6 +73,15 @@ public class EmpresaDetalhaFrota implements Serializable{
         this.producao = producao;
         this.empresaId = empresaId;
     }
+
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
+
 
 
     public String getCapEstocagem() {

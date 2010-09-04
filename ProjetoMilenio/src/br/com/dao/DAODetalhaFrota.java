@@ -1,11 +1,3 @@
-/*
-
- * insert
-
-
-
- */
-
 package br.com.dao;
 
 import br.com.Persistencia.Conexao;
@@ -30,7 +22,7 @@ public class DAODetalhaFrota implements IOperationBean<EmpresaDetalhaFrota> {
         String query = "Insert into         EmpresaDetalheFrota    " +
                 "     (capEstocagem, compMedio, duracao, ecos, empresaId, " +
                 "freq, frotaEspecie, gps, guincho, potenciaMotor, powerBlock," +
-                " producao, radar, sonar)     values     " +
+                " producao, radar, observacao,sonar)     values     " +
                 " ('"+bean.getCapEstocagem()+"'," +
                 "'"+bean.getCompMedio()+"'," +
                 "'"+bean.getDuracao()+"'," +
@@ -44,6 +36,7 @@ public class DAODetalhaFrota implements IOperationBean<EmpresaDetalhaFrota> {
                 " '"+bean.getPowerBlock()+"'," +
                 " '"+bean.getProducao()+"'," +
                 " '"+bean.getRadar()+"'," +
+                 " '"+bean.getObservacao()+"'," +
                 " '"+bean.getSonar()+"')";
         try {
             conexao = new Conexao();
@@ -90,6 +83,7 @@ public class DAODetalhaFrota implements IOperationBean<EmpresaDetalhaFrota> {
                     " powerBlock=  " +  " '"+bean.getPowerBlock()+"'," +
                     " producao=" +   " '"+bean.getProducao()+"'," +
                     " radar= " +  " '"+bean.getRadar()+"'," +
+                    " observacao= " +  " '"+bean.getObservacao()+"'," +
                     " sonar=" + " '"+bean.getSonar()+"'"+
                     "  where id = "+bean.getId();
 
@@ -129,6 +123,7 @@ public class DAODetalhaFrota implements IOperationBean<EmpresaDetalhaFrota> {
                 e.setDuracao(set.getString(fields[index++]));
                 e.setFreq(set.getString(fields[index++]));
                 e.setProducao(set.getString(fields[index++]));
+                e.setObservacao(set.getString(fields[index++]));
                 e.setEmpresaId(set.getInt(fields[index++]));
 
                 empresas.add(e);

@@ -42,6 +42,16 @@ public class EmpresaQuestionario2 {
     @Column
     private Integer empresaId;
 
+     @Column
+    private String observacao;
+
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
     public void all(String questao15, String questao16, String questao17, String questao18, String questao19, String questao20, String questao21, String questao22, Integer empresaId) {
         this.questao15 = questao15;
         this.questao16 = questao16;

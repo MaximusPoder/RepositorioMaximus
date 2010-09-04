@@ -29,7 +29,8 @@ public class DAOPescadorDadosEmbarcacao implements IOperationBean<PescadorDadosE
         String query = "insert     into         PescadorDadosEmbarcacao    " +
                 "     (questao1,questao2,questao3,questao4,questao5," +
                 "      questao6,questao7,questao8,questao9,questao10," +
-                "      questao11,questao12,questao13,questao14,questao15, questao16, questao17, " +
+                "      questao11,questao12,questao13,questao14,questao15, " +
+                "      questao16, questao17,observacao, " +
                 "      pescadorId)" +
                 " values  " +
                 " (" +
@@ -50,6 +51,7 @@ public class DAOPescadorDadosEmbarcacao implements IOperationBean<PescadorDadosE
                 " '" + bean.getQuestao15() + "'," +
                 " '" + bean.getQuestao16() + "'," +
                 " '" + bean.getQuestao17() + "'," +
+                  " '" + bean.getObservacao() + "'," +
                 "  " + bean.getPescadorId() + ")";
         try {
             conexao = new Conexao();
@@ -99,6 +101,7 @@ public class DAOPescadorDadosEmbarcacao implements IOperationBean<PescadorDadosE
                     "    questao15='" + bean.getQuestao15() + "',     " +
                     "    questao16='" + bean.getQuestao16() + "',    " +
                     "    questao17='" + bean.getQuestao17() + "',    " +
+                    "    observacao='" + bean.getObservacao() + "',    " +
                     "    pescadorId=" + bean.getPescadorId() + "    " +
                     "       where         id= " + bean.getId();
 
@@ -142,6 +145,7 @@ public class DAOPescadorDadosEmbarcacao implements IOperationBean<PescadorDadosE
                 e.setQuestao16(set.getString(fields[index++]));
                 e.setQuestao17(set.getString(fields[index++]));
                 e.setPescadorId(set.getInt(fields[index++]));
+                e.setObservacao(set.getString(fields[index++]));
                 es.add(e);
             }
 

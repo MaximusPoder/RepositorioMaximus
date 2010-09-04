@@ -33,6 +33,7 @@ public class EmpresaEB implements Serializable {
     @Column
     private Integer empresaId;
 
+
     public void all(String especie, String terceiro, String apetrecho, String epocaAno, Integer empresaId) {
         this.especie = especie;
         this.terceiro = terceiro;
@@ -41,6 +42,16 @@ public class EmpresaEB implements Serializable {
         this.empresaId = empresaId;
     }
 
+ @Column
+    private String observacao;
+
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
 
     public String getApetrecho() {
         return apetrecho;

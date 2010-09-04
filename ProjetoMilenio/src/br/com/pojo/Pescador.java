@@ -77,6 +77,16 @@ public class Pescador {
     @Column
     private String questao26;
 
+      @Column
+    private String observacao;
+
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
     public void all(String questao1, String questao2, String questao3, String questao4, String questao5, String questao6, String questao7, String questao8, String questao9, String questao10, String questao11, String questao12, String questao13, String questao14, String questao15, String questao16, String questao17, String questao18, String questao19, String questao20, String questao21, String questao22, String questao23, String questao24, String questao25, String questao26) {
         this.questao1 = questao1;
         this.questao2 = questao2;
