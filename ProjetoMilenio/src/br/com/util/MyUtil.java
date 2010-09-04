@@ -46,6 +46,7 @@ public class MyUtil {
     {
         for (JTextField tf : fields) {
             tf.setEnabled(b);
+            tf.setText("");
         }
     }
     public static  void setEnableFields(Boolean b,JTextArea...fields)

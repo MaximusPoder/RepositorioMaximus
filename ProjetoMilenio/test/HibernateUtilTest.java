@@ -16,7 +16,7 @@ public class HibernateUtilTest {
     @Test
     public void testGetInstanceCadastra() {
       
-          String[] fields =   MyUtil.getField(new EmpresaEB());
+          String[] fields = MyUtil.getField(new EmpresaQuestionario3());
           for (String string : fields) {
               System.out.println(string);
         }
