@@ -5,7 +5,6 @@
 package br.com.dao;
 
 import br.com.Persistencia.Conexao;
-import br.com.pojo.Empresa;
 import br.com.pojo.Pescador;
 import br.com.util.MyUtil;
 import java.sql.ResultSet;

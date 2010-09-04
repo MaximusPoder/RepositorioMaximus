@@ -28,7 +28,7 @@ import javax.swing.JRadioButton;
 public class WinQuestionario7 extends javax.swing.JPanel {
 
     /** Creates new form WinQuestionario7 */
-    private EmpresaQuestionario7 empresaQuestionario7;
+    private EmpresaQuestionario7 eq;
  
 
     public WinQuestionario7() {
@@ -40,11 +40,12 @@ public class WinQuestionario7 extends javax.swing.JPanel {
 
     }
 
-    private EmpresaQuestionario7 getQuestionario7OfPanel() {
+    private EmpresaQuestionario7 getQuestionarioOfPanel() {
 
 
 
         try {
+            String obs = tfObs.getText();
             String questao55 = MyUtil.getSelected(ckConsumidor, ckFeiras, ckOutro, ckRest, ckRevendedores, ckSuper);
             String questao56 = bgQuestao56.getSelection().getActionCommand();
             String questao57 = tfQuestao57.getText();
@@ -60,15 +61,17 @@ public class WinQuestionario7 extends javax.swing.JPanel {
             String questao66 = tfQuestao66.getText();
 
 
-            if (empresaQuestionario7 != null) {
-                empresaQuestionario7.all(questao55, questao56, questao57,
+            if (eq != null) {
+                eq.setObservacao(obs);
+                eq.all(questao55, questao56, questao57,
                         questao58, questao59, questao60, questao61, questao62, questao63,
                         questao64, questao65, questao66, WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
 
-                return empresaQuestionario7;
+                return eq;
             }
 
             EmpresaQuestionario7 eq = new EmpresaQuestionario7();
+            eq.setObservacao(obs);
             eq.all(questao55, questao56, questao57, questao58, questao59, questao60,
                     questao61, questao62, questao63, questao64, questao65, questao66,
                     WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
@@ -80,7 +83,7 @@ public class WinQuestionario7 extends javax.swing.JPanel {
         return null;
     }
 
-    private void setQuestionario7ForPanel(EmpresaQuestionario7 eq) {
+    private void setQuestionarioForPanel(EmpresaQuestionario7 eq) {
 
         MyUtil.setSelected(eq.getQuestao55(),
                 ckConsumidor, ckFeiras, ckOutro, ckRest, ckRevendedores, ckSuper);
@@ -88,7 +91,7 @@ public class WinQuestionario7 extends javax.swing.JPanel {
         tfQuestao57.setText(eq.getQuestao57());
         MyUtil.setSelected(eq.getQuestao58(), bgQuestao58);
         tfQuestao59.setText(eq.getQuestao59());
-
+        tfObs.setText(eq.getObservacao());
         MyUtil.setStringsToFields(eq.getQuestao60(), tfQuestao60_0, tfQuestao60_1, tfQuestao60_2, tfQuestao60_3);
         MyUtil.setStringsToFields(eq.getQuestao61(), tfQuestao61_0, tfQuestao61_1);
         MyUtil.setStringsToFields(eq.getQuestao62(), tfQuestao62_0, tfQuestao62_1, tfQuestao62_2);
@@ -99,13 +102,13 @@ public class WinQuestionario7 extends javax.swing.JPanel {
         tfQuestao66.setText(eq.getQuestao66());
     }
 
-    private void clearQuestionario7() {
+    private void clearQuestionario() {
 
         clearTab(tabQuestionario);
         MyUtil.clearCheckBox(tabQuestionario);
         bgQuestao56.clearSelection();
         bgQuestao58.clearSelection();
-        empresaQuestionario7 = null;
+        eq = null;
     }
 
     /*Metodos Actions do 8° Tab = Questionario 3*/
@@ -114,12 +117,12 @@ public class WinQuestionario7 extends javax.swing.JPanel {
         String cmd = e.getActionCommand();
 
         if (cmd.equalsIgnoreCase("Salvar")) {
-            if (empresaQuestionario7 == null) {
-                empresaQuestionario7 = getQuestionario7OfPanel();
-                new DAOQuestionario7().cadastrar(empresaQuestionario7);
+            if (eq == null) {
+                eq = getQuestionarioOfPanel();
+                new DAOQuestionario7().cadastrar(eq);
             } else {
-                 empresaQuestionario7 = getQuestionario7OfPanel();
-            new DAOQuestionario7().atualizar(empresaQuestionario7);
+                 eq = getQuestionarioOfPanel();
+            new DAOQuestionario7().atualizar(eq);
             }
         } else if (cmd.equalsIgnoreCase("Atualizar")) {
         }
@@ -149,14 +152,14 @@ public class WinQuestionario7 extends javax.swing.JPanel {
     }
 
     private void refresh() {
-        empresaQuestionario7 =
+        eq =
                 new DAOQuestionario7().getObjectWithQuery("select * from EmpresaQuestionario7" +
                 " where empresaId = " +
                 WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
-        if (empresaQuestionario7 != null) {
-            setQuestionario7ForPanel(empresaQuestionario7);
+        if (eq != null) {
+            setQuestionarioForPanel(eq);
         } else {
-            clearQuestionario7();
+            clearQuestionario();
         }
     }
 

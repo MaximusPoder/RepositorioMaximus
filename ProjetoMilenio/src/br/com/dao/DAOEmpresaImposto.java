@@ -33,11 +33,14 @@ public class DAOEmpresaImposto implements IOperationBean<EmpresaImposto> {
 
     public boolean cadastrar(EmpresaImposto bean) {
         String query = "insert     into         EmpresaImposto      " +
-                "   (ano, anterior, atual, empresaId, imposto)  " +
+                "   (ano, anterior, atual, empresaId,observacao, imposto)  " +
                 "   values  " +
-                "  ('" + bean.getAno() + "', '" + bean.getAnterior() + "'," +
-                " '" + bean.getAtual() + "', " +
-                bean.getEmpresaId() + ", '" + bean.getImposto() + "')";
+                "('" + bean.getAno() + "', '" +
+                bean.getAnterior() + "','" +
+                bean.getAtual() + "', " +
+                bean.getEmpresaId() +", '" + 
+                bean.getObservacao() + "', '" +
+                bean.getImposto() + "')";
         try {
             conexao = new Conexao();
             conexao.conecta("mil_interface");
@@ -73,11 +76,13 @@ public class DAOEmpresaImposto implements IOperationBean<EmpresaImposto> {
                     "    anterior='" + bean.getAnterior() + "',    " +
                     "    atual='" + bean.getAtual() + "',  " +
                     "    empresaId=" + bean.getEmpresaId() + "," +
+                    "    observacao='" + bean.getObservacao() + "',   " +
                     "    imposto='" + bean.getImposto() + "'   " +
                     "    where  id= "+bean.getId();
 
             return conexao.update(query);
         } catch (Exception e) {
+            System.out.println(e);
         } finally {
             conexao.desconecta();
         }
@@ -104,6 +109,7 @@ public class DAOEmpresaImposto implements IOperationBean<EmpresaImposto> {
                 e.setAtual(set.getString(fields[index++]));
                 e.setAno(set.getString(fields[index++]));
                 e.setEmpresaId(set.getInt(fields[index++]));
+                e.setObservacao(set.getString(fields[index++]));
 
                 empresas.add(e);
             }

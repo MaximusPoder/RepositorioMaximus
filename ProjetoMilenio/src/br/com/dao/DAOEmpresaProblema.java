@@ -22,9 +22,13 @@ public class DAOEmpresaProblema implements IOperationBean<EmpresaProblema> {
 
     public boolean cadastrar(EmpresaProblema bean) {
         String query = "insert    into        EmpresaProblema   " +
-                "     (empresaId, obs, problema, tipo)  " +
-                "      values        (" + bean.getEmpresaId() + ",'" + bean.getObs() + "'," +
-                " '" + bean.getProblema() + "', '" + bean.getTipo() + "')";
+                "     (empresaId, obs, problema, observacao,tipo)  " +
+                "      values   "
+                + " (" + bean.getEmpresaId() + ",'" +
+                bean.getObs() + "','" +
+                bean.getProblema() +  "', '"+
+                bean.getObservacao() +  "', '"
+                + bean.getTipo() + "')";
         try {
             conexao = new Conexao();
             conexao.conecta("mil_interface");
@@ -59,6 +63,7 @@ public class DAOEmpresaProblema implements IOperationBean<EmpresaProblema> {
                     "     empresaId=" + bean.getEmpresaId() + ",       " +
                     "     obs='" + bean.getObs() + "',     " +
                     "    problema='" + bean.getProblema() + "',     " +
+                    "    observacao='" + bean.getObservacao() + "',     " +
                     "    tipo='" + bean.getTipo() + "'   " +
                     "    where         id= " + bean.getId();
 
@@ -89,6 +94,7 @@ public class DAOEmpresaProblema implements IOperationBean<EmpresaProblema> {
                 e.setTipo(set.getString(fields[index++]));
                 e.setObs(set.getString(fields[index++]));
                 e.setEmpresaId(set.getInt(fields[index++]));
+                 e.setObservacao(set.getString(fields[index++]));
 
                 empresas.add(e);
             }

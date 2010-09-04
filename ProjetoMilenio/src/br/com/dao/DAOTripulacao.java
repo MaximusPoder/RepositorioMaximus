@@ -1,17 +1,6 @@
-/*
- insert
-    into
-        EmpresaTripulacao
-        (custo, empresaId, frotaEspecie, funcao, lucro, numero, relacaoTrabalho, salario, id)
-    values
-        (?, ?, ?, ?, ?, ?, ?, ?, ?)
-
- */
-
 package br.com.dao;
 
 import br.com.Persistencia.Conexao;
-import br.com.pojo.EmpresaTripulacao;
 import br.com.pojo.EmpresaTripulacao;
 import br.com.util.MyUtil;
 import java.sql.ResultSet;
@@ -32,11 +21,17 @@ public class DAOTripulacao implements IOperationBean<EmpresaTripulacao>{
     public boolean cadastrar(EmpresaTripulacao bean) {
         String query = "insert     into         EmpresaTripulacao  " +
                 "       (custo, empresaId, frotaEspecie, funcao, " +
-                "lucro, numero, relacaoTrabalho, salario)   " +
+                "lucro, numero, relacaoTrabalho,observacao, salario)   " +
                 "  values" +
-                "         ('"+bean.getCusto()+"',"+bean.getEmpresaId()+"," +
-                "'"+bean.getFrotaEspecie()+"','"+bean.getFuncao()+"','"+bean.getLucro()+"'," +
-                "'"+bean.getNumero()+"','"+bean.getRelacaoTrabalho()+"','"+bean.getSalario()+"')";
+                "('"+bean.getCusto()+"',"+
+                bean.getEmpresaId()+",'" +
+                bean.getFrotaEspecie()+"','"+
+                bean.getFuncao()+"','"+
+                bean.getLucro()+"','" +
+                bean.getNumero()+"','"+
+                bean.getRelacaoTrabalho()+"','"+
+                bean.getObservacao()+"','"+
+                bean.getSalario()+"')";
         try {
             conexao = new Conexao();
             conexao.conecta("mil_interface");
@@ -90,7 +85,7 @@ public class DAOTripulacao implements IOperationBean<EmpresaTripulacao>{
                 e.setCusto(set.getString(fields[index++]));
                 e.setLucro(set.getString(fields[index++]));
                 e.setEmpresaId(set.getInt(fields[index++]));
-
+                e.setObservacao(set.getString(fields[index++]));
                 empresas.add(e);
             }
 

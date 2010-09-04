@@ -26,7 +26,7 @@ public class DaoQuestionario3 implements IOperationBean<EmpresaQuestionario3>{
 
         String query = "insert     into         EmpresaQuestionario3    " +
                "     (empresaId, questao24, questao25, questao26, questao27," +
-               " questao28, questao29,questao30)" +
+               " questao28, questao29,observacao,questao30)" +
                " values  " +
                " ("+bean.getEmpresaId()+"," +
                " '"+bean.getQuestao24()+"'," +
@@ -35,6 +35,7 @@ public class DaoQuestionario3 implements IOperationBean<EmpresaQuestionario3>{
                " '"+bean.getQuestao27()+"'," +
                " '"+bean.getQuestao28()+"'," +
                " '"+bean.getQuestao29()+"'," +
+               " '"+bean.getObservacao()+"'," +
                " '"+bean.getQuestao30()+"')";
         try {
             conexao = new Conexao();
@@ -74,6 +75,7 @@ public class DaoQuestionario3 implements IOperationBean<EmpresaQuestionario3>{
                     "    questao27='"+bean.getQuestao27()+"',    " +
                     "    questao28='"+bean.getQuestao28()+"',   " +
                     "    questao29='"+bean.getQuestao29()+"',    " +
+                    "    observacao='"+bean.getObservacao()+"',    " +
                     "    questao30='"+bean.getQuestao30()+"'    " +
                     "       where         id= "+bean.getId();
 
@@ -111,6 +113,7 @@ public class DaoQuestionario3 implements IOperationBean<EmpresaQuestionario3>{
                 e.setQuestao29(set.getString(fields[index++]));
                 e.setQuestao30(set.getString(fields[index++]));
                 e.setEmpresaId(set.getInt(fields[index++]));
+                e.setObservacao(set.getString(fields[index++]));
             }
 
             return e;

@@ -39,7 +39,8 @@ public class DAOQuestionario1 implements IOperationBean<EmpresaQuestionario1> {
                 "9acondicionamento," +
                 "9congelamento," +
                 "9embalagem," +
-                "9estocagem," +
+                "9estocagem,"+ 
+                "observacao," +
                 "9expedicao)    " +
                 " values  " +
                 "(" + bean.getEmpresaId() + "," +
@@ -65,6 +66,7 @@ public class DAOQuestionario1 implements IOperationBean<EmpresaQuestionario1> {
                 "'" + bean.getQuestao9_12() + "'," +
                 "'" + bean.getQuestao9_13() + "'," +
                 "'" + bean.getQuestao9_14() + "'," +
+                "'" + bean.getObservacao() + "'," +
                 "'" + bean.getQuestao9_15() + "')";
         try {
             conexao = new Conexao();
@@ -127,6 +129,7 @@ public class DAOQuestionario1 implements IOperationBean<EmpresaQuestionario1> {
                     "     9congelamento='" + bean.getQuestao9_12() + "',   " +
                     "     9embalagem='" + bean.getQuestao9_13() + "',   " +
                     "     9estocagem='" + bean.getQuestao9_14() + "',   " +
+                    "     observacao='" + bean.getObservacao() + "',   " +
                     "    9expedicao='" + bean.getQuestao9_15() + "'    " +
                     "       where         id= " + bean.getId();
 
@@ -173,6 +176,7 @@ public class DAOQuestionario1 implements IOperationBean<EmpresaQuestionario1> {
                 e.setQuestao9_14(set.getString("9estocagem"));
                 e.setQuestao9_15(set.getString("9expedicao"));
 
+                e.setObservacao(set.getString("observacao"));
                 e.setQuestao10_1(set.getString("10file"));
                 e.setQuestao10_2(set.getString("10posta"));
                 e.setQuestao10_3(set.getString("10inteiro"));

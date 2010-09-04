@@ -94,7 +94,7 @@ public class WinEmpresaPescador extends javax.swing.JPanel {
         for (int i = 0; i < list.size(); i++) {
             EmpresaPescador e = list.get(i);
             Object[] objeto = {e.getEspecie(), e.getCausaPerda(),
-                e.getEstimativaPerda(), e.getDestinoPeixePerdido()};
+                e.getEstimativaPerda(), e.getDestinoPeixePerdido(),e.getObservacao()};
             model.addRow(objeto);
         }
     }
@@ -102,7 +102,7 @@ public class WinEmpresaPescador extends javax.swing.JPanel {
     private EmpresaPescador getEDFofPanel() {
 
         if (edf != null) {
-
+            edf.setObservacao(tfObs.getText());
             edf.setEspecie(tfEspecie.getText());
             edf.setCausaPerda(tfCausa.getText());
             edf.setEstimativaPerda(tfEstimativa.getText());
@@ -111,6 +111,7 @@ public class WinEmpresaPescador extends javax.swing.JPanel {
             return edf;
         }
         EmpresaPescador edf = new EmpresaPescador();
+         edf.setObservacao(tfObs.getText());
         edf.setEspecie(tfEspecie.getText());
         edf.setCausaPerda(tfCausa.getText());
         edf.setEstimativaPerda(tfEstimativa.getText());
@@ -122,7 +123,7 @@ public class WinEmpresaPescador extends javax.swing.JPanel {
     private EmpresaPescador getEDFofTable() {
 
         EmpresaPescador e = edfs.get(table.getSelectedRow());
-
+        tfObs.setText(e.getObservacao());
         tfEspecie.setText(e.getEspecie());
         tfCausa.setText(e.getCausaPerda());
         tfEstimativa.setText(e.getEstimativaPerda());
@@ -264,11 +265,11 @@ public class WinEmpresaPescador extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Espécie", "Causa da Perda", "Estimativa da Perda (%)", "Destino do Peixe perdido"
+                "Espécie", "Causa da Perda", "Estimativa da Perda (%)", "Destino do Peixe perdido", "Observacao"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -316,14 +317,14 @@ public class WinEmpresaPescador extends javax.swing.JPanel {
                                 .addGap(84, 84, 84)
                                 .addComponent(tfDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 747, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addContainerGap(143, Short.MAX_VALUE))
             .addComponent(panelCrudEmpresa1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addContainerGap(524, Short.MAX_VALUE))
+                .addContainerGap(526, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -353,7 +354,7 @@ public class WinEmpresaPescador extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addContainerGap(1301, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -74,6 +74,7 @@ public class WinQuestionario2 extends javax.swing.JPanel {
 
 
         try {
+            String obs = tfObs.getText();
             String questao15 = bgQuestao15.getSelection().getActionCommand();
             String questao16 = tfQuestao16.getText();
             String questao17 = tfQuestao17.getText();
@@ -84,7 +85,7 @@ public class WinQuestionario2 extends javax.swing.JPanel {
             String questao22 = tfQuestao22.getText();
 
             if (empresaQuestionario2 != null) {
-
+                empresaQuestionario2.setObservacao(obs);
                 empresaQuestionario2.all(questao15, questao16, questao17, questao18,
                         questao19, questao20, questao21, questao22,
                         WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
@@ -92,6 +93,7 @@ public class WinQuestionario2 extends javax.swing.JPanel {
             }
 
             EmpresaQuestionario2 eq = new EmpresaQuestionario2();
+            eq.setObservacao(obs);
             eq.all(questao15, questao16, questao17, questao18,
                     questao19, questao20, questao21, questao22,
                     WinSelecionaEmpresa.empresas.get(WinSelecionaEmpresa.cbEmpresa.getSelectedIndex() - 1).getId());
@@ -108,6 +110,7 @@ public class WinQuestionario2 extends javax.swing.JPanel {
     private void setQuestionario2ForPanel(EmpresaQuestionario2 eq) {
 
         MyUtil.setSelected(eq.getQuestao15(), bgQuestao15);
+        tfObs.setText(eq.getObservacao());
         tfQuestao16.setText(eq.getQuestao16());
         tfQuestao17.setText(eq.getQuestao17());
         tfQuestao18.setText(eq.getQuestao18());

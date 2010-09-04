@@ -7,7 +7,6 @@ package br.com.dao;
 
 import br.com.Persistencia.Conexao;
 import br.com.pojo.PescadorDadosEmbarcacao;
-import br.com.pojo.PescadorDadosEmbarcacao;
 import br.com.util.MyUtil;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -51,7 +50,7 @@ public class DAOPescadorDadosEmbarcacao implements IOperationBean<PescadorDadosE
                 " '" + bean.getQuestao15() + "'," +
                 " '" + bean.getQuestao16() + "'," +
                 " '" + bean.getQuestao17() + "'," +
-                  " '" + bean.getObservacao() + "'," +
+                " '" + bean.getObservacao() + "'," +
                 "  " + bean.getPescadorId() + ")";
         try {
             conexao = new Conexao();
@@ -189,9 +188,9 @@ public class DAOPescadorDadosEmbarcacao implements IOperationBean<PescadorDadosE
                 es.setQuestao15(set.getString(fields[index++]));
                 es.setQuestao16(set.getString(fields[index++]));
                 es.setQuestao17(set.getString(fields[index++]));
-             
-                es.setPescadorId(set.getInt(fields[index++]));
 
+                es.setPescadorId(set.getInt(fields[index++]));
+                 es.setObservacao(set.getString(fields[index++]));
             }
 
             return es;

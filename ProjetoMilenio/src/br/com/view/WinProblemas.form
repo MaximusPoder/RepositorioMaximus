@@ -47,29 +47,29 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jScrollPane5" alignment="0" min="-2" pref="788" max="-2" attributes="0"/>
                       <Component id="jScrollPane3" alignment="0" min="-2" pref="364" max="-2" attributes="0"/>
                       <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jScrollPane5" alignment="0" min="-2" pref="788" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="rbTransporte" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="rbQualificacao" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="rbFinanciamento" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="rbProducao" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="cbProducao" alignment="0" min="0" pref="0" max="32767" attributes="1"/>
-                                      <Component id="cbQualificacao" alignment="0" max="32767" attributes="1"/>
-                                      <Component id="cbFinanciamento" alignment="0" pref="141" max="32767" attributes="1"/>
-                                      <Component id="cbTransporte" alignment="1" max="32767" attributes="1"/>
-                                  </Group>
-                              </Group>
-                              <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="rbTransporte" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbQualificacao" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbFinanciamento" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbProducao" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="cbProducao" alignment="0" min="0" pref="0" max="32767" attributes="1"/>
+                              <Component id="cbQualificacao" alignment="0" max="32767" attributes="1"/>
+                              <Component id="cbFinanciamento" alignment="0" pref="141" max="32767" attributes="1"/>
+                              <Component id="cbTransporte" alignment="1" max="32767" attributes="1"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="tfOutro" min="-2" pref="118" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="jLabel42" min="-2" max="-2" attributes="0"/>
@@ -93,7 +93,6 @@
                                       <Component id="tfFinanciamento" min="-2" pref="151" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="tfOutro" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -150,9 +149,9 @@
                       <Component id="tfOutro" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel43" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                   <Component id="jScrollPane5" min="-2" pref="93" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jScrollPane3" min="-2" pref="66" max="-2" attributes="0"/>
@@ -396,11 +395,36 @@
             <Component class="javax.swing.JTable" name="tableProblemas">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="3" rowCount="4">
+                  <Table columnCount="4" rowCount="4">
                     <Column editable="false" title="Problema" type="java.lang.Object"/>
                     <Column editable="false" title="Tipo" type="java.lang.Object"/>
                     <Column editable="false" title="Quais os Custos ?" type="java.lang.Object"/>
+                    <Column editable="false" title="Observacao" type="java.lang.Object"/>
                   </Table>
+                </Property>
+                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                  <TableColumnModel selectionModel="0">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                  </TableColumnModel>
                 </Property>
                 <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>

@@ -2,7 +2,6 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package br.com.dao;
 
 import br.com.Persistencia.Conexao;
@@ -18,23 +17,24 @@ import java.util.logging.Logger;
  *
  * @author Elton
  */
-public class DAOQuestionario6 implements IOperationBean<EmpresaQuestionario6>{
+public class DAOQuestionario6 implements IOperationBean<EmpresaQuestionario6> {
 
     private Conexao conexao;
 
     public boolean cadastrar(EmpresaQuestionario6 bean) {
 
-        String query = "insert     into         EmpresaQuestionario6    " +
-               "     (empresaId, questao48, questao49, questao50, questao51," +
-               " questao52, questao53)" +
-               " values  " +
-               " ("+bean.getEmpresaId()+"," +
-               " '"+bean.getQuestao48()+"'," +
-               " '"+bean.getQuestao49()+"'," +
-               " '"+bean.getQuestao50()+"'," +
-               " '"+bean.getQuestao51()+"'," +
-               " '"+bean.getQuestao52()+"'," +
-               " '"+bean.getQuestao53()+"')";
+        String query = "insert     into         EmpresaQuestionario6    "
+                + "     (empresaId, questao48, questao49, questao50, questao51,"
+                + " questao52,observacao, questao53)"
+                + " values  "
+                + " (" + bean.getEmpresaId() + ","
+                + " '" + bean.getQuestao48() + "',"
+                + " '" + bean.getQuestao49() + "',"
+                + " '" + bean.getQuestao50() + "',"
+                + " '" + bean.getQuestao51() + "',"
+                + " '" + bean.getQuestao52() + "',"
+                + " '" + bean.getObservacao() + "',"
+                + " '" + bean.getQuestao53() + "')";
         try {
             conexao = new Conexao();
             conexao.conecta("mil_interface");
@@ -48,11 +48,11 @@ public class DAOQuestionario6 implements IOperationBean<EmpresaQuestionario6>{
     }
 
     public boolean excluir(EmpresaQuestionario6 bean) {
-          try {
+        try {
             conexao = new Conexao();
             conexao.conecta("mil_interface");
-            String query = " delete     from        EmpresaQuestionario6   where  " +
-                    "       id = " + bean.getId();
+            String query = " delete     from        EmpresaQuestionario6   where  "
+                    + "       id = " + bean.getId();
             return conexao.update(query);
         } catch (Exception e) {
         } finally {
@@ -62,18 +62,19 @@ public class DAOQuestionario6 implements IOperationBean<EmpresaQuestionario6>{
     }
 
     public boolean atualizar(EmpresaQuestionario6 bean) {
-         try {
+        try {
             conexao = new Conexao();
             conexao.conecta("mil_interface");
-            String query = "update         EmpresaQuestionario6     set    " +
-                    "     empresaId="+bean.getEmpresaId()+",    " +
-                    "    questao48='"+bean.getQuestao48()+"',     " +
-                    "    questao49='"+bean.getQuestao49()+"',    " +
-                    "    questao50='"+bean.getQuestao50()+"',    " +
-                    "    questao51='"+bean.getQuestao51()+"',    " +
-                    "    questao52='"+bean.getQuestao52()+"',   " +
-                    "    questao53='"+bean.getQuestao53()+"'    " +
-                    "       where         id= "+bean.getId();
+            String query = "update         EmpresaQuestionario6     set    "
+                    + "     empresaId=" + bean.getEmpresaId() + ",    "
+                    + "    questao48='" + bean.getQuestao48() + "',     "
+                    + "    questao49='" + bean.getQuestao49() + "',    "
+                    + "    questao50='" + bean.getQuestao50() + "',    "
+                    + "    questao51='" + bean.getQuestao51() + "',    "
+                    + "    questao52='" + bean.getQuestao52() + "',   "
+                    + "   observacao='" + bean.getObservacao() + "',   "
+                    + "    questao53='" + bean.getQuestao53() + "'    "
+                    + "       where         id= " + bean.getId();
 
             return conexao.update(query);
         } catch (Exception e) {
@@ -88,7 +89,7 @@ public class DAOQuestionario6 implements IOperationBean<EmpresaQuestionario6>{
     }
 
     public EmpresaQuestionario6 getObjectWithQuery(String query) {
-         try {
+        try {
             conexao = new Conexao();
             conexao.conecta("mil_interface");
             conexao.execute(query);
@@ -109,6 +110,7 @@ public class DAOQuestionario6 implements IOperationBean<EmpresaQuestionario6>{
                 e.setQuestao53(set.getString(fields[index++]));
 
                 e.setEmpresaId(set.getInt(fields[index++]));
+                e.setObservacao(set.getString(fields[index++]));
             }
 
             return e;
@@ -119,5 +121,4 @@ public class DAOQuestionario6 implements IOperationBean<EmpresaQuestionario6>{
         }
         return null;
     }
-
 }
