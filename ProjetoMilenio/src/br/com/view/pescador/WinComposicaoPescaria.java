@@ -99,6 +99,7 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
 
             public void actionPerformed(ActionEvent e) {
                 clear();
+                MyUtil.FieldsClear(panel);
             }
         });
         btCadastrar.addActionListener(getActionListener());
@@ -209,7 +210,7 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
     }
 
     private void clear() {
-       
+
         pescadorComposicao = null;
     }
 
