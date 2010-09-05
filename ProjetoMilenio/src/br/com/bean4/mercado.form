@@ -653,16 +653,12 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="24" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Question&#xe1;rio-Mercado/Feira"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Question&#xe1;rio-Mercado/Feira" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Munic&#xed;pio:"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Munic&#xed;pio:" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JComboBox" name="cbMunicipio">
@@ -680,16 +676,12 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="18" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Dados Pessoais "/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Dados Pessoais " noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Nome :"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Nome :" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfNome">
@@ -699,27 +691,21 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Apelido:"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Apelido:" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfApelido">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel6">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Naturalidade:"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Naturalidade:" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfNaturalidade">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Sexo:"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Sexo:" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JComboBox" name="cbSexo">
@@ -734,69 +720,51 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel8">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Idade:"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Idade:" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfIdade">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="0"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="0" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel9">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Atividade principal de renda :"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Atividade principal de renda :" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfAtividadePrincipal">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel10">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Atividade secund&#xe1;ria:"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Atividade secund&#xe1;ria:" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfAtividadeSecundaria">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel11">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="N&#xfa;mero total de boxes no local ?"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="N&#xfa;mero total de boxes no local ?" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfBoxes">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="0"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="0" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel12">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Quantos voc&#xea; possui ?"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Quantos voc&#xea; possui ?" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfQuantosPossui">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="0"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="0" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel13">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Estado Civil:"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Estado Civil:" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JComboBox" name="cbEstadoCivil">
@@ -812,36 +780,28 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel14">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Composi&#xe7;&#xe3;o Familiar:"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Composi&#xe7;&#xe3;o Familiar:" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfComposicaoFamilia">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel15">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Escolaridade:"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Escolaridade:" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfEscolaridade">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel16">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Por que parou ?"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Por que parou ?" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfPorQueParou">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel17">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Local de Moradia:"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Local de Moradia:" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JComboBox" name="cbLocalMoradia">
@@ -858,9 +818,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel18">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Qualidade da Moradia:"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Qualidade da Moradia:" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JComboBox" name="cbQualidadeMoradia">
@@ -878,46 +836,34 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel19">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Tipo de Constru&#xe7;ao:"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Tipo de Constru&#xe7;ao:" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfTipoConstrucao">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel20">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Possui Regristo no INSS ?"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Possui Regristo no INSS ?" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel21">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Na Col&#xf4;nia?"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Na Col&#xf4;nia?" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel22">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Qual colonia?"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Qual colonia?" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel23">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Em Alguma Associa&#xe7;&#xe3;o:"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Em Alguma Associa&#xe7;&#xe3;o:" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel24">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Qual :"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Qual :" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfAlgumaAssociacao">
@@ -927,16 +873,12 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel25">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Possui carteira de Pescador ?"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Possui carteira de Pescador ?" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel26">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Qual Org&#xe3;o?"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Qual Org&#xe3;o?" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfOrgaoCarteiraPescado">
@@ -946,37 +888,27 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel27">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Rela&#xe7;&#xe3;o de Trabalho:"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Rela&#xe7;&#xe3;o de Trabalho:" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel28">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Possui assis&#xea;ncia ao plano de sa&#xfa;de.Especificar:"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Possui assis&#xea;ncia ao plano de sa&#xfa;de.Especificar:" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel29">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Quais as atividades geram renda para sua fam&#xed;lia ?"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Quais as atividades geram renda para sua fam&#xed;lia ?" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel30">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Quem na sua fam&#xed;lia trabalha ? E com qual atividade?"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Quem na sua fam&#xed;lia trabalha ? E com qual atividade?" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel31">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Entrevistado:"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Entrevistado:" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfEntrevistado">
@@ -985,43 +917,33 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel33">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Esposa:"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Esposa:" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfEsposa">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel34">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Filhos:"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Filhos:" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfFilhos">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel35">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Netos:"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Netos:" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfNetos">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel36">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Quanto o tempo di&#xe1;rio que passam trabalhando ?"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Quanto o tempo di&#xe1;rio que passam trabalhando ?" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfTempoTrabalho">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="0"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="0" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfTempoTrabalhoActionPerformed"/>
@@ -1029,16 +951,12 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel37">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Quanto tempo esta na atividade ?"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Quanto tempo esta na atividade ?" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfTempoAtividade">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="0"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="0" noResource="true"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane2">
@@ -1065,9 +983,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel38">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Quais s&#xe3;o os gastos com material utilizado na atividade (estimar em fr&#xea;nquencia dos gastos- 1x por semana,por viagem, por m&#xea;s, etc )."/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Quais s&#xe3;o os gastos com material utilizado na atividade (estimar em fr&#xea;nquencia dos gastos- 1x por semana,por viagem, por m&#xea;s, etc )." noResource="true"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane5">
@@ -1080,8 +996,9 @@
                 <Component class="javax.swing.JTable" name="jtMaterialUtilizado">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="5" rowCount="4">
+                      <Table columnCount="6" rowCount="4">
                         <Column editable="true" title="id_material" type="java.lang.Object"/>
+                        <Column editable="true" title="material" type="java.lang.Object"/>
                         <Column editable="true" title="quantidade" type="java.lang.Object"/>
                         <Column editable="true" title="custo" type="java.lang.Object"/>
                         <Column editable="true" title="outros" type="java.lang.Object"/>
@@ -1110,7 +1027,12 @@
                           <Editor/>
                           <Renderer/>
                         </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                           <Title/>
                           <Editor/>
                           <Renderer/>
@@ -1126,9 +1048,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel39">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Origem do Produto"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Origem do Produto" noResource="true"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane6">
@@ -1193,9 +1113,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel40">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Dados das especies "/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Dados das especies " noResource="true"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane7">
@@ -1260,9 +1178,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel41">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Quais as principais perdas de pescado em fun&#xe7;&#xe3;o da :"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Quais as principais perdas de pescado em fun&#xe7;&#xe3;o da :" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel43">
@@ -1270,16 +1186,12 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="24" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Percep&#xe7;&#xe3;o Ambiental e Perspectivas:"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Percep&#xe7;&#xe3;o Ambiental e Perspectivas:" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel44">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="01_Existe alguma intera&#xe7;&#xe3;o entre os vendedores em rela&#xe7;&#xe3;oa troca ou coopera&#xe7;&#xe3;o dos produtos, etc ?"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="01_Existe alguma intera&#xe7;&#xe3;o entre os vendedores em rela&#xe7;&#xe3;oa troca ou coopera&#xe7;&#xe3;o dos produtos, etc ?" noResource="true"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane8">
@@ -1300,9 +1212,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel45">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="02_Qual o grau de competitividade/rivalidade entre os atravesadores ? "/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="02_Qual o grau de competitividade/rivalidade entre os atravesadores ? " noResource="true"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane9">
@@ -1318,9 +1228,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel46">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="03_A sazonalidade influencia na disponibilidade do pescador para a venda ?"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="03_A sazonalidade influencia na disponibilidade do pescador para a venda ?" noResource="true"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane10">
@@ -1340,16 +1248,12 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel47">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="04_Voc&#xea; acredita que as mudan&#xe7;as no clima podem influenciar nas pesca? Como?"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="04_Voc&#xea; acredita que as mudan&#xe7;as no clima podem influenciar nas pesca? Como?" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel48">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="05_O que est&#xe1; acontecendo com o tamanho e a quantidade de pescado ?"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="05_O que est&#xe1; acontecendo com o tamanho e a quantidade de pescado ?" noResource="true"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane12">
@@ -1365,9 +1269,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel49">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="06_Voc&#xea; sabe informar quais os motivos respons&#xe1;veis pela diminui&#xe7;&#xe3;o ?"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="06_Voc&#xea; sabe informar quais os motivos respons&#xe1;veis pela diminui&#xe7;&#xe3;o ?" noResource="true"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane13">
@@ -1383,9 +1285,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel50">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="07_Caso ocorra odesaparecimento do pescado, como voc&#xea; sustentaria a sua familia ?"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="07_Caso ocorra odesaparecimento do pescado, como voc&#xea; sustentaria a sua familia ?" noResource="true"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane14">
@@ -1401,16 +1301,12 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel51">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="08_Existem crian&#xe7;as envolvidas nessa pesca ?"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="08_Existem crian&#xe7;as envolvidas nessa pesca ?" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel52">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="09_Voc&#xea; deseja que seus filhos tamb&#xe9;m sejam comerciantes ? Por que? (pespectiva do pescador quanto ao futuro dos filhos)"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="09_Voc&#xea; deseja que seus filhos tamb&#xe9;m sejam comerciantes ? Por que? (pespectiva do pescador quanto ao futuro dos filhos)" noResource="true"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane15">
@@ -1426,9 +1322,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel53">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="10_Existe algum comflito entre os comerciantes na feira/mercado ?"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="10_Existe algum comflito entre os comerciantes na feira/mercado ?" noResource="true"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane16">
@@ -1444,9 +1338,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel54">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="11_Quais as dificuldades (gargalos) encontradas para manter a atividade de venda ? "/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="11_Quais as dificuldades (gargalos) encontradas para manter a atividade de venda ? " noResource="true"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane17">
@@ -1465,9 +1357,7 @@
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="buttonGroup1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Mercado"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Mercado" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbMercadoActionPerformed"/>
@@ -1478,9 +1368,7 @@
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="buttonGroup1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Feira Livre"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Feira Livre" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbFeiraLivreActionPerformed"/>
@@ -1488,9 +1376,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="botao_primeiro">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="&lt;&lt;"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="&lt;&lt;" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botao_primeiroActionPerformed"/>
@@ -1498,9 +1384,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="botao_anterior">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="&lt;"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="&lt;" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botao_anteriorActionPerformed"/>
@@ -1508,9 +1392,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="botao_proximo">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="&gt;"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="&gt;" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botao_proximoActionPerformed"/>
@@ -1518,9 +1400,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="botao_ultimo">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="&gt;&gt;"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="&gt;&gt;" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botao_ultimoActionPerformed"/>
@@ -1528,23 +1408,17 @@
             </Component>
             <Component class="javax.swing.JCheckBox" name="ckbCriancaEnvolvidas">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Sim"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Sim" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JCheckBox" name="ckbInss">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="SIm"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="SIm" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JCheckBox" name="ckbColonia">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Sim"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Sim" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="ckbColoniaItemStateChanged"/>
@@ -1552,9 +1426,7 @@
             </Component>
             <Component class="javax.swing.JCheckBox" name="ckbAlgumaAssociacao">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Sim"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Sim" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="ckbAlgumaAssociacaoItemStateChanged"/>
@@ -1562,9 +1434,7 @@
             </Component>
             <Component class="javax.swing.JCheckBox" name="ckbCarteiraPescado">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Sim"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Sim" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="ckbCarteiraPescadoItemStateChanged"/>
@@ -1572,9 +1442,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="botao_limpar">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Limpar"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Limpar" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botao_limparActionPerformed"/>
@@ -1582,9 +1450,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="botao_cadastrar">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Cadastrar"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Cadastrar" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botao_cadastrarActionPerformed"/>
@@ -1592,9 +1458,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="botao_Excluir">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Excluir"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Excluir" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botao_ExcluirActionPerformed"/>
@@ -1602,9 +1466,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="botao_alterar">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Alterar"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Alterar" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botao_alterarActionPerformed"/>
@@ -1612,9 +1474,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="btAdd">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Add"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Add" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btAddActionPerformed"/>
@@ -1622,37 +1482,27 @@
             </Component>
             <Component class="javax.swing.JCheckBox" name="ckbFamiliar">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Familiar"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Familiar" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JCheckBox" name="ckbArtesanalComVizinho">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Artesanal com vizinho, amigos,etc"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Artesanal com vizinho, amigos,etc" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JCheckBox" name="ckbArmadorEmbarcacao">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Armador ou Embarca&#xe7;&#xe3;o"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Armador ou Embarca&#xe7;&#xe3;o" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JCheckBox" name="ckbAssalariado">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Assalariado"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Assalariado" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btExcluir">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Excluir"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Excluir" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btExcluirActionPerformed"/>
@@ -1660,9 +1510,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="btAtualizar">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Atualizar"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Atualizar" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btAtualizarActionPerformed"/>
@@ -1719,9 +1567,7 @@
             </Container>
             <Component class="javax.swing.JButton" name="jbAdd1">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Add"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Add" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbAdd1ActionPerformed"/>
@@ -1729,9 +1575,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="jbExcluir1">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Excluir"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Excluir" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbExcluir1ActionPerformed"/>
@@ -1739,9 +1583,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="jbAtualizar1">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Atualizar"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Atualizar" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbAtualizar1ActionPerformed"/>
@@ -1749,9 +1591,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="jbAdd2">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Add"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Add" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbAdd2ActionPerformed"/>
@@ -1759,9 +1599,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="jbExcluir2">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Excluir"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Excluir" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbExcluir2ActionPerformed"/>
@@ -1769,9 +1607,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="jbAtualizar2">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Atualizar"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Atualizar" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbAtualizar2ActionPerformed"/>
@@ -1779,9 +1615,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="jbAdd3">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Add"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Add" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbAdd3ActionPerformed"/>
@@ -1789,9 +1623,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="jbExcluir3">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Excluir"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Excluir" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbExcluir3ActionPerformed"/>
@@ -1799,9 +1631,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="jbAtualizacao3">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Atualizar"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Atualizar" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbAtualizacao3ActionPerformed"/>
@@ -1824,9 +1654,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel42">
               <Properties>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="Quais as possiveis solu&#xe7;&#xf5;es(demanda) para melhorar o seu trabalhos ?"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Quais as possiveis solu&#xe7;&#xf5;es(demanda) para melhorar o seu trabalhos ?" noResource="true"/>
               </Properties>
             </Component>
           </SubComponents>
