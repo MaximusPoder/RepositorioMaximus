@@ -38,7 +38,8 @@ public class addEspecie extends javax.swing.JFrame {
         //Insere nomes das espécies cadastradas
         cbEspecie.removeAllItems();
         try {
-            conexao.execute("select * FROM atravessador_addmercado where id_atravessador="+idd_atravessador);
+            conexao.execute("SELECT DISTINCT especie FROM atravessador_addmercado where id_atravessador="+idd_atravessador);
+            //conexao.execute("select * FROM atravessador_addmercado where id_atravessador="+idd_atravessador);
             while (conexao.resultSet.next()){
                 cbEspecie.addItem(conexao.resultSet.getString("especie"));
                 //System.out.println(conexao.resultSet.getString("nome"));

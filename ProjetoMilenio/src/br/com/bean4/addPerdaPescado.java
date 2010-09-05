@@ -13,6 +13,7 @@ package br.com.bean4;
 
 import br.com.Persistencia.Conexao;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -32,11 +33,21 @@ public class addPerdaPescado extends javax.swing.JFrame {
         System.out.println(id_perda_pescado);
         idd_perda_pescado = id_perda_pescado;
 
+        try {
+            conexao.execute("SELECT DISTINCT especie FROM mercado_addespeciecomercializada where id_mercado="+idd_perda_pescado);
+            //conexao.execute("select * FROM mercado_addespeciecomercializada");
+            cbEspecie.removeAllItems();
+            while (conexao.resultSet.next()){
+                cbEspecie.addItem(conexao.resultSet.getString("especie"));
+            }
+        }catch (SQLException ex) {
+             System.out.println(ex);
+        }
+
     }
 
-    private addPerdaPescado() {
-        throw new UnsupportedOperationException("Not yet implemented");
-    }
+    
+
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -115,12 +126,12 @@ public class addPerdaPescado extends javax.swing.JFrame {
                             .addComponent(jLabel4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(cbEspecie, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cbCausaPerda, javax.swing.GroupLayout.Alignment.LEADING, 0, 0, Short.MAX_VALUE)
                             .addComponent(tfOutros, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tfDestinoPeixe, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tfEstimativa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                            .addComponent(jbPrincipaisPerdas)))
+                            .addComponent(jbPrincipaisPerdas)
+                            .addComponent(cbEspecie, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addComponent(jLabel1)))
@@ -163,33 +174,22 @@ public class addPerdaPescado extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbPrincipaisPerdasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPrincipaisPerdasActionPerformed
-        try {
-            conexao.execute("select * FROM mercado_addespeciecomercializada ");
-            cbEspecie.removeAllItems();
-            while (conexao.resultSet.next()){
-                cbEspecie.addItem(conexao.resultSet.getString("especie"));
-                System.out.println(conexao.resultSet.getString("nome"));
-            }
-        }catch (SQLException ex) {
-             System.out.println(ex);
-        }
-         try {
-            conexao.execute("select * from mercado_perdapescado");
-            conexao.resultSet.first();
-            System.out.println(conexao.resultSet.getString("nome"));
-        } catch (SQLException e) {
-            System.out.println(e);
-        }
+        
+         
 
-        String sqlinsert = "insert into mercado_addperdapescado" + "(especie,id_mercado,causa_perda,estimativa_da_perda,destino_do_peixe_perdido) values ('" +
+        String sqlinsert = "insert into mercado_addperdapescado"
+                + "(especie,id_mercado,causa_perda,estimativa_da_perda,destino_do_peixe_perdido) values ('" +
                cbEspecie.getSelectedItem()+"','"+
                idd_perda_pescado + "','" +
-               registro_q_vai() + "'," +
-               tfEstimativa.getText() + ",'" +
+               registro_q_vai() + "','" +
+               tfEstimativa.getText() + "','" +
                tfDestinoPeixe.getText() + "')";
                
         System.out.println(sqlinsert);
-        conexao.salvar(sqlinsert);
+        if (conexao.salvar(sqlinsert)) {
+                JOptionPane.showMessageDialog(null,"Cadastrado com sucesso");
+
+            }
     }//GEN-LAST:event_jbPrincipaisPerdasActionPerformed
 
     private void cbCausaPerdaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbCausaPerdaItemStateChanged
@@ -210,7 +210,7 @@ public class addPerdaPescado extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new addPerdaPescado().setVisible(true);
+                //new addPerdaPescado().setVisible(true);
             }
         });
     }

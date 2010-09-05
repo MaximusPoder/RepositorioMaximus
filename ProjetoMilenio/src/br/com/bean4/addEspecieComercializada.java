@@ -13,6 +13,7 @@ package br.com.bean4;
 
 import br.com.Persistencia.Conexao;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -171,17 +172,21 @@ public class addEspecieComercializada extends javax.swing.JFrame {
             System.out.println(ex);
         }
 
-        String sqlinsert = "insert into mercado_addespeciecomercializada (id_mercado,especie,quantidade_fresco,quantidade_salgado,preco_fresco,preco_salgado) values ('" +
+        String sqlinsert = "insert into mercado_addespeciecomercializada "
+                + "(id_mercado,especie,quantidade_fresco,quantidade_salgado,preco_fresco,preco_salgado) values ('" +
                idd_especie_comercializada + "','" +
-               tfEspecie.getText()+"',"+
-               tfQuantidadeFresco.getText() + "," +
-               tfQuatidadeSalgado.getText() + ",'" +
+               tfEspecie.getText()+"','"+
+               tfQuantidadeFresco.getText() + "','" +
+               tfQuatidadeSalgado.getText() + "','" +
                tfPrecoFresco.getText() + "','" +
                tfPrecoSalgado.getText() + "')";
 
         System.out.println(sqlinsert);
-        conexao.salvar(sqlinsert);
-        //agora é hora de atualizar o resultset
+
+        if (conexao.salvar(sqlinsert)) {
+                JOptionPane.showMessageDialog(null,"Cadastrado com sucesso");
+
+            }
         
     }//GEN-LAST:event_jbAddActionPerformed
 

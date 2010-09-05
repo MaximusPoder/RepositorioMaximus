@@ -13,6 +13,7 @@ package br.com.bean4;
 
 import br.com.Persistencia.Conexao;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -205,9 +206,13 @@ public class addProduto extends javax.swing.JFrame {
                 tfOutros.getText() + "')";
 
         System.out.println(sqlinsert);
-        conexao.salvar(sqlinsert);
+
+        if (conexao.salvar(sqlinsert)) {
+                JOptionPane.showMessageDialog(null,"Cadastrado com sucesso");
+
+            }
         //agora é hora de atualizar o resultset
-        addProduto.this.dispose();
+        //addProduto.this.dispose();
     }//GEN-LAST:event_jbAddActionPerformed
 
     private void cbProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbProdutoActionPerformed

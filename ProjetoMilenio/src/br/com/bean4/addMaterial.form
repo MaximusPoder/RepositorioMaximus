@@ -60,7 +60,7 @@
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="236" max="32767" attributes="0"/>
+              <EmptySpace pref="249" max="32767" attributes="0"/>
               <Component id="botao_add_mat" min="-2" pref="77" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
           </Group>

@@ -13,6 +13,7 @@ package br.com.bean2;
 
 import br.com.bean.*;
 import br.com.Persistencia.Conexao;
+import br.com.util.JMoneyField;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -56,7 +57,7 @@ public class addCProduto_MercadoLocal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         tfOutraEspecie = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        tfPreco = new javax.swing.JTextField();
+        tfPreco = new JMoneyField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         cbEspecie = new javax.swing.JComboBox();

@@ -501,7 +501,7 @@ public class frm_atravessador extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_questionario_comunidadeActionPerformed
 
     private void botao_cadastrar_comunidade1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_cadastrar_comunidade1ActionPerformed
-        new comunidade_questionariomercadofeira().setVisible(true);
+        new mercado().setVisible(true);
     }//GEN-LAST:event_botao_cadastrar_comunidade1ActionPerformed
 
     private void botao_cadastrar_pescadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_cadastrar_pescadorActionPerformed

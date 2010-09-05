@@ -16,6 +16,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -188,16 +189,19 @@ public class addMaterial extends javax.swing.JFrame {
 
         String sqlinsert = "insert into mercado_addmaterial " + "(id_mercado,nome,quantidade,custo,outros,frequencia) values ('" +
                 idd_mercado + "','" +
-                registro_q_vai() + "'," +
-                tfMatQuantidade.getText() + ",'" +
+                registro_q_vai() + "','" +
+                tfMatQuantidade.getText() + "','" +
                 tfMatCusto.getText() + "','" +
                 tfMatOutros.getText() + "','" +
                 tfMatFrequencia.getText() + "')";
 
         System.out.println(sqlinsert);
-        conexao.salvar(sqlinsert);
+        if (conexao.salvar(sqlinsert)) {
+                JOptionPane.showMessageDialog(null,"Cadastrado com sucesso");
+
+            }
         //agora é hora de atualizar o resultset
-        addMaterial.this.dispose();
+        //addMaterial.this.dispose();
 
     }//GEN-LAST:event_Action
 

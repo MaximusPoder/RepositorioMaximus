@@ -1204,6 +1204,7 @@ public class frm_questionario_atravessador extends javax.swing.JFrame {
 
             if (conexao.salvar(sqlinsert)){
             //agora é hora de atualizar o resultset
+            JOptionPane.showMessageDialog(null,"Salvo com sucesso");
             conexao.execute("select * from atravessador_questionario");
             conexao.resultSet.first(); //1º registro
             mostra_dados();

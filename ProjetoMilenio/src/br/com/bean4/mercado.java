@@ -4,7 +4,7 @@
  */
 
 /*
- * comunidade_questionariomercadofeira.java
+ * mercado.java
  *
  * Created on 09/08/2010, 10:38:53
  */
@@ -26,14 +26,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Home
  */
-public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
+public class mercado extends javax.swing.JFrame {
 
       private Conexao conexao;
       private Conexao conexao_jtable;
-      String id_mercado = null;
+      //String id_mercado = null;
 
-    /** Creates new form comunidade_questionariomercadofeira */
-    public comunidade_questionariomercadofeira() {
+    /** Creates new form mercado */
+    public mercado() {
         initComponents();
         conexao = new Conexao();
         conexao.conecta("mil_interface");
@@ -55,10 +55,10 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         try {
             conexao.resultSet.first();
             exibir_dados();
-            id_mercado =conexao.resultSet.getString("id_mercado");
+            System.out.println(getIdmercado());
         } catch (Exception e) {
         }
-        System.out.println(id_mercado);
+        
 
     }
 
@@ -221,9 +221,9 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24));
-        jLabel1.setText("Question\u00e1rio-Mercado/Feira");
+        jLabel1.setText("Questionário-Mercado/Feira"); // NOI18N
 
-        jLabel2.setText("Munic\u00edpio:");
+        jLabel2.setText("Município:"); // NOI18N
 
         cbMunicipio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -232,9 +232,9 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18));
-        jLabel3.setText("Dados Pessoais ");
+        jLabel3.setText("Dados Pessoais "); // NOI18N
 
-        jLabel4.setText("Nome :");
+        jLabel4.setText("Nome :"); // NOI18N
 
         tfNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -242,118 +242,117 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setText("Apelido:");
+        jLabel5.setText("Apelido:"); // NOI18N
 
-        jLabel6.setText("Naturalidade:");
+        jLabel6.setText("Naturalidade:"); // NOI18N
 
-        jLabel7.setText("Sexo:");
+        jLabel7.setText("Sexo:"); // NOI18N
 
         cbSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "FEMININO", "MASCULINO" }));
 
-        jLabel8.setText("Idade:");
+        jLabel8.setText("Idade:"); // NOI18N
 
-        tfIdade.setText("0");
+        tfIdade.setText("0"); // NOI18N
 
-        jLabel9.setText("Atividade principal de renda :");
+        jLabel9.setText("Atividade principal de renda :"); // NOI18N
 
-        jLabel10.setText("Atividade secund\u00e1ria:");
+        jLabel10.setText("Atividade secundária:"); // NOI18N
 
-        jLabel11.setText("N\u00famero total de boxes no local ?");
+        jLabel11.setText("Número total de boxes no local ?"); // NOI18N
 
-        tfBoxes.setText("0");
+        tfBoxes.setText("0"); // NOI18N
 
-        jLabel12.setText("Quantos voc\u00ea possui ?");
+        jLabel12.setText("Quantos você possui ?"); // NOI18N
 
-        tfQuantosPossui.setText("0");
+        tfQuantosPossui.setText("0"); // NOI18N
 
-        jLabel13.setText("Estado Civil:");
+        jLabel13.setText("Estado Civil:"); // NOI18N
 
         cbEstadoCivil.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SOLTEIRO", "CASADO", "UNIÃO ESTÁVEL" }));
 
-        jLabel14.setText("Composi\u00e7\u00e3o Familiar:");
+        jLabel14.setText("Composição Familiar:"); // NOI18N
 
-        jLabel15.setText("Escolaridade:");
+        jLabel15.setText("Escolaridade:"); // NOI18N
 
-        jLabel16.setText("Por que parou ?");
+        jLabel16.setText("Por que parou ?"); // NOI18N
 
-        jLabel17.setText("Local de Moradia:");
+        jLabel17.setText("Local de Moradia:"); // NOI18N
 
         cbLocalMoradia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sede Municipal", "Comunidade/ vila local", "Outro Município", "Capital" }));
 
-        jLabel18.setText("Qualidade da Moradia:");
+        jLabel18.setText("Qualidade da Moradia:"); // NOI18N
 
         cbQualidadeMoradia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Péssima", "Ruim", "Regular", "Boa", "òtima" }));
 
-        jLabel19.setText("Tipo de Constru\u00e7ao:");
+        jLabel19.setText("Tipo de Construçao:"); // NOI18N
 
-        jLabel20.setText("Possui Regristo no INSS ?");
+        jLabel20.setText("Possui Regristo no INSS ?"); // NOI18N
 
-        jLabel21.setText("Na Col\u00f4nia?");
+        jLabel21.setText("Na Colônia?"); // NOI18N
 
-        jLabel22.setText("Qual colonia?");
+        jLabel22.setText("Qual colonia?"); // NOI18N
 
-        jLabel23.setText("Em Alguma Associa\u00e7\u00e3o:");
+        jLabel23.setText("Em Alguma Associação:"); // NOI18N
 
-        jLabel24.setText("Qual :");
+        jLabel24.setText("Qual :"); // NOI18N
 
         tfAlgumaAssociacao.setEditable(false);
 
-        jLabel25.setText("Possui carteira de Pescador ?");
+        jLabel25.setText("Possui carteira de Pescador ?"); // NOI18N
 
-        jLabel26.setText("Qual Org\u00e3o?");
+        jLabel26.setText("Qual Orgão?"); // NOI18N
 
         tfOrgaoCarteiraPescado.setEditable(false);
 
-        jLabel27.setText("Rela\u00e7\u00e3o de Trabalho:");
+        jLabel27.setText("Relação de Trabalho:"); // NOI18N
 
-        jLabel28.setText("Possui assis\u00eancia ao plano de sa\u00fade.Especificar:");
+        jLabel28.setText("Possui assisência ao plano de saúde.Especificar:"); // NOI18N
 
-        jLabel29.setText("Quais as atividades geram renda para sua fam\u00edlia ?");
+        jLabel29.setText("Quais as atividades geram renda para sua família ?"); // NOI18N
 
-        jLabel30.setText("Quem na sua fam\u00edlia trabalha ? E com qual atividade?");
+        jLabel30.setText("Quem na sua família trabalha ? E com qual atividade?"); // NOI18N
 
-        jLabel31.setText("Entrevistado:");
+        jLabel31.setText("Entrevistado:"); // NOI18N
 
-        jLabel33.setText("Esposa:");
+        jLabel33.setText("Esposa:"); // NOI18N
 
-        jLabel34.setText("Filhos:");
+        jLabel34.setText("Filhos:"); // NOI18N
 
-        jLabel35.setText("Netos:");
+        jLabel35.setText("Netos:"); // NOI18N
 
-        jLabel36.setText("Quanto o tempo di\u00e1rio que passam trabalhando ?");
+        jLabel36.setText("Quanto o tempo diário que passam trabalhando ?"); // NOI18N
 
-        tfTempoTrabalho.setText("0");
+        tfTempoTrabalho.setText("0"); // NOI18N
         tfTempoTrabalho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfTempoTrabalhoActionPerformed(evt);
             }
         });
 
-        jLabel37.setText("Quanto tempo esta na atividade ?");
+        jLabel37.setText("Quanto tempo esta na atividade ?"); // NOI18N
 
-        tfTempoAtividade.setText("0");
+        tfTempoAtividade.setText("0"); // NOI18N
 
         jScrollPane2.setViewportView(tpPlanoSaude);
 
         jScrollPane3.setViewportView(tpRendaFamiliar);
 
-        jLabel38.setText("Quais s\u00e3o os gastos com material utilizado na atividade (estimar em fr\u00eanquencia dos gastos- 1x por semana,por viagem, por m\u00eas, etc ).");
+        jLabel38.setText("Quais são os gastos com material utilizado na atividade (estimar em frênquencia dos gastos- 1x por semana,por viagem, por mês, etc )."); // NOI18N
 
         jtMaterialUtilizado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "id_material", "quantidade", "custo", "outros", "frequência"
+                "id_material", "material", "quantidade", "custo", "outros", "frequência"
             }
         ));
         jScrollPane5.setViewportView(jtMaterialUtilizado);
-        jtMaterialUtilizado.getColumnModel().getColumn(4).setResizable(false);
 
-        jLabel39.setText("Origem do Produto");
+        jLabel39.setText("Origem do Produto"); // NOI18N
 
         jbOrigemProduto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -368,7 +367,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         ));
         jScrollPane6.setViewportView(jbOrigemProduto);
 
-        jLabel40.setText("Dados das especies ");
+        jLabel40.setText("Dados das especies "); // NOI18N
 
         jbDadosEspecie.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -391,57 +390,57 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         });
         jScrollPane7.setViewportView(jbDadosEspecie);
 
-        jLabel41.setText("Quais as principais perdas de pescado em fun\u00e7\u00e3o da :");
+        jLabel41.setText("Quais as principais perdas de pescado em função da :"); // NOI18N
 
         jLabel43.setFont(new java.awt.Font("Tahoma", 1, 24));
-        jLabel43.setText("Percep\u00e7\u00e3o Ambiental e Perspectivas:");
+        jLabel43.setText("Percepção Ambiental e Perspectivas:"); // NOI18N
 
-        jLabel44.setText("01_Existe alguma intera\u00e7\u00e3o entre os vendedores em rela\u00e7\u00e3oa troca ou coopera\u00e7\u00e3o dos produtos, etc ?");
+        jLabel44.setText("01_Existe alguma interação entre os vendedores em relaçãoa troca ou cooperação dos produtos, etc ?"); // NOI18N
 
         jScrollPane8.setViewportView(tpQuestao1);
 
         tfQualColonia.setEditable(false);
 
-        jLabel45.setText("02_Qual o grau de competitividade/rivalidade entre os atravesadores ? ");
+        jLabel45.setText("02_Qual o grau de competitividade/rivalidade entre os atravesadores ? "); // NOI18N
 
         jScrollPane9.setViewportView(tpQuestao2);
 
-        jLabel46.setText("03_A sazonalidade influencia na disponibilidade do pescador para a venda ?");
+        jLabel46.setText("03_A sazonalidade influencia na disponibilidade do pescador para a venda ?"); // NOI18N
 
         tpQuestao3.setColumns(20);
         tpQuestao3.setRows(5);
         jScrollPane10.setViewportView(tpQuestao3);
 
-        jLabel47.setText("04_Voc\u00ea acredita que as mudan\u00e7as no clima podem influenciar nas pesca? Como?");
+        jLabel47.setText("04_Você acredita que as mudanças no clima podem influenciar nas pesca? Como?"); // NOI18N
 
-        jLabel48.setText("05_O que est\u00e1 acontecendo com o tamanho e a quantidade de pescado ?");
+        jLabel48.setText("05_O que está acontecendo com o tamanho e a quantidade de pescado ?"); // NOI18N
 
         jScrollPane12.setViewportView(tpQuestao5);
 
-        jLabel49.setText("06_Voc\u00ea sabe informar quais os motivos respons\u00e1veis pela diminui\u00e7\u00e3o ?");
+        jLabel49.setText("06_Você sabe informar quais os motivos responsáveis pela diminuição ?"); // NOI18N
 
         jScrollPane13.setViewportView(tpQuestao6);
 
-        jLabel50.setText("07_Caso ocorra odesaparecimento do pescado, como voc\u00ea sustentaria a sua familia ?");
+        jLabel50.setText("07_Caso ocorra odesaparecimento do pescado, como você sustentaria a sua familia ?"); // NOI18N
 
         jScrollPane14.setViewportView(tpQuestao7);
 
-        jLabel51.setText("08_Existem crian\u00e7as envolvidas nessa pesca ?");
+        jLabel51.setText("08_Existem crianças envolvidas nessa pesca ?"); // NOI18N
 
-        jLabel52.setText("09_Voc\u00ea deseja que seus filhos tamb\u00e9m sejam comerciantes ? Por que? (pespectiva do pescador quanto ao futuro dos filhos)");
+        jLabel52.setText("09_Você deseja que seus filhos também sejam comerciantes ? Por que? (pespectiva do pescador quanto ao futuro dos filhos)"); // NOI18N
 
         jScrollPane15.setViewportView(tpQuestao8);
 
-        jLabel53.setText("10_Existe algum comflito entre os comerciantes na feira/mercado ?");
+        jLabel53.setText("10_Existe algum comflito entre os comerciantes na feira/mercado ?"); // NOI18N
 
         jScrollPane16.setViewportView(tpQuestao9);
 
-        jLabel54.setText("11_Quais as dificuldades (gargalos) encontradas para manter a atividade de venda ? ");
+        jLabel54.setText("11_Quais as dificuldades (gargalos) encontradas para manter a atividade de venda ? "); // NOI18N
 
         jScrollPane17.setViewportView(tpQuestao10);
 
         buttonGroup1.add(rbMercado);
-        rbMercado.setText("Mercado");
+        rbMercado.setText("Mercado"); // NOI18N
         rbMercado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbMercadoActionPerformed(evt);
@@ -449,117 +448,117 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         });
 
         buttonGroup1.add(rbFeiraLivre);
-        rbFeiraLivre.setText("Feira Livre");
+        rbFeiraLivre.setText("Feira Livre"); // NOI18N
         rbFeiraLivre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbFeiraLivreActionPerformed(evt);
             }
         });
 
-        botao_primeiro.setText("<<");
+        botao_primeiro.setText("<<"); // NOI18N
         botao_primeiro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botao_primeiroActionPerformed(evt);
             }
         });
 
-        botao_anterior.setText("<");
+        botao_anterior.setText("<"); // NOI18N
         botao_anterior.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botao_anteriorActionPerformed(evt);
             }
         });
 
-        botao_proximo.setText(">");
+        botao_proximo.setText(">"); // NOI18N
         botao_proximo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botao_proximoActionPerformed(evt);
             }
         });
 
-        botao_ultimo.setText(">>");
+        botao_ultimo.setText(">>"); // NOI18N
         botao_ultimo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botao_ultimoActionPerformed(evt);
             }
         });
 
-        ckbCriancaEnvolvidas.setText("Sim");
+        ckbCriancaEnvolvidas.setText("Sim"); // NOI18N
 
-        ckbInss.setText("SIm");
+        ckbInss.setText("SIm"); // NOI18N
 
-        ckbColonia.setText("Sim");
+        ckbColonia.setText("Sim"); // NOI18N
         ckbColonia.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 ckbColoniaItemStateChanged(evt);
             }
         });
 
-        ckbAlgumaAssociacao.setText("Sim");
+        ckbAlgumaAssociacao.setText("Sim"); // NOI18N
         ckbAlgumaAssociacao.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 ckbAlgumaAssociacaoItemStateChanged(evt);
             }
         });
 
-        ckbCarteiraPescado.setText("Sim");
+        ckbCarteiraPescado.setText("Sim"); // NOI18N
         ckbCarteiraPescado.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 ckbCarteiraPescadoItemStateChanged(evt);
             }
         });
 
-        botao_limpar.setText("Limpar");
+        botao_limpar.setText("Limpar"); // NOI18N
         botao_limpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botao_limparActionPerformed(evt);
             }
         });
 
-        botao_cadastrar.setText("Cadastrar");
+        botao_cadastrar.setText("Cadastrar"); // NOI18N
         botao_cadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botao_cadastrarActionPerformed(evt);
             }
         });
 
-        botao_Excluir.setText("Excluir");
+        botao_Excluir.setText("Excluir"); // NOI18N
         botao_Excluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botao_ExcluirActionPerformed(evt);
             }
         });
 
-        botao_alterar.setText("Alterar");
+        botao_alterar.setText("Alterar"); // NOI18N
         botao_alterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botao_alterarActionPerformed(evt);
             }
         });
 
-        btAdd.setText("Add");
+        btAdd.setText("Add"); // NOI18N
         btAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btAddActionPerformed(evt);
             }
         });
 
-        ckbFamiliar.setText("Familiar");
+        ckbFamiliar.setText("Familiar"); // NOI18N
 
-        ckbArtesanalComVizinho.setText("Artesanal com vizinho, amigos,etc");
+        ckbArtesanalComVizinho.setText("Artesanal com vizinho, amigos,etc"); // NOI18N
 
-        ckbArmadorEmbarcacao.setText("Armador ou Embarca\u00e7\u00e3o");
+        ckbArmadorEmbarcacao.setText("Armador ou Embarcação"); // NOI18N
 
-        ckbAssalariado.setText("Assalariado");
+        ckbAssalariado.setText("Assalariado"); // NOI18N
 
-        btExcluir.setText("Excluir");
+        btExcluir.setText("Excluir"); // NOI18N
         btExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btExcluirActionPerformed(evt);
             }
         });
 
-        btAtualizar.setText("Atualizar");
+        btAtualizar.setText("Atualizar"); // NOI18N
         btAtualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btAtualizarActionPerformed(evt);
@@ -579,63 +578,63 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(jbPerdaPescado);
 
-        jbAdd1.setText("Add");
+        jbAdd1.setText("Add"); // NOI18N
         jbAdd1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbAdd1ActionPerformed(evt);
             }
         });
 
-        jbExcluir1.setText("Excluir");
+        jbExcluir1.setText("Excluir"); // NOI18N
         jbExcluir1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbExcluir1ActionPerformed(evt);
             }
         });
 
-        jbAtualizar1.setText("Atualizar");
+        jbAtualizar1.setText("Atualizar"); // NOI18N
         jbAtualizar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbAtualizar1ActionPerformed(evt);
             }
         });
 
-        jbAdd2.setText("Add");
+        jbAdd2.setText("Add"); // NOI18N
         jbAdd2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbAdd2ActionPerformed(evt);
             }
         });
 
-        jbExcluir2.setText("Excluir");
+        jbExcluir2.setText("Excluir"); // NOI18N
         jbExcluir2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbExcluir2ActionPerformed(evt);
             }
         });
 
-        jbAtualizar2.setText("Atualizar");
+        jbAtualizar2.setText("Atualizar"); // NOI18N
         jbAtualizar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbAtualizar2ActionPerformed(evt);
             }
         });
 
-        jbAdd3.setText("Add");
+        jbAdd3.setText("Add"); // NOI18N
         jbAdd3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbAdd3ActionPerformed(evt);
             }
         });
 
-        jbExcluir3.setText("Excluir");
+        jbExcluir3.setText("Excluir"); // NOI18N
         jbExcluir3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbExcluir3ActionPerformed(evt);
             }
         });
 
-        jbAtualizacao3.setText("Atualizar");
+        jbAtualizacao3.setText("Atualizar"); // NOI18N
         jbAtualizacao3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbAtualizacao3ActionPerformed(evt);
@@ -646,7 +645,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         tpquestao4.setRows(5);
         jScrollPane11.setViewportView(tpquestao4);
 
-        jLabel42.setText("Quais as possiveis solu\u00e7\u00f5es(demanda) para melhorar o seu trabalhos ?");
+        jLabel42.setText("Quais as possiveis soluções(demanda) para melhorar o seu trabalhos ?"); // NOI18N
 
         javax.swing.GroupLayout AtualizarLayout = new javax.swing.GroupLayout(Atualizar);
         Atualizar.setLayout(AtualizarLayout);
@@ -1181,7 +1180,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
         try {
             conexao.resultSet.first();
             exibir_dados();
-            id_mercado =   conexao.resultSet.getString("id_mercado");
+
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -1191,7 +1190,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
          try {
             conexao.resultSet.previous();
             exibir_dados();
-            id_mercado =   conexao.resultSet.getString("id_mercado");
+
         } catch (Exception e) {
         }
     }//GEN-LAST:event_botao_anteriorActionPerformed
@@ -1200,7 +1199,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
           try {
             conexao.resultSet.next();
             exibir_dados();
-            id_mercado =   conexao.resultSet.getString("id_mercado");
+
         } catch (Exception e) {
         }
     }//GEN-LAST:event_botao_proximoActionPerformed
@@ -1209,7 +1208,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
      try {
             conexao.resultSet.last();
             exibir_dados();
-            id_mercado =   conexao.resultSet.getString("id_mercado");
+
         } catch (Exception e) {
         }
     }//GEN-LAST:event_botao_ultimoActionPerformed
@@ -1334,9 +1333,9 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
             if (conexao.salvar(sqlinsert)) {
                 JOptionPane.showMessageDialog(null,"Cadastrado com sucesso");
                 //agora é hora de atualizar o resultset
-                conexao.execute("select * from comunidade_questionariomarcadofeira ");
+                conexao.execute("select * from mercado_questionario ");
                 conexao.resultSet.first(); //1º registro
-               // mostra_dados_atravessador();
+                exibir_dados();
             }
                   
         }catch (Exception e) {
@@ -1375,9 +1374,8 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_ExcluirActionPerformed
 
     private void btAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAddActionPerformed
-       
-          
-                    new addMaterial(id_mercado).setVisible(true);
+      
+                    new addMaterial(getIdmercado()).setVisible(true);
                
     }//GEN-LAST:event_btAddActionPerformed
 
@@ -1436,17 +1434,17 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
              "nome= '"+tfNome.getText()+"',"+
              "apelido='"+tfApelido.getText()+"'," +
              "naturalidade='"+tfNaturalidade.getText()+"',"+
-             "sexo = '"+cbSexo.getSelectedItem()+"',"+
+             "sexo= '"+cbSexo.getSelectedItem()+"',"+
              "idade= '"+tfIdade.getText()+"',"+
              "atividade_principal ='"+tfAtividadePrincipal.getText()+"',"+
              "atividade_secundaria='"+tfAtividadeSecundaria.getText()+"',"+
-             "boxe_local='"+tfBoxes.getText()+"',"+
+             "boxes_local='"+tfBoxes.getText()+"',"+
              "quantos_possui='"+tfQuantosPossui.getText()+"',"+
              "estado_civil='"+cbEstadoCivil.getSelectedItem()+"',"+
-             "composicao_familia='"+tfComposicaoFamilia.getText()+"',"+
+             "composicao_familiar='"+tfComposicaoFamilia.getText()+"',"+
              "escolaridade='"+tfEscolaridade.getText()+"',"+
              "pq_parou='"+tfPorQueParou.getText()+"',"+
-             "local-moradia='"+cbLocalMoradia.getSelectedItem()+"',"+
+             "local_moradia='"+cbLocalMoradia.getSelectedItem()+"',"+
              "qualidade_moradia ='"+cbQualidadeMoradia.getSelectedItem()+"',"+
              "tipo_construcao='" +tfTipoConstrucao.getText()+"',"+
              "inss='"+ckb[0]+"',"+
@@ -1455,34 +1453,34 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
              "alguma_associacao='"+ckb[2]+"',"+
              "qual_associacao='"+tfAlgumaAssociacao.getText()+"',"+
              "carteira_pescador='"+ckb[3]+"',"+
-             "orgao_carteira_pesca='"+tfOrgaoCarteiraPescado.getText()+"',"+
+             "orgao_carteira_pescador='"+tfOrgaoCarteiraPescado.getText()+"',"+
              "relacao_trab_familiar='"+ckb[7]+"',"+
-             "relcao_trab_artesanal='"+ ckb[8]+"',"+
+             "relacao_trab_artesanal='"+ ckb[8]+"',"+
              "relacao_trab_armador='"+ ckb[9]+"',"+
              "relacao_trab_assalariado='"+ ckb[10]+"',"+
              "plano_saude='"+tpPlanoSaude.getText()+"',"+
-             "atividadde_renda_familiar='"+tpRendaFamiliar.getText()+"',"+
+             "atividade_renda_familiar='"+tpRendaFamiliar.getText()+"',"+
              "entrevistado='"+tfEntrevistado.getText()+"',"+
              "esposa='"+tfEsposa.getText()+"',"+
              "filhos='"+tfFilhos.getText()+"',"+
              "netos='"+tfNetos.getText()+"',"+
-             "tempo_diario_trabalho='"+tfTempoTrabalho.getText()+"',"+
+             "tempo_diario_trabalhando='"+tfTempoTrabalho.getText()+"',"+
              "periodo_atividade='"+tfTempoAtividade.getText()+"',"+
              "questao1='"+tpQuestao1.getText()+"',"+
              "questao2='"+tpQuestao2.getText()+"',"+
              "questao3='"+tpQuestao3.getText()+"',"+
              "questao4='"+tpquestao4.getText()+"',"+
              "questao5='"+tpQuestao5.getText()+"',"+
-             "questap6='"+tpQuestao6.getText()+"',"+
+             "questao6='"+tpQuestao6.getText()+"',"+
              "questao7='"+tpQuestao7.getText()+"',"+
              "questao8='"+ckb[4]+"',"+
              "questao9='"+tpQuestao8.getText()+"',"+
-             "questoa10='"+tpQuestao9.getText()+"',' "+
-             "questao11='"+tpQuestao10.getText()+"'"+
+             "questao10='"+tpQuestao9.getText()+"',"+
+             "questao11='"+tpQuestao10.getText()+"' "+
 
              "where id_mercado = "+conexao.resultSet.getString("id_mercado");
 
-              System.out.println(sql);
+            System.out.println(sql);
             if (conexao.update(sql)){
             JOptionPane.showMessageDialog(null,"Alterado com sucesso");
             //Atualiza Resultset
@@ -1509,7 +1507,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                     System.out.println("Exclusão realizada com sucesso");
 
                      conexao_jtable.execute("select * from mercado_addmaterial where id_mercado="
-                         +id_mercado);
+                         +getIdmercado());
         preencher_jtable();
 
 
@@ -1525,7 +1523,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
     private void btAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizarActionPerformed
        conexao_jtable.execute("select * from mercado_addmaterial where id_mercado="
-                         +id_mercado);
+                         +getIdmercado());
         preencher_jtable();
        
     }//GEN-LAST:event_btAtualizarActionPerformed
@@ -1533,7 +1531,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
     private void jbAdd1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAdd1ActionPerformed
          
 
-            new addProduto(id_mercado).setVisible(true);
+            new addProduto(getIdmercado()).setVisible(true);
 
         
     }//GEN-LAST:event_jbAdd1ActionPerformed
@@ -1548,7 +1546,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                     System.out.println("Exclusão realizada com sucesso");
 
                       conexao_jtable.execute("select * from mercado_addproduto where id_mercado="
-                               +id_mercado);
+                               +getIdmercado());
                      preencher_jbOrigemProduto();
 
 
@@ -1564,13 +1562,13 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
     private void jbAtualizar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtualizar1ActionPerformed
         conexao_jtable.execute("select * from mercado_addproduto where id_mercado="
-                               +id_mercado);
+                               +getIdmercado());
         preencher_jbOrigemProduto();
        
     }//GEN-LAST:event_jbAtualizar1ActionPerformed
 
     private void jbAdd2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAdd2ActionPerformed
-            new addEspecieComercializada(id_mercado).setVisible(true);
+            new addEspecieComercializada(getIdmercado()).setVisible(true);
     }//GEN-LAST:event_jbAdd2ActionPerformed
 
     private void jbExcluir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluir2ActionPerformed
@@ -1581,7 +1579,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                 if (conexao_jtable.salvar(sql)) {
                     System.out.println("Exclusão realizada com sucesso");
                      conexao_jtable.execute("select * from mercado_addespeciecomercializada where  id_mercado="
-                            +id_mercado);
+                            +getIdmercado());
                     preencher_jbDadosEspecie();
 
 //                    exibir_L_E_N_I(0);exibir_L_E_N_I(1);exibir_L_E_N_I(2);exibir_L_E_N_I(3);
@@ -1595,13 +1593,13 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
     private void jbAtualizar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtualizar2ActionPerformed
          conexao_jtable.execute("select * from mercado_addespeciecomercializada where  id_mercado="
-                            +id_mercado);
+                            +getIdmercado());
         preencher_jbDadosEspecie();
        
     }//GEN-LAST:event_jbAtualizar2ActionPerformed
 
     private void jbAdd3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAdd3ActionPerformed
-        new addPerdaPescado(id_mercado).setVisible(true);
+        new addPerdaPescado(getIdmercado()).setVisible(true);
     }//GEN-LAST:event_jbAdd3ActionPerformed
 
     private void jbExcluir3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluir3ActionPerformed
@@ -1612,7 +1610,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
                 if (conexao_jtable.salvar(sql)) {
                     System.out.println("Exclusão realizada com sucesso");
                       conexao_jtable.execute("select * from mercado_addperdapescado where  id_mercado="
-                            +id_mercado);
+                            +getIdmercado());
                      preencher_jbPerdaPescado();
 
 
@@ -1625,9 +1623,8 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
     }//GEN-LAST:event_jbExcluir3ActionPerformed
 
     private void jbAtualizacao3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtualizacao3ActionPerformed
-         conexao_jtable.execute("select * from mercado_addperdapescado where  id_mercado="
-                            +id_mercado);
-        preencher_jbPerdaPescado();
+         
+         preencher_jbPerdaPescado();
       
     
 
@@ -1685,7 +1682,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new comunidade_questionariomercadofeira().setVisible(true);
+                new mercado().setVisible(true);
             }
         });
     }
@@ -1973,10 +1970,11 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
   public void preencher_jtable(){
         jtMaterialUtilizado.getColumnModel().getColumn(0).setMaxWidth(0);
         jtMaterialUtilizado.getColumnModel().getColumn(0).setPreferredWidth(0);
-        jtMaterialUtilizado.getColumnModel().getColumn(1).setPreferredWidth(40);
+        jtMaterialUtilizado.getColumnModel().getColumn(1).setPreferredWidth(10);
         jtMaterialUtilizado.getColumnModel().getColumn(2).setPreferredWidth(10);
         jtMaterialUtilizado.getColumnModel().getColumn(3).setPreferredWidth(10);
         jtMaterialUtilizado.getColumnModel().getColumn(4).setPreferredWidth(10);
+        jtMaterialUtilizado.getColumnModel().getColumn(5).setPreferredWidth(10);
 
 
         DefaultTableModel modelo = (DefaultTableModel)jtMaterialUtilizado.getModel();
@@ -1993,7 +1991,7 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
 
             conexao_jtable.resultSet.first();
         }catch (SQLException erro){
-            System.out.println(erro + "1792");
+            System.out.println(erro + "linha 1996");
         }
 }
 
@@ -2055,6 +2053,9 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
     }
 
    public void preencher_jbPerdaPescado(){
+        conexao_jtable.execute("select * from mercado_addperdapescado where  id_mercado="
+                            +getIdmercado());
+
         jbPerdaPescado.getColumnModel().getColumn(0).setMaxWidth(0);
         jbPerdaPescado.getColumnModel().getColumn(0).setPreferredWidth(0);
         jbPerdaPescado.getColumnModel().getColumn(1).setPreferredWidth(10);
@@ -2094,6 +2095,15 @@ public class comunidade_questionariomercadofeira extends javax.swing.JFrame {
             return 1;
         }else
             return 0;
+    }
+
+    private String getIdmercado() {
+        String idd_mercado = "";
+        try {
+            idd_mercado = conexao.resultSet.getString("id_mercado").toString();
+        } catch (Exception e) {
+        }
+        return idd_mercado;
     }
 
 }
