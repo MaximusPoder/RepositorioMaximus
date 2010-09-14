@@ -222,9 +222,6 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         btAdd = new javax.swing.JButton();
         btRemove = new javax.swing.JButton();
-        jScrollPane12 = new javax.swing.JScrollPane();
-        tfObs = new javax.swing.JTextPane();
-        jLabel37 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1035, 806));
 
@@ -264,11 +261,11 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
                                 .addComponent(btCadastrar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btExcluir)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
                                 .addComponent(jLabel36)
                                 .addGap(193, 193, 193))
                             .addComponent(jLabel49))))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         panelCrudEmpresa3Layout.setVerticalGroup(
             panelCrudEmpresa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -371,10 +368,6 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
-        jScrollPane12.setViewportView(tfObs);
-
-        jLabel37.setText("Observação.:");
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -404,10 +397,8 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
                                 .addGroup(jPanel2Layout.createSequentialGroup()
                                     .addGap(84, 84, 84)
                                     .addComponent(tfDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addComponent(jLabel37)
-                    .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(296, Short.MAX_VALUE))
+                .addContainerGap(315, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addContainerGap()
@@ -453,11 +444,7 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
                         .addComponent(jLabel65)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel37)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(101, 101, 101))
+                .addGap(205, 205, 205))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addContainerGap()
@@ -478,7 +465,7 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
                             .addComponent(jLabel69)))
                     .addGap(18, 18, 18)
                     .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(565, Short.MAX_VALUE)))
+                    .addContainerGap(566, Short.MAX_VALUE)))
         );
 
         jScrollPane1.setViewportView(jPanel2);
@@ -503,7 +490,6 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
@@ -515,7 +501,6 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JPanel panelCrudEmpresa3;
@@ -526,7 +511,6 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
     private javax.swing.JTextField tfEspecie;
     private javax.swing.JTextField tfEstimativa;
     private javax.swing.JTextField tfFimSafra;
-    private javax.swing.JTextPane tfObs;
     private javax.swing.JTextField tfSsp;
     private javax.swing.JTextField tfinicioSafra;
     // End of variables declaration//GEN-END:variables
