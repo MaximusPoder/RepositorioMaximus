@@ -60,6 +60,7 @@ public class DAOPescadorMaterial implements IOperationBean<PescadorMaterial>{
             List<PescadorMaterial> empresas = new ArrayList<PescadorMaterial>();
             while (set.next()) {
                 int index = 0;
+
                 PescadorMaterial e = new PescadorMaterial();
                 e.setId(set.getInt(fields[index++]));
                 e.setMaterial(set.getString(fields[index++]));
@@ -68,9 +69,7 @@ public class DAOPescadorMaterial implements IOperationBean<PescadorMaterial>{
                 e.setCusto(set.getString(fields[index++]));
                 e.setOutros(set.getString(fields[index++]));
                 e.setFrequencia(set.getString(fields[index++]));
-
                 e.setPescadorId(set.getInt(fields[index++]));
-
                 empresas.add(e);
             }
 
