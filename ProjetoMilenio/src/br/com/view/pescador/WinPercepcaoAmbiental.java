@@ -144,7 +144,7 @@ public class WinPercepcaoAmbiental extends javax.swing.JPanel {
     }
 
     private void refresh() {
-
+ System.out.println("Indice Percep.: "+(WinSelecionaPescador.cbPescador.getSelectedIndex() - 1));
         pde = new DAOPercepcaoAmbiental().getObjectWithQuery("select * from " +
                 "PescadorPersPectiva where pescadorId = " +
                 WinSelecionaPescador.pescadors.get(WinSelecionaPescador.cbPescador.getSelectedIndex() - 1).getId());

@@ -29,8 +29,8 @@ public class WinQuestionarioPescador extends javax.swing.JFrame {
 
     /** Creates new form WinQuestionarioPescador */
     private Integer index = 1;
-    private final int max = 5;
-    private final int min = 2;
+    private final int max = 6;
+    private final int min = 1;
 
     public WinQuestionarioPescador() {
         initLookAndfeel();
@@ -92,19 +92,24 @@ public class WinQuestionarioPescador extends javax.swing.JFrame {
         }
     }
 
-//      public static void main(String args[]) {
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new WinQuestionarioPescador().setVisible(true);
-//            }
-//        });
-//    }
-
-
      private void updatePanel(Integer index) {
+
+         System.out.println("My index.: "+index);
+         if(index > max)
+         {
+             btProximo.setEnabled(false);
+             btAnterior.setEnabled(true);
+         }else if(index<min)
+         {
+             btProximo.setEnabled(true);
+             btAnterior.setEnabled(false);
+         }else{
+             btProximo.setEnabled(true);
+             btAnterior.setEnabled(true);
         switch (index) {
             case 1: {
-                  ChangePanel("", new WinPanelPescador());
+                btAnterior.setEnabled(false);
+                ChangePanel("", new WinPanelPescador());
                 break;
             }
              case 2: {
@@ -124,9 +129,11 @@ public class WinQuestionarioPescador extends javax.swing.JFrame {
                 break;
             }
             case 6: {
+                btProximo.setEnabled(false);
                   ChangePanel("", new WinPercepcaoAmbiental());
                 break;
             }
+        }
 
         }
     }
@@ -202,26 +209,14 @@ public class WinQuestionarioPescador extends javax.swing.JFrame {
 
     private void btAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAnteriorActionPerformed
         // TODO add your handling code here:
-
-        if (index-- == min) {
-            updatePanel(index);
-            btAnterior.setEnabled(false);
-        } else {
-            updatePanel(index);
-        }
-        btProximo.setEnabled(true);
+            updatePanel(--index);
+       
 }//GEN-LAST:event_btAnteriorActionPerformed
 
     private void btProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btProximoActionPerformed
         // TODO add your handling code here:
 
-        if (index++ == max) {
-            updatePanel(index);
-            btProximo.setEnabled(false);
-        } else {
-            updatePanel(index);
-        }
-        btAnterior.setEnabled(true);
+        updatePanel(++index);
     }//GEN-LAST:event_btProximoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

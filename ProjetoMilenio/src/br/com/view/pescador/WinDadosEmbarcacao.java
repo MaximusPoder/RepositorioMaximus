@@ -173,11 +173,14 @@ public class WinDadosEmbarcacao extends javax.swing.JPanel {
     }
 
     private void refresh() {
+        if((WinSelecionaPescador.cbPescador.getSelectedIndex() - 1)!=-1){
         pde = new DAOPescadorDadosEmbarcacao().getObjectWithQuery("select * from " +
                 "PescadorDadosEmbarcacao where pescadorId = " +
-                WinSelecionaPescador.pescadors.get(WinSelecionaPescador.cbPescador.getSelectedIndex() - 1).getId());
+                WinSelecionaPescador.pescadors.
+                get(WinSelecionaPescador.cbPescador.getSelectedIndex() - 1).getId());
         if (pde != null) {
             setpescadorComposicaoForPanel(pde);
+        }
         }
 
     }

@@ -16,6 +16,7 @@ import br.com.util.MyUtil;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.List;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -25,14 +26,19 @@ public class WinSelecionaPescador extends javax.swing.JPanel {
 
     protected static List<Pescador> pescadors;
 
+
     /** Creates new form WinSelecionaPescador */
     public WinSelecionaPescador() {
+       
         initComponents();
         pescadors = new DAOPescador().getListWithQuery("select * from Pescador");
+        
         MyUtil.refresComboBox(pescadors, cbPescador);
         initiAction();
+        cbPescador.setSelectedIndex(0);
         WinQuestionarioPescador.btProximo.setEnabled(false);
     }
+     
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -140,6 +146,7 @@ public class WinSelecionaPescador extends javax.swing.JPanel {
                         WinQuestionarioPescador.btProximo.setEnabled(false);
                     }else
                     {
+
                         WinQuestionarioPescador.btProximo.setEnabled(true);
                     }
                 }
