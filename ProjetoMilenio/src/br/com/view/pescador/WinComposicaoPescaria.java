@@ -35,7 +35,7 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
     private PescadorComposicao pescadorComposicao;
 
     public WinComposicaoPescaria() {
-
+  System.out.println("Inicia Composicao");
         initComponents();
         initAction();
         MyUtil.initiActionCmd(panel);
@@ -215,6 +215,7 @@ public class WinComposicaoPescaria extends javax.swing.JPanel {
     }
 
     private void refresh() {
+         System.out.println("Indice Refre.: "+(WinSelecionaPescador.cbPescador.getSelectedIndex() - 1));
         pescadorComposicao = new DAOPescadorComposicao().getObjectWithQuery("select * from " +
                 "PescadorComposicao where pescadorId = " +
                 WinSelecionaPescador.pescadors.get(WinSelecionaPescador.cbPescador.getSelectedIndex() - 1).getId());

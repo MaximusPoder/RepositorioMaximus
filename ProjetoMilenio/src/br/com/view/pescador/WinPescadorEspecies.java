@@ -59,6 +59,7 @@ public class WinPescadorEspecies extends javax.swing.JPanel {
     }
 
     private void refresh() {
+         System.out.println("Indice Pecador Espe.: "+(WinSelecionaPescador.cbPescador.getSelectedIndex() - 1));
         if (WinSelecionaPescador.cbPescador.getSelectedIndex() > 0) {
             especieCapturadas = new ArrayList<PescadorEspecieCapturada>();
             especieCapturadas = new DAOPescadorEspecieCapturada().getListWithQuery("select * from " +
