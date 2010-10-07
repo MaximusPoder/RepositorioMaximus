@@ -26,7 +26,8 @@ public class DAOPescador implements IOperationBean<Pescador> {
         String query = "insert     into         Pescador    " +
                 "     (questao1,questao2,questao3,questao4,questao5," +
                 "      questao6,questao7,questao8,questao9,questao10," +
-                "      questao11,questao12,questao13,questao14,questao15, questao16, questao17, " +
+                "      questao11,questao12,questao13,questao14,"
+                + "     questao15, questao16, questao17, " +
                 "      questao18, questao19, " +
                 "      questao20,questao21,questao22,questao23,questao24," +
                 " questao25,observacao,questao26)" +
