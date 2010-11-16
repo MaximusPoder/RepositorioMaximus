@@ -114,7 +114,7 @@ public class WinPanelPescador extends javax.swing.JPanel {
 
     private void setpescadorForPanel(Pescador p) {
 
-        cbMunicipioQuestao1.setSelectedItem(p.getQuestao1());
+        cbMunicipioQuestao1.setSelectedItem(p.getMunicipio());
         System.out.println("nome.: "+p.getQuestao2());
         tfQuestao2.setText(p.getQuestao2());
         tfQuestao3.setText(p.getQuestao3());

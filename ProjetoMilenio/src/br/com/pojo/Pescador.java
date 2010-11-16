@@ -25,7 +25,7 @@ public class Pescador {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column
-    private String questao1;
+    private String municipio;
     @Column
     private String questao2;
     @Column
@@ -43,13 +43,13 @@ public class Pescador {
     @Column
     private String questao9;
     @Column
-    private String questao10;
+    private String composicao_familiar;
     @Column
-    private String questao11;
+    private String escolaridade;
     @Column
-    private String questao12;
+    private String pq_parou;
     @Column
-    private String questao13;
+    private String local_moradia;
     @Column
     private String questao14;
     @Column
@@ -88,7 +88,7 @@ public class Pescador {
         this.observacao = observacao;
     }
     public void all(String questao1, String questao2, String questao3, String questao4, String questao5, String questao6, String questao7, String questao8, String questao9, String questao10, String questao11, String questao12, String questao13, String questao14, String questao15, String questao16, String questao17, String questao18, String questao19, String questao20, String questao21, String questao22, String questao23, String questao24, String questao25, String questao26) {
-        this.questao1 = questao1;
+        this.municipio = questao1;
         this.questao2 = questao2;
         this.questao3 = questao3;
         this.questao4 = questao4;
@@ -97,10 +97,10 @@ public class Pescador {
         this.questao7 = questao7;
         this.questao8 = questao8;
         this.questao9 = questao9;
-        this.questao10 = questao10;
-        this.questao11 = questao11;
-        this.questao12 = questao12;
-        this.questao13 = questao13;
+        this.composicao_familiar = questao10;
+        this.escolaridade = questao11;
+        this.pq_parou = questao12;
+        this.local_moradia = questao13;
         this.questao14 = questao14;
         this.questao15 = questao15;
         this.questao16 = questao16;
@@ -124,46 +124,46 @@ public class Pescador {
         this.id = id;
     }
 
-    public String getQuestao1() {
-        return questao1;
+    public String getMunicipio() {
+        return municipio;
     }
 
-    public void setQuestao1(String questao1) {
-        this.questao1 = questao1;
+    public void setMunicipio(String municipio) {
+        this.municipio = municipio;
     }
 
     public String getQuestao10() {
-        return questao10;
+        return composicao_familiar;
     }
 
 
 
     public void setQuestao10(String questao10) {
-        this.questao10 = questao10;
+        this.composicao_familiar = questao10;
     }
 
     public String getQuestao11() {
-        return questao11;
+        return escolaridade;
     }
 
     public void setQuestao11(String questao11) {
-        this.questao11 = questao11;
+        this.escolaridade = questao11;
     }
 
     public String getQuestao12() {
-        return questao12;
+        return pq_parou;
     }
 
     public void setQuestao12(String questao12) {
-        this.questao12 = questao12;
+        this.pq_parou = questao12;
     }
 
     public String getQuestao13() {
-        return questao13;
+        return local_moradia;
     }
 
     public void setQuestao13(String questao13) {
-        this.questao13 = questao13;
+        this.local_moradia = questao13;
     }
 
     public String getQuestao14() {

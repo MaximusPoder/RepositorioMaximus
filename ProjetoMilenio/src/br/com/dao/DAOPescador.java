@@ -24,16 +24,16 @@ public class DAOPescador implements IOperationBean<Pescador> {
 
     public boolean cadastrar(Pescador bean) {
         String query = "insert     into         Pescador    " +
-                "     (questao1,questao2,questao3,questao4,questao5," +
-                "      questao6,questao7,questao8,questao9,questao10," +
-                "      questao11,questao12,questao13,questao14,"
+                "     (municipio,questao2,questao3,questao4,questao5," +
+                "      questao6,questao7,questao8,questao9,composicao_familiar," +
+                "      escolaridade,pq_parou,local_moradia,questao14,"
                 + "     questao15, questao16, questao17, " +
                 "      questao18, questao19, " +
                 "      questao20,questao21,questao22,questao23,questao24," +
                 " questao25,observacao,questao26)" +
                 " values  " +
                 " (" +
-                " '" + bean.getQuestao1() + "'," +
+                " '" + bean.getMunicipio() + "'," +
                 " '" + bean.getQuestao2() + "'," +
                 " '" + bean.getQuestao3() + "'," +
                 " '" + bean.getQuestao4() + "'," +
@@ -93,7 +93,7 @@ public class DAOPescador implements IOperationBean<Pescador> {
             conexao = new Conexao();
             conexao.conecta("mil_interface");
             String query = "update         Pescador     set    " +
-                    "    questao1='" + bean.getQuestao1() + "',     " +
+                    "    municipio='" + bean.getMunicipio() + "',     " +
                     "    questao2='" + bean.getQuestao2() + "',     " +
                     "    questao3='" + bean.getQuestao3() + "',     " +
                     "    questao4='" + bean.getQuestao4() + "',     " +
@@ -102,7 +102,10 @@ public class DAOPescador implements IOperationBean<Pescador> {
                     "    questao7='" + bean.getQuestao7() + "',     " +
                     "    questao8='" + bean.getQuestao8() + "',     " +
                     "    questao9='" + bean.getQuestao9() + "',     " +
-                    "    questao10='" + bean.getQuestao10() + "',     " +
+                    "    composicao_familiar='" + bean.getQuestao10() + "',     " +
+                    "    escolaridade='" + bean.getQuestao11() + "',     " +
+                    "    pq_parou='" + bean.getQuestao12() + "',     " +
+                    "    local_moradia='" + bean.getQuestao13() + "',     " +
                     "    questao15='" + bean.getQuestao15() + "',     " +
                     "    questao16='" + bean.getQuestao16() + "',    " +
                     "    questao17='" + bean.getQuestao17() + "',    " +
@@ -139,33 +142,33 @@ public class DAOPescador implements IOperationBean<Pescador> {
             while (set.next()) {
                 int index = 0;
                 Pescador e = new Pescador();
-                e.setId(set.getInt(fields[index++]));
-                e.setQuestao1(set.getString(fields[index++]));
+                e.setId(set.getInt(fields[index++]));          //coluna 0
+                e.setMunicipio(set.getString(fields[index++])); 
                 e.setQuestao2(set.getString(fields[index++]));
                 e.setQuestao3(set.getString(fields[index++]));
                 e.setQuestao4(set.getString(fields[index++]));
-                e.setQuestao5(set.getString(fields[index++]));
-                e.setQuestao6(set.getString(fields[index++]));
+                e.setQuestao5(set.getString(fields[index++])); //coluna 5
+                e.setQuestao6(set.getString(fields[index++])); 
                 e.setQuestao7(set.getString(fields[index++]));
                 e.setQuestao8(set.getString(fields[index++]));
                 e.setQuestao9(set.getString(fields[index++]));
-                e.setQuestao10(set.getString(fields[index++]));
-                e.setQuestao11(set.getString(fields[index++]));
+                e.setQuestao10(set.getString(fields[index++])); //coluna 10
+                e.setQuestao11(set.getString(fields[index++])); 
                 e.setQuestao12(set.getString(fields[index++]));
                 e.setQuestao13(set.getString(fields[index++]));
                 e.setQuestao14(set.getString(fields[index++]));
-                e.setQuestao15(set.getString(fields[index++]));
-                e.setQuestao16(set.getString(fields[index++]));
+                e.setQuestao15(set.getString(fields[index++])); //coluna 15
+                e.setQuestao16(set.getString(fields[index++])); 
                 e.setQuestao17(set.getString(fields[index++]));
                 e.setQuestao18(set.getString(fields[index++]));
                 e.setQuestao19(set.getString(fields[index++]));
-                e.setQuestao20(set.getString(fields[index++]));
-                e.setQuestao21(set.getString(fields[index++]));
+                e.setQuestao20(set.getString(fields[index++])); //coluna 20
+                e.setQuestao21(set.getString(fields[index++])); 
                 e.setQuestao22(set.getString(fields[index++]));
                 e.setQuestao23(set.getString(fields[index++]));
                 e.setQuestao24(set.getString(fields[index++]));
-                e.setQuestao25(set.getString(fields[index++]));
-                e.setQuestao26(set.getString(fields[index++]));
+                e.setQuestao25(set.getString(fields[index++])); //coluna 25
+                e.setQuestao26(set.getString(fields[index++])); 
                 e.setObservacao(set.getString(fields[index++]));
 
 
