@@ -73,16 +73,26 @@ public class pescador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        buttonGroup2 = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jpAtravessador = new javax.swing.JPanel();
-        tfIdade = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel39 = new javax.swing.JLabel();
+        chbDrenagemNao = new javax.swing.JCheckBox();
+        chbArmadorPescador = new javax.swing.JCheckBox();
         tfNome = new javax.swing.JTextField();
-        jLabel22 = new javax.swing.JLabel();
+        chbAssalariado = new javax.swing.JCheckBox();
+        tfIdade = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
         cbMunicipio = new javax.swing.JComboBox();
         jLabel24 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        chbAguaNao = new javax.swing.JCheckBox();
+        chbAguaSim = new javax.swing.JCheckBox();
+        chbDrenagemSim = new javax.swing.JCheckBox();
+        jLabel42 = new javax.swing.JLabel();
+        chbFossaSim = new javax.swing.JCheckBox();
+        chbFossaNao = new javax.swing.JCheckBox();
+        jLabel41 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         Cadastrar = new javax.swing.JButton();
         botao_excluir = new javax.swing.JButton();
@@ -92,20 +102,53 @@ public class pescador extends javax.swing.JFrame {
         botao_proximo = new javax.swing.JButton();
         botao_ultimo = new javax.swing.JButton();
         botao_alterar = new javax.swing.JButton();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        chbIbamaNao = new javax.swing.JCheckBox();
+        jLabel5 = new javax.swing.JLabel();
+        chbPossuiRegistroNao = new javax.swing.JCheckBox();
+        chbIbamaSim = new javax.swing.JCheckBox();
         jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        chbPossuiRegistroSim = new javax.swing.JCheckBox();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        chbFamiliar = new javax.swing.JCheckBox();
+        chbParceria = new javax.swing.JCheckBox();
+        chbAlvenaria = new javax.swing.JCheckBox();
+        chbMadeira = new javax.swing.JCheckBox();
+        chbLuzNao = new javax.swing.JCheckBox();
+        chbLuzSim = new javax.swing.JCheckBox();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        chbBanheiroFora = new javax.swing.JCheckBox();
+        chbBanheiroDentro = new javax.swing.JCheckBox();
+        tfQualAssociacao = new javax.swing.JTextField();
         tfApelido = new javax.swing.JTextField();
+        jLabel45 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        tfNaturalidade = new javax.swing.JTextField();
-        jLabel28 = new javax.swing.JLabel();
+        chbAssociacaoNao = new javax.swing.JCheckBox();
+        chbAssociacaoSim = new javax.swing.JCheckBox();
+        jLabel26 = new javax.swing.JLabel();
         cbSexo = new javax.swing.JComboBox();
         jLabel29 = new javax.swing.JLabel();
+        tfNaturalidade = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        tfAtividadeSecundaria = new javax.swing.JTextField();
         tfAtividadePrincipal = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
-        tfAtividadeSecundaria = new javax.swing.JTextField();
+        tfDesdeQuandoPescador = new javax.swing.JTextField();
+        tfQualCooperativa = new javax.swing.JTextField();
+        chbCooperativaSim = new javax.swing.JCheckBox();
+        chbCooperativaNao = new javax.swing.JCheckBox();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
+        chbInssSim = new javax.swing.JCheckBox();
         tfComposicaoFamiliar = new javax.swing.JTextField();
+        chbInssNao = new javax.swing.JCheckBox();
         jLabel33 = new javax.swing.JLabel();
         tfEscolaridade = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
@@ -113,58 +156,13 @@ public class pescador extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
         cbLocalMoradia = new javax.swing.JComboBox();
         cbEstadoCivil = new javax.swing.JComboBox();
-        jLabel43 = new javax.swing.JLabel();
-        chbMadeira = new javax.swing.JCheckBox();
-        chbAlvenaria = new javax.swing.JCheckBox();
-        chbLuzSim = new javax.swing.JCheckBox();
-        chbLuzNao = new javax.swing.JCheckBox();
-        jLabel36 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        chbBanheiroDentro = new javax.swing.JCheckBox();
-        chbBanheiroFora = new javax.swing.JCheckBox();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        chbDrenagemNao = new javax.swing.JCheckBox();
-        chbDrenagemSim = new javax.swing.JCheckBox();
-        chbAguaSim = new javax.swing.JCheckBox();
-        chbAguaNao = new javax.swing.JCheckBox();
-        jLabel40 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
-        chbFossaNao = new javax.swing.JCheckBox();
-        chbFossaSim = new javax.swing.JCheckBox();
-        jLabel42 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        chbInssSim = new javax.swing.JCheckBox();
-        chbInssNao = new javax.swing.JCheckBox();
-        chbInssEmpregado = new javax.swing.JCheckBox();
-        jLabel2 = new javax.swing.JLabel();
-        chbColoniaSim = new javax.swing.JCheckBox();
-        chbColoniaNao = new javax.swing.JCheckBox();
-        jLabel44 = new javax.swing.JLabel();
         tfQualColonia = new javax.swing.JTextField();
+        jLabel44 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        chbAssociacaoNao = new javax.swing.JCheckBox();
-        chbAssociacaoSim = new javax.swing.JCheckBox();
-        tfQualAssociacao = new javax.swing.JTextField();
-        jLabel45 = new javax.swing.JLabel();
-        jLabel46 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        chbCooperativaNao = new javax.swing.JCheckBox();
-        chbCooperativaSim = new javax.swing.JCheckBox();
-        tfQualCooperativa = new javax.swing.JTextField();
-        tfDesdeQuandoPescador = new javax.swing.JTextField();
-        jLabel47 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        chbIbamaNao = new javax.swing.JCheckBox();
-        chbIbamaSim = new javax.swing.JCheckBox();
-        chbPossuiRegistroNao = new javax.swing.JCheckBox();
-        jLabel6 = new javax.swing.JLabel();
-        chbPossuiRegistroSim = new javax.swing.JCheckBox();
-        jLabel48 = new javax.swing.JLabel();
-        chbFamiliar = new javax.swing.JCheckBox();
-        chbParceria = new javax.swing.JCheckBox();
-        chbAssalariado = new javax.swing.JCheckBox();
-        chbArmadorPescador = new javax.swing.JCheckBox();
+        jLabel2 = new javax.swing.JLabel();
+        chbInssEmpregado = new javax.swing.JCheckBox();
+        chbColoniaNao = new javax.swing.JCheckBox();
+        chbColoniaSim = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Questionário Atravessador");
@@ -174,14 +172,48 @@ public class pescador extends javax.swing.JFrame {
             }
         });
 
-        jpAtravessador.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jpAtravessador.setPreferredSize(new java.awt.Dimension(735, 538));
+        jScrollPane1.setAutoscrolls(true);
 
-        jLabel22.setText("Idade.:");
+        jLabel39.setText("Água encanada.:");
+
+        chbDrenagemNao.setText("Não");
+
+        chbArmadorPescador.setText("Armador e pescador (arma o barco e vai pescar)");
+        chbArmadorPescador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chbArmadorPescadorActionPerformed(evt);
+            }
+        });
+
+        chbAssalariado.setText("Assalariado (carteira assinada)");
+        chbAssalariado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chbAssalariadoActionPerformed(evt);
+            }
+        });
 
         jLabel23.setText("Nome.:");
 
+        jLabel22.setText("Idade.:");
+
         jLabel24.setText("Município");
+
+        jLabel40.setText("Drenagem pluvial.:");
+
+        chbAguaNao.setText("Não");
+
+        chbAguaSim.setText("Sim");
+
+        chbDrenagemSim.setText("Sim");
+
+        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel42.setText("Questionário Pescador");
+
+        chbFossaSim.setText("Sim");
+
+        chbFossaNao.setText("Não");
+
+        jLabel41.setText("Fossa seca ou sépica.:");
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -264,7 +296,7 @@ public class pescador extends javax.swing.JFrame {
                         .addComponent(botao_proximo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botao_ultimo)))
-                .addContainerGap(362, Short.MAX_VALUE))
+                .addContainerGap(376, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -284,134 +316,29 @@ public class pescador extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel25.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel25.setText("DADOS PESSOAIS:");
-
-        jLabel26.setText("Apelido.:");
-
-        jLabel27.setText("Naturalidade.:");
-
-        jLabel28.setText("Sexo.:");
-
-        cbSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "M", "F" }));
-
-        jLabel29.setText("Atividade principal de renda.:");
-
-        jLabel30.setText("Atividade secundária.:");
-
-        jLabel31.setText("Estado civil.:");
-
-        jLabel32.setText("Composição Familiar.:");
-
-        jLabel33.setText("Escolaridade.:");
-
-        jLabel34.setText("Porque Parou?");
-
-        jLabel35.setText("Local de Moradia.:");
-
-        cbLocalMoradia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sede Municipal", "Comunidade/Vila local", "Outro Município", "Capital" }));
-
-        cbEstadoCivil.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Solteiro", "Casado", "União Estável" }));
-        cbEstadoCivil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbEstadoCivilActionPerformed(evt);
-            }
-        });
-
-        jLabel43.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel43.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel43.setText("MORADIA");
-
-        chbMadeira.setText("Madeira");
-
-        chbAlvenaria.setText("Alvenaria");
-        chbAlvenaria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chbAlvenariaActionPerformed(evt);
-            }
-        });
-
-        chbLuzSim.setText("Sim");
-
-        chbLuzNao.setText("Não");
-
-        jLabel36.setText("Luz elétrica.:");
-
-        jLabel38.setText("Casa.:");
-
-        chbBanheiroDentro.setText("Dentro");
-
-        chbBanheiroFora.setText("Fora");
-
-        jLabel37.setText("Banheiro.:");
-
-        jLabel39.setText("Água encanada.:");
-
-        chbDrenagemNao.setText("Não");
-
-        chbDrenagemSim.setText("Sim");
-
-        chbAguaSim.setText("Sim");
-
-        chbAguaNao.setText("Não");
-
-        jLabel40.setText("Drenagem pluvial.:");
-
-        jLabel41.setText("Fossa seca ou sépica.:");
-
-        chbFossaNao.setText("Não");
-
-        chbFossaSim.setText("Sim");
-
-        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel42.setText("Questionário Pescador");
-
-        jLabel1.setText("Paga INSS.:");
-
-        chbInssSim.setText("Sim");
-
-        chbInssNao.setText("Não (autônomo)");
-
-        chbInssEmpregado.setText("Empregado");
-
-        jLabel2.setText("Na colônia.:");
-
-        chbColoniaSim.setText("Sim");
-
-        chbColoniaNao.setText("Não");
-
-        jLabel44.setText("Qual.:");
-
-        jLabel3.setText("Em alguma associação.:");
-
-        chbAssociacaoNao.setText("Não");
-
-        chbAssociacaoSim.setText("Sim");
-
-        jLabel45.setText("Qual.:");
-
-        jLabel46.setText("Qual.:");
-
-        jLabel4.setText("Cooperativa.:");
-
-        chbCooperativaNao.setText("Não");
-
-        chbCooperativaSim.setText("Sim");
 
         jLabel47.setText("Desde quando é pescador.:");
 
+        chbIbamaNao.setText("Não");
+
         jLabel5.setText("Possui carteira IBAMA.:");
 
-        chbIbamaNao.setText("Não");
+        chbPossuiRegistroNao.setText("Não");
 
         chbIbamaSim.setText("Sim");
 
-        chbPossuiRegistroNao.setText("Não");
+        jLabel25.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel25.setText("DADOS PESSOAIS:");
 
         jLabel6.setText("Possui Registro Feral de Pescador (RGP-MPA).:");
 
         chbPossuiRegistroSim.setText("Sim");
 
-        jLabel48.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel37.setText("Banheiro.:");
+
+        jLabel48.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel48.setText("Relações de Trabalho");
 
         chbFamiliar.setText("Familiar (o lucro fica em casa)");
@@ -428,330 +355,402 @@ public class pescador extends javax.swing.JFrame {
             }
         });
 
-        chbAssalariado.setText("Assalariado (carteira assinada)");
-        chbAssalariado.addActionListener(new java.awt.event.ActionListener() {
+        chbAlvenaria.setText("Alvenaria");
+        chbAlvenaria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chbAssalariadoActionPerformed(evt);
+                chbAlvenariaActionPerformed(evt);
             }
         });
 
-        chbArmadorPescador.setText("Armador e pescador (arma o barco e vai pescar)");
-        chbArmadorPescador.addActionListener(new java.awt.event.ActionListener() {
+        chbMadeira.setText("Madeira");
+
+        chbLuzNao.setText("Não");
+
+        chbLuzSim.setText("Sim");
+
+        jLabel38.setText("Casa.:");
+
+        jLabel36.setText("Luz elétrica.:");
+
+        chbBanheiroFora.setText("Fora");
+
+        chbBanheiroDentro.setText("Dentro");
+
+        jLabel45.setText("Qual.:");
+
+        jLabel27.setText("Naturalidade.:");
+
+        chbAssociacaoNao.setText("Não");
+
+        chbAssociacaoSim.setText("Sim");
+
+        jLabel26.setText("Apelido.:");
+
+        cbSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "M", "F" }));
+
+        jLabel29.setText("Atividade principal de renda.:");
+
+        jLabel28.setText("Sexo.:");
+
+        jLabel30.setText("Atividade secundária.:");
+
+        chbCooperativaSim.setText("Sim");
+
+        chbCooperativaNao.setText("Não");
+
+        jLabel4.setText("Cooperativa.:");
+
+        jLabel46.setText("Qual.:");
+
+        jLabel31.setText("Estado civil.:");
+
+        jLabel1.setText("Paga INSS.:");
+
+        jLabel32.setText("Composição Familiar.:");
+
+        chbInssSim.setText("Sim");
+
+        chbInssNao.setText("Não (autônomo)");
+
+        jLabel33.setText("Escolaridade.:");
+
+        jLabel34.setText("Porque Parou?");
+
+        jLabel35.setText("Local de Moradia.:");
+
+        cbLocalMoradia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sede Municipal", "Comunidade/Vila local", "Outro Município", "Capital" }));
+
+        cbEstadoCivil.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Solteiro", "Casado", "União Estável" }));
+        cbEstadoCivil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chbArmadorPescadorActionPerformed(evt);
+                cbEstadoCivilActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jpAtravessadorLayout = new javax.swing.GroupLayout(jpAtravessador);
-        jpAtravessador.setLayout(jpAtravessadorLayout);
-        jpAtravessadorLayout.setHorizontalGroup(
-            jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                        .addComponent(chbArmadorPescador)
-                        .addContainerGap())
-                    .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jpAtravessadorLayout.createSequentialGroup()
+        jLabel44.setText("Qual.:");
+
+        jLabel3.setText("Em alguma associação.:");
+
+        jLabel2.setText("Na colônia.:");
+
+        chbInssEmpregado.setText("Empregado");
+
+        chbColoniaNao.setText("Não");
+
+        chbColoniaSim.setText("Sim");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel24)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cbMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel25)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel28)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel22)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel27)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfNaturalidade, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel35)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbLocalMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel33)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(tfEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel34))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel31)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cbEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel32)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tfComposicaoFamiliar, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tfPqParou, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel29)
+                                    .addComponent(jLabel30))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tfAtividadePrincipal)
+                                    .addComponent(tfAtividadeSecundaria, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel23)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tfNome, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel26)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tfApelido, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(283, 283, 283)
+                        .addComponent(jLabel42))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel43))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(chbArmadorPescador)
                             .addComponent(chbAssalariado)
-                            .addContainerGap())
-                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                .addComponent(chbParceria)
-                                .addContainerGap())
-                            .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                    .addComponent(chbFamiliar)
-                                    .addContainerGap())
-                                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel39)
-                                                    .addComponent(jLabel40)
-                                                    .addComponent(jLabel41)
-                                                    .addComponent(jLabel36)
-                                                    .addComponent(jLabel37)
-                                                    .addComponent(jLabel38))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(chbMadeira)
-                                                    .addComponent(chbLuzSim)
-                                                    .addComponent(chbBanheiroDentro)
-                                                    .addComponent(chbDrenagemSim)
-                                                    .addComponent(chbAguaSim)
-                                                    .addComponent(chbFossaSim))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(chbFossaNao)
-                                                    .addComponent(chbDrenagemNao)
-                                                    .addComponent(chbAguaNao)
-                                                    .addComponent(chbLuzNao)
-                                                    .addComponent(chbAlvenaria)
-                                                    .addComponent(chbBanheiroFora))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 404, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                                .addComponent(jLabel24)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(cbMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(jLabel25)
-                                            .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                                .addComponent(jLabel28)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jLabel22)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(tfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                                .addComponent(jLabel27)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(tfNaturalidade, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel35)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(cbLocalMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                                        .addComponent(jLabel33)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(tfEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(jLabel34))
-                                                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                                        .addComponent(jLabel31)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(cbEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                        .addComponent(jLabel32)))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(tfComposicaoFamiliar, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(tfPqParou, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel29)
-                                                    .addComponent(jLabel30))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(tfAtividadePrincipal)
-                                                    .addComponent(tfAtividadeSecundaria, javax.swing.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)))
-                                            .addComponent(jLabel43)
-                                            .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpAtravessadorLayout.createSequentialGroup()
-                                                    .addComponent(jLabel23)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(tfNome, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jLabel26)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(tfApelido, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpAtravessadorLayout.createSequentialGroup()
-                                        .addComponent(jLabel42)
-                                        .addGap(438, 438, 438))
-                                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                        .addComponent(jLabel47)
+                            .addComponent(chbParceria)
+                            .addComponent(chbFamiliar)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel47)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfDesdeQuandoPescador, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(chbInssSim)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tfDesdeQuandoPescador, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addContainerGap(392, Short.MAX_VALUE))
-                                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel2)
-                                            .addComponent(jLabel3)
-                                            .addComponent(jLabel4)
-                                            .addComponent(jLabel1))
+                                        .addComponent(chbInssNao)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                                .addComponent(chbInssSim)
+                                        .addComponent(chbInssEmpregado))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(chbColoniaSim)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(chbInssNao)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(chbInssEmpregado))
-                                            .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                                        .addComponent(chbColoniaSim)
+                                                .addComponent(chbColoniaNao)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jLabel44)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(chbAssociacaoSim)
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(chbColoniaNao)
+                                                        .addComponent(chbAssociacaoNao)
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                        .addComponent(jLabel44)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpAtravessadorLayout.createSequentialGroup()
-                                                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpAtravessadorLayout.createSequentialGroup()
-                                                                .addComponent(chbAssociacaoSim)
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(chbAssociacaoNao)
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                .addComponent(jLabel45))
-                                                            .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                                                .addComponent(chbCooperativaSim)
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(chbCooperativaNao)
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                .addComponent(jLabel46)))
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                                                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(tfQualCooperativa, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(tfQualAssociacao)
-                                                    .addComponent(tfQualColonia, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                        .addContainerGap(226, Short.MAX_VALUE))
-                                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                                .addComponent(jLabel6)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(chbPossuiRegistroSim)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(chbPossuiRegistroNao))
-                                            .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                                .addComponent(jLabel5)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(chbIbamaSim)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(chbIbamaNao)))
-                                        .addContainerGap(332, Short.MAX_VALUE))
-                                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                        .addComponent(jLabel48)
-                                        .addContainerGap(576, Short.MAX_VALUE))))))))
+                                                        .addComponent(jLabel45))
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(chbCooperativaSim)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(chbCooperativaNao)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(jLabel46)))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(tfQualCooperativa, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(tfQualAssociacao)
+                                            .addComponent(tfQualColonia, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel6)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(chbPossuiRegistroSim)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(chbPossuiRegistroNao))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel5)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(chbIbamaSim)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(chbIbamaNao)))
+                            .addComponent(jLabel48)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel39)
+                                    .addComponent(jLabel40)
+                                    .addComponent(jLabel41)
+                                    .addComponent(jLabel37)
+                                    .addComponent(jLabel36)
+                                    .addComponent(jLabel38))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(chbMadeira)
+                                    .addComponent(chbLuzSim)
+                                    .addComponent(chbBanheiroDentro)
+                                    .addComponent(chbDrenagemSim)
+                                    .addComponent(chbAguaSim)
+                                    .addComponent(chbFossaSim))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(chbFossaNao)
+                                    .addComponent(chbDrenagemNao)
+                                    .addComponent(chbAguaNao)
+                                    .addComponent(chbBanheiroFora)
+                                    .addComponent(chbAlvenaria)
+                                    .addComponent(chbLuzNao))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jpAtravessadorLayout.setVerticalGroup(
-            jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpAtravessadorLayout.createSequentialGroup()
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel42)
                 .addGap(16, 16, 16)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel24))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel25)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel23)
                     .addComponent(jLabel26)
                     .addComponent(tfApelido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel27)
                     .addComponent(tfNaturalidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel35)
                     .addComponent(cbLocalMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
                     .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22)
                     .addComponent(tfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel29)
                     .addComponent(tfAtividadePrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel30)
                     .addComponent(tfAtividadeSecundaria, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31)
                     .addComponent(jLabel32)
                     .addComponent(tfComposicaoFamiliar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel33)
                     .addComponent(tfEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel34)
                     .addComponent(tfPqParou, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel43)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(chbMadeira, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(chbLuzSim, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(chbAlvenaria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(chbLuzNao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(4, 4, 4)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(chbBanheiroDentro, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(chbBanheiroFora, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(5, 5, 5)
-                        .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel36, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+                        .addComponent(jLabel38)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE))
-                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(chbMadeira, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(chbAlvenaria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel36)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(chbLuzSim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(chbLuzNao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(chbBanheiroDentro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(chbBanheiroFora))))
+                        .addComponent(jLabel37)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(chbAguaSim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(chbAguaNao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(27, 27, 27))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpAtravessadorLayout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(chbDrenagemSim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(chbDrenagemNao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, 16, Short.MAX_VALUE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chbFossaSim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(chbFossaNao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+                                .addGap(27, 27, 27))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(chbAguaSim, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
+                                .addGap(27, 27, 27))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addComponent(chbDrenagemSim, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(chbFossaSim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(chbAguaNao, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
+                                .addGap(27, 27, 27))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addComponent(chbDrenagemNao, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(chbFossaNao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
-                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(chbInssSim)
                     .addComponent(chbInssNao)
                     .addComponent(chbInssEmpregado))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(chbColoniaSim)
                     .addComponent(chbColoniaNao)
                     .addComponent(jLabel44)
                     .addComponent(tfQualColonia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfQualAssociacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(chbAssociacaoSim)
                     .addComponent(chbAssociacaoNao)
                     .addComponent(jLabel45)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(chbCooperativaSim)
                     .addComponent(chbCooperativaNao)
                     .addComponent(jLabel46)
                     .addComponent(tfQualCooperativa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel47)
                     .addComponent(tfDesdeQuandoPescador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(chbIbamaSim)
                     .addComponent(chbIbamaNao)
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(chbPossuiRegistroSim)
                     .addComponent(chbPossuiRegistroNao)
                     .addComponent(jLabel6))
@@ -765,35 +764,57 @@ public class pescador extends javax.swing.JFrame {
                 .addComponent(chbAssalariado)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(chbArmadorPescador)
-                .addGap(24, 24, 24))
+                .addContainerGap())
         );
 
-        jScrollPane1.setViewportView(jpAtravessador);
+        jScrollPane1.setViewportView(jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 743, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 722, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 719, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE)
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-761)/2, (screenSize.height-753)/2, 761, 753);
+        setBounds((screenSize.width-738)/2, (screenSize.height-516)/2, 738, 516);
     }// </editor-fold>//GEN-END:initComponents
 
     private void fechar_janela(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_fechar_janela
         conexao.desconecta();
     }//GEN-LAST:event_fechar_janela
 
+    private void chbArmadorPescadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbArmadorPescadorActionPerformed
+        // TODO add your handling code here:
+}//GEN-LAST:event_chbArmadorPescadorActionPerformed
+
+    private void chbAssalariadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbAssalariadoActionPerformed
+        // TODO add your handling code here:
+}//GEN-LAST:event_chbAssalariadoActionPerformed
+
+    private void chbParceriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbParceriaActionPerformed
+        // TODO add your handling code here:
+}//GEN-LAST:event_chbParceriaActionPerformed
+
+    private void chbFamiliarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbFamiliarActionPerformed
+        // TODO add your handling code here:
+}//GEN-LAST:event_chbFamiliarActionPerformed
+
+    private void chbAlvenariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbAlvenariaActionPerformed
+        // TODO add your handling code here:
+}//GEN-LAST:event_chbAlvenariaActionPerformed
+
+    private void cbEstadoCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEstadoCivilActionPerformed
+        // TODO add your handling code here:
+}//GEN-LAST:event_cbEstadoCivilActionPerformed
+
     private void botao_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_alterarActionPerformed
         // Codigo para alterar os dados do BD
-        
+
 
         try{
             String sql ="UPDATE atravessador_cadastro SET "+
@@ -810,7 +831,7 @@ public class pescador extends javax.swing.JFrame {
                     "escolaridade = '"+ tfEscolaridade.getText() +"',"+
                     "pq_parou = '"+ tfPqParou.getText() +"',"+
                     "local_moradia = '"+ cbLocalMoradia.getSelectedItem() +"',"+
-                    
+
 
 
                     "where id_atravessador = "+conexao.resultSet.getString("id_atravessador");
@@ -887,14 +908,13 @@ public class pescador extends javax.swing.JFrame {
         tfComposicaoFamiliar.setText("");
         tfEscolaridade.setText("");
         tfPqParou.setText("");
-       
+
 
         //System.out.println(conexao.resultSet.getString("local_moradia"));
-       
+
         cbMunicipio.setSelectedIndex(0);
         cbSexo.setSelectedIndex(0);
         cbLocalMoradia.setSelectedIndex(0);
-        
 }//GEN-LAST:event_botao_novoActionPerformed
 
     private void botao_excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_excluirActionPerformed
@@ -923,10 +943,10 @@ public class pescador extends javax.swing.JFrame {
         } catch (SQLException ex) {
             System.out.println("Erro ao tentar excluir "+ex);
         }
-    }//GEN-LAST:event_botao_excluirActionPerformed
+}//GEN-LAST:event_botao_excluirActionPerformed
 
     private void CadastrarAction(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarAction
-        
+
         try {
             String sqlinsert = "insert into atravessador_cadastro "
                     + "(id_local,nome,apelido,naturalidade,"
@@ -967,30 +987,6 @@ public class pescador extends javax.swing.JFrame {
         }
 }//GEN-LAST:event_CadastrarAction
 
-    private void cbEstadoCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEstadoCivilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbEstadoCivilActionPerformed
-
-    private void chbAlvenariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbAlvenariaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chbAlvenariaActionPerformed
-
-    private void chbFamiliarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbFamiliarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chbFamiliarActionPerformed
-
-    private void chbParceriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbParceriaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chbParceriaActionPerformed
-
-    private void chbAssalariadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbAssalariadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chbAssalariadoActionPerformed
-
-    private void chbArmadorPescadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbArmadorPescadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chbArmadorPescadorActionPerformed
-
     /**
     * @param args the command line arguments
     */
@@ -1011,8 +1007,6 @@ public class pescador extends javax.swing.JFrame {
     private javax.swing.JButton botao_primeiro;
     private javax.swing.JButton botao_proximo;
     private javax.swing.JButton botao_ultimo;
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox cbEstadoCivil;
     private javax.swing.JComboBox cbLocalMoradia;
     private javax.swing.JComboBox cbMunicipio;
@@ -1079,9 +1073,9 @@ public class pescador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JPanel jpAtravessador;
     private javax.swing.JTextField tfApelido;
     private javax.swing.JTextField tfAtividadePrincipal;
     private javax.swing.JTextField tfAtividadeSecundaria;
