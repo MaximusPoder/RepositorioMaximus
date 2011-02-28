@@ -114,57 +114,57 @@ public class pescador extends javax.swing.JFrame {
         cbLocalMoradia = new javax.swing.JComboBox();
         cbEstadoCivil = new javax.swing.JComboBox();
         jLabel43 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
+        chbMadeira = new javax.swing.JCheckBox();
+        chbAlvenaria = new javax.swing.JCheckBox();
+        chbLuzSim = new javax.swing.JCheckBox();
+        chbLuzNao = new javax.swing.JCheckBox();
         jLabel36 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
+        chbBanheiroDentro = new javax.swing.JCheckBox();
+        chbBanheiroFora = new javax.swing.JCheckBox();
         jLabel37 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
-        jCheckBox7 = new javax.swing.JCheckBox();
-        jCheckBox8 = new javax.swing.JCheckBox();
-        jCheckBox9 = new javax.swing.JCheckBox();
-        jCheckBox10 = new javax.swing.JCheckBox();
+        chbDrenagemNao = new javax.swing.JCheckBox();
+        chbDrenagemSim = new javax.swing.JCheckBox();
+        chbAguaSim = new javax.swing.JCheckBox();
+        chbAguaNao = new javax.swing.JCheckBox();
         jLabel40 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
-        jCheckBox11 = new javax.swing.JCheckBox();
-        jCheckBox12 = new javax.swing.JCheckBox();
+        chbFossaNao = new javax.swing.JCheckBox();
+        chbFossaSim = new javax.swing.JCheckBox();
         jLabel42 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jCheckBox13 = new javax.swing.JCheckBox();
-        jCheckBox14 = new javax.swing.JCheckBox();
-        jCheckBox15 = new javax.swing.JCheckBox();
+        chbInssSim = new javax.swing.JCheckBox();
+        chbInssNao = new javax.swing.JCheckBox();
+        chbInssEmpregado = new javax.swing.JCheckBox();
         jLabel2 = new javax.swing.JLabel();
-        jCheckBox16 = new javax.swing.JCheckBox();
-        jCheckBox17 = new javax.swing.JCheckBox();
+        chbColoniaSim = new javax.swing.JCheckBox();
+        chbColoniaNao = new javax.swing.JCheckBox();
         jLabel44 = new javax.swing.JLabel();
-        tfPqParou1 = new javax.swing.JTextField();
+        tfQualColonia = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jCheckBox18 = new javax.swing.JCheckBox();
-        jCheckBox19 = new javax.swing.JCheckBox();
-        tfPqParou2 = new javax.swing.JTextField();
+        chbAssociacaoNao = new javax.swing.JCheckBox();
+        chbAssociacaoSim = new javax.swing.JCheckBox();
+        tfQualAssociacao = new javax.swing.JTextField();
         jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jCheckBox20 = new javax.swing.JCheckBox();
-        jCheckBox21 = new javax.swing.JCheckBox();
-        tfPqParou3 = new javax.swing.JTextField();
-        tfPqParou4 = new javax.swing.JTextField();
+        chbCooperativaNao = new javax.swing.JCheckBox();
+        chbCooperativaSim = new javax.swing.JCheckBox();
+        tfQualCooperativa = new javax.swing.JTextField();
+        tfDesdeQuandoPescador = new javax.swing.JTextField();
         jLabel47 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jCheckBox22 = new javax.swing.JCheckBox();
-        jCheckBox23 = new javax.swing.JCheckBox();
-        jCheckBox24 = new javax.swing.JCheckBox();
+        chbIbamaNao = new javax.swing.JCheckBox();
+        chbIbamaSim = new javax.swing.JCheckBox();
+        chbPossuiRegistroNao = new javax.swing.JCheckBox();
         jLabel6 = new javax.swing.JLabel();
-        jCheckBox25 = new javax.swing.JCheckBox();
+        chbPossuiRegistroSim = new javax.swing.JCheckBox();
         jLabel48 = new javax.swing.JLabel();
-        jCheckBox26 = new javax.swing.JCheckBox();
-        jCheckBox27 = new javax.swing.JCheckBox();
-        jCheckBox28 = new javax.swing.JCheckBox();
-        jCheckBox29 = new javax.swing.JCheckBox();
+        chbFamiliar = new javax.swing.JCheckBox();
+        chbParceria = new javax.swing.JCheckBox();
+        chbAssalariado = new javax.swing.JCheckBox();
+        chbArmadorPescador = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Questionário Atravessador");
@@ -321,71 +321,71 @@ public class pescador extends javax.swing.JFrame {
         jLabel43.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel43.setText("MORADIA");
 
-        jCheckBox1.setText("Madeira");
+        chbMadeira.setText("Madeira");
 
-        jCheckBox2.setText("Alvenaria");
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+        chbAlvenaria.setText("Alvenaria");
+        chbAlvenaria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
+                chbAlvenariaActionPerformed(evt);
             }
         });
 
-        jCheckBox3.setText("Sim");
+        chbLuzSim.setText("Sim");
 
-        jCheckBox4.setText("Não");
+        chbLuzNao.setText("Não");
 
         jLabel36.setText("Luz elétrica.:");
 
         jLabel38.setText("Casa.:");
 
-        jCheckBox5.setText("Dentro");
+        chbBanheiroDentro.setText("Dentro");
 
-        jCheckBox6.setText("Fora");
+        chbBanheiroFora.setText("Fora");
 
         jLabel37.setText("Banheiro.:");
 
         jLabel39.setText("Água encanada.:");
 
-        jCheckBox7.setText("Fora");
+        chbDrenagemNao.setText("Não");
 
-        jCheckBox8.setText("Dentro");
+        chbDrenagemSim.setText("Sim");
 
-        jCheckBox9.setText("Sim");
+        chbAguaSim.setText("Sim");
 
-        jCheckBox10.setText("Não");
+        chbAguaNao.setText("Não");
 
         jLabel40.setText("Drenagem pluvial.:");
 
         jLabel41.setText("Fossa seca ou sépica.:");
 
-        jCheckBox11.setText("Não");
+        chbFossaNao.setText("Não");
 
-        jCheckBox12.setText("Sim");
+        chbFossaSim.setText("Sim");
 
         jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel42.setText("Questionário Pescador");
 
         jLabel1.setText("Paga INSS.:");
 
-        jCheckBox13.setText("Sim");
+        chbInssSim.setText("Sim");
 
-        jCheckBox14.setText("Não (autônomo)");
+        chbInssNao.setText("Não (autônomo)");
 
-        jCheckBox15.setText("Empregado");
+        chbInssEmpregado.setText("Empregado");
 
         jLabel2.setText("Na colônia.:");
 
-        jCheckBox16.setText("Sim");
+        chbColoniaSim.setText("Sim");
 
-        jCheckBox17.setText("Não");
+        chbColoniaNao.setText("Não");
 
         jLabel44.setText("Qual.:");
 
         jLabel3.setText("Em alguma associação.:");
 
-        jCheckBox18.setText("Não");
+        chbAssociacaoNao.setText("Não");
 
-        jCheckBox19.setText("Sim");
+        chbAssociacaoSim.setText("Sim");
 
         jLabel45.setText("Qual.:");
 
@@ -393,52 +393,52 @@ public class pescador extends javax.swing.JFrame {
 
         jLabel4.setText("Cooperativa.:");
 
-        jCheckBox20.setText("Não");
+        chbCooperativaNao.setText("Não");
 
-        jCheckBox21.setText("Sim");
+        chbCooperativaSim.setText("Sim");
 
         jLabel47.setText("Desde quando é pescador.:");
 
         jLabel5.setText("Possui carteira IBAMA.:");
 
-        jCheckBox22.setText("Não");
+        chbIbamaNao.setText("Não");
 
-        jCheckBox23.setText("Sim");
+        chbIbamaSim.setText("Sim");
 
-        jCheckBox24.setText("Não");
+        chbPossuiRegistroNao.setText("Não");
 
         jLabel6.setText("Possui Registro Feral de Pescador (RGP-MPA).:");
 
-        jCheckBox25.setText("Sim");
+        chbPossuiRegistroSim.setText("Sim");
 
         jLabel48.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel48.setText("Relações de Trabalho");
 
-        jCheckBox26.setText("Familiar (o lucro fica em casa)");
-        jCheckBox26.addActionListener(new java.awt.event.ActionListener() {
+        chbFamiliar.setText("Familiar (o lucro fica em casa)");
+        chbFamiliar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox26ActionPerformed(evt);
+                chbFamiliarActionPerformed(evt);
             }
         });
 
-        jCheckBox27.setText("Parceria, com vizinhos, amigos etc. (o lucro é dividido)");
-        jCheckBox27.addActionListener(new java.awt.event.ActionListener() {
+        chbParceria.setText("Parceria, com vizinhos, amigos etc. (o lucro é dividido)");
+        chbParceria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox27ActionPerformed(evt);
+                chbParceriaActionPerformed(evt);
             }
         });
 
-        jCheckBox28.setText("Assalariado (carteira assinada)");
-        jCheckBox28.addActionListener(new java.awt.event.ActionListener() {
+        chbAssalariado.setText("Assalariado (carteira assinada)");
+        chbAssalariado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox28ActionPerformed(evt);
+                chbAssalariadoActionPerformed(evt);
             }
         });
 
-        jCheckBox29.setText("Armador e pescador (arma o barco e vai pescar)");
-        jCheckBox29.addActionListener(new java.awt.event.ActionListener() {
+        chbArmadorPescador.setText("Armador e pescador (arma o barco e vai pescar)");
+        chbArmadorPescador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox29ActionPerformed(evt);
+                chbArmadorPescadorActionPerformed(evt);
             }
         });
 
@@ -450,19 +450,19 @@ public class pescador extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                        .addComponent(jCheckBox29)
+                        .addComponent(chbArmadorPescador)
                         .addContainerGap())
                     .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                            .addComponent(jCheckBox28)
+                            .addComponent(chbAssalariado)
                             .addContainerGap())
                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                .addComponent(jCheckBox27)
+                                .addComponent(chbParceria)
                                 .addContainerGap())
                             .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                    .addComponent(jCheckBox26)
+                                    .addComponent(chbFamiliar)
                                     .addContainerGap())
                                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
@@ -477,20 +477,20 @@ public class pescador extends javax.swing.JFrame {
                                                     .addComponent(jLabel38))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jCheckBox1)
-                                                    .addComponent(jCheckBox3)
-                                                    .addComponent(jCheckBox5)
-                                                    .addComponent(jCheckBox8)
-                                                    .addComponent(jCheckBox9)
-                                                    .addComponent(jCheckBox12))
+                                                    .addComponent(chbMadeira)
+                                                    .addComponent(chbLuzSim)
+                                                    .addComponent(chbBanheiroDentro)
+                                                    .addComponent(chbDrenagemSim)
+                                                    .addComponent(chbAguaSim)
+                                                    .addComponent(chbFossaSim))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jCheckBox11)
-                                                    .addComponent(jCheckBox7)
-                                                    .addComponent(jCheckBox10)
-                                                    .addComponent(jCheckBox4)
-                                                    .addComponent(jCheckBox2)
-                                                    .addComponent(jCheckBox6))
+                                                    .addComponent(chbFossaNao)
+                                                    .addComponent(chbDrenagemNao)
+                                                    .addComponent(chbAguaNao)
+                                                    .addComponent(chbLuzNao)
+                                                    .addComponent(chbAlvenaria)
+                                                    .addComponent(chbBanheiroFora))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 404, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(jpAtravessadorLayout.createSequentialGroup()
                                                 .addComponent(jLabel24)
@@ -557,7 +557,7 @@ public class pescador extends javax.swing.JFrame {
                                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                                         .addComponent(jLabel47)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tfPqParou4, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(tfDesdeQuandoPescador, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addContainerGap(392, Short.MAX_VALUE))
                                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -568,54 +568,54 @@ public class pescador extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                                .addComponent(jCheckBox13)
+                                                .addComponent(chbInssSim)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jCheckBox14)
+                                                .addComponent(chbInssNao)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jCheckBox15))
+                                                .addComponent(chbInssEmpregado))
                                             .addGroup(jpAtravessadorLayout.createSequentialGroup()
                                                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                                        .addComponent(jCheckBox16)
+                                                        .addComponent(chbColoniaSim)
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(jCheckBox17)
+                                                        .addComponent(chbColoniaNao)
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                         .addComponent(jLabel44)
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpAtravessadorLayout.createSequentialGroup()
                                                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpAtravessadorLayout.createSequentialGroup()
-                                                                .addComponent(jCheckBox19)
+                                                                .addComponent(chbAssociacaoSim)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(jCheckBox18)
+                                                                .addComponent(chbAssociacaoNao)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                                 .addComponent(jLabel45))
                                                             .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                                                .addComponent(jCheckBox21)
+                                                                .addComponent(chbCooperativaSim)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(jCheckBox20)
+                                                                .addComponent(chbCooperativaNao)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                                 .addComponent(jLabel46)))
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                                                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(tfPqParou3, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(tfPqParou2)
-                                                    .addComponent(tfPqParou1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                    .addComponent(tfQualCooperativa, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(tfQualAssociacao)
+                                                    .addComponent(tfQualColonia, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                         .addContainerGap(226, Short.MAX_VALUE))
                                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                             .addGroup(jpAtravessadorLayout.createSequentialGroup()
                                                 .addComponent(jLabel6)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jCheckBox25)
+                                                .addComponent(chbPossuiRegistroSim)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jCheckBox24))
+                                                .addComponent(chbPossuiRegistroNao))
                                             .addGroup(jpAtravessadorLayout.createSequentialGroup()
                                                 .addComponent(jLabel5)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jCheckBox23)
+                                                .addComponent(chbIbamaSim)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jCheckBox22)))
+                                                .addComponent(chbIbamaNao)))
                                         .addContainerGap(332, Short.MAX_VALUE))
                                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                                         .addComponent(jLabel48)
@@ -685,86 +685,86 @@ public class pescador extends javax.swing.JFrame {
                         .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE))
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jCheckBox1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(chbMadeira, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(chbAlvenaria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jCheckBox3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(chbLuzSim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(chbLuzNao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jCheckBox5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox6))))
+                            .addComponent(chbBanheiroDentro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(chbBanheiroFora))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jCheckBox9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(chbAguaSim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(chbAguaNao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(27, 27, 27))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpAtravessadorLayout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jCheckBox8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(chbDrenagemSim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(chbDrenagemNao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, 16, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jCheckBox11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(chbFossaSim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(chbFossaNao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jCheckBox13)
-                    .addComponent(jCheckBox14)
-                    .addComponent(jCheckBox15))
+                    .addComponent(chbInssSim)
+                    .addComponent(chbInssNao)
+                    .addComponent(chbInssEmpregado))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox16)
-                    .addComponent(jCheckBox17)
+                    .addComponent(chbColoniaSim)
+                    .addComponent(chbColoniaNao)
                     .addComponent(jLabel44)
-                    .addComponent(tfPqParou1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfQualColonia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfPqParou2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox19)
-                    .addComponent(jCheckBox18)
+                    .addComponent(tfQualAssociacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(chbAssociacaoSim)
+                    .addComponent(chbAssociacaoNao)
                     .addComponent(jLabel45)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox21)
-                    .addComponent(jCheckBox20)
+                    .addComponent(chbCooperativaSim)
+                    .addComponent(chbCooperativaNao)
                     .addComponent(jLabel46)
-                    .addComponent(tfPqParou3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfQualCooperativa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel47)
-                    .addComponent(tfPqParou4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfDesdeQuandoPescador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox23)
-                    .addComponent(jCheckBox22)
+                    .addComponent(chbIbamaSim)
+                    .addComponent(chbIbamaNao)
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox25)
-                    .addComponent(jCheckBox24)
+                    .addComponent(chbPossuiRegistroSim)
+                    .addComponent(chbPossuiRegistroNao)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel48)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox26)
+                .addComponent(chbFamiliar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox27)
+                .addComponent(chbParceria)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox28)
+                .addComponent(chbAssalariado)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox29)
+                .addComponent(chbArmadorPescador)
                 .addGap(24, 24, 24))
         );
 
@@ -971,25 +971,25 @@ public class pescador extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbEstadoCivilActionPerformed
 
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+    private void chbAlvenariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbAlvenariaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
+    }//GEN-LAST:event_chbAlvenariaActionPerformed
 
-    private void jCheckBox26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox26ActionPerformed
+    private void chbFamiliarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbFamiliarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox26ActionPerformed
+    }//GEN-LAST:event_chbFamiliarActionPerformed
 
-    private void jCheckBox27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox27ActionPerformed
+    private void chbParceriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbParceriaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox27ActionPerformed
+    }//GEN-LAST:event_chbParceriaActionPerformed
 
-    private void jCheckBox28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox28ActionPerformed
+    private void chbAssalariadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbAssalariadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox28ActionPerformed
+    }//GEN-LAST:event_chbAssalariadoActionPerformed
 
-    private void jCheckBox29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox29ActionPerformed
+    private void chbArmadorPescadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbArmadorPescadorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox29ActionPerformed
+    }//GEN-LAST:event_chbArmadorPescadorActionPerformed
 
     /**
     * @param args the command line arguments
@@ -1017,35 +1017,35 @@ public class pescador extends javax.swing.JFrame {
     private javax.swing.JComboBox cbLocalMoradia;
     private javax.swing.JComboBox cbMunicipio;
     private javax.swing.JComboBox cbSexo;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox11;
-    private javax.swing.JCheckBox jCheckBox12;
-    private javax.swing.JCheckBox jCheckBox13;
-    private javax.swing.JCheckBox jCheckBox14;
-    private javax.swing.JCheckBox jCheckBox15;
-    private javax.swing.JCheckBox jCheckBox16;
-    private javax.swing.JCheckBox jCheckBox17;
-    private javax.swing.JCheckBox jCheckBox18;
-    private javax.swing.JCheckBox jCheckBox19;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox20;
-    private javax.swing.JCheckBox jCheckBox21;
-    private javax.swing.JCheckBox jCheckBox22;
-    private javax.swing.JCheckBox jCheckBox23;
-    private javax.swing.JCheckBox jCheckBox24;
-    private javax.swing.JCheckBox jCheckBox25;
-    private javax.swing.JCheckBox jCheckBox26;
-    private javax.swing.JCheckBox jCheckBox27;
-    private javax.swing.JCheckBox jCheckBox28;
-    private javax.swing.JCheckBox jCheckBox29;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
-    private javax.swing.JCheckBox jCheckBox9;
+    private javax.swing.JCheckBox chbAguaNao;
+    private javax.swing.JCheckBox chbAguaSim;
+    private javax.swing.JCheckBox chbAlvenaria;
+    private javax.swing.JCheckBox chbArmadorPescador;
+    private javax.swing.JCheckBox chbAssalariado;
+    private javax.swing.JCheckBox chbAssociacaoNao;
+    private javax.swing.JCheckBox chbAssociacaoSim;
+    private javax.swing.JCheckBox chbBanheiroDentro;
+    private javax.swing.JCheckBox chbBanheiroFora;
+    private javax.swing.JCheckBox chbColoniaNao;
+    private javax.swing.JCheckBox chbColoniaSim;
+    private javax.swing.JCheckBox chbCooperativaNao;
+    private javax.swing.JCheckBox chbCooperativaSim;
+    private javax.swing.JCheckBox chbDrenagemNao;
+    private javax.swing.JCheckBox chbDrenagemSim;
+    private javax.swing.JCheckBox chbFamiliar;
+    private javax.swing.JCheckBox chbFossaNao;
+    private javax.swing.JCheckBox chbFossaSim;
+    private javax.swing.JCheckBox chbIbamaNao;
+    private javax.swing.JCheckBox chbIbamaSim;
+    private javax.swing.JCheckBox chbInssEmpregado;
+    private javax.swing.JCheckBox chbInssNao;
+    private javax.swing.JCheckBox chbInssSim;
+    private javax.swing.JCheckBox chbLuzNao;
+    private javax.swing.JCheckBox chbLuzSim;
+    private javax.swing.JCheckBox chbMadeira;
+    private javax.swing.JCheckBox chbParceria;
+    private javax.swing.JCheckBox chbPossuiRegistroNao;
+    private javax.swing.JCheckBox chbPossuiRegistroSim;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
@@ -1086,15 +1086,15 @@ public class pescador extends javax.swing.JFrame {
     private javax.swing.JTextField tfAtividadePrincipal;
     private javax.swing.JTextField tfAtividadeSecundaria;
     private javax.swing.JTextField tfComposicaoFamiliar;
+    private javax.swing.JTextField tfDesdeQuandoPescador;
     private javax.swing.JTextField tfEscolaridade;
     private javax.swing.JTextField tfIdade;
     private javax.swing.JTextField tfNaturalidade;
     private javax.swing.JTextField tfNome;
     private javax.swing.JTextField tfPqParou;
-    private javax.swing.JTextField tfPqParou1;
-    private javax.swing.JTextField tfPqParou2;
-    private javax.swing.JTextField tfPqParou3;
-    private javax.swing.JTextField tfPqParou4;
+    private javax.swing.JTextField tfQualAssociacao;
+    private javax.swing.JTextField tfQualColonia;
+    private javax.swing.JTextField tfQualCooperativa;
     // End of variables declaration//GEN-END:variables
 
 
