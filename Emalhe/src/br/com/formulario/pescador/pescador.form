@@ -69,22 +69,22 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jCheckBox29" min="-2" max="-2" attributes="0"/>
+                              <Component id="chbArmadorPescador" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jCheckBox28" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chbAssalariado" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                               <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jCheckBox27" min="-2" max="-2" attributes="0"/>
+                                      <Component id="chbParceria" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jCheckBox26" min="-2" max="-2" attributes="0"/>
+                                          <Component id="chbFamiliar" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="103" alignment="0" groupAlignment="0" attributes="0">
@@ -101,21 +101,21 @@
                                                       </Group>
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jCheckBox1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jCheckBox3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jCheckBox5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jCheckBox8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jCheckBox9" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jCheckBox12" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="chbMadeira" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="chbLuzSim" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="chbBanheiroDentro" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="chbDrenagemSim" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="chbAguaSim" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="chbFossaSim" alignment="0" min="-2" max="-2" attributes="0"/>
                                                       </Group>
                                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                       <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jCheckBox11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jCheckBox7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jCheckBox10" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jCheckBox4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jCheckBox2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jCheckBox6" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="chbFossaNao" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="chbDrenagemNao" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="chbAguaNao" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="chbLuzNao" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="chbAlvenaria" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="chbBanheiroFora" min="-2" max="-2" attributes="0"/>
                                                       </Group>
                                                       <EmptySpace pref="404" max="-2" attributes="0"/>
                                                   </Group>
@@ -200,7 +200,7 @@
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="tfPqParou4" min="-2" pref="151" max="-2" attributes="0"/>
+                                              <Component id="tfDesdeQuandoPescador" min="-2" pref="151" max="-2" attributes="0"/>
                                               <EmptySpace pref="392" max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
@@ -213,18 +213,18 @@
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="jCheckBox13" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="chbInssSim" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="jCheckBox14" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="chbInssNao" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="jCheckBox15" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="chbInssEmpregado" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Group type="103" groupAlignment="0" attributes="0">
                                                           <Group type="102" alignment="0" attributes="0">
-                                                              <Component id="jCheckBox16" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="chbColoniaSim" min="-2" max="-2" attributes="0"/>
                                                               <EmptySpace max="-2" attributes="0"/>
-                                                              <Component id="jCheckBox17" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="chbColoniaNao" min="-2" max="-2" attributes="0"/>
                                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                               <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
                                                               <EmptySpace max="-2" attributes="0"/>
@@ -232,16 +232,16 @@
                                                           <Group type="102" alignment="1" attributes="0">
                                                               <Group type="103" groupAlignment="1" attributes="0">
                                                                   <Group type="102" alignment="0" attributes="0">
-                                                                      <Component id="jCheckBox19" min="-2" max="-2" attributes="0"/>
+                                                                      <Component id="chbAssociacaoSim" min="-2" max="-2" attributes="0"/>
                                                                       <EmptySpace max="-2" attributes="0"/>
-                                                                      <Component id="jCheckBox18" min="-2" max="-2" attributes="0"/>
+                                                                      <Component id="chbAssociacaoNao" min="-2" max="-2" attributes="0"/>
                                                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                                       <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
                                                                   </Group>
                                                                   <Group type="102" alignment="1" attributes="0">
-                                                                      <Component id="jCheckBox21" min="-2" max="-2" attributes="0"/>
+                                                                      <Component id="chbCooperativaSim" min="-2" max="-2" attributes="0"/>
                                                                       <EmptySpace max="-2" attributes="0"/>
-                                                                      <Component id="jCheckBox20" min="-2" max="-2" attributes="0"/>
+                                                                      <Component id="chbCooperativaNao" min="-2" max="-2" attributes="0"/>
                                                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                                       <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
                                                                   </Group>
@@ -250,9 +250,9 @@
                                                           </Group>
                                                       </Group>
                                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="tfPqParou3" alignment="1" max="32767" attributes="1"/>
-                                                          <Component id="tfPqParou2" alignment="0" max="32767" attributes="1"/>
-                                                          <Component id="tfPqParou1" alignment="0" min="-2" pref="189" max="-2" attributes="1"/>
+                                                          <Component id="tfQualCooperativa" alignment="1" max="32767" attributes="1"/>
+                                                          <Component id="tfQualAssociacao" alignment="0" max="32767" attributes="1"/>
+                                                          <Component id="tfQualColonia" alignment="0" min="-2" pref="189" max="-2" attributes="1"/>
                                                       </Group>
                                                   </Group>
                                               </Group>
@@ -263,16 +263,16 @@
                                                   <Group type="102" alignment="1" attributes="0">
                                                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="jCheckBox25" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="chbPossuiRegistroSim" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="jCheckBox24" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="chbPossuiRegistroNao" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="1" attributes="1">
                                                       <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="32767" attributes="0"/>
-                                                      <Component id="jCheckBox23" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="chbIbamaSim" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="jCheckBox22" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="chbIbamaNao" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                               <EmptySpace pref="332" max="32767" attributes="0"/>
@@ -362,18 +362,18 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jCheckBox1" alignment="3" max="32767" attributes="0"/>
-                                  <Component id="jCheckBox2" alignment="3" max="32767" attributes="0"/>
+                                  <Component id="chbMadeira" alignment="3" max="32767" attributes="0"/>
+                                  <Component id="chbAlvenaria" alignment="3" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jCheckBox3" alignment="3" max="32767" attributes="0"/>
-                                  <Component id="jCheckBox4" alignment="3" max="32767" attributes="0"/>
+                                  <Component id="chbLuzSim" alignment="3" max="32767" attributes="0"/>
+                                  <Component id="chbLuzNao" alignment="3" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jCheckBox5" alignment="3" max="32767" attributes="0"/>
-                                  <Component id="jCheckBox6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chbBanheiroDentro" alignment="3" max="32767" attributes="0"/>
+                                  <Component id="chbBanheiroFora" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -381,85 +381,85 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jCheckBox9" alignment="3" max="32767" attributes="0"/>
+                                  <Component id="chbAguaSim" alignment="3" max="32767" attributes="0"/>
                                   <Component id="jLabel39" alignment="3" max="32767" attributes="0"/>
-                                  <Component id="jCheckBox10" alignment="3" max="32767" attributes="0"/>
+                                  <Component id="chbAguaNao" alignment="3" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jCheckBox8" alignment="3" max="32767" attributes="0"/>
-                                  <Component id="jCheckBox7" alignment="3" max="32767" attributes="0"/>
+                                  <Component id="chbDrenagemSim" alignment="3" max="32767" attributes="0"/>
+                                  <Component id="chbDrenagemNao" alignment="3" max="32767" attributes="0"/>
                                   <Component id="jLabel40" alignment="3" pref="16" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jCheckBox12" alignment="3" max="32767" attributes="0"/>
-                          <Component id="jCheckBox11" alignment="3" max="32767" attributes="0"/>
+                          <Component id="chbFossaSim" alignment="3" max="32767" attributes="0"/>
+                          <Component id="chbFossaNao" alignment="3" max="32767" attributes="0"/>
                           <Component id="jLabel41" alignment="3" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox13" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox14" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox15" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="chbInssSim" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="chbInssNao" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="chbInssEmpregado" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jCheckBox16" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox17" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="chbColoniaSim" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="chbColoniaNao" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfPqParou1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfQualColonia" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="tfPqParou2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox19" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox18" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfQualAssociacao" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="chbAssociacaoSim" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="chbAssociacaoNao" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jCheckBox21" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox20" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="chbCooperativaSim" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="chbCooperativaNao" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel46" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfPqParou3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfQualCooperativa" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel47" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfPqParou4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfDesdeQuandoPescador" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jCheckBox23" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox22" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="chbIbamaSim" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="chbIbamaNao" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jCheckBox25" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox24" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="chbPossuiRegistroSim" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="chbPossuiRegistroNao" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jLabel48" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jCheckBox26" min="-2" max="-2" attributes="0"/>
+                      <Component id="chbFamiliar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jCheckBox27" min="-2" max="-2" attributes="0"/>
+                      <Component id="chbParceria" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jCheckBox28" min="-2" max="-2" attributes="0"/>
+                      <Component id="chbAssalariado" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jCheckBox29" min="-2" max="-2" attributes="0"/>
+                      <Component id="chbArmadorPescador" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -733,25 +733,25 @@
                 <Property name="text" type="java.lang.String" value="MORADIA"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+            <Component class="javax.swing.JCheckBox" name="chbMadeira">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Madeira"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox2">
+            <Component class="javax.swing.JCheckBox" name="chbAlvenaria">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Alvenaria"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chbAlvenariaActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox3">
+            <Component class="javax.swing.JCheckBox" name="chbLuzSim">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sim"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox4">
+            <Component class="javax.swing.JCheckBox" name="chbLuzNao">
               <Properties>
                 <Property name="text" type="java.lang.String" value="N&#xe3;o"/>
               </Properties>
@@ -766,12 +766,12 @@
                 <Property name="text" type="java.lang.String" value="Casa.:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox5">
+            <Component class="javax.swing.JCheckBox" name="chbBanheiroDentro">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Dentro"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox6">
+            <Component class="javax.swing.JCheckBox" name="chbBanheiroFora">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Fora"/>
               </Properties>
@@ -786,22 +786,22 @@
                 <Property name="text" type="java.lang.String" value="&#xc1;gua encanada.:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox7">
+            <Component class="javax.swing.JCheckBox" name="chbDrenagemNao">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Fora"/>
+                <Property name="text" type="java.lang.String" value="N&#xe3;o"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox8">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Dentro"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox9">
+            <Component class="javax.swing.JCheckBox" name="chbDrenagemSim">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sim"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox10">
+            <Component class="javax.swing.JCheckBox" name="chbAguaSim">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Sim"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chbAguaNao">
               <Properties>
                 <Property name="text" type="java.lang.String" value="N&#xe3;o"/>
               </Properties>
@@ -816,12 +816,12 @@
                 <Property name="text" type="java.lang.String" value="Fossa seca ou s&#xe9;pica.:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox11">
+            <Component class="javax.swing.JCheckBox" name="chbFossaNao">
               <Properties>
                 <Property name="text" type="java.lang.String" value="N&#xe3;o"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox12">
+            <Component class="javax.swing.JCheckBox" name="chbFossaSim">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sim"/>
               </Properties>
@@ -839,17 +839,17 @@
                 <Property name="text" type="java.lang.String" value="Paga INSS.:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox13">
+            <Component class="javax.swing.JCheckBox" name="chbInssSim">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sim"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox14">
+            <Component class="javax.swing.JCheckBox" name="chbInssNao">
               <Properties>
                 <Property name="text" type="java.lang.String" value="N&#xe3;o (aut&#xf4;nomo)"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox15">
+            <Component class="javax.swing.JCheckBox" name="chbInssEmpregado">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Empregado"/>
               </Properties>
@@ -859,12 +859,12 @@
                 <Property name="text" type="java.lang.String" value="Na col&#xf4;nia.:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox16">
+            <Component class="javax.swing.JCheckBox" name="chbColoniaSim">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sim"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox17">
+            <Component class="javax.swing.JCheckBox" name="chbColoniaNao">
               <Properties>
                 <Property name="text" type="java.lang.String" value="N&#xe3;o"/>
               </Properties>
@@ -874,24 +874,24 @@
                 <Property name="text" type="java.lang.String" value="Qual.:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfPqParou1">
+            <Component class="javax.swing.JTextField" name="tfQualColonia">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Em alguma associa&#xe7;&#xe3;o.:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox18">
+            <Component class="javax.swing.JCheckBox" name="chbAssociacaoNao">
               <Properties>
                 <Property name="text" type="java.lang.String" value="N&#xe3;o"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox19">
+            <Component class="javax.swing.JCheckBox" name="chbAssociacaoSim">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sim"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfPqParou2">
+            <Component class="javax.swing.JTextField" name="tfQualAssociacao">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel45">
               <Properties>
@@ -908,19 +908,19 @@
                 <Property name="text" type="java.lang.String" value="Cooperativa.:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox20">
+            <Component class="javax.swing.JCheckBox" name="chbCooperativaNao">
               <Properties>
                 <Property name="text" type="java.lang.String" value="N&#xe3;o"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox21">
+            <Component class="javax.swing.JCheckBox" name="chbCooperativaSim">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sim"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfPqParou3">
+            <Component class="javax.swing.JTextField" name="tfQualCooperativa">
             </Component>
-            <Component class="javax.swing.JTextField" name="tfPqParou4">
+            <Component class="javax.swing.JTextField" name="tfDesdeQuandoPescador">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel47">
               <Properties>
@@ -932,17 +932,17 @@
                 <Property name="text" type="java.lang.String" value="Possui carteira IBAMA.:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox22">
+            <Component class="javax.swing.JCheckBox" name="chbIbamaNao">
               <Properties>
                 <Property name="text" type="java.lang.String" value="N&#xe3;o"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox23">
+            <Component class="javax.swing.JCheckBox" name="chbIbamaSim">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sim"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox24">
+            <Component class="javax.swing.JCheckBox" name="chbPossuiRegistroNao">
               <Properties>
                 <Property name="text" type="java.lang.String" value="N&#xe3;o"/>
               </Properties>
@@ -952,7 +952,7 @@
                 <Property name="text" type="java.lang.String" value="Possui Registro Feral de Pescador (RGP-MPA).:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox25">
+            <Component class="javax.swing.JCheckBox" name="chbPossuiRegistroSim">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sim"/>
               </Properties>
@@ -965,36 +965,36 @@
                 <Property name="text" type="java.lang.String" value="Rela&#xe7;&#xf5;es de Trabalho"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox26">
+            <Component class="javax.swing.JCheckBox" name="chbFamiliar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Familiar (o lucro fica em casa)"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox26ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chbFamiliarActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox27">
+            <Component class="javax.swing.JCheckBox" name="chbParceria">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Parceria, com vizinhos, amigos etc. (o lucro &#xe9; dividido)"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox27ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chbParceriaActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox28">
+            <Component class="javax.swing.JCheckBox" name="chbAssalariado">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Assalariado (carteira assinada)"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox28ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chbAssalariadoActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox29">
+            <Component class="javax.swing.JCheckBox" name="chbArmadorPescador">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Armador e pescador (arma o barco e vai pescar)"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox29ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chbArmadorPescadorActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
