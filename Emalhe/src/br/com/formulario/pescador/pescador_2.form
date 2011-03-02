@@ -56,7 +56,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="chbArmadorPescador" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="chbAssalariado" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="273" max="-2" attributes="0"/>
                                   <Component id="jLabel42" min="-2" max="-2" attributes="0"/>
@@ -157,7 +157,7 @@
                                   </Group>
                                   <Group type="102" alignment="1" attributes="1">
                                       <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
                                       <Component id="chbIbamaSim" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="chbIbamaNao" min="-2" max="-2" attributes="0"/>
@@ -201,7 +201,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="tfApelido" pref="158" max="32767" attributes="0"/>
+                                  <Component id="tfApelido" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="1">
                                   <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
@@ -210,7 +210,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="cbLocalMoradia" pref="172" max="32767" attributes="0"/>
+                                  <Component id="cbLocalMoradia" max="32767" attributes="0"/>
                               </Group>
                               <Component id="jPanel4" alignment="0" max="32767" attributes="1"/>
                               <Group type="102" alignment="0" max="-2" attributes="0">
@@ -308,14 +308,14 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="chbMadeira" pref="27" max="32767" attributes="0"/>
+                                      <Component id="chbMadeira" pref="26" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                                      <Component id="chbLuzSim" pref="28" max="32767" attributes="0"/>
+                                      <Component id="chbLuzSim" pref="27" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="chbAlvenaria" pref="26" max="32767" attributes="0"/>
+                                      <Component id="chbAlvenaria" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                                      <Component id="chbLuzNao" max="32767" attributes="0"/>
+                                      <Component id="chbLuzNao" pref="24" max="32767" attributes="0"/>
                                       <EmptySpace min="4" pref="4" max="4" attributes="0"/>
                                   </Group>
                               </Group>
@@ -339,44 +339,44 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel39" pref="22" max="32767" attributes="0"/>
+                                      <Component id="jLabel39" pref="21" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                      <Component id="jLabel40" pref="22" max="32767" attributes="0"/>
+                                      <Component id="jLabel40" pref="21" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel41" pref="22" max="32767" attributes="0"/>
+                              <Component id="jLabel41" pref="21" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="chbAguaSim" pref="26" max="32767" attributes="0"/>
+                                      <Component id="chbAguaSim" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                      <Component id="chbDrenagemSim" pref="26" max="32767" attributes="0"/>
+                                      <Component id="chbDrenagemSim" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                              <Component id="chbFossaSim" pref="26" max="32767" attributes="0"/>
+                              <Component id="chbFossaSim" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="chbAguaNao" pref="26" max="32767" attributes="0"/>
+                                      <Component id="chbAguaNao" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                      <Component id="chbDrenagemNao" pref="26" max="32767" attributes="0"/>
+                                      <Component id="chbDrenagemNao" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                              <Component id="chbFossaNao" pref="26" max="32767" attributes="0"/>
+                              <Component id="chbFossaNao" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
