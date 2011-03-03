@@ -30,7 +30,7 @@ public class pescador_2 extends javax.swing.JFrame {
         try {
             conexao.execute("select * FROM tab_local where pai='Pará' or pai='Maranhão' or pai='Amapá' ");
             while (conexao.resultSet.next()){
-                cbMunicipio.addItem(conexao.resultSet.getString("nome"));
+                cbPescador.addItem(conexao.resultSet.getString("nome"));
                 //System.out.println(conexao.resultSet.getString("nome"));
             }
         }catch (SQLException ex) {
@@ -78,37 +78,24 @@ public class pescador_2 extends javax.swing.JFrame {
         jLabel39 = new javax.swing.JLabel();
         chbDrenagemNao = new javax.swing.JCheckBox();
         chbArmadorPescador = new javax.swing.JCheckBox();
-        tfNome = new javax.swing.JTextField();
         chbAssalariado = new javax.swing.JCheckBox();
-        tfIdade = new javax.swing.JTextField();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        cbMunicipio = new javax.swing.JComboBox();
+        cbPescador = new javax.swing.JComboBox();
         jLabel24 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
         chbAguaNao = new javax.swing.JCheckBox();
         chbAguaSim = new javax.swing.JCheckBox();
         chbDrenagemSim = new javax.swing.JCheckBox();
-        jLabel42 = new javax.swing.JLabel();
         chbFossaSim = new javax.swing.JCheckBox();
         chbFossaNao = new javax.swing.JCheckBox();
         jLabel41 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        Cadastrar = new javax.swing.JButton();
-        botao_excluir = new javax.swing.JButton();
-        botao_novo = new javax.swing.JButton();
-        botao_primeiro = new javax.swing.JButton();
-        botao_anterior = new javax.swing.JButton();
-        botao_proximo = new javax.swing.JButton();
-        botao_ultimo = new javax.swing.JButton();
-        botao_alterar = new javax.swing.JButton();
+        jLabel42 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
         chbIbamaNao = new javax.swing.JCheckBox();
         jLabel5 = new javax.swing.JLabel();
         chbPossuiRegistroNao = new javax.swing.JCheckBox();
         chbIbamaSim = new javax.swing.JCheckBox();
-        jLabel25 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         chbPossuiRegistroSim = new javax.swing.JCheckBox();
         jLabel37 = new javax.swing.JLabel();
@@ -124,38 +111,18 @@ public class pescador_2 extends javax.swing.JFrame {
         chbBanheiroFora = new javax.swing.JCheckBox();
         chbBanheiroDentro = new javax.swing.JCheckBox();
         tfQualAssociacao = new javax.swing.JTextField();
-        tfApelido = new javax.swing.JTextField();
         jLabel45 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
         chbAssociacaoNao = new javax.swing.JCheckBox();
         chbAssociacaoSim = new javax.swing.JCheckBox();
-        jLabel26 = new javax.swing.JLabel();
-        cbSexo = new javax.swing.JComboBox();
-        jLabel29 = new javax.swing.JLabel();
-        tfNaturalidade = new javax.swing.JTextField();
-        jLabel28 = new javax.swing.JLabel();
-        tfAtividadeSecundaria = new javax.swing.JTextField();
-        tfAtividadePrincipal = new javax.swing.JTextField();
-        jLabel30 = new javax.swing.JLabel();
         tfDesdeQuandoPescador = new javax.swing.JTextField();
         tfQualCooperativa = new javax.swing.JTextField();
         chbCooperativaSim = new javax.swing.JCheckBox();
         chbCooperativaNao = new javax.swing.JCheckBox();
         jLabel4 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
         chbInssSim = new javax.swing.JCheckBox();
-        tfComposicaoFamiliar = new javax.swing.JTextField();
         chbInssNao = new javax.swing.JCheckBox();
-        jLabel33 = new javax.swing.JLabel();
-        tfEscolaridade = new javax.swing.JTextField();
-        jLabel34 = new javax.swing.JLabel();
-        tfPqParou = new javax.swing.JTextField();
-        jLabel35 = new javax.swing.JLabel();
-        cbLocalMoradia = new javax.swing.JComboBox();
-        cbEstadoCivil = new javax.swing.JComboBox();
         tfQualColonia = new javax.swing.JTextField();
         jLabel44 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -163,6 +130,66 @@ public class pescador_2 extends javax.swing.JFrame {
         chbInssEmpregado = new javax.swing.JCheckBox();
         chbColoniaNao = new javax.swing.JCheckBox();
         chbColoniaSim = new javax.swing.JCheckBox();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTableAtividadeFamiliar = new javax.swing.JTable();
+        chbRecebeBeneficioGovernoNao = new javax.swing.JCheckBox();
+        jLabel7 = new javax.swing.JLabel();
+        chbRecebeBeneficioGovernoSim = new javax.swing.JCheckBox();
+        jButton1 = new javax.swing.JButton();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jLabel14 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jTextField9 = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jTextField10 = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jTextField11 = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        jTextField12 = new javax.swing.JTextField();
+        jTextField13 = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        jTextField14 = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTableAtividadeFamiliar1 = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jCheckBox3 = new javax.swing.JCheckBox();
+        jCheckBox4 = new javax.swing.JCheckBox();
+        jLabel23 = new javax.swing.JLabel();
+        jCheckBox5 = new javax.swing.JCheckBox();
+        jCheckBox6 = new javax.swing.JCheckBox();
+        jCheckBox7 = new javax.swing.JCheckBox();
+        jCheckBox8 = new javax.swing.JCheckBox();
+        jLabel25 = new javax.swing.JLabel();
+        jTextField15 = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        jTextField16 = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        jTextField17 = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        jTextField18 = new javax.swing.JTextField();
+        jLabel29 = new javax.swing.JLabel();
+        jTextField19 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Questionário Atravessador");
@@ -192,11 +219,7 @@ public class pescador_2 extends javax.swing.JFrame {
             }
         });
 
-        jLabel23.setText("Nome.:");
-
-        jLabel22.setText("Idade.:");
-
-        jLabel24.setText("Município");
+        jLabel24.setText("Pesacador");
 
         jLabel40.setText("Drenagem pluvial.:");
 
@@ -206,9 +229,6 @@ public class pescador_2 extends javax.swing.JFrame {
 
         chbDrenagemSim.setText("Sim");
 
-        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12));
-        jLabel42.setText("Questionário Pescador");
-
         chbFossaSim.setText("Sim");
 
         chbFossaNao.setText("Não");
@@ -217,103 +237,24 @@ public class pescador_2 extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-        Cadastrar.setText("Cadastrar");
-        Cadastrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CadastrarAction(evt);
-            }
-        });
-
-        botao_excluir.setText("Excluir");
-        botao_excluir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botao_excluirActionPerformed(evt);
-            }
-        });
-
-        botao_novo.setText("Limpar");
-        botao_novo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botao_novoActionPerformed(evt);
-            }
-        });
-
-        botao_primeiro.setText("<<");
-        botao_primeiro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botao_primeiroActionPerformed(evt);
-            }
-        });
-
-        botao_anterior.setText("<");
-        botao_anterior.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botao_anteriorActionPerformed(evt);
-            }
-        });
-
-        botao_proximo.setText(">");
-        botao_proximo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botao_proximoActionPerformed(evt);
-            }
-        });
-
-        botao_ultimo.setText(">>");
-        botao_ultimo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botao_ultimoActionPerformed(evt);
-            }
-        });
-
-        botao_alterar.setText("Alterar");
-        botao_alterar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botao_alterarActionPerformed(evt);
-            }
-        });
+        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel42.setText("Questionário Pescador");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(botao_novo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Cadastrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botao_excluir)
-                        .addGap(7, 7, 7)
-                        .addComponent(botao_alterar))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(botao_primeiro)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botao_anterior)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botao_proximo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botao_ultimo)))
-                .addContainerGap(365, Short.MAX_VALUE))
+                .addGap(274, 274, 274)
+                .addComponent(jLabel42)
+                .addContainerGap(321, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botao_primeiro)
-                    .addComponent(botao_anterior)
-                    .addComponent(botao_proximo)
-                    .addComponent(botao_ultimo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botao_novo)
-                    .addComponent(Cadastrar)
-                    .addComponent(botao_excluir)
-                    .addComponent(botao_alterar))
-                .addContainerGap())
+                .addComponent(jLabel42)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel43.setFont(new java.awt.Font("Tahoma", 1, 12));
@@ -329,16 +270,13 @@ public class pescador_2 extends javax.swing.JFrame {
 
         chbIbamaSim.setText("Sim");
 
-        jLabel25.setFont(new java.awt.Font("Tahoma", 1, 12));
-        jLabel25.setText("DADOS PESSOAIS:");
-
         jLabel6.setText("Possui Registro Feral de Pescador (RGP-MPA).:");
 
         chbPossuiRegistroSim.setText("Sim");
 
         jLabel37.setText("Banheiro.:");
 
-        jLabel48.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel48.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel48.setText("Relações de Trabalho");
 
         chbFamiliar.setText("Familiar (o lucro fica em casa)");
@@ -378,21 +316,9 @@ public class pescador_2 extends javax.swing.JFrame {
 
         jLabel45.setText("Qual.:");
 
-        jLabel27.setText("Naturalidade.:");
-
         chbAssociacaoNao.setText("Não");
 
         chbAssociacaoSim.setText("Sim");
-
-        jLabel26.setText("Apelido.:");
-
-        cbSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "M", "F" }));
-
-        jLabel29.setText("Atividade principal de renda.:");
-
-        jLabel28.setText("Sexo.:");
-
-        jLabel30.setText("Atividade secundária.:");
 
         chbCooperativaSim.setText("Sim");
 
@@ -402,30 +328,11 @@ public class pescador_2 extends javax.swing.JFrame {
 
         jLabel46.setText("Qual.:");
 
-        jLabel31.setText("Estado civil.:");
-
         jLabel1.setText("Paga INSS.:");
-
-        jLabel32.setText("Composição Familiar.:");
 
         chbInssSim.setText("Sim");
 
         chbInssNao.setText("Não (autônomo)");
-
-        jLabel33.setText("Escolaridade.:");
-
-        jLabel34.setText("Porque Parou?");
-
-        jLabel35.setText("Local de Moradia.:");
-
-        cbLocalMoradia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sede Municipal", "Comunidade/Vila local", "Outro Município", "Capital" }));
-
-        cbEstadoCivil.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Solteiro", "Casado", "União Estável" }));
-        cbEstadoCivil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbEstadoCivilActionPerformed(evt);
-            }
-        });
 
         jLabel44.setText("Qual.:");
 
@@ -439,6 +346,223 @@ public class pescador_2 extends javax.swing.JFrame {
 
         chbColoniaSim.setText("Sim");
 
+        jTableAtividadeFamiliar.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Cod", "Parentesco", "Atividade", "Renda"
+            }
+        ));
+        jScrollPane2.setViewportView(jTableAtividadeFamiliar);
+
+        chbRecebeBeneficioGovernoNao.setText("Não");
+
+        jLabel7.setText("Recebe algum benefício do governo.:");
+
+        chbRecebeBeneficioGovernoSim.setText("Sim");
+
+        jButton1.setText("Editar");
+
+        jLabel49.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel49.setText("Composição da Pescaria");
+
+        jLabel8.setText("Pescaria Principal (espécie).:");
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setText("Safra.:");
+
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("Arte de pesca.:");
+
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setText("Quantidade.:");
+
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+
+        jLabel12.setText("Tamanho e malha.:");
+
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
+
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField6ActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setText("Tempo da arte na água.:");
+
+        jCheckBox1.setText("Dia");
+
+        jCheckBox2.setText("Noite");
+
+        jLabel14.setText("Pesqueiros mais visitados, nome e latitude longitude.:");
+
+        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField7ActionPerformed(evt);
+            }
+        });
+
+        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField8ActionPerformed(evt);
+            }
+        });
+
+        jLabel15.setText("Tempo para chegar no pesqueiro.:");
+
+        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField9ActionPerformed(evt);
+            }
+        });
+
+        jLabel16.setText("Dias efetivos de pesca.:");
+
+        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField10ActionPerformed(evt);
+            }
+        });
+
+        jLabel17.setText("Quantas viagens por mês.:");
+
+        jLabel18.setText("Produção por viagem (KG).:");
+
+        jTextField11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField11ActionPerformed(evt);
+            }
+        });
+
+        jLabel19.setText("Renda média do pescador (por viagem) R$.:");
+
+        jTextField12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField12ActionPerformed(evt);
+            }
+        });
+
+        jTextField13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField13ActionPerformed(evt);
+            }
+        });
+
+        jLabel20.setText("Além da pesca outra pescaria.:");
+
+        jTextField14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField14ActionPerformed(evt);
+            }
+        });
+
+        jLabel21.setText("Período.:");
+
+        jTableAtividadeFamiliar1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Cod", "Espécie", "Inicio da Safra", "Fim da Safra", "Arte de Pesca", "Tamanho", "Malha"
+            }
+        ));
+        jScrollPane3.setViewportView(jTableAtividadeFamiliar1);
+
+        jButton2.setText("Editar");
+
+        jLabel50.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel50.setText("Dados de outras espécies também capturadas");
+
+        jLabel51.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel51.setText("Dados da Embarcação");
+
+        jLabel22.setText("Embarcação.:");
+
+        jCheckBox3.setText("Própria");
+
+        jCheckBox4.setText("Patrão (Dono do Barco)");
+
+        jLabel23.setText("Tipo.:");
+
+        jCheckBox5.setText("CAM");
+
+        jCheckBox6.setText("BPP");
+
+        jCheckBox7.setText("BMP");
+
+        jCheckBox8.setText("Outros.");
+
+        jLabel25.setText("Qual.:");
+
+        jTextField15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField15ActionPerformed(evt);
+            }
+        });
+
+        jLabel26.setText("Nome do barco:");
+
+        jTextField16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField16ActionPerformed(evt);
+            }
+        });
+
+        jLabel27.setText("Porto de Origem:");
+
+        jTextField17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField17ActionPerformed(evt);
+            }
+        });
+
+        jLabel28.setText("A quanto tempo ele esta trabalhando nesse barco.:");
+
+        jTextField18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField18ActionPerformed(evt);
+            }
+        });
+
+        jLabel29.setText("Como se faz a conservação do pescado.:");
+
+        jTextField19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField19ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -446,222 +570,242 @@ public class pescador_2 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 732, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(chbRecebeBeneficioGovernoSim)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(chbRecebeBeneficioGovernoNao))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel24)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cbPescador, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(chbArmadorPescador)
                     .addComponent(chbAssalariado)
+                    .addComponent(jLabel43)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel47)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfDesdeQuandoPescador, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(chbInssSim)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(chbInssNao)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(chbInssEmpregado))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(chbColoniaSim)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(chbColoniaNao)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel44)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                .addComponent(chbAssociacaoSim)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(chbAssociacaoNao)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jLabel45))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(chbCooperativaSim)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(chbCooperativaNao)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jLabel46)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tfQualCooperativa, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(tfQualAssociacao)
+                                    .addComponent(tfQualColonia, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(273, 273, 273)
-                            .addComponent(jLabel42))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel24)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(cbMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jLabel25)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel28)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(jLabel22)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel6)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel29)
-                                .addComponent(jLabel30))
+                            .addComponent(chbPossuiRegistroSim)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(tfAtividadePrincipal)
-                                .addComponent(tfAtividadeSecundaria, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addComponent(jLabel43)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel47)
+                            .addComponent(chbPossuiRegistroNao))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel5)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(chbIbamaSim)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tfDesdeQuandoPescador, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel1))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(chbInssSim)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(chbInssNao)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(chbInssEmpregado))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(chbColoniaSim)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(chbColoniaNao)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(jLabel44)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(chbAssociacaoSim)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(chbAssociacaoNao)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                    .addComponent(jLabel45))
-                                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(chbCooperativaSim)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(chbCooperativaNao)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                    .addComponent(jLabel46)))
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(tfQualCooperativa, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(tfQualAssociacao)
-                                        .addComponent(tfQualColonia, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel6)
+                            .addComponent(chbIbamaNao)))
+                    .addComponent(jLabel48)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel39)
+                            .addComponent(jLabel40)
+                            .addComponent(jLabel41)
+                            .addComponent(jLabel37)
+                            .addComponent(jLabel36)
+                            .addComponent(jLabel38))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(chbMadeira)
+                            .addComponent(chbLuzSim)
+                            .addComponent(chbBanheiroDentro)
+                            .addComponent(chbDrenagemSim)
+                            .addComponent(chbAguaSim)
+                            .addComponent(chbFossaSim))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(chbFossaNao)
+                            .addComponent(chbDrenagemNao)
+                            .addComponent(chbAguaNao)
+                            .addComponent(chbBanheiroFora)
+                            .addComponent(chbAlvenaria)
+                            .addComponent(chbLuzNao)))
+                    .addComponent(chbParceria)
+                    .addComponent(chbFamiliar)
+                    .addComponent(jButton1)
+                    .addComponent(jLabel49)
+                    .addComponent(jButton2)
+                    .addComponent(jLabel50)
+                    .addComponent(jLabel51)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel26)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel27)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel10))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(4, 4, 4)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel9))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
+                            .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel20)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(chbPossuiRegistroSim)
+                                .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(chbPossuiRegistroNao))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(113, 113, 113)
-                                .addComponent(chbIbamaSim)
+                                .addComponent(jLabel21))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel19)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTextField12))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel15)
+                                            .addComponent(jLabel17))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jTextField10)
+                                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(chbIbamaNao)))
-                        .addComponent(jLabel48)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel39)
-                                .addComponent(jLabel40)
-                                .addComponent(jLabel41)
-                                .addComponent(jLabel37)
-                                .addComponent(jLabel36)
-                                .addComponent(jLabel38))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(chbMadeira)
-                                .addComponent(chbLuzSim)
-                                .addComponent(chbBanheiroDentro)
-                                .addComponent(chbDrenagemSim)
-                                .addComponent(chbAguaSim)
-                                .addComponent(chbFossaSim))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(chbFossaNao)
-                                .addComponent(chbDrenagemNao)
-                                .addComponent(chbAguaNao)
-                                .addComponent(chbBanheiroFora)
-                                .addComponent(chbAlvenaria)
-                                .addComponent(chbLuzNao)))
-                        .addComponent(chbParceria)
-                        .addComponent(chbFamiliar)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel23)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tfNome, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel26)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tfApelido))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel27)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tfNaturalidade, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel35)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(cbLocalMoradia, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel33)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(tfEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel34))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel31)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(cbEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jLabel32)))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(tfComposicaoFamiliar, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(tfPqParou, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(28, Short.MAX_VALUE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel18)
+                                    .addComponent(jLabel16))))
+                        .addGap(7, 7, 7)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextField9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+                            .addComponent(jTextField11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+                            .addComponent(jTextField15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jCheckBox1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jCheckBox2))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 419, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 732, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel28)
+                                    .addComponent(jLabel29))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel22)
+                                    .addComponent(jLabel23))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jCheckBox5)
+                                        .addGap(14, 14, 14)
+                                        .addComponent(jCheckBox6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jCheckBox7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jCheckBox8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel25)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jCheckBox3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jCheckBox4)))))
+                        .addGap(16, 16, 16)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel42)
-                .addGap(16, 16, 16)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbPescador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel24))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel25)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel23)
-                    .addComponent(jLabel26)
-                    .addComponent(tfApelido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel27)
-                    .addComponent(tfNaturalidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel35)
-                    .addComponent(cbLocalMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel28)
-                    .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel22)
-                    .addComponent(tfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel29)
-                    .addComponent(tfAtividadePrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel30)
-                    .addComponent(tfAtividadeSecundaria, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel31)
-                    .addComponent(jLabel32)
-                    .addComponent(tfComposicaoFamiliar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel33)
-                    .addComponent(tfEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel34)
-                    .addComponent(tfPqParou, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel43)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(chbMadeira, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                                .addComponent(chbMadeira, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(chbLuzSim, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE))
+                                .addComponent(chbLuzSim, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(chbAlvenaria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(chbAlvenaria, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(chbLuzNao, javax.swing.GroupLayout.PREFERRED_SIZE, 24, Short.MAX_VALUE)
+                                .addComponent(chbLuzNao, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
                                 .addGap(4, 4, 4)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -679,33 +823,33 @@ public class pescador_2 extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE)
+                                .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
                                 .addGap(27, 27, 27))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGap(27, 27, 27)
-                                .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE)))
+                                .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE))
+                        .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(chbAguaSim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(chbAguaSim, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
                                 .addGap(27, 27, 27))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGap(27, 27, 27)
-                                .addComponent(chbDrenagemSim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(chbDrenagemSim, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(chbFossaSim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(chbFossaSim, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(chbAguaNao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(chbAguaNao, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
                                 .addGap(27, 27, 27))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGap(27, 27, 27)
-                                .addComponent(chbDrenagemNao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(chbDrenagemNao, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(chbFossaNao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(chbFossaNao, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -757,6 +901,107 @@ public class pescador_2 extends javax.swing.JFrame {
                 .addComponent(chbAssalariado)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(chbArmadorPescador)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addGap(11, 11, 11)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chbRecebeBeneficioGovernoSim)
+                    .addComponent(chbRecebeBeneficioGovernoNao)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel49)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13)
+                    .addComponent(jCheckBox1)
+                    .addComponent(jCheckBox2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel15)
+                    .addComponent(jLabel16)
+                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17)
+                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel18))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel19))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel20)
+                    .addComponent(jLabel21)
+                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel50)
+                .addGap(8, 8, 8)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel51)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(jCheckBox3)
+                    .addComponent(jCheckBox4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(jCheckBox5)
+                    .addComponent(jCheckBox6)
+                    .addComponent(jCheckBox7)
+                    .addComponent(jCheckBox8)
+                    .addComponent(jLabel25)
+                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel26)
+                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel28)
+                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29)
+                    .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -801,184 +1046,81 @@ public class pescador_2 extends javax.swing.JFrame {
         // TODO add your handling code here:
 }//GEN-LAST:event_chbAlvenariaActionPerformed
 
-    private void cbEstadoCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEstadoCivilActionPerformed
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
-}//GEN-LAST:event_cbEstadoCivilActionPerformed
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void botao_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_alterarActionPerformed
-        // Codigo para alterar os dados do BD
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
 
-        try{
-            String sql ="UPDATE atravessador_cadastro SET "+
-                    "id_local = '"+cbMunicipio.getSelectedItem()+"',"+
-                    "nome = '"+tfNome.getText()+"',"+
-                    "apelido = '"+ tfApelido.getText() +"',"+
-                    "naturalidade = '"+ tfNaturalidade.getText() +"',"+
-                    "sexo = '"+ cbSexo.getSelectedItem() +"',"+
-                    "idade = '"+ tfIdade.getText() +"',"+
-                    "atividade_principal = '"+ tfAtividadePrincipal.getText() +"',"+
-                    "atividade_secundaria = '"+ tfAtividadeSecundaria.getText() +"',"+
-                    "estado_civil = '"+ cbEstadoCivil.getSelectedItem() +"',"+
-                    "composicao_familiar = '"+ tfComposicaoFamiliar.getText() +"',"+
-                    "escolaridade = '"+ tfEscolaridade.getText() +"',"+
-                    "pq_parou = '"+ tfPqParou.getText() +"',"+
-                    "local_moradia = '"+ cbLocalMoradia.getSelectedItem() +"',"+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
 
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
 
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
 
-                    "where id_atravessador = "+conexao.resultSet.getString("id_atravessador");
+    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField7ActionPerformed
 
-            System.out.println(sql);
-            if (conexao.update(sql)){
-                JOptionPane.showMessageDialog(null,"Alterado com sucesso");
-                //Atualiza Resultset
-                conexao.execute("select * from atravessador_cadastro");
-                conexao.resultSet.next();
-                mostra_dados_atravessador();
-            }
+    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField8ActionPerformed
 
+    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField9ActionPerformed
 
-        }catch (Exception e){
-            System.out.println(e + "Erro no botão alterar");
-        }
-}//GEN-LAST:event_botao_alterarActionPerformed
+    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField10ActionPerformed
 
-    private void botao_ultimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_ultimoActionPerformed
-        try {
-            conexao.resultSet.last();
-            mostra_dados_atravessador();
+    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField11ActionPerformed
 
+    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField12ActionPerformed
 
-        }catch (SQLException ex) {
-            Logger.getLogger(pescador_2.class.getName()).log(Level.SEVERE, null, ex);
-        }
-}//GEN-LAST:event_botao_ultimoActionPerformed
+    private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField13ActionPerformed
 
-    private void botao_proximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_proximoActionPerformed
-        try {
+    private void jTextField15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField15ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField15ActionPerformed
 
-            conexao.resultSet.next();
-            mostra_dados_atravessador();
-            navega = 2;
+    private void jTextField14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField14ActionPerformed
+        // TODO add your handling code here:
+}//GEN-LAST:event_jTextField14ActionPerformed
 
+    private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField16ActionPerformed
 
-        }catch (SQLException ex) {
-            Logger.getLogger(pescador_2.class.getName()).log(Level.SEVERE, null, ex);
-        }
-}//GEN-LAST:event_botao_proximoActionPerformed
+    private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField17ActionPerformed
 
-    private void botao_anteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_anteriorActionPerformed
-        try {
-            conexao.resultSet.previous();
-            mostra_dados_atravessador();
-            navega = 1;
+    private void jTextField18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField18ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField18ActionPerformed
 
-        }catch (SQLException ex) {
-            Logger.getLogger(pescador_2.class.getName()).log(Level.SEVERE, null, ex);
-        }
-}//GEN-LAST:event_botao_anteriorActionPerformed
-
-    private void botao_primeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_primeiroActionPerformed
-        try {
-            conexao.resultSet.first();
-            mostra_dados_atravessador();
-
-
-        }catch (SQLException ex) {
-            Logger.getLogger(pescador_2.class.getName()).log(Level.SEVERE, null, ex);
-        }
-}//GEN-LAST:event_botao_primeiroActionPerformed
-
-    private void botao_novoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_novoActionPerformed
-        tfNome.setText("");
-        tfApelido.setText("");
-        tfNaturalidade.setText("");
-        tfIdade.setText("0");
-        tfAtividadePrincipal.setText("");
-        tfAtividadeSecundaria.setText("");
-        cbEstadoCivil.setSelectedIndex(0);
-        tfComposicaoFamiliar.setText("");
-        tfEscolaridade.setText("");
-        tfPqParou.setText("");
-
-
-        //System.out.println(conexao.resultSet.getString("local_moradia"));
-
-        cbMunicipio.setSelectedIndex(0);
-        cbSexo.setSelectedIndex(0);
-        cbLocalMoradia.setSelectedIndex(0);
-}//GEN-LAST:event_botao_novoActionPerformed
-
-    private void botao_excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_excluirActionPerformed
-        String sql;
-        try {
-            sql = "select * from atravessador_cadastro Where id_atravessador =" + conexao.resultSet.getString("id_atravessador");
-            conexao.execute(sql);
-            conexao.resultSet.first();
-            String nome = "Deletar o atravessador : "+conexao.resultSet.getString("nome")+" ?";
-            int opcao_escolhida = JOptionPane.showConfirmDialog(null,nome,"Exclusão ",JOptionPane.YES_NO_OPTION);
-            if (opcao_escolhida == JOptionPane.YES_OPTION) {
-                sql = "DELETE FROM atravessador_cadastro Where id_atravessador ="+conexao.resultSet.getString("id_atravessador");
-                if (conexao.salvar(sql)) {
-                    JOptionPane.showMessageDialog(null,"Exclusão realizada com sucesso");
-                    //atualiza o ResultSet
-                    conexao.execute("select * from atravessador_cadastro");
-                    conexao.resultSet.first();
-                    mostra_dados_atravessador();
-                }
-            } else{
-                conexao.execute("select * from atravessador_cadastro");
-                conexao.resultSet.first();
-                mostra_dados_atravessador();
-            }
-
-        } catch (SQLException ex) {
-            System.out.println("Erro ao tentar excluir "+ex);
-        }
-}//GEN-LAST:event_botao_excluirActionPerformed
-
-    private void CadastrarAction(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarAction
-
-        try {
-            String sqlinsert = "insert into atravessador_cadastro "
-                    + "(id_local,nome,apelido,naturalidade,"
-                    + "sexo,idade,atividade_principal,atividade_secundaria,"
-                    + "estado_civil,composicao_familiar,escolaridade,pq_parou,"
-                    + "local_moradia,qualidade_moradia,tipo_construcao,"
-                    + "atividades_geram_renda,atividade_entrevistado,"
-                    + "atividade_esposa,atividade_filhos,atividade_netos,"
-                    + "tempo_diario_trab,tempo_na_atividade,"
-                    + "renda_mensal_ou_viagem,possui_reg_colonia,qual_colonia,"
-                    + "na_colonia_desde) values ('"+
-                    cbMunicipio.getSelectedItem()+"','"+
-                    tfNome.getText()+"','"+
-                    tfApelido.getText()+"','"+
-                    tfNaturalidade.getText()+"','"+
-                    cbSexo.getSelectedItem()+"',"+
-                    tfIdade.getText()+",'"+
-                    tfAtividadePrincipal.getText()+"','"+
-                    tfAtividadeSecundaria.getText()+"','"+
-                    cbEstadoCivil.getSelectedItem()+"','"+
-                    tfComposicaoFamiliar.getText()+"','"+
-                    tfEscolaridade.getText()+"','"+
-                    tfPqParou.getText()+"','"+
-                    cbLocalMoradia.getSelectedItem()+"','";
-
-            //System.out.println(sqlinsert);
-            if (conexao.salvar(sqlinsert)) {
-                JOptionPane.showMessageDialog(null,"Cadastrado com sucesso");
-                //agora é hora de atualizar o resultset
-                conexao.execute("select * from atravessador_cadastro");
-                conexao.resultSet.first(); //1º registro
-                mostra_dados_atravessador();
-            }
-
-
-        }catch (SQLException erro){
-            System.out.println(erro);
-        }
-}//GEN-LAST:event_CadastrarAction
+    private void jTextField19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField19ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField19ActionPerformed
 
     /**
     * @param args the command line arguments
@@ -992,18 +1134,7 @@ public class pescador_2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Cadastrar;
-    private javax.swing.JButton botao_alterar;
-    private javax.swing.JButton botao_anterior;
-    private javax.swing.JButton botao_excluir;
-    private javax.swing.JButton botao_novo;
-    private javax.swing.JButton botao_primeiro;
-    private javax.swing.JButton botao_proximo;
-    private javax.swing.JButton botao_ultimo;
-    private javax.swing.JComboBox cbEstadoCivil;
-    private javax.swing.JComboBox cbLocalMoradia;
-    private javax.swing.JComboBox cbMunicipio;
-    private javax.swing.JComboBox cbSexo;
+    private javax.swing.JComboBox cbPescador;
     private javax.swing.JCheckBox chbAguaNao;
     private javax.swing.JCheckBox chbAguaSim;
     private javax.swing.JCheckBox chbAlvenaria;
@@ -1033,8 +1164,32 @@ public class pescador_2 extends javax.swing.JFrame {
     private javax.swing.JCheckBox chbParceria;
     private javax.swing.JCheckBox chbPossuiRegistroNao;
     private javax.swing.JCheckBox chbPossuiRegistroSim;
+    private javax.swing.JCheckBox chbRecebeBeneficioGovernoNao;
+    private javax.swing.JCheckBox chbRecebeBeneficioGovernoSim;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JCheckBox jCheckBox4;
+    private javax.swing.JCheckBox jCheckBox5;
+    private javax.swing.JCheckBox jCheckBox6;
+    private javax.swing.JCheckBox jCheckBox7;
+    private javax.swing.JCheckBox jCheckBox8;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -1044,12 +1199,6 @@ public class pescador_2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
@@ -1064,21 +1213,41 @@ public class pescador_2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField tfApelido;
-    private javax.swing.JTextField tfAtividadePrincipal;
-    private javax.swing.JTextField tfAtividadeSecundaria;
-    private javax.swing.JTextField tfComposicaoFamiliar;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable jTableAtividadeFamiliar;
+    private javax.swing.JTable jTableAtividadeFamiliar1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField14;
+    private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField jTextField16;
+    private javax.swing.JTextField jTextField17;
+    private javax.swing.JTextField jTextField18;
+    private javax.swing.JTextField jTextField19;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JTextField tfDesdeQuandoPescador;
-    private javax.swing.JTextField tfEscolaridade;
-    private javax.swing.JTextField tfIdade;
-    private javax.swing.JTextField tfNaturalidade;
-    private javax.swing.JTextField tfNome;
-    private javax.swing.JTextField tfPqParou;
     private javax.swing.JTextField tfQualAssociacao;
     private javax.swing.JTextField tfQualColonia;
     private javax.swing.JTextField tfQualCooperativa;
@@ -1088,26 +1257,15 @@ public class pescador_2 extends javax.swing.JFrame {
     public void mostra_dados_atravessador(){
         try {
 
-            tfNome.setText(conexao.resultSet.getString("nome"));
-            tfApelido.setText(conexao.resultSet.getString("apelido"));
-            tfNaturalidade.setText(conexao.resultSet.getString("naturalidade"));
-            tfIdade.setText(conexao.resultSet.getString("idade"));
-            tfAtividadePrincipal.setText(conexao.resultSet.getString("atividade_principal"));
-            tfAtividadeSecundaria.setText(conexao.resultSet.getString("atividade_secundaria"));
-            cbEstadoCivil.setSelectedItem(conexao.resultSet.getString("estado_civil"));
-            tfComposicaoFamiliar.setText(conexao.resultSet.getString("composicao_familiar"));
-            tfEscolaridade.setText(conexao.resultSet.getString("escolaridade"));
-            tfPqParou.setText(conexao.resultSet.getString("pq_parou"));
+            
            
 
             //System.out.println(conexao.resultSet.getString("local_moradia"));
             
           
             
-            cbMunicipio.setSelectedItem(conexao.resultSet.getString("id_local"));
-            cbSexo.setSelectedItem(conexao.resultSet.getString("sexo"));
-            cbLocalMoradia.setSelectedItem(conexao.resultSet.getString("local_moradia"));
-            
+            cbPescador.setSelectedItem(conexao.resultSet.getString("id_local"));
+       
 
 
         }catch (SQLException ex) {
