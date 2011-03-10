@@ -29,12 +29,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane1" alignment="0" pref="780" max="32767" attributes="0"/>
+          <Component id="jScrollPane1" alignment="0" pref="782" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane1" alignment="0" pref="471" max="32767" attributes="0"/>
+          <Component id="jScrollPane1" alignment="0" pref="478" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -54,7 +54,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane3" alignment="0" pref="733" max="32767" attributes="1"/>
+                          <Component id="jScrollPane3" alignment="0" pref="743" max="32767" attributes="1"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -84,14 +84,7 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="chbInssSim" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="chbInssNao" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="chbInssEmpregado" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="chbColoniaSim" min="-2" max="-2" attributes="0"/>
@@ -127,6 +120,13 @@
                                           <Component id="tfQualColonia" alignment="0" min="-2" pref="189" max="-2" attributes="1"/>
                                       </Group>
                                   </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                           <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
@@ -146,34 +146,6 @@
                               </Group>
                           </Group>
                           <Component id="jLabel48" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel39" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel40" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel41" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel36" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel38" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="chbMadeira" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="chbLuzSim" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="chbBanheiroDentro" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="chbDrenagemSim" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="chbAguaSim" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="chbFossaSim" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="chbFossaNao" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="chbDrenagemNao" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="chbAguaNao" min="-2" max="-2" attributes="0"/>
-                                  <Component id="chbBanheiroFora" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="chbAlvenaria" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="chbLuzNao" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
                           <Component id="chbParceria" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="chbFamiliar" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jbEditarAtividadeFamiliar" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -209,8 +181,8 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="tfSafra" pref="247" max="32767" attributes="1"/>
-                                  <Component id="tfQuantidadeArtePesca" alignment="0" pref="247" max="32767" attributes="1"/>
+                                  <Component id="tfSafra" pref="298" max="32767" attributes="1"/>
+                                  <Component id="tfQuantidadeArtePesca" alignment="0" pref="298" max="32767" attributes="1"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -218,8 +190,8 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="tfAlemPescaOutraPescaria" min="-2" pref="213" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="tfAlemPescaOutraPescaria" min="-2" pref="207" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
@@ -250,15 +222,15 @@
                               </Group>
                               <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="tfDiasdePesca" alignment="0" pref="167" max="32767" attributes="1"/>
-                                  <Component id="tfProducaoViagem" alignment="0" pref="167" max="32767" attributes="1"/>
-                                  <Component id="tfPeriodo" alignment="0" pref="167" max="32767" attributes="1"/>
+                                  <Component id="tfDiasdePesca" alignment="0" pref="239" max="32767" attributes="1"/>
+                                  <Component id="tfProducaoViagem" alignment="0" pref="239" max="32767" attributes="1"/>
+                                  <Component id="tfPeriodo" alignment="0" pref="239" max="32767" attributes="1"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="tfTamanhoEMalha" pref="194" max="32767" attributes="0"/>
+                              <Component id="tfTamanhoEMalha" pref="265" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -271,9 +243,9 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="tfPesqueiros" pref="420" max="32767" attributes="0"/>
+                              <Component id="tfPesqueiros" pref="482" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="jScrollPane2" alignment="0" pref="733" max="32767" attributes="1"/>
+                          <Component id="jScrollPane2" alignment="0" pref="743" max="32767" attributes="1"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
@@ -317,6 +289,37 @@
                               </Group>
                               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel39" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel40" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel41" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel36" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jLabel38" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="chbMadeira" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chbLuzSim" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chbBanheiroDentro" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chbDrenagemSim" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chbAguaSim" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chbFossaSim" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="chbLuzNao" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chbBanheiroFora" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chbFossaNao" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chbDrenagemNao" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chbAguaNao" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chbAlvenaria" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -339,30 +342,31 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="chbMadeira" pref="33" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="chbMadeira" alignment="3" pref="33" max="32767" attributes="0"/>
+                                          <Component id="jLabel38" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                                      <Component id="chbLuzSim" pref="33" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="chbLuzSim" alignment="3" pref="33" max="32767" attributes="0"/>
+                                          <Component id="chbLuzNao" alignment="3" pref="31" max="32767" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="chbAlvenaria" pref="31" max="32767" attributes="0"/>
-                                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                                      <Component id="chbLuzNao" pref="31" max="32767" attributes="0"/>
-                                      <EmptySpace min="4" pref="4" max="4" attributes="0"/>
+                                      <Component id="chbAlvenaria" pref="32" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="chbBanheiroDentro" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
                                   <Component id="chbBanheiroFora" alignment="3" max="32767" attributes="1"/>
+                                  <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                              <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                               <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -379,7 +383,7 @@
                                   </Group>
                               </Group>
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel41" pref="28" max="32767" attributes="0"/>
+                              <Component id="jLabel41" pref="27" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -393,7 +397,7 @@
                                   </Group>
                               </Group>
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                              <Component id="chbFossaSim" pref="32" max="32767" attributes="0"/>
+                              <Component id="chbFossaSim" pref="31" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -407,15 +411,15 @@
                                   </Group>
                               </Group>
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                              <Component id="chbFossaNao" pref="32" max="32767" attributes="0"/>
+                              <Component id="chbFossaNao" pref="31" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="chbInssSim" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="chbInssNao" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="chbInssEmpregado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jRadioButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jRadioButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jRadioButton3" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -630,7 +634,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel24">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Pesacador"/>
+                <Property name="text" type="java.lang.String" value="Pescador"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel40">
@@ -681,7 +685,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="298" max="-2" attributes="0"/>
                           <Component id="jLabel42" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="298" max="32767" attributes="0"/>
+                          <EmptySpace pref="308" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -867,16 +871,6 @@
                 <Property name="text" type="java.lang.String" value="Paga INSS.:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chbInssSim">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Sim"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="chbInssNao">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="N&#xe3;o (aut&#xf4;nomo)"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JTextField" name="tfQualColonia">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel44">
@@ -892,11 +886,6 @@
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Na col&#xf4;nia.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="chbInssEmpregado">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Empregado"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JCheckBox" name="chbColoniaNao">
@@ -1311,6 +1300,21 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfConservacaoPescadoActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Sim"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="jRadioButton2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="N&#xe3;o (aut&#xf4;nomo)"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="jRadioButton3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Empregado"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
