@@ -1,10 +1,10 @@
 package br.com.formulario.pescador;
 
 import br.com.conexao.Conexao;
+import br.com.util.Utilidade;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 
 
@@ -14,39 +14,39 @@ import javax.swing.JOptionPane;
  */
 public class pescador_2 extends javax.swing.JFrame {
 
-    private int navega = 0; //variavel pra saber o  botão clicado;
-    private int inicia_combo = 0;
-    private boolean state = false;
-
     private Conexao conexao;
 
+    private String ItemDoCb;
+    private int inicia_combo = 0; //Evita a ativação inicial do cbPescador
+    private Utilidade util = new Utilidade();
 
     public pescador_2() {
         initComponents(); //Inicializa os componentes da tela
         conexao = new Conexao();
-        conexao.conecta("mil_interface");
+        conexao.conecta("emalhe");
               
-        //Insere nomes do município no cbMunicipio
+        //Insere nome do pescador no CB
+        //Insere nome no cbNomeAtravessador
         try {
-            conexao.execute("select * FROM tab_local where pai='Pará' or pai='Maranhão' or pai='Amapá' ");
+            cbPescador.removeAllItems();
+            conexao.execute("select * from pescador");
+
             while (conexao.resultSet.next()){
-                cbPescador.addItem(conexao.resultSet.getString("nome"));
-                //System.out.println(conexao.resultSet.getString("nome"));
+                cbPescador.addItem(conexao.resultSet.getString("cod_pescador")+
+                            " # "+ conexao.resultSet.getString("nome"));              
             }
+
         }catch (SQLException ex) {
-            Logger.getLogger(pescador_2.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Erro no CB "+ex);
         }
 
-        conexao.execute("select * from atravessador_cadastro");
-
+        conexao.execute("select * from pescador_modaria");
         try {
             conexao.resultSet.first();
-            mostra_dados_atravessador();
-
-
-        }catch (SQLException ex) {
-            Logger.getLogger(pescador_2.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            System.out.println(ex+" Erro  linha 47");
         }
+        mostra_dados();
 
        /*
         Teste que mostra toda a tabela selecionada
@@ -187,9 +187,9 @@ public class pescador_2 extends javax.swing.JFrame {
         tfTempoTrabalhandoBarco = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
         tfConservacaoPescado = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
+        rbInssSim = new javax.swing.JRadioButton();
+        rbInssNao = new javax.swing.JRadioButton();
+        rbInssEmpregado = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Questionário Atravessador");
@@ -216,6 +216,17 @@ public class pescador_2 extends javax.swing.JFrame {
         chbAssalariado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chbAssalariadoActionPerformed(evt);
+            }
+        });
+
+        cbPescador.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbPescadorItemStateChanged(evt);
+            }
+        });
+        cbPescador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbPescadorActionPerformed(evt);
             }
         });
 
@@ -557,11 +568,11 @@ public class pescador_2 extends javax.swing.JFrame {
             }
         });
 
-        jRadioButton1.setText("Sim");
+        rbInssSim.setText("Sim");
 
-        jRadioButton2.setText("Não (autônomo)");
+        rbInssNao.setText("Não (autônomo)");
 
-        jRadioButton3.setText("Empregado");
+        rbInssEmpregado.setText("Empregado");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -625,11 +636,11 @@ public class pescador_2 extends javax.swing.JFrame {
                                     .addComponent(tfQualAssociacao)
                                     .addComponent(tfQualColonia, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jRadioButton1)
+                                .addComponent(rbInssSim)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton2)
+                                .addComponent(rbInssNao)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton3))))
+                                .addComponent(rbInssEmpregado))))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel6)
@@ -854,9 +865,9 @@ public class pescador_2 extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton3))
+                    .addComponent(rbInssSim)
+                    .addComponent(rbInssNao)
+                    .addComponent(rbInssEmpregado))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(chbColoniaSim)
@@ -1123,6 +1134,19 @@ public class pescador_2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfConservacaoPescadoActionPerformed
 
+    private void cbPescadorItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbPescadorItemStateChanged
+        //System.out.println("trocou");
+    }//GEN-LAST:event_cbPescadorItemStateChanged
+
+    private void cbPescadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbPescadorActionPerformed
+
+        if (inicia_combo == 1){
+             mostra_dados();
+        }
+        inicia_combo = 1;
+
+    }//GEN-LAST:event_cbPescadorActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -1219,9 +1243,6 @@ public class pescador_2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -1229,6 +1250,9 @@ public class pescador_2 extends javax.swing.JFrame {
     private javax.swing.JTable jTableEspeciesCapturadas;
     private javax.swing.JButton jbEditarAtividadeFamiliar;
     private javax.swing.JButton jbEditarEspeciesCapturadas;
+    private javax.swing.JRadioButton rbInssEmpregado;
+    private javax.swing.JRadioButton rbInssNao;
+    private javax.swing.JRadioButton rbInssSim;
     private javax.swing.JTextField tfAlemPescaOutraPescaria;
     private javax.swing.JTextField tfArtePesca;
     private javax.swing.JTextField tfConservacaoPescado;
@@ -1255,33 +1279,114 @@ public class pescador_2 extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
 
-    public void mostra_dados_atravessador(){
+    private void mostra_dados(){
+        String codigo = util.separa(1,cbPescador.getSelectedItem().toString());
+        System.out.println(codigo);
         try {
+            //Pescador Moradia
+            conexao.execute("SELECT * FROM pescador_modaria WHERE cod_pescador = "+codigo);
+            conexao.resultSet.first();
 
-            
-           
+            //Selecionar os check boxes conforme o BD
+            String testador;
 
-            //System.out.println(conexao.resultSet.getString("local_moradia"));
+            testador = conexao.resultSet.getString("casa");
+            if (testador.equals("Madeira"))
+                   chbMadeira.setSelected(true);
+            else
+                   chbMadeira.setSelected(false);
+
+            if (testador.equals("Alvenaria"))
+                   chbAlvenaria.setSelected(true);
+            else
+                   chbAlvenaria.setSelected(false);
+
+            if (conexao.resultSet.getString("luz").equals("1"))
+                   chbLuzSim.setSelected(true);
+            else
+                   chbLuzSim.setSelected(false);
+
+            testador = conexao.resultSet.getString("banheiro");
+            if (testador.equals("Dentro"))
+                   chbBanheiroDentro.setSelected(true);
+            else
+                   chbBanheiroDentro.setSelected(false);
+
+            if (testador.equals("Fora"))
+                   chbBanheiroFora.setSelected(true);
+            else
+                   chbBanheiroFora.setSelected(false);
             
-          
-            
-            cbPescador.setSelectedItem(conexao.resultSet.getString("id_local"));
-       
+            if (conexao.resultSet.getString("agua_encanada").equals("1"))
+                   chbAguaSim.setSelected(true);
+            else
+                   chbAguaSim.setSelected(false);
+
+            if (conexao.resultSet.getString("drenagem_pluvial").equals("1"))
+                   chbDrenagemSim.setSelected(true);
+            else
+                   chbDrenagemSim.setSelected(false);
+
+            if (conexao.resultSet.getString("fossa").equals("1"))
+                   chbFossaSim.setSelected(true);
+            else
+                   chbFossaSim.setSelected(false);
+
+            testador = conexao.resultSet.getString("paga_inss");
+            if (testador.equals("Sim"))
+                   rbInssSim.setSelected(true);
+            else
+                   rbInssSim.setSelected(false);
+
+            if (testador.equals("Não"))
+                   rbInssNao.setSelected(true);
+            else
+                   rbInssNao.setSelected(false);
+
+            if (testador.equals("Empregado"))
+                   rbInssEmpregado.setSelected(true);
+            else
+                   rbInssEmpregado.setSelected(false);
+
+            if (conexao.resultSet.getString("colonia").equals("1"))
+                   chbColoniaSim.setSelected(true);
+            else
+                   chbColoniaSim.setSelected(false);
+
+            tfQualColonia.setText(conexao.resultSet.getString("colonia_qual"));
+
+            if (conexao.resultSet.getString("associacao").equals("1"))
+                   chbAssociacaoSim.setSelected(true);
+            else
+                   chbAssociacaoSim.setSelected(false);
+
+            tfQualAssociacao.setText(conexao.resultSet.getString("associacao_qual"));
+
+            if (conexao.resultSet.getString("cooperativa").equals("1"))
+                   chbCooperativaSim.setSelected(true);
+            else
+                   chbCooperativaSim.setSelected(false);
+
+            tfQualCooperativa.setText(conexao.resultSet.getString("cooperativa_qual"));
+
+            tfDesdeQuandoPescador.setText(conexao.resultSet.getString("tempo_pescador"));
+
+            if (conexao.resultSet.getString("possui_carteira_ibama").equals("1"))
+                   chbIbamaSim.setSelected(true);
+            else
+                   chbIbamaSim.setSelected(false);
+
+            if (conexao.resultSet.getString("possui_rgp").equals("1"))
+                   chbPossuiRegistroSim.setSelected(true);
+            else
+                   chbPossuiRegistroSim.setSelected(false);
+
 
 
         }catch (SQLException ex) {
-            if (navega == 1){
-                JOptionPane.showMessageDialog(null,"Você já esta no primeiro registro");
-                proximo();
-            }
-            else if (navega == 2){
-                JOptionPane.showMessageDialog(null,"Você já esta no ultimo registro");
-                anterior();
-            }
-            else
+            
                 JOptionPane.showMessageDialog(null,"Nenhum registro encontrado "+ ex );
-            navega = 0;
-            //Logger.getLogger(pescador.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("Erro no mostrar dados");
         }
     }
 
@@ -1300,13 +1405,10 @@ public class pescador_2 extends javax.swing.JFrame {
                     Logger.getLogger(pescador_2.class.getName()).log(Level.SEVERE, null, ex1);
                 }
     }
-    
-private int checar(JCheckBox ckb) {
-        if (ckb.isSelected()){
-            return 1;
-        }else
-            return 0;
-    }
 
+    private void limpar_dados() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+    
 
 }

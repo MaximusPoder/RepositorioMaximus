@@ -6,7 +6,7 @@
 package br.com.util;
 
 import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
+import javax.swing.JRadioButton;
 
 /**
  *
@@ -40,8 +40,15 @@ public class Utilidade {
 
 }
 
-    public int checar(JCheckBox ckb) {
+    public int checarCkb(JCheckBox ckb) {
         if (ckb.isSelected()){
+            return 1;
+        }else
+            return 0;
+    }
+
+    public int checarChb(JRadioButton chb) {
+        if (chb.isSelected()){
             return 1;
         }else
             return 0;
