@@ -1382,6 +1382,36 @@ public class pescador_2 extends javax.swing.JFrame {
                    chbPossuiRegistroSim.setSelected(false);
 
 
+//            Pescador Moradia
+//            conexao.execute("SELECT * FROM pescador_relacoes_trabalho WHERE cod_pescador = "+codigo);
+//            conexao.resultSet.first();
+
+            if (conexao.resultSet.getString("familiar").equals("1"))
+                   chbFamiliar.setSelected(true);
+            else
+                   chbFamiliar.setSelected(false);
+
+            if (conexao.resultSet.getString("parceria").equals("1"))
+                   chbParceria.setSelected(true);
+            else
+                   chbParceria.setSelected(false);
+
+            if (conexao.resultSet.getString("assalariado").equals("1"))
+                   chbAssalariado.setSelected(true);
+            else
+                   chbAssalariado.setSelected(false);
+
+            if (conexao.resultSet.getString("armador_pescador").equals("1"))
+                   chbArmadorPescador.setSelected(true);
+            else
+                   chbArmadorPescador.setSelected(false);
+
+            if (conexao.resultSet.getString("recebe_beneficio").equals("1"))
+                   chbRecebeBeneficioGovernoSim.setSelected(true);
+            else
+                   chbRecebeBeneficioGovernoSim.setSelected(false);
+
+
 
         }catch (SQLException ex) {
             
