@@ -82,17 +82,17 @@ public class pescador_2 extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
         ckbAguaSim = new javax.swing.JCheckBox();
-        chbDrenagemSim = new javax.swing.JCheckBox();
-        chbFossaSim = new javax.swing.JCheckBox();
+        ckbDrenagemSim = new javax.swing.JCheckBox();
+        ckbFossaSim = new javax.swing.JCheckBox();
         jLabel41 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel42 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        chbIbamaSim = new javax.swing.JCheckBox();
+        ckbIbamaSim = new javax.swing.JCheckBox();
         jLabel6 = new javax.swing.JLabel();
-        chbPossuiRegistroSim = new javax.swing.JCheckBox();
+        ckbPossuiRgp = new javax.swing.JCheckBox();
         jLabel37 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
         ckbFamiliar = new javax.swing.JCheckBox();
@@ -102,10 +102,10 @@ public class pescador_2 extends javax.swing.JFrame {
         jLabel36 = new javax.swing.JLabel();
         tfQualAssociacao = new javax.swing.JTextField();
         jLabel45 = new javax.swing.JLabel();
-        chbAssociacaoSim = new javax.swing.JCheckBox();
+        ckbAssociacaoSim = new javax.swing.JCheckBox();
         tfDesdeQuandoPescador = new javax.swing.JTextField();
         tfQualCooperativa = new javax.swing.JTextField();
-        chbCooperativaSim = new javax.swing.JCheckBox();
+        ckbCooperativaSim = new javax.swing.JCheckBox();
         jLabel4 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -113,7 +113,7 @@ public class pescador_2 extends javax.swing.JFrame {
         jLabel44 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        chbColoniaSim = new javax.swing.JCheckBox();
+        ckbColoniaSim = new javax.swing.JCheckBox();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableAtividadeFamiliar = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
@@ -132,8 +132,8 @@ public class pescador_2 extends javax.swing.JFrame {
         tfTamanhoEMalha = new javax.swing.JTextField();
         tfTempoArteAgua = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        chbTempoArteAguaDia = new javax.swing.JCheckBox();
-        chbTempoArteAguaNoite = new javax.swing.JCheckBox();
+        ckbTempoArteAguaDia = new javax.swing.JCheckBox();
+        ckbTempoArteAguaNoite = new javax.swing.JCheckBox();
         tfTempoChegarPesqueiro = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         tfDiasdePesca = new javax.swing.JTextField();
@@ -227,9 +227,9 @@ public class pescador_2 extends javax.swing.JFrame {
 
         ckbAguaSim.setText("Sim");
 
-        chbDrenagemSim.setText("Sim");
+        ckbDrenagemSim.setText("Sim");
 
-        chbFossaSim.setText("Sim");
+        ckbFossaSim.setText("Sim");
 
         jLabel41.setText("Fossa seca ou sépica.:");
 
@@ -262,11 +262,11 @@ public class pescador_2 extends javax.swing.JFrame {
 
         jLabel5.setText("Possui carteira IBAMA.:");
 
-        chbIbamaSim.setText("Sim");
+        ckbIbamaSim.setText("Sim");
 
         jLabel6.setText("Possui Registro Feral de Pescador (RGP-MPA).:");
 
-        chbPossuiRegistroSim.setText("Sim");
+        ckbPossuiRgp.setText("Sim");
 
         jLabel37.setText("Banheiro.:");
 
@@ -295,9 +295,9 @@ public class pescador_2 extends javax.swing.JFrame {
 
         jLabel45.setText("Qual.:");
 
-        chbAssociacaoSim.setText("Sim");
+        ckbAssociacaoSim.setText("Sim");
 
-        chbCooperativaSim.setText("Sim");
+        ckbCooperativaSim.setText("Sim");
 
         jLabel4.setText("Cooperativa.:");
 
@@ -311,7 +311,7 @@ public class pescador_2 extends javax.swing.JFrame {
 
         jLabel2.setText("Na colônia.:");
 
-        chbColoniaSim.setText("Sim");
+        ckbColoniaSim.setText("Sim");
 
         jTableAtividadeFamiliar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -383,9 +383,9 @@ public class pescador_2 extends javax.swing.JFrame {
 
         jLabel13.setText("Tempo da arte na água.:");
 
-        chbTempoArteAguaDia.setText("Dia");
+        ckbTempoArteAguaDia.setText("Dia");
 
-        chbTempoArteAguaNoite.setText("Noite");
+        ckbTempoArteAguaNoite.setText("Noite");
 
         tfTempoChegarPesqueiro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -598,18 +598,18 @@ public class pescador_2 extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(chbColoniaSim)
+                                        .addComponent(ckbColoniaSim)
                                         .addGap(59, 59, 59)
                                         .addComponent(jLabel44)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                .addComponent(chbAssociacaoSim)
+                                                .addComponent(ckbAssociacaoSim)
                                                 .addGap(59, 59, 59)
                                                 .addComponent(jLabel45))
                                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(chbCooperativaSim)
+                                                .addComponent(ckbCooperativaSim)
                                                 .addGap(59, 59, 59)
                                                 .addComponent(jLabel46)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
@@ -628,11 +628,11 @@ public class pescador_2 extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(chbPossuiRegistroSim))
+                                .addComponent(ckbPossuiRgp))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(chbIbamaSim)))
+                                .addComponent(ckbIbamaSim)))
                         .addGap(51, 51, 51))
                     .addComponent(jLabel48)
                     .addComponent(ckbParceria)
@@ -659,9 +659,9 @@ public class pescador_2 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tfTempoArteAgua, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(chbTempoArteAguaDia)
+                        .addComponent(ckbTempoArteAguaDia)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(chbTempoArteAguaNoite))
+                        .addComponent(ckbTempoArteAguaNoite))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 769, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -708,9 +708,9 @@ public class pescador_2 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(rbMadeira)
-                            .addComponent(chbDrenagemSim)
+                            .addComponent(ckbDrenagemSim)
                             .addComponent(ckbAguaSim)
-                            .addComponent(chbFossaSim)
+                            .addComponent(ckbFossaSim)
                             .addComponent(ckbLuzSim)
                             .addComponent(rbBanheiroDentro))
                         .addGap(18, 18, 18)
@@ -823,10 +823,10 @@ public class pescador_2 extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGap(27, 27, 27)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(chbDrenagemSim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(ckbDrenagemSim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(chbFossaSim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(ckbFossaSim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -835,19 +835,19 @@ public class pescador_2 extends javax.swing.JFrame {
                     .addComponent(rbInssEmpregado))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chbColoniaSim)
+                    .addComponent(ckbColoniaSim)
                     .addComponent(jLabel44)
                     .addComponent(tfQualColonia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfQualAssociacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(chbAssociacaoSim)
+                    .addComponent(ckbAssociacaoSim)
                     .addComponent(jLabel45)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chbCooperativaSim)
+                    .addComponent(ckbCooperativaSim)
                     .addComponent(jLabel46)
                     .addComponent(tfQualCooperativa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
@@ -857,11 +857,11 @@ public class pescador_2 extends javax.swing.JFrame {
                     .addComponent(tfDesdeQuandoPescador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chbIbamaSim)
+                    .addComponent(ckbIbamaSim)
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chbPossuiRegistroSim)
+                    .addComponent(ckbPossuiRgp)
                     .addComponent(jLabel6))
                 .addGap(7, 7, 7)
                 .addComponent(jLabel48)
@@ -909,8 +909,8 @@ public class pescador_2 extends javax.swing.JFrame {
                     .addComponent(tfTempoArteAgua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tfTamanhoEMalha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13)
-                    .addComponent(chbTempoArteAguaDia)
-                    .addComponent(chbTempoArteAguaNoite))
+                    .addComponent(ckbTempoArteAguaDia)
+                    .addComponent(ckbTempoArteAguaNoite))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1114,17 +1114,8 @@ public class pescador_2 extends javax.swing.JFrame {
     private javax.swing.ButtonGroup banheirobanheiro;
     private javax.swing.ButtonGroup casacasa;
     private javax.swing.JComboBox cbPescador;
-    private javax.swing.JCheckBox chbAssociacaoSim;
-    private javax.swing.JCheckBox chbColoniaSim;
-    private javax.swing.JCheckBox chbCooperativaSim;
-    private javax.swing.JCheckBox chbDrenagemSim;
     private javax.swing.JCheckBox chbEmbarcacaoPatrao;
     private javax.swing.JCheckBox chbEmbarcacaoPropria;
-    private javax.swing.JCheckBox chbFossaSim;
-    private javax.swing.JCheckBox chbIbamaSim;
-    private javax.swing.JCheckBox chbPossuiRegistroSim;
-    private javax.swing.JCheckBox chbTempoArteAguaDia;
-    private javax.swing.JCheckBox chbTempoArteAguaNoite;
     private javax.swing.JCheckBox chbTipoBMP;
     private javax.swing.JCheckBox chbTipoBPP;
     private javax.swing.JCheckBox chbTipoCAM;
@@ -1132,10 +1123,19 @@ public class pescador_2 extends javax.swing.JFrame {
     private javax.swing.JCheckBox ckbAguaSim;
     private javax.swing.JCheckBox ckbArmadorPescador;
     private javax.swing.JCheckBox ckbAssalariado;
+    private javax.swing.JCheckBox ckbAssociacaoSim;
+    private javax.swing.JCheckBox ckbColoniaSim;
+    private javax.swing.JCheckBox ckbCooperativaSim;
+    private javax.swing.JCheckBox ckbDrenagemSim;
     private javax.swing.JCheckBox ckbFamiliar;
+    private javax.swing.JCheckBox ckbFossaSim;
+    private javax.swing.JCheckBox ckbIbamaSim;
     private javax.swing.JCheckBox ckbLuzSim;
     private javax.swing.JCheckBox ckbParceria;
+    private javax.swing.JCheckBox ckbPossuiRgp;
     private javax.swing.JCheckBox ckbRecebeBeneficioGovernoSim;
+    private javax.swing.JCheckBox ckbTempoArteAguaDia;
+    private javax.swing.JCheckBox ckbTempoArteAguaNoite;
     private javax.swing.ButtonGroup inssinss;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -1258,7 +1258,6 @@ public class pescador_2 extends javax.swing.JFrame {
                    tinss = "Empregado";
 
 
-        
             sqlinsert = "insert into pescador_modaria "
                     + "(cod_pescador,casa,luz,banheiro,agua_encanada,"
                     + "drenagem_pluvial,fossa,paga_inss,colonia,colonia_qual,"
@@ -1270,8 +1269,18 @@ public class pescador_2 extends javax.swing.JFrame {
                     util.checarCkb(ckbLuzSim)+"','"+
                     tbanheiro+"','"+
                     util.checarCkb(ckbAguaSim)+"','"+
+                    util.checarCkb(ckbDrenagemSim)+"','"+
+                    util.checarCkb(ckbFossaSim)+"','"+
                     tinss+"','"+
-                    "')";
+                    util.checarCkb(ckbColoniaSim)+"','"+
+                    tfQualColonia.getText()+"','"+
+                    util.checarCkb(ckbAssociacaoSim)+"','"+
+                    tfQualAssociacao.getText()+"','"+
+                    util.checarCkb(ckbCooperativaSim)+"','"+
+                    tfQualCooperativa.getText()+"','"+
+                    tfDesdeQuandoPescador.getText()+"','"+
+                    util.checarCkb(ckbIbamaSim)+"','"+
+                    util.checarCkb(ckbPossuiRgp)+"')";
 
             //System.out.println(sqlinsert);
             if (conexao.salvar(sqlinsert)) {
@@ -1299,14 +1308,36 @@ public class pescador_2 extends javax.swing.JFrame {
         
         
         //Composição da Pescaria
-       
-            sqlinsert = "insert into pescador "
-                    + "(cod_pescador,nome,apelido,naturalidade,"
-                    + "sexo,idade,atividade_principal,atividade_secundaria,"
-                    + "estado_civil,composicao_familiar,escolaridade,pq_parou,"
-                    + "local_moradia) values ('"+
 
-                    "')";
+            String tdianoite = "";
+
+            if (ckbTempoArteAguaDia.isSelected())
+                   tcasa = "Dia";
+            else if (ckbTempoArteAguaNoite.isSelected())
+                   tcasa = "Noite";
+
+
+            sqlinsert = "insert into pescador_composicao_pescaria "
+                    + "(cod_pescador,pescaria_principal,safra,arte_pesca,"
+                    + "quatidade_arte_pesca,tamanho_malha,tempo_arte_agua,"
+                    + "dia_noite,tempo_chegada,dias_efetivos_pesca,viagens_mes,"
+                    + "producao_viagem,renda_media_pecador,outra_pescaria"
+                    + "periodo) values ("+
+                    codigo+",'"+
+                    tfPescariaPrincipal.getText()+"','"+
+                    tfSafra.getText()+"','"+
+                    tfArtePesca.getText()+"','"+
+                    tfQuantidadeArtePesca.getText()+"','"+
+                    tfTamanhoEMalha.getText()+"','"+
+                    tfTempoArteAgua.getText()+"','"+
+                    tdianoite+"','"+
+                    tfTempoChegarPesqueiro.getText()+"','"+
+                    tfDiasdePesca.getText()+"','"+
+                    tfQuantasViagensMes.getText()+"','"+
+                    tfProducaoViagem.getText()+"','"+
+                    tfRendaMediaPescador.getText()+"','"+
+                    tfAlemPescaOutraPescaria.getText()+"','"+
+                    tfPeriodo.getText()+"')";
 
             //System.out.println(sqlinsert);
             if (conexao.salvar(sqlinsert)) {
@@ -1315,13 +1346,16 @@ public class pescador_2 extends javax.swing.JFrame {
         
         
         //Dados da Embarcação
-           sqlinsert = "insert into pescador "
-                    + "(cod_pescador,nome,apelido,naturalidade,"
-                    + "sexo,idade,atividade_principal,atividade_secundaria,"
-                    + "estado_civil,composicao_familiar,escolaridade,pq_parou,"
-                    + "local_moradia) values ('"+
-
-                    "')";
+           sqlinsert = "insert into pescador_dados_embarcacao "
+                    + "(cod_pescador,dono_embarcacao,tipo_embarcacao,nome_barco,"
+                    + "porto_origem,tempo_no_barco,conservacao_pescador) values ("+
+                    codigo+",'"+
+                    //
+                    //
+                    tfNomeBarco.getText()+"','"+
+                    tfPortoOrigem.getText()+"','"+
+                    tfTempoTrabalhandoBarco.getText()+"','"+
+                    tfConservacaoPescado.getText()+"')";
 
             //System.out.println(sqlinsert);
             if (conexao.salvar(sqlinsert)) {
@@ -1376,14 +1410,14 @@ public class pescador_2 extends javax.swing.JFrame {
                    ckbAguaSim.setSelected(false);
 
             if (conexao.resultSet.getString("drenagem_pluvial").equals("1"))
-                   chbDrenagemSim.setSelected(true);
+                   ckbDrenagemSim.setSelected(true);
             else
-                   chbDrenagemSim.setSelected(false);
+                   ckbDrenagemSim.setSelected(false);
 
             if (conexao.resultSet.getString("fossa").equals("1"))
-                   chbFossaSim.setSelected(true);
+                   ckbFossaSim.setSelected(true);
             else
-                   chbFossaSim.setSelected(false);
+                   ckbFossaSim.setSelected(false);
 
             testador = conexao.resultSet.getString("paga_inss");
             if (testador.equals("Sim"))
@@ -1402,37 +1436,37 @@ public class pescador_2 extends javax.swing.JFrame {
                    rbInssEmpregado.setSelected(false);
 
             if (conexao.resultSet.getString("colonia").equals("1"))
-                   chbColoniaSim.setSelected(true);
+                   ckbColoniaSim.setSelected(true);
             else
-                   chbColoniaSim.setSelected(false);
+                   ckbColoniaSim.setSelected(false);
 
             tfQualColonia.setText(conexao.resultSet.getString("colonia_qual"));
 
             if (conexao.resultSet.getString("associacao").equals("1"))
-                   chbAssociacaoSim.setSelected(true);
+                   ckbAssociacaoSim.setSelected(true);
             else
-                   chbAssociacaoSim.setSelected(false);
+                   ckbAssociacaoSim.setSelected(false);
 
             tfQualAssociacao.setText(conexao.resultSet.getString("associacao_qual"));
 
             if (conexao.resultSet.getString("cooperativa").equals("1"))
-                   chbCooperativaSim.setSelected(true);
+                   ckbCooperativaSim.setSelected(true);
             else
-                   chbCooperativaSim.setSelected(false);
+                   ckbCooperativaSim.setSelected(false);
 
             tfQualCooperativa.setText(conexao.resultSet.getString("cooperativa_qual"));
 
             tfDesdeQuandoPescador.setText(conexao.resultSet.getString("tempo_pescador"));
 
             if (conexao.resultSet.getString("possui_carteira_ibama").equals("1"))
-                   chbIbamaSim.setSelected(true);
+                   ckbIbamaSim.setSelected(true);
             else
-                   chbIbamaSim.setSelected(false);
+                   ckbIbamaSim.setSelected(false);
 
             if (conexao.resultSet.getString("possui_rgp").equals("1"))
-                   chbPossuiRegistroSim.setSelected(true);
+                   ckbPossuiRgp.setSelected(true);
             else
-                   chbPossuiRegistroSim.setSelected(false);
+                   ckbPossuiRgp.setSelected(false);
 
 
 //            Relações de Trabalho
@@ -1476,14 +1510,14 @@ public class pescador_2 extends javax.swing.JFrame {
             tfTempoArteAgua.setText(conexao.resultSet.getString("tempo_arte_agua"));
 
             if (conexao.resultSet.getString("dia").equals("1"))
-                   chbTempoArteAguaDia.setSelected(true);
+                   ckbTempoArteAguaDia.setSelected(true);
             else
-                   chbTempoArteAguaDia.setSelected(false);
+                   ckbTempoArteAguaDia.setSelected(false);
 
             if (conexao.resultSet.getString("noite").equals("1"))
-                   chbTempoArteAguaNoite.setSelected(true);
+                   ckbTempoArteAguaNoite.setSelected(true);
             else
-                   chbTempoArteAguaNoite.setSelected(false);
+                   ckbTempoArteAguaNoite.setSelected(false);
 
             tfTempoChegarPesqueiro.setText(conexao.resultSet.getString("tempo_chegar_pesqueiro"));
             tfDiasdePesca.setText(conexao.resultSet.getString("dias_pesca"));

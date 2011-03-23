@@ -89,7 +89,7 @@
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="chbColoniaSim" min="-2" max="-2" attributes="0"/>
+                                              <Component id="ckbColoniaSim" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                                               <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
@@ -97,12 +97,12 @@
                                           <Group type="102" alignment="1" attributes="0">
                                               <Group type="103" groupAlignment="1" attributes="0">
                                                   <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="chbAssociacaoSim" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="ckbAssociacaoSim" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                                                       <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="1" attributes="0">
-                                                      <Component id="chbCooperativaSim" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="ckbCooperativaSim" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                                                       <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
                                                   </Group>
@@ -130,12 +130,12 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="chbPossuiRegistroSim" min="-2" max="-2" attributes="0"/>
+                                      <Component id="ckbPossuiRgp" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="1">
                                       <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="chbIbamaSim" min="-2" max="-2" attributes="0"/>
+                                      <Component id="ckbIbamaSim" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="51" pref="51" max="-2" attributes="0"/>
@@ -167,9 +167,9 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="tfTempoArteAgua" min="-2" pref="160" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="chbTempoArteAguaDia" min="-2" max="-2" attributes="0"/>
+                              <Component id="ckbTempoArteAguaDia" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="chbTempoArteAguaNoite" min="-2" max="-2" attributes="0"/>
+                              <Component id="ckbTempoArteAguaNoite" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jScrollPane2" alignment="0" pref="769" max="32767" attributes="1"/>
                           <Group type="102" alignment="0" attributes="0">
@@ -229,9 +229,9 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="rbMadeira" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="chbDrenagemSim" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ckbDrenagemSim" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="ckbAguaSim" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="chbFossaSim" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ckbFossaSim" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="ckbLuzSim" min="-2" max="-2" attributes="0"/>
                                   <Component id="rbBanheiroDentro" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -378,13 +378,13 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="chbDrenagemSim" alignment="3" max="32767" attributes="0"/>
+                                          <Component id="ckbDrenagemSim" alignment="3" max="32767" attributes="0"/>
                                           <Component id="jLabel40" alignment="3" pref="21" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                              <Component id="chbFossaSim" max="32767" attributes="0"/>
+                              <Component id="ckbFossaSim" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -396,7 +396,7 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="chbColoniaSim" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckbColoniaSim" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="tfQualColonia" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -404,13 +404,13 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="tfQualAssociacao" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="chbAssociacaoSim" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckbAssociacaoSim" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="chbCooperativaSim" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckbCooperativaSim" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel46" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="tfQualCooperativa" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -422,12 +422,12 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="chbIbamaSim" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckbIbamaSim" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="chbPossuiRegistroSim" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckbPossuiRgp" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
@@ -484,8 +484,8 @@
                           <Component id="tfTempoArteAgua" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="tfTamanhoEMalha" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="chbTempoArteAguaDia" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="chbTempoArteAguaNoite" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckbTempoArteAguaDia" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckbTempoArteAguaNoite" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane4" min="-2" pref="116" max="-2" attributes="0"/>
@@ -614,12 +614,12 @@
                 <Property name="text" type="java.lang.String" value="Sim"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chbDrenagemSim">
+            <Component class="javax.swing.JCheckBox" name="ckbDrenagemSim">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sim"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chbFossaSim">
+            <Component class="javax.swing.JCheckBox" name="ckbFossaSim">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sim"/>
               </Properties>
@@ -685,7 +685,7 @@
                 <Property name="text" type="java.lang.String" value="Possui carteira IBAMA.:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chbIbamaSim">
+            <Component class="javax.swing.JCheckBox" name="ckbIbamaSim">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sim"/>
               </Properties>
@@ -695,7 +695,7 @@
                 <Property name="text" type="java.lang.String" value="Possui Registro Feral de Pescador (RGP-MPA).:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chbPossuiRegistroSim">
+            <Component class="javax.swing.JCheckBox" name="ckbPossuiRgp">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sim"/>
               </Properties>
@@ -751,7 +751,7 @@
                 <Property name="text" type="java.lang.String" value="Qual.:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chbAssociacaoSim">
+            <Component class="javax.swing.JCheckBox" name="ckbAssociacaoSim">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sim"/>
               </Properties>
@@ -760,7 +760,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="tfQualCooperativa">
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chbCooperativaSim">
+            <Component class="javax.swing.JCheckBox" name="ckbCooperativaSim">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sim"/>
               </Properties>
@@ -797,7 +797,7 @@
                 <Property name="text" type="java.lang.String" value="Na col&#xf4;nia.:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chbColoniaSim">
+            <Component class="javax.swing.JCheckBox" name="ckbColoniaSim">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sim"/>
               </Properties>
@@ -933,12 +933,12 @@
                 <Property name="text" type="java.lang.String" value="Tempo da arte na &#xe1;gua.:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chbTempoArteAguaDia">
+            <Component class="javax.swing.JCheckBox" name="ckbTempoArteAguaDia">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Dia"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chbTempoArteAguaNoite">
+            <Component class="javax.swing.JCheckBox" name="ckbTempoArteAguaNoite">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Noite"/>
               </Properties>
