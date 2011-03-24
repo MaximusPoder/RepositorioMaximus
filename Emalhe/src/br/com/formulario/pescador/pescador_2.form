@@ -193,22 +193,22 @@
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="chbTipoCAM" min="-2" max="-2" attributes="0"/>
+                                              <Component id="ckbTipoCAM" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                              <Component id="chbTipoBPP" min="-2" max="-2" attributes="0"/>
+                                              <Component id="ckbTipoBPP" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="chbTipoBMP" min="-2" max="-2" attributes="0"/>
+                                              <Component id="ckbTipoBMP" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="chbTipoOutros" min="-2" max="-2" attributes="0"/>
+                                              <Component id="ckbTipoOutros" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="tfOutroTipoQual" min="-2" pref="169" max="-2" attributes="1"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="chbEmbarcacaoPropria" min="-2" max="-2" attributes="0"/>
+                                              <Component id="ckbEmbarcacaoPropria" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="chbEmbarcacaoPatrao" min="-2" max="-2" attributes="0"/>
+                                              <Component id="ckbEmbarcacaoPatrao" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -319,6 +319,7 @@
                                   <Component id="tfQuantidadeArtePesca" alignment="0" pref="281" max="32767" attributes="1"/>
                               </Group>
                           </Group>
+                          <Component id="jButton2" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -342,7 +343,7 @@
                               <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="7" max="32767" attributes="0"/>
+                              <EmptySpace pref="5" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -350,7 +351,7 @@
                                   <Component id="rbAlvenaria" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="ckbLuzSim" pref="32" max="32767" attributes="0"/>
+                              <Component id="ckbLuzSim" pref="30" max="32767" attributes="0"/>
                               <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -528,16 +529,16 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="chbEmbarcacaoPropria" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="chbEmbarcacaoPatrao" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckbEmbarcacaoPropria" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckbEmbarcacaoPatrao" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="chbTipoCAM" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="chbTipoBPP" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="chbTipoBMP" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="chbTipoOutros" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckbTipoCAM" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckbTipoBPP" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckbTipoBMP" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckbTipoOutros" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="tfOutroTipoQual" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -561,7 +562,9 @@
                           <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="tfConservacaoPescado" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1105,12 +1108,12 @@
                 <Property name="text" type="java.lang.String" value="Embarca&#xe7;&#xe3;o.:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chbEmbarcacaoPropria">
+            <Component class="javax.swing.JCheckBox" name="ckbEmbarcacaoPropria">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Pr&#xf3;pria"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chbEmbarcacaoPatrao">
+            <Component class="javax.swing.JCheckBox" name="ckbEmbarcacaoPatrao">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Patr&#xe3;o (Dono do Barco)"/>
               </Properties>
@@ -1120,22 +1123,22 @@
                 <Property name="text" type="java.lang.String" value="Tipo.:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chbTipoCAM">
+            <Component class="javax.swing.JCheckBox" name="ckbTipoCAM">
               <Properties>
                 <Property name="text" type="java.lang.String" value="CAM"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chbTipoBPP">
+            <Component class="javax.swing.JCheckBox" name="ckbTipoBPP">
               <Properties>
                 <Property name="text" type="java.lang.String" value="BPP"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chbTipoBMP">
+            <Component class="javax.swing.JCheckBox" name="ckbTipoBMP">
               <Properties>
                 <Property name="text" type="java.lang.String" value="BMP"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chbTipoOutros">
+            <Component class="javax.swing.JCheckBox" name="ckbTipoOutros">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Outros."/>
               </Properties>
@@ -1305,6 +1308,14 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfQualBeneficio">
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Salvar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
