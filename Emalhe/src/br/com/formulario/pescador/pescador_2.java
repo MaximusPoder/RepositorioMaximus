@@ -154,13 +154,13 @@ public class pescador_2 extends javax.swing.JFrame {
         jLabel50 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        chbEmbarcacaoPropria = new javax.swing.JCheckBox();
-        chbEmbarcacaoPatrao = new javax.swing.JCheckBox();
+        ckbEmbarcacaoPropria = new javax.swing.JCheckBox();
+        ckbEmbarcacaoPatrao = new javax.swing.JCheckBox();
         jLabel23 = new javax.swing.JLabel();
-        chbTipoCAM = new javax.swing.JCheckBox();
-        chbTipoBPP = new javax.swing.JCheckBox();
-        chbTipoBMP = new javax.swing.JCheckBox();
-        chbTipoOutros = new javax.swing.JCheckBox();
+        ckbTipoCAM = new javax.swing.JCheckBox();
+        ckbTipoBPP = new javax.swing.JCheckBox();
+        ckbTipoBMP = new javax.swing.JCheckBox();
+        ckbTipoOutros = new javax.swing.JCheckBox();
         jLabel25 = new javax.swing.JLabel();
         tfPeriodo = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
@@ -183,6 +183,7 @@ public class pescador_2 extends javax.swing.JFrame {
         rbBanheiroFora = new javax.swing.JRadioButton();
         jLabel14 = new javax.swing.JLabel();
         tfQualBeneficio = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Questionário Atravessador");
@@ -466,19 +467,19 @@ public class pescador_2 extends javax.swing.JFrame {
 
         jLabel22.setText("Embarcação.:");
 
-        chbEmbarcacaoPropria.setText("Própria");
+        ckbEmbarcacaoPropria.setText("Própria");
 
-        chbEmbarcacaoPatrao.setText("Patrão (Dono do Barco)");
+        ckbEmbarcacaoPatrao.setText("Patrão (Dono do Barco)");
 
         jLabel23.setText("Tipo.:");
 
-        chbTipoCAM.setText("CAM");
+        ckbTipoCAM.setText("CAM");
 
-        chbTipoBPP.setText("BPP");
+        ckbTipoBPP.setText("BPP");
 
-        chbTipoBMP.setText("BMP");
+        ckbTipoBMP.setText("BMP");
 
-        chbTipoOutros.setText("Outros.");
+        ckbTipoOutros.setText("Outros.");
 
         jLabel25.setText("Qual.:");
 
@@ -566,6 +567,13 @@ public class pescador_2 extends javax.swing.JFrame {
         rbBanheiroFora.setText("Fora");
 
         jLabel14.setText("Qual.:");
+
+        jButton2.setText("Salvar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -680,21 +688,21 @@ public class pescador_2 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(chbTipoCAM)
+                                        .addComponent(ckbTipoCAM)
                                         .addGap(14, 14, 14)
-                                        .addComponent(chbTipoBPP)
+                                        .addComponent(ckbTipoBPP)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(chbTipoBMP)
+                                        .addComponent(ckbTipoBMP)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(chbTipoOutros)
+                                        .addComponent(ckbTipoOutros)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel25)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(tfOutroTipoQual, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(chbEmbarcacaoPropria)
+                                        .addComponent(ckbEmbarcacaoPropria)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(chbEmbarcacaoPatrao)))))
+                                        .addComponent(ckbEmbarcacaoPatrao)))))
                         .addGap(65, 65, 65))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -775,7 +783,8 @@ public class pescador_2 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tfSafra, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
-                            .addComponent(tfQuantidadeArtePesca, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE))))
+                            .addComponent(tfQuantidadeArtePesca, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)))
+                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -795,13 +804,13 @@ public class pescador_2 extends javax.swing.JFrame {
                         .addComponent(jLabel38)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel36)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 5, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbMadeira)
                             .addComponent(rbAlvenaria))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ckbLuzSim, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                        .addComponent(ckbLuzSim, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
                         .addGap(2, 2, 2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -948,15 +957,15 @@ public class pescador_2 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
-                    .addComponent(chbEmbarcacaoPropria)
-                    .addComponent(chbEmbarcacaoPatrao))
+                    .addComponent(ckbEmbarcacaoPropria)
+                    .addComponent(ckbEmbarcacaoPatrao))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel23)
-                    .addComponent(chbTipoCAM)
-                    .addComponent(chbTipoBPP)
-                    .addComponent(chbTipoBMP)
-                    .addComponent(chbTipoOutros)
+                    .addComponent(ckbTipoCAM)
+                    .addComponent(ckbTipoBPP)
+                    .addComponent(ckbTipoBMP)
+                    .addComponent(ckbTipoOutros)
                     .addComponent(jLabel25)
                     .addComponent(tfOutroTipoQual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -975,7 +984,9 @@ public class pescador_2 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel29)
                     .addComponent(tfConservacaoPescado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton2)
+                .addGap(13, 13, 13))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -1099,6 +1110,10 @@ public class pescador_2 extends javax.swing.JFrame {
         // TODO add your handling code here:
 }//GEN-LAST:event_ckbArmadorPescadorActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        salvar_dados();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -1114,12 +1129,6 @@ public class pescador_2 extends javax.swing.JFrame {
     private javax.swing.ButtonGroup banheirobanheiro;
     private javax.swing.ButtonGroup casacasa;
     private javax.swing.JComboBox cbPescador;
-    private javax.swing.JCheckBox chbEmbarcacaoPatrao;
-    private javax.swing.JCheckBox chbEmbarcacaoPropria;
-    private javax.swing.JCheckBox chbTipoBMP;
-    private javax.swing.JCheckBox chbTipoBPP;
-    private javax.swing.JCheckBox chbTipoCAM;
-    private javax.swing.JCheckBox chbTipoOutros;
     private javax.swing.JCheckBox ckbAguaSim;
     private javax.swing.JCheckBox ckbArmadorPescador;
     private javax.swing.JCheckBox ckbAssalariado;
@@ -1127,6 +1136,8 @@ public class pescador_2 extends javax.swing.JFrame {
     private javax.swing.JCheckBox ckbColoniaSim;
     private javax.swing.JCheckBox ckbCooperativaSim;
     private javax.swing.JCheckBox ckbDrenagemSim;
+    private javax.swing.JCheckBox ckbEmbarcacaoPatrao;
+    private javax.swing.JCheckBox ckbEmbarcacaoPropria;
     private javax.swing.JCheckBox ckbFamiliar;
     private javax.swing.JCheckBox ckbFossaSim;
     private javax.swing.JCheckBox ckbIbamaSim;
@@ -1136,8 +1147,13 @@ public class pescador_2 extends javax.swing.JFrame {
     private javax.swing.JCheckBox ckbRecebeBeneficioGovernoSim;
     private javax.swing.JCheckBox ckbTempoArteAguaDia;
     private javax.swing.JCheckBox ckbTempoArteAguaNoite;
+    private javax.swing.JCheckBox ckbTipoBMP;
+    private javax.swing.JCheckBox ckbTipoBPP;
+    private javax.swing.JCheckBox ckbTipoCAM;
+    private javax.swing.JCheckBox ckbTipoOutros;
     private javax.swing.ButtonGroup inssinss;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1309,19 +1325,12 @@ public class pescador_2 extends javax.swing.JFrame {
         
         //Composição da Pescaria
 
-            String tdianoite = "";
-
-            if (ckbTempoArteAguaDia.isSelected())
-                   tcasa = "Dia";
-            else if (ckbTempoArteAguaNoite.isSelected())
-                   tcasa = "Noite";
-
 
             sqlinsert = "insert into pescador_composicao_pescaria "
                     + "(cod_pescador,pescaria_principal,safra,arte_pesca,"
-                    + "quatidade_arte_pesca,tamanho_malha,tempo_arte_agua,"
-                    + "dia_noite,tempo_chegada,dias_efetivos_pesca,viagens_mes,"
-                    + "producao_viagem,renda_media_pecador,outra_pescaria"
+                    + "quantidade_arte_pesca,tamanho_malha,tempo_arte_agua,"
+                    + "dia,noite,tempo_chegada,dias_efetivos_pesca,viagens_mes,"
+                    + "producao_viagem,renda_media_pecador,outra_pescaria,"
                     + "periodo) values ("+
                     codigo+",'"+
                     tfPescariaPrincipal.getText()+"','"+
@@ -1330,7 +1339,8 @@ public class pescador_2 extends javax.swing.JFrame {
                     tfQuantidadeArtePesca.getText()+"','"+
                     tfTamanhoEMalha.getText()+"','"+
                     tfTempoArteAgua.getText()+"','"+
-                    tdianoite+"','"+
+                    util.checarCkb(ckbTempoArteAguaDia)+"','"+
+                    util.checarCkb(ckbTempoArteAguaNoite)+"','"+
                     tfTempoChegarPesqueiro.getText()+"','"+
                     tfDiasdePesca.getText()+"','"+
                     tfQuantasViagensMes.getText()+"','"+
@@ -1346,12 +1356,32 @@ public class pescador_2 extends javax.swing.JFrame {
         
         
         //Dados da Embarcação
+
+           String tdono = "";
+
+           if (ckbEmbarcacaoPropria.isSelected())
+                   tdono = "Própria";
+            else if (ckbEmbarcacaoPatrao.isSelected())
+                   tdono = "Patrão";
+
+           String TtipoEmbarcacao = "";
+
+           if (ckbTipoCAM.isSelected())
+                   TtipoEmbarcacao = "CAM";
+           else if (ckbTipoBPP.isSelected())
+                   TtipoEmbarcacao = "BPP";
+           else if (ckbTipoBMP.isSelected())
+                   TtipoEmbarcacao = "BMP";
+           else if (ckbTipoOutros.isSelected())
+                   TtipoEmbarcacao = tfOutroTipoQual.getText();
+
+            
            sqlinsert = "insert into pescador_dados_embarcacao "
                     + "(cod_pescador,dono_embarcacao,tipo_embarcacao,nome_barco,"
                     + "porto_origem,tempo_no_barco,conservacao_pescador) values ("+
                     codigo+",'"+
-                    //
-                    //
+                    tdono+"','"+
+                    TtipoEmbarcacao+"','"+
                     tfNomeBarco.getText()+"','"+
                     tfPortoOrigem.getText()+"','"+
                     tfTempoTrabalhandoBarco.getText()+"','"+
@@ -1468,10 +1498,11 @@ public class pescador_2 extends javax.swing.JFrame {
             else
                    ckbPossuiRgp.setSelected(false);
 
+            System.out.println("Passou! Moradia");
 
 //            Relações de Trabalho
-//            conexao.execute("SELECT * FROM pescador_relacoes_trabalho WHERE cod_pescador = "+codigo);
-//            conexao.resultSet.first();
+            conexao.execute("SELECT * FROM pescador_relacoes_trabalho WHERE cod_pescador = "+codigo);
+            conexao.resultSet.first();
 
             if (conexao.resultSet.getString("familiar").equals("1"))
                    ckbFamiliar.setSelected(true);
@@ -1498,9 +1529,13 @@ public class pescador_2 extends javax.swing.JFrame {
             else
                    ckbRecebeBeneficioGovernoSim.setSelected(false);
 
+            tfQualBeneficio.setText(conexao.resultSet.getString("beneficio"));
+
+            System.out.println("Passou! Relações de Trabalho");
+
 //            Composição da Pescaria
-//            conexao.execute("SELECT * FROM pescador_moradia WHERE cod_pescador = "+codigo);
-//            conexao.resultSet.first();
+            conexao.execute("SELECT * FROM pescador_composicao_pescaria WHERE cod_pescador = "+codigo);
+            conexao.resultSet.first();
 
             tfPescariaPrincipal.setText(conexao.resultSet.getString("pescaria_principal"));
             tfSafra.setText(conexao.resultSet.getString("safra"));
@@ -1508,6 +1543,7 @@ public class pescador_2 extends javax.swing.JFrame {
             tfQuantidadeArtePesca.setText(conexao.resultSet.getString("quantidade_arte_pesca"));
             tfTamanhoEMalha.setText(conexao.resultSet.getString("tamanho_malha"));
             tfTempoArteAgua.setText(conexao.resultSet.getString("tempo_arte_agua"));
+
 
             if (conexao.resultSet.getString("dia").equals("1"))
                    ckbTempoArteAguaDia.setSelected(true);
@@ -1519,54 +1555,45 @@ public class pescador_2 extends javax.swing.JFrame {
             else
                    ckbTempoArteAguaNoite.setSelected(false);
 
-            tfTempoChegarPesqueiro.setText(conexao.resultSet.getString("tempo_chegar_pesqueiro"));
-            tfDiasdePesca.setText(conexao.resultSet.getString("dias_pesca"));
-            tfQuantasViagensMes.setText(conexao.resultSet.getString("viagem_mes"));
+            tfTempoChegarPesqueiro.setText(conexao.resultSet.getString("tempo_chegada"));
+            tfDiasdePesca.setText(conexao.resultSet.getString("dias_efetivos_pesca"));
+            tfQuantasViagensMes.setText(conexao.resultSet.getString("viagens_mes"));
             tfProducaoViagem.setText(conexao.resultSet.getString("producao_viagem"));
-            tfRendaMediaPescador.setText(conexao.resultSet.getString("renda_media"));
+            tfRendaMediaPescador.setText(conexao.resultSet.getString("renda_media_pecador"));
             tfPeriodo.setText(conexao.resultSet.getString("periodo"));
             tfAlemPescaOutraPescaria.setText(conexao.resultSet.getString("outra_pescaria"));
 
+            System.out.println("Passou! pescaria");
+
+
 //          Dados da Embarcação
-//          conexao.execute("SELECT * FROM pescador_embarcacao WHERE cod_pescador = "+codigo);
-//          conexao.resultSet.first();
+            conexao.execute("SELECT * FROM pescador_dados_embarcacao WHERE cod_pescador = "+codigo);
+            conexao.resultSet.first();
 
-            if (conexao.resultSet.getString("embarcacao_propria").equals("1"))
-                   chbEmbarcacaoPropria.setSelected(true);
-            else
-                   chbEmbarcacaoPropria.setSelected(false);
+            testador = conexao.resultSet.getString("dono_embarcacao");
+            if (testador.equals("Própria"))
+                   ckbEmbarcacaoPropria.setSelected(true);
+            else if (testador.equals("Patrão"))
+                   ckbEmbarcacaoPatrao.setSelected(true);
 
-            if (conexao.resultSet.getString("embarcacao_patrao").equals("1"))
-                   chbEmbarcacaoPatrao.setSelected(true);
-            else
-                   chbEmbarcacaoPatrao.setSelected(false);
+            testador = conexao.resultSet.getString("tipo_embarcacao");
+            if (testador.equals("CAM"))
+                   ckbTipoCAM.setSelected(true);
+            else if (testador.equals("BPP"))
+                   ckbTipoBPP.setSelected(true);
+            else if (testador.equals("BMP"))
+                   ckbTipoBMP.setSelected(true);
+            else {
+                   ckbTipoOutros.setSelected(true);
+                   tfOutroTipoQual.setText(testador);
+                 }
 
-            if (conexao.resultSet.getString("cam").equals("1"))
-                   chbTipoCAM.setSelected(true);
-            else
-                   chbTipoCAM.setSelected(false);
-
-            if (conexao.resultSet.getString("bpp").equals("1"))
-                   chbTipoBPP.setSelected(true);
-            else
-                   chbTipoBPP.setSelected(false);
-
-            if (conexao.resultSet.getString("bmp").equals("1"))
-                   chbTipoBMP.setSelected(true);
-            else
-                   chbTipoBMP.setSelected(false);
-
-            if (conexao.resultSet.getString("outra_emarcacao").equals("1"))
-                   chbTipoOutros.setSelected(true);
-            else
-                   chbTipoOutros.setSelected(false);
-
-            tfOutroTipoQual.setText(conexao.resultSet.getString("outro_tipo"));
             tfNomeBarco.setText(conexao.resultSet.getString("nome_barco"));
             tfPortoOrigem.setText(conexao.resultSet.getString("porto_origem"));
-            tfTempoTrabalhandoBarco.setText(conexao.resultSet.getString("tempo_trabalho_barco"));
-            tfConservacaoPescado.setText(conexao.resultSet.getString("conservacao_pescado"));
+            tfTempoTrabalhandoBarco.setText(conexao.resultSet.getString("tempo_no_barco"));
+            tfConservacaoPescado.setText(conexao.resultSet.getString("conservacao_pescador"));
 
+            System.out.println("Passou! embarcacao");
 
 
         }catch (SQLException ex) {
