@@ -27,7 +27,7 @@ public class Utilidade {
         //fiz um if para verificar se o caractere é igual a "#"
         if (palavra.substring(i,i+1).equals("#")){
            int posicao = i+1;
-            System.out.println("Está na posição " + posicao);
+            //System.out.println("Está na posição " + posicao);
             if (n == 1){
                 return palavra.substring(0,posicao-2);
             }

@@ -1,9 +1,11 @@
 package br.com.formulario.pescador;
 
 import br.com.conexao.Conexao;
+import br.com.util.JMoneyField;
 import br.com.util.Utilidade;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 
 /**
@@ -176,7 +178,7 @@ public class pescador_2 extends javax.swing.JFrame {
         rbInssEmpregado = new javax.swing.JRadioButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTableComposicaoPescaria = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        btExcluirCP = new javax.swing.JButton();
         rbMadeira = new javax.swing.JRadioButton();
         rbAlvenaria = new javax.swing.JRadioButton();
         rbBanheiroDentro = new javax.swing.JRadioButton();
@@ -189,7 +191,7 @@ public class pescador_2 extends javax.swing.JFrame {
         tfParentescoRT = new javax.swing.JTextField();
         tfAtividadeRT = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
-        tfRendaRT = new javax.swing.JTextField();
+        tfRendaRT = new JMoneyField();
         jLabel32 = new javax.swing.JLabel();
         btExcluirRT = new javax.swing.JButton();
         tfLocalCP = new javax.swing.JTextField();
@@ -572,7 +574,12 @@ public class pescador_2 extends javax.swing.JFrame {
         jScrollPane4.setViewportView(jTableComposicaoPescaria);
         jTableComposicaoPescaria.getColumnModel().getColumn(0).setResizable(false);
 
-        jButton1.setText("Excluir");
+        btExcluirCP.setText("Excluir");
+        btExcluirCP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btExcluirCPActionPerformed(evt);
+            }
+        });
 
         casacasa.add(rbMadeira);
         rbMadeira.setText("Madeira");
@@ -609,6 +616,11 @@ public class pescador_2 extends javax.swing.JFrame {
         jLabel32.setText("Renda");
 
         btExcluirRT.setText("Excluir");
+        btExcluirRT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btExcluirRTActionPerformed(evt);
+            }
+        });
 
         jLabel33.setText("Local");
 
@@ -787,7 +799,7 @@ public class pescador_2 extends javax.swing.JFrame {
                                     .addComponent(tfProducaoViagem, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
                                     .addComponent(tfPeriodo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
                                     .addComponent(tfDiasdePesca, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)))))
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btExcluirCP, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jbEditarEspeciesCapturadas, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel51)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -1020,7 +1032,7 @@ public class pescador_2 extends javax.swing.JFrame {
                 .addGap(11, 11, 11)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(btExcluirCP)
                 .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfTempoChegarPesqueiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1225,6 +1237,14 @@ public class pescador_2 extends javax.swing.JFrame {
         addBtCP();
     }//GEN-LAST:event_btAdicionarCPActionPerformed
 
+    private void btExcluirRTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirRTActionPerformed
+        excluirRT();
+    }//GEN-LAST:event_btExcluirRTActionPerformed
+
+    private void btExcluirCPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirCPActionPerformed
+        excluirCP();
+    }//GEN-LAST:event_btExcluirCPActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -1240,6 +1260,7 @@ public class pescador_2 extends javax.swing.JFrame {
     private javax.swing.ButtonGroup banheirobanheiro;
     private javax.swing.JButton btAdicionarCP;
     private javax.swing.JButton btAdicionarRT;
+    private javax.swing.JButton btExcluirCP;
     private javax.swing.JButton btExcluirRT;
     private javax.swing.ButtonGroup casacasa;
     private javax.swing.JComboBox cbPescador;
@@ -1266,7 +1287,6 @@ public class pescador_2 extends javax.swing.JFrame {
     private javax.swing.JCheckBox ckbTipoCAM;
     private javax.swing.JCheckBox ckbTipoOutros;
     private javax.swing.ButtonGroup inssinss;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
@@ -1867,6 +1887,10 @@ public class pescador_2 extends javax.swing.JFrame {
 
             System.out.println("Passou! embarcacao");
 
+            attjTableAtividadeFamiliar();
+            attjTableComposicaoPescaria();
+
+            System.out.println("Passou! Tabelas");
 
         }catch (SQLException ex) {
             
@@ -1879,6 +1903,8 @@ public class pescador_2 extends javax.swing.JFrame {
     private void limpar_dados() {
         throw new UnsupportedOperationException("Not yet implemented");
     }
+
+    //Trabalho com tabelas
 
     private void addBtRt(){
     String codigo = util.separa(1,cbPescador.getSelectedItem().toString());
@@ -1899,32 +1925,118 @@ public class pescador_2 extends javax.swing.JFrame {
             }
     }
 
+    private void excluirRT() {
+        //System.out.println(jTableAtividadeFamiliar.getValueAt(jTableAtividadeFamiliar.getSelectedRow(),0));
+        String sql;
+
+        sql = "delete from pescador_relacoes_trabalho_familia_renda "
+            + "Where cod_pescador_relacoes_trabalho_familia_renda = "
+            + jTableAtividadeFamiliar.getValueAt(jTableAtividadeFamiliar.getSelectedRow(),0);
+
+            if (conexao.salvar(sql)) {
+                System.out.println("Exclusão realizada com sucesso");
+                attjTableAtividadeFamiliar();
+            }   else
+                    JOptionPane.showMessageDialog(null,"Erro na exclusão");
+
+    }
+
     private void attjTableAtividadeFamiliar(){
-        throw new UnsupportedOperationException("Not yet implemented");
+        String codigo = util.separa(1,cbPescador.getSelectedItem().toString());
+
+        conexao.execute("select * from pescador_relacoes_trabalho_familia_renda"
+                        + " where cod_pescador = " + codigo);
+
+        jTableAtividadeFamiliar.getColumnModel().getColumn(0).setMaxWidth(0);
+        jTableAtividadeFamiliar.getColumnModel().getColumn(0).setPreferredWidth(0);
+        jTableAtividadeFamiliar.getColumnModel().getColumn(1).setPreferredWidth(10);
+        jTableAtividadeFamiliar.getColumnModel().getColumn(2).setPreferredWidth(10);
+        jTableAtividadeFamiliar.getColumnModel().getColumn(3).setPreferredWidth(10);
+
+        DefaultTableModel modelo = (DefaultTableModel)jTableAtividadeFamiliar.getModel();
+        modelo.setNumRows(0);//limpa o JTable;
+
+        try{
+            while (conexao.resultSet.next())
+                modelo.addRow(new Object[]{conexao.resultSet.getString("cod_pescador_relacoes_trabalho_familia_renda"),
+                                           conexao.resultSet.getString("parentesco"),
+                                           conexao.resultSet.getString("atividade"),
+                                           conexao.resultSet.getString("renda"),
+                                          });
+
+            conexao.resultSet.first();
+
+        }catch (SQLException erro){
+            System.out.println(erro + "Tabela Familia Renda Trabalho");
+            attjTableComposicaoPescaria();
+        }
+
     }
 
     private void addBtCP() {
     String codigo = util.separa(1,cbPescador.getSelectedItem().toString());
     System.out.println(codigo);
 
-          //Relações de Trabalho - Tabela Renda Familia
-          String sqlinsert = "insert into pescador "
+          //Tabela Locais da composição pescaria
+          String sqlinsert = "insert into pescador_composicao_pescaria_locais "
                     + "(cod_pescador,local,latitude,longitude) values ("+
                     codigo+",'"+
                     tfLocalCP.getText()+"','"+
                     tfLatitudeCP.getText()+"','"+
                     tfLongitudeCP.getText()+"')";
 
-            //System.out.println(sqlinsert);
+            System.out.println(sqlinsert);
             if (conexao.salvar(sqlinsert)) {
-                System.out.println("Jtable RT - Cadastrado com sucesso");
-                attjTableAtividadeFamiliar();
+                System.out.println("Jtable CP - Cadastrado com sucesso");
+                attjTableComposicaoPescaria();
             }
 
     }
 
+    private void excluirCP() {
+        //System.out.println(jTableComposicaoPescaria.getValueAt(jTableComposicaoPescaria.getSelectedRow(),0));
+        String sql;
+
+        sql = "delete from pescador_composicao_pescaria_locais "
+            + "Where cod_pescaria_composicao_pescaria_locais = "
+            + jTableComposicaoPescaria.getValueAt(jTableComposicaoPescaria.getSelectedRow(),0);
+
+            if (conexao.salvar(sql)) {
+                System.out.println("Exclusão realizada com sucesso");
+                attjTableComposicaoPescaria();
+            }   else
+                    JOptionPane.showMessageDialog(null,"Erro na exclusão");
+    }
+
     private void attjTableComposicaoPescaria(){
-        throw new UnsupportedOperationException("Not yet implemented");
+        String codigo = util.separa(1,cbPescador.getSelectedItem().toString());
+
+        conexao.execute("select * from pescador_composicao_pescaria_locais"
+                        + " where cod_pescador = " + codigo);
+
+        jTableComposicaoPescaria.getColumnModel().getColumn(0).setMaxWidth(0);
+        jTableComposicaoPescaria.getColumnModel().getColumn(0).setPreferredWidth(0);
+        jTableComposicaoPescaria.getColumnModel().getColumn(1).setPreferredWidth(10);
+        jTableComposicaoPescaria.getColumnModel().getColumn(2).setPreferredWidth(10);
+        jTableComposicaoPescaria.getColumnModel().getColumn(3).setPreferredWidth(10);
+
+        DefaultTableModel modelo = (DefaultTableModel)jTableComposicaoPescaria.getModel();
+        modelo.setNumRows(0);//limpa o JTable;
+
+        try{
+            while (conexao.resultSet.next())
+                modelo.addRow(new Object[]{conexao.resultSet.getString("cod_pescaria_composicao_pescaria_locais"),
+                                           conexao.resultSet.getString("local"),
+                                           conexao.resultSet.getString("latitude"),
+                                           conexao.resultSet.getString("longitude"),
+                                          });
+
+            conexao.resultSet.first();
+
+        }catch (SQLException erro){
+            System.out.println(erro + "Tabela Composição Pescaria");
+        }
+
     }
 
 }
