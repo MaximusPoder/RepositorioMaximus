@@ -10,13 +10,13 @@ import javax.swing.JOptionPane;
  *
  * @author Jhonathas
  */
-public class pescador_3 extends javax.swing.JFrame {
+public class pescador3 extends javax.swing.JFrame {
 
     private Utilidade util = new Utilidade();
     private int inicia_combo = 0;
     private Conexao conexao;
 
-    public pescador_3() {
+    public pescador3() {
         initComponents(); //Inicializa os componentes da tela
         conexao = new Conexao();
         conexao.conecta("emalhe");
@@ -123,7 +123,7 @@ public class pescador_3 extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel42.setText("Questionário Pescador");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -143,7 +143,7 @@ public class pescador_3 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel43.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel43.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel43.setText("Percepção e Perspectivas:");
 
         jLabel25.setText("1 - Percebeu aumento no número de pescadores nos últimos 10 anos? ");
@@ -507,7 +507,7 @@ public class pescador_3 extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new pescador_3().setVisible(true);
+                new pescador3().setVisible(true);
             }
         });
     }
