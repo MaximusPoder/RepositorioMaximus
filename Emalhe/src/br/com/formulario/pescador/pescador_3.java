@@ -1,10 +1,8 @@
 package br.com.formulario.pescador;
 
 import br.com.conexao.Conexao;
+import br.com.util.Utilidade;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 
 
@@ -14,53 +12,18 @@ import javax.swing.JOptionPane;
  */
 public class pescador_3 extends javax.swing.JFrame {
 
-    private int navega = 0; //variavel pra saber o  botão clicado;
+    private Utilidade util = new Utilidade();
     private int inicia_combo = 0;
-    private boolean state = false;
-
     private Conexao conexao;
-
 
     public pescador_3() {
         initComponents(); //Inicializa os componentes da tela
         conexao = new Conexao();
-        conexao.conecta("mil_interface");
-              
-        //Insere nomes do município no cbMunicipio
-        try {
-            conexao.execute("select * FROM tab_local where pai='Pará' or pai='Maranhão' or pai='Amapá' ");
-            while (conexao.resultSet.next()){
-                cbPescador.addItem(conexao.resultSet.getString("nome"));
-                //System.out.println(conexao.resultSet.getString("nome"));
-            }
-        }catch (SQLException ex) {
-            Logger.getLogger(pescador_3.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        conexao.conecta("emalhe");
 
-        conexao.execute("select * from atravessador_cadastro");
-
-        try {
-            conexao.resultSet.first();
-            mostra_dados_atravessador();
-
-
-        }catch (SQLException ex) {
-            Logger.getLogger(pescador_3.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-       /*
-        Teste que mostra toda a tabela selecionada
-        try {
-            while (conexao.resultSet.next()){
-            System.out.println(conexao.resultSet.getString("nome"));
-            }
-        }catch (SQLException ex) {
-            Logger.getLogger(pescador.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       */
-        
-        
-
+        //Insere nome do pescador no cbPescador
+        attCbPescador();
+        mostra_dados();
 
     }
 
@@ -96,19 +59,19 @@ public class pescador_3 extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         rbQ3Sim = new javax.swing.JRadioButton();
         rbQ3Nao = new javax.swing.JRadioButton();
-        chbQ3TrocadeOleo = new javax.swing.JCheckBox();
-        chbQ3TrocadePescado = new javax.swing.JCheckBox();
-        chbQ3TrocadeAlimentos = new javax.swing.JCheckBox();
-        chbQ3Rebocar = new javax.swing.JCheckBox();
-        chbQ3Outros = new javax.swing.JCheckBox();
+        ckbQ3TrocadeOleo = new javax.swing.JCheckBox();
+        ckbQ3TrocadePescado = new javax.swing.JCheckBox();
+        ckbQ3TrocadeAlimentos = new javax.swing.JCheckBox();
+        ckbQ3Rebocar = new javax.swing.JCheckBox();
+        ckbQ3Outros = new javax.swing.JCheckBox();
         rbQ4Sim = new javax.swing.JRadioButton();
         jLabel28 = new javax.swing.JLabel();
-        chbQ4Outros = new javax.swing.JCheckBox();
-        chbQ4PorRoubodeRede = new javax.swing.JCheckBox();
-        chbQ4PorPesqueiros = new javax.swing.JCheckBox();
+        ckbQ4Outros = new javax.swing.JCheckBox();
+        ckbQ4PorRoubodeRede = new javax.swing.JCheckBox();
+        ckbQ4PorPesqueiros = new javax.swing.JCheckBox();
         rbQ4Nao = new javax.swing.JRadioButton();
-        chbQ4PorSobreposicaoDeRedeEEspinhel = new javax.swing.JCheckBox();
-        chbQ4PorSobreposicaodeRedes = new javax.swing.JCheckBox();
+        ckbQ4PorSobreposicaoDeRedeEEspinhel = new javax.swing.JCheckBox();
+        ckbQ4PorSobreposicaodeRedes = new javax.swing.JCheckBox();
         rbQ5Sim = new javax.swing.JRadioButton();
         rbQ5Nao = new javax.swing.JRadioButton();
         jLabel29 = new javax.swing.JLabel();
@@ -128,9 +91,12 @@ public class pescador_3 extends javax.swing.JFrame {
         jScrollPane10 = new javax.swing.JScrollPane();
         taQuestao10 = new javax.swing.JTextArea();
         jLabel35 = new javax.swing.JLabel();
-        chbQuestao11DeCrescimento = new javax.swing.JCheckBox();
-        chbQuestao11Estabilizacao = new javax.swing.JCheckBox();
-        chbQuestao11DeDiminuicao = new javax.swing.JCheckBox();
+        ckbQuestao11DeCrescimento = new javax.swing.JCheckBox();
+        ckbQuestao11Estabilizacao = new javax.swing.JCheckBox();
+        ckbQuestao11DeDiminuicao = new javax.swing.JCheckBox();
+        btSalvar = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        btAtualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Questionário Atravessador");
@@ -141,6 +107,17 @@ public class pescador_3 extends javax.swing.JFrame {
         });
 
         jScrollPane1.setAutoscrolls(true);
+
+        cbPescador.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbPescadorItemStateChanged(evt);
+            }
+        });
+        cbPescador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbPescadorActionPerformed(evt);
+            }
+        });
 
         jLabel24.setText("Pesacador");
 
@@ -156,7 +133,7 @@ public class pescador_3 extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(274, 274, 274)
                 .addComponent(jLabel42)
-                .addContainerGap(280, Short.MAX_VALUE))
+                .addContainerGap(294, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,33 +174,33 @@ public class pescador_3 extends javax.swing.JFrame {
         grupo_questao_3.add(rbQ3Nao);
         rbQ3Nao.setText("Não");
 
-        chbQ3TrocadeOleo.setText("Troca de óleo");
+        ckbQ3TrocadeOleo.setText("Troca de óleo");
 
-        chbQ3TrocadePescado.setText("Troca de pescado ou grude");
+        ckbQ3TrocadePescado.setText("Troca de pescado ou grude");
 
-        chbQ3TrocadeAlimentos.setText("Troca de alimentos");
+        ckbQ3TrocadeAlimentos.setText("Troca de alimentos");
 
-        chbQ3Rebocar.setText("Rebocar");
+        ckbQ3Rebocar.setText("Rebocar");
 
-        chbQ3Outros.setText("Outros");
+        ckbQ3Outros.setText("Outros");
 
         grupo_questao_4.add(rbQ4Sim);
         rbQ4Sim.setText("Sim");
 
         jLabel28.setText("4 - Existe alguma competitividade/rivalidade entre os pescadores?");
 
-        chbQ4Outros.setText("Outros");
+        ckbQ4Outros.setText("Outros");
 
-        chbQ4PorRoubodeRede.setText("Por roubo de rede");
+        ckbQ4PorRoubodeRede.setText("Por roubo de rede");
 
-        chbQ4PorPesqueiros.setText("Por pesqueiros");
+        ckbQ4PorPesqueiros.setText("Por pesqueiros");
 
         grupo_questao_4.add(rbQ4Nao);
         rbQ4Nao.setText("Não");
 
-        chbQ4PorSobreposicaoDeRedeEEspinhel.setText("Por sobreposição de rede e espinhel");
+        ckbQ4PorSobreposicaoDeRedeEEspinhel.setText("Por sobreposição de rede e espinhel");
 
-        chbQ4PorSobreposicaodeRedes.setText("Por sobreposição de redes");
+        ckbQ4PorSobreposicaodeRedes.setText("Por sobreposição de redes");
 
         grupo_questao_5.add(rbQ5Sim);
         rbQ5Sim.setText("Sim");
@@ -265,128 +242,129 @@ public class pescador_3 extends javax.swing.JFrame {
 
         jLabel35.setText("11 - Pretende continuar na atividade?");
 
-        chbQuestao11DeCrescimento.setText("De crescimento");
+        ckbQuestao11DeCrescimento.setText("De crescimento");
 
-        chbQuestao11Estabilizacao.setText("Estabilização");
+        ckbQuestao11Estabilizacao.setText("Estabilização");
 
-        chbQuestao11DeDiminuicao.setText("De diminuição");
+        ckbQuestao11DeDiminuicao.setText("De diminuição");
+
+        btSalvar.setText("Salvar");
+        btSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSalvarActionPerformed(evt);
+            }
+        });
+
+        btAtualizar.setText("Atualizar");
+        btAtualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAtualizarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel24)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(cbPescador, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel43)
+                            .addComponent(jLabel25)
+                            .addComponent(jLabel27)
+                            .addComponent(jLabel26)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel25)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rbQ1sim)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rbQ1nao))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel26)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(rbQ2Aumentando)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rbQ2Diminuindo))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel27)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(rbQ3Sim)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rbQ3Nao))
+                                .addGap(22, 22, 22)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(ckbQ3TrocadeOleo)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ckbQ3TrocadePescado)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ckbQ3TrocadeAlimentos)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ckbQ3Rebocar)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ckbQ3Outros))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(rbQ3Sim)
+                                        .addGap(56, 56, 56)
+                                        .addComponent(rbQ3Nao))))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(rbQ2Aumentando)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rbQ2Diminuindo))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(rbQ1sim)
+                        .addGap(52, 52, 52)
+                        .addComponent(rbQ1nao))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(20, 20, 20)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(chbQ4PorSobreposicaoDeRedeEEspinhel)
+                                        .addComponent(ckbQ4PorSobreposicaoDeRedeEEspinhel)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(chbQ4PorRoubodeRede)
+                                        .addComponent(ckbQ4PorRoubodeRede)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(chbQ4Outros))
+                                        .addComponent(ckbQ4Outros))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(chbQ4PorPesqueiros)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(ckbQ4PorPesqueiros)
+                                            .addComponent(rbQ4Sim))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(chbQ4PorSobreposicaodeRedes))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel28)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rbQ4Sim)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rbQ4Nao))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(rbQ4Nao)
+                                            .addComponent(ckbQ4PorSobreposicaodeRedes)))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel29)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(rbQ5Sim)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(rbQ5Nao))
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(chbQ3TrocadeOleo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(chbQ3TrocadePescado)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(chbQ3TrocadeAlimentos)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(chbQ3Rebocar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(chbQ3Outros))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel30)
-                                .addGap(161, 161, 161))
-                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel31)
-                                .addGap(161, 161, 161))
-                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel32)
-                                .addGap(161, 161, 161))
-                            .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel33)
-                                .addGap(161, 161, 161))
-                            .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel34)
-                                .addGap(161, 161, 161))
-                            .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE)
+                            .addComponent(jLabel30)
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE)
+                            .addComponent(jLabel31)
+                            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE)
+                            .addComponent(jLabel32)
+                            .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE)
+                            .addComponent(jLabel33)
+                            .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE)
+                            .addComponent(jLabel34)
+                            .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
-                                .addComponent(chbQuestao11DeCrescimento)
+                                .addComponent(ckbQuestao11DeCrescimento)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(chbQuestao11Estabilizacao)
+                                .addComponent(ckbQuestao11Estabilizacao)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(chbQuestao11DeDiminuicao))
-                            .addComponent(jLabel35))))
+                                .addComponent(ckbQuestao11DeDiminuicao))
+                            .addComponent(jLabel35)
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 705, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel28)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(558, Short.MAX_VALUE)
+                .addComponent(btAtualizar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btSalvar)
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -401,41 +379,45 @@ public class pescador_3 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel43)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel25)
                     .addComponent(rbQ1sim)
                     .addComponent(rbQ1nao))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel26)
                     .addComponent(rbQ2Aumentando)
                     .addComponent(rbQ2Diminuindo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel27)
                     .addComponent(rbQ3Sim)
                     .addComponent(rbQ3Nao))
-                .addGap(2, 2, 2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chbQ3TrocadeOleo)
-                    .addComponent(chbQ3TrocadePescado)
-                    .addComponent(chbQ3TrocadeAlimentos)
-                    .addComponent(chbQ3Rebocar)
-                    .addComponent(chbQ3Outros))
-                .addGap(0, 0, 0)
+                    .addComponent(ckbQ3TrocadeOleo)
+                    .addComponent(ckbQ3TrocadePescado)
+                    .addComponent(ckbQ3TrocadeAlimentos)
+                    .addComponent(ckbQ3Rebocar)
+                    .addComponent(ckbQ3Outros))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel28)
+                .addGap(6, 6, 6)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel28)
                     .addComponent(rbQ4Sim)
                     .addComponent(rbQ4Nao))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chbQ4PorPesqueiros)
-                    .addComponent(chbQ4PorSobreposicaodeRedes))
+                    .addComponent(ckbQ4PorPesqueiros)
+                    .addComponent(ckbQ4PorSobreposicaodeRedes))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chbQ4PorSobreposicaoDeRedeEEspinhel)
-                    .addComponent(chbQ4PorRoubodeRede)
-                    .addComponent(chbQ4Outros))
+                    .addComponent(ckbQ4PorSobreposicaoDeRedeEEspinhel)
+                    .addComponent(ckbQ4PorRoubodeRede)
+                    .addComponent(ckbQ4Outros))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel29)
@@ -467,10 +449,16 @@ public class pescador_3 extends javax.swing.JFrame {
                 .addComponent(jLabel35)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chbQuestao11DeCrescimento)
-                    .addComponent(chbQuestao11Estabilizacao)
-                    .addComponent(chbQuestao11DeDiminuicao))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(ckbQuestao11DeCrescimento)
+                    .addComponent(ckbQuestao11Estabilizacao)
+                    .addComponent(ckbQuestao11DeDiminuicao))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btSalvar)
+                    .addComponent(btAtualizar))
+                .addContainerGap())
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -494,6 +482,25 @@ public class pescador_3 extends javax.swing.JFrame {
         conexao.desconecta();
     }//GEN-LAST:event_fechar_janela
 
+    private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
+        salvar_dados();
+    }//GEN-LAST:event_btSalvarActionPerformed
+
+    private void btAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizarActionPerformed
+        atualizar_dados();
+    }//GEN-LAST:event_btAtualizarActionPerformed
+
+    private void cbPescadorItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbPescadorItemStateChanged
+        
+    }//GEN-LAST:event_cbPescadorItemStateChanged
+
+    private void cbPescadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbPescadorActionPerformed
+        if (inicia_combo == 1){
+            mostra_dados();
+        }
+        inicia_combo = 1;
+    }//GEN-LAST:event_cbPescadorActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -506,20 +513,22 @@ public class pescador_3 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btAtualizar;
+    private javax.swing.JButton btSalvar;
     private javax.swing.JComboBox cbPescador;
-    private javax.swing.JCheckBox chbQ3Outros;
-    private javax.swing.JCheckBox chbQ3Rebocar;
-    private javax.swing.JCheckBox chbQ3TrocadeAlimentos;
-    private javax.swing.JCheckBox chbQ3TrocadeOleo;
-    private javax.swing.JCheckBox chbQ3TrocadePescado;
-    private javax.swing.JCheckBox chbQ4Outros;
-    private javax.swing.JCheckBox chbQ4PorPesqueiros;
-    private javax.swing.JCheckBox chbQ4PorRoubodeRede;
-    private javax.swing.JCheckBox chbQ4PorSobreposicaoDeRedeEEspinhel;
-    private javax.swing.JCheckBox chbQ4PorSobreposicaodeRedes;
-    private javax.swing.JCheckBox chbQuestao11DeCrescimento;
-    private javax.swing.JCheckBox chbQuestao11DeDiminuicao;
-    private javax.swing.JCheckBox chbQuestao11Estabilizacao;
+    private javax.swing.JCheckBox ckbQ3Outros;
+    private javax.swing.JCheckBox ckbQ3Rebocar;
+    private javax.swing.JCheckBox ckbQ3TrocadeAlimentos;
+    private javax.swing.JCheckBox ckbQ3TrocadeOleo;
+    private javax.swing.JCheckBox ckbQ3TrocadePescado;
+    private javax.swing.JCheckBox ckbQ4Outros;
+    private javax.swing.JCheckBox ckbQ4PorPesqueiros;
+    private javax.swing.JCheckBox ckbQ4PorRoubodeRede;
+    private javax.swing.JCheckBox ckbQ4PorSobreposicaoDeRedeEEspinhel;
+    private javax.swing.JCheckBox ckbQ4PorSobreposicaodeRedes;
+    private javax.swing.JCheckBox ckbQuestao11DeCrescimento;
+    private javax.swing.JCheckBox ckbQuestao11DeDiminuicao;
+    private javax.swing.JCheckBox ckbQuestao11Estabilizacao;
     private javax.swing.ButtonGroup grupo_questao_1;
     private javax.swing.ButtonGroup grupo_questao_2;
     private javax.swing.ButtonGroup grupo_questao_3;
@@ -548,6 +557,7 @@ public class pescador_3 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JRadioButton rbQ1nao;
     private javax.swing.JRadioButton rbQ1sim;
     private javax.swing.JRadioButton rbQ2Aumentando;
@@ -567,58 +577,356 @@ public class pescador_3 extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
 
-    public void mostra_dados_atravessador(){
+    private void mostra_dados(){
+        limpar_dados();
+        String codigo = util.separa(1,cbPescador.getSelectedItem().toString());
+        System.out.println(codigo);
         try {
+            //Pescador Moradia
+            conexao.execute("SELECT * FROM pescador_perspectiva WHERE cod_pescador = "+codigo);
+            conexao.resultSet.first();
 
-            
-           
+            //Selecionar os check boxes conforme o BD
+            String testador = new String();
 
-            //System.out.println(conexao.resultSet.getString("local_moradia"));
-            
-          
-            
-            cbPescador.setSelectedItem(conexao.resultSet.getString("id_local"));
-       
+            testador = conexao.resultSet.getString("questao1");
+            if (testador.equals("sim"))
+                   rbQ1sim.setSelected(true);
+            else
+                   rbQ1sim.setSelected(false);
 
+            if (testador.equals("não"))
+                   rbQ1nao.setSelected(true);
+            else
+                   rbQ1nao.setSelected(false);
+
+            testador = conexao.resultSet.getString("questao2");
+            if (testador.equals("aumentando"))
+                   rbQ2Aumentando.setSelected(true);
+            else
+                   rbQ2Aumentando.setSelected(false);
+
+            if (testador.equals("diminuindo"))
+                   rbQ2Diminuindo.setSelected(true);
+            else
+                   rbQ2Diminuindo.setSelected(false);
+
+            testador = conexao.resultSet.getString("questao3");
+            if (!testador.equals(""))
+                   rbQ3Sim.setSelected(true);
+            else
+                   rbQ3Sim.setSelected(false);
+
+            if (testador.equals(""))
+                   rbQ3Nao.setSelected(true);
+            else
+                   rbQ3Nao.setSelected(false);
+
+            if (testador.equals("Troca de óleo"))
+                   ckbQ3TrocadeOleo.setSelected(true);
+            else
+                   ckbQ3TrocadeOleo.setSelected(false);
+
+            if (testador.equals("Troca de pescado ou grude"))
+                   ckbQ3TrocadePescado.setSelected(true);
+            else
+                   ckbQ3TrocadePescado.setSelected(false);
+
+            if (testador.equals("Troca de alimentos"))
+                   ckbQ3TrocadeAlimentos.setSelected(true);
+            else
+                   ckbQ3TrocadeAlimentos.setSelected(false);
+
+            if (testador.equals("Rebocar"))
+                   ckbQ3Rebocar.setSelected(true);
+            else
+                   ckbQ3Rebocar.setSelected(false);
+
+            if (testador.equals("Outros"))
+                   ckbQ3Outros.setSelected(true);
+            else
+                   ckbQ3Outros.setSelected(false);
+            
+            testador = conexao.resultSet.getString("questao4");
+            if (!testador.equals(""))
+                   rbQ4Sim.setSelected(true);
+            else
+                   rbQ4Sim.setSelected(false);
+
+            if (testador.equals(""))
+                   rbQ4Nao.setSelected(true);
+            else
+                   rbQ4Nao.setSelected(false);
+
+            if (testador.equals("Por pesqueiros"))
+                   ckbQ4PorPesqueiros.setSelected(true);
+            else
+                   ckbQ4PorPesqueiros.setSelected(false);
+
+            if (testador.equals("Por sobreposição de redes"))
+                   ckbQ4PorSobreposicaodeRedes.setSelected(true);
+            else
+                   ckbQ4PorSobreposicaodeRedes.setSelected(false);
+
+            if (testador.equals("Por sobreposição de rede e espinhel"))
+                   ckbQ4PorSobreposicaoDeRedeEEspinhel.setSelected(true);
+            else
+                   ckbQ4PorSobreposicaoDeRedeEEspinhel.setSelected(false);
+
+            if (testador.equals("Por roubo de rede"))
+                   ckbQ4PorRoubodeRede.setSelected(true);
+            else
+                   ckbQ4PorRoubodeRede.setSelected(false);
+
+            if (testador.equals("Outros"))
+                   ckbQ4Outros.setSelected(true);
+            else
+                   ckbQ4Outros.setSelected(false);
+
+            testador = conexao.resultSet.getString("questao5");
+            if (!testador.equals(""))
+                   rbQ5Sim.setSelected(true);
+            else
+                   rbQ5Sim.setSelected(false);
+
+            if (testador.equals(""))
+                   rbQ5Nao.setSelected(true);
+            else
+                   rbQ5Nao.setSelected(false);
+
+            taQuestao5.setText(testador);
+
+            taQuestao6.setText(conexao.resultSet.getString("questao6"));
+
+            taQuestao7.setText(conexao.resultSet.getString("questao7"));
+
+            taQuestao8.setText(conexao.resultSet.getString("questao8"));
+
+            taQuestao9.setText(conexao.resultSet.getString("questao9"));
+
+            taQuestao10.setText(conexao.resultSet.getString("questao10"));
+
+            testador = conexao.resultSet.getString("questao11");
+            if (testador.equals("De crescimento"))
+                   ckbQuestao11DeCrescimento.setSelected(true);
+            else
+                   ckbQuestao11DeCrescimento.setSelected(false);
+
+            if (testador.equals("Estabilização"))
+                   ckbQuestao11Estabilizacao.setSelected(true);
+            else
+                   ckbQuestao11Estabilizacao.setSelected(false);
+
+            if (testador.equals("De diminuição"))
+                   ckbQuestao11DeDiminuicao.setSelected(true);
+            else
+                   ckbQuestao11DeDiminuicao.setSelected(false);
 
         }catch (SQLException ex) {
-            if (navega == 1){
-                JOptionPane.showMessageDialog(null,"Você já esta no primeiro registro");
-                proximo();
-            }
-            else if (navega == 2){
-                JOptionPane.showMessageDialog(null,"Você já esta no ultimo registro");
-                anterior();
-            }
-            else
                 JOptionPane.showMessageDialog(null,"Nenhum registro encontrado "+ ex );
-            navega = 0;
-            //Logger.getLogger(pescador.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("Erro no mostrar dados");               
+        }
+
+    }
+
+    private void attCbPescador() {
+        try {
+            cbPescador.removeAllItems();
+            conexao.execute("select * from pescador");
+
+            while (conexao.resultSet.next()){
+                cbPescador.addItem(conexao.resultSet.getString("cod_pescador")+
+                            " # "+ conexao.resultSet.getString("nome"));
+            }
+
+        }catch (SQLException ex) {
+            System.out.println("Erro no cbPescador "+ex);
         }
     }
 
-    private void anterior() {
-         try {
-                    conexao.resultSet.previous();
-                } catch (SQLException ex1) {
-                    Logger.getLogger(pescador_3.class.getName()).log(Level.SEVERE, null, ex1);
-                }
+    private void limpar_dados() {
+        
+        rbQ1sim.setSelected(false);
+        rbQ1nao.setSelected(false);
+        rbQ2Aumentando.setSelected(false);
+        rbQ2Diminuindo.setSelected(false);
+        rbQ3Sim.setSelected(false);
+        rbQ3Nao.setSelected(false);
+        ckbQ3TrocadeOleo.setSelected(false);
+        ckbQ3TrocadePescado.setSelected(false);
+        ckbQ3TrocadeAlimentos.setSelected(false);
+        ckbQ3Rebocar.setSelected(false);
+        ckbQ3Outros.setSelected(false);
+        rbQ4Sim.setSelected(false);
+        rbQ4Nao.setSelected(false);
+        ckbQ4PorPesqueiros.setSelected(false);
+        ckbQ4PorSobreposicaodeRedes.setSelected(false);
+        ckbQ4PorSobreposicaoDeRedeEEspinhel.setSelected(false);
+        ckbQ4PorRoubodeRede.setSelected(false);
+        ckbQ4Outros.setSelected(false);
+        rbQ4Sim.setSelected(false);
+        rbQ4Nao.setSelected(false);
+        taQuestao5.setText("");
+        taQuestao6.setText("");
+        taQuestao7.setText("");
+        taQuestao8.setText("");
+        taQuestao9.setText("");
+        taQuestao10.setText("");
+        ckbQuestao11DeCrescimento.setSelected(false);
+        ckbQuestao11Estabilizacao.setSelected(false);
+        ckbQuestao11DeDiminuicao.setSelected(false);
+
     }
 
-    private void proximo() {
-        try {
-                    conexao.resultSet.next();
-                } catch (SQLException ex1) {
-                    Logger.getLogger(pescador_3.class.getName()).log(Level.SEVERE, null, ex1);
-                }
-    }
-    
-private int checar(JCheckBox ckb) {
-        if (ckb.isSelected()){
-            return 1;
-        }else
-            return 0;
+    private void salvar_dados() {
+    String codigo = util.separa(1,cbPescador.getSelectedItem().toString());
+    System.out.println(codigo);
+
+          //Tabela Locais da composição pescaria
+          //Pegando ites do CB
+
+            String q1 = new String();
+            if (rbQ1sim.isSelected())
+                   q1 = "sim";
+            else
+                   q1 = "não";
+
+            String q2 = new String();
+            if (rbQ2Aumentando.isSelected())
+                   q2 = "aumentando";
+            else if (rbQ2Diminuindo.isSelected())
+                   q2 = "diminuindo";
+
+            String q3 = new String();
+            if (ckbQ3TrocadeOleo.isSelected())
+                   q3 = "Troca de óleo";
+            else if (ckbQ3TrocadePescado.isSelected())
+                   q3 = "Troca de pescado ou grude";
+            else if (ckbQ3TrocadeAlimentos.isSelected())
+                   q3 = "Troca de alimentos";
+            else if (ckbQ3Rebocar.isSelected())
+                   q3 = "Rebocar";
+            else if (ckbQ3Outros.isSelected())
+                   q3 = "Outros";
+
+            String q4 = new String();
+            if (ckbQ4PorPesqueiros.isSelected())
+                   q4 = "Por pesqueiros";
+            else if (ckbQ4PorSobreposicaodeRedes.isSelected())
+                   q4 = "Por sobreposição de redes";
+            else if (ckbQ4PorSobreposicaoDeRedeEEspinhel.isSelected())
+                   q4 = "Por sobreposição de rede e espinhel";
+            else if (ckbQ4PorRoubodeRede.isSelected())
+                   q4 = "Por roubo de rede";
+            else if (ckbQ4Outros.isSelected())
+                   q4 = "Outros";
+
+            String q11 = new String();
+            if (ckbQ4PorPesqueiros.isSelected())
+                   q11 = "De crescimento";
+            else if (ckbQ4PorSobreposicaodeRedes.isSelected())
+                   q11 = "Estabilização";
+            else if (ckbQ4PorSobreposicaoDeRedeEEspinhel.isSelected())
+                   q11 = "De diminuição";
+         
+            String sqlinsert = "insert into pescador_perspectiva "
+                    + "(cod_pescador,questao1,questao2,questao3,"
+                    + "questao4,questao5,questao6,questao7,"
+                    + "questao8,questao9,questao10,questao11"
+                    +  ") values ("+
+                    codigo+",'"+
+                    q1+"','"+
+                    q2+"','"+
+                    q3+"','"+
+                    q4+"','"+
+                    taQuestao5.getText()+"','"+
+                    taQuestao6.getText()+"','"+
+                    taQuestao7.getText()+"','"+
+                    taQuestao8.getText()+"','"+
+                    taQuestao9.getText()+"','"+
+                    taQuestao10.getText()+"','"+
+                    q11+"')";
+
+            //System.out.println(sqlinsert);
+            if (conexao.salvar(sqlinsert)) {
+                System.out.println("Pescador Perspectiva - Cadastrado com sucesso");
+                mostra_dados();
+            }
+
+
     }
 
+    private void atualizar_dados() {
+    String codigo = util.separa(1,cbPescador.getSelectedItem().toString());
+    System.out.println(codigo);
+
+          //Tabela Locais da composição pescaria
+          //Pegando ites do CB
+
+            String q1 = new String();
+            if (rbQ1sim.isSelected())
+                   q1 = "sim";
+            else
+                   q1 = "não";
+
+            String q2 = new String();
+            if (rbQ2Aumentando.isSelected())
+                   q2 = "aumentando";
+            else if (rbQ2Diminuindo.isSelected())
+                   q2 = "diminuindo";
+
+            String q3 = new String();
+            if (ckbQ3TrocadeOleo.isSelected())
+                   q3 = "Troca de óleo";
+            else if (ckbQ3TrocadePescado.isSelected())
+                   q3 = "Troca de pescado ou grude";
+            else if (ckbQ3TrocadeAlimentos.isSelected())
+                   q3 = "Troca de alimentos";
+            else if (ckbQ3Rebocar.isSelected())
+                   q3 = "Rebocar";
+            else if (ckbQ3Outros.isSelected())
+                   q3 = "Outros";
+
+            String q4 = new String();
+            if (ckbQ4PorPesqueiros.isSelected())
+                   q4 = "Por pesqueiros";
+            else if (ckbQ4PorSobreposicaodeRedes.isSelected())
+                   q4 = "Por sobreposição de redes";
+            else if (ckbQ4PorSobreposicaoDeRedeEEspinhel.isSelected())
+                   q4 = "Por sobreposição de rede e espinhel";
+            else if (ckbQ4PorRoubodeRede.isSelected())
+                   q4 = "Por roubo de rede";
+            else if (ckbQ4Outros.isSelected())
+                   q4 = "Outros";
+
+            String q11 = new String();
+            if (ckbQuestao11DeCrescimento.isSelected())
+                   q11 = "De crescimento";
+            else if (ckbQuestao11Estabilizacao.isSelected())
+                   q11 = "Estabilização";
+            else if (ckbQuestao11DeDiminuicao.isSelected())
+                   q11 = "De diminuição";
+
+        String sqlupdate ="UPDATE pescador_perspectiva SET "
+                    +"questao1 = '"+q1+"',"
+                    +"questao2 = '"+q2+"',"
+                    +"questao3 = '"+q3+"',"
+                    +"questao4 = '"+q4+"',"
+                    +"questao5 = '"+taQuestao5.getText()+"',"
+                    +"questao6 = '"+taQuestao6.getText()+"',"
+                    +"questao7 = '"+taQuestao7.getText()+"',"
+                    +"questao8 = '"+taQuestao8.getText()+"',"
+                    +"questao9 = '"+taQuestao9.getText()+"',"
+                    +"questao10 = '"+taQuestao10.getText()+"',"
+                    +"questao11 = '"+q11+"' "+
+
+                    "where cod_pescador = "+codigo;
+
+            //System.out.println(sqlupdate);
+            if (conexao.update(sqlupdate)){
+                System.out.println("Atualizado com sucesso");
+                mostra_dados();
+            }
+    }
 
 }
