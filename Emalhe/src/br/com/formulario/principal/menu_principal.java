@@ -11,6 +11,8 @@
 
 package br.com.formulario.principal;
 
+import br.com.caminhoneiro.*;
+import br.com.formulario.atravessador.*;
 import br.com.formulario.pescador.*;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
@@ -62,11 +64,13 @@ public class menu_principal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         botao_cadastrar_atravessador = new javax.swing.JButton();
         botao_questionario_atravessador = new javax.swing.JButton();
+        btAtravessadorPercepcaoPerspectiva = new javax.swing.JButton();
         botao_sair = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         botao_cadastrar_caminhoneiro = new javax.swing.JButton();
         botao_questionario_caminhoneiro = new javax.swing.JButton();
+        btCaminhoneiroPercepcaoPerspectiva = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         botao_cadastrar_comunidade = new javax.swing.JButton();
@@ -116,6 +120,13 @@ public class menu_principal extends javax.swing.JFrame {
             }
         });
 
+        btAtravessadorPercepcaoPerspectiva.setText("Percepção e Perspectivas");
+        btAtravessadorPercepcaoPerspectiva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAtravessadorPercepcaoPerspectivaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -124,8 +135,9 @@ public class menu_principal extends javax.swing.JFrame {
                 .addGap(48, 48, 48)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(botao_cadastrar_atravessador)
+                    .addComponent(btAtravessadorPercepcaoPerspectiva)
                     .addComponent(botao_questionario_atravessador))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,7 +146,9 @@ public class menu_principal extends javax.swing.JFrame {
                 .addComponent(botao_cadastrar_atravessador)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botao_questionario_atravessador)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btAtravessadorPercepcaoPerspectiva)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         botao_sair.setText("Sair");
@@ -164,6 +178,13 @@ public class menu_principal extends javax.swing.JFrame {
             }
         });
 
+        btCaminhoneiroPercepcaoPerspectiva.setText("Percepção e Perspectivas");
+        btCaminhoneiroPercepcaoPerspectiva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCaminhoneiroPercepcaoPerspectivaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -174,8 +195,10 @@ public class menu_principal extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(8, 8, 8)
                         .addComponent(botao_cadastrar_caminhoneiro))
-                    .addComponent(botao_questionario_caminhoneiro))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(btCaminhoneiroPercepcaoPerspectiva)
+                        .addComponent(botao_questionario_caminhoneiro)))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,7 +207,9 @@ public class menu_principal extends javax.swing.JFrame {
                 .addComponent(botao_cadastrar_caminhoneiro)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botao_questionario_caminhoneiro)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btCaminhoneiroPercepcaoPerspectiva)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14));
@@ -219,7 +244,7 @@ public class menu_principal extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(63, Short.MAX_VALUE)
+                .addContainerGap(72, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jButton1)
                     .addComponent(botao_cadastrar_comunidade)
@@ -235,7 +260,7 @@ public class menu_principal extends javax.swing.JFrame {
                 .addComponent(botao_questionario_comunidade)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14));
@@ -255,7 +280,7 @@ public class menu_principal extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(57, Short.MAX_VALUE)
+                .addContainerGap(64, Short.MAX_VALUE)
                 .addComponent(botao_cadastrar_comunidade1)
                 .addGap(41, 41, 41))
         );
@@ -304,7 +329,7 @@ public class menu_principal extends javax.swing.JFrame {
                     .addComponent(jButton3)
                     .addComponent(jButton2)
                     .addComponent(botao_cadastrar_pescador))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -338,7 +363,7 @@ public class menu_principal extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(56, 56, 56)
                 .addComponent(botao_cadastrar_economia)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -423,7 +448,7 @@ public class menu_principal extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                                     .addComponent(jLabel2)
                                     .addGap(74, 74, 74))
                                 .addGroup(layout.createSequentialGroup()
@@ -434,9 +459,9 @@ public class menu_principal extends javax.swing.JFrame {
                                             .addGap(71, 71, 71))
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                             .addGap(25, 25, 25)))))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabel6)
@@ -458,9 +483,9 @@ public class menu_principal extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel4)
                     .addComponent(jLabel3))
@@ -492,11 +517,11 @@ public class menu_principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botao_cadastrar_atravessadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_cadastrar_atravessadorActionPerformed
-        //new frm_cad_atravessador().setVisible(true);
+        new atravessador().setVisible(true);
     }//GEN-LAST:event_botao_cadastrar_atravessadorActionPerformed
 
     private void botao_questionario_atravessadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_questionario_atravessadorActionPerformed
-       // new frm_questionario_atravessador().setVisible(true);
+        new atravessador2().setVisible(true);
     }//GEN-LAST:event_botao_questionario_atravessadorActionPerformed
 
     private void botao_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_sairActionPerformed
@@ -508,11 +533,11 @@ public class menu_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosed
 
     private void botao_cadastrar_caminhoneiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_cadastrar_caminhoneiroActionPerformed
-        //new frm_cad_caminhoneiro().setVisible(true);
+        new caminhoneiro().setVisible(true);
     }//GEN-LAST:event_botao_cadastrar_caminhoneiroActionPerformed
 
     private void botao_questionario_caminhoneiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_questionario_caminhoneiroActionPerformed
-       // new frm_questionario_caminhoneiro().setVisible(true);
+        new caminhoneiro2().setVisible(true);
     }//GEN-LAST:event_botao_questionario_caminhoneiroActionPerformed
 
     private void botao_cadastrar_comunidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_cadastrar_comunidadeActionPerformed
@@ -563,6 +588,14 @@ public class menu_principal extends javax.swing.JFrame {
         new pescador3().setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void btAtravessadorPercepcaoPerspectivaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtravessadorPercepcaoPerspectivaActionPerformed
+        new atravessador3().setVisible(true);
+    }//GEN-LAST:event_btAtravessadorPercepcaoPerspectivaActionPerformed
+
+    private void btCaminhoneiroPercepcaoPerspectivaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCaminhoneiroPercepcaoPerspectivaActionPerformed
+        new caminhoneiro3().setVisible(true);
+    }//GEN-LAST:event_btCaminhoneiroPercepcaoPerspectivaActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -589,6 +622,8 @@ public class menu_principal extends javax.swing.JFrame {
     private javax.swing.JButton botao_questionario_colonia;
     private javax.swing.JButton botao_questionario_comunidade;
     private javax.swing.JButton botao_sair;
+    private javax.swing.JButton btAtravessadorPercepcaoPerspectiva;
+    private javax.swing.JButton btCaminhoneiroPercepcaoPerspectiva;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

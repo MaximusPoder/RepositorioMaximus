@@ -1,11 +1,9 @@
 package br.com.formulario.pescador;
 
 import br.com.conexao.Conexao;
-import br.com.util.Utilidade;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 
 
@@ -16,8 +14,6 @@ import javax.swing.JOptionPane;
 public class pescador extends javax.swing.JFrame {
 
     private int navega = 0; //variavel pra saber o  botão clicado;
-    private int inicia_combo = 0;
-    private boolean state = false;
 
     private Conexao conexao;
 
@@ -48,20 +44,6 @@ public class pescador extends javax.swing.JFrame {
         }catch (SQLException ex) {
             Logger.getLogger(pescador.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-       /*
-        Teste que mostra toda a tabela selecionada
-        try {
-            while (conexao.resultSet.next()){
-            System.out.println(conexao.resultSet.getString("nome"));
-            }
-        }catch (SQLException ex) {
-            Logger.getLogger(pescador.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       */
-        
-        
-
 
     }
 
@@ -107,13 +89,13 @@ public class pescador extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         tfComposicaoFamiliar = new javax.swing.JTextField();
         jLabel33 = new javax.swing.JLabel();
-        tfEscolaridade = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
         tfPqParou = new javax.swing.JTextField();
         jLabel35 = new javax.swing.JLabel();
         cbLocalMoradia = new javax.swing.JComboBox();
         cbEstadoCivil = new javax.swing.JComboBox();
         lb_pescador = new javax.swing.JLabel();
+        cbEscolaridade = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Questionário Atravessador");
@@ -131,7 +113,7 @@ public class pescador extends javax.swing.JFrame {
 
         jLabel24.setText("Município");
 
-        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel42.setText("Questionário Pescador");
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -271,6 +253,8 @@ public class pescador extends javax.swing.JFrame {
 
         lb_pescador.setText("Pescador");
 
+        cbEscolaridade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1° Série fundamental", "2° Série fundamental", "3° Série fundamental", "4° Série fundamental", "5° Série fundamental", "6° Série fundamental", "7° Série fundamental", "8° Série fundamental", "1° Série médio", "2° Série médio", "3° Série médio", "Ensino Superior Incompleto", "Ensino Superior Completo" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -306,20 +290,20 @@ public class pescador extends javax.swing.JFrame {
                                 .addComponent(tfAtividadePrincipal)
                                 .addComponent(tfAtividadeSecundaria, javax.swing.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel33)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel34))
+                                .addComponent(cbEscolaridade, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel31)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cbEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel32)))
+                                .addComponent(cbEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel32)
+                            .addComponent(jLabel34))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(tfComposicaoFamiliar, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tfPqParou, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -341,7 +325,7 @@ public class pescador extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(tfApelido)
                                 .addComponent(cbLocalMoradia, 0, 158, Short.MAX_VALUE)))))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -393,10 +377,10 @@ public class pescador extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel33)
-                    .addComponent(tfEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel34)
-                    .addComponent(tfPqParou, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(36, Short.MAX_VALUE))
+                    .addComponent(tfPqParou, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel34))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -409,11 +393,11 @@ public class pescador extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-725)/2, (screenSize.height-433)/2, 725, 433);
+        setBounds((screenSize.width-725)/2, (screenSize.height-437)/2, 725, 437);
     }// </editor-fold>//GEN-END:initComponents
 
     private void fechar_janela(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_fechar_janela
@@ -438,7 +422,7 @@ public class pescador extends javax.swing.JFrame {
                     "atividade_secundaria = '"+ tfAtividadeSecundaria.getText() +"',"+
                     "estado_civil = '"+ cbEstadoCivil.getSelectedItem() +"',"+
                     "composicao_familiar = '"+ tfComposicaoFamiliar.getText() +"',"+
-                    "escolaridade = '"+ tfEscolaridade.getText() +"',"+
+                    "escolaridade = '"+ cbEscolaridade.getSelectedItem() +"',"+
                     "pq_parou = '"+ tfPqParou.getText() +"' "+
                     
 
@@ -506,7 +490,7 @@ public class pescador extends javax.swing.JFrame {
         tfAtividadeSecundaria.setText("");
         cbEstadoCivil.setSelectedIndex(0);
         tfComposicaoFamiliar.setText("");
-        tfEscolaridade.setText("");
+        cbEscolaridade.setSelectedIndex(0);
         tfPqParou.setText("");
         cbMunicipio.setSelectedIndex(0);
         cbSexo.setSelectedIndex(0);
@@ -559,7 +543,7 @@ public class pescador extends javax.swing.JFrame {
                     tfAtividadeSecundaria.getText()+"','"+
                     cbEstadoCivil.getSelectedItem()+"','"+
                     tfComposicaoFamiliar.getText()+"','"+
-                    tfEscolaridade.getText()+"','"+
+                    cbEscolaridade.getSelectedItem()+"','"+
                     tfPqParou.getText()+"','"+
                     cbLocalMoradia.getSelectedItem()+"')";
 
@@ -598,6 +582,7 @@ public class pescador extends javax.swing.JFrame {
     private javax.swing.JButton botao_primeiro;
     private javax.swing.JButton botao_proximo;
     private javax.swing.JButton botao_ultimo;
+    private javax.swing.JComboBox cbEscolaridade;
     private javax.swing.JComboBox cbEstadoCivil;
     private javax.swing.JComboBox cbLocalMoradia;
     private javax.swing.JComboBox cbMunicipio;
@@ -625,7 +610,6 @@ public class pescador extends javax.swing.JFrame {
     private javax.swing.JTextField tfAtividadePrincipal;
     private javax.swing.JTextField tfAtividadeSecundaria;
     private javax.swing.JTextField tfComposicaoFamiliar;
-    private javax.swing.JTextField tfEscolaridade;
     private javax.swing.JTextField tfIdade;
     private javax.swing.JTextField tfNaturalidade;
     private javax.swing.JTextField tfNome;
@@ -643,7 +627,7 @@ public class pescador extends javax.swing.JFrame {
             tfAtividadeSecundaria.setText(conexao.resultSet.getString("atividade_secundaria"));
             cbEstadoCivil.setSelectedItem(conexao.resultSet.getString("estado_civil"));
             tfComposicaoFamiliar.setText(conexao.resultSet.getString("composicao_familiar"));
-            tfEscolaridade.setText(conexao.resultSet.getString("escolaridade"));
+            cbEscolaridade.setSelectedItem(conexao.resultSet.getString("escolaridade"));
             tfPqParou.setText(conexao.resultSet.getString("pq_parou"));
             cbMunicipio.setSelectedItem(conexao.resultSet.getString("municipio"));
             cbSexo.setSelectedItem(conexao.resultSet.getString("sexo"));
