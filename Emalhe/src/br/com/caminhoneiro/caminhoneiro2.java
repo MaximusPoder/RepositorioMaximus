@@ -8,7 +8,7 @@
  *
  * Created on 26/07/2010, 09:44:24
  */
-package br.com.formulario.atravessador;
+package br.com.caminhoneiro;
 
 import br.com.conexao.Conexao;
 import br.com.util.JMoneyField;
@@ -22,14 +22,14 @@ import javax.swing.table.DefaultTableModel;
  * @author MPA
  */
 
-public class atravessador2 extends javax.swing.JFrame {
+public class caminhoneiro2 extends javax.swing.JFrame {
 
     /** Creates new form frm_questionario_atravessador */
     private Conexao conexao;
     int inicia_combo = 0;
     String id_atravessador;
     String ItemDoCb;
-    public atravessador2() {
+    public caminhoneiro2() {
         initComponents();
         conexao = new Conexao();
         conexao.conecta("mil_interface");
@@ -431,7 +431,7 @@ public class atravessador2 extends javax.swing.JFrame {
         jLabel58.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel58.setText("Como funciona o \"caminho da cadeia de comercialização\" do pescado ou da grude");
 
-        jLabel59.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel59.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel59.setText("1 - Recepção dos produtos:");
 
         jLabel1.setText("De quem compra o produto, ou seja, quais seus fornecedores?");
@@ -476,14 +476,14 @@ public class atravessador2 extends javax.swing.JFrame {
 
         jCheckBox1.setText("Sempre dos mesmo fornecedores");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel6.setText("O produto você adquire:");
 
         jCheckBox2.setText("Smpre dos mesmo fornecedores e de quem aparece");
 
         jCheckBox3.setText("De quem vende mais barato");
 
-        jLabel60.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel60.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel60.setText("2 - Arquisição (comercialização):");
 
         jLabel7.setText("Só vende o peixe inteiro?");
@@ -577,7 +577,7 @@ public class atravessador2 extends javax.swing.JFrame {
 
         jLabel20.setText("Quais os critérios para definir a qualidade do produto?");
 
-        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel23.setText("Carne do Peixe");
 
         jCheckBox5.setText("Cor");
@@ -590,7 +590,7 @@ public class atravessador2 extends javax.swing.JFrame {
 
         jCheckBox6.setText("Odor");
 
-        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel24.setText("Grude");
 
         ckbOdor1.setText("Tamanho");
@@ -599,7 +599,7 @@ public class atravessador2 extends javax.swing.JFrame {
 
         jCheckBox9.setText("Odor");
 
-        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel26.setText("ABA");
 
         ckbOdor2.setText("Tamanho");
@@ -608,12 +608,12 @@ public class atravessador2 extends javax.swing.JFrame {
 
         jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        jLabel61.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel61.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel61.setText("3 - Armazenamento");
 
         jLabel27.setText("Onde fica armazenado o produto?!");
 
-        jLabel29.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel29.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel29.setText("Pescado");
 
         jSeparator7.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -633,7 +633,7 @@ public class atravessador2 extends javax.swing.JFrame {
 
         rbOutroAtravessadorG1.setText("Sem mancha");
 
-        jLabel62.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel62.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel62.setText("4 - Comercialização");
 
         jLabel28.setText("Qual o mercado que você comercializa?");
@@ -642,7 +642,7 @@ public class atravessador2 extends javax.swing.JFrame {
 
         jLabel31.setText("Quais os seus clientes?");
 
-        jLabel32.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel32.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel32.setText("Pescado");
 
         jSeparator9.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -1755,7 +1755,7 @@ public class atravessador2 extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new atravessador2().setVisible(true);
+                new caminhoneiro2().setVisible(true);
             }
         });
     }
