@@ -35,12 +35,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane1" alignment="0" pref="776" max="32767" attributes="0"/>
+          <Component id="jScrollPane1" alignment="0" pref="774" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane1" alignment="0" pref="423" max="32767" attributes="0"/>
+          <Component id="jScrollPane1" alignment="0" pref="416" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -67,7 +67,6 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jPanel4" alignment="0" max="32767" attributes="1"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -99,24 +98,22 @@
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                                      <Group type="102" alignment="0" attributes="1">
-                                                          <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="cbSexo" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="tfIdade" max="32767" attributes="0"/>
-                                                      </Group>
-                                                      <Component id="jLabel29" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="1">
+                                                      <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="cbSexo" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="tfIdade" min="-2" pref="30" max="-2" attributes="0"/>
                                                   </Group>
+                                                  <Component id="jLabel29" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jLabel31" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jLabel33" alignment="0" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="tfEscolaridade" max="32767" attributes="1"/>
+                                                  <Component id="cbEscolaridade" max="32767" attributes="1"/>
                                                   <Component id="tfAtividadePrincipal" alignment="0" max="32767" attributes="1"/>
                                                   <Component id="cbEstadoCivil" alignment="0" pref="196" max="32767" attributes="1"/>
                                               </Group>
@@ -130,6 +127,17 @@
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="jLabel26" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel35" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="tfApelido" max="32767" attributes="1"/>
+                                                  <Component id="cbLocalMoradia" alignment="0" min="-2" pref="168" max="-2" attributes="1"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="jLabel30" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
@@ -142,19 +150,9 @@
                                                   <Component id="tfAtividadeSecundaria" alignment="0" min="-2" pref="164" max="-2" attributes="1"/>
                                               </Group>
                                           </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Component id="jLabel26" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel35" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="tfApelido" max="32767" attributes="1"/>
-                                                  <Component id="cbLocalMoradia" alignment="0" min="-2" pref="168" max="-2" attributes="1"/>
-                                              </Group>
-                                          </Group>
                                       </Group>
                                   </Group>
+                                  <Component id="jPanel4" alignment="0" max="32767" attributes="1"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -162,7 +160,7 @@
                               <Component id="jLabel42" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="53" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -187,15 +185,15 @@
                           <Component id="jCheckBox4" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jRadioButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jRadioButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jRadioButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="tfNome" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -204,13 +202,6 @@
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="tfNaturalidade" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cbSexo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tfIdade" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
@@ -225,6 +216,13 @@
                               </Group>
                           </Group>
                       </Group>
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbSexo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfIdade" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
@@ -238,29 +236,29 @@
                                   <Component id="cbEstadoCivil" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tfEscolaridade" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tfAtividadeSecundaria" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tfAtividadeSecundaria" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="tfComposicaoFamiliar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="tfPqParou" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="tfComposicaoFamiliar" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="tfPqParou" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="cbEscolaridade" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="135" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -485,8 +483,6 @@
                 <Property name="text" type="java.lang.String" value="Escolaridade.:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfEscolaridade">
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel34">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Porque Parou?"/>
@@ -563,6 +559,27 @@
             <Component class="javax.swing.JCheckBox" name="jCheckBox4">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Bicicleta"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cbEscolaridade">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="13">
+                    <StringItem index="0" value="1&#xb0; S&#xe9;rie fundamental"/>
+                    <StringItem index="1" value="2&#xb0; S&#xe9;rie fundamental"/>
+                    <StringItem index="2" value="3&#xb0; S&#xe9;rie fundamental"/>
+                    <StringItem index="3" value="4&#xb0; S&#xe9;rie fundamental"/>
+                    <StringItem index="4" value="5&#xb0; S&#xe9;rie fundamental"/>
+                    <StringItem index="5" value="6&#xb0; S&#xe9;rie fundamental"/>
+                    <StringItem index="6" value="7&#xb0; S&#xe9;rie fundamental"/>
+                    <StringItem index="7" value="8&#xb0; S&#xe9;rie fundamental"/>
+                    <StringItem index="8" value="1&#xb0; S&#xe9;rie m&#xe9;dio"/>
+                    <StringItem index="9" value="2&#xb0; S&#xe9;rie m&#xe9;dio"/>
+                    <StringItem index="10" value="3&#xb0; S&#xe9;rie m&#xe9;dio"/>
+                    <StringItem index="11" value="Ensino Superior Incompleto"/>
+                    <StringItem index="12" value="Ensino Superior Completo"/>
+                  </StringArray>
+                </Property>
               </Properties>
             </Component>
           </SubComponents>

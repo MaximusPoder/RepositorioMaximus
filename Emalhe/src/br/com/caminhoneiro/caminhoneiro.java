@@ -102,7 +102,6 @@ public class caminhoneiro extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         tfComposicaoFamiliar = new javax.swing.JTextField();
         jLabel33 = new javax.swing.JLabel();
-        tfEscolaridade = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
         tfPqParou = new javax.swing.JTextField();
         jLabel35 = new javax.swing.JLabel();
@@ -116,6 +115,7 @@ public class caminhoneiro extends javax.swing.JFrame {
         jCheckBox2 = new javax.swing.JCheckBox();
         jCheckBox3 = new javax.swing.JCheckBox();
         jCheckBox4 = new javax.swing.JCheckBox();
+        cbEscolaridade = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Questionário Atravessador");
@@ -281,6 +281,8 @@ public class caminhoneiro extends javax.swing.JFrame {
 
         jCheckBox4.setText("Bicicleta");
 
+        cbEscolaridade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1° Série fundamental", "2° Série fundamental", "3° Série fundamental", "4° Série fundamental", "5° Série fundamental", "6° Série fundamental", "7° Série fundamental", "8° Série fundamental", "1° Série médio", "2° Série médio", "3° Série médio", "Ensino Superior Incompleto", "Ensino Superior Completo" }));
+
         javax.swing.GroupLayout jpAtravessadorLayout = new javax.swing.GroupLayout(jpAtravessador);
         jpAtravessador.setLayout(jpAtravessadorLayout);
         jpAtravessadorLayout.setHorizontalGroup(
@@ -290,7 +292,6 @@ public class caminhoneiro extends javax.swing.JFrame {
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpAtravessadorLayout.createSequentialGroup()
                                 .addComponent(jLabel24)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -318,21 +319,20 @@ public class caminhoneiro extends javax.swing.JFrame {
                                         .addComponent(tfNome, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpAtravessadorLayout.createSequentialGroup()
-                                                    .addComponent(jLabel28)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jLabel22)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(tfIdade))
-                                                .addComponent(jLabel29, javax.swing.GroupLayout.Alignment.LEADING))
+                                            .addGroup(jpAtravessadorLayout.createSequentialGroup()
+                                                .addComponent(jLabel28)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel22)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(tfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jLabel29)
                                             .addComponent(jLabel31)
                                             .addComponent(jLabel33))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(tfEscolaridade)
+                                            .addComponent(cbEscolaridade, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(tfAtividadePrincipal)
                                             .addComponent(cbEstadoCivil, 0, 196, Short.MAX_VALUE)))
                                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
@@ -342,6 +342,14 @@ public class caminhoneiro extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
+                                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel35, javax.swing.GroupLayout.Alignment.LEADING))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(tfApelido)
+                                            .addComponent(cbLocalMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
                                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel30)
                                             .addComponent(jLabel34)
@@ -350,15 +358,8 @@ public class caminhoneiro extends javax.swing.JFrame {
                                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(tfPqParou)
                                             .addComponent(tfComposicaoFamiliar)
-                                            .addComponent(tfAtividadeSecundaria, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel35, javax.swing.GroupLayout.Alignment.LEADING))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(tfApelido)
-                                            .addComponent(cbLocalMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                            .addComponent(tfAtividadeSecundaria, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addGap(283, 283, 283)
                         .addComponent(jLabel42)))
@@ -383,27 +384,21 @@ public class caminhoneiro extends javax.swing.JFrame {
                     .addComponent(jCheckBox3)
                     .addComponent(jCheckBox4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel25)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
+                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jRadioButton1)
+                            .addComponent(jRadioButton2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel25)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tfNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel23))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel27)
-                            .addComponent(tfNaturalidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(13, 13, 13)
-                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel28)
-                            .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel22)
-                            .addComponent(tfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(tfNaturalidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tfApelido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -412,6 +407,12 @@ public class caminhoneiro extends javax.swing.JFrame {
                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel35)
                             .addComponent(cbLocalMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(13, 13, 13)
+                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel28)
+                    .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22)
+                    .addComponent(tfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
@@ -423,21 +424,21 @@ public class caminhoneiro extends javax.swing.JFrame {
                             .addComponent(jLabel31)
                             .addComponent(cbEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel33)
-                            .addComponent(tfEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel30)
-                            .addComponent(tfAtividadeSecundaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tfComposicaoFamiliar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel32))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tfPqParou, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel34))))
+                        .addComponent(jLabel33))
+                    .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jpAtravessadorLayout.createSequentialGroup()
+                            .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel30)
+                                .addComponent(tfAtividadeSecundaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(tfComposicaoFamiliar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel32))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(tfPqParou, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel34)))
+                        .addComponent(cbEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -447,11 +448,11 @@ public class caminhoneiro extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 776, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 774, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 416, Short.MAX_VALUE)
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
@@ -477,7 +478,7 @@ public class caminhoneiro extends javax.swing.JFrame {
                     "atividade_secundaria = '"+ tfAtividadeSecundaria.getText() +"',"+
                     "estado_civil = '"+ cbEstadoCivil.getSelectedItem() +"',"+
                     "composicao_familiar = '"+ tfComposicaoFamiliar.getText() +"',"+
-                    "escolaridade = '"+ tfEscolaridade.getText() +"',"+
+//                    "escolaridade = '"+ tfEscolaridade.getText() +"',"+
                     "pq_parou = '"+ tfPqParou.getText() +"',"+
                     "local_moradia = '"+ cbLocalMoradia.getSelectedItem() +"',"+
 //                    "qualidade_moradia = '"+ cbQualidadeMoradia.getSelectedItem() +"',"+
@@ -567,7 +568,7 @@ public class caminhoneiro extends javax.swing.JFrame {
         tfAtividadeSecundaria.setText("");
         cbEstadoCivil.setSelectedIndex(0);
         tfComposicaoFamiliar.setText("");
-        tfEscolaridade.setText("");
+//        tfEscolaridade.setText("");
         tfPqParou.setText("");
 //        taAtividadeRendaFamilia.setText("");
 //        tfEntrevistado.setText("");
@@ -639,7 +640,7 @@ public class caminhoneiro extends javax.swing.JFrame {
                     tfAtividadeSecundaria.getText()+"','"+
                     cbEstadoCivil.getSelectedItem()+"','"+
                     tfComposicaoFamiliar.getText()+"','"+
-                    tfEscolaridade.getText()+"','"+
+//                    tfEscolaridade.getText()+"','"+
                     tfPqParou.getText()+"','"+
                     cbLocalMoradia.getSelectedItem()+"','";
 //                    cbQualidadeMoradia.getSelectedItem()+"','"+
@@ -694,6 +695,7 @@ public class caminhoneiro extends javax.swing.JFrame {
     private javax.swing.JButton botao_ultimo;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JComboBox cbEscolaridade;
     private javax.swing.JComboBox cbEstadoCivil;
     private javax.swing.JComboBox cbLocalMoradia;
     private javax.swing.JComboBox cbMunicipio;
@@ -727,7 +729,6 @@ public class caminhoneiro extends javax.swing.JFrame {
     private javax.swing.JTextField tfAtividadePrincipal;
     private javax.swing.JTextField tfAtividadeSecundaria;
     private javax.swing.JTextField tfComposicaoFamiliar;
-    private javax.swing.JTextField tfEscolaridade;
     private javax.swing.JTextField tfIdade;
     private javax.swing.JTextField tfNaturalidade;
     private javax.swing.JTextField tfNome;
@@ -746,7 +747,7 @@ public class caminhoneiro extends javax.swing.JFrame {
             tfAtividadeSecundaria.setText(conexao.resultSet.getString("atividade_secundaria"));
             cbEstadoCivil.setSelectedItem(conexao.resultSet.getString("estado_civil"));
             tfComposicaoFamiliar.setText(conexao.resultSet.getString("composicao_familiar"));
-            tfEscolaridade.setText(conexao.resultSet.getString("escolaridade"));
+//            tfEscolaridade.setText(conexao.resultSet.getString("escolaridade"));
             tfPqParou.setText(conexao.resultSet.getString("pq_parou"));
 //            taAtividadeRendaFamilia.setText(conexao.resultSet.getString("atividades_geram_renda"));
 //            tfEntrevistado.setText(conexao.resultSet.getString("atividade_entrevistado"));
