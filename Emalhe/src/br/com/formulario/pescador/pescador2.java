@@ -29,7 +29,8 @@ public class pescador2 extends javax.swing.JFrame {
         //Insere nome do pescador no cbPescador
         attCbPescador();
         //Insere nome da Espécie no cbEspecie
-        attCbEspecie();
+        attCbs();
+        mudar_estadoCB();
 
         mostra_dados();
 
@@ -134,7 +135,6 @@ public class pescador2 extends javax.swing.JFrame {
         ckbTipoBMP = new javax.swing.JCheckBox();
         ckbTipoOutros = new javax.swing.JCheckBox();
         jLabel25 = new javax.swing.JLabel();
-        tfPeriodo = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
         tfNomeBarco = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
@@ -178,7 +178,6 @@ public class pescador2 extends javax.swing.JFrame {
         tfInicioSafra = new javax.swing.JTextField();
         tfFimSafra = new javax.swing.JTextField();
         jLabel55 = new javax.swing.JLabel();
-        tfArteDePesca = new javax.swing.JTextField();
         jLabel56 = new javax.swing.JLabel();
         tfTamanho = new javax.swing.JTextField();
         jLabel57 = new javax.swing.JLabel();
@@ -193,21 +192,43 @@ public class pescador2 extends javax.swing.JFrame {
         cbEspecieComposicaoPescaria = new javax.swing.JComboBox();
         jLabel58 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        ckbJanPP = new javax.swing.JCheckBox();
-        ckbFevPP = new javax.swing.JCheckBox();
-        ckbMarPP = new javax.swing.JCheckBox();
-        ckbAbrPP = new javax.swing.JCheckBox();
-        ckbMaiPP = new javax.swing.JCheckBox();
-        ckbJunPP = new javax.swing.JCheckBox();
-        ckbJulPP = new javax.swing.JCheckBox();
-        ckbSetPP = new javax.swing.JCheckBox();
-        ckbAgoPP = new javax.swing.JCheckBox();
-        ckbNovPP = new javax.swing.JCheckBox();
-        ckbOutPP = new javax.swing.JCheckBox();
-        ckbDezPP = new javax.swing.JCheckBox();
+        ckbJanS = new javax.swing.JCheckBox();
+        ckbFevS = new javax.swing.JCheckBox();
+        ckbMarS = new javax.swing.JCheckBox();
+        ckbAbrS = new javax.swing.JCheckBox();
+        ckbMaiS = new javax.swing.JCheckBox();
+        ckbJunS = new javax.swing.JCheckBox();
+        ckbJulS = new javax.swing.JCheckBox();
+        ckbSetS = new javax.swing.JCheckBox();
+        ckbAgoS = new javax.swing.JCheckBox();
+        ckbNovS = new javax.swing.JCheckBox();
+        ckbOutS = new javax.swing.JCheckBox();
+        ckbDezS = new javax.swing.JCheckBox();
         cbArtePescaComposicaoPescaria = new javax.swing.JComboBox();
         tfMalhaComposicaoPescaria = new javax.swing.JTextField();
         jLabel59 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        cbArtePesca = new javax.swing.JComboBox();
+        jLabel63 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        ckbJanP = new javax.swing.JCheckBox();
+        ckbFevP = new javax.swing.JCheckBox();
+        ckbMarP = new javax.swing.JCheckBox();
+        ckbAbrP = new javax.swing.JCheckBox();
+        ckbMaiP = new javax.swing.JCheckBox();
+        ckbJunP = new javax.swing.JCheckBox();
+        ckbJulP = new javax.swing.JCheckBox();
+        ckbSetP = new javax.swing.JCheckBox();
+        ckbAgoP = new javax.swing.JCheckBox();
+        ckbNovP = new javax.swing.JCheckBox();
+        ckbOutP = new javax.swing.JCheckBox();
+        ckbDezP = new javax.swing.JCheckBox();
+        jLabel64 = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
+        jLabel66 = new javax.swing.JLabel();
+        jLabel67 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Questionário Atravessador");
@@ -270,7 +291,7 @@ public class pescador2 extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(286, 286, 286)
                 .addComponent(jLabel42)
-                .addContainerGap(432, Short.MAX_VALUE))
+                .addContainerGap(290, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -386,6 +407,7 @@ public class pescador2 extends javax.swing.JFrame {
 
         jLabel12.setText("Tamanho.:");
 
+        tfTamanhoComposicaoPescaria.setEditable(false);
         tfTamanhoComposicaoPescaria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfTamanhoComposicaoPescariaActionPerformed(evt);
@@ -428,7 +450,7 @@ public class pescador2 extends javax.swing.JFrame {
 
         jLabel17.setText("Quantas viagens por mês.:");
 
-        jLabel18.setText("Produção por viagem (KG).:");
+        jLabel18.setText("Produção por viagem.:");
 
         tfProducaoViagem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -503,12 +525,6 @@ public class pescador2 extends javax.swing.JFrame {
         ckbTipoOutros.setText("Outros.");
 
         jLabel25.setText("Qual.:");
-
-        tfPeriodo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfPeriodoActionPerformed(evt);
-            }
-        });
 
         jLabel26.setText("Nome do barco:");
 
@@ -670,29 +686,29 @@ public class pescador2 extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(230, 230, 230));
 
-        ckbJanPP.setText("jan");
+        ckbJanS.setText("jan");
 
-        ckbFevPP.setText("fev");
+        ckbFevS.setText("fev");
 
-        ckbMarPP.setText("mar");
+        ckbMarS.setText("mar");
 
-        ckbAbrPP.setText("abr");
+        ckbAbrS.setText("abr");
 
-        ckbMaiPP.setText("mai");
+        ckbMaiS.setText("mai");
 
-        ckbJunPP.setText("jun");
+        ckbJunS.setText("jun");
 
-        ckbJulPP.setText("jul");
+        ckbJulS.setText("jul");
 
-        ckbSetPP.setText("set");
+        ckbSetS.setText("set");
 
-        ckbAgoPP.setText("ago");
+        ckbAgoS.setText("ago");
 
-        ckbNovPP.setText("nov");
+        ckbNovS.setText("nov");
 
-        ckbOutPP.setText("out");
+        ckbOutS.setText("out");
 
-        ckbDezPP.setText("dez");
+        ckbDezS.setText("dez");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -700,57 +716,68 @@ public class pescador2 extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ckbJulS, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ckbJanS, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(ckbJanPP)
+                        .addComponent(ckbFevS)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ckbFevPP)
+                        .addComponent(ckbMarS)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ckbMarPP)
+                        .addComponent(ckbAbrS)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ckbAbrPP)
+                        .addComponent(ckbMaiS)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ckbMaiPP)
+                        .addComponent(ckbJunS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(ckbAgoS)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ckbJunPP))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(ckbJulPP, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+                        .addComponent(ckbSetS)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ckbAgoPP)
+                        .addComponent(ckbOutS)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ckbSetPP)
+                        .addComponent(ckbNovS)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ckbOutPP)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ckbNovPP)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ckbDezPP)))
-                .addContainerGap())
+                        .addComponent(ckbDezS)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ckbJanPP)
-                    .addComponent(ckbFevPP)
-                    .addComponent(ckbMarPP)
-                    .addComponent(ckbAbrPP)
-                    .addComponent(ckbMaiPP)
-                    .addComponent(ckbJunPP))
+                    .addComponent(ckbJanS)
+                    .addComponent(ckbFevS)
+                    .addComponent(ckbMarS)
+                    .addComponent(ckbAbrS)
+                    .addComponent(ckbMaiS)
+                    .addComponent(ckbJunS))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ckbJulPP)
-                    .addComponent(ckbAgoPP)
-                    .addComponent(ckbSetPP)
-                    .addComponent(ckbOutPP)
-                    .addComponent(ckbNovPP)
-                    .addComponent(ckbDezPP))
+                    .addComponent(ckbJulS)
+                    .addComponent(ckbAgoS)
+                    .addComponent(ckbSetS)
+                    .addComponent(ckbOutS)
+                    .addComponent(ckbNovS)
+                    .addComponent(ckbDezS))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         cbArtePescaComposicaoPescaria.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbArtePescaComposicaoPescaria.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbArtePescaComposicaoPescariaItemStateChanged(evt);
+            }
+        });
+        cbArtePescaComposicaoPescaria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbArtePescaComposicaoPescariaActionPerformed(evt);
+            }
+        });
 
+        tfMalhaComposicaoPescaria.setEditable(false);
         tfMalhaComposicaoPescaria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfMalhaComposicaoPescariaActionPerformed(evt);
@@ -759,292 +786,418 @@ public class pescador2 extends javax.swing.JFrame {
 
         jLabel59.setText("Malha.:");
 
+        jLabel60.setText("metros");
+
+        jLabel61.setText("milímetros");
+
+        jLabel62.setText("horas");
+
+        cbArtePesca.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel63.setText("horas");
+
+        jPanel3.setBackground(new java.awt.Color(230, 230, 230));
+
+        ckbJanP.setText("jan");
+
+        ckbFevP.setText("fev");
+
+        ckbMarP.setText("mar");
+
+        ckbAbrP.setText("abr");
+
+        ckbMaiP.setText("mai");
+
+        ckbJunP.setText("jun");
+
+        ckbJulP.setText("jul");
+
+        ckbSetP.setText("set");
+
+        ckbAgoP.setText("ago");
+
+        ckbNovP.setText("nov");
+
+        ckbOutP.setText("out");
+
+        ckbDezP.setText("dez");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ckbJulP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ckbJanP, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(ckbFevP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ckbMarP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ckbAbrP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ckbMaiP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ckbJunP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(ckbAgoP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ckbSetP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ckbOutP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ckbNovP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ckbDezP)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ckbJanP)
+                    .addComponent(ckbFevP)
+                    .addComponent(ckbMarP)
+                    .addComponent(ckbAbrP)
+                    .addComponent(ckbMaiP)
+                    .addComponent(ckbJunP))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ckbJulP)
+                    .addComponent(ckbAgoP)
+                    .addComponent(ckbSetP)
+                    .addComponent(ckbOutP)
+                    .addComponent(ckbNovP)
+                    .addComponent(ckbDezP))
+                .addContainerGap())
+        );
+
+        jLabel64.setText("Dias");
+
+        jLabel65.setText("KG");
+
+        jLabel66.setText("metros");
+
+        jLabel67.setText("milímetros");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(ckbArmadorPescador)
-                                .addComponent(ckbAssalariado)
-                                .addComponent(ckbParceria)
-                                .addComponent(ckbFamiliar)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel24)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(cbPescador, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jLabel43)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel47)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(tfDesdeQuandoPescador, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel58))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel2)
-                                        .addComponent(jLabel3)
-                                        .addComponent(jLabel4)
-                                        .addComponent(jLabel1))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ckbArmadorPescador)
+                                    .addComponent(ckbAssalariado)
+                                    .addComponent(ckbParceria)
+                                    .addComponent(ckbFamiliar)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel24)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(cbPescador, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel43)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel47)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(tfDesdeQuandoPescador, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel58))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel2)
+                                            .addComponent(jLabel3)
+                                            .addComponent(jLabel4)
+                                            .addComponent(jLabel1))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(ckbColoniaSim)
+                                                        .addGap(59, 59, 59)
+                                                        .addComponent(jLabel44)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                                .addComponent(ckbAssociacaoSim)
+                                                                .addGap(59, 59, 59)
+                                                                .addComponent(jLabel45))
+                                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addComponent(ckbCooperativaSim)
+                                                                .addGap(59, 59, 59)
+                                                                .addComponent(jLabel46)))
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(tfQualCooperativa, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(tfQualAssociacao)
+                                                    .addComponent(tfQualColonia, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(rbInssSim)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(rbInssNao)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(rbInssEmpregado))))
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jLabel6)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(ckbPossuiRgp))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jLabel5)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(ckbIbamaSim)))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel26)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(tfNomeBarco, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel27)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(tfPortoOrigem, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel28)
+                                            .addComponent(jLabel29))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(tfConservacaoPescado)
+                                            .addComponent(tfTempoTrabalhandoBarco, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel22)
+                                            .addComponent(jLabel23))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(ckbTipoCAM)
+                                                .addGap(14, 14, 14)
+                                                .addComponent(ckbTipoBPP)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(ckbTipoBMP)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(ckbTipoOutros)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jLabel25)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(tfOutroTipoQual, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(ckbEmbarcacaoPropria)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(ckbEmbarcacaoPatrao))))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel41)
+                                            .addComponent(jLabel36)
+                                            .addComponent(jLabel40)
+                                            .addComponent(jLabel39)
+                                            .addComponent(jLabel37)
+                                            .addComponent(jLabel38))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(rbMadeira)
+                                            .addComponent(ckbDrenagemSim)
+                                            .addComponent(ckbAguaSim)
+                                            .addComponent(ckbFossaSim)
+                                            .addComponent(ckbLuzSim)
+                                            .addComponent(rbBanheiroDentro))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(rbBanheiroFora)
+                                            .addComponent(rbAlvenaria)))
+                                    .addComponent(jLabel51)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ckbRecebeBeneficioGovernoSim)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel14)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(tfQualBeneficio, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel49)
+                                    .addComponent(jLabel50)
+                                    .addComponent(jLabel48)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(btExcluirEspeciesCapturadas)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(jLabel54)
+                                                        .addGap(18, 18, 18)
+                                                        .addComponent(tfFimSafra, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(jLabel53)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(cbEspecie, javax.swing.GroupLayout.Alignment.TRAILING, 0, 128, Short.MAX_VALUE)
+                                                            .addComponent(tfInicioSafra))))
+                                                .addComponent(jLabel52))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addGroup(jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(ckbColoniaSim)
-                                                    .addGap(59, 59, 59)
-                                                    .addComponent(jLabel44)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                            .addComponent(ckbAssociacaoSim)
-                                                            .addGap(59, 59, 59)
-                                                            .addComponent(jLabel45))
+                                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(jLabel56)
+                                                        .addComponent(jLabel57))
+                                                    .addGap(33, 33, 33)
+                                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                                            .addComponent(ckbCooperativaSim)
-                                                            .addGap(59, 59, 59)
-                                                            .addComponent(jLabel46)))
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(tfQualCooperativa, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(tfQualAssociacao)
-                                                .addComponent(tfQualColonia, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(rbInssSim)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(rbInssNao)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(rbInssEmpregado))))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ckbPossuiRgp))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(ckbIbamaSim)))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel26)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(tfNomeBarco, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel27)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(tfPortoOrigem, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jLabel19)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel28)
-                                        .addComponent(jLabel29))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(tfConservacaoPescado)
-                                        .addComponent(tfTempoTrabalhandoBarco, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel22)
-                                        .addComponent(jLabel23))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(ckbTipoCAM)
-                                            .addGap(14, 14, 14)
-                                            .addComponent(ckbTipoBPP)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(ckbTipoBMP)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(ckbTipoOutros)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(jLabel25)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(tfOutroTipoQual, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(ckbEmbarcacaoPropria)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(ckbEmbarcacaoPatrao))))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel41)
-                                        .addComponent(jLabel36)
-                                        .addComponent(jLabel40)
-                                        .addComponent(jLabel39)
-                                        .addComponent(jLabel37)
-                                        .addComponent(jLabel38))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(rbMadeira)
-                                        .addComponent(ckbDrenagemSim)
-                                        .addComponent(ckbAguaSim)
-                                        .addComponent(ckbFossaSim)
-                                        .addComponent(ckbLuzSim)
-                                        .addComponent(rbBanheiroDentro))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(rbBanheiroFora)
-                                        .addComponent(rbAlvenaria)))
-                                .addComponent(jLabel51)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel7)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(ckbRecebeBeneficioGovernoSim)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jLabel14)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(tfQualBeneficio, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jLabel49)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel52)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(cbEspecie, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addComponent(jLabel50, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButton1))
-                                .addComponent(jLabel48)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel53)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(tfInicioSafra))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel54)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(tfFimSafra, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel55)
-                                            .addComponent(jLabel56))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(tfTamanho)
-                                            .addComponent(tfArteDePesca, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel57)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(tfMalha, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(btAddEspeciesCapturadas, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(btExcluirEspeciesCapturadas))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel20)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(tfAlemPescaOutraPescaria))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel15)
-                                                .addComponent(jLabel17))
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(tfQuantasViagensMes)
-                                                .addComponent(tfTempoChegarPesqueiro, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(tfRendaMediaPescador, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                            .addComponent(tfTamanho, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                            .addComponent(jLabel67)
+                                                            .addGap(55, 55, 55)
+                                                            .addComponent(btAddEspeciesCapturadas, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                            .addComponent(tfMalha, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                            .addComponent(jLabel66))))
+                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGap(18, 18, 18)
+                                                    .addComponent(jLabel55)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(cbArtePesca, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                            .addGap(14, 14, 14)
-                                            .addComponent(jLabel16))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                            .addGap(12, 12, 12)
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel18)
-                                                .addComponent(jLabel21))
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(tfDiasdePesca, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-                                                .addComponent(tfProducaoViagem)
-                                                .addComponent(tfPeriodo)))))
-                                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, 855, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel59)
-                                            .addComponent(jLabel8)
-                                            .addComponent(jLabel10)
-                                            .addComponent(jLabel12))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(tfTamanhoComposicaoPescaria)
-                                            .addComponent(cbEspecieComposicaoPescaria, 0, 156, Short.MAX_VALUE)
-                                            .addComponent(cbArtePescaComposicaoPescaria, 0, 156, Short.MAX_VALUE)
-                                            .addComponent(tfMalhaComposicaoPescaria, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addComponent(jLabel13)
-                                                        .addGap(11, 11, 11))
-                                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addComponent(jLabel11)
-                                                        .addGap(18, 18, 18)))
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                    .addComponent(tfTempoArteAgua)
-                                                    .addComponent(tfQuantidadeArtePesca, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
-                                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(ckbTempoArteAguaDia)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(ckbTempoArteAguaNoite))))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel9)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel33)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(tfLocalCP, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel35)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(tfLatitudeCP, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                    .addComponent(btExcluirRT)
-                                    .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel33)
+                                                .addComponent(jLabel34)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(tfLongitudeCP, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(btAdicionarCP))
+                                            .addComponent(btExcluirCP)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel15)
+                                                    .addComponent(jLabel17)
+                                                    .addComponent(jLabel20)
+                                                    .addComponent(jLabel19))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(tfAlemPescaOutraPescaria, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(tfTempoChegarPesqueiro, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jLabel63))
+                                                    .addComponent(tfQuantasViagensMes, javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(tfRendaMediaPescador, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(jLabel21)
+                                                        .addGap(17, 17, 17)
+                                                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addGap(2, 2, 2)
+                                                                .addComponent(jLabel16)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                .addComponent(tfDiasdePesca, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE))
+                                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addComponent(jLabel18)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(tfProducaoViagem, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)))
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(jLabel65)
+                                                            .addComponent(jLabel64))
+                                                        .addGap(88, 88, 88)))))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jLabel30)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(tfLocalCP, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(tfParentescoRT, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel35)
+                                            .addComponent(jLabel31)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(tfLatitudeCP, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(tfAtividadeRT, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jLabel32)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(tfRendaRT, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(jLabel34)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(tfLongitudeCP, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(btAdicionarCP))
-                                        .addComponent(btExcluirCP))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel30)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tfParentescoRT, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel31)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tfAtividadeRT, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel32)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tfRendaRT, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(40, 40, 40)
-                                        .addComponent(btAdicionarRT)))))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2))
-                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(btAdicionarRT)
+                                            .addGap(58, 58, 58))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(jLabel59)
+                                                    .addComponent(jLabel8)
+                                                    .addComponent(jLabel10)
+                                                    .addComponent(jLabel12))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(cbEspecieComposicaoPescaria, 0, 156, Short.MAX_VALUE)
+                                                    .addComponent(cbArtePescaComposicaoPescaria, 0, 156, Short.MAX_VALUE)
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                            .addComponent(tfMalhaComposicaoPescaria, javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(tfTamanhoComposicaoPescaria, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE))
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(jLabel61)
+                                                            .addComponent(jLabel60))))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addComponent(jLabel13)
+                                                                .addGap(11, 11, 11))
+                                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addComponent(jLabel11)
+                                                                .addGap(18, 18, 18)))
+                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(ckbTempoArteAguaDia)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(ckbTempoArteAguaNoite))
+                                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                                    .addComponent(tfQuantidadeArtePesca, javax.swing.GroupLayout.Alignment.LEADING)
+                                                                    .addComponent(tfTempoArteAgua, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE))
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(jLabel62))))
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(jLabel9)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                            .addComponent(btExcluirRT)
+                                            .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.LEADING)))
+                                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(90, 90, 90))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jButton3)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jButton2))
+                                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -1065,13 +1218,13 @@ public class pescador2 extends javax.swing.JFrame {
                         .addComponent(jLabel38)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel36)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 5, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbMadeira)
                             .addComponent(rbAlvenaria))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ckbLuzSim, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                        .addComponent(ckbLuzSim, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                         .addGap(2, 2, 2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1082,7 +1235,7 @@ public class pescador2 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(62, 62, 62)
-                        .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE))
+                        .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -1096,7 +1249,7 @@ public class pescador2 extends javax.swing.JFrame {
                                     .addComponent(ckbDrenagemSim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(ckbFossaSim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(ckbFossaSim, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -1186,11 +1339,13 @@ public class pescador2 extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tfTamanhoComposicaoPescaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel60))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tfMalhaComposicaoPescaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel59))
+                            .addComponent(jLabel59)
+                            .addComponent(jLabel61))
                         .addGap(52, 52, 52))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1198,12 +1353,15 @@ public class pescador2 extends javax.swing.JFrame {
                             .addComponent(jLabel11))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13)
-                            .addComponent(tfTempoArteAgua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ckbTempoArteAguaDia)
-                            .addComponent(ckbTempoArteAguaNoite))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addGap(13, 13, 13)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ckbTempoArteAguaDia)
+                                    .addComponent(ckbTempoArteAguaNoite)))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(tfTempoArteAgua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel62)))))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel33)
@@ -1217,29 +1375,39 @@ public class pescador2 extends javax.swing.JFrame {
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btExcluirCP)
-                .addGap(78, 78, 78)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfTempoChegarPesqueiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15)
-                    .addComponent(jLabel16)
-                    .addComponent(tfDiasdePesca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfQuantasViagensMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17)
-                    .addComponent(jLabel18)
-                    .addComponent(tfProducaoViagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel19)
-                    .addComponent(tfRendaMediaPescador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfPeriodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel21))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel20)
-                    .addComponent(tfAlemPescaOutraPescaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(11, 11, 11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tfTempoChegarPesqueiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel63))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel17)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(tfQuantasViagensMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel65)
+                                    .addComponent(tfProducaoViagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel18))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(tfRendaMediaPescador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel19)
+                                    .addComponent(jLabel21))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel20)
+                            .addComponent(tfAlemPescaOutraPescaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel16)
+                            .addComponent(tfDiasdePesca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel64))
+                        .addGap(31, 31, 31)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(123, 123, 123)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel50)
@@ -1247,22 +1415,24 @@ public class pescador2 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel52)
                     .addComponent(cbEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(jButton1)
+                    .addComponent(jLabel55)
+                    .addComponent(cbArtePesca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel53)
                     .addComponent(tfInicioSafra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel55)
-                    .addComponent(tfArteDePesca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel57)
-                    .addComponent(tfMalha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfMalha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel66))
                 .addGap(9, 9, 9)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel54)
                     .addComponent(tfFimSafra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tfTamanho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel56)
-                    .addComponent(btAddEspeciesCapturadas))
+                    .addComponent(btAddEspeciesCapturadas)
+                    .addComponent(jLabel67))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1316,11 +1486,11 @@ public class pescador2 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 899, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 901, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE)
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
@@ -1346,10 +1516,6 @@ public class pescador2 extends javax.swing.JFrame {
     private void tfNomeBarcoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNomeBarcoActionPerformed
         // TODO add your handling code here:
 }//GEN-LAST:event_tfNomeBarcoActionPerformed
-
-    private void tfPeriodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPeriodoActionPerformed
-        // TODO add your handling code here:
-}//GEN-LAST:event_tfPeriodoActionPerformed
 
     private void tfOutroTipoQualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfOutroTipoQualActionPerformed
         // TODO add your handling code here:
@@ -1400,11 +1566,10 @@ public class pescador2 extends javax.swing.JFrame {
 }//GEN-LAST:event_ckbFamiliarActionPerformed
 
     private void cbPescadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbPescadorActionPerformed
-
         if (inicia_combo == 1){
             mostra_dados();
         }
-        inicia_combo = 1;
+        //inicia_combo = 1;
     }//GEN-LAST:event_cbPescadorActionPerformed
 
     private void cbPescadorItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbPescadorItemStateChanged
@@ -1470,6 +1635,17 @@ public class pescador2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfMalhaComposicaoPescariaActionPerformed
 
+    private void cbArtePescaComposicaoPescariaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbArtePescaComposicaoPescariaItemStateChanged
+        
+    }//GEN-LAST:event_cbArtePescaComposicaoPescariaItemStateChanged
+
+    private void cbArtePescaComposicaoPescariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbArtePescaComposicaoPescariaActionPerformed
+        if (inicia_combo == 1){
+             mudar_estadoCB();
+        }
+        //inicia_combo = 1;
+    }//GEN-LAST:event_cbArtePescaComposicaoPescariaActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -1490,38 +1666,51 @@ public class pescador2 extends javax.swing.JFrame {
     private javax.swing.JButton btExcluirEspeciesCapturadas;
     private javax.swing.JButton btExcluirRT;
     private javax.swing.ButtonGroup casacasa;
+    private javax.swing.JComboBox cbArtePesca;
     private javax.swing.JComboBox cbArtePescaComposicaoPescaria;
     private javax.swing.JComboBox cbEspecie;
     private javax.swing.JComboBox cbEspecieComposicaoPescaria;
     private javax.swing.JComboBox cbPescador;
-    private javax.swing.JCheckBox ckbAbrPP;
-    private javax.swing.JCheckBox ckbAgoPP;
+    private javax.swing.JCheckBox ckbAbrP;
+    private javax.swing.JCheckBox ckbAbrS;
+    private javax.swing.JCheckBox ckbAgoP;
+    private javax.swing.JCheckBox ckbAgoS;
     private javax.swing.JCheckBox ckbAguaSim;
     private javax.swing.JCheckBox ckbArmadorPescador;
     private javax.swing.JCheckBox ckbAssalariado;
     private javax.swing.JCheckBox ckbAssociacaoSim;
     private javax.swing.JCheckBox ckbColoniaSim;
     private javax.swing.JCheckBox ckbCooperativaSim;
-    private javax.swing.JCheckBox ckbDezPP;
+    private javax.swing.JCheckBox ckbDezP;
+    private javax.swing.JCheckBox ckbDezS;
     private javax.swing.JCheckBox ckbDrenagemSim;
     private javax.swing.JCheckBox ckbEmbarcacaoPatrao;
     private javax.swing.JCheckBox ckbEmbarcacaoPropria;
     private javax.swing.JCheckBox ckbFamiliar;
-    private javax.swing.JCheckBox ckbFevPP;
+    private javax.swing.JCheckBox ckbFevP;
+    private javax.swing.JCheckBox ckbFevS;
     private javax.swing.JCheckBox ckbFossaSim;
     private javax.swing.JCheckBox ckbIbamaSim;
-    private javax.swing.JCheckBox ckbJanPP;
-    private javax.swing.JCheckBox ckbJulPP;
-    private javax.swing.JCheckBox ckbJunPP;
+    private javax.swing.JCheckBox ckbJanP;
+    private javax.swing.JCheckBox ckbJanS;
+    private javax.swing.JCheckBox ckbJulP;
+    private javax.swing.JCheckBox ckbJulS;
+    private javax.swing.JCheckBox ckbJunP;
+    private javax.swing.JCheckBox ckbJunS;
     private javax.swing.JCheckBox ckbLuzSim;
-    private javax.swing.JCheckBox ckbMaiPP;
-    private javax.swing.JCheckBox ckbMarPP;
-    private javax.swing.JCheckBox ckbNovPP;
-    private javax.swing.JCheckBox ckbOutPP;
+    private javax.swing.JCheckBox ckbMaiP;
+    private javax.swing.JCheckBox ckbMaiS;
+    private javax.swing.JCheckBox ckbMarP;
+    private javax.swing.JCheckBox ckbMarS;
+    private javax.swing.JCheckBox ckbNovP;
+    private javax.swing.JCheckBox ckbNovS;
+    private javax.swing.JCheckBox ckbOutP;
+    private javax.swing.JCheckBox ckbOutS;
     private javax.swing.JCheckBox ckbParceria;
     private javax.swing.JCheckBox ckbPossuiRgp;
     private javax.swing.JCheckBox ckbRecebeBeneficioGovernoSim;
-    private javax.swing.JCheckBox ckbSetPP;
+    private javax.swing.JCheckBox ckbSetP;
+    private javax.swing.JCheckBox ckbSetS;
     private javax.swing.JCheckBox ckbTempoArteAguaDia;
     private javax.swing.JCheckBox ckbTempoArteAguaNoite;
     private javax.swing.JCheckBox ckbTipoBMP;
@@ -1588,11 +1777,20 @@ public class pescador2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -1614,7 +1812,6 @@ public class pescador2 extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbInssSim;
     private javax.swing.JRadioButton rbMadeira;
     private javax.swing.JTextField tfAlemPescaOutraPescaria;
-    private javax.swing.JTextField tfArteDePesca;
     private javax.swing.JTextField tfAtividadeRT;
     private javax.swing.JTextField tfConservacaoPescado;
     private javax.swing.JTextField tfDesdeQuandoPescador;
@@ -1629,7 +1826,6 @@ public class pescador2 extends javax.swing.JFrame {
     private javax.swing.JTextField tfNomeBarco;
     private javax.swing.JTextField tfOutroTipoQual;
     private javax.swing.JTextField tfParentescoRT;
-    private javax.swing.JTextField tfPeriodo;
     private javax.swing.JTextField tfPortoOrigem;
     private javax.swing.JTextField tfProducaoViagem;
     private javax.swing.JTextField tfQualAssociacao;
@@ -1733,15 +1929,20 @@ public class pescador2 extends javax.swing.JFrame {
 
             sqlinsert = "insert into pescador_composicao_pescaria "
                     + "(cod_pescador,pescaria_principal,arte_pesca,"
-                    + "quantidade_arte_pesca,tamanho_malha,tempo_arte_agua,"
+                    + "quantidade_arte_pesca,tamanho,malha,tempo_arte_agua,"
                     + "dia,noite,tempo_chegada,dias_efetivos_pesca,viagens_mes,"
                     + "producao_viagem,renda_media_pecador,outra_pescaria,"
-                    + "periodo,jan,fev,mar,abr,mai,jun,jul,ago,sett,out,nov,dez) values ("+
+                    + "safra_jan,safra_fev,safra_mar,safra_abr,safra_mai,safra_jun,"
+                    + "safra_jul,safra_ago,safra_set,safra_out,safra_nov,safra_dez,"
+                    + "periodo_jan,periodo_fev,periodo_mar,periodo_abr,"
+                    + "periodo_mai,periodo_jun,periodo_jul,periodo_ago,"
+                    + "periodo_set,periodo_out,periodo_nov,periodo_dez) values ("+
                     codigo+",'"+
                     cbEspecieComposicaoPescaria.getSelectedItem()+"','"+
                     cbArtePescaComposicaoPescaria.getSelectedItem()+"','"+
                     tfQuantidadeArtePesca.getText()+"','"+
                     tfTamanhoComposicaoPescaria.getText()+"','"+
+                    tfMalhaComposicaoPescaria.getText()+"','"+
                     tfTempoArteAgua.getText()+"','"+
                     util.checarCkb(ckbTempoArteAguaDia)+"','"+
                     util.checarCkb(ckbTempoArteAguaNoite)+"','"+
@@ -1751,19 +1952,30 @@ public class pescador2 extends javax.swing.JFrame {
                     tfProducaoViagem.getText()+"','"+
                     tfRendaMediaPescador.getText()+"','"+
                     tfAlemPescaOutraPescaria.getText()+"','"+
-                    tfPeriodo.getText()+"','"+
-                    util.checarCkb(ckbJanPP)+"','"+
-                    util.checarCkb(ckbFevPP)+"','"+
-                    util.checarCkb(ckbMarPP)+"','"+
-                    util.checarCkb(ckbAbrPP)+"','"+
-                    util.checarCkb(ckbMaiPP)+"','"+
-                    util.checarCkb(ckbJunPP)+"','"+
-                    util.checarCkb(ckbJulPP)+"','"+
-                    util.checarCkb(ckbAgoPP)+"','"+
-                    util.checarCkb(ckbSetPP)+"','"+
-                    util.checarCkb(ckbOutPP)+"','"+
-                    util.checarCkb(ckbNovPP)+"','"+
-                    util.checarCkb(ckbDezPP)+"')";
+                    util.checarCkb(ckbJanS)+"','"+
+                    util.checarCkb(ckbFevS)+"','"+
+                    util.checarCkb(ckbMarS)+"','"+
+                    util.checarCkb(ckbAbrS)+"','"+
+                    util.checarCkb(ckbMaiS)+"','"+
+                    util.checarCkb(ckbJunS)+"','"+
+                    util.checarCkb(ckbJulS)+"','"+
+                    util.checarCkb(ckbAgoS)+"','"+
+                    util.checarCkb(ckbSetS)+"','"+
+                    util.checarCkb(ckbOutS)+"','"+
+                    util.checarCkb(ckbNovS)+"','"+
+                    util.checarCkb(ckbDezS)+"','"+
+                    util.checarCkb(ckbJanP)+"','"+
+                    util.checarCkb(ckbFevP)+"','"+
+                    util.checarCkb(ckbMarP)+"','"+
+                    util.checarCkb(ckbAbrP)+"','"+
+                    util.checarCkb(ckbMaiP)+"','"+
+                    util.checarCkb(ckbJunP)+"','"+
+                    util.checarCkb(ckbJulP)+"','"+
+                    util.checarCkb(ckbAgoP)+"','"+
+                    util.checarCkb(ckbSetP)+"','"+
+                    util.checarCkb(ckbOutP)+"','"+
+                    util.checarCkb(ckbNovP)+"','"+
+                    util.checarCkb(ckbDezP)+"')";
 
             //System.out.println(sqlinsert);
             if (conexao.salvar(sqlinsert)) {
@@ -1893,21 +2105,22 @@ public class pescador2 extends javax.swing.JFrame {
 
             sqlupdate ="UPDATE pescador_composicao_pescaria SET "
                     +"pescaria_principal = '"+cbEspecieComposicaoPescaria.getSelectedItem()+"',"
-                    +"jan = '"+util.checarCkb(ckbJanPP)+"',"
-                    +"fev = '"+util.checarCkb(ckbFevPP)+"',"
-                    +"mar = '"+util.checarCkb(ckbMarPP)+"',"
-                    +"abr = '"+util.checarCkb(ckbAbrPP)+"',"
-                    +"mai = '"+util.checarCkb(ckbMaiPP)+"',"
-                    +"jun = '"+ util.checarCkb(ckbJunPP)+"',"
-                    +"jul = '"+util.checarCkb(ckbJulPP)+"',"
-                    +"ago = '"+util.checarCkb(ckbAgoPP)+"',"
-                    +"sett = '"+util.checarCkb(ckbSetPP)+"',"
-                    +"out = '"+util.checarCkb(ckbOutPP)+"',"
-                    +"nov = '"+util.checarCkb(ckbNovPP)+"',"
-                    +"dez = '"+util.checarCkb(ckbDezPP)+"',"
+                    +"safra_jan = '"+util.checarCkb(ckbJanS)+"',"
+                    +"safra_fev = '"+util.checarCkb(ckbFevS)+"',"
+                    +"safra_mar = '"+util.checarCkb(ckbMarS)+"',"
+                    +"safra_abr = '"+util.checarCkb(ckbAbrS)+"',"
+                    +"safra_mai = '"+util.checarCkb(ckbMaiS)+"',"
+                    +"safra_jun = '"+ util.checarCkb(ckbJunS)+"',"
+                    +"safra_jul = '"+util.checarCkb(ckbJulS)+"',"
+                    +"safra_ago = '"+util.checarCkb(ckbAgoS)+"',"
+                    +"safra_set = '"+util.checarCkb(ckbSetS)+"',"
+                    +"safra_out = '"+util.checarCkb(ckbOutS)+"',"
+                    +"safra_nov = '"+util.checarCkb(ckbNovS)+"',"
+                    +"safra_dez = '"+util.checarCkb(ckbDezS)+"',"
                     +"arte_pesca = '"+cbArtePescaComposicaoPescaria.getSelectedItem()+"',"
                     +"quantidade_arte_pesca = '"+tfQuantidadeArtePesca.getText()+"',"
-                    +"tamanho_malha = '"+tfTamanhoComposicaoPescaria.getText()+"',"
+                    +"tamanho = '"+tfTamanhoComposicaoPescaria.getText()+"',"
+                    +"malha = '"+tfMalhaComposicaoPescaria.getText()+"',"
                     +"tempo_arte_agua = '"+tfTempoArteAgua.getText()+"',"
                     +"dia = '"+util.checarCkb(ckbTempoArteAguaDia)+"',"
                     +"noite = '"+util.checarCkb(ckbTempoArteAguaNoite)+"',"
@@ -1917,11 +2130,22 @@ public class pescador2 extends javax.swing.JFrame {
                     +"producao_viagem = '"+tfProducaoViagem.getText()+"',"
                     +"renda_media_pecador = '"+tfRendaMediaPescador.getText()+"',"
                     +"outra_pescaria = '"+tfAlemPescaOutraPescaria.getText()+"',"
-                    +"periodo = '"+tfPeriodo.getText()+"' "+
+                    +"periodo_jan = '"+util.checarCkb(ckbJanP)+"',"
+                    +"periodo_fev = '"+util.checarCkb(ckbFevP)+"',"
+                    +"periodo_mar = '"+util.checarCkb(ckbMarP)+"',"
+                    +"periodo_abr = '"+util.checarCkb(ckbAbrP)+"',"
+                    +"periodo_mai = '"+util.checarCkb(ckbMaiP)+"',"
+                    +"periodo_jun = '"+ util.checarCkb(ckbJunP)+"',"
+                    +"periodo_jul = '"+util.checarCkb(ckbJulP)+"',"
+                    +"periodo_ago = '"+util.checarCkb(ckbAgoP)+"',"
+                    +"periodo_set = '"+util.checarCkb(ckbSetP)+"',"
+                    +"periodo_out = '"+util.checarCkb(ckbOutP)+"',"
+                    +"periodo_nov = '"+util.checarCkb(ckbNovP)+"',"
+                    +"periodo_dez = '"+util.checarCkb(ckbDezP)+"' "+
 
                     "where cod_pescador = "+codigo;
 
-            System.out.println(sqlupdate);
+            //System.out.println(sqlupdate);
             if (conexao.salvar(sqlupdate)) {
                 System.out.println("Composição da Pescaria - Alterado com sucesso");
             }
@@ -2112,45 +2336,82 @@ public class pescador2 extends javax.swing.JFrame {
 
             cbEspecieComposicaoPescaria.setSelectedItem(conexao.resultSet.getString("pescaria_principal"));
 
-            if (conexao.resultSet.getString("jan").equals("1"))
-                   ckbJanPP.setSelected(true);
+            if (conexao.resultSet.getString("safra_jan").equals("1"))
+                   ckbJanS.setSelected(true);
 
-            if (conexao.resultSet.getString("fev").equals("1"))
-                   ckbFevPP.setSelected(true);
+            if (conexao.resultSet.getString("safra_fev").equals("1"))
+                   ckbFevS.setSelected(true);
 
-            if (conexao.resultSet.getString("mar").equals("1"))
-                   ckbMarPP.setSelected(true);
+            if (conexao.resultSet.getString("safra_mar").equals("1"))
+                   ckbMarS.setSelected(true);
 
-            if (conexao.resultSet.getString("abr").equals("1"))
-                   ckbAbrPP.setSelected(true);
+            if (conexao.resultSet.getString("safra_abr").equals("1"))
+                   ckbAbrS.setSelected(true);
 
-            if (conexao.resultSet.getString("mai").equals("1"))
-                   ckbMaiPP.setSelected(true);
+            if (conexao.resultSet.getString("safra_mai").equals("1"))
+                   ckbMaiS.setSelected(true);
 
-            if (conexao.resultSet.getString("jun").equals("1"))
-                   ckbJunPP.setSelected(true);
+            if (conexao.resultSet.getString("safra_jun").equals("1"))
+                   ckbJunS.setSelected(true);
 
-            if (conexao.resultSet.getString("jul").equals("1"))
-                   ckbJulPP.setSelected(true);
+            if (conexao.resultSet.getString("safra_jul").equals("1"))
+                   ckbJulS.setSelected(true);
 
-            if (conexao.resultSet.getString("ago").equals("1"))
-                   ckbAgoPP.setSelected(true);
+            if (conexao.resultSet.getString("safra_ago").equals("1"))
+                   ckbAgoS.setSelected(true);
 
-            if (conexao.resultSet.getString("sett").equals("1"))
-                   ckbSetPP.setSelected(true);
+            if (conexao.resultSet.getString("safra_set").equals("1"))
+                   ckbSetS.setSelected(true);
 
-            if (conexao.resultSet.getString("out").equals("1"))
-                   ckbOutPP.setSelected(true);
+            if (conexao.resultSet.getString("safra_out").equals("1"))
+                   ckbOutS.setSelected(true);
 
-            if (conexao.resultSet.getString("nov").equals("1"))
-                   ckbNovPP.setSelected(true);
+            if (conexao.resultSet.getString("safra_nov").equals("1"))
+                   ckbNovS.setSelected(true);
 
-            if (conexao.resultSet.getString("dez").equals("1"))
-                   ckbDezPP.setSelected(true);
+            if (conexao.resultSet.getString("safra_dez").equals("1"))
+                   ckbDezS.setSelected(true);
+
+            if (conexao.resultSet.getString("periodo_jan").equals("1"))
+                   ckbJanP.setSelected(true);
+
+            if (conexao.resultSet.getString("periodo_fev").equals("1"))
+                   ckbFevP.setSelected(true);
+
+            if (conexao.resultSet.getString("periodo_mar").equals("1"))
+                   ckbMarP.setSelected(true);
+
+            if (conexao.resultSet.getString("periodo_abr").equals("1"))
+                   ckbAbrP.setSelected(true);
+
+            if (conexao.resultSet.getString("periodo_mai").equals("1"))
+                   ckbMaiP.setSelected(true);
+
+            if (conexao.resultSet.getString("periodo_jun").equals("1"))
+                   ckbJunP.setSelected(true);
+
+            if (conexao.resultSet.getString("periodo_jul").equals("1"))
+                   ckbJulP.setSelected(true);
+
+            if (conexao.resultSet.getString("periodo_ago").equals("1"))
+                   ckbAgoP.setSelected(true);
+
+            if (conexao.resultSet.getString("periodo_set").equals("1"))
+                   ckbSetP.setSelected(true);
+
+            if (conexao.resultSet.getString("periodo_out").equals("1"))
+                   ckbOutP.setSelected(true);
+
+            if (conexao.resultSet.getString("periodo_nov").equals("1"))
+                   ckbNovP.setSelected(true);
+
+            if (conexao.resultSet.getString("periodo_dez").equals("1"))
+                   ckbDezP.setSelected(true);
 
             cbArtePescaComposicaoPescaria.setSelectedItem(conexao.resultSet.getString("arte_pesca"));
             tfQuantidadeArtePesca.setText(conexao.resultSet.getString("quantidade_arte_pesca"));
-            tfTamanhoComposicaoPescaria.setText(conexao.resultSet.getString("tamanho_malha"));
+            tfTamanhoComposicaoPescaria.setText(conexao.resultSet.getString("tamanho"));
+            tfMalhaComposicaoPescaria.setText(conexao.resultSet.getString("malha"));
             tfTempoArteAgua.setText(conexao.resultSet.getString("tempo_arte_agua"));
 
 
@@ -2169,7 +2430,6 @@ public class pescador2 extends javax.swing.JFrame {
             tfQuantasViagensMes.setText(conexao.resultSet.getString("viagens_mes"));
             tfProducaoViagem.setText(conexao.resultSet.getString("producao_viagem"));
             tfRendaMediaPescador.setText(conexao.resultSet.getString("renda_media_pecador"));
-            tfPeriodo.setText(conexao.resultSet.getString("periodo"));
             tfAlemPescaOutraPescaria.setText(conexao.resultSet.getString("outra_pescaria"));
 
             System.out.println("Passou! pescaria");
@@ -2210,7 +2470,7 @@ public class pescador2 extends javax.swing.JFrame {
 
             System.out.println("Passou! Tabelas");
 
-            attCbEspecie();
+            attCbs();
 
         }catch (SQLException ex) {           
                 JOptionPane.showMessageDialog(null,"Nenhum registro encontrado "+ ex );
@@ -2252,21 +2512,22 @@ public class pescador2 extends javax.swing.JFrame {
 
             //Composição da Pescaria
             cbEspecieComposicaoPescaria.setSelectedIndex(0);
-            ckbJanPP.setSelected(false);
-            ckbFevPP.setSelected(false);
-            ckbMarPP.setSelected(false);
-            ckbAbrPP.setSelected(false);
-            ckbMaiPP.setSelected(false);
-            ckbJunPP.setSelected(false);
-            ckbJulPP.setSelected(false);
-            ckbAgoPP.setSelected(false);
-            ckbSetPP.setSelected(false);
-            ckbOutPP.setSelected(false);
-            ckbNovPP.setSelected(false);
-            ckbDezPP.setSelected(false);
+            ckbJanS.setSelected(false);
+            ckbFevS.setSelected(false);
+            ckbMarS.setSelected(false);
+            ckbAbrS.setSelected(false);
+            ckbMaiS.setSelected(false);
+            ckbJunS.setSelected(false);
+            ckbJulS.setSelected(false);
+            ckbAgoS.setSelected(false);
+            ckbSetS.setSelected(false);
+            ckbOutS.setSelected(false);
+            ckbNovS.setSelected(false);
+            ckbDezS.setSelected(false);
             cbArtePescaComposicaoPescaria.setSelectedIndex(0);
             tfQuantidadeArtePesca.setText("");
             tfTamanhoComposicaoPescaria.setText("");
+            tfMalhaComposicaoPescaria.setText("");
             tfTempoArteAgua.setText("");
             ckbTempoArteAguaDia.setSelected(false);
             ckbTempoArteAguaNoite.setSelected(false);
@@ -2275,7 +2536,18 @@ public class pescador2 extends javax.swing.JFrame {
             tfQuantasViagensMes.setText("");
             tfProducaoViagem.setText("");
             tfRendaMediaPescador.setText("");
-            tfPeriodo.setText("");
+            ckbJanP.setSelected(false);
+            ckbFevP.setSelected(false);
+            ckbMarP.setSelected(false);
+            ckbAbrP.setSelected(false);
+            ckbMaiP.setSelected(false);
+            ckbJunP.setSelected(false);
+            ckbJulP.setSelected(false);
+            ckbAgoP.setSelected(false);
+            ckbSetP.setSelected(false);
+            ckbOutP.setSelected(false);
+            ckbNovP.setSelected(false);
+            ckbDezP.setSelected(false);
             tfAlemPescaOutraPescaria.setText("");
 
             //Dados da Embarcação
@@ -2300,7 +2572,7 @@ public class pescador2 extends javax.swing.JFrame {
             tfLongitudeCP.setText("");
             tfInicioSafra.setText("");
             tfFimSafra.setText("");
-            tfArteDePesca.setText("");
+            cbArtePesca.setSelectedIndex(0);
             tfMalha.setText("");
             tfTamanho.setText("");
 
@@ -2455,7 +2727,7 @@ public class pescador2 extends javax.swing.JFrame {
                     cbEspecie.getSelectedItem()+"','"+
                     tfInicioSafra.getText()+"','"+
                     tfFimSafra.getText()+"','"+
-                    tfArteDePesca.getText()+"','"+
+                    cbArtePesca.getSelectedItem()+"','"+
                     tfTamanho.getText()+"','"+
                     tfMalha.getText()+"')";
 
@@ -2533,7 +2805,7 @@ public class pescador2 extends javax.swing.JFrame {
         }
     }
 
-    public void attCbEspecie() {
+    private void attCbs() {
         String item = new String();
         try {
             cbEspecie.removeAllItems();
@@ -2547,7 +2819,33 @@ public class pescador2 extends javax.swing.JFrame {
             }
 
         }catch (SQLException ex) {
-            System.out.println("Erro no cbEspécie "+ex);
+            System.out.println("attCbs() Com erro 1 "+ex);
+        }
+
+         try {
+            cbArtePescaComposicaoPescaria.removeAllItems();
+            conexao.execute("select * from arte_de_pesca");
+
+            while (conexao.resultSet.next()){
+                item = conexao.resultSet.getString("arte_de_pesca");
+                cbArtePescaComposicaoPescaria.addItem(item);
+            }
+
+        }catch (SQLException ex) {
+            System.out.println("attCbs() Com erro 2 "+ex);
+        }
+    }
+    
+    private void mudar_estadoCB(){
+    if (cbArtePescaComposicaoPescaria.getSelectedItem().toString().toLowerCase().equals("rede de emalhar")){
+            tfTamanhoComposicaoPescaria.setEditable(true);
+            tfMalhaComposicaoPescaria.setEditable(true);
+        }
+        else{
+            tfTamanhoComposicaoPescaria.setEditable(false);
+            tfMalhaComposicaoPescaria.setEditable(false);
+            tfTamanhoComposicaoPescaria.setText("");
+            tfMalhaComposicaoPescaria.setText("");
         }
     }
 
