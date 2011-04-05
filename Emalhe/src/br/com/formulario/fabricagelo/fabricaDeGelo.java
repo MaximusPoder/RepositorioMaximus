@@ -1,7 +1,7 @@
-package br.com.formulario.pescador;
+package br.com.formulario.fabricagelo;
 
+import br.com.formulario.pescador.*;
 import br.com.conexao.Conexao;
-import br.com.util.JIntField;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -12,17 +12,17 @@ import javax.swing.JOptionPane;
  *
  * @author Jhonathas
  */
-public class pescador extends javax.swing.JFrame {
+public class fabricaDeGelo extends javax.swing.JFrame {
 
     private int navega = 0; //variavel pra saber o  botão clicado;
 
     private Conexao conexao;
 
 
-    public pescador() {
+    public fabricaDeGelo() {
         initComponents(); //Inicializa os componentes da tela
-        conexao = new Conexao();
-        conexao.conecta("emalhe");
+//        conexao = new Conexao();
+//        conexao.conecta("emalhe");
               
         //Insere nomes do município no cbMunicipio
         try {
@@ -31,7 +31,7 @@ public class pescador extends javax.swing.JFrame {
                 cbMunicipio.addItem(conexao.resultSet.getString("nome"));
             }
         }catch (SQLException ex) {
-            Logger.getLogger(pescador.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(fabricaDeGelo.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         //inicia a conexão com o bd do formulário
@@ -43,7 +43,7 @@ public class pescador extends javax.swing.JFrame {
 
 
         }catch (SQLException ex) {
-            Logger.getLogger(pescador.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(fabricaDeGelo.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
@@ -60,7 +60,7 @@ public class pescador extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         tfNome = new javax.swing.JTextField();
-        tfIdade = new JIntField();
+        tfIdade = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         cbMunicipio = new javax.swing.JComboBox();
@@ -88,7 +88,7 @@ public class pescador extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
-        tfComposicaoFamiliar = new JIntField();
+        tfComposicaoFamiliar = new javax.swing.JTextField();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         tfPqParou = new javax.swing.JTextField();
@@ -235,7 +235,7 @@ public class pescador extends javax.swing.JFrame {
 
         jLabel31.setText("Estado civil.:");
 
-        jLabel32.setText("Número de filhos.:");
+        jLabel32.setText("Composição Familiar.:");
 
         jLabel33.setText("Escolaridade.:");
 
@@ -305,8 +305,8 @@ public class pescador extends javax.swing.JFrame {
                             .addComponent(jLabel32)
                             .addComponent(jLabel34))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfComposicaoFamiliar, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tfComposicaoFamiliar, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tfPqParou, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -326,7 +326,7 @@ public class pescador extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(tfApelido)
                                 .addComponent(cbLocalMoradia, 0, 158, Short.MAX_VALUE)))))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -381,7 +381,7 @@ public class pescador extends javax.swing.JFrame {
                     .addComponent(tfPqParou, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel34))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -390,11 +390,11 @@ public class pescador extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 709, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 707, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
@@ -453,7 +453,7 @@ public class pescador extends javax.swing.JFrame {
             navega = 2;
 
         }catch (SQLException ex) {
-            Logger.getLogger(pescador.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(fabricaDeGelo.class.getName()).log(Level.SEVERE, null, ex);
         }
 }//GEN-LAST:event_botao_ultimoActionPerformed
 
@@ -478,7 +478,7 @@ public class pescador extends javax.swing.JFrame {
             navega = 1;
 
         }catch (SQLException ex) {
-            Logger.getLogger(pescador.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(fabricaDeGelo.class.getName()).log(Level.SEVERE, null, ex);
         }
 }//GEN-LAST:event_botao_primeiroActionPerformed
 
@@ -569,7 +569,7 @@ public class pescador extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new pescador().setVisible(true);
+                new fabricaDeGelo().setVisible(true);
             }
         });
     }
@@ -656,7 +656,7 @@ public class pescador extends javax.swing.JFrame {
          try {
                     conexao.resultSet.previous();
                 } catch (SQLException ex1) {
-                    Logger.getLogger(pescador.class.getName()).log(Level.SEVERE, null, ex1);
+                    Logger.getLogger(fabricaDeGelo.class.getName()).log(Level.SEVERE, null, ex1);
                 }
     }
 
@@ -664,7 +664,7 @@ public class pescador extends javax.swing.JFrame {
         try {
                     conexao.resultSet.next();
                 } catch (SQLException ex1) {
-                    Logger.getLogger(pescador.class.getName()).log(Level.SEVERE, null, ex1);
+                    Logger.getLogger(fabricaDeGelo.class.getName()).log(Level.SEVERE, null, ex1);
                 }
     }
 

@@ -162,20 +162,12 @@
                                           <Component id="jLabel29" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="tfTempoTrabalhandoBarco" min="-2" pref="111" max="-2" attributes="1"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jLabel68" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="ckbGelo" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="ckbSal" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="ckbFrigorifico" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="tfConservacaoPescado" max="32767" attributes="1"/>
+                                          <Component id="tfTempoTrabalhandoBarco" alignment="0" min="-2" pref="111" max="-2" attributes="1"/>
                                       </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel68" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -481,7 +473,7 @@
                               <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="21" max="32767" attributes="0"/>
+                              <EmptySpace pref="19" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -489,7 +481,7 @@
                                   <Component id="rbAlvenaria" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="ckbLuzSim" pref="42" max="32767" attributes="0"/>
+                              <Component id="ckbLuzSim" pref="40" max="32767" attributes="0"/>
                               <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -503,7 +495,7 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                              <Component id="jLabel41" pref="33" max="32767" attributes="0"/>
+                              <Component id="jLabel41" pref="32" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -523,7 +515,7 @@
                                   </Group>
                               </Group>
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                              <Component id="ckbFossaSim" pref="39" max="32767" attributes="0"/>
+                              <Component id="ckbFossaSim" pref="38" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -631,7 +623,7 @@
                                   <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel60" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="20" max="32767" attributes="0"/>
+                              <EmptySpace pref="18" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="tfMalhaComposicaoPescaria" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel59" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -789,9 +781,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ckbGelo" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ckbSal" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ckbFrigorifico" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfConservacaoPescado" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
@@ -1023,6 +1013,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfQualColonia">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try{&#xa;javax.swing.text.MaskFormatter cpf= new javax.swing.text.MaskFormatter(&quot;###.###.###-##&quot;);&#xa;tfConservacaoPescado = new javax.swing.JFormattedTextField(cpf);&#xa;}catch (Exception e){&#xa;}"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel44">
               <Properties>
@@ -1186,9 +1179,6 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfTempoChegarPesqueiroActionPerformed"/>
               </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JIntField()"/>
-              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel15">
               <Properties>
@@ -1199,9 +1189,6 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfDiasdePescaActionPerformed"/>
               </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JIntField()"/>
-              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel16">
               <Properties>
@@ -1212,9 +1199,6 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfQuantasViagensMesActionPerformed"/>
               </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JIntField()"/>
-              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel17">
               <Properties>
@@ -1230,9 +1214,6 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfProducaoViagemActionPerformed"/>
               </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JDecimal2()"/>
-              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel19">
               <Properties>
@@ -1243,9 +1224,6 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfRendaMediaPescadorActionPerformed"/>
               </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JMoneyField()"/>
-              </AuxValues>
             </Component>
             <Component class="javax.swing.JTextField" name="tfAlemPescaOutraPescaria">
               <Events>
@@ -1254,13 +1232,10 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel20">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Outra pescaria.:"/>
+                <Property name="text" type="java.lang.String" value="Al&#xe9;m da pesca outra pescaria.:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfOutroTipoQual">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfOutroTipoQualActionPerformed"/>
               </Events>
@@ -1412,6 +1387,11 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Como se faz a conserva&#xe7;&#xe3;o do pescado.:"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="tfConservacaoPescado">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfConservacaoPescadoActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JRadioButton" name="rbInssSim">
               <Properties>
@@ -1640,14 +1620,8 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfInicioSafra">
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JIntField()"/>
-              </AuxValues>
             </Component>
             <Component class="javax.swing.JTextField" name="tfFimSafra">
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JIntField()"/>
-              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel55">
               <Properties>
@@ -1660,9 +1634,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfTamanho">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel57">
               <Properties>
@@ -1670,9 +1641,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfMalha">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btAddEspeciesCapturadas">
               <Properties>
@@ -2120,21 +2088,6 @@
             <Component class="javax.swing.JLabel" name="jLabel68">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Anos"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="ckbGelo">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Gelo"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="ckbSal">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Sal"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="ckbFrigorifico">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Frigor&#xed;fico"/>
               </Properties>
             </Component>
           </SubComponents>
