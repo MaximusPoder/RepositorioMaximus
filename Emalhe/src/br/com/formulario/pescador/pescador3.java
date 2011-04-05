@@ -41,6 +41,7 @@ public class pescador3 extends javax.swing.JFrame {
         grupo_questao_3 = new javax.swing.ButtonGroup();
         grupo_questao_4 = new javax.swing.ButtonGroup();
         grupo_questao_5 = new javax.swing.ButtonGroup();
+        g11 = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         cbPescador = new javax.swing.JComboBox();
@@ -91,12 +92,12 @@ public class pescador3 extends javax.swing.JFrame {
         jScrollPane10 = new javax.swing.JScrollPane();
         taQuestao10 = new javax.swing.JTextArea();
         jLabel35 = new javax.swing.JLabel();
-        ckbQuestao11DeCrescimento = new javax.swing.JCheckBox();
-        ckbQuestao11Estabilizacao = new javax.swing.JCheckBox();
-        ckbQuestao11DeDiminuicao = new javax.swing.JCheckBox();
         btSalvar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         btAtualizar = new javax.swing.JButton();
+        ckbQuestao11DeCrescimento = new javax.swing.JRadioButton();
+        ckbQuestao11Estabilizacao = new javax.swing.JRadioButton();
+        ckbQuestao11DeDiminuicao = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Questionário Atravessador");
@@ -242,12 +243,6 @@ public class pescador3 extends javax.swing.JFrame {
 
         jLabel35.setText("11 - Que perspectivas você tem vê para os próximos anos?");
 
-        ckbQuestao11DeCrescimento.setText("De crescimento");
-
-        ckbQuestao11Estabilizacao.setText("Estabilização");
-
-        ckbQuestao11DeDiminuicao.setText("De diminuição");
-
         btSalvar.setText("Salvar");
         btSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -261,6 +256,15 @@ public class pescador3 extends javax.swing.JFrame {
                 btAtualizarActionPerformed(evt);
             }
         });
+
+        g11.add(ckbQuestao11DeCrescimento);
+        ckbQuestao11DeCrescimento.setText("De crescimento");
+
+        g11.add(ckbQuestao11Estabilizacao);
+        ckbQuestao11Estabilizacao.setText("De Estabilização");
+
+        g11.add(ckbQuestao11DeDiminuicao);
+        ckbQuestao11DeDiminuicao.setText("De Diminuição");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -344,7 +348,6 @@ public class pescador3 extends javax.swing.JFrame {
                             .addComponent(jLabel34)
                             .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
                                 .addComponent(ckbQuestao11DeCrescimento)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(ckbQuestao11Estabilizacao)
@@ -454,7 +457,7 @@ public class pescador3 extends javax.swing.JFrame {
                     .addComponent(ckbQuestao11DeDiminuicao))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btSalvar)
                     .addComponent(btAtualizar))
@@ -526,9 +529,10 @@ public class pescador3 extends javax.swing.JFrame {
     private javax.swing.JCheckBox ckbQ4PorRoubodeRede;
     private javax.swing.JCheckBox ckbQ4PorSobreposicaoDeRedeEEspinhel;
     private javax.swing.JCheckBox ckbQ4PorSobreposicaodeRedes;
-    private javax.swing.JCheckBox ckbQuestao11DeCrescimento;
-    private javax.swing.JCheckBox ckbQuestao11DeDiminuicao;
-    private javax.swing.JCheckBox ckbQuestao11Estabilizacao;
+    private javax.swing.JRadioButton ckbQuestao11DeCrescimento;
+    private javax.swing.JRadioButton ckbQuestao11DeDiminuicao;
+    private javax.swing.JRadioButton ckbQuestao11Estabilizacao;
+    private javax.swing.ButtonGroup g11;
     private javax.swing.ButtonGroup grupo_questao_1;
     private javax.swing.ButtonGroup grupo_questao_2;
     private javax.swing.ButtonGroup grupo_questao_3;
@@ -723,7 +727,7 @@ public class pescador3 extends javax.swing.JFrame {
                    ckbQuestao11DeDiminuicao.setSelected(false);
 
         }catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null,"Nenhum registro encontrado "+ ex );
+                //JOptionPane.showMessageDialog(null,"Nenhum registro encontrado "+ ex );
                 System.out.println("Erro no mostrar dados");               
         }
 
