@@ -1,6 +1,6 @@
 package br.com.formulario.fabricagelo;
 
-import br.com.formulario.pescador.*;
+import br.com.formulario.fabricaDeGelo.*;
 import br.com.conexao.Conexao;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -35,7 +35,7 @@ public class fabricaDeGelo extends javax.swing.JFrame {
         }
 
         //inicia a conexão com o bd do formulário
-        conexao.execute("select * from pescador");
+        conexao.execute("select * from fabrica_gelo");
 
         try {
             conexao.resultSet.first();
@@ -93,7 +93,6 @@ public class fabricaDeGelo extends javax.swing.JFrame {
         lb_pescador = new javax.swing.JLabel();
         tfPessoaEntrevistada = new javax.swing.JTextField();
         ckbFabricaSim = new javax.swing.JCheckBox();
-        ckbFabricaNao = new javax.swing.JCheckBox();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         tfPrecoSaca = new javax.swing.JTextField();
@@ -256,8 +255,6 @@ public class fabricaDeGelo extends javax.swing.JFrame {
 
         ckbFabricaSim.setText("Sim");
 
-        ckbFabricaNao.setText("Não");
-
         jLabel1.setText("8_Qual o preço do gelo. :");
 
         jLabel2.setText("Saca :");
@@ -320,9 +317,7 @@ public class fabricaDeGelo extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel32)
                         .addGap(19, 19, 19)
-                        .addComponent(ckbFabricaSim)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ckbFabricaNao))
+                        .addComponent(ckbFabricaSim))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel34)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -389,7 +384,6 @@ public class fabricaDeGelo extends javax.swing.JFrame {
                         .addGap(36, 36, 36)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(ckbFabricaSim)
-                            .addComponent(ckbFabricaNao)
                             .addComponent(jLabel32)))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel31)
@@ -439,29 +433,23 @@ public class fabricaDeGelo extends javax.swing.JFrame {
         try{
             String sql ="UPDATE pescador SET "+
                     "municipio = '"+cbMunicipio.getSelectedItem()+"',"+
-                    "nome = '"+tfNomeEmpresa.getText()+"',"+
-                    "apelido = '"+ tfFoneFax.getText() +"',"+
-                    "naturalidade = '"+ tfEndereco.getText() +"',"+
-//                    "local_moradia = '"+ cbLocalMoradia.getSelectedItem() +"',"+
-//                    "sexo = '"+ cbSexo.getSelectedItem() +"',"+
-//                    "idade = '"+ tfFuncao.getText() +"',"+
-//                    "atividade_principal = '"+ tfTempoExisteEmpresa.getText() +"',"+
-//                    "atividade_secundaria = '"+ tfQualEmpresaFoi.getText() +"',"+
-//                    "estado_civil = '"+ cbEmpresaFoi.getSelectedItem() +"',"+
-//                    "composicao_familiar = '"+ tfComposicaoFamiliar.getText() +"',"+
-//                    "escolaridade = '"+ cbEscolaridade.getSelectedItem() +"',"+
-//                    "pq_parou = '"+ tfProducaoDiaria.getText() +"' "+
-                    
+                    "nome_empresa = '"+tfNomeEmpresa.getText()+"',"+
+                    "endereco = '"+ tfEndereco.getText() +"',"+
+                    "fone_fax = '"+ tfFoneFax.getText() +"',"+
+                    "pessoa_entrevistada = '"+ tfPessoaEntrevistada.getText() +"',"+
+                    "funcao = '"+ tfFuncao.getText() +"',"+
+                    "tempo_existencia= '"+ tfTempoExisteEmpresa.getText() +"',"+
+                    "empresa_foi = '"+ cbEmpresaFoi.getSelectedItem() +"',"+
+                    "qual = '"+ tfQualEmpresaFoi.getText() +"',"+
+                   "producao_diaria = '"+ tfProducaoDiaria.getText() +"' "+
 
-
-
-                    "where cod_pescador = "+conexao.resultSet.getString("cod_pescador");
+                   "where Cod_empresa = "+conexao.resultSet.getString("Cod_empresa");
 
             System.out.println(sql);
             if (conexao.update(sql)){
                 JOptionPane.showMessageDialog(null,"Alterado com sucesso");
                 //Atualiza Resultset
-                conexao.execute("select * from pescador");
+                conexao.execute("select * from fabrica_gelo");
                 conexao.resultSet.next();
                 mostra_dados_atravessador();
             }
@@ -510,18 +498,17 @@ public class fabricaDeGelo extends javax.swing.JFrame {
 
     private void botao_novoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_novoActionPerformed
         tfNomeEmpresa.setText("");
-        tfFoneFax.setText("");
         tfEndereco.setText("");
+        tfFoneFax.setText("");
+        tfPessoaEntrevistada.setText("");
         tfFuncao.setText("0");
         tfTempoExisteEmpresa.setText("");
         tfQualEmpresaFoi.setText("");
         cbEmpresaFoi.setSelectedIndex(0);
-//        tfComposicaoFamiliar.setText("");
-//        cbEscolaridade.setSelectedIndex(0);
-//        tfProducaoDiaria.setText("");
-//        cbMunicipio.setSelectedIndex(0);
-//        cbSexo.setSelectedIndex(0);
-//        cbLocalMoradia.setSelectedIndex(0);
+        tfQualEmpresaFoi.setText("");
+        ckbFabricaSim.getSelected(0);
+        tfProducaoDiaria.getText();
+        
 }//GEN-LAST:event_botao_novoActionPerformed
 
     private void botao_excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_excluirActionPerformed
@@ -619,7 +606,6 @@ public class fabricaDeGelo extends javax.swing.JFrame {
     private javax.swing.JButton botao_ultimo;
     private javax.swing.JComboBox cbEmpresaFoi;
     private javax.swing.JComboBox cbMunicipio;
-    private javax.swing.JCheckBox ckbFabricaNao;
     private javax.swing.JCheckBox ckbFabricaSim;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -655,7 +641,9 @@ public class fabricaDeGelo extends javax.swing.JFrame {
 
 
     private void mostra_dados_atravessador(){
+        String teste = new String();
         try {
+
             tfNomeEmpresa.setText(conexao.resultSet.getString("nome"));
             tfFoneFax.setText(conexao.resultSet.getString("apelido"));
             tfEndereco.setText(conexao.resultSet.getString("naturalidade"));
@@ -699,5 +687,12 @@ public class fabricaDeGelo extends javax.swing.JFrame {
                     Logger.getLogger(fabricaDeGelo.class.getName()).log(Level.SEVERE, null, ex1);
                 }
     }
+
+     private void getConfirmacao(){
+         String Tconfirmacao = new String();
+         if (ckbFabricaSim.isSelected())
+             Tconfirmacao= ckbFabricaSim.getText();
+
+         }
 
 }
