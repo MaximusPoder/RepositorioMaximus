@@ -1,16 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/*
- * frm_questionario_atravessador.java
- *
- * Created on 26/07/2010, 09:44:24
- */
 package br.com.formulario.atravessador;
 
 import br.com.conexao.Conexao;
+import br.com.util.JDecimal2;
 import br.com.util.JIntField;
 import br.com.util.JMoneyField;
 import br.com.util.Utilidade;
@@ -39,14 +31,12 @@ public class atravessador2 extends javax.swing.JFrame {
         conexao.conecta("emalhe");
 
         //Insere nome no cbNomeAtravessador
-        attCbAtravessador();
+         attCbAtravessador();
 
-        //attCbs();
+         attCbs();
         //mudar_estadoCB();
 
          mostra_dados();
-
-
 
     }
 
@@ -75,9 +65,9 @@ public class atravessador2 extends javax.swing.JFrame {
         jLabel47 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         ckbPossuiColonia = new javax.swing.JCheckBox();
-        tfDesdeQuando = new javax.swing.JTextField();
-        qual_cooperativa = new javax.swing.JTextField();
-        tfTempoAtividadeMoradia = new javax.swing.JTextField();
+        tfDesdeQuando = new JIntField();
+        tfQualEntidade = new javax.swing.JTextField();
+        tfTempoAtividadeMoradia = new JIntField();
         rbMadeira = new javax.swing.JRadioButton();
         rbBanheiroDentro = new javax.swing.JRadioButton();
         rbAlvenaria = new javax.swing.JRadioButton();
@@ -113,19 +103,7 @@ public class atravessador2 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
-        rbPescadorP = new javax.swing.JRadioButton();
-        rbEmpresaP = new javax.swing.JRadioButton();
-        rbOutroAtravessadorP = new javax.swing.JRadioButton();
-        rbDonoBarcoP = new javax.swing.JRadioButton();
-        rbMercadoFeiraP = new javax.swing.JRadioButton();
-        rbCooperativaP = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
-        rbPescadorG = new javax.swing.JRadioButton();
-        rbEmpresaG = new javax.swing.JRadioButton();
-        rbDonoBarcoG = new javax.swing.JRadioButton();
-        rbMercadoFeiraG = new javax.swing.JRadioButton();
-        rbOutroAtravessadorG = new javax.swing.JRadioButton();
-        rbCooperativaG = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
         tfNumeroFornecedores = new JIntField();
         jLabel5 = new javax.swing.JLabel();
@@ -137,53 +115,46 @@ public class atravessador2 extends javax.swing.JFrame {
         jLabel60 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
-        jCheckBox4 = new javax.swing.JCheckBox();
+        ckbSoPeixeiInteiro = new javax.swing.JCheckBox();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane31 = new javax.swing.JScrollPane();
         jTableFormaComercializacao = new javax.swing.JTable();
         jLabel10 = new javax.swing.JLabel();
         jToggleButton1 = new javax.swing.JToggleButton();
-        jTextField9 = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         jScrollPane32 = new javax.swing.JScrollPane();
-        jTableAtividadeFamiliar2 = new javax.swing.JTable();
+        jtGrude = new javax.swing.JTable();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
+        tfPrecoGrude = new JMoneyField();
+        tfTipoGrude = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        tfVolumeGrude = new JDecimal2();
+        btAdicionarespeciesemana = new javax.swing.JToggleButton();
         jToggleButton3 = new javax.swing.JToggleButton();
         jToggleButton4 = new javax.swing.JToggleButton();
         jLabel20 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        ckbOdor = new javax.swing.JCheckBox();
-        jCheckBox7 = new javax.swing.JCheckBox();
+        ckbCorCarnePeixe = new javax.swing.JCheckBox();
+        ckbOdorCarnePeixe = new javax.swing.JCheckBox();
+        ckbConsistenciaCarnePeixe = new javax.swing.JCheckBox();
         jSeparator4 = new javax.swing.JSeparator();
-        jCheckBox6 = new javax.swing.JCheckBox();
+        ckbOdorGrude = new javax.swing.JCheckBox();
         jLabel24 = new javax.swing.JLabel();
-        ckbOdor1 = new javax.swing.JCheckBox();
-        jCheckBox8 = new javax.swing.JCheckBox();
-        jCheckBox9 = new javax.swing.JCheckBox();
+        ckbTamanhoGrude = new javax.swing.JCheckBox();
+        ckbSemManchaGrude = new javax.swing.JCheckBox();
+        ckbOdorAba = new javax.swing.JCheckBox();
         jLabel26 = new javax.swing.JLabel();
-        ckbOdor2 = new javax.swing.JCheckBox();
-        jCheckBox10 = new javax.swing.JCheckBox();
+        ckbTamanhoAba = new javax.swing.JCheckBox();
+        ckbSemManchaAba = new javax.swing.JCheckBox();
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
         jLabel61 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jSeparator7 = new javax.swing.JSeparator();
-        rbPescadorP1 = new javax.swing.JRadioButton();
         jLabel30 = new javax.swing.JLabel();
-        rbPescadorG1 = new javax.swing.JRadioButton();
-        rbEmpresaG1 = new javax.swing.JRadioButton();
-        rbOutroAtravessadorP1 = new javax.swing.JRadioButton();
-        rbEmpresaP1 = new javax.swing.JRadioButton();
-        rbOutroAtravessadorG1 = new javax.swing.JRadioButton();
         jSeparator8 = new javax.swing.JSeparator();
         jLabel62 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
@@ -207,40 +178,37 @@ public class atravessador2 extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jScrollPane33 = new javax.swing.JScrollPane();
-        jTableAtividadeFamiliar3 = new javax.swing.JTable();
+        jtForma = new javax.swing.JTable();
         jLabel36 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
+        tfDestino = new javax.swing.JTextField();
+        tfVolume = new javax.swing.JTextField();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
-        jTextField16 = new javax.swing.JTextField();
+        tfCliente = new javax.swing.JTextField();
         jLabel40 = new javax.swing.JLabel();
-        jTextField18 = new javax.swing.JTextField();
-        jTextField19 = new javax.swing.JTextField();
+        tfPreco = new JMoneyField();
         jLabel63 = new javax.swing.JLabel();
-        jToggleButton5 = new javax.swing.JToggleButton();
+        btAddFormas = new javax.swing.JToggleButton();
         jToggleButton6 = new javax.swing.JToggleButton();
         cbEspecie = new javax.swing.JComboBox();
         jLabel71 = new javax.swing.JLabel();
-        jCheckBox19 = new javax.swing.JCheckBox();
+        ckbFinanciarSim = new javax.swing.JCheckBox();
         jLabel72 = new javax.swing.JLabel();
-        jTextField25 = new javax.swing.JTextField();
+        tfQuantasFinanciadas = new javax.swing.JTextField();
         jScrollPane34 = new javax.swing.JScrollPane();
-        jTableAtividadeFamiliar4 = new javax.swing.JTable();
+        jtGastos = new javax.swing.JTable();
         jLabel37 = new javax.swing.JLabel();
-        jTextField17 = new javax.swing.JTextField();
+        tfCustoCusto = new JMoneyField();
         jLabel64 = new javax.swing.JLabel();
-        jTextField20 = new javax.swing.JTextField();
+        tfOutroCusto = new javax.swing.JTextField();
         jLabel65 = new javax.swing.JLabel();
         jLabel66 = new javax.swing.JLabel();
         jLabel67 = new javax.swing.JLabel();
-        jTextField21 = new javax.swing.JTextField();
-        jTextField22 = new javax.swing.JTextField();
-        jLabel68 = new javax.swing.JLabel();
-        jTextField23 = new javax.swing.JTextField();
+        tfQuantidadeCusto = new JIntField();
+        tfTipoGasto = new javax.swing.JTextField();
         jToggleButton7 = new javax.swing.JToggleButton();
         jToggleButton8 = new javax.swing.JToggleButton();
-        cbEspecie1 = new javax.swing.JComboBox();
+        cbGastos = new javax.swing.JComboBox();
         jLabel69 = new javax.swing.JLabel();
         jSeparator10 = new javax.swing.JSeparator();
         cbEspecieAquisicao = new javax.swing.JComboBox();
@@ -250,6 +218,39 @@ public class atravessador2 extends javax.swing.JFrame {
         ckbSemCabecaAq = new javax.swing.JCheckBox();
         ckbOutrosAq = new javax.swing.JCheckBox();
         ckbFileAq = new javax.swing.JCheckBox();
+        jLabel11 = new javax.swing.JLabel();
+        ckbPescadorP = new javax.swing.JCheckBox();
+        ckbEmpresaP = new javax.swing.JCheckBox();
+        ckbOutroAtravessadorP = new javax.swing.JCheckBox();
+        ckbDonoBarcoP = new javax.swing.JCheckBox();
+        ckbMercadoFeiraP = new javax.swing.JCheckBox();
+        ckbCooperativaP = new javax.swing.JCheckBox();
+        ckbMercadoFeiraG = new javax.swing.JCheckBox();
+        ckbCooperativaG = new javax.swing.JCheckBox();
+        ckbPescadorG = new javax.swing.JCheckBox();
+        ckbOutroAtravessadorG = new javax.swing.JCheckBox();
+        ckbEmpresaG = new javax.swing.JCheckBox();
+        ckbDonoBarcoG = new javax.swing.JCheckBox();
+        jLabel12 = new javax.swing.JLabel();
+        cbEspecieGrude = new javax.swing.JComboBox();
+        ckbGeloPescador = new javax.swing.JCheckBox();
+        ckbFrigorificoPescador = new javax.swing.JCheckBox();
+        ckbInNaturaPescador = new javax.swing.JCheckBox();
+        ckbSalPescador = new javax.swing.JCheckBox();
+        ckbSalGrude = new javax.swing.JCheckBox();
+        ckbSolGrude = new javax.swing.JCheckBox();
+        ckbEstufaGrude = new javax.swing.JCheckBox();
+        ckbGeloGrude = new javax.swing.JCheckBox();
+        jCheckBox25 = new javax.swing.JCheckBox();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        btAdiconarJtMercadoCliente = new javax.swing.JToggleButton();
+        btDeletarJtMercadoCliente = new javax.swing.JToggleButton();
+        cbProduto = new javax.swing.JComboBox();
+        tfProduto = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        tfSempreDosMesmosPq = new javax.swing.JTextField();
+        tfOutrosGastos = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -309,7 +310,7 @@ public class atravessador2 extends javax.swing.JFrame {
 
         jLabel44.setText("Qual?");
 
-        jLabel45.setText("Desde quando? (ex: 14/10/1988)");
+        jLabel45.setText("Desde quando?");
 
         jLabel47.setText("Tem registro em alguma entidade de classe (colônia, associação, cooperativa)?");
 
@@ -327,6 +328,8 @@ public class atravessador2 extends javax.swing.JFrame {
                 ckbPossuiColoniaActionPerformed(evt);
             }
         });
+
+        tfQualEntidade.setEditable(false);
 
         tfTempoAtividadeMoradia.setText("0");
 
@@ -406,7 +409,14 @@ public class atravessador2 extends javax.swing.JFrame {
 
         jLabel25.setText("Qual.:");
 
+        tfQualBeneficio.setEditable(false);
+
         ckbRecebeBeneficioGovernoSim.setText("Sim");
+        ckbRecebeBeneficioGovernoSim.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                ckbRecebeBeneficioGovernoSimStateChanged(evt);
+            }
+        });
 
         jLabel57.setText("Recebe algum benefício do governo.:");
 
@@ -423,32 +433,8 @@ public class atravessador2 extends javax.swing.JFrame {
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        rbPescadorP.setText("Pescador");
-
-        rbEmpresaP.setText("Empresa");
-
-        rbOutroAtravessadorP.setText("Outro Atravessador");
-
-        rbDonoBarcoP.setText("Dono do Barco");
-
-        rbMercadoFeiraP.setText("Mercado ou Feira");
-
-        rbCooperativaP.setText("Cooperativa");
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setText("Grude");
-
-        rbPescadorG.setText("Pescador");
-
-        rbEmpresaG.setText("Empresa");
-
-        rbDonoBarcoG.setText("Dono do Barco");
-
-        rbMercadoFeiraG.setText("Mercado ou Feira");
-
-        rbOutroAtravessadorG.setText("Outro Atravessador");
-
-        rbCooperativaG.setText("Cooperativa");
 
         jLabel4.setText("Quantos fornecedores são?");
 
@@ -470,7 +456,7 @@ public class atravessador2 extends javax.swing.JFrame {
 
         jLabel7.setText("Só vende o peixe inteiro?");
 
-        jCheckBox4.setText("Sim");
+        ckbSoPeixeiInteiro.setText("Sim");
 
         jLabel9.setText("Quais outras formas de comercialização?");
 
@@ -497,7 +483,7 @@ public class atravessador2 extends javax.swing.JFrame {
         jTableFormaComercializacao.getColumnModel().getColumn(0).setResizable(false);
         jTableFormaComercializacao.getColumnModel().getColumn(7).setHeaderValue("Outros");
 
-        jLabel10.setText("Espédcie Produto.:");
+        jLabel10.setText("Espécie Produto.:");
 
         jToggleButton1.setText("Adicionar");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -506,9 +492,9 @@ public class atravessador2 extends javax.swing.JFrame {
             }
         });
 
-        jLabel17.setText("Espédcie Produto.:");
+        jLabel17.setText("Espécie Produto.:");
 
-        jTableAtividadeFamiliar2.setModel(new javax.swing.table.DefaultTableModel(
+        jtGrude.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -527,18 +513,23 @@ public class atravessador2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane32.setViewportView(jTableAtividadeFamiliar2);
-        jTableAtividadeFamiliar2.getColumnModel().getColumn(0).setResizable(false);
+        jScrollPane32.setViewportView(jtGrude);
+        jtGrude.getColumnModel().getColumn(0).setResizable(false);
 
         jLabel18.setText("A grude comercializada é de qual espécie? Por semana");
 
-        jLabel19.setText("Sem cabeça.:");
+        jLabel19.setText("Tipo.:");
 
-        jLabel21.setText("Postas.:");
+        jLabel21.setText("Preço R$.:");
 
-        jLabel22.setText("Eviscerado.:");
+        jLabel22.setText("Volume.:");
 
-        jToggleButton2.setText("Adicionar");
+        btAdicionarespeciesemana.setText("Adicionar");
+        btAdicionarespeciesemana.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAdicionarespeciesemanaActionPerformed(evt);
+            }
+        });
 
         jToggleButton3.setText("Excluir");
         jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -548,37 +539,42 @@ public class atravessador2 extends javax.swing.JFrame {
         });
 
         jToggleButton4.setText("Excluir");
+        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton4ActionPerformed(evt);
+            }
+        });
 
         jLabel20.setText("Quais os critérios para definir a qualidade do produto?");
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel23.setText("Carne do Peixe");
 
-        jCheckBox5.setText("Cor");
+        ckbCorCarnePeixe.setText("Cor");
 
-        ckbOdor.setText("Odor");
+        ckbOdorCarnePeixe.setText("Odor");
 
-        jCheckBox7.setText("Consistência");
+        ckbConsistenciaCarnePeixe.setText("Consistência");
 
         jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        jCheckBox6.setText("Odor");
+        ckbOdorGrude.setText("Odor");
 
         jLabel24.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel24.setText("Grude");
 
-        ckbOdor1.setText("Tamanho");
+        ckbTamanhoGrude.setText("Tamanho");
 
-        jCheckBox8.setText("Sem mancha");
+        ckbSemManchaGrude.setText("Sem mancha");
 
-        jCheckBox9.setText("Odor");
+        ckbOdorAba.setText("Odor");
 
         jLabel26.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel26.setText("ABA");
 
-        ckbOdor2.setText("Tamanho");
+        ckbTamanhoAba.setText("Tamanho");
 
-        jCheckBox10.setText("Sem mancha");
+        ckbSemManchaAba.setText("Sem mancha");
 
         jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
@@ -592,20 +588,8 @@ public class atravessador2 extends javax.swing.JFrame {
 
         jSeparator7.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        rbPescadorP1.setText("Gelo");
-
         jLabel30.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel30.setText("Grude");
-
-        rbPescadorG1.setText("Sal");
-
-        rbEmpresaG1.setText("Estufa");
-
-        rbOutroAtravessadorP1.setText("in natura");
-
-        rbEmpresaP1.setText("Caminhão frigorífico");
-
-        rbOutroAtravessadorG1.setText("Sem mancha");
 
         jLabel62.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel62.setText("4 - Comercialização");
@@ -652,7 +636,7 @@ public class atravessador2 extends javax.swing.JFrame {
 
         jLabel35.setText("Espécie.:");
 
-        jTableAtividadeFamiliar3.setModel(new javax.swing.table.DefaultTableModel(
+        jtForma.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -671,8 +655,8 @@ public class atravessador2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane33.setViewportView(jTableAtividadeFamiliar3);
-        jTableAtividadeFamiliar3.getColumnModel().getColumn(0).setResizable(false);
+        jScrollPane33.setViewportView(jtForma);
+        jtForma.getColumnModel().getColumn(0).setResizable(false);
 
         jLabel36.setText("Volume (semana).:");
 
@@ -680,9 +664,9 @@ public class atravessador2 extends javax.swing.JFrame {
 
         jLabel39.setText("Produto.:");
 
-        jTextField16.addActionListener(new java.awt.event.ActionListener() {
+        tfCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField16ActionPerformed(evt);
+                tfClienteActionPerformed(evt);
             }
         });
 
@@ -690,39 +674,56 @@ public class atravessador2 extends javax.swing.JFrame {
 
         jLabel63.setText("Preço (R$).:");
 
-        jToggleButton5.setText("Adicionar");
+        btAddFormas.setText("Adicionar");
+        btAddFormas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAddFormasActionPerformed(evt);
+            }
+        });
 
         jToggleButton6.setText("Excluir");
+        jToggleButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton6ActionPerformed(evt);
+            }
+        });
 
         cbEspecie.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel71.setText("Você costuma financiar alguma embarcação em troca do pescado ou grude?");
 
-        jCheckBox19.setText("Sim");
+        ckbFinanciarSim.setText("Sim");
+        ckbFinanciarSim.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                ckbFinanciarSimStateChanged(evt);
+            }
+        });
 
         jLabel72.setText("Quantas?");
 
-        jTableAtividadeFamiliar4.setModel(new javax.swing.table.DefaultTableModel(
+        tfQuantasFinanciadas.setEditable(false);
+
+        jtGastos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Cod", "Gastos", "Tipo", "Quantidade", "Custo", "Outros", "Frequência"
+                "Cod", "Gastos", "Tipo", "Quantidade", "Custo", "Outros"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true, true
+                false, true, true, true, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane34.setViewportView(jTableAtividadeFamiliar4);
-        jTableAtividadeFamiliar4.getColumnModel().getColumn(0).setResizable(false);
+        jScrollPane34.setViewportView(jtGastos);
+        jtGastos.getColumnModel().getColumn(0).setResizable(false);
 
         jLabel37.setText("Gastos:");
 
@@ -734,19 +735,32 @@ public class atravessador2 extends javax.swing.JFrame {
 
         jLabel67.setText("Quantidade.:");
 
-        jTextField21.addActionListener(new java.awt.event.ActionListener() {
+        tfQuantidadeCusto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField21ActionPerformed(evt);
+                tfQuantidadeCustoActionPerformed(evt);
             }
         });
 
-        jLabel68.setText("Frequência.:");
-
         jToggleButton7.setText("Adicionar");
+        jToggleButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton7ActionPerformed(evt);
+            }
+        });
 
         jToggleButton8.setText("Excluir");
+        jToggleButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton8ActionPerformed(evt);
+            }
+        });
 
-        cbEspecie1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Combustível", "Lubrificante", "Gelo", "Rancho", "Pagamento de pescador - Vale", "Frete", "Carregador do pescado", "Gelo para transporte" }));
+        cbGastos.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Combustível", "Lubrificante", "Gelo", "Rancho", "Pagamento de pescador - Vale", "Frete", "Carregador do pescado", "Gelo para transporte", "Outro" }));
+        cbGastos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbGastosActionPerformed(evt);
+            }
+        });
 
         jLabel69.setText("Quais os gastos você tem com cada barco por pescaria?");
 
@@ -763,6 +777,103 @@ public class atravessador2 extends javax.swing.JFrame {
         ckbOutrosAq.setText("Outros");
 
         ckbFileAq.setText("File");
+
+        jLabel11.setText("Anos");
+
+        ckbPescadorP.setText("Pescador");
+
+        ckbEmpresaP.setText("Empresa");
+
+        ckbOutroAtravessadorP.setText("Outro Atravessador");
+
+        ckbDonoBarcoP.setText("Dono do Barco");
+
+        ckbMercadoFeiraP.setText("Mercado ou Feira");
+
+        ckbCooperativaP.setText("Cooperativa");
+
+        ckbMercadoFeiraG.setText("Mercado ou Feira");
+
+        ckbCooperativaG.setText("Cooperativa");
+
+        ckbPescadorG.setText("Pescador");
+
+        ckbOutroAtravessadorG.setText("Outro Atravessador");
+
+        ckbEmpresaG.setText("Empresa");
+
+        ckbDonoBarcoG.setText("Dono do Barco");
+
+        jLabel12.setText("KG");
+
+        cbEspecieGrude.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        ckbGeloPescador.setText("Gelo");
+
+        ckbFrigorificoPescador.setText("Caminhão frigorífico");
+
+        ckbInNaturaPescador.setText("In natura");
+
+        ckbSalPescador.setText("Sal");
+        ckbSalPescador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ckbSalPescadorActionPerformed(evt);
+            }
+        });
+
+        ckbSalGrude.setText("Sal");
+
+        ckbSolGrude.setText("Sol");
+
+        ckbEstufaGrude.setText("Estufa");
+
+        ckbGeloGrude.setText("Gelo");
+        ckbGeloGrude.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ckbGeloGrudeActionPerformed(evt);
+            }
+        });
+
+        jCheckBox25.setText("Não sabe");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "cod", "Mercado", "Pescado", "Grude"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTable1);
+        jTable1.getColumnModel().getColumn(0).setResizable(false);
+
+        btAdiconarJtMercadoCliente.setText("Adicionar");
+
+        btDeletarJtMercadoCliente.setText("Excluir");
+
+        cbProduto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Carne", "Grude seca", "Grude fresca", "Aba", "Outro" }));
+        cbProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbProdutoActionPerformed(evt);
+            }
+        });
+
+        tfProduto.setEditable(false);
+
+        jLabel13.setText("Por que?");
+
+        tfOutrosGastos.setEditable(false);
 
         javax.swing.GroupLayout jpPescadoSubprodutoLayout = new javax.swing.GroupLayout(jpPescadoSubproduto);
         jpPescadoSubproduto.setLayout(jpPescadoSubprodutoLayout);
@@ -833,11 +944,13 @@ public class atravessador2 extends javax.swing.JFrame {
                             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                 .addComponent(jLabel44)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(qual_cooperativa, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tfQualEntidade, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel45)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfDesdeQuando, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(tfDesdeQuando, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel11))
                             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                 .addComponent(jLabel47)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -850,23 +963,30 @@ public class atravessador2 extends javax.swing.JFrame {
                                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel2)
-                                            .addComponent(rbPescadorP)
-                                            .addComponent(rbEmpresaP)
-                                            .addComponent(rbOutroAtravessadorP)
-                                            .addComponent(rbDonoBarcoP)
-                                            .addComponent(rbMercadoFeiraP)
-                                            .addComponent(rbCooperativaP))
-                                        .addGap(78, 78, 78)
+                                            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                                                .addGap(10, 10, 10)
+                                                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(ckbEmpresaP)
+                                                    .addComponent(ckbPescadorP)
+                                                    .addComponent(ckbOutroAtravessadorP)
+                                                    .addComponent(ckbDonoBarcoP)
+                                                    .addComponent(ckbMercadoFeiraP)
+                                                    .addComponent(ckbCooperativaP))))
+                                        .addGap(30, 30, 30)
                                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
                                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel3)
-                                            .addComponent(rbPescadorG)
-                                            .addComponent(rbEmpresaG)
-                                            .addComponent(rbOutroAtravessadorG)
-                                            .addComponent(rbDonoBarcoG)
-                                            .addComponent(rbMercadoFeiraG)
-                                            .addComponent(rbCooperativaG)))
+                                            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                                                .addGap(94, 94, 94)
+                                                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(ckbEmpresaG)
+                                                    .addComponent(ckbPescadorG)
+                                                    .addComponent(ckbOutroAtravessadorG)
+                                                    .addComponent(ckbDonoBarcoG)
+                                                    .addComponent(ckbMercadoFeiraG)
+                                                    .addComponent(ckbCooperativaG)))
+                                            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                                                .addGap(84, 84, 84)
+                                                .addComponent(jLabel3))))
                                     .addComponent(ckbSempreMesmoFornecedor1)
                                     .addComponent(jLabel6)
                                     .addComponent(ckbSempreMesmoFornecedor2)
@@ -874,7 +994,9 @@ public class atravessador2 extends javax.swing.JFrame {
                                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                         .addComponent(jLabel4)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tfNumeroFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(tfNumeroFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jCheckBox25))
                                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                         .addComponent(jLabel5)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -896,7 +1018,7 @@ public class atravessador2 extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox4))
+                        .addComponent(ckbSoPeixeiInteiro))
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel9))
@@ -923,7 +1045,7 @@ public class atravessador2 extends javax.swing.JFrame {
                         .addComponent(ckbSemCabecaAq)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ckbOutrosAq)))
-                .addContainerGap(149, Short.MAX_VALUE))
+                .addContainerGap(151, Short.MAX_VALUE))
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -935,213 +1057,239 @@ public class atravessador2 extends javax.swing.JFrame {
                                     .addComponent(jLabel17)
                                     .addComponent(jLabel22))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jTextField14, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                                        .addComponent(tfVolumeGrude, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel12)
+                                        .addGap(56, 56, 56))
+                                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                                        .addComponent(cbEspecieGrude, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel19)
                                     .addComponent(jLabel21))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
-                                    .addComponent(jTextField10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
-                                    .addComponent(jToggleButton2, javax.swing.GroupLayout.Alignment.TRAILING))))
+                                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(tfTipoGrude, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tfPrecoGrude, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE))))
                         .addGap(3, 3, 3))
-                    .addComponent(jScrollPane32, javax.swing.GroupLayout.DEFAULT_SIZE, 581, Short.MAX_VALUE))
+                    .addComponent(jScrollPane32, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jToggleButton3)
-                    .addComponent(jScrollPane31, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE))
-                .addGap(15, 15, 15))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                .addContainerGap(524, Short.MAX_VALUE)
+                .addContainerGap(526, Short.MAX_VALUE)
                 .addComponent(jToggleButton4)
                 .addContainerGap())
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel20)
-                .addContainerGap(282, Short.MAX_VALUE))
+                .addContainerGap(284, Short.MAX_VALUE))
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox7)
-                    .addComponent(ckbOdor)
-                    .addComponent(jCheckBox5)
+                    .addComponent(ckbConsistenciaCarnePeixe)
+                    .addComponent(ckbOdorCarnePeixe)
+                    .addComponent(ckbCorCarnePeixe)
                     .addComponent(jLabel23))
                 .addGap(25, 25, 25)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox8)
-                    .addComponent(ckbOdor1)
-                    .addComponent(jCheckBox6)
+                    .addComponent(ckbSemManchaGrude)
+                    .addComponent(ckbTamanhoGrude)
+                    .addComponent(ckbOdorGrude)
                     .addComponent(jLabel24))
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox10)
-                    .addComponent(ckbOdor2)
-                    .addComponent(jCheckBox9)
+                    .addComponent(ckbSemManchaAba)
+                    .addComponent(ckbTamanhoAba)
+                    .addComponent(ckbOdorAba)
                     .addComponent(jLabel26))
                 .addContainerGap(193, Short.MAX_VALUE))
-            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel61)
-                .addContainerGap(480, Short.MAX_VALUE))
+                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btAdicionarespeciesemana)
+                    .addComponent(jToggleButton3)
+                    .addComponent(jScrollPane31, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE))
+                .addGap(15, 15, 15))
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addComponent(jSeparator6, javax.swing.GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE)
+                        .addGap(21, 21, 21))
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel29)
-                            .addComponent(rbPescadorP1)
-                            .addComponent(rbEmpresaP1)
-                            .addComponent(rbOutroAtravessadorP1))
-                        .addGap(44, 44, 44)
-                        .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel30)
-                            .addComponent(rbPescadorG1)
-                            .addComponent(rbEmpresaG1)
-                            .addComponent(rbOutroAtravessadorG1)))
-                    .addComponent(jLabel27))
-                .addContainerGap(261, Short.MAX_VALUE))
+                            .addComponent(jLabel61)
+                            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel29)
+                                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(ckbGeloPescador)
+                                            .addComponent(ckbFrigorificoPescador)
+                                            .addComponent(ckbInNaturaPescador)
+                                            .addComponent(ckbSalPescador))))
+                                .addGap(83, 83, 83)
+                                .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(ckbSalGrude)
+                                            .addComponent(ckbEstufaGrude)
+                                            .addComponent(ckbSolGrude)
+                                            .addComponent(ckbGeloGrude)))
+                                    .addComponent(jLabel30)))
+                            .addComponent(jLabel27)
+                            .addComponent(jLabel62)
+                            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                                .addComponent(jLabel28)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel31)
+                            .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ckbOdor4)
+                                    .addComponent(jCheckBox13)
+                                    .addComponent(jCheckBox15)
+                                    .addComponent(ckbOdor3)
+                                    .addComponent(jCheckBox11)
+                                    .addComponent(jCheckBox12)
+                                    .addComponent(jCheckBox14)
+                                    .addComponent(jLabel32))
+                                .addGap(18, 18, 18)
+                                .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel33)
+                                    .addComponent(jCheckBox17)
+                                    .addComponent(ckbOdor5)
+                                    .addComponent(jCheckBox16)
+                                    .addComponent(jCheckBox18))))
+                        .addGap(35, 35, 35))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSeparator8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
-                    .addComponent(jSeparator6, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE))
+                .addContainerGap(510, Short.MAX_VALUE)
+                .addComponent(btAdiconarJtMercadoCliente)
                 .addContainerGap())
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel62)
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                        .addComponent(jLabel28)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(126, Short.MAX_VALUE))
-            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                        .addComponent(jLabel34)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ckbSempreDosMesmos))
-                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ckbOdor4)
-                            .addComponent(jCheckBox13)
-                            .addComponent(jCheckBox15)
-                            .addComponent(ckbOdor3)
-                            .addComponent(jCheckBox11)
-                            .addComponent(jCheckBox12)
-                            .addComponent(jCheckBox14)
-                            .addComponent(jLabel32))
-                        .addGap(18, 18, 18)
-                        .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel33)
-                            .addComponent(jCheckBox17)
-                            .addComponent(ckbOdor5)
-                            .addComponent(jCheckBox16)
-                            .addComponent(jCheckBox18)))
-                    .addComponent(jLabel31))
-                .addContainerGap(120, Short.MAX_VALUE))
-            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane33, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
+                        .addContainerGap())
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel35)
                             .addComponent(jLabel39)
                             .addComponent(jLabel40))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextField16)
-                            .addComponent(jTextField18)
-                            .addComponent(cbEspecie, 0, 198, Short.MAX_VALUE))
+                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                                .addComponent(cbProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
+                            .addComponent(cbEspecie, 0, 239, Short.MAX_VALUE)
+                            .addComponent(tfCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btAddFormas)
                             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel63)
                                     .addComponent(jLabel36)
                                     .addComponent(jLabel38))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
-                                    .addComponent(jTextField13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
-                                    .addComponent(jTextField19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)))
-                            .addComponent(jToggleButton5)))
-                    .addComponent(jToggleButton6, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane33, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE))
-                .addGap(15, 15, 15))
-            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel71)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox19)
-                .addContainerGap(103, Short.MAX_VALUE))
-            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel72)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField25, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
-                .addGap(358, 358, 358))
-            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel69)
-                .addContainerGap(271, Short.MAX_VALUE))
+                                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tfPreco)
+                                    .addComponent(tfVolume)
+                                    .addComponent(tfDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(15, 15, 15))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addContainerGap(526, Short.MAX_VALUE)
+                .addComponent(jToggleButton6)
+                .addContainerGap())
+            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
+                .addContainerGap(526, Short.MAX_VALUE)
+                .addComponent(btDeletarJtMercadoCliente)
+                .addContainerGap())
+            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                        .addContainerGap()
+                        .addComponent(jLabel13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfSempreDosMesmosPq))
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addComponent(jLabel34)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ckbSempreDosMesmos)))
+                .addContainerGap(248, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jToggleButton7)
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addComponent(botao_alterar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botao_salvar_questionario))
-                    .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jSeparator10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
-                        .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                            .addContainerGap()
-                            .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                                    .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel37)
-                                        .addComponent(jLabel65)
-                                        .addComponent(jLabel67))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jTextField21)
-                                        .addComponent(jTextField22)
-                                        .addComponent(cbEspecie1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                                            .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel68)
-                                                .addComponent(jLabel64)
-                                                .addComponent(jLabel66))
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jTextField20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
-                                                .addComponent(jTextField17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
-                                                .addComponent(jTextField23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)))
-                                        .addComponent(jToggleButton7)))
-                                .addComponent(jToggleButton8, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jScrollPane34, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)))))
+                    .addComponent(jSeparator10, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addComponent(jLabel72)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfQuantasFinanciadas, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
+                        .addGap(343, 343, 343))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addComponent(jLabel69)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton8)
+                    .addComponent(jScrollPane34, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
+                                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel37)
+                                    .addComponent(jLabel65)
+                                    .addComponent(jLabel67))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(tfQuantidadeCusto)
+                                    .addComponent(tfTipoGasto)
+                                    .addComponent(cbGastos, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel64)
+                                            .addComponent(jLabel66))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(tfCustoCusto)
+                                            .addComponent(tfOutroCusto, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)))
+                                    .addComponent(tfOutrosGastos)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
+                                .addComponent(jLabel71)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ckbFinanciarSim)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)))
                 .addGap(15, 15, 15))
         );
         jpPescadoSubprodutoLayout.setVerticalGroup(
             jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
+            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1190,9 +1338,10 @@ public class atravessador2 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel44)
-                    .addComponent(qual_cooperativa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfQualEntidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel45)
-                    .addComponent(tfDesdeQuando, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfDesdeQuando, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
                 .addGap(16, 16, 16)
                 .addComponent(jLabel49)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1226,42 +1375,42 @@ public class atravessador2 extends javax.swing.JFrame {
                 .addComponent(jLabel59)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rbPescadorP)
+                        .addComponent(ckbPescadorP)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rbEmpresaP)
+                        .addComponent(ckbEmpresaP)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rbOutroAtravessadorP)
+                        .addComponent(ckbOutroAtravessadorP)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rbDonoBarcoP)
+                        .addComponent(ckbDonoBarcoP)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rbMercadoFeiraP)
+                        .addComponent(ckbMercadoFeiraP)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rbCooperativaP))
-                    .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                            .addComponent(jLabel3)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(rbPescadorG)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(rbEmpresaG)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(rbOutroAtravessadorG)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(rbDonoBarcoG)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(rbMercadoFeiraG)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(rbCooperativaG))
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(ckbCooperativaP))
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ckbPescadorG)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ckbEmpresaG)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ckbOutroAtravessadorG)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ckbDonoBarcoG)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ckbMercadoFeiraG)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ckbCooperativaG))
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(tfNumeroFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfNumeroFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCheckBox25))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -1281,7 +1430,7 @@ public class atravessador2 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jCheckBox4))
+                    .addComponent(ckbSoPeixeiInteiro))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1307,17 +1456,18 @@ public class atravessador2 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel21)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfPrecoGrude, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbEspecieGrude, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfVolumeGrude, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfTipoGrude, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jToggleButton2)
+                .addComponent(btAdicionarespeciesemana)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1328,36 +1478,36 @@ public class atravessador2 extends javax.swing.JFrame {
                         .addGap(34, 34, 34)
                         .addComponent(jLabel20)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
+                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addComponent(jLabel23)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox5)
+                        .addComponent(ckbCorCarnePeixe)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(ckbOdor)
+                        .addComponent(ckbOdorCarnePeixe)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox7))
-                    .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
-                    .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
-                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                        .addComponent(jLabel26)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(ckbOdor2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox10))
+                        .addComponent(ckbConsistenciaCarnePeixe))
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addComponent(jLabel24)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox6)
+                        .addComponent(ckbOdorGrude)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(ckbOdor1)
+                        .addComponent(ckbTamanhoGrude)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox8)))
+                        .addComponent(ckbSemManchaGrude))
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addComponent(jLabel26)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ckbOdorAba)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ckbTamanhoAba)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ckbSemManchaAba))
+                    .addComponent(jSeparator5, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                    .addComponent(jSeparator4))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel61)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel27)
@@ -1366,23 +1516,26 @@ public class atravessador2 extends javax.swing.JFrame {
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addComponent(jLabel29)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rbPescadorP1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rbEmpresaP1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rbOutroAtravessadorP1))
-                    .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                            .addGap(8, 8, 8)
-                            .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                            .addComponent(jLabel30)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(rbPescadorG1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(rbEmpresaG1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(rbOutroAtravessadorG1))))
+                        .addComponent(ckbGeloPescador)
+                        .addGap(1, 1, 1)
+                        .addComponent(ckbFrigorificoPescador)
+                        .addGap(4, 4, 4)
+                        .addComponent(ckbInNaturaPescador)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ckbSalPescador))
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addComponent(jLabel30)
+                        .addGap(5, 5, 5)
+                        .addComponent(ckbSalGrude)
+                        .addGap(1, 1, 1)
+                        .addComponent(ckbEstufaGrude)
+                        .addGap(4, 4, 4)
+                        .addComponent(ckbSolGrude)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ckbGeloGrude))
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1424,69 +1577,90 @@ public class atravessador2 extends javax.swing.JFrame {
                         .addComponent(jCheckBox14)
                         .addGap(5, 5, 5)
                         .addComponent(jCheckBox15)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(14, 14, 14)
+                .addComponent(btAdiconarJtMercadoCliente)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btDeletarJtMercadoCliente)
+                .addGap(17, 17, 17)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel34)
                     .addComponent(ckbSempreDosMesmos))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(tfSempreDosMesmosPq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel35)
-                    .addComponent(jLabel38)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel39)
-                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel36)
-                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel40)
-                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel63)
-                    .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(5, 5, 5)
-                .addComponent(jToggleButton5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel35)
+                            .addComponent(cbEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel39)
+                            .addComponent(cbProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel40)
+                            .addComponent(tfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel38)
+                            .addComponent(tfDestino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel36)
+                            .addComponent(tfVolume, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel63)
+                            .addComponent(tfPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btAddFormas)))
+                .addGap(13, 13, 13)
                 .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton6)
-                .addGap(7, 7, 7)
-                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel71)
-                    .addComponent(jCheckBox19))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel72)
-                    .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel69)
+                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel71)
+                            .addComponent(ckbFinanciarSim))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel72)
+                            .addComponent(tfQuantasFinanciadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel69))
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jToggleButton6)))
                 .addGap(12, 12, 12)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel37)
-                    .addComponent(jLabel66)
-                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbEspecie1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbGastos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfOutrosGastos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel65)
-                    .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel64)
-                    .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfTipoGasto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfCustoCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel66))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel67)
-                    .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel68)
-                    .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(5, 5, 5)
+                    .addComponent(tfQuantidadeCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel64)
+                    .addComponent(tfOutroCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jToggleButton7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(11, 11, 11)
                 .addComponent(jScrollPane34, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jToggleButton8)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1541,10 +1715,10 @@ public class atravessador2 extends javax.swing.JFrame {
 
     private void ckbPossuiColoniaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ckbPossuiColoniaStateChanged
         if (ckbPossuiColonia.isSelected()){
-            qual_cooperativa.setEditable(true);
+            tfQualEntidade.setEditable(true);
         }else{
-            qual_cooperativa.setEditable(false);
-            qual_cooperativa.setText("");
+            tfQualEntidade.setEditable(false);
+            tfQualEntidade.setText("");
         }
 }//GEN-LAST:event_ckbPossuiColoniaStateChanged
 
@@ -1568,13 +1742,13 @@ public class atravessador2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ckbFossaSimActionPerformed
 
-    private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
+    private void tfClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfClienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField16ActionPerformed
+    }//GEN-LAST:event_tfClienteActionPerformed
 
-    private void jTextField21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField21ActionPerformed
+    private void tfQuantidadeCustoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfQuantidadeCustoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField21ActionPerformed
+    }//GEN-LAST:event_tfQuantidadeCustoActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         AttAquisicaoFormasComercilizacao();
@@ -1583,6 +1757,74 @@ public class atravessador2 extends javax.swing.JFrame {
     private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
         DelAttAquisicaoFormasComercilizacao();
     }//GEN-LAST:event_jToggleButton3ActionPerformed
+
+    private void ckbRecebeBeneficioGovernoSimStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ckbRecebeBeneficioGovernoSimStateChanged
+        if (ckbRecebeBeneficioGovernoSim.isSelected()){
+            tfQualBeneficio.setEditable(true);
+        }else{
+            tfQualBeneficio.setEditable(false);
+            tfQualBeneficio.setText("");
+        }
+    }//GEN-LAST:event_ckbRecebeBeneficioGovernoSimStateChanged
+
+    private void btAdicionarespeciesemanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAdicionarespeciesemanaActionPerformed
+        AttComercializacaoGrude();
+    }//GEN-LAST:event_btAdicionarespeciesemanaActionPerformed
+
+    private void ckbSalPescadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckbSalPescadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ckbSalPescadorActionPerformed
+
+    private void ckbGeloGrudeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckbGeloGrudeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ckbGeloGrudeActionPerformed
+
+    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
+        DeljtGrude();
+    }//GEN-LAST:event_jToggleButton4ActionPerformed
+
+    private void cbProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbProdutoActionPerformed
+        if (cbProduto.getSelectedItem().equals("Outro"))
+            tfProduto.setEditable(true);
+        else {
+            tfProduto.setEditable(false);
+            tfProduto.setText("");
+        }
+    }//GEN-LAST:event_cbProdutoActionPerformed
+
+    private void cbGastosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbGastosActionPerformed
+         if (cbGastos.getSelectedItem().equals("Outro"))
+            tfOutrosGastos.setEditable(true);
+        else {
+            tfOutrosGastos.setEditable(false);
+            tfOutrosGastos.setText("");
+        }
+    }//GEN-LAST:event_cbGastosActionPerformed
+
+    private void ckbFinanciarSimStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ckbFinanciarSimStateChanged
+       if ( ckbFinanciarSim.isSelected()){
+            tfQuantasFinanciadas.setEditable(true);
+        }else{
+            tfQuantasFinanciadas.setEditable(false);
+            tfQuantasFinanciadas.setText("");
+        }
+    }//GEN-LAST:event_ckbFinanciarSimStateChanged
+
+    private void btAddFormasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAddFormasActionPerformed
+        AddJtFormas();
+    }//GEN-LAST:event_btAddFormasActionPerformed
+
+    private void jToggleButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton6ActionPerformed
+        DelJtFormas();
+    }//GEN-LAST:event_jToggleButton6ActionPerformed
+
+    private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
+        AddJtGastos();
+    }//GEN-LAST:event_jToggleButton7ActionPerformed
+
+    private void jToggleButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton8ActionPerformed
+       DelJtGastos();
+    }//GEN-LAST:event_jToggleButton8ActionPerformed
 
     /**
     * @param args the command line arguments
@@ -1598,36 +1840,69 @@ public class atravessador2 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botao_alterar;
     private javax.swing.JButton botao_salvar_questionario;
+    private javax.swing.JToggleButton btAddFormas;
     private javax.swing.JButton btAdicionarRendaFamilia;
+    private javax.swing.JToggleButton btAdicionarespeciesemana;
+    private javax.swing.JToggleButton btAdiconarJtMercadoCliente;
+    private javax.swing.JToggleButton btDeletarJtMercadoCliente;
     private javax.swing.JButton btExcluirRendaFamilia;
     private javax.swing.JComboBox cbEspecie;
-    private javax.swing.JComboBox cbEspecie1;
     private javax.swing.JComboBox cbEspecieAquisicao;
+    private javax.swing.JComboBox cbEspecieGrude;
+    private javax.swing.JComboBox cbGastos;
     private javax.swing.JComboBox cbNomeAtravessador;
+    private javax.swing.JComboBox cbProduto;
     private javax.swing.JCheckBox ckbAguaSim;
+    private javax.swing.JCheckBox ckbConsistenciaCarnePeixe;
+    private javax.swing.JCheckBox ckbCooperativaG;
+    private javax.swing.JCheckBox ckbCooperativaP;
+    private javax.swing.JCheckBox ckbCorCarnePeixe;
+    private javax.swing.JCheckBox ckbDonoBarcoG;
+    private javax.swing.JCheckBox ckbDonoBarcoP;
     private javax.swing.JCheckBox ckbDrenagemSim;
+    private javax.swing.JCheckBox ckbEmpresaG;
+    private javax.swing.JCheckBox ckbEmpresaP;
+    private javax.swing.JCheckBox ckbEstufaGrude;
     private javax.swing.JCheckBox ckbEvisceradoAq;
     private javax.swing.JCheckBox ckbFileAq;
+    private javax.swing.JCheckBox ckbFinanciarSim;
     private javax.swing.JCheckBox ckbFornecedorAumentouSim;
     private javax.swing.JCheckBox ckbFossaSim;
+    private javax.swing.JCheckBox ckbFrigorificoPescador;
+    private javax.swing.JCheckBox ckbGeloGrude;
+    private javax.swing.JCheckBox ckbGeloPescador;
+    private javax.swing.JCheckBox ckbInNaturaPescador;
     private javax.swing.JCheckBox ckbLuzSim;
     private javax.swing.JCheckBox ckbMaisBarato3;
-    private javax.swing.JCheckBox ckbOdor;
-    private javax.swing.JCheckBox ckbOdor1;
-    private javax.swing.JCheckBox ckbOdor2;
+    private javax.swing.JCheckBox ckbMercadoFeiraG;
+    private javax.swing.JCheckBox ckbMercadoFeiraP;
     private javax.swing.JCheckBox ckbOdor3;
     private javax.swing.JCheckBox ckbOdor4;
     private javax.swing.JCheckBox ckbOdor5;
+    private javax.swing.JCheckBox ckbOdorAba;
+    private javax.swing.JCheckBox ckbOdorCarnePeixe;
+    private javax.swing.JCheckBox ckbOdorGrude;
+    private javax.swing.JCheckBox ckbOutroAtravessadorG;
+    private javax.swing.JCheckBox ckbOutroAtravessadorP;
     private javax.swing.JCheckBox ckbOutrosAq;
+    private javax.swing.JCheckBox ckbPescadorG;
+    private javax.swing.JCheckBox ckbPescadorP;
     private javax.swing.JCheckBox ckbPossuiColonia;
     private javax.swing.JCheckBox ckbPostaAq;
     private javax.swing.JCheckBox ckbRecebeBeneficioGovernoSim;
+    private javax.swing.JCheckBox ckbSalGrude;
+    private javax.swing.JCheckBox ckbSalPescador;
     private javax.swing.JCheckBox ckbSalgadoAq;
     private javax.swing.JCheckBox ckbSemCabecaAq;
+    private javax.swing.JCheckBox ckbSemManchaAba;
+    private javax.swing.JCheckBox ckbSemManchaGrude;
     private javax.swing.JCheckBox ckbSempreDosMesmos;
     private javax.swing.JCheckBox ckbSempreMesmoFornecedor1;
     private javax.swing.JCheckBox ckbSempreMesmoFornecedor2;
-    private javax.swing.JCheckBox jCheckBox10;
+    private javax.swing.JCheckBox ckbSoPeixeiInteiro;
+    private javax.swing.JCheckBox ckbSolGrude;
+    private javax.swing.JCheckBox ckbTamanhoAba;
+    private javax.swing.JCheckBox ckbTamanhoGrude;
     private javax.swing.JCheckBox jCheckBox11;
     private javax.swing.JCheckBox jCheckBox12;
     private javax.swing.JCheckBox jCheckBox13;
@@ -1636,16 +1911,13 @@ public class atravessador2 extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox16;
     private javax.swing.JCheckBox jCheckBox17;
     private javax.swing.JCheckBox jCheckBox18;
-    private javax.swing.JCheckBox jCheckBox19;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
-    private javax.swing.JCheckBox jCheckBox9;
+    private javax.swing.JCheckBox jCheckBox25;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -1702,7 +1974,6 @@ public class atravessador2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
-    private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel71;
@@ -1711,6 +1982,7 @@ public class atravessador2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane30;
     private javax.swing.JScrollPane jScrollPane31;
     private javax.swing.JScrollPane jScrollPane32;
@@ -1726,65 +1998,46 @@ public class atravessador2 extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTableAtividadeFamiliar;
-    private javax.swing.JTable jTableAtividadeFamiliar2;
-    private javax.swing.JTable jTableAtividadeFamiliar3;
-    private javax.swing.JTable jTableAtividadeFamiliar4;
     private javax.swing.JTable jTableFormaComercializacao;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JToggleButton jToggleButton4;
-    private javax.swing.JToggleButton jToggleButton5;
     private javax.swing.JToggleButton jToggleButton6;
     private javax.swing.JToggleButton jToggleButton7;
     private javax.swing.JToggleButton jToggleButton8;
     private javax.swing.JPanel jpPescadoSubproduto;
-    private javax.swing.JTextField qual_cooperativa;
+    private javax.swing.JTable jtForma;
+    private javax.swing.JTable jtGastos;
+    private javax.swing.JTable jtGrude;
     private javax.swing.JRadioButton rbAlvenaria;
     private javax.swing.JRadioButton rbBanheiroDentro;
     private javax.swing.JRadioButton rbBanheiroFora;
-    private javax.swing.JRadioButton rbCooperativaG;
-    private javax.swing.JRadioButton rbCooperativaP;
-    private javax.swing.JRadioButton rbDonoBarcoG;
-    private javax.swing.JRadioButton rbDonoBarcoP;
-    private javax.swing.JRadioButton rbEmpresaG;
-    private javax.swing.JRadioButton rbEmpresaG1;
-    private javax.swing.JRadioButton rbEmpresaP;
-    private javax.swing.JRadioButton rbEmpresaP1;
     private javax.swing.JRadioButton rbMadeira;
-    private javax.swing.JRadioButton rbMercadoFeiraG;
-    private javax.swing.JRadioButton rbMercadoFeiraP;
-    private javax.swing.JRadioButton rbOutroAtravessadorG;
-    private javax.swing.JRadioButton rbOutroAtravessadorG1;
-    private javax.swing.JRadioButton rbOutroAtravessadorP;
-    private javax.swing.JRadioButton rbOutroAtravessadorP1;
-    private javax.swing.JRadioButton rbPescadorG;
-    private javax.swing.JRadioButton rbPescadorG1;
-    private javax.swing.JRadioButton rbPescadorP;
-    private javax.swing.JRadioButton rbPescadorP1;
     private javax.swing.JTextField tfAtividade;
+    private javax.swing.JTextField tfCliente;
+    private javax.swing.JTextField tfCustoCusto;
     private javax.swing.JTextField tfDesdeQuando;
+    private javax.swing.JTextField tfDestino;
     private javax.swing.JTextField tfNumeroFornecedores;
+    private javax.swing.JTextField tfOutroCusto;
+    private javax.swing.JTextField tfOutrosGastos;
     private javax.swing.JTextField tfParentesco;
+    private javax.swing.JTextField tfPreco;
+    private javax.swing.JTextField tfPrecoGrude;
+    private javax.swing.JTextField tfProduto;
     private javax.swing.JTextField tfQualBeneficio;
+    private javax.swing.JTextField tfQualEntidade;
+    private javax.swing.JTextField tfQuantasFinanciadas;
+    private javax.swing.JTextField tfQuantidadeCusto;
     private javax.swing.JTextField tfRenda;
+    private javax.swing.JTextField tfSempreDosMesmosPq;
     private javax.swing.JTextField tfTempoAtividadeMoradia;
+    private javax.swing.JTextField tfTipoGasto;
+    private javax.swing.JTextField tfTipoGrude;
+    private javax.swing.JTextField tfVolume;
+    private javax.swing.JTextField tfVolumeGrude;
     // End of variables declaration//GEN-END:variables
 
         public void preencher_jtable(){
@@ -1872,7 +2125,7 @@ public class atravessador2 extends javax.swing.JFrame {
                    ckbFossaSim.setSelected(true);
             else
                    ckbFossaSim.setSelected(false);
-            qual_cooperativa.setText(conexao.resultSet.getString("qual_cooperativa"));
+            tfQualEntidade.setText(conexao.resultSet.getString("qual_cooperativa"));
             tfDesdeQuando.setText(conexao.resultSet.getString("tempo_cooperativa"));
             
             System.out.println("Passou! Moradia");
@@ -2241,7 +2494,7 @@ public class atravessador2 extends javax.swing.JFrame {
                     util.checarCkb(ckbDrenagemSim)+"','"+
                     util.checarCkb(ckbFossaSim)+"','"+
                     util.checarCkb(ckbPossuiColonia)+"','"+
-                    qual_cooperativa.getText()+"','"+
+                    tfQualEntidade.getText()+"','"+
                     tfDesdeQuando.getText()+"','"+
                     util.checarCkb(ckbRecebeBeneficioGovernoSim)+"','"+
                     tfQualBeneficio.getText()+"','"+
@@ -2249,7 +2502,7 @@ public class atravessador2 extends javax.swing.JFrame {
 
             //System.out.println(sqlinsert);
             if (conexao.salvar(sqlinsert)) {
-                System.out.println("Moradia - Cadastrado com sucesso");
+                System.out.println("1 Moradia - Cadastrado com sucesso");
             }
 
        //Recepção atravessador
@@ -2264,18 +2517,18 @@ public class atravessador2 extends javax.swing.JFrame {
                     + "produto_sempre_dos_mesmos,produto_sempre_dos_mesmos_quem_aparece,"
                     + "produto_sempre_mais_barato) values ("+
                     codigo+",'"+
-                    util.checarChb(rbPescadorP)+"','"+
-                    util.checarChb(rbEmpresaP)+"','"+
-                    util.checarChb(rbOutroAtravessadorP)+"','"+
-                    util.checarChb(rbDonoBarcoP)+"','"+
-                    util.checarChb(rbMercadoFeiraP)+"','"+
-                    util.checarChb(rbCooperativaP)+"','"+
-                    util.checarChb(rbPescadorG)+"','"+
-                    util.checarChb(rbEmpresaG)+"','"+
-                    util.checarChb(rbOutroAtravessadorG)+"','"+
-                    util.checarChb(rbDonoBarcoG)+"','"+
-                    util.checarChb(rbMercadoFeiraG)+"','"+
-                    util.checarChb(rbCooperativaG)+"','"+
+                    util.checarCkb(ckbPescadorP)+"','"+
+                    util.checarCkb(ckbEmpresaP)+"','"+
+                    util.checarCkb(ckbOutroAtravessadorP)+"','"+
+                    util.checarCkb(ckbDonoBarcoP)+"','"+
+                    util.checarCkb(ckbMercadoFeiraP)+"','"+
+                    util.checarCkb(ckbCooperativaP)+"','"+
+                    util.checarCkb(ckbPescadorG)+"','"+
+                    util.checarCkb(ckbEmpresaG)+"','"+
+                    util.checarCkb(ckbOutroAtravessadorG)+"','"+
+                    util.checarCkb(ckbDonoBarcoG)+"','"+
+                    util.checarCkb(ckbMercadoFeiraG)+"','"+
+                    util.checarCkb(ckbCooperativaG)+"','"+
                     tfNumeroFornecedores.getText()+"','"+
                     util.checarCkb(ckbFornecedorAumentouSim)+"','"+
                     util.checarCkb(ckbSempreMesmoFornecedor1)+"','"+
@@ -2284,7 +2537,67 @@ public class atravessador2 extends javax.swing.JFrame {
 
             //System.out.println(sqlinsert);
             if (conexao.salvar(sqlinsert)) {
-                System.out.println("Recepção - Cadastrado com sucesso");
+                System.out.println("2 Recepção - Cadastrado com sucesso");
+            }
+
+            //Aquisicao
+            sqlinsert = "insert into atravessador_aquisicao "
+                    + "(cod_atravessador,peixe_inteiro,cor_carne_peixe,"
+                    + "odor_carne_peixe,consitencia_carne_peixe,odor_grude,"
+                    + "tamanho_grude,sem_mancha_grude,odor_aba,"
+                    + "tamanho_aba,sem_mancha_aba) values ("+
+                    codigo+",'"+
+                    util.checarCkb(ckbSoPeixeiInteiro)+"','"+
+                    util.checarCkb(ckbCorCarnePeixe)+"','"+
+                    util.checarCkb(ckbOdorCarnePeixe)+"','"+
+                    util.checarCkb(ckbConsistenciaCarnePeixe)+"','"+
+                    util.checarCkb(ckbOdorGrude)+"','"+
+                    util.checarCkb(ckbTamanhoGrude)+"','"+
+                    util.checarCkb(ckbSemManchaGrude)+"','"+
+                    util.checarCkb(ckbOdorAba)+"','"+
+                    util.checarCkb(ckbTamanhoAba)+"','"+
+                    util.checarCkb(ckbSemManchaAba)+"')";
+
+            //System.out.println(sqlinsert);
+            if (conexao.salvar(sqlinsert)) {
+                System.out.println("3 Aquisicao - Cadastrado com sucesso");
+            }
+
+            //Armazenamento
+            sqlinsert = "insert into atravessador_armazenamento "
+                    + "(cod_atravessador,pescado_gelo,pescado_frigorifico,"
+                    + "pescado_innatura,pescado_sal,grude_sal,"
+                    + "grude_estufa,grude_sol,grude_gelo) values ("+
+                    codigo+",'"+
+                    util.checarCkb(ckbGeloPescador)+"','"+
+                    util.checarCkb(ckbFrigorificoPescador)+"','"+
+                    util.checarCkb(ckbInNaturaPescador)+"','"+
+                    util.checarCkb(ckbSalPescador)+"','"+
+                    util.checarCkb(ckbSalGrude)+"','"+
+                    util.checarCkb(ckbEstufaGrude)+"','"+
+                    util.checarCkb(ckbSolGrude)+"','"+
+                    util.checarCkb(ckbGeloGrude)+"')";
+
+            //System.out.println(sqlinsert);
+            if (conexao.salvar(sqlinsert)) {
+                System.out.println("Armazenamento - Cadastrado com sucesso");
+            }
+
+            //Comercialização
+            sqlinsert = "insert into atravessador_comercializacao "
+                    + "(cod_atravessador,sempre_mesmo_comprador,"
+                    + "pq_sempre_o_mesmo,fincancia_embarcacao,"
+                    + "quantas_financia) values ("+
+                    codigo+",'"+
+                    util.checarCkb(ckbSempreDosMesmos)+"','"+
+                    tfSempreDosMesmosPq.getText()+"','"+
+                    util.checarCkb(ckbFinanciarSim)+"','"+
+                    tfQuantasFinanciadas.getText()+"')";
+
+            //System.out.println(sqlinsert);
+            if (conexao.salvar(sqlinsert)) {
+                System.out.println("4 Comercialização - Cadastrado com sucesso");
+                mostra_dados();
             }
 
 
@@ -2321,7 +2634,7 @@ public class atravessador2 extends javax.swing.JFrame {
                     +"drenagem_pluvial = '"+util.checarCkb(ckbDrenagemSim)+"',"
                     +"fossa = '"+util.checarCkb(ckbFossaSim)+"',"
                     +"tem_registro = '"+util.checarCkb(ckbPossuiColonia)+"',"
-                    +"qual_entidade = '"+qual_cooperativa.getText()+"',"
+                    +"qual_entidade = '"+tfQualEntidade.getText()+"',"
                     +"tempo_registro = '"+tfDesdeQuando.getText()+"',"
                     +"recebe_beneficio = '"+util.checarCkb(ckbRecebeBeneficioGovernoSim)+"',"
                     +"beneficio = '"+tfQualBeneficio.getText()+"',"
@@ -2338,19 +2651,19 @@ public class atravessador2 extends javax.swing.JFrame {
 
             //Recepção Produtos
             sqlupdate ="UPDATE atravessador_recepcao_produtos SET "
-                    +"pescador_fornece_pescado = '"+util.checarChb(rbPescadorP)+"',"
-                    +"empresa_fornece_pescado = '"+util.checarChb(rbEmpresaP)+"',"
-                    +"outro_atravessador_fornece_pescado = '"+util.checarChb(rbOutroAtravessadorP)+"',"
-                    +"dono_do_barco_fornece_pescado = '"+util.checarChb(rbDonoBarcoP)+"',"
-                    +"mercado_ou_feira_fornece_pescado = '"+util.checarChb(rbMercadoFeiraP)+"',"
-                    +"cooperativa_fornece_pescado = '"+ util.checarChb(rbCooperativaP)+"',"
+                    +"pescador_fornece_pescado = '"+util.checarCkb(ckbPescadorP)+"',"
+                    +"empresa_fornece_pescado = '"+util.checarCkb(ckbEmpresaP)+"',"
+                    +"outro_atravessador_fornece_pescado = '"+util.checarCkb(ckbOutroAtravessadorP)+"',"
+                    +"dono_do_barco_fornece_pescado = '"+util.checarCkb(ckbDonoBarcoP)+"',"
+                    +"mercado_ou_feira_fornece_pescado = '"+util.checarCkb(ckbMercadoFeiraP)+"',"
+                    +"cooperativa_fornece_pescado = '"+ util.checarCkb(ckbCooperativaP)+"',"
 
-                    +"pescador_fornece_grude = '"+util.checarChb(rbPescadorG)+"',"
-                    +"empresa_fornece_grude = '"+util.checarChb(rbEmpresaG)+"',"
-                    +"outro_atravessador_fornece_grude = '"+util.checarChb(rbOutroAtravessadorG)+"',"
-                    +"dono_do_barco_fornece_grude = '"+util.checarChb(rbDonoBarcoG)+"',"
-                    +"mercado_ou_feira_fornece_grude = '"+util.checarChb(rbMercadoFeiraG)+"',"
-                    +"cooperativa_fornece_grude = '"+util.checarChb(rbCooperativaG)+"',"
+                    +"pescador_fornece_grude = '"+util.checarCkb(ckbPescadorG)+"',"
+                    +"empresa_fornece_grude = '"+util.checarCkb(ckbEmpresaG)+"',"
+                    +"outro_atravessador_fornece_grude = '"+util.checarCkb(ckbOutroAtravessadorG)+"',"
+                    +"dono_do_barco_fornece_grude = '"+util.checarCkb(ckbDonoBarcoG)+"',"
+                    +"mercado_ou_feira_fornece_grude = '"+util.checarCkb(ckbMercadoFeiraG)+"',"
+                    +"cooperativa_fornece_grude = '"+util.checarCkb(ckbCooperativaG)+"',"
 
                     +"numero_fornecedores = '"+tfNumeroFornecedores.getText()+"',"
                     +"numero_aumentou = '"+util.checarCkb(ckbFornecedorAumentouSim)+"',"
@@ -2360,12 +2673,70 @@ public class atravessador2 extends javax.swing.JFrame {
 
                     "where cod_atravessador = "+codigo;
 
-            System.out.println(sqlupdate);
+            //System.out.println(sqlupdate);
             if (conexao.update(sqlupdate)){
                 System.out.println("Recepção - Atualizado com sucesso");
                 //Atualiza Resultset
             }
 
+             //Aquisicao
+            sqlupdate ="UPDATE atravessador_aquisicao SET "
+                    +"peixe_inteiro = '"+util.checarCkb(ckbSoPeixeiInteiro)+"',"
+                    +"cor_carne_peixe = '"+util.checarCkb(ckbCorCarnePeixe)+"',"
+                    +"odor_carne_peixe = '"+util.checarCkb(ckbOdorCarnePeixe)+"',"
+                    +"consitencia_carne_peixe = '"+util.checarCkb(ckbConsistenciaCarnePeixe)+"',"
+                    +"odor_grude = '"+util.checarCkb(ckbOdorGrude)+"',"
+                    +"tamanho_grude = '"+ util.checarCkb(ckbTamanhoGrude)+"',"
+                    +"sem_mancha_grude = '"+ util.checarCkb(ckbSemManchaGrude)+"',"
+                    +"odor_aba = '"+ util.checarCkb(ckbOdorAba)+"',"
+                    +"tamanho_aba = '"+ util.checarCkb(ckbTamanhoAba)+"',"
+                    +"sem_mancha_aba = '"+ util.checarCkb(ckbSemManchaAba)+"' "+
+
+                    "where cod_atravessador = "+codigo;
+
+
+            //System.out.println(sqlupdate);
+            if (conexao.update(sqlupdate)){
+                System.out.println("Aquisição - Atualizado com sucesso");
+                //Atualiza Resultset
+            }
+
+            //Armazenamento
+
+            sqlupdate ="UPDATE atravessador_armazenamento SET "
+                    +"pescado_gelo = '"+util.checarCkb(ckbGeloPescador)+"',"
+                    +"pescado_frigorifico = '"+util.checarCkb(ckbFrigorificoPescador)+"',"
+                    +"pescado_innatura = '"+util.checarCkb(ckbInNaturaPescador)+"',"
+                    +"pescado_sal = '"+util.checarCkb(ckbSalPescador)+"',"
+                    +"grude_sal = '"+util.checarCkb(ckbSalGrude)+"',"
+                    +"grude_estufa = '"+util.checarCkb(ckbEstufaGrude)+"',"
+                    +"grude_sol = '"+ util.checarCkb(ckbSolGrude)+"',"
+                    +"grude_gelo = '"+util.checarCkb(ckbGeloGrude)+"' "+
+
+                    "where cod_atravessador = "+codigo;
+            
+            //System.out.println(sqlupdate);
+            if (conexao.update(sqlupdate)){
+                System.out.println("Armazenamento - Atualizado com sucesso");
+                //Atualiza Resultset
+            }
+
+            //Comercialização
+             sqlupdate ="UPDATE atravessador_comercializacao SET "
+                    +"sempre_mesmo_comprador = '"+util.checarCkb(ckbSempreDosMesmos)+"',"
+                    +"pq_sempre_o_mesmo = '"+tfSempreDosMesmosPq.getText()+"',"
+                    +"fincancia_embarcacao = '"+util.checarCkb(ckbFinanciarSim)+"',"
+                    +"quantas_financia = '"+tfQuantasFinanciadas.getText()+"' "+
+
+                    "where cod_atravessador = "+codigo;
+
+
+            //System.out.println(sqlupdate);
+            if (conexao.update(sqlupdate)){
+                System.out.println("Comércio - Atualizado com sucesso");
+                //Atualiza Resultset
+                mostra_dados();
+            }
     }
 
     private void AttAquisicaoFormasComercilizacao() {
@@ -2442,6 +2813,258 @@ public class atravessador2 extends javax.swing.JFrame {
             if (conexao.salvar(sql)) {
                 System.out.println("Exclusão realizada com sucesso");
                 AttAquisicaoFormasComercilizacao();
+            }   else
+                    JOptionPane.showMessageDialog(null,"Erro na exclusão");
+    }
+
+    private void AttComercializacaoGrude() {
+        String codigo = util.separa(1,cbNomeAtravessador.getSelectedItem().toString());
+        System.out.println(codigo);
+
+          //Relações de Trabalho - Tabela Renda Familia
+          String sqlinsert = "insert into atravessador_aquisicao_grude_especie "
+                    + "(cod_atravessador,especie,volume,preco,tipo) values ("+
+                    codigo+",'"+
+                    cbEspecieGrude.getSelectedItem()+"','"+
+                    tfVolumeGrude.getText()+"','"+
+                    tfPrecoGrude.getText()+"','"+
+                    tfTipoGrude.getText()+"')";
+
+            System.out.println(sqlinsert);
+            if (conexao.salvar(sqlinsert)) {
+                System.out.println("Jtable RT - Cadastrado com sucesso");
+                attjtGrudeEspecie();
+            }
+    }
+
+    private void attCbs() {
+        String item = new String();
+                try {
+                    cbEspecieAquisicao.removeAllItems();
+                    cbEspecieGrude.removeAllItems();
+                    cbEspecie.removeAllItems();
+                    conexao.execute("select * from especie");
+
+                    while (conexao.resultSet.next()){
+                        item = conexao.resultSet.getString("especie");
+                        cbEspecieAquisicao.addItem(item);
+                        cbEspecieGrude.addItem(item);
+                        cbEspecie.addItem(item);
+
+                    }
+                }catch (SQLException ex) {
+                    System.out.println(ex);
+                }
+    }
+
+    private void attjtGrudeEspecie() {
+        String codigo = util.separa(1,cbNomeAtravessador.getSelectedItem().toString());
+
+        conexao.execute("select * from atravessador_aquisicao_grude_especie"
+                        + " where cod_atravessador = " + codigo);
+
+        jtGrude.getColumnModel().getColumn(0).setMaxWidth(0);
+        jtGrude.getColumnModel().getColumn(0).setPreferredWidth(0);
+        jtGrude.getColumnModel().getColumn(1).setPreferredWidth(10);
+        jtGrude.getColumnModel().getColumn(2).setPreferredWidth(10);
+        jtGrude.getColumnModel().getColumn(3).setPreferredWidth(10);
+        jtGrude.getColumnModel().getColumn(4).setPreferredWidth(10);
+ 
+
+
+        DefaultTableModel modelo = (DefaultTableModel)jtGrude.getModel();
+        modelo.setNumRows(0);//limpa o JTable;
+
+        try{
+            while (conexao.resultSet.next())
+                modelo.addRow(new Object[]{conexao.resultSet.getString("cod_atravessador_aquisicao_grude_especie"),
+                                           conexao.resultSet.getString("especie"),
+                                           conexao.resultSet.getString("volume"),
+                                           conexao.resultSet.getString("preco"),
+                                           conexao.resultSet.getString("tipo"),
+                                          });
+
+            conexao.resultSet.first();
+
+        }catch (SQLException erro){
+            System.out.println(erro + " tabela GRUDE");
+            //attjTableComposicaoPescaria();
+        }
+    }
+
+    private void DeljtGrude() {
+        //System.out.println(jTableAtividadeFamiliar.getValueAt(jTableAtividadeFamiliar.getSelectedRow(),0));
+        String sql;
+
+        sql = "delete from atravessador_aquisicao_grude_especie "
+            + "Where cod_atravessador_aquisicao_grude_especie = "
+            + jtGrude.getValueAt(jtGrude.getSelectedRow(),0);
+
+            if (conexao.salvar(sql)) {
+                System.out.println("Exclusão realizada com sucesso");
+                attjtGrudeEspecie();
+            }   else
+                    JOptionPane.showMessageDialog(null,"Erro na exclusão");
+    }
+
+    private void AddJtFormas() {
+        String codigo = util.separa(1,cbNomeAtravessador.getSelectedItem().toString());
+        System.out.println(codigo);
+
+        String produtot = new String();
+            produtot = cbProduto.getSelectedItem().toString();
+            if (produtot.equals("Outro"))
+                produtot = tfProduto.getText();
+
+          //Relações de Trabalho - Tabela Renda Familia
+          String sqlinsert = "insert atravessador_comercializacao_formas "
+                    + "(cod_atravessador,especie,produto,cliente,destino,"
+                    + "volume,preco) values ("+
+                    codigo+",'"+
+                    cbEspecie.getSelectedItem()+"','"+
+                    produtot+"','"+
+                    tfCliente.getText()+"','"+
+                    tfDestino.getText()+"','"+
+                    tfVolume.getText()+"','"+
+                    tfPreco.getText()+"')";
+
+            System.out.println(sqlinsert);
+            if (conexao.salvar(sqlinsert)) {
+                System.out.println("Jtable - Cadastrado com sucesso");
+                attjtForma();
+            }
+    }
+
+    private void attjtForma() {
+        String codigo = util.separa(1,cbNomeAtravessador.getSelectedItem().toString());
+
+        conexao.execute("select * from atravessador_comercializacao_formas"
+                        + " where cod_atravessador = " + codigo);
+
+        jtForma.getColumnModel().getColumn(0).setMaxWidth(0);
+        jtForma.getColumnModel().getColumn(0).setPreferredWidth(0);
+        jtForma.getColumnModel().getColumn(1).setPreferredWidth(10);
+        jtForma.getColumnModel().getColumn(2).setPreferredWidth(10);
+        jtForma.getColumnModel().getColumn(3).setPreferredWidth(10);
+        jtForma.getColumnModel().getColumn(4).setPreferredWidth(10);
+        jtForma.getColumnModel().getColumn(5).setPreferredWidth(10);
+        jtForma.getColumnModel().getColumn(6).setPreferredWidth(10);
+
+
+
+        DefaultTableModel modelo = (DefaultTableModel)jtForma.getModel();
+        modelo.setNumRows(0);//limpa o JTable;
+
+        try{
+            while (conexao.resultSet.next())
+                modelo.addRow(new Object[]{conexao.resultSet.getString("cod_atravessador_comercializacao_formas"),
+                                           conexao.resultSet.getString("especie"),
+                                           conexao.resultSet.getString("produto"),
+                                           conexao.resultSet.getString("cliente"),
+                                           conexao.resultSet.getString("destino"),
+                                           conexao.resultSet.getString("volume"),
+                                           conexao.resultSet.getString("preco"),
+                                          });
+
+            conexao.resultSet.first();
+
+        }catch (SQLException erro){
+            System.out.println(erro + " tabela Forma");
+            //attjTableComposicaoPescaria();
+        }
+    }
+
+    private void DelJtFormas() {
+        //System.out.println(jTableAtividadeFamiliar.getValueAt(jTableAtividadeFamiliar.getSelectedRow(),0));
+        String sql;
+
+        sql = "delete from atravessador_comercializacao_formas "
+            + "Where cod_atravessador_comercializacao_formas = "
+            + jtForma.getValueAt(jtForma.getSelectedRow(),0);
+
+            if (conexao.salvar(sql)) {
+                System.out.println("Exclusão realizada com sucesso");
+                attjtForma();
+            }   else
+                    JOptionPane.showMessageDialog(null,"Erro na exclusão");
+    }
+
+    private void AddJtGastos() {
+        String codigo = util.separa(1,cbNomeAtravessador.getSelectedItem().toString());
+        System.out.println(codigo);
+
+        String gastot = new String();
+            gastot = cbGastos.getSelectedItem().toString();
+            if (gastot.equals("Outro"))
+                gastot = tfOutrosGastos.getText();
+
+          //Relações de Trabalho - Tabela Renda Familia
+          String sqlinsert = "insert atravessador_comercializacao_gastos "
+                    + "(cod_atravessador,gasto,tipo,quantidade,"
+                    + "custo,outros) values ("+
+                    codigo+",'"+
+                    gastot+"','"+
+                    tfTipoGasto+"','"+
+                    tfQuantidadeCusto.getText()+"','"+
+                    tfCustoCusto.getText()+"','"+
+                    tfOutroCusto.getText()+"')";
+
+            System.out.println(sqlinsert);
+            if (conexao.salvar(sqlinsert)) {
+                System.out.println("Jtable - Cadastrado com sucesso");
+                attjtGasto();
+            }
+    }
+
+    private void attjtGasto() {
+        String codigo = util.separa(1,cbNomeAtravessador.getSelectedItem().toString());
+
+        conexao.execute("select * from atravessador_comercializacao_gastos"
+                        + " where cod_atravessador = " + codigo);
+
+        jtGastos.getColumnModel().getColumn(0).setMaxWidth(0);
+        jtGastos.getColumnModel().getColumn(0).setPreferredWidth(0);
+        jtGastos.getColumnModel().getColumn(1).setPreferredWidth(10);
+        jtGastos.getColumnModel().getColumn(2).setPreferredWidth(10);
+        jtGastos.getColumnModel().getColumn(3).setPreferredWidth(10);
+        jtGastos.getColumnModel().getColumn(4).setPreferredWidth(10);
+        jtGastos.getColumnModel().getColumn(5).setPreferredWidth(10);
+
+
+
+
+        DefaultTableModel modelo = (DefaultTableModel)jtGastos.getModel();
+        modelo.setNumRows(0);//limpa o JTable;
+
+        try{
+            while (conexao.resultSet.next())
+                modelo.addRow(new Object[]{conexao.resultSet.getString("cod_atravessador_comercializacao_gastos"),
+                                           conexao.resultSet.getString("gasto"),
+                                           conexao.resultSet.getString("tipo"),
+                                           conexao.resultSet.getString("quantidade"),
+                                           conexao.resultSet.getString("custo"),
+                                           conexao.resultSet.getString("outros"),
+                                          });
+
+            conexao.resultSet.first();
+
+        }catch (SQLException erro){
+            System.out.println(erro + " tabela gastos");
+            //attjTableComposicaoPescaria();
+        }
+    }
+
+    private void DelJtGastos() {
+        //System.out.println(jTableAtividadeFamiliar.getValueAt(jTableAtividadeFamiliar.getSelectedRow(),0));
+        String sql;
+
+        sql = "delete from atravessador_comercializacao_gastos "
+            + "Where cod_atravessador_comercializacao_gastos = "
+            + jtGastos.getValueAt(jtGastos.getSelectedRow(),0);
+
+            if (conexao.salvar(sql)) {
+                System.out.println("Exclusão realizada com sucesso");
+                attjtGasto();
             }   else
                     JOptionPane.showMessageDialog(null,"Erro na exclusão");
     }
