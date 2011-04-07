@@ -51,6 +51,8 @@ public class atravessador2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        casa = new javax.swing.ButtonGroup();
+        banheiro = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
         jpPescadoSubproduto = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
@@ -64,7 +66,7 @@ public class atravessador2 extends javax.swing.JFrame {
         jLabel45 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
-        ckbPossuiColonia = new javax.swing.JCheckBox();
+        ckbTemRegistroEntidade = new javax.swing.JCheckBox();
         tfDesdeQuando = new JIntField();
         tfQualEntidade = new javax.swing.JTextField();
         tfTempoAtividadeMoradia = new JIntField();
@@ -317,15 +319,15 @@ public class atravessador2 extends javax.swing.JFrame {
         jLabel49.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel49.setText("Quem de sua família trabalha? E com qual atividade?:");
 
-        ckbPossuiColonia.setText("Sim");
-        ckbPossuiColonia.addChangeListener(new javax.swing.event.ChangeListener() {
+        ckbTemRegistroEntidade.setText("Sim");
+        ckbTemRegistroEntidade.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                ckbPossuiColoniaStateChanged(evt);
+                ckbTemRegistroEntidadeStateChanged(evt);
             }
         });
-        ckbPossuiColonia.addActionListener(new java.awt.event.ActionListener() {
+        ckbTemRegistroEntidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ckbPossuiColoniaActionPerformed(evt);
+                ckbTemRegistroEntidadeActionPerformed(evt);
             }
         });
 
@@ -333,12 +335,16 @@ public class atravessador2 extends javax.swing.JFrame {
 
         tfTempoAtividadeMoradia.setText("0");
 
+        casa.add(rbMadeira);
         rbMadeira.setText("Madeira");
 
+        banheiro.add(rbBanheiroDentro);
         rbBanheiroDentro.setText("Dentro");
 
+        casa.add(rbAlvenaria);
         rbAlvenaria.setText("Alvenaria");
 
+        banheiro.add(rbBanheiroFora);
         rbBanheiroFora.setText("Fora");
         rbBanheiroFora.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -433,7 +439,7 @@ public class atravessador2 extends javax.swing.JFrame {
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel3.setText("Grude");
 
         jLabel4.setText("Quantos fornecedores são?");
@@ -778,7 +784,7 @@ public class atravessador2 extends javax.swing.JFrame {
 
         ckbFileAq.setText("File");
 
-        jLabel11.setText("Anos");
+        jLabel11.setText("Ano (Ex: 1998)");
 
         ckbPescadorP.setText("Pescador");
 
@@ -954,7 +960,7 @@ public class atravessador2 extends javax.swing.JFrame {
                             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                 .addComponent(jLabel47)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ckbPossuiColonia))
+                                .addComponent(ckbTemRegistroEntidade))
                             .addComponent(jLabel49)
                             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                 .addGap(23, 23, 23)
@@ -1045,7 +1051,7 @@ public class atravessador2 extends javax.swing.JFrame {
                         .addComponent(ckbSemCabecaAq)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ckbOutrosAq)))
-                .addContainerGap(151, Short.MAX_VALUE))
+                .addContainerGap(215, Short.MAX_VALUE))
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1074,16 +1080,16 @@ public class atravessador2 extends javax.swing.JFrame {
                                     .addComponent(tfTipoGrude, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(tfPrecoGrude, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE))))
                         .addGap(3, 3, 3))
-                    .addComponent(jScrollPane32, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE))
+                    .addComponent(jScrollPane32, javax.swing.GroupLayout.DEFAULT_SIZE, 585, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                .addContainerGap(526, Short.MAX_VALUE)
+                .addContainerGap(532, Short.MAX_VALUE)
                 .addComponent(jToggleButton4)
                 .addContainerGap())
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel20)
-                .addContainerGap(284, Short.MAX_VALUE))
+                .addContainerGap(336, Short.MAX_VALUE))
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1107,7 +1113,7 @@ public class atravessador2 extends javax.swing.JFrame {
                     .addComponent(ckbTamanhoAba)
                     .addComponent(ckbOdorAba)
                     .addComponent(jLabel26))
-                .addContainerGap(193, Short.MAX_VALUE))
+                .addContainerGap(239, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1178,14 +1184,14 @@ public class atravessador2 extends javax.swing.JFrame {
                                     .addComponent(jCheckBox18))))
                         .addGap(35, 35, 35))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                .addContainerGap(510, Short.MAX_VALUE)
+                .addContainerGap(518, Short.MAX_VALUE)
                 .addComponent(btAdiconarJtMercadoCliente)
                 .addContainerGap())
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                        .addComponent(jScrollPane33, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
+                        .addComponent(jScrollPane33, javax.swing.GroupLayout.DEFAULT_SIZE, 585, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1197,9 +1203,9 @@ public class atravessador2 extends javax.swing.JFrame {
                             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                 .addComponent(cbProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
-                            .addComponent(cbEspecie, 0, 239, Short.MAX_VALUE)
-                            .addComponent(tfCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE))
+                                .addComponent(tfProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE))
+                            .addComponent(cbEspecie, 0, 270, Short.MAX_VALUE)
+                            .addComponent(tfCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btAddFormas)
@@ -1215,15 +1221,15 @@ public class atravessador2 extends javax.swing.JFrame {
                                     .addComponent(tfDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(15, 15, 15))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                .addContainerGap(526, Short.MAX_VALUE)
+                .addContainerGap(532, Short.MAX_VALUE)
                 .addComponent(jToggleButton6)
                 .addContainerGap())
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 585, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                .addContainerGap(526, Short.MAX_VALUE)
+                .addContainerGap(532, Short.MAX_VALUE)
                 .addComponent(btDeletarJtMercadoCliente)
                 .addContainerGap())
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
@@ -1237,7 +1243,7 @@ public class atravessador2 extends javax.swing.JFrame {
                         .addComponent(jLabel34)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ckbSempreDosMesmos)))
-                .addContainerGap(248, Short.MAX_VALUE))
+                .addContainerGap(308, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1250,11 +1256,11 @@ public class atravessador2 extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addComponent(jLabel72)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfQuantasFinanciadas, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
+                        .addComponent(tfQuantasFinanciadas, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
                         .addGap(343, 343, 343))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addComponent(jLabel69)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jToggleButton8)
                     .addComponent(jScrollPane34, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
@@ -1284,7 +1290,7 @@ public class atravessador2 extends javax.swing.JFrame {
                                 .addComponent(jLabel71)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(ckbFinanciarSim)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)))
                 .addGap(15, 15, 15))
         );
         jpPescadoSubprodutoLayout.setVerticalGroup(
@@ -1334,7 +1340,7 @@ public class atravessador2 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel47)
-                    .addComponent(ckbPossuiColonia))
+                    .addComponent(ckbTemRegistroEntidade))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel44)
@@ -1675,15 +1681,15 @@ public class atravessador2 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 619, Short.MAX_VALUE)
+            .addGap(0, 621, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 619, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 743, Short.MAX_VALUE)
+            .addGap(0, 750, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 743, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE))
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
@@ -1713,18 +1719,18 @@ public class atravessador2 extends javax.swing.JFrame {
         atualizar_dados();
     }//GEN-LAST:event_botao_alterarActionPerformed
 
-    private void ckbPossuiColoniaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ckbPossuiColoniaStateChanged
-        if (ckbPossuiColonia.isSelected()){
+    private void ckbTemRegistroEntidadeStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ckbTemRegistroEntidadeStateChanged
+        if (ckbTemRegistroEntidade.isSelected()){
             tfQualEntidade.setEditable(true);
         }else{
             tfQualEntidade.setEditable(false);
             tfQualEntidade.setText("");
         }
-}//GEN-LAST:event_ckbPossuiColoniaStateChanged
+}//GEN-LAST:event_ckbTemRegistroEntidadeStateChanged
 
-    private void ckbPossuiColoniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckbPossuiColoniaActionPerformed
+    private void ckbTemRegistroEntidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckbTemRegistroEntidadeActionPerformed
         // TODO add your handling code here:
-}//GEN-LAST:event_ckbPossuiColoniaActionPerformed
+}//GEN-LAST:event_ckbTemRegistroEntidadeActionPerformed
 
     private void btExcluirRendaFamiliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirRendaFamiliaActionPerformed
         excluirRT();
@@ -1838,6 +1844,7 @@ public class atravessador2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup banheiro;
     private javax.swing.JButton botao_alterar;
     private javax.swing.JButton botao_salvar_questionario;
     private javax.swing.JToggleButton btAddFormas;
@@ -1846,6 +1853,7 @@ public class atravessador2 extends javax.swing.JFrame {
     private javax.swing.JToggleButton btAdiconarJtMercadoCliente;
     private javax.swing.JToggleButton btDeletarJtMercadoCliente;
     private javax.swing.JButton btExcluirRendaFamilia;
+    private javax.swing.ButtonGroup casa;
     private javax.swing.JComboBox cbEspecie;
     private javax.swing.JComboBox cbEspecieAquisicao;
     private javax.swing.JComboBox cbEspecieGrude;
@@ -1887,7 +1895,6 @@ public class atravessador2 extends javax.swing.JFrame {
     private javax.swing.JCheckBox ckbOutrosAq;
     private javax.swing.JCheckBox ckbPescadorG;
     private javax.swing.JCheckBox ckbPescadorP;
-    private javax.swing.JCheckBox ckbPossuiColonia;
     private javax.swing.JCheckBox ckbPostaAq;
     private javax.swing.JCheckBox ckbRecebeBeneficioGovernoSim;
     private javax.swing.JCheckBox ckbSalGrude;
@@ -1903,6 +1910,7 @@ public class atravessador2 extends javax.swing.JFrame {
     private javax.swing.JCheckBox ckbSolGrude;
     private javax.swing.JCheckBox ckbTamanhoAba;
     private javax.swing.JCheckBox ckbTamanhoGrude;
+    private javax.swing.JCheckBox ckbTemRegistroEntidade;
     private javax.swing.JCheckBox jCheckBox11;
     private javax.swing.JCheckBox jCheckBox12;
     private javax.swing.JCheckBox jCheckBox13;
@@ -2040,44 +2048,13 @@ public class atravessador2 extends javax.swing.JFrame {
     private javax.swing.JTextField tfVolumeGrude;
     // End of variables declaration//GEN-END:variables
 
-        public void preencher_jtable(){
-//        jTable1.getColumnModel().getColumn(0).setMaxWidth(0);
-//        jTable1.getColumnModel().getColumn(0).setPreferredWidth(0);
-//        jTable1.getColumnModel().getColumn(1).setPreferredWidth(40);
-//        jTable1.getColumnModel().getColumn(2).setPreferredWidth(10);
-//        jTable1.getColumnModel().getColumn(3).setPreferredWidth(10);
-//        jTable1.getColumnModel().getColumn(4).setPreferredWidth(10);
-//        jTable1.getColumnModel().getColumn(5).setPreferredWidth(10);
-//        jTable1.getColumnModel().getColumn(6).setPreferredWidth(10);
-//
-//        DefaultTableModel modelo = (DefaultTableModel)jTable1.getModel();
-//        modelo.setNumRows(0);//limpa o JTable1;
-//
-//        try{
-//            while (conexao.resultSet.next())
-//                modelo.addRow(new Object[]{conexao.resultSet.getString("id_material"),
-//                                           conexao.resultSet.getString("nome"),
-//                                           conexao.resultSet.getString("tipo"),
-//                                           conexao.resultSet.getString("quantidade"),
-//                                           conexao.resultSet.getString("custo"),
-//                                           conexao.resultSet.getString("outros"),
-//                                           conexao.resultSet.getString("frequencia")});
-//
-//            conexao.resultSet.first();
-//        }catch (SQLException erro){
-//            System.out.println(erro);
-//        }
-
-
-
-    }
 
     private void mostra_dados(){
         limpar_dados();
         String codigo = util.separa(1,cbNomeAtravessador.getSelectedItem().toString());
         System.out.println(codigo);
         try {
-            //Pescador Moradia
+            //Atravessador Moradia
             conexao.execute("SELECT * FROM atravessador_moradia WHERE cod_atravessador = "+codigo);
             conexao.resultSet.first();
 
@@ -2087,139 +2064,156 @@ public class atravessador2 extends javax.swing.JFrame {
             testador = conexao.resultSet.getString("casa");
             if (testador.equals("Madeira"))
                    rbMadeira.setSelected(true);
-            else
-                   rbMadeira.setSelected(false);
 
             if (testador.equals("Alvenaria"))
                    rbAlvenaria.setSelected(true);
-            else
-                   rbAlvenaria.setSelected(false);
 
             if (conexao.resultSet.getString("luz").equals("1"))
                    ckbLuzSim.setSelected(true);
-            else
-                   ckbLuzSim.setSelected(false);
 
             testador = conexao.resultSet.getString("banheiro");
             if (testador.equals("Dentro"))
                    rbBanheiroDentro.setSelected(true);
-            else
-                   rbBanheiroDentro.setSelected(false);
 
             if (testador.equals("Fora"))
                    rbBanheiroFora.setSelected(true);
-            else
-                   rbBanheiroFora.setSelected(false);
 
             if (conexao.resultSet.getString("agua_encanada").equals("1"))
                    ckbAguaSim.setSelected(true);
-            else
-                   ckbAguaSim.setSelected(false);
 
             if (conexao.resultSet.getString("drenagem_pluvial").equals("1"))
                    ckbDrenagemSim.setSelected(true);
-            else
-                   ckbDrenagemSim.setSelected(false);
 
             if (conexao.resultSet.getString("fossa").equals("1"))
                    ckbFossaSim.setSelected(true);
-            else
-                   ckbFossaSim.setSelected(false);
-            tfQualEntidade.setText(conexao.resultSet.getString("qual_cooperativa"));
-            tfDesdeQuando.setText(conexao.resultSet.getString("tempo_cooperativa"));
-            
-            System.out.println("Passou! Moradia");
 
-//          Relações de Trabalho
-            conexao.execute("SELECT * FROM atravessador_relacoes_trabalho WHERE cod_pescador = "+codigo);
-            conexao.resultSet.first();
+            if (conexao.resultSet.getString("tem_registro").equals("1"))
+                   ckbTemRegistroEntidade.setSelected(true);
 
+            tfQualEntidade.setText(conexao.resultSet.getString("qual_entidade"));
+            tfDesdeQuando.setText(conexao.resultSet.getString("tempo_registro"));
+       
             if (conexao.resultSet.getString("recebe_beneficio").equals("1"))
                    ckbRecebeBeneficioGovernoSim.setSelected(true);
-            else
-                   ckbRecebeBeneficioGovernoSim.setSelected(false);
 
             tfQualBeneficio.setText(conexao.resultSet.getString("beneficio"));
             tfTempoAtividadeMoradia.setText(conexao.resultSet.getString("tempo_atividade"));
 
-            System.out.println("Passou! Relações de Trabalho");
+            System.out.println("Passou Moradia");
 
-//            taExigenciaCompraPescado.setText(conexao.resultSet.getString("exigencia_pescado_subprodutos"));
-//            taRecepcao.setText(conexao.resultSet.getString("como_func_recepcao"));
-//            taArmazenamento.setText(conexao.resultSet.getString("como_func_armazenamento"));
-//            taComercializacao.setText(conexao.resultSet.getString("como_funf_comercializacao"));
+            //Atravessador Recepção
+            conexao.execute("SELECT * FROM atravessador_recepcao_produtos WHERE cod_atravessador = "+codigo);
+            conexao.resultSet.first();
+
+           if (conexao.resultSet.getString("pescador_fornece_pescado").equals("1"))
+                   ckbPescadorP.setSelected(true);
+
+           if (conexao.resultSet.getString("empresa_fornece_pescado").equals("1"))
+                   ckbEmpresaP.setSelected(true);
+
+            if (conexao.resultSet.getString("outro_atravessador_fornece_pescado").equals("1"))
+                   ckbOutroAtravessadorP.setSelected(true);
+
+            if (conexao.resultSet.getString("dono_do_barco_fornece_pescado").equals("1"))
+                   ckbDonoBarcoP.setSelected(true);
+
+            if (conexao.resultSet.getString("mercado_ou_feira_fornece_pescado").equals("1"))
+                   ckbMercadoFeiraP.setSelected(true);
+
+            if (conexao.resultSet.getString("cooperativa_fornece_pescado").equals("1"))
+                   ckbCooperativaP.setSelected(true);
+            //
+            if (conexao.resultSet.getString("pescador_fornece_grude").equals("1"))
+                   ckbPescadorG.setSelected(true);
+
+            if (conexao.resultSet.getString("empresa_fornece_grude").equals("1"))
+                   ckbEmpresaG.setSelected(true);
+
+            if (conexao.resultSet.getString("outro_atravessador_fornece_grude").equals("1"))
+                   ckbOutroAtravessadorG.setSelected(true);
+
+            if (conexao.resultSet.getString("dono_do_barco_fornece_grude").equals("1"))
+                   ckbDonoBarcoG.setSelected(true);
+
+            if (conexao.resultSet.getString("mercado_ou_feira_fornece_grude").equals("1"))
+                   ckbMercadoFeiraG.setSelected(true);
+
+            if (conexao.resultSet.getString("cooperativa_fornece_grude").equals("1"))
+                   ckbCooperativaG.setSelected(true);
+            //
+            tfNumeroFornecedores.setText(conexao.resultSet.getString("numero_fornecedores"));
+
+            if (conexao.resultSet.getString("numero_aumentou").equals("1"))
+                   ckbFornecedorAumentouSim.setSelected(true);
+
+            if (conexao.resultSet.getString("produto_sempre_dos_mesmos").equals("1"))
+                   ckbSempreMesmoFornecedor1.setSelected(true);
+
+            if (conexao.resultSet.getString("produto_sempre_dos_mesmos_quem_aparece").equals("1"))
+                   ckbSempreMesmoFornecedor2.setSelected(true);
+
+            if (conexao.resultSet.getString("produto_sempre_mais_barato").equals("1"))
+                   ckbMaisBarato3.setSelected(true);
+
+
+//             //Aquisicao
+//             sqlupdate ="UPDATE atravessador_aquisicao SET "
+//                    +"peixe_inteiro = '"+util.checarCkb(ckbSoPeixeiInteiro)+"',"
+//                    +"cor_carne_peixe = '"+util.checarCkb(ckbCorCarnePeixe)+"',"
+//                    +"odor_carne_peixe = '"+util.checarCkb(ckbOdorCarnePeixe)+"',"
+//                    +"consitencia_carne_peixe = '"+util.checarCkb(ckbConsistenciaCarnePeixe)+"',"
+//                    +"odor_grude = '"+util.checarCkb(ckbOdorGrude)+"',"
+//                    +"tamanho_grude = '"+ util.checarCkb(ckbTamanhoGrude)+"',"
+//                    +"sem_mancha_grude = '"+ util.checarCkb(ckbSemManchaGrude)+"',"
+//                    +"odor_aba = '"+ util.checarCkb(ckbOdorAba)+"',"
+//                    +"tamanho_aba = '"+ util.checarCkb(ckbTamanhoAba)+"',"
+//                    +"sem_mancha_aba = '"+ util.checarCkb(ckbSemManchaAba)+"' "+
 //
-//           tpDificuldadesEncontradas.setText(conexao.resultSet.getString("dificuldades_para_manter_e_solucoes"));
-//           tpSempreMesmoCompradores.setText(conexao.resultSet.getString("sempre_vende_pros_mesmos"));
-//           tpExigenciasCompradores.setText(conexao.resultSet.getString("exigencias_compradores"));
-//           tpComoNegocia.setText(conexao.resultSet.getString("como_negocia"));
-//           tpCedeAdiantamento.setText(conexao.resultSet.getString("cede_adiantamento"));
-//           tpSitObrigaEntregar.setText(conexao.resultSet.getString("situacao_obriga_entregar_prod"));
-//           tpExisteIteracao.setText(conexao.resultSet.getString("existe_interacao"));
-//           tpGrauCompetitividade.setText(conexao.resultSet.getString("grau_competitividade"));
-//           tpAtuacaoInstituicoesSuaRelacao.setText(conexao.resultSet.getString("atuacao_instituicoes_sua_relacao"));
-//           tpEstoqueContEstavel.setText(conexao.resultSet.getString("estoque_continua_estavel"));
-//           tpTamanhoPescadoDiminuindo.setText(conexao.resultSet.getString("pescado_diminuindo_mot_mudanca"));
-//           tpNumeroFornecedoresAumentou.setText(conexao.resultSet.getString("numero_aumentou_o_que_acha"));
-//           tpPerspectiva.setText(conexao.resultSet.getString("perspectiva"));
-//           tpContinuarAtividade.setText(conexao.resultSet.getString("pretende_continuar"));
-//           tpDesejoFilhos.setText(conexao.resultSet.getString("desejo_para_filhos"));
-//           tfOutros_principaisClientes.setText(conexao.resultSet.getString("possui_cliente_outros_quais"));
+//                    "where cod_atravessador = "+codigo;
 //
-//            //Selecionar os check boxes conforme o BD
-//            if (conexao.resultSet.getString("sempre_dos_mesmos_pesc").equals("1"))
-//                   ckbSempreDosMesmos.setSelected(true);
-//            else
-//                   ckbSempreDosMesmos.setSelected(false);
 //
-//            if (conexao.resultSet.getString("peixe_inteiro").equals("1"))
-//                   ckbPeixeInteiro.setSelected(true);
-//            else
-//                   ckbPeixeInteiro.setSelected(false);
-//
-//            if (conexao.resultSet.getString("possui_cliente_consumidor").equals("1"))
-//                   ckbConsumidor.setSelected(true);
-//            else
-//                   ckbConsumidor.setSelected(false);
-//
-//            if (conexao.resultSet.getString("possui_cliente_restaurante").equals("1"))
-//                   ckbRestaurante.setSelected(true);
-//            else
-//                   ckbRestaurante.setSelected(false);
-//
-//            if (conexao.resultSet.getString("possui_cliente_supermercados").equals("1"))
-//                   ckbSupemercados.setSelected(true);
-//            else
-//                   ckbSupemercados.setSelected(false);
-//
-//            if (conexao.resultSet.getString("possui_cliente_revendedores").equals("1"))
-//                   ckbRevendedores.setSelected(true);
-//            else
-//                   ckbRevendedores.setSelected(false);
-//
-//            if (conexao.resultSet.getString("possui_cliente_feiras").equals("1"))
-//                   ckbFeiras.setSelected(true);
-//            else
-//                   ckbFeiras.setSelected(false);
-//
-//            if (conexao.resultSet.getString("possui_cliente_outros").equals("1"))
-//                   ckbOutros_principaisClientes.setSelected(true);
-//            else
-//                   ckbOutros_principaisClientes.setSelected(false);
-//
-//           if (ckbOutros_principaisClientes.isSelected()){ // se outros estiver marcado, deixa editar
-//            tfOutros_principaisClientes.setEditable(true);
+//            //System.out.println(sqlupdate);
+//            if (conexao.update(sqlupdate)){
+//                System.out.println("Aquisição - Atualizado com sucesso");
+//                //Atualiza Resultset
 //            }
-//           else
-//            tfOutros_principaisClientes.setEditable(false);
 //
-//           //mudancas
+//            //Armazenamento
 //
-//           tfOutrasFormasDeComercializacaoPeixe.setText(conexao.resultSet.getString("sempre_dos_mesmos_pesc_quais"));
-//           tpObservacao.setText(conexao.resultSet.getString("observacao"));
-
-
-
+//            sqlupdate ="UPDATE atravessador_armazenamento SET "
+//                    +"pescado_gelo = '"+util.checarCkb(ckbGeloPescador)+"',"
+//                    +"pescado_frigorifico = '"+util.checarCkb(ckbFrigorificoPescador)+"',"
+//                    +"pescado_innatura = '"+util.checarCkb(ckbInNaturaPescador)+"',"
+//                    +"pescado_sal = '"+util.checarCkb(ckbSalPescador)+"',"
+//                    +"grude_sal = '"+util.checarCkb(ckbSalGrude)+"',"
+//                    +"grude_estufa = '"+util.checarCkb(ckbEstufaGrude)+"',"
+//                    +"grude_sol = '"+ util.checarCkb(ckbSolGrude)+"',"
+//                    +"grude_gelo = '"+util.checarCkb(ckbGeloGrude)+"' "+
+//
+//                    "where cod_atravessador = "+codigo;
+//
+//            //System.out.println(sqlupdate);
+//            if (conexao.update(sqlupdate)){
+//                System.out.println("Armazenamento - Atualizado com sucesso");
+//                //Atualiza Resultset
+//            }
+//
+//            //Comercialização
+//             sqlupdate ="UPDATE atravessador_comercializacao SET "
+//                    +"sempre_mesmo_comprador = '"+util.checarCkb(ckbSempreDosMesmos)+"',"
+//                    +"pq_sempre_o_mesmo = '"+tfSempreDosMesmosPq.getText()+"',"
+//                    +"fincancia_embarcacao = '"+util.checarCkb(ckbFinanciarSim)+"',"
+//                    +"quantas_financia = '"+tfQuantasFinanciadas.getText()+"' "+
+//
+//                    "where cod_atravessador = "+codigo;
+//
+//
+//            //System.out.println(sqlupdate);
+//            if (conexao.update(sqlupdate)){
+//                System.out.println("Comércio - Atualizado com sucesso");
+//                //Atualiza Resultset
+//                mostra_dados();
+//            }
 
 
         } catch (Exception e) {
@@ -2267,118 +2261,6 @@ public class atravessador2 extends javax.swing.JFrame {
 //            tpObservacao.setText("");
     }
 
-        public String pega_codigo_ou_nome(int n,String teste) { //Se entrar com 1 pega o Código, se não pega o Nome
-              //pegar a Id do atravessador
-              
-              //aqui ele pega a quantidade de carcteres que tem uma determinada variável
-              //e armazena numa INT para usá-la de contador
-              int contador = teste.length();
-
-              //cria um for( para fazer uma varredura letra por letra até encontrar
-              for(int i = 0;i<contador;i++){
-                 //usamos substring pra pegar um caractere, passando como parâmetro,
-                 //o primeiro caractere a ser pega, até a ultima.
-                //fiz um if para verificar se o caractere é igual a "#"
-                if (teste.substring(i,i+1).equals("#")){
-                   int posicao = i+1;
-                    System.out.println("Está na posição " + posicao);
-                    if (n == 1){
-                        return teste.substring(0,posicao-2);
-                    }
-                    else
-                        return teste.substring(posicao+1,teste.length());
-                }
-
-              }
-              return "nada";
-        }
-
-        public void preencher_jtableMercado(JTable table){
-        table.getColumnModel().getColumn(0).setMaxWidth(0);
-        table.getColumnModel().getColumn(0).setPreferredWidth(0);
-        table.getColumnModel().getColumn(1).setPreferredWidth(40);
-        table.getColumnModel().getColumn(2).setPreferredWidth(10);
-        table.getColumnModel().getColumn(3).setPreferredWidth(10);
-        table.getColumnModel().getColumn(4).setPreferredWidth(10);
-        table.getColumnModel().getColumn(5).setPreferredWidth(10);
-
-        DefaultTableModel modelo = (DefaultTableModel)table.getModel();
-        modelo.setNumRows(0);//limpa o JTable;
-
-        try{
-            while (conexao.resultSet.next())
-                modelo.addRow(new Object[]{conexao.resultSet.getString("id_mercado"),
-                                           conexao.resultSet.getString("especie"),
-                                           conexao.resultSet.getString("produto"),
-                                           conexao.resultSet.getString("destino"),
-                                           conexao.resultSet.getString("volume")+" "+conexao.resultSet.getString("unidade_volume"),
-                                           conexao.resultSet.getString("preco")});
-
-            conexao.resultSet.first();
-        }catch (SQLException erro){
-            System.out.println(erro);
-        }
-
-
-
-    }
-
-                public void preencher_jtableEspecie(){
-////        jtEspecie.getColumnModel().getColumn(0).setMaxWidth(0);
-////        jtEspecie.getColumnModel().getColumn(0).setPreferredWidth(0);
-////        jtEspecie.getColumnModel().getColumn(1).setPreferredWidth(10);
-////        jtEspecie.getColumnModel().getColumn(2).setPreferredWidth(10);
-////        jtEspecie.getColumnModel().getColumn(3).setPreferredWidth(10);
-////        jtEspecie.getColumnModel().getColumn(4).setPreferredWidth(10);
-////
-//        DefaultTableModel modelo = (DefaultTableModel)jTableAtividadeFamiliar.getModel();
-//        modelo.setNumRows(0);//limpa o JTable;
-//
-//        try{
-//            while (conexao.resultSet.next())
-//                modelo.addRow(new Object[]{conexao.resultSet.getString("id_especie"),
-//                                           conexao.resultSet.getString("especie"),
-//                                           conexao.resultSet.getString("causa_da_perda"),
-//                                           conexao.resultSet.getString("estimativa_da_perda"),
-//                                           conexao.resultSet.getString("destino_do_peixe_perdido")});
-//
-//            conexao.resultSet.first();
-//        }catch (SQLException erro){
-//            System.out.println(erro);
-//        }
-    }
-
-    public void exibir_L_E_N_I(int i){
-//        if (i == 0){
-//        //Atualiza A primeira tabela Mercado Local
-//        conexao.execute("select * from atravessador_addmercado where id_atravessador="
-//                        +pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+" "
-//                        + "and mercado='Mercado Local'");
-//        preencher_jtableMercado(jtMercadoLocal);
-//        conexao.execute("select * from atravessador_cadastro");
-//        } else if (i == 1){
-//        //Atualiza A segunda tabela Mercado Estadual
-//        conexao.execute("select * from atravessador_addmercado where id_atravessador="
-//                        +pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+" "
-//                        + "and mercado='Mercado Estadual'");
-//        preencher_jtableMercado(jtMercadoEstadual);
-//        conexao.execute("select * from atravessador_cadastro");
-//        }else if (i == 2){
-//        //Atualiza A terceira tabela Mercado Nacional
-//        conexao.execute("select * from atravessador_addmercado where id_atravessador="
-//                        +pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+" "
-//                        + "and mercado='Mercado Nacional'");
-//        preencher_jtableMercado(jtMercadoNacional);
-//        conexao.execute("select * from atravessador_cadastro");
-//        }else if (i == 3){
-//        //Atualiza A primeira tabela Mercado Internacional
-//        conexao.execute("select * from atravessador_addmercado where id_atravessador="
-//                        +pega_codigo_ou_nome(1,cbNomeAtravessador.getSelectedItem().toString())+" "
-//                        + "and mercado='Mercado Internacional'");
-//        preencher_jtableMercado(jtMercadoInternacional);
-//        conexao.execute("select * from atravessador_cadastro");
-//        }
-    }
 
     private void excluirRT() {
          //System.out.println(jTableAtividadeFamiliar.getValueAt(jTableAtividadeFamiliar.getSelectedRow(),0));
@@ -2493,7 +2375,7 @@ public class atravessador2 extends javax.swing.JFrame {
                     util.checarCkb(ckbAguaSim)+"','"+
                     util.checarCkb(ckbDrenagemSim)+"','"+
                     util.checarCkb(ckbFossaSim)+"','"+
-                    util.checarCkb(ckbPossuiColonia)+"','"+
+                    util.checarCkb(ckbTemRegistroEntidade)+"','"+
                     tfQualEntidade.getText()+"','"+
                     tfDesdeQuando.getText()+"','"+
                     util.checarCkb(ckbRecebeBeneficioGovernoSim)+"','"+
@@ -2633,7 +2515,7 @@ public class atravessador2 extends javax.swing.JFrame {
                     +"agua_encanada = '"+util.checarCkb(ckbAguaSim)+"',"
                     +"drenagem_pluvial = '"+util.checarCkb(ckbDrenagemSim)+"',"
                     +"fossa = '"+util.checarCkb(ckbFossaSim)+"',"
-                    +"tem_registro = '"+util.checarCkb(ckbPossuiColonia)+"',"
+                    +"tem_registro = '"+util.checarCkb(ckbTemRegistroEntidade)+"',"
                     +"qual_entidade = '"+tfQualEntidade.getText()+"',"
                     +"tempo_registro = '"+tfDesdeQuando.getText()+"',"
                     +"recebe_beneficio = '"+util.checarCkb(ckbRecebeBeneficioGovernoSim)+"',"
