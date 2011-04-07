@@ -64,7 +64,7 @@ public class atravessador3 extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        taQuestao6 = new javax.swing.JTextArea();
+        taQuestao4 = new javax.swing.JTextArea();
         jLabel35 = new javax.swing.JLabel();
         ckbQuestao11DeCrescimento = new javax.swing.JCheckBox();
         ckbQuestao11Estabilizacao = new javax.swing.JCheckBox();
@@ -74,7 +74,7 @@ public class atravessador3 extends javax.swing.JFrame {
         btAtualizar = new javax.swing.JButton();
         jLabel36 = new javax.swing.JLabel();
         jScrollPane11 = new javax.swing.JScrollPane();
-        taQuestao11 = new javax.swing.JTextArea();
+        taQuestao1 = new javax.swing.JTextArea();
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
         jCheckBox3 = new javax.swing.JCheckBox();
@@ -155,9 +155,9 @@ public class atravessador3 extends javax.swing.JFrame {
 
         jLabel30.setText("4 - Existem conflitos com instituições (IBAMA, MPA, SEPAQ)? Quais instituições e descrever conflitos.");
 
-        taQuestao6.setColumns(20);
-        taQuestao6.setRows(5);
-        jScrollPane6.setViewportView(taQuestao6);
+        taQuestao4.setColumns(20);
+        taQuestao4.setRows(5);
+        jScrollPane6.setViewportView(taQuestao4);
 
         jLabel35.setText("6 - Que perspectivas você tem (vê) para os próximos anos?");
 
@@ -183,9 +183,9 @@ public class atravessador3 extends javax.swing.JFrame {
 
         jLabel36.setText("1 - Quais dificuldades encontradas para manter a atividade da venda? Quais soluções para melhorar o trabalho?");
 
-        taQuestao11.setColumns(20);
-        taQuestao11.setRows(5);
-        jScrollPane11.setViewportView(taQuestao11);
+        taQuestao1.setColumns(20);
+        taQuestao1.setRows(5);
+        jScrollPane11.setViewportView(taQuestao1);
 
         jCheckBox1.setText("Sim");
 
@@ -211,7 +211,7 @@ public class atravessador3 extends javax.swing.JFrame {
                             .addComponent(ckbQ3TrocadePescado)
                             .addComponent(ckbQ3TrocadeAlimentos)
                             .addComponent(ckbQ3Outros))))
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addContainerGap(133, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,7 +226,7 @@ public class atravessador3 extends javax.swing.JFrame {
                             .addComponent(ckbQ4PorPesqueiros)
                             .addComponent(ckbQ4PorSobreposicaoDeRedeEEspinhel)
                             .addComponent(ckbQ4Outros))))
-                .addContainerGap(277, Short.MAX_VALUE))
+                .addContainerGap(301, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -237,9 +237,9 @@ public class atravessador3 extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, 711, Short.MAX_VALUE)
-                            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 711, Short.MAX_VALUE)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 711, Short.MAX_VALUE))
+                            .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, 735, Short.MAX_VALUE)
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 735, Short.MAX_VALUE)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 735, Short.MAX_VALUE))
                         .addGap(18, 18, 18))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -254,9 +254,9 @@ public class atravessador3 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(ckbQuestao11DeDiminuicao))
                             .addComponent(jLabel35))
-                        .addContainerGap(388, Short.MAX_VALUE))
+                        .addContainerGap(412, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 546, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 570, Short.MAX_VALUE)
                         .addComponent(btAtualizar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btSalvar)
@@ -273,8 +273,8 @@ public class atravessador3 extends javax.swing.JFrame {
                         .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel36)
                         .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 717, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 741, Short.MAX_VALUE)
+                .addContainerGap(36, Short.MAX_VALUE))
+            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 765, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -431,9 +431,9 @@ public class atravessador3 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextArea taQuestao11;
+    private javax.swing.JTextArea taQuestao1;
+    private javax.swing.JTextArea taQuestao4;
     private javax.swing.JTextArea taQuestao5;
-    private javax.swing.JTextArea taQuestao6;
     // End of variables declaration//GEN-END:variables
 
 
@@ -446,141 +446,11 @@ public class atravessador3 extends javax.swing.JFrame {
             conexao.execute("SELECT * FROM pescador_perspectiva WHERE cod_pescador = "+codigo);
             conexao.resultSet.first();
 
-            //Selecionar os check boxes conforme o BD
-            String testador = new String();
+           taQuestao1.setText(conexao.resultSet.getString("questao1"));
+           taQuestao4.setText(conexao.resultSet.getString("questao4"));
+           taQuestao5.setText(conexao.resultSet.getString("questao5"));
 
-            testador = conexao.resultSet.getString("questao1");
-//            if (testador.equals("sim"))
-//                   rbQ1sim.setSelected(true);
-//            else
-//                   rbQ1sim.setSelected(false);
-//
-//            if (testador.equals("não"))
-//                   rbQ1nao.setSelected(true);
-//            else
-//                   rbQ1nao.setSelected(false);
-//
-//            testador = conexao.resultSet.getString("questao2");
-//            if (testador.equals("aumentando"))
-//                   rbQ2Aumentando.setSelected(true);
-//            else
-//                   rbQ2Aumentando.setSelected(false);
-//
-//            if (testador.equals("diminuindo"))
-//                   rbQ2Diminuindo.setSelected(true);
-//            else
-//                   rbQ2Diminuindo.setSelected(false);
-//
-//            testador = conexao.resultSet.getString("questao3");
-//            if (!testador.equals(""))
-//                   rbQ3Sim.setSelected(true);
-//            else
-//                   rbQ3Sim.setSelected(false);
-//
-//            if (testador.equals(""))
-//                   rbQ3Nao.setSelected(true);
-//            else
-//                   rbQ3Nao.setSelected(false);
 
-            if (testador.equals("Troca de óleo"))
-                   ckbQ3TrocadeOleo.setSelected(true);
-            else
-                   ckbQ3TrocadeOleo.setSelected(false);
-
-            if (testador.equals("Troca de pescado ou grude"))
-                   ckbQ3TrocadePescado.setSelected(true);
-            else
-                   ckbQ3TrocadePescado.setSelected(false);
-
-            if (testador.equals("Troca de alimentos"))
-                   ckbQ3TrocadeAlimentos.setSelected(true);
-            else
-                   ckbQ3TrocadeAlimentos.setSelected(false);
-
-//            if (testador.equals("Rebocar"))
-//                   ckbQ3Rebocar.setSelected(true);
-//            else
-//                   ckbQ3Rebocar.setSelected(false);
-//
-//            if (testador.equals("Outros"))
-//                   ckbQ3Outros.setSelected(true);
-//            else
-//                   ckbQ3Outros.setSelected(false);
-//
-//            testador = conexao.resultSet.getString("questao4");
-//            if (!testador.equals(""))
-//                   rbQ4Sim.setSelected(true);
-//            else
-//                   rbQ4Sim.setSelected(false);
-//
-//            if (testador.equals(""))
-//                   rbQ4Nao.setSelected(true);
-//            else
-//                   rbQ4Nao.setSelected(false);
-
-            if (testador.equals("Por pesqueiros"))
-                   ckbQ4PorPesqueiros.setSelected(true);
-            else
-                   ckbQ4PorPesqueiros.setSelected(false);
-
-            if (testador.equals("Por sobreposição de redes"))
-                   ckbQ4PorSobreposicaodeRedes.setSelected(true);
-            else
-                   ckbQ4PorSobreposicaodeRedes.setSelected(false);
-
-            if (testador.equals("Por sobreposição de rede e espinhel"))
-                   ckbQ4PorSobreposicaoDeRedeEEspinhel.setSelected(true);
-            else
-                   ckbQ4PorSobreposicaoDeRedeEEspinhel.setSelected(false);
-
-//            if (testador.equals("Por roubo de rede"))
-//                   ckbQ4PorRoubodeRede.setSelected(true);
-//            else
-//                   ckbQ4PorRoubodeRede.setSelected(false);
-//
-//            if (testador.equals("Outros"))
-//                   ckbQ4Outros.setSelected(true);
-//            else
-//                   ckbQ4Outros.setSelected(false);
-//
-//            testador = conexao.resultSet.getString("questao5");
-//            if (!testador.equals(""))
-//                   rbQ5Sim.setSelected(true);
-//            else
-//                   rbQ5Sim.setSelected(false);
-//
-//            if (testador.equals(""))
-//                   rbQ5Nao.setSelected(true);
-//            else
-//                   rbQ5Nao.setSelected(false);
-
-            taQuestao5.setText(testador);
-
-            taQuestao6.setText(conexao.resultSet.getString("questao6"));
-
-//            taQuestao7.setText(conexao.resultSet.getString("questao7"));
-//
-//            taQuestao8.setText(conexao.resultSet.getString("questao8"));
-//
-//            taQuestao9.setText(conexao.resultSet.getString("questao9"));
-//
-//            taQuestao10.setText(conexao.resultSet.getString("questao10"));
-
-            testador = conexao.resultSet.getString("questao11");
-            if (testador.equals("De crescimento"))
-                   ckbQuestao11DeCrescimento.setSelected(true);
-            else
-                   ckbQuestao11DeCrescimento.setSelected(false);
-
-            if (testador.equals("Estabilização"))
-                   ckbQuestao11Estabilizacao.setSelected(true);
-            else
-                   ckbQuestao11Estabilizacao.setSelected(false);
-
-            if (testador.equals("De diminuição"))
-                   ckbQuestao11DeDiminuicao.setSelected(true);
-            else
-                   ckbQuestao11DeDiminuicao.setSelected(false);
 
         }catch (SQLException ex) {
                 JOptionPane.showMessageDialog(null,"Nenhum registro encontrado "+ ex );
