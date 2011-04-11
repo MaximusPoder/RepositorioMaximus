@@ -18,7 +18,7 @@
     <Property name="title" type="java.lang.String" value="Question&#xe1;rio Atravessador"/>
   </Properties>
   <SyntheticProperties>
-    <SyntheticProperty name="formSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,4,0,0,3,-107"/>
+    <SyntheticProperty name="formSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,4,-74,0,0,3,73"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="0"/>
     <SyntheticProperty name="generateSize" type="boolean" value="true"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
@@ -41,12 +41,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane1" alignment="0" pref="899" max="32767" attributes="0"/>
+          <Component id="jScrollPane1" alignment="0" pref="825" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane1" alignment="0" pref="471" max="32767" attributes="0"/>
+          <Component id="jScrollPane1" alignment="0" pref="1168" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -63,394 +63,198 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jSeparator5" alignment="0" max="32767" attributes="1"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jSeparator5" alignment="0" pref="771" max="32767" attributes="1"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="ckbArmadorPescador" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ckbAssalariado" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ckbParceria" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ckbFamiliar" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="cbPescador" min="-2" pref="364" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jLabel43" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="tfDesdeQuandoPescador" min="-2" pref="151" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel58" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="ckbColoniaSim" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                                                      <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <Group type="103" groupAlignment="1" attributes="0">
-                                                          <Group type="102" alignment="0" attributes="0">
-                                                              <Component id="ckbAssociacaoSim" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                                                              <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
-                                                          </Group>
-                                                          <Group type="102" alignment="1" attributes="0">
-                                                              <Component id="ckbCooperativaSim" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                                                              <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
-                                                          </Group>
-                                                      </Group>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="tfQualCooperativa" alignment="1" max="32767" attributes="1"/>
-                                                  <Component id="tfQualAssociacao" alignment="0" max="32767" attributes="1"/>
-                                                  <Component id="tfQualColonia" alignment="0" min="-2" pref="189" max="-2" attributes="1"/>
-                                              </Group>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="rbInssSim" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="rbInssNao" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="rbInssEmpregado" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="ckbPossuiRgp" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="1">
-                                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="ckbIbamaSim" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="tfNomeBarco" min="-2" pref="169" max="-2" attributes="1"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="tfPortoOrigem" min="-2" pref="169" max="-2" attributes="1"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel28" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel29" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="tfConservacaoPescado" max="32767" attributes="1"/>
-                                          <Component id="tfTempoTrabalhandoBarco" alignment="0" min="-2" pref="111" max="-2" attributes="1"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel68" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel22" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel23" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="chbEmbarcacaoPropria" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="chbTipoCAM" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="chbTipoBPP" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                                              <Component id="chbTipoBMP" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="chbTipoOutros" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                                              <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
-                                              <Component id="tfOutroTipoQual" min="-2" pref="169" max="-2" attributes="1"/>
-                                          </Group>
-                                          <Component id="chbEmbarcacaoPatrao" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel41" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel36" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel40" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel39" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel38" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="rbMadeira" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="ckbDrenagemSim" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="ckbAguaSim" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="ckbFossaSim" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="ckbLuzSim" min="-2" max="-2" attributes="0"/>
-                                          <Component id="rbBanheiroDentro" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="rbBanheiroFora" min="-2" max="-2" attributes="0"/>
-                                          <Component id="rbAlvenaria" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="jLabel51" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="ckbRecebeBeneficioGovernoSim" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="tfQualBeneficio" min="-2" pref="163" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jLabel49" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel50" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel48" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jSeparator1" alignment="0" max="32767" attributes="1"/>
-                                      <Component id="jScrollPane3" alignment="0" max="32767" attributes="1"/>
-                                      <Component id="btExcluirEspeciesCapturadas" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="jLabel54" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="tfFimSafra" min="-2" pref="129" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="jLabel53" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="cbEspecie" alignment="1" pref="128" max="32767" attributes="0"/>
-                                                          <Component id="tfInicioSafra" alignment="0" max="32767" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
-                                              </Group>
-                                              <Component id="jLabel52" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="1">
-                                                  <Component id="jButton1" min="-2" pref="72" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="jLabel55" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="cbArtePesca" min="-2" pref="132" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Group type="103" groupAlignment="1" attributes="0">
-                                                      <Component id="jLabel57" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jLabel56" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="tfTamanho" alignment="1" min="-2" pref="129" max="-2" attributes="1"/>
-                                                      <Component id="tfMalha" alignment="1" min="-2" pref="128" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="jLabel66" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
-                                                          <Component id="btAddEspeciesCapturadas" min="-2" pref="91" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Component id="jLabel67" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
-                                      </Group>
+                                      <Component id="cbEmpresa" min="-2" pref="364" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                      <Group type="103" alignment="1" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="jScrollPane4" alignment="0" max="32767" attributes="1"/>
-                                          <Group type="102" alignment="0" attributes="1">
-                                              <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="tfLocalCP" min="-2" pref="155" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="tfLatitudeCP" min="-2" pref="131" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="tfLongitudeCP" min="-2" pref="129" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="btAdicionarCP" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="btExcluirCP" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel15" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel20" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel19" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Component id="tfAlemPescaOutraPescaria" alignment="0" pref="136" max="32767" attributes="0"/>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="tfTempoChegarPesqueiro" min="-2" pref="51" max="-2" attributes="1"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="jLabel63" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Component id="tfQuantasViagensMes" alignment="0" max="32767" attributes="1"/>
-                                                  <Component id="tfRendaMediaPescador" alignment="0" pref="136" max="32767" attributes="1"/>
-                                              </Group>
-                                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                                                      <Component id="jPanel3" min="-2" max="-2" attributes="1"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Group type="102" alignment="0" attributes="0">
-                                                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                                              <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                              <Component id="tfDiasdePesca" pref="85" max="32767" attributes="1"/>
-                                                          </Group>
-                                                          <Group type="102" alignment="0" attributes="0">
-                                                              <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                                              <Component id="tfProducaoViagem" pref="86" max="32767" attributes="1"/>
-                                                          </Group>
-                                                      </Group>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jLabel65" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jLabel64" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="btExcluirCP" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="btAdicionarCP" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="1" attributes="1">
-                                          <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="tfParentescoRT" min="-2" pref="117" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="tfAtividadeRT" min="-2" pref="131" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="tfRendaRT" min="-2" pref="129" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="btAdicionarRT" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="jScrollPane2" alignment="0" max="32767" attributes="1"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Component id="jLabel59" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel10" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel12" alignment="1" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="cbEspecieComposicaoPescaria" alignment="0" pref="156" max="32767" attributes="1"/>
-                                                  <Component id="cbArtePescaComposicaoPescaria" alignment="0" pref="156" max="32767" attributes="1"/>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                          <Component id="tfMalhaComposicaoPescaria" alignment="0" max="32767" attributes="1"/>
-                                                          <Component id="tfTamanhoComposicaoPescaria" alignment="0" pref="55" max="32767" attributes="1"/>
-                                                      </Group>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jLabel61" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jLabel60" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
-                                              </Group>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <Group type="103" groupAlignment="1" attributes="0">
-                                                          <Group type="102" attributes="0">
-                                                              <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                                                          </Group>
-                                                          <Group type="102" alignment="1" attributes="0">
-                                                              <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                          </Group>
-                                                      </Group>
-                                                      <Group type="103" groupAlignment="1" attributes="0">
-                                                          <Group type="102" alignment="1" attributes="0">
-                                                              <EmptySpace max="-2" attributes="0"/>
-                                                              <Component id="ckbTempoArteAguaDia" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace max="-2" attributes="0"/>
-                                                              <Component id="ckbTempoArteAguaNoite" min="-2" max="-2" attributes="0"/>
-                                                          </Group>
-                                                          <Group type="102" alignment="0" attributes="0">
-                                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                                  <Component id="tfQuantidadeArtePesca" alignment="0" max="32767" attributes="1"/>
-                                                                  <Component id="tfTempoArteAgua" alignment="0" pref="69" max="32767" attributes="1"/>
-                                                              </Group>
-                                                              <EmptySpace max="-2" attributes="0"/>
-                                                              <Component id="jLabel62" min="-2" max="-2" attributes="0"/>
-                                                          </Group>
-                                                      </Group>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="jPanel2" max="32767" attributes="1"/>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
-                                          <Component id="btExcluirRT" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jSeparator4" alignment="0" max="32767" attributes="1"/>
-                                      </Group>
+                                      <Component id="jSeparator4" alignment="0" pref="761" max="32767" attributes="1"/>
                                   </Group>
                                   <Component id="jPanel4" alignment="0" min="-2" max="-2" attributes="1"/>
                               </Group>
                           </Group>
-                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jButton3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jSeparator2" alignment="1" min="-2" pref="577" max="-2" attributes="1"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel48" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jSeparator3" alignment="0" min="-2" pref="736" max="-2" attributes="1"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" alignment="1" attributes="1">
+                                      <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="cbFuncaoFuncionario" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="tfNumeroFuncionario" min="-2" pref="131" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="tfSalarioFuncionario" min="-2" pref="129" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="tfHorasTrabalhadasFuncionario" min="-2" pref="104" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                      <Component id="jScrollPane2" min="-2" max="-2" attributes="1"/>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="btExcluirRT" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="btAdicionarRT" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="tfTempoPermanenciaFuncionarios" alignment="0" min="-2" pref="222" max="-2" attributes="0"/>
+                                  <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jComboBox2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="tfOutrosFabrica" min="-2" pref="134" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Group type="102" alignment="0" attributes="1">
+                                          <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="tfIncentivosFiscaisFabrica" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="1">
+                                          <Component id="cbPrincipaisClientes" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jTextField1" min="-2" pref="110" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="tfOrigemAguaFabrica" alignment="0" max="32767" attributes="1"/>
+                                      <Component id="tfSolucionarProblemasFabrica" alignment="0" max="32767" attributes="1"/>
+                                      <Component id="jLabel5" alignment="0" max="32767" attributes="1"/>
+                                  </Group>
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="tfProblemasFabricaGelo" alignment="0" max="32767" attributes="1"/>
+                                      <Component id="jLabel3" alignment="0" max="32767" attributes="1"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" alignment="0" attributes="1">
+                                      <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="cbCustosAbatimento" min="-2" pref="82" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="tfLatitudeCP" min="-2" pref="131" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="tfLongitudeCP" min="-2" pref="129" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="tfAPartiAbatimento" min="-2" pref="125" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jScrollPane4" alignment="0" pref="761" max="32767" attributes="1"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="401" max="-2" attributes="0"/>
+                      <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="292" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="516" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btAddEspeciesCapturadas" min="-2" pref="91" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btExcluirEspeciesCapturadas" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="jSeparator1" alignment="0" max="32767" attributes="1"/>
+                                  <Component id="jScrollPane3" alignment="0" max="32767" attributes="1"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel54" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="tfEquipamentosEmprestimo" min="-2" pref="129" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel53" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="cbTIpoEmprestimo" min="-2" pref="114" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="jLabel57" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel56" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="tfConstrucaoEmprestimo" alignment="1" min="-2" pref="129" max="-2" attributes="1"/>
+                                          <Component id="tfMalha" alignment="1" min="-2" pref="128" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="tfOutrosEmprestimo" min="-2" pref="155" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="180" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -461,401 +265,159 @@
                       <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="cbPescador" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbEmpresa" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                              <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="17" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="rbMadeira" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="rbAlvenaria" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="ckbLuzSim" pref="42" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="rbBanheiroDentro" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rbBanheiroFora" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                              <Component id="jLabel41" pref="35" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="ckbAguaSim" alignment="3" max="32767" attributes="0"/>
-                                          <Component id="jLabel39" alignment="3" pref="22" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="ckbDrenagemSim" alignment="3" max="32767" attributes="0"/>
-                                          <Component id="jLabel40" alignment="3" pref="21" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                              <Component id="ckbFossaSim" pref="38" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rbInssSim" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rbInssNao" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rbInssEmpregado" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="ckbColoniaSim" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfQualColonia" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="tfQualAssociacao" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ckbAssociacaoSim" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="ckbCooperativaSim" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel46" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfQualCooperativa" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel47" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfDesdeQuandoPescador" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel58" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="ckbIbamaSim" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="ckbPossuiRgp" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jSeparator3" min="-2" pref="10" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel48" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                      <Component id="ckbFamiliar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="ckbParceria" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="ckbAssalariado" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="ckbArmadorPescador" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfParentescoRT" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbFuncaoFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel31" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfAtividadeRT" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfNumeroFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfRendaRT" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btAdicionarRT" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfSalarioFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfHorasTrabalhadasFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="115" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btExcluirRT" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="ckbRecebeBeneficioGovernoSim" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btExcluirRT" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btAdicionarRT" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="tfTempoPermanenciaFuncionarios" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="tfProblemasFabricaGelo" min="-2" pref="59" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="tfSolucionarProblemasFabrica" min="-2" pref="66" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="tfOrigemAguaFabrica" min="-2" pref="33" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfQualBeneficio" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                      <Component id="jSeparator4" min="-2" pref="10" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cbEspecieComposicaoPescaria" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="cbArtePescaComposicaoPescaria" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="tfTamanhoComposicaoPescaria" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel60" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace pref="18" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="tfMalhaComposicaoPescaria" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel59" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel61" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="tfQuantidadeArtePesca" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="ckbTempoArteAguaDia" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="ckbTempoArteAguaNoite" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="tfTempoArteAgua" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel62" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
+                          <Component id="tfOutrosFabrica" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfLocalCP" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfLatitudeCP" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfLongitudeCP" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btAdicionarCP" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbPrincipaisClientes" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jCheckBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel38" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfIncentivosFiscaisFabrica" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jSeparator4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbCustosAbatimento" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tfLatitudeCP" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="tfLongitudeCP" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tfAPartiAbatimento" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane4" min="-2" pref="113" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btExcluirCP" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="tfTempoChegarPesqueiro" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel63" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="tfQuantasViagensMes" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel65" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="tfProducaoViagem" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="tfRendaMediaPescador" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tfAlemPescaOutraPescaria" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tfDiasdePesca" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel64" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                              <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
-                      <Component id="jSeparator5" min="-2" pref="10" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel50" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel52" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cbEspecie" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel55" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cbArtePesca" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btExcluirCP" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btAdicionarCP" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <Component id="jSeparator5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jCheckBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel53" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfInicioSafra" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfTamanho" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfConstrucaoEmprestimo" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel56" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel67" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbTIpoEmprestimo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfOutrosEmprestimo" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel54" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfFimSafra" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btAddEspeciesCapturadas" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfEquipamentosEmprestimo" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel57" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="tfMalha" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel66" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane3" min="-2" pref="118" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btExcluirEspeciesCapturadas" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btExcluirEspeciesCapturadas" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btAddEspeciesCapturadas" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      <Component id="jLabel51" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="chbEmbarcacaoPropria" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="chbEmbarcacaoPatrao" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="chbTipoCAM" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="chbTipoBPP" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="chbTipoBMP" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="chbTipoOutros" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfOutroTipoQual" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfNomeBarco" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfPortoOrigem" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfTempoTrabalhandoBarco" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel68" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfConservacaoPescado" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel39">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="&#xc1;gua encanada.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="ckbArmadorPescador">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Armador e pescador (arma o barco e vai pescar)"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ckbArmadorPescadorActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="ckbAssalariado">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Assalariado (carteira assinada)"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ckbAssalariadoActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="cbPescador">
+            <Component class="javax.swing.JComboBox" name="cbEmpresa">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="0"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cbPescadorItemStateChanged"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbPescadorActionPerformed"/>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cbEmpresaItemStateChanged"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbEmpresaActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel24">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Pescador"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel40">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Drenagem pluvial.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="ckbAguaSim">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Sim"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="ckbDrenagemSim">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Sim"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="ckbFossaSim">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Sim"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel41">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Fossa seca ou s&#xe9;pica.:"/>
+                <Property name="text" type="java.lang.String" value="Empresa"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel4">
@@ -891,150 +453,17 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="12" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Question&#xe1;rio Pescador"/>
+                    <Property name="text" type="java.lang.String" value="Question&#xe1;rio Fabrica de G&#xea;lo 2"/>
                   </Properties>
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="jLabel43">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="12" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="MORADIA"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel47">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Desde quando &#xe9; pescador.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel5">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Possui carteira IBAMA.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="ckbIbamaSim">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Sim"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel6">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Possui Registro Feral de Pescador (RGP-MPA).:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="ckbPossuiRgp">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Sim"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel37">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Banheiro.:"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel48">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="12" style="1"/>
+                  <Font name="Tahoma" size="12" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Rela&#xe7;&#xf5;es de Trabalho"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="ckbFamiliar">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Familiar (o lucro fica em casa)"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ckbFamiliarActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="ckbParceria">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Parceria, com vizinhos, amigos etc. (o lucro &#xe9; dividido)"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ckbParceriaActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="ckbLuzSim">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Sim"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel38">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Casa.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel36">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Luz el&#xe9;trica.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="tfQualAssociacao">
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel45">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Qual.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="ckbAssociacaoSim">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Sim"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="tfDesdeQuandoPescador">
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new br.com.util.JIntField()"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JTextField" name="tfQualCooperativa">
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="ckbCooperativaSim">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Sim"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel4">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Cooperativa.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel46">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Qual.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Paga INSS.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="tfQualColonia">
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try{&#xa;javax.swing.text.MaskFormatter cpf= new javax.swing.text.MaskFormatter(&quot;###.###.###-##&quot;);&#xa;tfConservacaoPescado = new javax.swing.JFormattedTextField(cpf);&#xa;}catch (Exception e){&#xa;}"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel44">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Qual.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel3">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Em alguma associa&#xe7;&#xe3;o.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel2">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Na col&#xf4;nia.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="ckbColoniaSim">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Sim"/>
+                <Property name="text" type="java.lang.String" value="9_Qual o n&#xfa;mero de funcionarios por setor ?"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane2">
@@ -1085,19 +514,6 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="jLabel7">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Recebe algum benef&#xed;cio do governo.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="ckbRecebeBeneficioGovernoSim">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Sim"/>
-              </Properties>
-              <Events>
-                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckbRecebeBeneficioGovernoSimStateChanged"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JButton" name="btAdicionarRT">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Adicionar"/>
@@ -1109,140 +525,9 @@
             <Component class="javax.swing.JLabel" name="jLabel49">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="12" style="1"/>
+                  <Font name="Tahoma" size="12" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Composi&#xe7;&#xe3;o da Pescaria"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel8">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Pescaria Principal (esp&#xe9;cie).:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel9">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Safra.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel10">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Arte de pesca.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel11">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Quantidade.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="tfQuantidadeArtePesca">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfQuantidadeArtePescaActionPerformed"/>
-              </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JIntField()"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel12">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Tamanho.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="tfTamanhoComposicaoPescaria">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfTamanhoComposicaoPescariaActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="tfTempoArteAgua">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfTempoArteAguaActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel13">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Tempo da arte na &#xe1;gua.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="ckbTempoArteAguaDia">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Dia"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="ckbTempoArteAguaNoite">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Noite"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="tfTempoChegarPesqueiro">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfTempoChegarPesqueiroActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel15">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Tempo para chegar no pesqueiro.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="tfDiasdePesca">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfDiasdePescaActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel16">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Dias efetivos de pesca.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="tfQuantasViagensMes">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfQuantasViagensMesActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel17">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Quantas viagens por m&#xea;s.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel18">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Produ&#xe7;&#xe3;o por viagem.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="tfProducaoViagem">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfProducaoViagemActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel19">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Renda m&#xe9;dia do pescador (por viagem) R$.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="tfRendaMediaPescador">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfRendaMediaPescadorActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="tfAlemPescaOutraPescaria">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfAlemPescaOutraPescariaActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel20">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Al&#xe9;m da pesca outra pescaria.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="tfOutroTipoQual">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfOutroTipoQualActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel21">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Per&#xed;odo.:"/>
+                <Property name="text" type="java.lang.String" value="17_ A empresa recebe algum abatimento nos custos ?"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane3">
@@ -1255,23 +540,17 @@
                 <Component class="javax.swing.JTable" name="jTableEspeciesCapturadas">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="7" rowCount="4">
+                      <Table columnCount="6" rowCount="4">
                         <Column editable="true" title="Cod" type="java.lang.Object"/>
-                        <Column editable="true" title="Esp&#xe9;cie" type="java.lang.Object"/>
-                        <Column editable="true" title="Inicio da Safra" type="java.lang.Object"/>
-                        <Column editable="true" title="Fim da Safra" type="java.lang.Object"/>
-                        <Column editable="true" title="Arte de Pesca" type="java.lang.Object"/>
-                        <Column editable="true" title="Tamanho" type="java.lang.Object"/>
-                        <Column editable="true" title="Malha" type="java.lang.Object"/>
+                        <Column editable="true" title="Emprestimo" type="java.lang.Object"/>
+                        <Column editable="true" title="Constru&#xe7;&#xe3;o" type="java.lang.Object"/>
+                        <Column editable="true" title="Equipamento" type="java.lang.Object"/>
+                        <Column editable="true" title="Cap. Giro" type="java.lang.Object"/>
+                        <Column editable="true" title="Outros" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                       <TableColumnModel selectionModel="0">
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
                         <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                           <Title/>
                           <Editor/>
@@ -1319,104 +598,6 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btExcluirEspeciesCapturadasActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel50">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="12" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Dados de outras esp&#xe9;cies tamb&#xe9;m capturadas"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel51">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="12" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Dados da Embarca&#xe7;&#xe3;o"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel22">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Embarca&#xe7;&#xe3;o.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel23">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Tipo.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel25">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Qual.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel26">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Nome do barco:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="tfNomeBarco">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfNomeBarcoActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel27">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Porto de Origem:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="tfPortoOrigem">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfPortoOrigemActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel28">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="A quanto tempo ele esta trabalhando nesse barco.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="tfTempoTrabalhandoBarco">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfTempoTrabalhandoBarcoActionPerformed"/>
-              </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JIntField()"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel29">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Como se faz a conserva&#xe7;&#xe3;o do pescado.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="tfConservacaoPescado">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfConservacaoPescadoActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="rbInssSim">
-              <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="inssinss"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Sim aut&#xf4;nomo"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="rbInssNao">
-              <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="inssinss"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Sim empregado"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="rbInssEmpregado">
-              <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="inssinss"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="N&#xe3;o"/>
-              </Properties>
-            </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane4">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
@@ -1427,16 +608,22 @@
                 <Component class="javax.swing.JTable" name="jTableComposicaoPescaria">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="4" rowCount="4">
+                      <Table columnCount="5" rowCount="4">
                         <Column editable="false" title="cod" type="java.lang.Object"/>
-                        <Column editable="true" title="Local" type="java.lang.Object"/>
-                        <Column editable="true" title="Latitude" type="java.lang.Object"/>
-                        <Column editable="true" title="Longitude" type="java.lang.Object"/>
+                        <Column editable="true" title="Custo" type="java.lang.Object"/>
+                        <Column editable="true" title="Valor" type="java.lang.Object"/>
+                        <Column editable="true" title="Desconto" type="java.lang.Object"/>
+                        <Column editable="true" title="A Parti de (Ano)" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                       <TableColumnModel selectionModel="0">
                         <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                           <Title/>
                           <Editor/>
                           <Renderer/>
@@ -1473,48 +660,6 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btExcluirCPActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="rbMadeira">
-              <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="casacasa"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Madeira"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="rbAlvenaria">
-              <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="casacasa"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Alvenaria"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="rbBanheiroDentro">
-              <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="banheirobanheiro"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Dentro"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="rbBanheiroFora">
-              <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="banheirobanheiro"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Fora"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel14">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Qual.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="tfQualBeneficio">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JButton" name="jButton2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Salvar"/>
@@ -1533,26 +678,24 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel30">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Parentesco:"/>
+                <Property name="text" type="java.lang.String" value="Fun&#xe7;&#xe3;o"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfParentescoRT">
-            </Component>
-            <Component class="javax.swing.JTextField" name="tfAtividadeRT">
+            <Component class="javax.swing.JTextField" name="tfNumeroFuncionario">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel31">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Atividade"/>
+                <Property name="text" type="java.lang.String" value="N&#xfa;mero :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfRendaRT">
+            <Component class="javax.swing.JTextField" name="tfSalarioFuncionario">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JMoneyField()"/>
               </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel32">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Renda"/>
+                <Property name="text" type="java.lang.String" value="Sal&#xe1;rio"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btExcluirRT">
@@ -1563,11 +706,9 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btExcluirRTActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfLocalCP">
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel33">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Local.:"/>
+                <Property name="text" type="java.lang.String" value="Custos.:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfLatitudeCP">
@@ -1584,60 +725,36 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel34">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Longitude.:"/>
+                <Property name="text" type="java.lang.String" value="Desconto"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel35">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Latitude.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="cbEspecie">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
-                  </StringArray>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel52">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Esp&#xe9;cie.:"/>
+                <Property name="text" type="java.lang.String" value="Valor.:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel53">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Inicio Safra.:"/>
+                <Property name="text" type="java.lang.String" value="Tipo Emprestimo:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel54">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Fim Safra.:"/>
+                <Property name="text" type="java.lang.String" value="Equipamento"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfInicioSafra">
-            </Component>
-            <Component class="javax.swing.JTextField" name="tfFimSafra">
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel55">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Arte de Pesca.:"/>
-              </Properties>
+            <Component class="javax.swing.JTextField" name="tfEquipamentosEmprestimo">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel56">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Tamanho.:"/>
+                <Property name="text" type="java.lang.String" value="Constru&#xe7;&#xe3;o.:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfTamanho">
+            <Component class="javax.swing.JTextField" name="tfConstrucaoEmprestimo">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel57">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Malha.:"/>
+                <Property name="text" type="java.lang.String" value="Cap. Giro.:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfMalha">
@@ -1650,445 +767,190 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btAddEspeciesCapturadasActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Nova Esp&#xe9;cie"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator1">
-            </Component>
-            <Component class="javax.swing.JSeparator" name="jSeparator2">
-            </Component>
-            <Component class="javax.swing.JSeparator" name="jSeparator3">
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator4">
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator5">
             </Component>
-            <Component class="javax.swing.JComboBox" name="cbEspecieComposicaoPescaria">
+            <Component class="javax.swing.JComboBox" name="cbFuncaoFuncionario">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="5">
+                    <StringItem index="0" value="Administral&#xe7;&#xe3;o"/>
+                    <StringItem index="1" value="Produ&#xe7;&#xe3;o"/>
+                    <StringItem index="2" value="Vigilante"/>
+                    <StringItem index="3" value="Servi&#xe7;o Gerais "/>
+                    <StringItem index="4" value=" "/>
                   </StringArray>
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel58">
+            <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Anos"/>
+                <Property name="text" type="java.lang.String" value="Horas Trabalhadas"/>
               </Properties>
             </Component>
-            <Container class="javax.swing.JPanel" name="jPanel2">
+            <Component class="javax.swing.JTextField" name="tfHorasTrabalhadasFuncionario">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="e6" green="e6" red="e6" type="rgb"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="10_Qual a m&#xe9;dia do tempo de perman&#xea;ncia dos funcion&#xe1;rios da empresa em anos ?"/>
               </Properties>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="ckbJulS" alignment="1" max="32767" attributes="1"/>
-                              <Component id="ckbJanS" alignment="1" min="-2" max="-2" attributes="1"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="1">
-                                  <Component id="ckbFevS" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ckbMarS" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ckbAbrS" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ckbMaiS" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ckbJunS" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="ckbAgoS" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ckbSetS" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ckbOutS" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ckbNovS" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ckbDezS" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="ckbJanS" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ckbFevS" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ckbMarS" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ckbAbrS" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ckbMaiS" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ckbJunS" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="ckbJulS" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ckbAgoS" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ckbSetS" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ckbOutS" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ckbNovS" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ckbDezS" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JCheckBox" name="ckbJanS">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jan"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="ckbFevS">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="fev"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="ckbMarS">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="mar"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="ckbAbrS">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="abr"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="ckbMaiS">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="mai"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="ckbJunS">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jun"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="ckbJulS">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jul"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="ckbSetS">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="set"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="ckbAgoS">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="ago"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="ckbNovS">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="nov"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="ckbOutS">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="out"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="ckbDezS">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="dez"/>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Component class="javax.swing.JComboBox" name="cbArtePescaComposicaoPescaria">
+            </Component>
+            <Component class="javax.swing.JTextField" name="tfTempoPermanenciaFuncionarios">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="11_Quais os principais problemas que enfrenta com a f&#xe1;brica de gelo ?"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="tfProblemasFabricaGelo">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="1"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="12_Como solucionar os problemas(gargalos ) ?"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="tfSolucionarProblemasFabrica">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel5">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="13_Qual a origem da &#xe1;gua utilizada para a fabrica&#xe7;&#xe3;o do gelo ?"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="tfOrigemAguaFabrica">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel6">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="14_A &#xe1;gua passa por algum tipo  d tratamento ? Qual ?"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="jComboBox2">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                    <StringItem index="0" value="Filtragem"/>
+                    <StringItem index="1" value="Cloro"/>
+                    <StringItem index="2" value="Oz&#xf4;nio"/>
+                    <StringItem index="3" value="Outros"/>
                   </StringArray>
                 </Property>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel7">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Quais ?"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="tfOutrosFabrica">
               <Events>
-                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cbArtePescaComposicaoPescariaItemStateChanged"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbArtePescaComposicaoPescariaActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfOutrosFabricaActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfMalhaComposicaoPescaria">
+            <Component class="javax.swing.JLabel" name="jLabel14">
               <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfMalhaComposicaoPescariaActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel59">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Malha.:"/>
+                <Property name="text" type="java.lang.String" value="15_ Quais os principais clientes ?"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel60">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="metros"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel61">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="mil&#xed;metros"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel62">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="horas"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="cbArtePesca">
+            <Component class="javax.swing.JComboBox" name="cbPrincipaisClientes">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                    <StringItem index="0" value="Pescador"/>
+                    <StringItem index="1" value="Caminh&#xe3;o"/>
+                    <StringItem index="2" value="Marreteiro"/>
+                    <StringItem index="3" value="Outros"/>
                   </StringArray>
                 </Property>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel36">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Quais ?"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField1">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbArtePescaActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel63">
+            <Component class="javax.swing.JLabel" name="jLabel37">
               <Properties>
-                <Property name="text" type="java.lang.String" value="horas"/>
+                <Property name="text" type="java.lang.String" value="16_ A empresa recebeu incentivos fiscais ?"/>
               </Properties>
             </Component>
-            <Container class="javax.swing.JPanel" name="jPanel3">
+            <Component class="javax.swing.JCheckBox" name="jCheckBox1">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="e6" green="e6" red="e6" type="rgb"/>
+                <Property name="text" type="java.lang.String" value="Sim"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel38">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Qual ?"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="tfIncentivosFiscaisFabrica">
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cbCustosAbatimento">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="4">
+                    <StringItem index="0" value="LUZ"/>
+                    <StringItem index="1" value="ICMS"/>
+                    <StringItem index="2" value="IPTU"/>
+                    <StringItem index="3" value="OUTROS"/>
+                  </StringArray>
                 </Property>
               </Properties>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="ckbJulP" alignment="1" max="32767" attributes="1"/>
-                              <Component id="ckbJanP" alignment="1" min="-2" max="-2" attributes="1"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="1">
-                                  <Component id="ckbFevP" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ckbMarP" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ckbAbrP" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ckbMaiP" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ckbJunP" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="ckbAgoP" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ckbSetP" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ckbOutP" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ckbNovP" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ckbDezP" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="ckbJanP" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ckbFevP" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ckbMarP" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ckbAbrP" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ckbMaiP" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ckbJunP" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="ckbJulP" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ckbAgoP" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ckbSetP" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ckbOutP" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ckbNovP" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ckbDezP" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JCheckBox" name="ckbJanP">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jan"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="ckbFevP">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="fev"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="ckbMarP">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="mar"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="ckbAbrP">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="abr"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="ckbMaiP">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="mai"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="ckbJunP">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jun"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="ckbJulP">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jul"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="ckbSetP">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="set"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="ckbAgoP">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="ago"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="ckbNovP">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="nov"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="ckbOutP">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="out"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="ckbDezP">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="dez"/>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Component class="javax.swing.JLabel" name="jLabel64">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel8">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Dias"/>
+                <Property name="text" type="java.lang.String" value="A parti de (ano).:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel65">
+            <Component class="javax.swing.JTextField" name="tfAPartiAbatimento">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel9">
               <Properties>
-                <Property name="text" type="java.lang.String" value="KG"/>
+                <Property name="text" type="java.lang.String" value="18_ Fez algum emprestimo para a mpresa ?"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel66">
+            <Component class="javax.swing.JCheckBox" name="jCheckBox2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="metros"/>
+                <Property name="text" type="java.lang.String" value="Sim"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel67">
+            <Component class="javax.swing.JLabel" name="jLabel10">
               <Properties>
-                <Property name="text" type="java.lang.String" value="mil&#xed;metros"/>
+                <Property name="text" type="java.lang.String" value="Relacionar :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="chbEmbarcacaoPropria">
+            <Component class="javax.swing.JComboBox" name="cbTIpoEmprestimo">
               <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="embarcacao"/>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="8">
+                    <StringItem index="0" value="Banco"/>
+                    <StringItem index="1" value="Linha de Credito(FNO,Finame)"/>
+                    <StringItem index="2" value="valor do Emprestimo R$"/>
+                    <StringItem index="3" value="Data Emprestimo"/>
+                    <StringItem index="4" value="Car&#xea;ncia"/>
+                    <StringItem index="5" value="Presta&#xe7;&#xe3;o"/>
+                    <StringItem index="6" value="Qtas Pagou"/>
+                    <StringItem index="7" value="Em dia/atrasado/Inadiplente"/>
+                  </StringArray>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Pr&#xf3;pria"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="chbEmbarcacaoPatrao">
+            <Component class="javax.swing.JLabel" name="jLabel11">
               <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="embarcacao"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Patr&#xe3;o (Dono do Barco)"/>
+                <Property name="text" type="java.lang.String" value="Outros :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="chbTipoCAM">
-              <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="tipo"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="CAM"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="chbTipoBPP">
-              <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="tipo"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="BPP"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="chbTipoBMP">
-              <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="tipo"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="BMP"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="chbTipoOutros">
-              <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="tipo"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Outros"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel68">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Anos"/>
-              </Properties>
+            <Component class="javax.swing.JTextField" name="tfOutrosEmprestimo">
             </Component>
           </SubComponents>
         </Container>
