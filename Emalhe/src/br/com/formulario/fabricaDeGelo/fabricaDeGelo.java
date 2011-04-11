@@ -60,7 +60,7 @@ public class fabricaDeGelo extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
-        tfNome = new javax.swing.JTextField();
+        tfNomeFabrica = new javax.swing.JTextField();
         tfIdade = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
@@ -77,27 +77,28 @@ public class fabricaDeGelo extends javax.swing.JFrame {
         botao_ultimo = new javax.swing.JButton();
         botao_alterar = new javax.swing.JButton();
         jLabel25 = new javax.swing.JLabel();
-        tfApelido = new javax.swing.JTextField();
+        tfFoneFaxFabrica = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         cbSexo = new javax.swing.JComboBox();
         jLabel29 = new javax.swing.JLabel();
-        tfNaturalidade = new javax.swing.JTextField();
+        tfEnderecoFabrica = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
         tfAtividadeSecundaria = new javax.swing.JTextField();
-        tfAtividadePrincipal = new javax.swing.JTextField();
+        tfTempoExistencia = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        tfComposicaoFamiliar = new javax.swing.JTextField();
         jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        tfPqParou = new javax.swing.JTextField();
         jLabel35 = new javax.swing.JLabel();
-        cbLocalMoradia = new javax.swing.JComboBox();
-        cbEstadoCivil = new javax.swing.JComboBox();
         lb_pescador = new javax.swing.JLabel();
         cbEscolaridade = new javax.swing.JComboBox();
+        tfFuncaoFabrica = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        tfQualFabrica = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        tfPrecoSaca = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        tfPrecoTonelada = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Questionário Atravessador");
@@ -109,14 +110,14 @@ public class fabricaDeGelo extends javax.swing.JFrame {
 
         jScrollPane1.setAutoscrolls(true);
 
-        jLabel23.setText("Nome.:");
+        jLabel23.setText("Nome da Fabrica.:");
 
-        jLabel22.setText("Idade.:");
+        jLabel22.setText("Pessoa Entrevistada.:");
 
         jLabel24.setText("Município");
 
-        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12));
-        jLabel42.setText("Questionário Pescador");
+        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel42.setText("Questionário fabrica de Gêlo");
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -199,7 +200,7 @@ public class fabricaDeGelo extends javax.swing.JFrame {
                         .addComponent(botao_proximo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botao_ultimo)))
-                .addContainerGap(364, Short.MAX_VALUE))
+                .addContainerGap(677, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,40 +223,39 @@ public class fabricaDeGelo extends javax.swing.JFrame {
         jLabel25.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel25.setText("DADOS PESSOAIS:");
 
-        jLabel27.setText("Naturalidade.:");
+        jLabel27.setText("Endereço.:");
 
-        jLabel26.setText("Apelido.:");
+        jLabel26.setText("Fone/Fax.:");
 
-        cbSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "M", "F" }));
+        cbSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Comprada", "Construida", "Modificada(A parti de outra)" }));
 
-        jLabel29.setText("Atividade principal de renda.:");
+        jLabel29.setText("A quanto tempo a empresa existe ?");
 
-        jLabel28.setText("Sexo.:");
+        jLabel28.setText("A empresa foi .:");
 
-        jLabel30.setText("Atividade secundária.:");
+        jLabel30.setText("Sempre foi só fábrica de gêlo ?");
 
-        jLabel31.setText("Estado civil.:");
+        jLabel31.setText("Qual a produção diaria da Fábrica de gelo ?");
 
-        jLabel32.setText("Composição Familiar.:");
+        jLabel33.setText("Qual o preço do gelo.:");
 
-        jLabel33.setText("Escolaridade.:");
+        jLabel35.setText("Função.:");
 
-        jLabel34.setText("Porque Parou?");
+        lb_pescador.setText("Fabrica");
 
-        jLabel35.setText("Local de Moradia.:");
+        cbEscolaridade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sim", "Não" }));
 
-        cbLocalMoradia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sede Municipal", "Comunidade/Vila local", "Outro Município", "Capital" }));
+        jLabel1.setText("Qual ?");
 
-        cbEstadoCivil.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Solteiro", "Casado", "União Estável" }));
-        cbEstadoCivil.addActionListener(new java.awt.event.ActionListener() {
+        jLabel2.setText("Sala:");
+
+        tfPrecoSaca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbEstadoCivilActionPerformed(evt);
+                tfPrecoSacaActionPerformed(evt);
             }
         });
 
-        lb_pescador.setText("Pescador");
-
-        cbEscolaridade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1° Série fundamental", "2° Série fundamental", "3° Série fundamental", "4° Série fundamental", "5° Série fundamental", "6° Série fundamental", "7° Série fundamental", "8° Série fundamental", "1° Série médio", "2° Série médio", "3° Série médio", "Ensino Superior Incompleto", "Ensino Superior Completo" }));
+        jLabel3.setText("Tonelada :");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -275,59 +275,63 @@ public class fabricaDeGelo extends javax.swing.JFrame {
                         .addComponent(jLabel25)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lb_pescador))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel29)
-                            .addComponent(jLabel30)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel29)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfTempoExistencia, javax.swing.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel23)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfNomeFabrica, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel27)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfEnderecoFabrica, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel26)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfFoneFaxFabrica, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel22)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel35)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfFuncaoFabrica, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(396, 396, 396))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel33)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tfPrecoSaca, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfPrecoTonelada))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel31)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tfAtividadeSecundaria))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel28)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel22)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(tfAtividadePrincipal)
-                                .addComponent(tfAtividadeSecundaria, javax.swing.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel33)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cbEscolaridade, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel31)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cbEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfQualFabrica, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel30)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel32)
-                            .addComponent(jLabel34))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tfComposicaoFamiliar, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfPqParou, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel27)
-                                .addComponent(jLabel23))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(tfNome, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(tfNaturalidade, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE))
-                            .addGap(18, 18, 18)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel35)
-                                .addComponent(jLabel26))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(tfApelido)
-                                .addComponent(cbLocalMoradia, 0, 158, Short.MAX_VALUE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(cbEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -346,43 +350,44 @@ public class fabricaDeGelo extends javax.swing.JFrame {
                     .addComponent(lb_pescador))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel23)
-                    .addComponent(jLabel26)
-                    .addComponent(tfApelido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfNomeFabrica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel27)
-                    .addComponent(tfNaturalidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbLocalMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel35))
+                    .addComponent(tfEnderecoFabrica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel26)
+                    .addComponent(tfFoneFaxFabrica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel28)
-                    .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22)
-                    .addComponent(tfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel35)
+                    .addComponent(tfFuncaoFabrica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel29)
-                    .addComponent(tfAtividadePrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(tfTempoExistencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel28)
+                    .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
+                    .addComponent(tfQualFabrica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel30)
-                    .addComponent(tfAtividadeSecundaria, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel31)
-                    .addComponent(jLabel32)
-                    .addComponent(tfComposicaoFamiliar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(tfAtividadeSecundaria, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel33)
-                    .addComponent(tfPqParou, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel34))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel2)
+                    .addComponent(tfPrecoSaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(tfPrecoTonelada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(148, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -391,42 +396,42 @@ public class fabricaDeGelo extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 707, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-725)/2, (screenSize.height-437)/2, 725, 437);
+        setBounds((screenSize.width-735)/2, (screenSize.height-444)/2, 735, 444);
     }// </editor-fold>//GEN-END:initComponents
 
     private void fechar_janela(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_fechar_janela
         conexao.desconecta();
     }//GEN-LAST:event_fechar_janela
 
-    private void cbEstadoCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEstadoCivilActionPerformed
-        // TODO add your handling code here:
-}//GEN-LAST:event_cbEstadoCivilActionPerformed
-
     private void botao_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_alterarActionPerformed
         try{
             String sql ="UPDATE pescador SET "+
                     "municipio = '"+cbMunicipio.getSelectedItem()+"',"+
-                    "nome = '"+tfNome.getText()+"',"+
-                    "apelido = '"+ tfApelido.getText() +"',"+
-                    "naturalidade = '"+ tfNaturalidade.getText() +"',"+
+                    "nome = '"+tfNomeFabrica.getText()+"',"+
+                    "apelido = '"+ tfFoneFaxFabrica.getText() +"',"+
+                    "naturalidade = '"+ tfEnderecoFabrica.getText() +"',"+
                     "local_moradia = '"+ cbLocalMoradia.getSelectedItem() +"',"+
                     "sexo = '"+ cbSexo.getSelectedItem() +"',"+
                     "idade = '"+ tfIdade.getText() +"',"+
-                    "atividade_principal = '"+ tfAtividadePrincipal.getText() +"',"+
+                    "atividade_principal = '"+ tfTempoExistencia.getText() +"',"+
                     "atividade_secundaria = '"+ tfAtividadeSecundaria.getText() +"',"+
                     "estado_civil = '"+ cbEstadoCivil.getSelectedItem() +"',"+
                     "composicao_familiar = '"+ tfComposicaoFamiliar.getText() +"',"+
                     "escolaridade = '"+ cbEscolaridade.getSelectedItem() +"',"+
                     "pq_parou = '"+ tfPqParou.getText() +"' "+
-                    
+
 
 
 
@@ -459,17 +464,15 @@ public class fabricaDeGelo extends javax.swing.JFrame {
 }//GEN-LAST:event_botao_ultimoActionPerformed
 
     private void botao_proximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_proximoActionPerformed
-            proximo();
-            mostra_dados_atravessador();
-            navega = 2;
-
+        proximo();
+        mostra_dados_atravessador();
+        navega = 2;
 }//GEN-LAST:event_botao_proximoActionPerformed
 
     private void botao_anteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_anteriorActionPerformed
-            anterior();
-            mostra_dados_atravessador();
-            navega = 1;
-
+        anterior();
+        mostra_dados_atravessador();
+        navega = 1;
 }//GEN-LAST:event_botao_anteriorActionPerformed
 
     private void botao_primeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_primeiroActionPerformed
@@ -484,11 +487,11 @@ public class fabricaDeGelo extends javax.swing.JFrame {
 }//GEN-LAST:event_botao_primeiroActionPerformed
 
     private void botao_novoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_novoActionPerformed
-        tfNome.setText("");
-        tfApelido.setText("");
-        tfNaturalidade.setText("");
+        tfNomeFabrica.setText("");
+        tfFoneFaxFabrica.setText("");
+        tfEnderecoFabrica.setText("");
         tfIdade.setText("0");
-        tfAtividadePrincipal.setText("");
+        tfTempoExistencia.setText("");
         tfAtividadeSecundaria.setText("");
         cbEstadoCivil.setSelectedIndex(0);
         tfComposicaoFamiliar.setText("");
@@ -536,12 +539,12 @@ public class fabricaDeGelo extends javax.swing.JFrame {
                     + "estado_civil,composicao_familiar,escolaridade,pq_parou,"
                     + "local_moradia) values ('"+
                     cbMunicipio.getSelectedItem()+"','"+
-                    tfNome.getText()+"','"+
-                    tfApelido.getText()+"','"+
-                    tfNaturalidade.getText()+"','"+
+                    tfNomeFabrica.getText()+"','"+
+                    tfFoneFaxFabrica.getText()+"','"+
+                    tfEnderecoFabrica.getText()+"','"+
                     cbSexo.getSelectedItem()+"',"+
                     tfIdade.getText()+",'"+
-                    tfAtividadePrincipal.getText()+"','"+
+                    tfTempoExistencia.getText()+"','"+
                     tfAtividadeSecundaria.getText()+"','"+
                     cbEstadoCivil.getSelectedItem()+"','"+
                     tfComposicaoFamiliar.getText()+"','"+
@@ -564,6 +567,10 @@ public class fabricaDeGelo extends javax.swing.JFrame {
         }
 }//GEN-LAST:event_CadastrarAction
 
+    private void tfPrecoSacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPrecoSacaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfPrecoSacaActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -585,10 +592,10 @@ public class fabricaDeGelo extends javax.swing.JFrame {
     private javax.swing.JButton botao_proximo;
     private javax.swing.JButton botao_ultimo;
     private javax.swing.JComboBox cbEscolaridade;
-    private javax.swing.JComboBox cbEstadoCivil;
-    private javax.swing.JComboBox cbLocalMoradia;
     private javax.swing.JComboBox cbMunicipio;
     private javax.swing.JComboBox cbSexo;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -597,35 +604,36 @@ public class fabricaDeGelo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lb_pescador;
-    private javax.swing.JTextField tfApelido;
-    private javax.swing.JTextField tfAtividadePrincipal;
     private javax.swing.JTextField tfAtividadeSecundaria;
-    private javax.swing.JTextField tfComposicaoFamiliar;
+    private javax.swing.JTextField tfEnderecoFabrica;
+    private javax.swing.JTextField tfFoneFaxFabrica;
+    private javax.swing.JTextField tfFuncaoFabrica;
     private javax.swing.JTextField tfIdade;
-    private javax.swing.JTextField tfNaturalidade;
-    private javax.swing.JTextField tfNome;
-    private javax.swing.JTextField tfPqParou;
+    private javax.swing.JTextField tfNomeFabrica;
+    private javax.swing.JTextField tfPrecoSaca;
+    private javax.swing.JTextField tfPrecoTonelada;
+    private javax.swing.JTextField tfQualFabrica;
+    private javax.swing.JTextField tfTempoExistencia;
     // End of variables declaration//GEN-END:variables
 
 
     private void mostra_dados_atravessador(){
         try {
-            tfNome.setText(conexao.resultSet.getString("nome"));
-            tfApelido.setText(conexao.resultSet.getString("apelido"));
-            tfNaturalidade.setText(conexao.resultSet.getString("naturalidade"));
+            tfNomeFabrica.setText(conexao.resultSet.getString("nome"));
+            tfFoneFaxFabrica.setText(conexao.resultSet.getString("apelido"));
+            tfEnderecoFabrica.setText(conexao.resultSet.getString("naturalidade"));
             tfIdade.setText(conexao.resultSet.getString("idade"));
-            tfAtividadePrincipal.setText(conexao.resultSet.getString("atividade_principal"));
+            tfTempoExistencia.setText(conexao.resultSet.getString("atividade_principal"));
             tfAtividadeSecundaria.setText(conexao.resultSet.getString("atividade_secundaria"));
             cbEstadoCivil.setSelectedItem(conexao.resultSet.getString("estado_civil"));
             tfComposicaoFamiliar.setText(conexao.resultSet.getString("composicao_familiar"));
