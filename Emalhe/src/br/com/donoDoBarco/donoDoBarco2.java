@@ -133,7 +133,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         btExcluirRT = new javax.swing.JButton();
         jLabel33 = new javax.swing.JLabel();
-        tfLatitudeCP = new JMoneyField();
+        tfValorPrecoEspecie = new JMoneyField();
         btAdicionarCP = new javax.swing.JButton();
         jLabel35 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -160,10 +160,6 @@ public class donoDoBarco2 extends javax.swing.JFrame {
         jLabel59 = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
-        chbTipoCAM = new javax.swing.JRadioButton();
-        chbTipoBPP = new javax.swing.JRadioButton();
-        chbTipoBMP = new javax.swing.JRadioButton();
-        chbTipoOutros = new javax.swing.JRadioButton();
         ckbGelo = new javax.swing.JCheckBox();
         ckbSal = new javax.swing.JCheckBox();
         ckbFrigorifico = new javax.swing.JCheckBox();
@@ -190,7 +186,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
         jLabel65 = new javax.swing.JLabel();
         cbEspecieVendaPescado = new javax.swing.JComboBox();
         jLabel34 = new javax.swing.JLabel();
-        tfLocalCompPescaria1 = new JMoneyField();
+        tfRendaMediaPescaria = new JMoneyField();
         jToggleButton7 = new javax.swing.JToggleButton();
         tfTipoGasto = new javax.swing.JTextField();
         jLabel69 = new javax.swing.JLabel();
@@ -258,6 +254,12 @@ public class donoDoBarco2 extends javax.swing.JFrame {
         cbSitucao = new javax.swing.JComboBox();
         jLabel28 = new javax.swing.JLabel();
         ckbPossuiInscricaoSim = new javax.swing.JCheckBox();
+        jLabel87 = new javax.swing.JLabel();
+        ckbSimDependencia = new javax.swing.JCheckBox();
+        ckbTipoCAM = new javax.swing.JCheckBox();
+        ckbTipoBPP = new javax.swing.JCheckBox();
+        ckbTipoBMP = new javax.swing.JCheckBox();
+        ckbTipoOutros = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Questionário Atravessador");
@@ -679,23 +681,6 @@ public class donoDoBarco2 extends javax.swing.JFrame {
 
         jLabel61.setText("milímetros");
 
-        tipo.add(chbTipoCAM);
-        chbTipoCAM.setText("CAM");
-
-        tipo.add(chbTipoBPP);
-        chbTipoBPP.setText("BPP");
-
-        tipo.add(chbTipoBMP);
-        chbTipoBMP.setText("BMP");
-
-        tipo.add(chbTipoOutros);
-        chbTipoOutros.setText("Outros");
-        chbTipoOutros.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                chbTipoOutrosStateChanged(evt);
-            }
-        });
-
         ckbGelo.setText("Gelo");
 
         ckbSal.setText("Sal");
@@ -954,6 +939,18 @@ public class donoDoBarco2 extends javax.swing.JFrame {
 
         ckbPossuiInscricaoSim.setText("Sim");
 
+        jLabel87.setText("Existe algum grau de dependência com um atravessador?");
+
+        ckbSimDependencia.setText("Sim");
+
+        ckbTipoCAM.setText("cam");
+
+        ckbTipoBPP.setText("bpp");
+
+        ckbTipoBMP.setText("bmp");
+
+        ckbTipoOutros.setText("Outro");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -1065,23 +1062,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel30)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfParentescoRT, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel31)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfAtividadeRT, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel32)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfRendaRT, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btAdicionarRT)
-                                .addGap(58, 58, 58))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(jLabel8)
@@ -1111,8 +1092,26 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                                             .addComponent(jLabel11)
                                             .addGap(18, 18, 18)
                                             .addComponent(tfQuantidadeArtePesca, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addComponent(btExcluirRT)
-                                .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.LEADING))))
+                                .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel30)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(tfParentescoRT, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel31)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(tfAtividadeRT, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel32)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(tfRendaRT, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btAdicionarRT))
+                                    .addComponent(btExcluirRT))
+                                .addGap(58, 58, 58))))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
@@ -1162,11 +1161,11 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ckbPretrchosPropriosSim)
                     .addComponent(tfSePretrochosProprios, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(665, Short.MAX_VALUE))
+                .addContainerGap(717, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel16)
-                .addContainerGap(754, Short.MAX_VALUE))
+                .addContainerGap(790, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel17)
@@ -1176,7 +1175,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                 .addComponent(jLabel18)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfPqCompPescaria, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(491, Short.MAX_VALUE))
+                .addContainerGap(552, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -1202,22 +1201,22 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                 .addComponent(tfProducaoViagemCompPescaria, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel64)
-                .addContainerGap(558, Short.MAX_VALUE))
+                .addContainerGap(578, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel34)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfLocalCompPescaria1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(728, Short.MAX_VALUE))
+                .addComponent(tfRendaMediaPescaria, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(770, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jToggleButton8)
-                    .addComponent(jScrollPane34, javax.swing.GroupLayout.DEFAULT_SIZE, 756, Short.MAX_VALUE)
+                    .addComponent(jScrollPane34, javax.swing.GroupLayout.DEFAULT_SIZE, 833, Short.MAX_VALUE)
                     .addComponent(jToggleButton7)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel69)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 436, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 449, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel52)
@@ -1239,17 +1238,17 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                                     .addComponent(tfCustoCusto)
                                     .addComponent(tfOutroCusto, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(tfOutrosGastos))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 291, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 349, Short.MAX_VALUE)))
                 .addGap(216, 216, 216))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel65)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 517, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 565, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 684, Short.MAX_VALUE)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 761, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel33)
                                 .addGap(3, 3, 3)
@@ -1257,8 +1256,8 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel35)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfLatitudeCP, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 209, Short.MAX_VALUE)
+                                .addComponent(tfValorPrecoEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 261, Short.MAX_VALUE)
                                 .addComponent(btAdicionarCP))
                             .addComponent(btExcluirCP))
                         .addGap(288, 288, 288)))
@@ -1267,11 +1266,11 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jToggleButton10)
-                    .addComponent(jScrollPane35, javax.swing.GroupLayout.DEFAULT_SIZE, 756, Short.MAX_VALUE)
+                    .addComponent(jScrollPane35, javax.swing.GroupLayout.DEFAULT_SIZE, 833, Short.MAX_VALUE)
                     .addComponent(jToggleButton9)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel73)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 469, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel53)
@@ -1293,78 +1292,28 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                                     .addComponent(tfCustoCusto1)
                                     .addComponent(tfOutroCusto1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(tfOutrosGastos1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 291, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 349, Short.MAX_VALUE)))
                 .addGap(216, 216, 216))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel77)
-                .addContainerGap(696, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(395, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(ckbDestinoAtravessador)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ckbDestinoEmpresa)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ckbDestinoCaminhao)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ckbDestinoSupermercado)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ckbDestinoOutro)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfDestinoOutro, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(406, Short.MAX_VALUE))
+                .addContainerGap(472, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel22)
-                .addContainerGap(829, Short.MAX_VALUE))
+                .addContainerGap(878, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel54)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfFormaFinanciamento, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(685, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel23)
-                .addGap(6, 6, 6)
-                .addComponent(chbTipoCAM)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(chbTipoBPP)
-                .addGap(4, 4, 4)
-                .addComponent(chbTipoBMP)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(chbTipoOutros)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel25)
-                .addGap(4, 4, 4)
-                .addComponent(tfOutroTipoQual, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(537, Short.MAX_VALUE))
+                .addContainerGap(736, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel26)
                 .addGap(18, 18, 18)
                 .addComponent(tfNomeEmbarcacao, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(678, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel27)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfComprimento, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel78)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel56)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfTonBruta, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel57)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfTonLiq, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(507, Short.MAX_VALUE))
+                .addContainerGap(732, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel79)
@@ -1374,7 +1323,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                 .addComponent(jLabel80)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cbPropulsao, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(668, Short.MAX_VALUE))
+                .addContainerGap(714, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel81)
@@ -1390,7 +1339,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                 .addComponent(jLabel84)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfTripulacao, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(542, Short.MAX_VALUE))
+                .addContainerGap(576, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel85)
@@ -1399,8 +1348,8 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel86)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cbSitucao, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(660, Short.MAX_VALUE))
+                .addComponent(cbSitucao, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(671, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1416,7 +1365,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                         .addComponent(jLabel28)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ckbPossuiInscricaoSim)))
-                .addContainerGap(615, Short.MAX_VALUE))
+                .addContainerGap(628, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -1425,6 +1374,64 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                         .addComponent(jButton2))
                     .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel77)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(ckbDestinoAtravessador)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ckbDestinoEmpresa)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ckbDestinoCaminhao)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ckbDestinoSupermercado)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ckbDestinoOutro)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfDestinoOutro, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(406, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel87)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ckbSimDependencia)
+                .addContainerGap(667, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel27)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfComprimento, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel78)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel56)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfTonBruta, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel57)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfTonLiq, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel23)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ckbTipoCAM)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ckbTipoBPP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ckbTipoBMP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ckbTipoOutros)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel25)
+                        .addGap(4, 4, 4)
+                        .addComponent(tfOutroTipoQual, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(535, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1610,7 +1617,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                             .addComponent(jLabel33)
                             .addComponent(cbEspecieVendaPescado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel35)
-                            .addComponent(tfLatitudeCP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tfValorPrecoEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(9, 9, 9))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btAdicionarCP)
@@ -1621,7 +1628,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel34)
-                    .addComponent(tfLocalCompPescaria1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfRendaMediaPescaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(55, 55, 55)
                 .addComponent(jLabel69)
                 .addGap(12, 12, 12)
@@ -1670,13 +1677,10 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                 .addComponent(jToggleButton9)
                 .addGap(11, 11, 11)
                 .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton10))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(jLabel77)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jToggleButton10)
+                .addGap(12, 12, 12)
+                .addComponent(jLabel77)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ckbDestinoAtravessador)
@@ -1685,7 +1689,11 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                     .addComponent(ckbDestinoSupermercado)
                     .addComponent(ckbDestinoOutro)
                     .addComponent(tfDestinoOutro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel87)
+                    .addComponent(ckbSimDependencia))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -1705,16 +1713,14 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                     .addComponent(jLabel54)
                     .addComponent(tfFormaFinanciamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(chbTipoCAM)
-                        .addComponent(jLabel23))
-                    .addComponent(chbTipoBPP)
-                    .addComponent(chbTipoBMP)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(chbTipoOutros)
-                        .addComponent(jLabel25)
-                        .addComponent(tfOutroTipoQual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(ckbTipoCAM)
+                    .addComponent(ckbTipoBPP)
+                    .addComponent(ckbTipoBMP)
+                    .addComponent(ckbTipoOutros)
+                    .addComponent(jLabel25)
+                    .addComponent(tfOutroTipoQual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfNomeEmbarcacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1774,11 +1780,11 @@ public class donoDoBarco2 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 901, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 899, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE)
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
@@ -1895,20 +1901,15 @@ public class donoDoBarco2 extends javax.swing.JFrame {
     }//GEN-LAST:event_ckbPretrchosPropriosSimStateChanged
 
     private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
-        AddJtGastos();
+       
 }//GEN-LAST:event_jToggleButton7ActionPerformed
 
     private void cbGastosViagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbGastosViagemActionPerformed
-        if (cbGastos.getSelectedItem().equals("Outro"))
-            tfOutrosGastos.setEditable(true);
-        else {
-            tfOutrosGastos.setEditable(false);
-            tfOutrosGastos.setText("");
-        }
+        
 }//GEN-LAST:event_cbGastosViagemActionPerformed
 
     private void jToggleButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton8ActionPerformed
-        DelJtGastos();
+       
 }//GEN-LAST:event_jToggleButton8ActionPerformed
 
     private void tfQuantidadeCustoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfQuantidadeCustoActionPerformed
@@ -1964,15 +1965,6 @@ public class donoDoBarco2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfAnoConstrucaoActionPerformed
 
-    private void chbTipoOutrosStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_chbTipoOutrosStateChanged
-        if (chbTipoOutros.isSelected()) {
-            tfOutroTipoQual.setEditable(true);
-        } else {
-            tfOutroTipoQual.setEditable(false);
-            tfOutroTipoQual.setText("");
-        }
-    }//GEN-LAST:event_chbTipoOutrosStateChanged
-
     /**
     * @param args the command line arguments
     */
@@ -2000,10 +1992,6 @@ public class donoDoBarco2 extends javax.swing.JFrame {
     private javax.swing.JComboBox cbMaterialCasco;
     private javax.swing.JComboBox cbPropulsao;
     private javax.swing.JComboBox cbSitucao;
-    private javax.swing.JRadioButton chbTipoBMP;
-    private javax.swing.JRadioButton chbTipoBPP;
-    private javax.swing.JRadioButton chbTipoCAM;
-    private javax.swing.JRadioButton chbTipoOutros;
     private javax.swing.JCheckBox ckbAbrS;
     private javax.swing.JCheckBox ckbAgoS;
     private javax.swing.JCheckBox ckbAguaSim;
@@ -2040,7 +2028,12 @@ public class donoDoBarco2 extends javax.swing.JFrame {
     private javax.swing.JCheckBox ckbRecebeBeneficioGovernoSim;
     private javax.swing.JCheckBox ckbSal;
     private javax.swing.JCheckBox ckbSetS;
+    private javax.swing.JCheckBox ckbSimDependencia;
     private javax.swing.JCheckBox ckbSimFinanciada;
+    private javax.swing.JCheckBox ckbTipoBMP;
+    private javax.swing.JCheckBox ckbTipoBPP;
+    private javax.swing.JCheckBox ckbTipoCAM;
+    private javax.swing.JCheckBox ckbTipoOutros;
     private javax.swing.ButtonGroup embarcacao;
     private javax.swing.ButtonGroup inssinss;
     private javax.swing.JButton jButton2;
@@ -2128,6 +2121,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel86;
+    private javax.swing.JLabel jLabel87;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -2168,9 +2162,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
     private javax.swing.JTextField tfDesdeQuandoDonoBarco;
     private javax.swing.JTextField tfDestinoOutro;
     private javax.swing.JTextField tfFormaFinanciamento;
-    private javax.swing.JTextField tfLatitudeCP;
     private javax.swing.JTextField tfLocalCompPescaria;
-    private javax.swing.JTextField tfLocalCompPescaria1;
     private javax.swing.JTextField tfMalhaComposicaoPescaria;
     private javax.swing.JTextField tfMarca;
     private javax.swing.JTextField tfNomeEmbarcacao;
@@ -2191,6 +2183,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
     private javax.swing.JTextField tfQuantidadeArtePesca;
     private javax.swing.JTextField tfQuantidadeCusto;
     private javax.swing.JTextField tfQuantidadeCusto1;
+    private javax.swing.JTextField tfRendaMediaPescaria;
     private javax.swing.JTextField tfRendaRT;
     private javax.swing.JTextField tfSePretrochosProprios;
     private javax.swing.JTextField tfTamanhoComposicaoPescaria;
@@ -2199,6 +2192,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
     private javax.swing.JTextField tfTonBruta;
     private javax.swing.JTextField tfTonLiq;
     private javax.swing.JTextField tfTripulacao;
+    private javax.swing.JTextField tfValorPrecoEspecie;
     private javax.swing.JTextField tfViagemMesCompPescaria;
     private javax.swing.ButtonGroup tipo;
     // End of variables declaration//GEN-END:variables
@@ -2283,108 +2277,100 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                 System.out.println("2 dono_barco_relacoes_trabalho - Cadastrado com sucesso");
             }
         
-        
-        //Composição da Pescaria
+            sqlinsert = "insert into dono_barco_composicao_pescaria "
+                    + "(cod_dono_barco,pescaria_principal,arte_pesca,"
+                    + "quantidade_arte_pesca,tamanho,malha,petrechos_proprios,"
+                    + "de_quem_petrecho,onde_adquire_panagens_local,onde_adquire_panagens_pq,"
+                    + "custo_entalhamento,custo_chumbo,custo_boias,qtd_viagem_mes,producao_viagem,"
+                    + "renda_media_por_pescaria,destino_atravessador,destino_empresa,"
+                    + "destino_caminhao,destino_supermercado,destino_outros,"
+                    + "destino_outros_quais,existe_dependencia,"
+                    + "safra_jan,safra_fev,safra_mar,safra_abr,safra_mai,safra_jun,"
+                    + "safra_jul,safra_ago,safra_set,safra_out,safra_nov,safra_dez) values ("+
+                    codigo+",'"+
+                    cbEspecieComposicaoPescaria.getSelectedItem()+"','"+
+                    cbArtePescaComposicaoPescaria.getSelectedItem()+"','"+
+                    tfQuantidadeArtePesca.getText()+"','"+
+                    tfTamanhoComposicaoPescaria.getText()+"','"+
+                    tfMalhaComposicaoPescaria.getText()+"','"+
 
-//
-//            sqlinsert = "insert into pescador_composicao_pescaria "
-//                    + "(cod_pescador,pescaria_principal,arte_pesca,"
-//                    + "quantidade_arte_pesca,tamanho,malha,tempo_arte_agua,"
-//                    + "dia,noite,tempo_chegada,dias_efetivos_pesca,viagens_mes,"
-//                    + "producao_viagem,renda_media_pecador,outra_pescaria,"
-//                    + "safra_jan,safra_fev,safra_mar,safra_abr,safra_mai,safra_jun,"
-//                    + "safra_jul,safra_ago,safra_set,safra_out,safra_nov,safra_dez,"
-//                    + "periodo_jan,periodo_fev,periodo_mar,periodo_abr,"
-//                    + "periodo_mai,periodo_jun,periodo_jul,periodo_ago,"
-//                    + "periodo_set,periodo_out,periodo_nov,periodo_dez) values ("+
-//                    codigo+",'"+
-//                    cbEspecieComposicaoPescaria.getSelectedItem()+"','"+
-//                    cbArtePescaComposicaoPescaria.getSelectedItem()+"','"+
-//                    tfQuantidadeArtePesca.getText()+"','"+
-//                    tfTamanhoComposicaoPescaria.getText()+"','"+
-//                    tfMalhaComposicaoPescaria.getText()+"','"+
-//                    tfTempoArteAgua.getText()+"','"+
-//                    util.checarCkb(ckbTempoArteAguaDia)+"','"+
-//                    util.checarCkb(ckbTempoArteAguaNoite)+"','"+
-//                    tfTempoChegarPesqueiro.getText()+"','"+
-//                    tfDiasdePesca.getText()+"','"+
-//                    tfQuantasViagensMes.getText()+"','"+
-//                    tfProducaoViagem.getText()+"','"+
-//                    tfRendaMediaPescador.getText()+"','"+
-//                    tfAlemPescaOutraPescaria.getText()+"','"+
-//                    util.checarCkb(ckbJanS)+"','"+
-//                    util.checarCkb(ckbFevS)+"','"+
-//                    util.checarCkb(ckbMarS)+"','"+
-//                    util.checarCkb(ckbAbrS)+"','"+
-//                    util.checarCkb(ckbMaiS)+"','"+
-//                    util.checarCkb(ckbJunS)+"','"+
-//                    util.checarCkb(ckbJulS)+"','"+
-//                    util.checarCkb(ckbAgoS)+"','"+
-//                    util.checarCkb(ckbSetS)+"','"+
-//                    util.checarCkb(ckbOutS)+"','"+
-//                    util.checarCkb(ckbNovS)+"','"+
-//                    util.checarCkb(ckbDezS)+"','"+
-//                    util.checarCkb(ckbJanP)+"','"+
-//                    util.checarCkb(ckbFevP)+"','"+
-//                    util.checarCkb(ckbMarP)+"','"+
-//                    util.checarCkb(ckbAbrP)+"','"+
-//                    util.checarCkb(ckbMaiP)+"','"+
-//                    util.checarCkb(ckbJunP)+"','"+
-//                    util.checarCkb(ckbJulP)+"','"+
-//                    util.checarCkb(ckbAgoP)+"','"+
-//                    util.checarCkb(ckbSetP)+"','"+
-//                    util.checarCkb(ckbOutP)+"','"+
-//                    util.checarCkb(ckbNovP)+"','"+
-//                    util.checarCkb(ckbDezP)+"')";
-//
-//            //System.out.println(sqlinsert);
-//            if (conexao.salvar(sqlinsert)) {
-//                System.out.println("Composição da Pescaria - Cadastrado com sucesso");
-//            }
-//
-//
-//        //Dados da Embarcação
-//
-//           String tdono = "";
-//
-//           if (chbEmbarcacaoPropria.isSelected())
-//                   tdono = "Própria";
-//            else if (chbEmbarcacaoPatrao.isSelected())
-//                   tdono = "Patrão";
-//
-//           String TtipoEmbarcacao = "";
-//
-//           if (chbTipoCAM.isSelected())
-//                   TtipoEmbarcacao = "CAM";
-//           else if (chbTipoBPP.isSelected())
-//                   TtipoEmbarcacao = "BPP";
-//           else if (chbTipoBMP.isSelected())
-//                   TtipoEmbarcacao = "BMP";
-//           else if (chbTipoOutros.isSelected())
-//                   TtipoEmbarcacao = tfOutroTipoQual.getText();
-//
-//
-//           sqlinsert = "insert into pescador_dados_embarcacao "
-//                    + "(cod_pescador,dono_embarcacao,tipo_embarcacao,nome_barco,"
-//                    + "porto_origem,tempo_no_barco,conservacao_gelo,"
-//                    + "conservacao_sal,conservacao_frigorifico) values ("+
-//                    codigo+",'"+
-//                    tdono+"','"+
-//                    TtipoEmbarcacao+"','"+
-//                    tfNomeBarco.getText()+"','"+
-//                    tfPortoOrigem.getText()+"','"+
-//                    tfTempoTrabalhandoBarco.getText()+"','"+
-//                    util.checarCkb(ckbGelo)+"','"+
-//                    util.checarCkb(ckbSal)+"','"+
-//                    util.checarCkb(ckbFrigorifico)+"')";
-//
-//            //System.out.println(sqlinsert);
-//            if (conexao.salvar(sqlinsert)) {
-//                System.out.println("Dados da Embarcação - Cadastrado com sucesso");
-//                JOptionPane.showMessageDialog(null,"Salvo com sucesso");
-//                //agora é hora de atualizar o resultset
-//                mostra_dados();
-//            }
+                    util.checarCkb(ckbPretrchosPropriosSim)+"','"+
+                    tfSePretrochosProprios.getText()+"','"+
+                    tfLocalCompPescaria.getText()+"','"+
+                    tfPqCompPescaria.getText()+"','"+
+                    tfCustoEntralhamentoCompPescaria.getText()+"','"+
+                    tfCustoChumboCompPescaria.getText()+"','"+
+                    tfCustoBoiasCompPescaria.getText()+"','"+
+                    tfViagemMesCompPescaria.getText()+"','"+
+                    tfProducaoViagemCompPescaria.getText()+"','"+
+                    tfRendaMediaPescaria.getText()+"','"+
+                    util.checarCkb(ckbDestinoAtravessador)+"','"+
+                    util.checarCkb(ckbDestinoEmpresa)+"','"+
+                    util.checarCkb(ckbDestinoCaminhao)+"','"+
+                    util.checarCkb(ckbDestinoSupermercado)+"','"+
+                    util.checarCkb(ckbDestinoOutro)+"','"+
+                    tfDestinoOutro.getText()+"','"+
+                    util.checarCkb(ckbSimDependencia)+"','"+
+
+                    util.checarCkb(ckbJanS)+"','"+
+                    util.checarCkb(ckbFevS)+"','"+
+                    util.checarCkb(ckbMarS)+"','"+
+                    util.checarCkb(ckbAbrS)+"','"+
+                    util.checarCkb(ckbMaiS)+"','"+
+                    util.checarCkb(ckbJunS)+"','"+
+                    util.checarCkb(ckbJulS)+"','"+
+                    util.checarCkb(ckbAgoS)+"','"+
+                    util.checarCkb(ckbSetS)+"','"+
+                    util.checarCkb(ckbOutS)+"','"+
+                    util.checarCkb(ckbNovS)+"','"+
+                    util.checarCkb(ckbDezS)+"')";
+
+            //System.out.println(sqlinsert);
+            if (conexao.salvar(sqlinsert)) {
+                System.out.println("3 dono_barco_composicao_pescaria - Cadastrado com sucesso");
+            }
+
+
+        //Dados da Embarcação
+
+           sqlinsert = "insert into dono_barco_dados_embarcacao "
+                    + "(cod_dono_barco,embarcacao_foi_financiada,qual_instituicao_financiou,"
+                    + "forma_financiamento,cam,bpp,bmp,outro,outro_tipo,nome_embarcacao,"
+                    + "comprimento,ton_bruta,ton_liquida,material_casco,propulsao,cilindros,"
+                    + "marca,tripulacao,ano_construcao,situacao_atual,"
+                    + "conservacao_gelo,conservacao_sal,conservacao_frigorifico,possui_inscricao) values ("+
+                    codigo+",'"+
+                    util.checarCkb(ckbSimFinanciada)+"','"+
+                    tfQualInstituicao.getText()+"','"+
+                    tfFormaFinanciamento.getText()+"','"+
+                    util.checarCkb(ckbTipoCAM)+"','"+
+                    util.checarCkb(ckbTipoBPP)+"','"+
+                    util.checarCkb(ckbTipoBMP)+"','"+
+                    util.checarCkb(ckbTipoOutros)+"','"+
+                    tfOutroTipoQual.getText()+"','"+
+                    tfNomeEmbarcacao.getText()+"','"+
+                    tfComprimento.getText()+"','"+
+                    tfTonBruta.getText()+"','"+
+                    tfTonLiq.getText()+"','"+
+                    cbMaterialCasco.getSelectedItem()+"','"+
+                    cbPropulsao.getSelectedItem()+"','"+
+                    tfNumeroCilindros.getText()+"','"+
+                    tfMarca.getText()+"','"+
+                    tfTripulacao.getText()+"','"+
+                    tfAnoConstrucao.getText()+"','"+
+                    cbSitucao.getSelectedItem()+"','"+
+                    util.checarCkb(ckbGelo)+"','"+
+                    util.checarCkb(ckbSal)+"','"+
+                    util.checarCkb(ckbFrigorifico)+"','"+
+                    util.checarCkb(ckbPossuiInscricaoSim)+"')";
+
+            //System.out.println(sqlinsert);
+            if (conexao.salvar(sqlinsert)) {
+                System.out.println("4 Dados da Embarcação - Cadastrado com sucesso");
+                JOptionPane.showMessageDialog(null,"Salvo com sucesso");
+                //agora é hora de atualizar o resultset
+                mostra_dados();
+            }
    
     }
 
@@ -2437,11 +2423,11 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                     +"possui_carteira_ibama = '"+util.checarCkb(ckbIbamaSim)+"',"
                     +"possui_rgp = '"+util.checarCkb(ckbPossuiRgp)+"' "+
 
-                    "where cod_pescador = "+codigo;
+                    "where cod_dono_barco = "+codigo;
 
             //System.out.println(sqlupdate);
             if (conexao.update(sqlupdate)){
-                System.out.println("Pescador Moradia - Atualizado com sucesso");
+                System.out.println("1 Pescador Moradia - Atualizado com sucesso");
                 //Atualiza Resultset
             }
 
@@ -2460,100 +2446,95 @@ public class donoDoBarco2 extends javax.swing.JFrame {
 
             //System.out.println(sqlinsert);
             if (conexao.salvar(sqlupdate)) {
-                System.out.println("Relações de Trabalho - Atualizado com sucesso");
+                System.out.println("2 Relações de Trabalho - Atualizado com sucesso");
             }
 
 
-//        //Composição da Pescaria
-//
-//            sqlupdate ="UPDATE dono_barco_composicao_pescaria SET "
-//                    +"pescaria_principal = '"+cbEspecieComposicaoPescaria.getSelectedItem()+"',"
-//                    +"safra_jan = '"+util.checarCkb(ckbJanS)+"',"
-//                    +"safra_fev = '"+util.checarCkb(ckbFevS)+"',"
-//                    +"safra_mar = '"+util.checarCkb(ckbMarS)+"',"
-//                    +"safra_abr = '"+util.checarCkb(ckbAbrS)+"',"
-//                    +"safra_mai = '"+util.checarCkb(ckbMaiS)+"',"
-//                    +"safra_jun = '"+ util.checarCkb(ckbJunS)+"',"
-//                    +"safra_jul = '"+util.checarCkb(ckbJulS)+"',"
-//                    +"safra_ago = '"+util.checarCkb(ckbAgoS)+"',"
-//                    +"safra_set = '"+util.checarCkb(ckbSetS)+"',"
-//                    +"safra_out = '"+util.checarCkb(ckbOutS)+"',"
-//                    +"safra_nov = '"+util.checarCkb(ckbNovS)+"',"
-//                    +"safra_dez = '"+util.checarCkb(ckbDezS)+"',"
-//                    +"arte_pesca = '"+cbArtePescaComposicaoPescaria.getSelectedItem()+"',"
-//                    +"quantidade_arte_pesca = '"+tfQuantidadeArtePesca.getText()+"',"
-//                    +"tamanho = '"+tfTamanhoComposicaoPescaria.getText()+"',"
-//                    +"malha = '"+tfMalhaComposicaoPescaria.getText()+"',"
-//                    +"tempo_arte_agua = '"+tfTempoArteAgua.getText()+"',"
-//                    +"dia = '"+util.checarCkb(ckbTempoArteAguaDia)+"',"
-//                    +"noite = '"+util.checarCkb(ckbTempoArteAguaNoite)+"',"
-//                    +"tempo_chegada = '"+tfTempoChegarPesqueiro.getText()+"',"
-//                    +"dias_efetivos_pesca = '"+tfDiasdePesca.getText()+"',"
-//                    +"viagens_mes = '"+tfQuantasViagensMes.getText()+"',"
-//                    +"producao_viagem = '"+tfProducaoViagem.getText()+"',"
-//                    +"renda_media_pecador = '"+tfRendaMediaPescador.getText()+"',"
-//                    +"outra_pescaria = '"+tfAlemPescaOutraPescaria.getText()+"',"
-//                    +"periodo_jan = '"+util.checarCkb(ckbJanP)+"',"
-//                    +"periodo_fev = '"+util.checarCkb(ckbFevP)+"',"
-//                    +"periodo_mar = '"+util.checarCkb(ckbMarP)+"',"
-//                    +"periodo_abr = '"+util.checarCkb(ckbAbrP)+"',"
-//                    +"periodo_mai = '"+util.checarCkb(ckbMaiP)+"',"
-//                    +"periodo_jun = '"+ util.checarCkb(ckbJunP)+"',"
-//                    +"periodo_jul = '"+util.checarCkb(ckbJulP)+"',"
-//                    +"periodo_ago = '"+util.checarCkb(ckbAgoP)+"',"
-//                    +"periodo_set = '"+util.checarCkb(ckbSetP)+"',"
-//                    +"periodo_out = '"+util.checarCkb(ckbOutP)+"',"
-//                    +"periodo_nov = '"+util.checarCkb(ckbNovP)+"',"
-//                    +"periodo_dez = '"+util.checarCkb(ckbDezP)+"' "+
-//
-//                    "where cod_dono_barco = "+codigo;
-//
-//            //System.out.println(sqlupdate);
-//            if (conexao.salvar(sqlupdate)) {
-//                System.out.println("Composição da Pescaria - Alterado com sucesso");
-//            }
-//
-//
-//        //Dados da Embarcação
-//
-//           String tdono = "";
-//
-//           if (chbEmbarcacaoPropria.isSelected())
-//                   tdono = "Própria";
-//            else if (chbEmbarcacaoPatrao.isSelected())
-//                   tdono = "Patrão";
-//
-//           String TtipoEmbarcacao = "";
-//
-//           if (chbTipoCAM.isSelected())
-//                   TtipoEmbarcacao = "CAM";
-//           else if (chbTipoBPP.isSelected())
-//                   TtipoEmbarcacao = "BPP";
-//           else if (chbTipoBMP.isSelected())
-//                   TtipoEmbarcacao = "BMP";
-//           else if (chbTipoOutros.isSelected())
-//                   TtipoEmbarcacao = tfOutroTipoQual.getText();
-//
-//
-//           sqlupdate = "UPDATE dono_barco_dados_embarcacao SET "
-//                    +"dono_embarcacao = '"+tdono+"',"
-//                    +"tipo_embarcacao = '"+TtipoEmbarcacao+"',"
-//                    +"nome_barco = '"+tfNomeBarco.getText()+"',"
-//                    +"porto_origem = '"+tfPortoOrigem.getText()+"',"
-//                    +"tempo_no_barco = '"+tfTempoTrabalhandoBarco.getText()+"',"
-//                    +"conservacao_gelo = '"+util.checarCkb(ckbGelo)+"',"
-//                    +"conservacao_sal = '"+util.checarCkb(ckbSal)+"',"
-//                    +"conservacao_frigorifico = '"+util.checarCkb(ckbFrigorifico)+"' "+
-//
-//                    "where cod_dono_barco = "+codigo;
-//
-//            //System.out.println(sqlupdate);
-//            if (conexao.salvar(sqlupdate)) {
-//                System.out.println("Dados da Embarcação - Atualização com sucesso");
-//                JOptionPane.showMessageDialog(null,"Alterado com sucesso");
-//                //agora é hora de atualizar o resultset
-//                mostra_dados();
-//            }
+        //Composição da Pescaria
+
+            sqlupdate ="UPDATE dono_barco_composicao_pescaria SET "
+                    +"pescaria_principal = '"+cbEspecieComposicaoPescaria.getSelectedItem()+"',"
+                    +"safra_jan = '"+util.checarCkb(ckbJanS)+"',"
+                    +"safra_fev = '"+util.checarCkb(ckbFevS)+"',"
+                    +"safra_mar = '"+util.checarCkb(ckbMarS)+"',"
+                    +"safra_abr = '"+util.checarCkb(ckbAbrS)+"',"
+                    +"safra_mai = '"+util.checarCkb(ckbMaiS)+"',"
+                    +"safra_jun = '"+ util.checarCkb(ckbJunS)+"',"
+                    +"safra_jul = '"+util.checarCkb(ckbJulS)+"',"
+                    +"safra_ago = '"+util.checarCkb(ckbAgoS)+"',"
+                    +"safra_set = '"+util.checarCkb(ckbSetS)+"',"
+                    +"safra_out = '"+util.checarCkb(ckbOutS)+"',"
+                    +"safra_nov = '"+util.checarCkb(ckbNovS)+"',"
+                    +"safra_dez = '"+util.checarCkb(ckbDezS)+"',"
+                    +"arte_pesca = '"+cbArtePescaComposicaoPescaria.getSelectedItem()+"',"
+                    +"quantidade_arte_pesca = '"+tfQuantidadeArtePesca.getText()+"',"
+                    +"tamanho = '"+tfTamanhoComposicaoPescaria.getText()+"',"
+                    +"malha = '"+tfMalhaComposicaoPescaria.getText()+"',"
+                   
+                    +"petrechos_proprios = '"+util.checarCkb(ckbPretrchosPropriosSim)+"',"
+                    +"de_quem_petrecho = '"+tfSePretrochosProprios.getText()+"',"
+                    +"onde_adquire_panagens_local = '"+tfLocalCompPescaria.getText()+"',"
+                    +"onde_adquire_panagens_pq = '"+tfPqCompPescaria.getText()+"',"
+                    +"custo_entalhamento = '"+tfCustoEntralhamentoCompPescaria.getText()+"',"
+                    +"custo_chumbo = '"+tfCustoChumboCompPescaria.getText()+"',"
+                    +"custo_boias = '"+tfCustoBoiasCompPescaria.getText()+"',"
+                    +"qtd_viagem_mes = '"+tfViagemMesCompPescaria.getText()+"',"
+                    +"producao_viagem = '"+tfProducaoViagemCompPescaria.getText()+"',"
+                    +"renda_media_por_pescaria = '"+tfRendaMediaPescaria.getText()+"',"
+                    +"destino_atravessador = '"+util.checarCkb(ckbDestinoAtravessador)+"',"
+                    +"destino_empresa = '"+util.checarCkb(ckbDestinoEmpresa)+"',"
+                    +"destino_caminhao = '"+util.checarCkb(ckbDestinoCaminhao)+"',"
+                    +"destino_supermercado = '"+util.checarCkb(ckbDestinoSupermercado)+"',"
+                    +"destino_outros = '"+util.checarCkb(ckbDestinoOutro)+"',"
+                    +"destino_outros_quais = '"+tfDestinoOutro.getText()+"',"
+                    +"existe_dependencia = '"+util.checarCkb(ckbSimDependencia)+"' "+
+
+                    "where cod_dono_barco = "+codigo;
+
+            //System.out.println(sqlupdate);
+            if (conexao.salvar(sqlupdate)) {
+                System.out.println("3 Composição da Pescaria - Alterado com sucesso");
+            }
+
+
+        //Dados da Embarcação
+
+
+           sqlupdate = "UPDATE dono_barco_dados_embarcacao SET "
+                    +"embarcacao_foi_financiada = '"+util.checarCkb(ckbSimFinanciada)+"',"
+                    +"qual_instituicao_financiou = '"+tfQualInstituicao.getText()+"',"
+                    +"forma_financiamento = '"+tfFormaFinanciamento.getText()+"',"
+                    +"cam= '"+util.checarCkb(ckbTipoCAM)+"',"
+                    +"bpp = '"+util.checarCkb(ckbTipoBPP)+"',"
+
+                    +"bmp= '"+util.checarCkb(ckbTipoBMP)+"',"
+                    +"outro= '"+util.checarCkb(ckbTipoOutros)+"',"
+                    +"outro_tipo= '"+tfOutroTipoQual.getText()+"',"
+                    +"nome_embarcacao= '"+tfNomeEmbarcacao.getText()+"',"
+                    +"comprimento= '"+tfComprimento.getText()+"',"
+                    +"ton_bruta= '"+tfTonBruta.getText()+"',"
+                    +"ton_liquida= '"+tfTonLiq.getText()+"',"
+                    +"material_casco= '"+cbMaterialCasco.getSelectedItem()+"',"
+                    +"propulsao= '"+cbPropulsao.getSelectedItem()+"',"
+                    +"cilindros= '"+tfNumeroCilindros.getText()+"',"
+                    +"marca= '"+tfMarca.getText()+"',"
+                    +"tripulacao= '"+tfTripulacao.getText()+"',"
+                    +"ano_construcao= '"+tfAnoConstrucao.getText()+"',"
+                    +"situacao_atual= '"+cbSitucao.getSelectedItem()+"',"
+                    +"conservacao_gelo = '"+util.checarCkb(ckbGelo)+"',"
+                    +"conservacao_sal = '"+util.checarCkb(ckbSal)+"',"
+                    +"conservacao_frigorifico = '"+util.checarCkb(ckbFrigorifico)+"',"
+                    +"possui_inscricao = '"+util.checarCkb(ckbPossuiInscricaoSim)+"' "+
+
+                    "where cod_dono_barco = "+codigo;
+
+            //System.out.println(sqlupdate);
+            if (conexao.salvar(sqlupdate)) {
+                System.out.println("4 Dados da Embarcação - Atualização com sucesso");
+                JOptionPane.showMessageDialog(null,"Alterado com sucesso");
+                //agora é hora de atualizar o resultset
+                mostra_dados();
+            }
 
     }
 
@@ -2902,39 +2883,18 @@ public class donoDoBarco2 extends javax.swing.JFrame {
             tfQuantidadeArtePesca.setText("");
             tfTamanhoComposicaoPescaria.setText("");
             tfMalhaComposicaoPescaria.setText("");
-            tfTempoArteAgua.setText("");
-            ckbTempoArteAguaDia.setSelected(false);
-            ckbTempoArteAguaNoite.setSelected(false);
-            tfTempoChegarPesqueiro.setText("");
-            tfDiasdePesca.setText("");
-            tfQuantasViagensMes.setText("");
-            tfProducaoViagem.setText("");
-            tfRendaMediaPescador.setText("");
-            ckbJanP.setSelected(false);
-            ckbFevP.setSelected(false);
-            ckbMarP.setSelected(false);
-            ckbAbrP.setSelected(false);
-            ckbMaiP.setSelected(false);
-            ckbJunP.setSelected(false);
-            ckbJulP.setSelected(false);
-            ckbAgoP.setSelected(false);
-            ckbSetP.setSelected(false);
-            ckbOutP.setSelected(false);
-            ckbNovP.setSelected(false);
-            ckbDezP.setSelected(false);
-            tfAlemPescaOutraPescaria.setText("");
+          
 
             //Dados da Embarcação
-            chbEmbarcacaoPropria.setSelected(false);
-            chbEmbarcacaoPatrao.setSelected(false);
-            chbTipoCAM.setSelected(false);
-            chbTipoBPP.setSelected(false);
-            chbTipoBMP.setSelected(false);
-            chbTipoOutros.setSelected(false);
+           
+            ckbTipoCAM.setSelected(false);
+            ckbTipoBPP.setSelected(false);
+            ckbTipoBMP.setSelected(false);
+            ckbTipoOutros.setSelected(false);
             tfOutroTipoQual.setText("");
             tfNomeEmbarcacao.setText("");
             tfComprimento.setText("");
-            tfTempoTrabalhandoBarco.setText("");
+      
             ckbFrigorifico.setSelected(false);
             ckbGelo.setSelected(false);
             ckbSal.setSelected(false);
@@ -2943,14 +2903,9 @@ public class donoDoBarco2 extends javax.swing.JFrame {
             tfParentescoRT.setText("");
             tfAtividadeRT.setText("");
             tfRendaRT.setText("");
-            tfLocalCP.setText("");
-            tfLatitudeCP.setText("");
-            tfLongitudeCP.setText("");
-            tfInicioSafra.setText("");
-            tfFimSafra.setText("");
-            cbArtePesca.setSelectedIndex(0);
-            tfMalha.setText("");
-            tfTamanho.setText("");
+           
+            tfValorPrecoEspecie.setText("");
+            
 
     }
 
@@ -3029,17 +2984,16 @@ public class donoDoBarco2 extends javax.swing.JFrame {
     System.out.println(codigo);
 
           //Tabela Locais da composição pescaria
-          String sqlinsert = "insert into dono_barco_composicao_pescaria_locais "
-                    + "(cod_dono_barco,local,latitude,longitude) values ("+
+          String sqlinsert = "insert into dono_barco_composicao_pescaria_precos "
+                    + "(cod_dono_barco,especie,valor) values ("+
                     codigo+",'"+
-                    tfLocalCP.getText()+"','"+
-                    tfLatitudeCP.getText()+"','"+
-                    tfLongitudeCP.getText()+"')";
+                    cbEspecieVendaPescado.getSelectedItem()+"','"+
+                    tfValorPrecoEspecie.getText()+"')";
 
             System.out.println(sqlinsert);
             if (conexao.salvar(sqlinsert)) {
-                System.out.println("Jtable CP - Cadastrado com sucesso");
-                attjTableComposicaoPescaria();
+                System.out.println("dono_barco_composicao_pescaria_precos - Cadastrado com sucesso");
+                attjtPrecoPescado();
             }
 
     }
@@ -3048,123 +3002,47 @@ public class donoDoBarco2 extends javax.swing.JFrame {
         //System.out.println(jTableComposicaoPescaria.getValueAt(jTableComposicaoPescaria.getSelectedRow(),0));
         String sql;
 
-        sql = "delete from dono_barco_composicao_pescaria_locais "
-            + "Where cod_pescaria_composicao_pescaria_locais = "
+        sql = "delete from dono_barco_composicao_pescaria_precos "
+            + "Where cod_dono_barco_composicao_pescaria_precos = "
             + jtPrecoPescado.getValueAt(jtPrecoPescado.getSelectedRow(),0);
 
             if (conexao.salvar(sql)) {
                 System.out.println("Exclusão realizada com sucesso");
-                attjTableComposicaoPescaria();
+                attjtPrecoPescado();
             }   else
                     JOptionPane.showMessageDialog(null,"Erro na exclusão");
     }
 
-    private void attjTableComposicaoPescaria(){
+    private void attjtPrecoPescado(){
         String codigo = util.separa(1,cbDonoBarco.getSelectedItem().toString());
 
-        conexao.execute("select * from dono_barco_composicao_pescaria_locais"
+        conexao.execute("select * from dono_barco_composicao_pescaria_precos"
                         + " where cod_dono_barco = " + codigo);
 
         jtPrecoPescado.getColumnModel().getColumn(0).setMaxWidth(0);
         jtPrecoPescado.getColumnModel().getColumn(0).setPreferredWidth(0);
         jtPrecoPescado.getColumnModel().getColumn(1).setPreferredWidth(10);
         jtPrecoPescado.getColumnModel().getColumn(2).setPreferredWidth(10);
-        jtPrecoPescado.getColumnModel().getColumn(3).setPreferredWidth(10);
+
 
         DefaultTableModel modelo = (DefaultTableModel)jtPrecoPescado.getModel();
         modelo.setNumRows(0);//limpa o JTable;
 
         try{
             while (conexao.resultSet.next())
-                modelo.addRow(new Object[]{conexao.resultSet.getString("cod_pescaria_composicao_pescaria_locais"),
-                                           conexao.resultSet.getString("local"),
-                                           conexao.resultSet.getString("latitude"),
-                                           conexao.resultSet.getString("longitude"),
-                                          });
-
-            conexao.resultSet.first();
-
-        }catch (SQLException erro){
-            System.out.println(erro + "Tabela Composição Pescaria");
-        }
-
-    }// FIM Trabalho com a tabela Composição Pescaria
-
-    //Trabalho com a tabela Especies Capturadas
-    private void addBtEP() {
-    String codigo = util.separa(1,cbDonoBarco.getSelectedItem().toString());
-    System.out.println(codigo);
-
-          //Tabela Locais da Especies Capturadas
-          String sqlinsert = "insert into dono_barco_especies_capturadas "
-                    + "(cod_dono_barco,especie,inicio_safra,fim_safra,"
-                    + "arte_pesca,tamanho,malha) values ("+
-                    codigo+",'"+
-                    cbEspecie.getSelectedItem()+"','"+
-                    tfInicioSafra.getText()+"','"+
-                    tfFimSafra.getText()+"','"+
-                    cbArtePesca.getSelectedItem()+"','"+
-                    tfTamanho.getText()+"','"+
-                    tfMalha.getText()+"')";
-
-            System.out.println(sqlinsert);
-            if (conexao.salvar(sqlinsert)) {
-                System.out.println("Jtable CP - Cadastrado com sucesso");
-                jTableEspeciesCapturadas();
-            }
-
-    }
-
-    private void excluirEP() {
-        String sql;
-
-        sql = "delete from dono_barco_especies_capturadas "
-            + "Where cod_dono_barco_especies_capturadas = "
-            + jTableEspeciesCapturadas.getValueAt(jTableEspeciesCapturadas.getSelectedRow(),0);
-
-            if (conexao.salvar(sql)) {
-                System.out.println("Exclusão realizada com sucesso");
-                jTableEspeciesCapturadas();
-            }   else
-                    JOptionPane.showMessageDialog(null,"Erro na exclusão");
-    }
-
-    private void jTableEspeciesCapturadas(){
-        String codigo = util.separa(1,cbDonoBarco.getSelectedItem().toString());
-
-        conexao.execute("select * from dono_barco_especies_capturadas "
-                      + "where cod_dono_barco = " + codigo);
-
-        jTableEspeciesCapturadas.getColumnModel().getColumn(0).setMaxWidth(0);
-        jTableEspeciesCapturadas.getColumnModel().getColumn(0).setPreferredWidth(0);
-        jTableEspeciesCapturadas.getColumnModel().getColumn(1).setPreferredWidth(10);
-        jTableEspeciesCapturadas.getColumnModel().getColumn(2).setPreferredWidth(10);
-        jTableEspeciesCapturadas.getColumnModel().getColumn(3).setPreferredWidth(10);
-        jTableEspeciesCapturadas.getColumnModel().getColumn(4).setPreferredWidth(10);
-        jTableEspeciesCapturadas.getColumnModel().getColumn(5).setPreferredWidth(10);
-        jTableEspeciesCapturadas.getColumnModel().getColumn(6).setPreferredWidth(10);
-
-        DefaultTableModel modelo = (DefaultTableModel)jTableEspeciesCapturadas.getModel();
-        modelo.setNumRows(0);//limpa o JTable;
-
-        try{
-            while (conexao.resultSet.next())
-                modelo.addRow(new Object[]{conexao.resultSet.getString("cod_dono_barco_especies_capturadas"),
+                modelo.addRow(new Object[]{conexao.resultSet.getString("cod_dono_barco_composicao_pescaria_precos"),
                                            conexao.resultSet.getString("especie"),
-                                           conexao.resultSet.getString("inicio_safra"),
-                                           conexao.resultSet.getString("fim_safra"),
-                                           conexao.resultSet.getString("arte_pesca"),
-                                           conexao.resultSet.getString("tamanho"),
-                                           conexao.resultSet.getString("malha"),
+                                           conexao.resultSet.getString("valor"),
                                           });
 
             conexao.resultSet.first();
 
         }catch (SQLException erro){
-            System.out.println(erro + "Tabela Espécies Capturadas");
+            System.out.println(erro + "Tabela dono_barco_composicao_pescaria_precos");
         }
 
-    }// FIM Trabalho com a tabela Espécies Capturadas
+    }// FIM Trabalho dono_barco_composicao_pescaria_precos"
+
 
     private void attCbdono_barco() {
         try {
@@ -3184,14 +3062,12 @@ public class donoDoBarco2 extends javax.swing.JFrame {
     private void attCbs() {
         String item = new String();
         try {
-            cbEspecie.removeAllItems();
             cbEspecieComposicaoPescaria.removeAllItems();
             cbEspecieVendaPescado.removeAllItems();
             conexao.execute("select * from especie");
 
             while (conexao.resultSet.next()){
                 item = conexao.resultSet.getString("especie");
-                cbEspecie.addItem(item);
                 cbEspecieComposicaoPescaria.addItem(item);
                 cbEspecieVendaPescado.addItem(item);
             }
@@ -3201,13 +3077,11 @@ public class donoDoBarco2 extends javax.swing.JFrame {
         }
 
          try {
-            cbArtePesca.removeAllItems();
             cbArtePescaComposicaoPescaria.removeAllItems();
             conexao.execute("select * from arte_de_pesca");
 
             while (conexao.resultSet.next()){
                 item = conexao.resultSet.getString("arte_de_pesca");
-                cbArtePesca.addItem(item);
                 cbArtePescaComposicaoPescaria.addItem(item);
             }
 
@@ -3228,17 +3102,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
             tfTamanhoComposicaoPescaria.setText("");
             tfMalhaComposicaoPescaria.setText("");
         }
-        
-        if (cbArtePesca.getSelectedItem().toString().toLowerCase().equals("rede de emalhar")){
-            tfTamanho.setEditable(true);
-            tfMalha.setEditable(true);
-        }
-        else{
-            tfTamanho.setEditable(false);
-            tfMalha.setEditable(false);
-            tfTamanho.setText("");
-            tfMalha.setText("");
-        }
+                
 
         } catch (Exception e) {
         }
