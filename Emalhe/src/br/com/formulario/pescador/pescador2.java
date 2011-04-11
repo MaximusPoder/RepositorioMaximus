@@ -1888,7 +1888,7 @@ public class pescador2 extends javax.swing.JFrame {
                    tinss = "Empregado";
 
 
-            sqlinsert = "insert into pescador_modaria "
+            sqlinsert = "insert into pescador_moradia "
                     + "(cod_pescador,casa,luz,banheiro,agua_encanada,"
                     + "drenagem_pluvial,fossa,paga_inss,colonia,colonia_qual,"
                     + "associacao,associacao_qual,cooperativa,cooperativa_qual,"
@@ -2072,7 +2072,7 @@ public class pescador2 extends javax.swing.JFrame {
                    tinss = "Empregado";
             //Pegando ites do CB/>
 
-            sqlupdate ="UPDATE pescador_modaria SET "
+            sqlupdate ="UPDATE pescador_moradia SET "
                     +"casa = '"+tcasa+"',"
                     +"luz = '"+util.checarCkb(ckbLuzSim)+"',"
                     +"banheiro = '"+tbanheiro+"',"
@@ -2216,7 +2216,7 @@ public class pescador2 extends javax.swing.JFrame {
         System.out.println(codigo);
         try {
             //Pescador Moradia
-            conexao.execute("SELECT * FROM pescador_modaria WHERE cod_pescador = "+codigo);
+            conexao.execute("SELECT * FROM pescador_moradia WHERE cod_pescador = "+codigo);
             conexao.resultSet.first();
 
             //Selecionar os check boxes conforme o BD
