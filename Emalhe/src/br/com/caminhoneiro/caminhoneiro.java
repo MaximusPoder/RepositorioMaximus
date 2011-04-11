@@ -12,6 +12,7 @@
 package br.com.caminhoneiro;
 
 import br.com.conexao.Conexao;
+import br.com.util.JIntField;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,33 +25,23 @@ import javax.swing.JOptionPane;
  */
 public class caminhoneiro extends javax.swing.JFrame {
 
-    /** Creates new form winProduto */
-    int navega = 0; //variavel pra saber o  botão clicado;
-    private Conexao conexao;
-    int inicia_combo = 0;
-    private boolean state = false;
+     private int navega = 0; //variavel pra saber o  botão clicado;
+     private Conexao conexao;
 
     public caminhoneiro() {
         initComponents(); //Inicializa os componentes da tela
         conexao = new Conexao();
-        conexao.conecta("mil_interface");
-              
-        //Insere nomes do município no cbMunicipio
-        try {
-            conexao.execute("select * FROM tab_local where pai='Pará' or pai='Maranhão' or pai='Amapá' ");
-            while (conexao.resultSet.next()){
-                cbMunicipio.addItem(conexao.resultSet.getString("nome"));
-                //System.out.println(conexao.resultSet.getString("nome"));
-            }
-        }catch (SQLException ex) {
-            Logger.getLogger(caminhoneiro.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        conexao.conecta("emalhe");
 
-        conexao.execute("select * from atravessador_cadastro");
+        //Insere nomes do município no cbMunicipio
+        AttCb();
+
+        //inicia a conexão com o bd do formulário
+        conexao.execute("select * from caminhoneiro");
 
         try {
             conexao.resultSet.first();
-            mostra_dados_atravessador();
+            mostra_dados_caminhoneiro();
 
 
         }catch (SQLException ex) {
@@ -68,11 +59,10 @@ public class caminhoneiro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        definicao = new javax.swing.ButtonGroup();
         buttonGroup1 = new javax.swing.ButtonGroup();
-        buttonGroup2 = new javax.swing.ButtonGroup();
-        jScrollPane1 = new javax.swing.JScrollPane();
         jpAtravessador = new javax.swing.JPanel();
-        tfIdade = new javax.swing.JTextField();
+        tfIdade = new JIntField();
         tfNome = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
@@ -95,12 +85,11 @@ public class caminhoneiro extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         cbSexo = new javax.swing.JComboBox();
         jLabel29 = new javax.swing.JLabel();
-        tfAtividadePrincipal = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
         tfAtividadeSecundaria = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
-        tfComposicaoFamiliar = new javax.swing.JTextField();
+        tfComposicaoFamiliar = new JIntField();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         tfPqParou = new javax.swing.JTextField();
@@ -109,13 +98,14 @@ public class caminhoneiro extends javax.swing.JFrame {
         cbEstadoCivil = new javax.swing.JComboBox();
         jLabel42 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
         cbEscolaridade = new javax.swing.JComboBox();
+        rbCaminhao = new javax.swing.JRadioButton();
+        rbMoto = new javax.swing.JRadioButton();
+        rbCarroParticular = new javax.swing.JRadioButton();
+        cbAtividadePrincipal = new javax.swing.JComboBox();
+        rbBicicleta = new javax.swing.JRadioButton();
+        rbSoTrasporta = new javax.swing.JRadioButton();
+        rbSoComercializa = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Questionário Atravessador");
@@ -127,6 +117,12 @@ public class caminhoneiro extends javax.swing.JFrame {
 
         jpAtravessador.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jpAtravessador.setPreferredSize(new java.awt.Dimension(735, 538));
+
+        tfIdade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfIdadeActionPerformed(evt);
+            }
+        });
 
         jLabel22.setText("Idade.:");
 
@@ -215,7 +211,7 @@ public class caminhoneiro extends javax.swing.JFrame {
                         .addComponent(botao_proximo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botao_ultimo)))
-                .addContainerGap(353, Short.MAX_VALUE))
+                .addContainerGap(378, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -252,7 +248,7 @@ public class caminhoneiro extends javax.swing.JFrame {
 
         jLabel31.setText("Estado civil.:");
 
-        jLabel32.setText("Composição Familiar.:");
+        jLabel32.setText("Número de filhos.:");
 
         jLabel33.setText("Escolaridade.:");
 
@@ -264,24 +260,37 @@ public class caminhoneiro extends javax.swing.JFrame {
 
         cbEstadoCivil.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Solteiro", "Casado", "União Estável" }));
 
-        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel42.setText("Questionário Caminhoneiro");
 
-        jLabel1.setText("Tipo de veiculo:");
-
-        jRadioButton1.setText("Só transporta");
-
-        jRadioButton2.setText("Transporta e comercializa");
-
-        jCheckBox1.setText("Caminhão");
-
-        jCheckBox2.setText("Moto");
-
-        jCheckBox3.setText("Carro particular");
-
-        jCheckBox4.setText("Bicicleta");
+        jLabel1.setText("Você é:");
 
         cbEscolaridade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1° Série fundamental", "2° Série fundamental", "3° Série fundamental", "4° Série fundamental", "5° Série fundamental", "6° Série fundamental", "7° Série fundamental", "8° Série fundamental", "1° Série médio", "2° Série médio", "3° Série médio", "Ensino Superior Incompleto", "Ensino Superior Completo" }));
+
+        definicao.add(rbCaminhao);
+        rbCaminhao.setText("Caminhão");
+
+        definicao.add(rbMoto);
+        rbMoto.setText("Moto");
+
+        definicao.add(rbCarroParticular);
+        rbCarroParticular.setText("Carro Particular");
+
+        cbAtividadePrincipal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        definicao.add(rbBicicleta);
+        rbBicicleta.setText("Bicicleta");
+
+        buttonGroup1.add(rbSoTrasporta);
+        rbSoTrasporta.setText("Só Transporta");
+
+        buttonGroup1.add(rbSoComercializa);
+        rbSoComercializa.setText("Transporta e Comercializa");
+        rbSoComercializa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbSoComercializaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpAtravessadorLayout = new javax.swing.GroupLayout(jpAtravessador);
         jpAtravessador.setLayout(jpAtravessadorLayout);
@@ -291,79 +300,80 @@ public class caminhoneiro extends javax.swing.JFrame {
                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpAtravessadorLayout.createSequentialGroup()
+                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
+                        .addGap(246, 246, 246)
+                        .addComponent(jLabel42))
+                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rbCaminhao)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rbMoto)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rbCarroParticular)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rbBicicleta))
+                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jpAtravessadorLayout.createSequentialGroup()
                                 .addComponent(jLabel24)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(cbMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpAtravessadorLayout.createSequentialGroup()
-                                .addComponent(jRadioButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton2))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpAtravessadorLayout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox4))
-                            .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpAtravessadorLayout.createSequentialGroup()
+                            .addComponent(jLabel25)
+                            .addGroup(jpAtravessadorLayout.createSequentialGroup()
                                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                        .addComponent(jLabel23)
-                                        .addGap(38, 38, 38)
-                                        .addComponent(tfNome, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                                .addComponent(jLabel28)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel22)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(tfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(jLabel29)
-                                            .addComponent(jLabel31)
-                                            .addComponent(jLabel33))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(cbEscolaridade, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(tfAtividadePrincipal)
-                                            .addComponent(cbEstadoCivil, 0, 196, Short.MAX_VALUE)))
                                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                                         .addComponent(jLabel27)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tfNaturalidade, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(18, 18, 18)
+                                        .addComponent(tfNaturalidade, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
+                                        .addComponent(jLabel23)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(tfNome, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel35, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tfApelido)
+                                    .addComponent(cbLocalMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jpAtravessadorLayout.createSequentialGroup()
                                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel35, javax.swing.GroupLayout.Alignment.LEADING))
+                                        .addComponent(jLabel28)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(tfApelido)
-                                            .addComponent(cbLocalMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel30)
-                                            .addComponent(jLabel34)
-                                            .addComponent(jLabel32))
+                                        .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(tfPqParou)
-                                            .addComponent(tfComposicaoFamiliar)
-                                            .addComponent(tfAtividadeSecundaria, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                        .addGap(283, 283, 283)
-                        .addComponent(jLabel42)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(jLabel22)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(tfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel29)
+                                    .addComponent(jLabel31)
+                                    .addComponent(jLabel33))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(cbEstadoCivil, 0, 196, Short.MAX_VALUE)
+                                    .addComponent(cbEscolaridade, 0, 196, Short.MAX_VALUE)
+                                    .addComponent(cbAtividadePrincipal, 0, 196, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel30)
+                                    .addComponent(jLabel34)
+                                    .addComponent(jLabel32))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tfPqParou, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
+                                    .addComponent(tfComposicaoFamiliar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
+                                    .addComponent(tfAtividadeSecundaria, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)))
+                            .addGroup(jpAtravessadorLayout.createSequentialGroup()
+                                .addComponent(rbSoTrasporta)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(rbSoComercializa)))))
+                .addContainerGap())
         );
         jpAtravessadorLayout.setVerticalGroup(
             jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -374,24 +384,24 @@ public class caminhoneiro extends javax.swing.JFrame {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel24))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox2)
-                    .addComponent(jCheckBox3)
-                    .addComponent(jCheckBox4))
+                    .addComponent(rbCaminhao)
+                    .addComponent(rbMoto)
+                    .addComponent(rbCarroParticular)
+                    .addComponent(rbBicicleta))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rbSoTrasporta)
+                    .addComponent(rbSoComercializa))
+                .addGap(7, 7, 7)
                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(cbMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel24))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel25)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tfNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel23))
@@ -407,56 +417,52 @@ public class caminhoneiro extends javax.swing.JFrame {
                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel35)
                             .addComponent(cbLocalMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(13, 13, 13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
                     .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22)
                     .addComponent(tfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel29)
-                            .addComponent(tfAtividadePrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel31)
-                            .addComponent(cbEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel33))
-                    .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                            .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel30)
-                                .addComponent(tfAtividadeSecundaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(tfComposicaoFamiliar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel32))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(tfPqParou, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel34)))
-                        .addComponent(cbEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29)
+                    .addComponent(jLabel30)
+                    .addComponent(tfAtividadeSecundaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbAtividadePrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel31)
+                    .addComponent(tfComposicaoFamiliar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel32)
+                    .addComponent(cbEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33)
+                    .addComponent(tfPqParou, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel34)
+                    .addComponent(cbEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        jScrollPane1.setViewportView(jpAtravessador);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 774, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jpAtravessador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 416, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jpAtravessador, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-792)/2, (screenSize.height-461)/2, 792, 461);
+        setBounds((screenSize.width-783)/2, (screenSize.height-487)/2, 783, 487);
     }// </editor-fold>//GEN-END:initComponents
 
     private void fechar_janela(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_fechar_janela
@@ -464,60 +470,47 @@ public class caminhoneiro extends javax.swing.JFrame {
     }//GEN-LAST:event_fechar_janela
 
     private void botao_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_alterarActionPerformed
-        
-
         try{
-            String sql ="UPDATE atravessador_cadastro SET "+
-                    "id_local = '"+cbMunicipio.getSelectedItem()+"',"+
+            String sql ="UPDATE caminhoneiro SET "+
+                    "tipo_veiculo = '"+getTrasporte()+"',"+
+                    "modo_transporte = '"+getModo()+"',"+
+                    "municipio = '"+cbMunicipio.getSelectedItem()+"',"+
                     "nome = '"+tfNome.getText()+"',"+
                     "apelido = '"+ tfApelido.getText() +"',"+
                     "naturalidade = '"+ tfNaturalidade.getText() +"',"+
+                    "local_moradia = '"+ cbLocalMoradia.getSelectedItem() +"',"+
                     "sexo = '"+ cbSexo.getSelectedItem() +"',"+
                     "idade = '"+ tfIdade.getText() +"',"+
-                    "atividade_principal = '"+ tfAtividadePrincipal.getText() +"',"+
+                    "atividade_principal = '"+ cbAtividadePrincipal.getSelectedItem() +"',"+
                     "atividade_secundaria = '"+ tfAtividadeSecundaria.getText() +"',"+
                     "estado_civil = '"+ cbEstadoCivil.getSelectedItem() +"',"+
                     "composicao_familiar = '"+ tfComposicaoFamiliar.getText() +"',"+
-//                    "escolaridade = '"+ tfEscolaridade.getText() +"',"+
-                    "pq_parou = '"+ tfPqParou.getText() +"',"+
-                    "local_moradia = '"+ cbLocalMoradia.getSelectedItem() +"',"+
-//                    "qualidade_moradia = '"+ cbQualidadeMoradia.getSelectedItem() +"',"+
-//                    "tipo_construcao = '"+ tfTipoConstrucao.getText() +"',"+
-//                    "atividades_geram_renda = '"+ taAtividadeRendaFamilia.getText() +"',"+
-//                    "atividade_entrevistado = '"+ tfEntrevistado.getText() +"',"+
-//                    "atividade_esposa = '"+ tfEsposa.getText() +"',"+
-//                    "atividade_filhos = '"+ tfFilhos.getText() +"',"+
-//                    "atividade_netos = '"+ tfNetos.getText() +"',"+
-//                    "tempo_diario_trab = '"+ tfTempoDiario.getText() +"',"+
-//                    "tempo_na_atividade = '"+ tfTempoAtividade.getText() +"',"+
-//                    "renda_mensal_ou_viagem = '"+ tfRendaMensal.getText() +"',"+
-//                    "possui_reg_colonia = '"+ a +"',"+
-//                    "qual_colonia = '"+ tfQualColonia.getText() +"',"+
-//                    "na_colonia_desde = '"+ tfDesdeQuando.getText() +"' "+
+                    "escolaridade = '"+ cbEscolaridade.getSelectedItem() +"',"+
+                    "pq_parou = '"+ tfPqParou.getText() +"' "+
 
 
-                    "where id_atravessador = "+conexao.resultSet.getString("id_atravessador");
+                    "where cod_caminhoneiro = "+conexao.resultSet.getString("cod_caminhoneiro");
 
             System.out.println(sql);
             if (conexao.update(sql)){
                 JOptionPane.showMessageDialog(null,"Alterado com sucesso");
                 //Atualiza Resultset
-                conexao.execute("select * from atravessador_cadastro");
+                conexao.execute("select * from caminhoneiro");
                 conexao.resultSet.next();
-                mostra_dados_atravessador();
+                mostra_dados_caminhoneiro();
             }
 
 
         }catch (Exception e){
-            System.out.println(e + "Erro no botão alterar");
+            System.out.println(e + " Erro no botão alterar");
         }
 }//GEN-LAST:event_botao_alterarActionPerformed
 
     private void botao_ultimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_ultimoActionPerformed
         try {
             conexao.resultSet.last();
-            mostra_dados_atravessador();
-
+            mostra_dados_caminhoneiro();
+            navega = 2;
 
         }catch (SQLException ex) {
             Logger.getLogger(caminhoneiro.class.getName()).log(Level.SEVERE, null, ex);
@@ -525,34 +518,22 @@ public class caminhoneiro extends javax.swing.JFrame {
 }//GEN-LAST:event_botao_ultimoActionPerformed
 
     private void botao_proximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_proximoActionPerformed
-        try {
-
-            conexao.resultSet.next();
-            mostra_dados_atravessador();
-            navega = 2;
-
-
-        }catch (SQLException ex) {
-            Logger.getLogger(caminhoneiro.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        proximo();
+        mostra_dados_caminhoneiro();
+        navega = 2;
 }//GEN-LAST:event_botao_proximoActionPerformed
 
     private void botao_anteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_anteriorActionPerformed
-        try {
-            conexao.resultSet.previous();
-            mostra_dados_atravessador();
-            navega = 1;
-
-        }catch (SQLException ex) {
-            Logger.getLogger(caminhoneiro.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        anterior();
+        mostra_dados_caminhoneiro();
+        navega = 1;
 }//GEN-LAST:event_botao_anteriorActionPerformed
 
     private void botao_primeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_primeiroActionPerformed
         try {
             conexao.resultSet.first();
-            mostra_dados_atravessador();
-
+            mostra_dados_caminhoneiro();
+            navega = 1;
 
         }catch (SQLException ex) {
             Logger.getLogger(caminhoneiro.class.getName()).log(Level.SEVERE, null, ex);
@@ -560,111 +541,67 @@ public class caminhoneiro extends javax.swing.JFrame {
 }//GEN-LAST:event_botao_primeiroActionPerformed
 
     private void botao_novoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_novoActionPerformed
-        tfNome.setText("");
-        tfApelido.setText("");
-        tfNaturalidade.setText("");
-        tfIdade.setText("0");
-        tfAtividadePrincipal.setText("");
-        tfAtividadeSecundaria.setText("");
-        cbEstadoCivil.setSelectedIndex(0);
-        tfComposicaoFamiliar.setText("");
-//        tfEscolaridade.setText("");
-        tfPqParou.setText("");
-//        taAtividadeRendaFamilia.setText("");
-//        tfEntrevistado.setText("");
-//        tfEsposa.setText("");
-//        tfFilhos.setText("");
-//        tfNetos.setText("");
-//        tfTempoDiario.setText("0");
-//        tfTempoAtividade.setText("0");
-//        tfRendaMensal.setText("0");
-//        tfQualColonia.setText("");
-//        tfDesdeQuando.setText("01/01/2001");
-//        tfTipoConstrucao.setText("");
-//
-//        //System.out.println(conexao.resultSet.getString("local_moradia"));
-//        chbPossuiColonia.setSelected(false);
-//        cbMunicipio.setSelectedIndex(0);
-//        cbSexo.setSelectedIndex(0);
-//        cbLocalMoradia.setSelectedIndex(0);
-//        cbQualidadeMoradia.setSelectedIndex(0);
+        limpar();
 }//GEN-LAST:event_botao_novoActionPerformed
 
     private void botao_excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_excluirActionPerformed
         String sql;
         try {
-            sql = "select * from atravessador_cadastro Where id_atravessador =" + conexao.resultSet.getString("id_atravessador");
+            sql = "select * from caminhoneiro Where cod_caminhoneiro =" + conexao.resultSet.getString("cod_caminhoneiro");
             conexao.execute(sql);
             conexao.resultSet.first();
-            String nome = "Deletar o atravessador : "+conexao.resultSet.getString("nome")+" ?";
+            String nome = "Deletar o caminhoneiro : "+conexao.resultSet.getString("nome")+" ?";
             int opcao_escolhida = JOptionPane.showConfirmDialog(null,nome,"Exclusão ",JOptionPane.YES_NO_OPTION);
             if (opcao_escolhida == JOptionPane.YES_OPTION) {
-                sql = "DELETE FROM atravessador_cadastro Where id_atravessador ="+conexao.resultSet.getString("id_atravessador");
+                sql = "DELETE FROM caminhoneiro Where cod_caminhoneiro ="+conexao.resultSet.getString("cod_caminhoneiro");
                 if (conexao.salvar(sql)) {
                     JOptionPane.showMessageDialog(null,"Exclusão realizada com sucesso");
                     //atualiza o ResultSet
-                    conexao.execute("select * from atravessador_cadastro");
+                    conexao.execute("select * from caminhoneiro");
                     conexao.resultSet.first();
-                    mostra_dados_atravessador();
+                    mostra_dados_caminhoneiro();
                 }
             } else{
-                conexao.execute("select * from atravessador_cadastro");
+                conexao.execute("select * from caminhoneiro");
                 conexao.resultSet.first();
-                mostra_dados_atravessador();
+                mostra_dados_caminhoneiro();
             }
 
         } catch (SQLException ex) {
             System.out.println("Erro ao tentar excluir "+ex);
         }
-    }//GEN-LAST:event_botao_excluirActionPerformed
+}//GEN-LAST:event_botao_excluirActionPerformed
 
     private void CadastrarAction(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarAction
-         try {
-            String sqlinsert = "insert into atravessador_cadastro "
-                    + "(id_local,nome,apelido,naturalidade,"
+        try {
+            String sqlinsert = "insert into caminhoneiro "
+                    + "(tipo_veiculo,modo_transporte,municipio,nome,apelido,naturalidade,"
                     + "sexo,idade,atividade_principal,atividade_secundaria,"
                     + "estado_civil,composicao_familiar,escolaridade,pq_parou,"
-                    + "local_moradia,qualidade_moradia,tipo_construcao,"
-                    + "atividades_geram_renda,atividade_entrevistado,"
-                    + "atividade_esposa,atividade_filhos,atividade_netos,"
-                    + "tempo_diario_trab,tempo_na_atividade,"
-                    + "renda_mensal_ou_viagem,possui_reg_colonia,qual_colonia,"
-                    + "na_colonia_desde) values ('"+
+                    + "local_moradia) values ('"+
+                    getTrasporte()+"','"+
+                    getModo()+"','"+
                     cbMunicipio.getSelectedItem()+"','"+
                     tfNome.getText()+"','"+
                     tfApelido.getText()+"','"+
                     tfNaturalidade.getText()+"','"+
                     cbSexo.getSelectedItem()+"',"+
                     tfIdade.getText()+",'"+
-                    tfAtividadePrincipal.getText()+"','"+
+                    cbAtividadePrincipal.getSelectedItem()+"','"+
                     tfAtividadeSecundaria.getText()+"','"+
                     cbEstadoCivil.getSelectedItem()+"','"+
                     tfComposicaoFamiliar.getText()+"','"+
-//                    tfEscolaridade.getText()+"','"+
+                    cbEscolaridade.getSelectedItem()+"','"+
                     tfPqParou.getText()+"','"+
-                    cbLocalMoradia.getSelectedItem()+"','";
-//                    cbQualidadeMoradia.getSelectedItem()+"','"+
-//                    tfTipoConstrucao.getText()+"','"+
-//                    taAtividadeRendaFamilia.getText()+"','"+
-//                    tfEntrevistado.getText()+"','"+
-//                    tfEsposa.getText()+"','"+
-//                    tfFilhos.getText()+"','"+
-//                    tfNetos.getText()+"','"+
-//                    tfTempoDiario.getText()+"','"+
-//                    tfTempoAtividade.getText()+"','"+
-//                    tfRendaMensal.getText()+"',"+
-//                    a+",'"+
-//                    tfQualColonia.getText()+"','"+
-//                    tfDesdeQuando.getText()+"')";
+                    cbLocalMoradia.getSelectedItem()+"')";
 
             //System.out.println(sqlinsert);
-
             if (conexao.salvar(sqlinsert)) {
                 JOptionPane.showMessageDialog(null,"Cadastrado com sucesso");
                 //agora é hora de atualizar o resultset
-                conexao.execute("select * from atravessador_cadastro");
+                conexao.execute("select * from caminhoneiro");
                 conexao.resultSet.first(); //1º registro
-                mostra_dados_atravessador();
+                mostra_dados_caminhoneiro();
             }
 
 
@@ -673,13 +610,21 @@ public class caminhoneiro extends javax.swing.JFrame {
         }
 }//GEN-LAST:event_CadastrarAction
 
+    private void tfIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfIdadeActionPerformed
+        // TODO add your handling code here:
+}//GEN-LAST:event_tfIdadeActionPerformed
+
+    private void rbSoComercializaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbSoComercializaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbSoComercializaActionPerformed
+
     /**
     * @param args the command line arguments
     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //new frm_atravessador().setVisible(true);
+                //new frm_caminhoneiro().setVisible(true);
             }
         });
     }
@@ -694,16 +639,13 @@ public class caminhoneiro extends javax.swing.JFrame {
     private javax.swing.JButton botao_proximo;
     private javax.swing.JButton botao_ultimo;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JComboBox cbAtividadePrincipal;
     private javax.swing.JComboBox cbEscolaridade;
     private javax.swing.JComboBox cbEstadoCivil;
     private javax.swing.JComboBox cbLocalMoradia;
     private javax.swing.JComboBox cbMunicipio;
     private javax.swing.JComboBox cbSexo;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
+    private javax.swing.ButtonGroup definicao;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -721,12 +663,14 @@ public class caminhoneiro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel jpAtravessador;
+    private javax.swing.JRadioButton rbBicicleta;
+    private javax.swing.JRadioButton rbCaminhao;
+    private javax.swing.JRadioButton rbCarroParticular;
+    private javax.swing.JRadioButton rbMoto;
+    private javax.swing.JRadioButton rbSoComercializa;
+    private javax.swing.JRadioButton rbSoTrasporta;
     private javax.swing.JTextField tfApelido;
-    private javax.swing.JTextField tfAtividadePrincipal;
     private javax.swing.JTextField tfAtividadeSecundaria;
     private javax.swing.JTextField tfComposicaoFamiliar;
     private javax.swing.JTextField tfIdade;
@@ -736,43 +680,44 @@ public class caminhoneiro extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
 
-    public void mostra_dados_atravessador(){
+    private void mostra_dados_caminhoneiro(){
+       //limpar();
+       String teste = new String();
         try {
+
+            try {
+            teste = conexao.resultSet.getString("tipo_veiculo");
+            if (teste.equals(rbCaminhao.getText()))
+                rbCaminhao.setSelected(true);
+            else if (teste.equals(rbCarroParticular.getText()))
+                rbCarroParticular.setSelected(true);
+            else if (teste.equals(rbMoto.getText()))
+                rbMoto.setSelected(true);
+            else if (teste.equals(rbBicicleta.getText()))
+                rbBicicleta.setSelected(true);
+
+            teste = conexao.resultSet.getString("modo_transporte");
+            if (teste.equals(rbSoTrasporta.getText()))
+                rbSoTrasporta.setSelected(true);
+            else if (teste.equals(rbSoComercializa.getText()))
+                rbSoComercializa.setSelected(true);
+            } catch (Exception e) {
+            }
+            
 
             tfNome.setText(conexao.resultSet.getString("nome"));
             tfApelido.setText(conexao.resultSet.getString("apelido"));
             tfNaturalidade.setText(conexao.resultSet.getString("naturalidade"));
             tfIdade.setText(conexao.resultSet.getString("idade"));
-            tfAtividadePrincipal.setText(conexao.resultSet.getString("atividade_principal"));
+            cbAtividadePrincipal.setSelectedItem(conexao.resultSet.getString("atividade_principal"));
             tfAtividadeSecundaria.setText(conexao.resultSet.getString("atividade_secundaria"));
             cbEstadoCivil.setSelectedItem(conexao.resultSet.getString("estado_civil"));
             tfComposicaoFamiliar.setText(conexao.resultSet.getString("composicao_familiar"));
-//            tfEscolaridade.setText(conexao.resultSet.getString("escolaridade"));
+            cbEscolaridade.setSelectedItem(conexao.resultSet.getString("escolaridade"));
             tfPqParou.setText(conexao.resultSet.getString("pq_parou"));
-//            taAtividadeRendaFamilia.setText(conexao.resultSet.getString("atividades_geram_renda"));
-//            tfEntrevistado.setText(conexao.resultSet.getString("atividade_entrevistado"));
-//            tfEsposa.setText(conexao.resultSet.getString("atividade_esposa"));
-//            tfFilhos.setText(conexao.resultSet.getString("atividade_filhos"));
-//            tfNetos.setText(conexao.resultSet.getString("atividade_netos"));
-//            tfTempoDiario.setText(conexao.resultSet.getString("tempo_diario_trab"));
-//            tfTempoAtividade.setText(conexao.resultSet.getString("tempo_na_atividade"));
-//            tfRendaMensal.setText(conexao.resultSet.getString("renda_mensal_ou_viagem"));
-//            tfQualColonia.setText(conexao.resultSet.getString("qual_colonia"));
-//            tfDesdeQuando.setText(conexao.resultSet.getString("na_colonia_desde"));
-//            tfTipoConstrucao.setText(conexao.resultSet.getString("tipo_construcao"));
-
-            //System.out.println(conexao.resultSet.getString("local_moradia"));
-            
-//            if (conexao.resultSet.getString("possui_reg_colonia").equals("1"))
-//                   chbPossuiColonia.setSelected(true);
-//            else
-//                   chbPossuiColonia.setSelected(false);
-//
-//            cbMunicipio.setSelectedItem(conexao.resultSet.getString("id_local"));
-//            cbSexo.setSelectedItem(conexao.resultSet.getString("sexo"));
-//            cbLocalMoradia.setSelectedItem(conexao.resultSet.getString("local_moradia"));
-//            cbQualidadeMoradia.setSelectedItem(conexao.resultSet.getString("qualidade_moradia"));
-
+            cbMunicipio.setSelectedItem(conexao.resultSet.getString("municipio"));
+            cbSexo.setSelectedItem(conexao.resultSet.getString("sexo"));
+            cbLocalMoradia.setSelectedItem(conexao.resultSet.getString("local_moradia"));
 
         }catch (SQLException ex) {
             if (navega == 1){
@@ -786,7 +731,7 @@ public class caminhoneiro extends javax.swing.JFrame {
             else
                 JOptionPane.showMessageDialog(null,"Nenhum registro encontrado "+ ex );
             navega = 0;
-            //Logger.getLogger(frm_cad_atravessador.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(pescador.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -804,6 +749,72 @@ public class caminhoneiro extends javax.swing.JFrame {
                 } catch (SQLException ex1) {
                     Logger.getLogger(caminhoneiro.class.getName()).log(Level.SEVERE, null, ex1);
                 }
+    }
+
+    private String getTrasporte() {
+        String tdefinicao = new String();
+        if (rbCaminhao.isSelected())
+            tdefinicao = rbCaminhao.getText();
+        else if (rbCarroParticular.isSelected())
+            tdefinicao = rbCarroParticular.getText();
+        else if (rbMoto.isSelected())
+            tdefinicao = rbMoto.getText();
+        else if (rbBicicleta.isSelected())
+            tdefinicao = rbBicicleta.getText();
+
+        return tdefinicao;
+    }
+
+        private String getModo() {
+        String tdefinicao = new String();
+        if (rbSoTrasporta.isSelected())
+            tdefinicao = rbSoTrasporta.getText();
+        else if (rbSoComercializa.isSelected())
+            tdefinicao = rbSoComercializa.getText();
+
+        return tdefinicao;
+    }
+
+    private void limpar() {
+        tfNome.setText("");
+        tfApelido.setText("");
+        tfNaturalidade.setText("");
+        tfIdade.setText("0");
+        cbAtividadePrincipal.setSelectedIndex(0);
+        tfAtividadeSecundaria.setText("");
+        cbEstadoCivil.setSelectedIndex(0);
+        tfComposicaoFamiliar.setText("");
+        cbEscolaridade.setSelectedIndex(0);
+        tfPqParou.setText("");
+        cbMunicipio.setSelectedIndex(0);
+        cbSexo.setSelectedIndex(0);
+        cbLocalMoradia.setSelectedIndex(0);
+        cbEscolaridade.setSelectedIndex(0);
+        rbCaminhao.setSelected(false);
+        rbCarroParticular.setSelected(false);
+        rbMoto.setSelected(false);
+    }
+
+    private void AttCb() {
+        try {
+            cbMunicipio.removeAllItems();
+            conexao.execute("select * FROM municipios where pai='Pará' or pai='Maranhão' or pai='Amapá' ");
+            while (conexao.resultSet.next()){
+                cbMunicipio.addItem(conexao.resultSet.getString("nome"));
+            }
+        }catch (SQLException ex) {
+            Logger.getLogger(caminhoneiro.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        try {
+            cbAtividadePrincipal.removeAllItems();
+            conexao.execute("select * FROM atividade ");
+            while (conexao.resultSet.next()){
+                cbAtividadePrincipal.addItem(conexao.resultSet.getString("atividade"));
+            }
+        }catch (SQLException ex) {
+            Logger.getLogger(caminhoneiro.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 
