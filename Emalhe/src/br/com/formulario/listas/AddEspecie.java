@@ -7,12 +7,12 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
-public class pescadorAddEspecie extends javax.swing.JFrame {
+public class AddEspecie extends javax.swing.JFrame {
 
     /** Creates new form winProduto */
     private Conexao conexao;
     public String codigo_pescador;
-    public pescadorAddEspecie(String cod_pescador) {
+    public AddEspecie(String cod_pescador) {
         
         initComponents();
         conexao = new Conexao();
