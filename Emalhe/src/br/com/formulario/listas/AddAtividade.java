@@ -7,24 +7,24 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
-public class AddEspecie extends javax.swing.JFrame {
+public class AddAtividade extends javax.swing.JFrame {
 
     /** Creates new form winProduto */
     private Conexao conexao;
 
-    public AddEspecie() {
+    public AddAtividade() {
         
         initComponents();
         conexao = new Conexao();
         conexao.conecta("emalhe");
-    
+
+
+
         //atualiza tabela;
         attjTableEspecie();
 
 
     }
-
- 
 
 
     @SuppressWarnings("unchecked")
@@ -49,9 +49,9 @@ public class AddEspecie extends javax.swing.JFrame {
         });
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14));
-        jLabel6.setText("Nova Espécie");
+        jLabel6.setText("Nova Atividade");
 
-        jLabel1.setText("Espécie.:");
+        jLabel1.setText("Atividade.:");
 
         jTableEspecie.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -61,7 +61,7 @@ public class AddEspecie extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "cod", "Espécie"
+                "cod", "Atividade"
             }
         ));
         jScrollPane1.setViewportView(jTableEspecie);
@@ -95,7 +95,7 @@ public class AddEspecie extends javax.swing.JFrame {
                         .addComponent(btExcluir)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
@@ -149,12 +149,14 @@ public class AddEspecie extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void btAdd() {
-          String sqlinsert = "insert into especie (especie) values ('" +
+
+
+          String sqlinsert = "insert into atividade (atividade) values ('" +
                               tfEspecie.getText() +"')";
 
             System.out.println(sqlinsert);
             if (conexao.salvar(sqlinsert)) {
-                System.out.println("Espécie Cadastrada");
+                System.out.println("Atividade Cadastrada");
                 attjTableEspecie();
             }
 
@@ -163,8 +165,8 @@ public class AddEspecie extends javax.swing.JFrame {
     private void excluirEspecie() {
         String sql;
 
-        sql = "delete from especie "
-            + "Where cod_especie = "
+        sql = "delete from atividade "
+            + "Where cod_atividade = "
             + jTableEspecie.getValueAt(jTableEspecie.getSelectedRow(),0);
 
             if (conexao.salvar(sql)) {
@@ -175,7 +177,7 @@ public class AddEspecie extends javax.swing.JFrame {
     }
 
     private void attjTableEspecie(){
-        conexao.execute("select * from especie");
+        conexao.execute("select * from atividade");
 
         jTableEspecie.getColumnModel().getColumn(0).setMaxWidth(0);
         jTableEspecie.getColumnModel().getColumn(0).setPreferredWidth(0);
@@ -186,14 +188,14 @@ public class AddEspecie extends javax.swing.JFrame {
 
         try{
             while (conexao.resultSet.next())
-                modelo.addRow(new Object[]{conexao.resultSet.getString("cod_especie"),
-                                           conexao.resultSet.getString("especie"),
+                modelo.addRow(new Object[]{conexao.resultSet.getString("cod_atividade"),
+                                           conexao.resultSet.getString("atividade"),
                                           });
 
             conexao.resultSet.first();
 
         }catch (SQLException erro){
-            System.out.println(erro + " Tabela Especie");
+            System.out.println(erro + " Tabela atividade");
         }
 
     }
