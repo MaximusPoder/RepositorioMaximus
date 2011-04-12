@@ -422,15 +422,15 @@ public class fabricaDeGelo extends javax.swing.JFrame {
                     "nome = '"+tfNomeFabrica.getText()+"',"+
                     "apelido = '"+ tfFoneFaxFabrica.getText() +"',"+
                     "naturalidade = '"+ tfEnderecoFabrica.getText() +"',"+
-                    "local_moradia = '"+ cbLocalMoradia.getSelectedItem() +"',"+
-                    "sexo = '"+ cbSexo.getSelectedItem() +"',"+
-                    "idade = '"+ tfIdade.getText() +"',"+
-                    "atividade_principal = '"+ tfTempoExistencia.getText() +"',"+
-                    "atividade_secundaria = '"+ tfAtividadeSecundaria.getText() +"',"+
-                    "estado_civil = '"+ cbEstadoCivil.getSelectedItem() +"',"+
-                    "composicao_familiar = '"+ tfComposicaoFamiliar.getText() +"',"+
-                    "escolaridade = '"+ cbEscolaridade.getSelectedItem() +"',"+
-                    "pq_parou = '"+ tfPqParou.getText() +"' "+
+//                    "local_moradia = '"+ cbLocalMoradia.getSelectedItem() +"',"+
+//                    "sexo = '"+ cbSexo.getSelectedItem() +"',"+
+//                    "idade = '"+ tfIdade.getText() +"',"+
+//                    "atividade_principal = '"+ tfTempoExistencia.getText() +"',"+
+//                    "atividade_secundaria = '"+ tfAtividadeSecundaria.getText() +"',"+
+//                    "estado_civil = '"+ cbEstadoCivil.getSelectedItem() +"',"+
+//                    "composicao_familiar = '"+ tfComposicaoFamiliar.getText() +"',"+
+//                    "escolaridade = '"+ cbEscolaridade.getSelectedItem() +"',"+
+//                    "pq_parou = '"+ tfPqParou.getText() +"' "+
 
 
 
@@ -493,13 +493,13 @@ public class fabricaDeGelo extends javax.swing.JFrame {
         tfIdade.setText("0");
         tfTempoExistencia.setText("");
         tfAtividadeSecundaria.setText("");
-        cbEstadoCivil.setSelectedIndex(0);
-        tfComposicaoFamiliar.setText("");
-        cbEscolaridade.setSelectedIndex(0);
-        tfPqParou.setText("");
-        cbMunicipio.setSelectedIndex(0);
-        cbSexo.setSelectedIndex(0);
-        cbLocalMoradia.setSelectedIndex(0);
+//        cbEstadoCivil.setSelectedIndex(0);
+//        tfComposicaoFamiliar.setText("");
+//        cbEscolaridade.setSelectedIndex(0);
+//        tfPqParou.setText("");
+//        cbMunicipio.setSelectedIndex(0);
+//        cbSexo.setSelectedIndex(0);
+//        cbLocalMoradia.setSelectedIndex(0);
 }//GEN-LAST:event_botao_novoActionPerformed
 
     private void botao_excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_excluirActionPerformed
@@ -546,11 +546,7 @@ public class fabricaDeGelo extends javax.swing.JFrame {
                     tfIdade.getText()+",'"+
                     tfTempoExistencia.getText()+"','"+
                     tfAtividadeSecundaria.getText()+"','"+
-                    cbEstadoCivil.getSelectedItem()+"','"+
-                    tfComposicaoFamiliar.getText()+"','"+
-                    cbEscolaridade.getSelectedItem()+"','"+
-                    tfPqParou.getText()+"','"+
-                    cbLocalMoradia.getSelectedItem()+"')";
+                    "')";
 
             //System.out.println(sqlinsert);
             if (conexao.salvar(sqlinsert)) {
@@ -635,13 +631,7 @@ public class fabricaDeGelo extends javax.swing.JFrame {
             tfIdade.setText(conexao.resultSet.getString("idade"));
             tfTempoExistencia.setText(conexao.resultSet.getString("atividade_principal"));
             tfAtividadeSecundaria.setText(conexao.resultSet.getString("atividade_secundaria"));
-            cbEstadoCivil.setSelectedItem(conexao.resultSet.getString("estado_civil"));
-            tfComposicaoFamiliar.setText(conexao.resultSet.getString("composicao_familiar"));
-            cbEscolaridade.setSelectedItem(conexao.resultSet.getString("escolaridade"));
-            tfPqParou.setText(conexao.resultSet.getString("pq_parou"));
-            cbMunicipio.setSelectedItem(conexao.resultSet.getString("municipio"));
-            cbSexo.setSelectedItem(conexao.resultSet.getString("sexo"));
-            cbLocalMoradia.setSelectedItem(conexao.resultSet.getString("local_moradia"));
+           
             
 
 

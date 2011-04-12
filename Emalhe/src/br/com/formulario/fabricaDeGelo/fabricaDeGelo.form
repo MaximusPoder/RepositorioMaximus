@@ -85,7 +85,7 @@
                                   <Group type="102" alignment="0" attributes="1">
                                       <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="tfNomeFabrica" pref="490" max="32767" attributes="1"/>
+                                      <Component id="tfNomeFabrica" pref="505" max="32767" attributes="1"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
@@ -281,7 +281,7 @@
                                   <Component id="botao_ultimo" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="677" max="32767" attributes="0"/>
+                          <EmptySpace pref="679" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
