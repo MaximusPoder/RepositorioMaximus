@@ -7,24 +7,23 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
-public class AddEspecie extends javax.swing.JFrame {
+public class AddArtePesca extends javax.swing.JFrame {
 
     /** Creates new form winProduto */
     private Conexao conexao;
 
-    public AddEspecie() {
+    public AddArtePesca() {
         
         initComponents();
         conexao = new Conexao();
         conexao.conecta("emalhe");
-    
+
+
         //atualiza tabela;
         attjTableEspecie();
 
 
     }
-
- 
 
 
     @SuppressWarnings("unchecked")
@@ -49,9 +48,9 @@ public class AddEspecie extends javax.swing.JFrame {
         });
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14));
-        jLabel6.setText("Nova Espécie");
+        jLabel6.setText("Nova Arte de Pesca");
 
-        jLabel1.setText("Espécie.:");
+        jLabel1.setText("Arte Pesca.:");
 
         jTableEspecie.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -61,7 +60,7 @@ public class AddEspecie extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "cod", "Espécie"
+                "cod", "Arte de Pesca"
             }
         ));
         jScrollPane1.setViewportView(jTableEspecie);
@@ -80,30 +79,31 @@ public class AddEspecie extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btAddEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap())
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(btAddEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel1)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tfEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addContainerGap())
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(btExcluir)
+                            .addContainerGap())
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
+                            .addContainerGap()))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel6)
-                        .addGap(90, 90, 90))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btExcluir)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
-                        .addContainerGap())))
+                        .addGap(76, 76, 76))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(tfEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -149,12 +149,12 @@ public class AddEspecie extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void btAdd() {
-          String sqlinsert = "insert into especie (especie) values ('" +
+          String sqlinsert = "insert into arte_de_pesca (arte_de_pesca) values ('" +
                               tfEspecie.getText() +"')";
 
             System.out.println(sqlinsert);
             if (conexao.salvar(sqlinsert)) {
-                System.out.println("Espécie Cadastrada");
+                System.out.println("arte_de_pesca Cadastrada");
                 attjTableEspecie();
             }
 
@@ -163,8 +163,8 @@ public class AddEspecie extends javax.swing.JFrame {
     private void excluirEspecie() {
         String sql;
 
-        sql = "delete from especie "
-            + "Where cod_especie = "
+        sql = "delete from arte_de_pesca "
+            + "Where cod_arte_de_pesca = "
             + jTableEspecie.getValueAt(jTableEspecie.getSelectedRow(),0);
 
             if (conexao.salvar(sql)) {
@@ -175,7 +175,7 @@ public class AddEspecie extends javax.swing.JFrame {
     }
 
     private void attjTableEspecie(){
-        conexao.execute("select * from especie");
+        conexao.execute("select * from arte_de_pesca");
 
         jTableEspecie.getColumnModel().getColumn(0).setMaxWidth(0);
         jTableEspecie.getColumnModel().getColumn(0).setPreferredWidth(0);
@@ -186,8 +186,8 @@ public class AddEspecie extends javax.swing.JFrame {
 
         try{
             while (conexao.resultSet.next())
-                modelo.addRow(new Object[]{conexao.resultSet.getString("cod_especie"),
-                                           conexao.resultSet.getString("especie"),
+                modelo.addRow(new Object[]{conexao.resultSet.getString("cod_arte_de_pesca"),
+                                           conexao.resultSet.getString("arte_de_pesca"),
                                           });
 
             conexao.resultSet.first();
