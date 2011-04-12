@@ -199,7 +199,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
         tfQuantidadeCusto = new JIntField();
         jLabel71 = new javax.swing.JLabel();
         jScrollPane34 = new javax.swing.JScrollPane();
-        jtGastos = new javax.swing.JTable();
+        jtGastosPorViagem = new javax.swing.JTable();
         jLabel52 = new javax.swing.JLabel();
         tfCustoCusto = new JMoneyField();
         tfOutrosGastos = new javax.swing.JTextField();
@@ -209,7 +209,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
         tfCustoCusto1 = new JMoneyField();
         tfOutrosGastos1 = new javax.swing.JTextField();
         jScrollPane35 = new javax.swing.JScrollPane();
-        jtGastos1 = new javax.swing.JTable();
+        jtGastosPorAno = new javax.swing.JTable();
         tfQuantidadeCusto1 = new JIntField();
         jLabel72 = new javax.swing.JLabel();
         cbGastosANO = new javax.swing.JComboBox();
@@ -298,7 +298,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
             }
         });
 
-        jLabel24.setText("Pescador");
+        jLabel24.setText("Dono do Barco");
 
         jLabel40.setText("Drenagem pluvial.:");
 
@@ -759,7 +759,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
 
         jLabel71.setText("Quantidade.:");
 
-        jtGastos.setModel(new javax.swing.table.DefaultTableModel(
+        jtGastosPorViagem.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -778,7 +778,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane34.setViewportView(jtGastos);
+        jScrollPane34.setViewportView(jtGastosPorViagem);
 
         jLabel52.setText("Gastos:");
 
@@ -795,7 +795,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
 
         tfOutrosGastos1.setEditable(false);
 
-        jtGastos1.setModel(new javax.swing.table.DefaultTableModel(
+        jtGastosPorAno.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -814,7 +814,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane35.setViewportView(jtGastos1);
+        jScrollPane35.setViewportView(jtGastosPorAno);
 
         tfQuantidadeCusto1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1379,8 +1379,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel77)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel77))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(ckbDestinoAtravessador)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1901,15 +1900,15 @@ public class donoDoBarco2 extends javax.swing.JFrame {
     }//GEN-LAST:event_ckbPretrchosPropriosSimStateChanged
 
     private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
-       
+    AddjtGastosPorViagem();
 }//GEN-LAST:event_jToggleButton7ActionPerformed
 
     private void cbGastosViagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbGastosViagemActionPerformed
-        
+    mudar_estadoCB();
 }//GEN-LAST:event_cbGastosViagemActionPerformed
 
     private void jToggleButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton8ActionPerformed
-       
+    DeljtGastosPorViagem();
 }//GEN-LAST:event_jToggleButton8ActionPerformed
 
     private void tfQuantidadeCustoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfQuantidadeCustoActionPerformed
@@ -1917,7 +1916,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
 }//GEN-LAST:event_tfQuantidadeCustoActionPerformed
 
     private void jToggleButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton9ActionPerformed
-        // TODO add your handling code here:
+        AddjtGastosPorAno();
     }//GEN-LAST:event_jToggleButton9ActionPerformed
 
     private void tfQuantidadeCusto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfQuantidadeCusto1ActionPerformed
@@ -1925,11 +1924,11 @@ public class donoDoBarco2 extends javax.swing.JFrame {
     }//GEN-LAST:event_tfQuantidadeCusto1ActionPerformed
 
     private void cbGastosANOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbGastosANOActionPerformed
-        // TODO add your handling code here:
+        mudar_estadoCB();
     }//GEN-LAST:event_cbGastosANOActionPerformed
 
     private void jToggleButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton10ActionPerformed
-        // TODO add your handling code here:
+        DeljtGastosPorAno();
     }//GEN-LAST:event_jToggleButton10ActionPerformed
 
     private void ckbDestinoOutroStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ckbDestinoOutroStateChanged
@@ -2141,8 +2140,8 @@ public class donoDoBarco2 extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton7;
     private javax.swing.JToggleButton jToggleButton8;
     private javax.swing.JToggleButton jToggleButton9;
-    private javax.swing.JTable jtGastos;
-    private javax.swing.JTable jtGastos1;
+    private javax.swing.JTable jtGastosPorAno;
+    private javax.swing.JTable jtGastosPorViagem;
     private javax.swing.JTable jtPrecoPescado;
     private javax.swing.JRadioButton rbAlvenaria;
     private javax.swing.JRadioButton rbBanheiroDentro;
@@ -2540,6 +2539,11 @@ public class donoDoBarco2 extends javax.swing.JFrame {
 
     private void mostra_dados(){
         limpar_dados();
+
+        attjtGastosPorViagem();
+        attjtPrecoPescado();
+        attjtGastosPorAno();
+
         String codigo = util.separa(1,cbDonoBarco.getSelectedItem().toString());
         System.out.println(codigo);
         try {
@@ -2676,154 +2680,159 @@ public class donoDoBarco2 extends javax.swing.JFrame {
 
             System.out.println("Passou! Relações de Trabalho");
 
-//            Composição da Pescaria
-//            conexao.execute("SELECT * FROM dono_barco_composicao_pescaria WHERE cod_dono_barco = "+codigo);
-//            conexao.resultSet.first();
-//
-//            cbEspecieComposicaoPescaria.setSelectedItem(conexao.resultSet.getString("pescaria_principal"));
-//
-//            if (conexao.resultSet.getString("safra_jan").equals("1"))
-//                   ckbJanS.setSelected(true);
-//
-//            if (conexao.resultSet.getString("safra_fev").equals("1"))
-//                   ckbFevS.setSelected(true);
-//
-//            if (conexao.resultSet.getString("safra_mar").equals("1"))
-//                   ckbMarS.setSelected(true);
-//
-//            if (conexao.resultSet.getString("safra_abr").equals("1"))
-//                   ckbAbrS.setSelected(true);
-//
-//            if (conexao.resultSet.getString("safra_mai").equals("1"))
-//                   ckbMaiS.setSelected(true);
-//
-//            if (conexao.resultSet.getString("safra_jun").equals("1"))
-//                   ckbJunS.setSelected(true);
-//
-//            if (conexao.resultSet.getString("safra_jul").equals("1"))
-//                   ckbJulS.setSelected(true);
-//
-//            if (conexao.resultSet.getString("safra_ago").equals("1"))
-//                   ckbAgoS.setSelected(true);
-//
-//            if (conexao.resultSet.getString("safra_set").equals("1"))
-//                   ckbSetS.setSelected(true);
-//
-//            if (conexao.resultSet.getString("safra_out").equals("1"))
-//                   ckbOutS.setSelected(true);
-//
-//            if (conexao.resultSet.getString("safra_nov").equals("1"))
-//                   ckbNovS.setSelected(true);
-//
-//            if (conexao.resultSet.getString("safra_dez").equals("1"))
-//                   ckbDezS.setSelected(true);
-//
-//            if (conexao.resultSet.getString("periodo_jan").equals("1"))
-//                   ckbJanP.setSelected(true);
-//
-//            if (conexao.resultSet.getString("periodo_fev").equals("1"))
-//                   ckbFevP.setSelected(true);
-//
-//            if (conexao.resultSet.getString("periodo_mar").equals("1"))
-//                   ckbMarP.setSelected(true);
-//
-//            if (conexao.resultSet.getString("periodo_abr").equals("1"))
-//                   ckbAbrP.setSelected(true);
-//
-//            if (conexao.resultSet.getString("periodo_mai").equals("1"))
-//                   ckbMaiP.setSelected(true);
-//
-//            if (conexao.resultSet.getString("periodo_jun").equals("1"))
-//                   ckbJunP.setSelected(true);
-//
-//            if (conexao.resultSet.getString("periodo_jul").equals("1"))
-//                   ckbJulP.setSelected(true);
-//
-//            if (conexao.resultSet.getString("periodo_ago").equals("1"))
-//                   ckbAgoP.setSelected(true);
-//
-//            if (conexao.resultSet.getString("periodo_set").equals("1"))
-//                   ckbSetP.setSelected(true);
-//
-//            if (conexao.resultSet.getString("periodo_out").equals("1"))
-//                   ckbOutP.setSelected(true);
-//
-//            if (conexao.resultSet.getString("periodo_nov").equals("1"))
-//                   ckbNovP.setSelected(true);
-//
-//            if (conexao.resultSet.getString("periodo_dez").equals("1"))
-//                   ckbDezP.setSelected(true);
-//
-//            cbArtePescaComposicaoPescaria.setSelectedItem(conexao.resultSet.getString("arte_pesca"));
-//            tfQuantidadeArtePesca.setText(conexao.resultSet.getString("quantidade_arte_pesca"));
-//            tfTamanhoComposicaoPescaria.setText(conexao.resultSet.getString("tamanho"));
-//            tfMalhaComposicaoPescaria.setText(conexao.resultSet.getString("malha"));
-//            tfTempoArteAgua.setText(conexao.resultSet.getString("tempo_arte_agua"));
-//
-//
-//            if (conexao.resultSet.getString("dia").equals("1"))
-//                   ckbTempoArteAguaDia.setSelected(true);
-//            else
-//                   ckbTempoArteAguaDia.setSelected(false);
-//
-//            if (conexao.resultSet.getString("noite").equals("1"))
-//                   ckbTempoArteAguaNoite.setSelected(true);
-//            else
-//                   ckbTempoArteAguaNoite.setSelected(false);
-//
-//            tfTempoChegarPesqueiro.setText(conexao.resultSet.getString("tempo_chegada"));
-//            tfDiasdePesca.setText(conexao.resultSet.getString("dias_efetivos_pesca"));
-//            tfQuantasViagensMes.setText(conexao.resultSet.getString("viagens_mes"));
-//            tfProducaoViagem.setText(conexao.resultSet.getString("producao_viagem"));
-//            tfRendaMediaPescador.setText(conexao.resultSet.getString("renda_media_pecador"));
-//            tfAlemPescaOutraPescaria.setText(conexao.resultSet.getString("outra_pescaria"));
-//
-//            System.out.println("Passou! pescaria");
-//
-//
-////          Dados da Embarcação
-//            conexao.execute("SELECT * FROM dono_barco_dados_embarcacao WHERE cod_dono_barco = "+codigo);
-//            conexao.resultSet.first();
-//
-//            testador = conexao.resultSet.getString("dono_embarcacao");
-//            if (testador.equals("Própria"))
-//                   chbEmbarcacaoPropria.setSelected(true);
-//            else if (testador.equals("Patrão"))
-//                   chbEmbarcacaoPatrao.setSelected(true);
-//
-//            testador = conexao.resultSet.getString("tipo_embarcacao");
-//            if (testador.equals("CAM"))
-//                   chbTipoCAM.setSelected(true);
-//            else if (testador.equals("BPP"))
-//                   chbTipoBPP.setSelected(true);
-//            else if (testador.equals("BMP"))
-//                   chbTipoBMP.setSelected(true);
-//            else {
-//                   chbTipoOutros.setSelected(true);
-//                   tfOutroTipoQual.setText(testador);
-//                 }
-//
-//            tfNomeBarco.setText(conexao.resultSet.getString("nome_barco"));
-//            tfPortoOrigem.setText(conexao.resultSet.getString("porto_origem"));
-//            tfTempoTrabalhandoBarco.setText(conexao.resultSet.getString("tempo_no_barco"));
-//
-//
-//            if (conexao.resultSet.getString("conservacao_gelo").equals("1"))
-//                    ckbGelo.setSelected(true);
-//
-//            if (conexao.resultSet.getString("conservacao_sal").equals("1"))
-//                    ckbSal.setSelected(true);
-//
-//            if (conexao.resultSet.getString("conservacao_frigorifico").equals("1"))
-//                    ckbFrigorifico.setSelected(true);
-//
-//            System.out.println("Passou! embarcacao");
-//
-//            attjTableAtividadeFamiliar();
-//            attjTableComposicaoPescaria();
-//            jTableEspeciesCapturadas();
-//
-//            System.out.println("Passou! Tabelas");
+             //Composição da Pescaria
+            conexao.execute("SELECT * FROM dono_barco_composicao_pescaria WHERE cod_dono_barco = "+codigo);
+            conexao.resultSet.first();
+
+            cbEspecieComposicaoPescaria.setSelectedItem(conexao.resultSet.getString("pescaria_principal"));
+            
+            if (conexao.resultSet.getString("safra_jan").equals("1"))
+                   ckbJanS.setSelected(true);
+            
+            if (conexao.resultSet.getString("safra_fev").equals("1"))
+                   ckbFevS.setSelected(true);
+
+            if (conexao.resultSet.getString("safra_mar").equals("1"))
+                   ckbMarS.setSelected(true);
+
+            if (conexao.resultSet.getString("safra_abr").equals("1"))
+                   ckbAbrS.setSelected(true);
+
+            if (conexao.resultSet.getString("safra_mai").equals("1"))
+                   ckbMaiS.setSelected(true);
+
+            if (conexao.resultSet.getString("safra_jun").equals("1"))
+                   ckbJunS.setSelected(true);
+
+            if (conexao.resultSet.getString("safra_jul").equals("1"))
+                   ckbJulS.setSelected(true);
+
+            if (conexao.resultSet.getString("safra_ago").equals("1"))
+                   ckbAgoS.setSelected(true);
+
+            if (conexao.resultSet.getString("safra_set").equals("1"))
+                   ckbSetS.setSelected(true);
+
+            if (conexao.resultSet.getString("safra_out").equals("1"))
+                   ckbOutS.setSelected(true);
+
+            if (conexao.resultSet.getString("safra_nov").equals("1"))
+                   ckbNovS.setSelected(true);
+
+            if (conexao.resultSet.getString("safra_dez").equals("1"))
+                   ckbDezS.setSelected(true);
+            
+            cbEspecieComposicaoPescaria.setSelectedItem(conexao.resultSet.getString("arte_pesca"));
+            
+            tfQuantidadeArtePesca.setText(conexao.resultSet.getString("quantidade_arte_pesca"));
+            
+            tfTamanhoComposicaoPescaria.setText(conexao.resultSet.getString("tamanho"));
+            
+            tfMalhaComposicaoPescaria.setText(conexao.resultSet.getString("malha"));
+            
+            if (conexao.resultSet.getString("petrechos_proprios").equals("1"))
+                   ckbPretrchosPropriosSim.setSelected(true);
+            
+            tfSePretrochosProprios.setText(conexao.resultSet.getString("de_quem_petrecho"));
+            
+            tfLocalCompPescaria.setText(conexao.resultSet.getString("onde_adquire_panagens_local"));
+            
+            tfPqCompPescaria.setText(conexao.resultSet.getString("onde_adquire_panagens_pq"));
+            
+            tfCustoEntralhamentoCompPescaria.setText(conexao.resultSet.getString("custo_entalhamento"));
+            
+            tfCustoChumboCompPescaria.setText(conexao.resultSet.getString("custo_chumbo"));
+            
+            tfCustoBoiasCompPescaria.setText(conexao.resultSet.getString("custo_boias"));
+            
+            tfViagemMesCompPescaria.setText(conexao.resultSet.getString("qtd_viagem_mes"));
+            
+            tfProducaoViagemCompPescaria.setText(conexao.resultSet.getString("producao_viagem"));
+            
+            tfRendaMediaPescaria.setText(conexao.resultSet.getString("renda_media_por_pescaria"));
+            
+            if (conexao.resultSet.getString("destino_atravessador").equals("1"))
+                   ckbDestinoAtravessador.setSelected(true);
+            
+            if (conexao.resultSet.getString("destino_empresa").equals("1"))
+                   ckbDestinoEmpresa.setSelected(true);
+            
+            if (conexao.resultSet.getString("destino_caminhao").equals("1"))
+                   ckbDestinoCaminhao.setSelected(true);
+            
+            if (conexao.resultSet.getString("destino_supermercado").equals("1"))
+                   ckbDestinoSupermercado.setSelected(true);
+            
+            if (conexao.resultSet.getString("destino_outros").equals("1"))
+                   ckbDestinoOutro.setSelected(true);
+            
+            tfDestinoOutro.setText(conexao.resultSet.getString("destino_outros_quais"));
+            
+            if (conexao.resultSet.getString("existe_dependencia").equals("1"))
+                   ckbSimDependencia.setSelected(true);
+
+            System.out.println("Passou! Composição da Pescaria");
+            
+        //Dados da Embarcação
+            conexao.execute("SELECT * FROM dono_barco_dados_embarcacao WHERE cod_dono_barco = "+codigo);
+            conexao.resultSet.first();
+            
+            if (conexao.resultSet.getString("embarcacao_foi_financiada").equals("1"))
+                   ckbSimFinanciada.setSelected(true);
+            
+            tfQualInstituicao.setText(conexao.resultSet.getString("qual_instituicao_financiou"));
+            
+            tfFormaFinanciamento.setText(conexao.resultSet.getString("forma_financiamento"));
+            
+            if (conexao.resultSet.getString("cam").equals("1"))
+                   ckbTipoCAM.setSelected(true);
+            
+            if (conexao.resultSet.getString("bpp").equals("1"))
+                   ckbTipoBPP.setSelected(true);
+            
+            if (conexao.resultSet.getString("bmp").equals("1"))
+                   ckbTipoBMP.setSelected(true);
+            
+            if (conexao.resultSet.getString("outro").equals("1"))
+                   ckbTipoOutros.setSelected(true);
+            
+            tfOutroTipoQual.setText(conexao.resultSet.getString("outro_tipo"));
+
+            tfNomeEmbarcacao.setText(conexao.resultSet.getString("nome_embarcacao"));
+            
+            tfComprimento.setText(conexao.resultSet.getString("comprimento"));
+            
+            tfTonBruta.setText(conexao.resultSet.getString("ton_bruta"));
+            
+            tfTonLiq.setText(conexao.resultSet.getString("ton_liquida"));
+            
+            cbMaterialCasco.setSelectedItem(conexao.resultSet.getString("material_casco"));
+            
+            cbPropulsao.setSelectedItem(conexao.resultSet.getString("propulsao"));
+            
+            tfNumeroCilindros.setText(conexao.resultSet.getString("cilindros"));
+            
+            tfMarca.setText(conexao.resultSet.getString("marca"));
+            
+            tfTripulacao.setText(conexao.resultSet.getString("tripulacao"));
+            
+            tfAnoConstrucao.setText(conexao.resultSet.getString("ano_construcao"));
+            
+            cbSitucao.setSelectedItem(conexao.resultSet.getString("situacao_atual"));   
+            
+            if (conexao.resultSet.getString("conservacao_gelo").equals("1"))
+                   ckbGelo.setSelected(true);
+            
+            if (conexao.resultSet.getString("conservacao_sal").equals("1"))
+                   ckbSal.setSelected(true);
+            
+            if (conexao.resultSet.getString("conservacao_frigorifico").equals("1"))
+                   ckbFrigorifico.setSelected(true);
+            
+            if (conexao.resultSet.getString("possui_inscricao").equals("1"))
+                   ckbPossuiInscricaoSim.setSelected(true);
+
+            System.out.println("Passou! Dados Embarcação");
 
             attCbs();
 
@@ -2835,77 +2844,91 @@ public class donoDoBarco2 extends javax.swing.JFrame {
 
 
     private void limpar_dados() {
+                rbMadeira.setSelected(false);
+                rbAlvenaria.setSelected(false);
+                ckbLuzSim.setSelected(false);
+                rbBanheiroDentro.setSelected(false);
+                rbBanheiroFora.setSelected(false);
+                ckbAguaSim.setSelected(false);
+                ckbDrenagemSim.setSelected(false);
+                ckbFossaSim.setSelected(false);
+                rbInssSim.setSelected(false);
+                rbInssSim.setSelected(false);
+                rbInssNao.setSelected(false);
+                rbInssEmpregado.setSelected(false);
+                ckbColoniaSim.setSelected(false);
+                tfQualColonia.setText("");
+                ckbAssociacaoSim.setSelected(false);
+                tfQualAssociacao.setText("");
+                ckbCooperativaSim.setSelected(false);
+                tfQualCooperativa.setText("");
+                tfDesdeQuandoDonoBarco.setText("");
+                ckbIbamaSim.setSelected(false);
+                ckbPossuiRgp.setSelected(false);
+                ckbFamiliar.setSelected(false);
+                ckbParceria.setSelected(false);
+                ckbAssalariado.setSelected(false);
+                ckbArmadorPescador.setSelected(false);
+                ckbRecebeBeneficioGovernoSim.setSelected(false);
+                tfQualBeneficio.setText("");
+                cbEspecieComposicaoPescaria.setSelectedItem("");
+                ckbJanS.setSelected(false);
+                ckbFevS.setSelected(false);
+                ckbMarS.setSelected(false);
+                ckbAbrS.setSelected(false);
+                ckbMaiS.setSelected(false);
+                ckbJunS.setSelected(false);
+                ckbJulS.setSelected(false);
+                ckbAgoS.setSelected(false);
+                ckbSetS.setSelected(false);
+                ckbOutS.setSelected(false);
+                ckbNovS.setSelected(false);
+                ckbDezS.setSelected(false);
+                cbEspecieComposicaoPescaria.setSelectedIndex(0);
+                tfQuantidadeArtePesca.setText("");
+                tfTamanhoComposicaoPescaria.setText("");
+                tfMalhaComposicaoPescaria.setText("");
+                ckbPretrchosPropriosSim.setSelected(false);
+                tfSePretrochosProprios.setText("");
+                tfLocalCompPescaria.setText("");
+                tfPqCompPescaria.setText("");
+                tfCustoEntralhamentoCompPescaria.setText("");
+                tfCustoChumboCompPescaria.setText("");
+                tfCustoBoiasCompPescaria.setText("");
+                tfViagemMesCompPescaria.setText("");
+                tfProducaoViagemCompPescaria.setText("");
+                tfRendaMediaPescaria.setText("");
+                ckbDestinoAtravessador.setSelected(false);
+                ckbDestinoEmpresa.setSelected(false);
+                ckbDestinoCaminhao.setSelected(false);
+                ckbDestinoSupermercado.setSelected(false);
+                ckbDestinoOutro.setSelected(false);
+                tfDestinoOutro.setText("");
+                ckbSimDependencia.setSelected(false);
+                ckbSimFinanciada.setSelected(false);
+                tfQualInstituicao.setText("");
+                tfFormaFinanciamento.setText("");
+                ckbTipoCAM.setSelected(false);
+                ckbTipoBPP.setSelected(false);
+                ckbTipoBMP.setSelected(false);
+                ckbTipoOutros.setSelected(false);
+                tfOutroTipoQual.setText("");
+                tfNomeEmbarcacao.setText("");
+                tfComprimento.setText("");
+                tfTonBruta.setText("");
+                tfTonLiq.setText("");
+                cbMaterialCasco.setSelectedIndex(0);
+                cbPropulsao.setSelectedIndex(0);
+                tfNumeroCilindros.setText("");
+                tfMarca.setText("");
+                tfTripulacao.setText("");
+                tfAnoConstrucao.setText("");
+                cbSitucao.setSelectedIndex(0);
+                ckbGelo.setSelected(false);
+                ckbSal.setSelected(false);
+                ckbFrigorifico.setSelected(false);
+                ckbPossuiInscricaoSim.setSelected(false);
 
-            rbMadeira.setSelected(false);
-            rbAlvenaria.setSelected(false);
-            ckbLuzSim.setSelected(false);
-            rbBanheiroDentro.setSelected(false);
-            rbBanheiroFora.setSelected(false);
-            ckbAguaSim.setSelected(false);
-            ckbDrenagemSim.setSelected(false);
-            ckbFossaSim.setSelected(false);
-            rbInssSim.setSelected(false);
-            rbInssNao.setSelected(false);
-            rbInssEmpregado.setSelected(false);
-            ckbColoniaSim.setSelected(false);
-            tfQualColonia.setText("");
-            ckbAssociacaoSim.setSelected(false);
-            tfQualAssociacao.setText("");
-            ckbCooperativaSim.setSelected(false);
-            tfQualCooperativa.setText("");
-            tfDesdeQuandoDonoBarco.setText("");
-            ckbIbamaSim.setSelected(false);
-            ckbPossuiRgp.setSelected(false);
-
-            //relações trabalho
-            ckbFamiliar.setSelected(false);
-            ckbParceria.setSelected(false);
-            ckbAssalariado.setSelected(false);
-            ckbArmadorPescador.setSelected(false);
-            ckbRecebeBeneficioGovernoSim.setSelected(false);
-            tfQualBeneficio.setText("");
-
-            //Composição da Pescaria
-            cbEspecieComposicaoPescaria.setSelectedIndex(0);
-            ckbJanS.setSelected(false);
-            ckbFevS.setSelected(false);
-            ckbMarS.setSelected(false);
-            ckbAbrS.setSelected(false);
-            ckbMaiS.setSelected(false);
-            ckbJunS.setSelected(false);
-            ckbJulS.setSelected(false);
-            ckbAgoS.setSelected(false);
-            ckbSetS.setSelected(false);
-            ckbOutS.setSelected(false);
-            ckbNovS.setSelected(false);
-            ckbDezS.setSelected(false);
-            cbArtePescaComposicaoPescaria.setSelectedIndex(0);
-            tfQuantidadeArtePesca.setText("");
-            tfTamanhoComposicaoPescaria.setText("");
-            tfMalhaComposicaoPescaria.setText("");
-          
-
-            //Dados da Embarcação
-           
-            ckbTipoCAM.setSelected(false);
-            ckbTipoBPP.setSelected(false);
-            ckbTipoBMP.setSelected(false);
-            ckbTipoOutros.setSelected(false);
-            tfOutroTipoQual.setText("");
-            tfNomeEmbarcacao.setText("");
-            tfComprimento.setText("");
-      
-            ckbFrigorifico.setSelected(false);
-            ckbGelo.setSelected(false);
-            ckbSal.setSelected(false);
-
-            //Tabelas
-            tfParentescoRT.setText("");
-            tfAtividadeRT.setText("");
-            tfRendaRT.setText("");
-           
-            tfValorPrecoEspecie.setText("");
-            
 
     }
 
@@ -3107,7 +3130,182 @@ public class donoDoBarco2 extends javax.swing.JFrame {
         } catch (Exception e) {
         }
 
+        try {
+            if (cbGastosViagem.getSelectedItem().equals("Outro"))
+                tfOutrosGastos.setEditable(true);
+            else {
+                tfOutrosGastos.setEditable(false);
+                tfOutrosGastos.setText("");
+            }
+        } catch (Exception e) {
+        }
 
+        try {
+            if (cbGastosANO.getSelectedItem().equals("Outro"))
+                tfOutrosGastos1.setEditable(true);
+            else {
+                tfOutrosGastos1.setEditable(false);
+                tfOutrosGastos1.setText("");
+            }
+        } catch (Exception e) {
+        }
+
+    }
+
+    private void AddjtGastosPorViagem() {
+    String codigo = util.separa(1,cbDonoBarco.getSelectedItem().toString());
+    System.out.println(codigo);
+
+        String gastot = new String();
+            gastot = cbGastosViagem.getSelectedItem().toString();
+            if (gastot.equals("Outro"))
+                gastot = tfOutrosGastos.getText();
+
+          //Relações de Trabalho - Tabela Renda Familia
+          String sqlinsert = "insert into dono_barco_composicao_gasto_por_viagem "
+                    + "(cod_dono_barco,gasto,tipo,quantidade,"
+                    + "custo,outros) values ("+
+                    codigo+",'"+
+                    gastot+"','"+
+                    tfTipoGasto.getText()+"','"+
+                    tfQuantidadeCusto.getText()+"','"+
+                    tfCustoCusto.getText()+"','"+
+                    tfOutroCusto.getText()+"')";
+
+            System.out.println(sqlinsert);
+            if (conexao.salvar(sqlinsert)) {
+                System.out.println("dono_barco_composicao_gasto_por_viagem - Cadastrado com sucesso");
+                attjtGastosPorViagem();
+            }
+    }
+
+    private void attjtGastosPorViagem() {
+        String codigo = util.separa(1,cbDonoBarco.getSelectedItem().toString());
+
+        conexao.execute("select * from dono_barco_composicao_gasto_por_viagem"
+                        + " where cod_dono_barco = " + codigo);
+
+        jtGastosPorViagem.getColumnModel().getColumn(0).setMaxWidth(0);
+        jtGastosPorViagem.getColumnModel().getColumn(0).setPreferredWidth(0);
+        jtGastosPorViagem.getColumnModel().getColumn(1).setPreferredWidth(10);
+        jtGastosPorViagem.getColumnModel().getColumn(2).setPreferredWidth(10);
+        jtGastosPorViagem.getColumnModel().getColumn(3).setPreferredWidth(10);
+        jtGastosPorViagem.getColumnModel().getColumn(4).setPreferredWidth(10);
+        jtGastosPorViagem.getColumnModel().getColumn(5).setPreferredWidth(10);
+
+
+
+
+        DefaultTableModel modelo = (DefaultTableModel)jtGastosPorViagem.getModel();
+        modelo.setNumRows(0);//limpa o JTable;
+
+        try{
+            while (conexao.resultSet.next())
+                modelo.addRow(new Object[]{conexao.resultSet.getString("cod_dono_barco_composicao_gasto_por_viagem"),
+                                           conexao.resultSet.getString("gasto"),
+                                           conexao.resultSet.getString("tipo"),
+                                           conexao.resultSet.getString("quantidade"),
+                                           conexao.resultSet.getString("custo"),
+                                           conexao.resultSet.getString("outros"),
+                                          });
+
+            conexao.resultSet.first();
+
+        }catch (SQLException erro){
+            System.out.println(erro + " tabela gastos");
+        }
+    }
+
+    private void DeljtGastosPorViagem() {
+        String sql;
+
+        sql = "delete from dono_barco_composicao_gasto_por_viagem "
+            + "Where cod_dono_barco_composicao_gasto_por_viagem = "
+            + jtGastosPorViagem.getValueAt(jtGastosPorViagem.getSelectedRow(),0);
+
+            if (conexao.salvar(sql)) {
+                System.out.println("Exclusão realizada com sucesso");
+                attjtGastosPorViagem();
+            }   else
+                    JOptionPane.showMessageDialog(null,"Erro na exclusão");
+    }
+
+    private void AddjtGastosPorAno() {
+    String codigo = util.separa(1,cbDonoBarco.getSelectedItem().toString());
+    System.out.println(codigo);
+
+        String gastot = new String();
+            gastot = cbGastosANO.getSelectedItem().toString();
+            if (gastot.equals("Outro"))
+                gastot = tfOutrosGastos1.getText();
+
+          //Relações de Trabalho - Tabela Renda Familia
+          String sqlinsert = "insert into dono_barco_composicao_gasto_por_ano "
+                    + "(cod_dono_barco,gasto,tipo,quantidade,"
+                    + "custo,outros) values ("+
+                    codigo+",'"+
+                    gastot+"','"+
+                    tfTipoGasto1.getText()+"','"+
+                    tfQuantidadeCusto1.getText()+"','"+
+                    tfCustoCusto1.getText()+"','"+
+                    tfOutroCusto1.getText()+"')";
+
+            System.out.println(sqlinsert);
+            if (conexao.salvar(sqlinsert)) {
+                System.out.println("dono_barco_composicao_gasto_por_ano - Cadastrado com sucesso");
+                attjtGastosPorAno();
+            }
+    }
+
+    private void attjtGastosPorAno() {
+        String codigo = util.separa(1,cbDonoBarco.getSelectedItem().toString());
+
+        conexao.execute("select * from dono_barco_composicao_gasto_por_ano"
+                        + " where cod_dono_barco = " + codigo);
+
+        jtGastosPorAno.getColumnModel().getColumn(0).setMaxWidth(0);
+        jtGastosPorAno.getColumnModel().getColumn(0).setPreferredWidth(0);
+        jtGastosPorAno.getColumnModel().getColumn(1).setPreferredWidth(10);
+        jtGastosPorAno.getColumnModel().getColumn(2).setPreferredWidth(10);
+        jtGastosPorAno.getColumnModel().getColumn(3).setPreferredWidth(10);
+        jtGastosPorAno.getColumnModel().getColumn(4).setPreferredWidth(10);
+        jtGastosPorAno.getColumnModel().getColumn(5).setPreferredWidth(10);
+
+
+
+
+        DefaultTableModel modelo = (DefaultTableModel)jtGastosPorAno.getModel();
+        modelo.setNumRows(0);//limpa o JTable;
+
+        try{
+            while (conexao.resultSet.next())
+                modelo.addRow(new Object[]{conexao.resultSet.getString("cod_dono_barco_composicao_gasto_por_ano"),
+                                           conexao.resultSet.getString("gasto"),
+                                           conexao.resultSet.getString("tipo"),
+                                           conexao.resultSet.getString("quantidade"),
+                                           conexao.resultSet.getString("custo"),
+                                           conexao.resultSet.getString("outros"),
+                                          });
+
+            conexao.resultSet.first();
+
+        }catch (SQLException erro){
+            System.out.println(erro + " tabela gastos");
+        }
+    }
+
+    private void DeljtGastosPorAno() {
+        String sql;
+
+        sql = "delete from dono_barco_composicao_gasto_por_ano "
+            + "Where cod_dono_barco_composicao_gasto_por_ano = "
+            + jtGastosPorAno.getValueAt(jtGastosPorAno.getSelectedRow(),0);
+
+            if (conexao.salvar(sql)) {
+                System.out.println("Exclusão realizada com sucesso");
+                attjtGastosPorAno();
+            }   else
+                    JOptionPane.showMessageDialog(null,"Erro na exclusão");
     }
 
 }
