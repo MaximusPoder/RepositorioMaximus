@@ -86,11 +86,11 @@ public class caminhoneiro3 extends javax.swing.JFrame {
             }
         });
 
-        jLabel24.setText("Atravessador");
+        jLabel24.setText("Caminhoneiro");
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel42.setText("Perspectiva Caminhoneiro");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
