@@ -1,19 +1,11 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * frm_atravessador.java
- *
- * Created on 26/07/2010, 09:30:35
- */
 
 package br.com.formulario.principal;
 
 import br.com.caminhoneiro.*;
 import br.com.donoDoBarco.*;
+import br.com.formulario.listas.*;
 import br.com.formulario.atravessador.*;
+import br.com.formulario.mercadoFeira.*;
 import br.com.formulario.pescador.*;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
@@ -79,7 +71,9 @@ public class menu_principal extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        botao_cadastrar_comunidade1 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         botao_cadastrar_pescador = new javax.swing.JButton();
@@ -88,11 +82,11 @@ public class menu_principal extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         botao_cadastrar_economia = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
-        botao_cadastrar_colonia = new javax.swing.JButton();
-        botao_questionario_colonia = new javax.swing.JButton();
-        botao_entrevista_colonia = new javax.swing.JButton();
+        especies = new javax.swing.JButton();
+        atividades = new javax.swing.JButton();
+        artedepesca = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -199,7 +193,7 @@ public class menu_principal extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(btCaminhoneiroPercepcaoPerspectiva)
                         .addComponent(botao_questionario_caminhoneiro)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,7 +207,7 @@ public class menu_principal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel3.setForeground(new java.awt.Color(153, 0, 102));
         jLabel3.setText("Formulário Dono do Barco ");
 
@@ -261,7 +255,7 @@ public class menu_principal extends javax.swing.JFrame {
                 .addComponent(botao_questionario_comunidade)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14));
@@ -269,10 +263,24 @@ public class menu_principal extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-        botao_cadastrar_comunidade1.setText("Cadastrar Mercado");
-        botao_cadastrar_comunidade1.addActionListener(new java.awt.event.ActionListener() {
+        jButton4.setText("Cadastrar Mercado");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botao_cadastrar_comunidade1ActionPerformed(evt);
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButton5.setText("Questionário Mercado");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jButton6.setText("Percepção e Perspectivas");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
             }
         });
 
@@ -281,16 +289,23 @@ public class menu_principal extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(68, Short.MAX_VALUE)
-                .addComponent(botao_cadastrar_comunidade1)
-                .addGap(41, 41, 41))
+                .addContainerGap(48, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton6)
+                    .addComponent(jButton5)
+                    .addComponent(jButton4))
+                .addGap(40, 40, 40))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(botao_cadastrar_comunidade1)
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jButton4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton6)
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14));
@@ -330,7 +345,7 @@ public class menu_principal extends javax.swing.JFrame {
                     .addComponent(jButton3)
                     .addComponent(jButton2)
                     .addComponent(botao_cadastrar_pescador))
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -339,9 +354,9 @@ public class menu_principal extends javax.swing.JFrame {
                 .addComponent(botao_cadastrar_pescador)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton3)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14));
@@ -364,40 +379,36 @@ public class menu_principal extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(56, 56, 56)
                 .addComponent(botao_cadastrar_economia)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(botao_cadastrar_economia)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14));
-        jLabel7.setForeground(new java.awt.Color(153, 0, 102));
-        jLabel7.setText("Formulário Colônia");
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
-        botao_cadastrar_colonia.setText("Cadastrar Colônia");
-        botao_cadastrar_colonia.addActionListener(new java.awt.event.ActionListener() {
+        especies.setText("Espécies");
+        especies.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botao_cadastrar_coloniaActionPerformed(evt);
+                especiesActionPerformed(evt);
             }
         });
 
-        botao_questionario_colonia.setText("Questionário Colônia");
-        botao_questionario_colonia.addActionListener(new java.awt.event.ActionListener() {
+        atividades.setText("Atividades");
+        atividades.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botao_questionario_coloniaActionPerformed(evt);
+                atividadesActionPerformed(evt);
             }
         });
 
-        botao_entrevista_colonia.setText("Entrevista");
-        botao_entrevista_colonia.addActionListener(new java.awt.event.ActionListener() {
+        artedepesca.setText("Arte de Pesca");
+        artedepesca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botao_entrevista_coloniaActionPerformed(evt);
+                artedepescaActionPerformed(evt);
             }
         });
 
@@ -406,29 +417,27 @@ public class menu_principal extends javax.swing.JFrame {
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap(96, Short.MAX_VALUE)
+                .addGap(64, 64, 64)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .addComponent(botao_cadastrar_colonia)
-                        .addGap(63, 63, 63))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .addComponent(botao_questionario_colonia)
-                        .addGap(58, 58, 58))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .addComponent(botao_entrevista_colonia)
-                        .addGap(90, 90, 90))))
+                    .addComponent(artedepesca)
+                    .addComponent(atividades)
+                    .addComponent(especies))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(botao_cadastrar_colonia)
+                .addComponent(especies)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botao_questionario_colonia)
+                .addComponent(atividades)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botao_entrevista_colonia)
+                .addComponent(artedepesca)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14));
+        jLabel7.setText("Listas");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -442,14 +451,14 @@ public class menu_principal extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.CENTER)
                             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                                     .addComponent(jLabel2)
                                     .addGap(74, 74, 74))
                                 .addGroup(layout.createSequentialGroup()
@@ -460,20 +469,18 @@ public class menu_principal extends javax.swing.JFrame {
                                             .addGap(71, 71, 71))
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(botao_sair)
+                                                .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                             .addGap(25, 25, 25)))))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addGap(93, 93, 93))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(135, 135, 135)
-                        .addComponent(botao_sair)
-                        .addGap(147, 147, 147))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(141, 141, 141))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -491,26 +498,23 @@ public class menu_principal extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(13, 13, 13)
+                .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addComponent(botao_sair)))
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
+                .addComponent(botao_sair)
                 .addContainerGap())
         );
 
@@ -549,10 +553,6 @@ public class menu_principal extends javax.swing.JFrame {
         new donoDoBarco2().setVisible(true);
     }//GEN-LAST:event_botao_questionario_comunidadeActionPerformed
 
-    private void botao_cadastrar_comunidade1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_cadastrar_comunidade1ActionPerformed
-       // new mercado().setVisible(true);
-    }//GEN-LAST:event_botao_cadastrar_comunidade1ActionPerformed
-
     private void botao_cadastrar_pescadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_cadastrar_pescadorActionPerformed
         // TODO add your handling code here:
         new pescador().setVisible(true);
@@ -565,21 +565,8 @@ public class menu_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_cadastrar_economiaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        //new comunidade_historia().setVisible(true);
+       new donoDoBarco3().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void botao_cadastrar_coloniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_cadastrar_coloniaActionPerformed
-       // new colonia_cadastro().setVisible(true);
-    }//GEN-LAST:event_botao_cadastrar_coloniaActionPerformed
-
-    private void botao_questionario_coloniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_questionario_coloniaActionPerformed
-        //new colonia_questionario().setVisible(true);
-    }//GEN-LAST:event_botao_questionario_coloniaActionPerformed
-
-    private void botao_entrevista_coloniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_entrevista_coloniaActionPerformed
-       // new colonia_historia().setVisible(true);
-    }//GEN-LAST:event_botao_entrevista_coloniaActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         new pescador2().setVisible(true);
@@ -597,6 +584,30 @@ public class menu_principal extends javax.swing.JFrame {
         new caminhoneiro3().setVisible(true);
     }//GEN-LAST:event_btCaminhoneiroPercepcaoPerspectivaActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        new mercadoFeira().setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        new mercadoFeira2().setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void especiesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_especiesActionPerformed
+        new AddEspecie().setVisible(true);
+    }//GEN-LAST:event_especiesActionPerformed
+
+    private void atividadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atividadesActionPerformed
+        new AddAtividade().setVisible(true);
+    }//GEN-LAST:event_atividadesActionPerformed
+
+    private void artedepescaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_artedepescaActionPerformed
+        new AddArtePesca().setVisible(true);
+    }//GEN-LAST:event_artedepescaActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+       new mercadoFeira3().setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -610,24 +621,26 @@ public class menu_principal extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton artedepesca;
+    private javax.swing.JButton atividades;
     private javax.swing.JButton botao_cadastrar_atravessador;
     private javax.swing.JButton botao_cadastrar_caminhoneiro;
-    private javax.swing.JButton botao_cadastrar_colonia;
     private javax.swing.JButton botao_cadastrar_comunidade;
-    private javax.swing.JButton botao_cadastrar_comunidade1;
     private javax.swing.JButton botao_cadastrar_economia;
     private javax.swing.JButton botao_cadastrar_pescador;
-    private javax.swing.JButton botao_entrevista_colonia;
     private javax.swing.JButton botao_questionario_atravessador;
     private javax.swing.JButton botao_questionario_caminhoneiro;
-    private javax.swing.JButton botao_questionario_colonia;
     private javax.swing.JButton botao_questionario_comunidade;
     private javax.swing.JButton botao_sair;
     private javax.swing.JButton btAtravessadorPercepcaoPerspectiva;
     private javax.swing.JButton btCaminhoneiroPercepcaoPerspectiva;
+    private javax.swing.JButton especies;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
