@@ -41,12 +41,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane1" alignment="0" pref="899" max="32767" attributes="0"/>
+          <Component id="jScrollPane1" alignment="0" pref="901" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane1" alignment="0" pref="471" max="32767" attributes="0"/>
+          <Component id="jScrollPane1" alignment="0" pref="478" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -333,12 +333,12 @@
                           <Component id="ckbPretrchosPropriosSim" min="-2" max="-2" attributes="0"/>
                           <Component id="tfSePretrochosProprios" min="-2" pref="158" max="-2" attributes="1"/>
                       </Group>
-                      <EmptySpace pref="717" max="32767" attributes="0"/>
+                      <EmptySpace pref="742" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="790" max="32767" attributes="0"/>
+                      <EmptySpace pref="831" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -349,7 +349,7 @@
                       <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="tfPqCompPescaria" min="-2" pref="220" max="-2" attributes="1"/>
-                      <EmptySpace pref="552" max="32767" attributes="0"/>
+                      <EmptySpace pref="568" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -381,14 +381,14 @@
                       <Component id="tfProducaoViagemCompPescaria" min="-2" pref="57" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jLabel64" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="578" max="32767" attributes="0"/>
+                      <EmptySpace pref="635" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="tfRendaMediaPescaria" min="-2" pref="77" max="-2" attributes="1"/>
-                      <EmptySpace pref="770" max="32767" attributes="0"/>
+                      <EmptySpace pref="805" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -398,7 +398,7 @@
                           <Component id="jToggleButton7" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel69" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="449" max="-2" attributes="0"/>
+                              <EmptySpace pref="513" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -427,7 +427,7 @@
                                   </Group>
                                   <Component id="tfOutrosGastos" max="32767" attributes="1"/>
                               </Group>
-                              <EmptySpace pref="349" max="32767" attributes="0"/>
+                              <EmptySpace pref="368" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="216" max="-2" attributes="0"/>
@@ -437,7 +437,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel65" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="565" max="-2" attributes="0"/>
+                              <EmptySpace pref="594" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
@@ -450,7 +450,7 @@
                                       <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="tfValorPrecoEspecie" min="-2" pref="131" max="-2" attributes="0"/>
-                                      <EmptySpace pref="261" max="32767" attributes="0"/>
+                                      <EmptySpace pref="286" max="32767" attributes="0"/>
                                       <Component id="btAdicionarCP" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="btExcluirCP" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -468,7 +468,7 @@
                           <Component id="jToggleButton9" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel73" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="469" max="-2" attributes="0"/>
+                              <EmptySpace pref="529" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -497,7 +497,7 @@
                                   </Group>
                                   <Component id="tfOutrosGastos1" max="32767" attributes="1"/>
                               </Group>
-                              <EmptySpace pref="349" max="32767" attributes="0"/>
+                              <EmptySpace pref="368" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="216" max="-2" attributes="0"/>
@@ -510,21 +510,21 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="878" max="32767" attributes="0"/>
+                      <EmptySpace pref="906" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel54" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="tfFormaFinanciamento" min="-2" pref="160" max="-2" attributes="0"/>
-                      <EmptySpace pref="736" max="32767" attributes="0"/>
+                      <EmptySpace pref="762" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="tfNomeEmbarcacao" min="-2" pref="169" max="-2" attributes="1"/>
-                      <EmptySpace pref="732" max="32767" attributes="0"/>
+                      <EmptySpace pref="755" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -535,7 +535,7 @@
                       <Component id="jLabel80" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="cbPropulsao" min="-2" pref="73" max="-2" attributes="0"/>
-                      <EmptySpace pref="714" max="32767" attributes="0"/>
+                      <EmptySpace pref="745" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -552,7 +552,7 @@
                       <Component id="jLabel84" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="tfTripulacao" min="-2" pref="74" max="-2" attributes="1"/>
-                      <EmptySpace pref="576" max="32767" attributes="0"/>
+                      <EmptySpace pref="619" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -563,7 +563,7 @@
                       <Component id="jLabel86" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="cbSitucao" min="-2" pref="109" max="-2" attributes="0"/>
-                      <EmptySpace pref="671" max="32767" attributes="0"/>
+                      <EmptySpace pref="701" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -583,7 +583,7 @@
                               <Component id="ckbPossuiInscricaoSim" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="628" max="32767" attributes="0"/>
+                      <EmptySpace pref="692" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
@@ -617,14 +617,14 @@
                               <Component id="tfDestinoOutro" min="-2" pref="129" max="-2" attributes="1"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="406" max="32767" attributes="0"/>
+                      <EmptySpace pref="483" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel87" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="ckbSimDependencia" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="667" max="32767" attributes="0"/>
+                      <EmptySpace pref="733" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -660,7 +660,7 @@
                               <Component id="tfOutroTipoQual" min="-2" pref="169" max="-2" attributes="1"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="535" max="32767" attributes="0"/>
+                      <EmptySpace pref="584" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2490,6 +2490,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Outro"/>
               </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckbTipoOutrosStateChanged"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

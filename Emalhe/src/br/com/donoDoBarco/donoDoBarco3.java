@@ -541,6 +541,7 @@ public class donoDoBarco3 extends javax.swing.JFrame {
 
             //System.out.println(sqlinsert);
             if (conexao.salvar(sqlinsert)) {
+                JOptionPane.showMessageDialog(null,"Cadastrado com sucesso");
                 System.out.println("Cadastrado com sucesso");
                 mostra_dados();
             }
@@ -572,6 +573,7 @@ public class donoDoBarco3 extends javax.swing.JFrame {
 
             //System.out.println(sqlupdate);
             if (conexao.update(sqlupdate)){
+                JOptionPane.showMessageDialog(null,"Atualizado com sucesso");
                 System.out.println("Atualizado com sucesso");
                 mostra_dados();
             }
