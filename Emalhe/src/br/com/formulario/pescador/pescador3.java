@@ -98,6 +98,9 @@ public class pescador3 extends javax.swing.JFrame {
         ckbQuestao11DeCrescimento = new javax.swing.JRadioButton();
         ckbQuestao11Estabilizacao = new javax.swing.JRadioButton();
         ckbQuestao11DeDiminuicao = new javax.swing.JRadioButton();
+        rbq1ns = new javax.swing.JRadioButton();
+        rbq2ns = new javax.swing.JRadioButton();
+        rbQ11ns = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Questionário Atravessador");
@@ -266,6 +269,15 @@ public class pescador3 extends javax.swing.JFrame {
         g11.add(ckbQuestao11DeDiminuicao);
         ckbQuestao11DeDiminuicao.setText("De Diminuição");
 
+        grupo_questao_1.add(rbq1ns);
+        rbq1ns.setText("n/s");
+
+        grupo_questao_2.add(rbq2ns);
+        rbq2ns.setText("n/s");
+
+        g11.add(rbQ11ns);
+        rbQ11ns.setText("n/s");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -304,12 +316,16 @@ public class pescador3 extends javax.swing.JFrame {
                         .addGap(34, 34, 34)
                         .addComponent(rbQ2Aumentando)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rbQ2Diminuindo))
+                        .addComponent(rbQ2Diminuindo)
+                        .addGap(18, 18, 18)
+                        .addComponent(rbq2ns))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addComponent(rbQ1sim)
                         .addGap(52, 52, 52)
-                        .addComponent(rbQ1nao))
+                        .addComponent(rbQ1nao)
+                        .addGap(44, 44, 44)
+                        .addComponent(rbq1ns))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -352,15 +368,17 @@ public class pescador3 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(ckbQuestao11Estabilizacao)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ckbQuestao11DeDiminuicao))
+                                .addComponent(ckbQuestao11DeDiminuicao)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(rbQ11ns))
                             .addComponent(jLabel35)
                             .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 705, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel28)))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(567, Short.MAX_VALUE)
+                .addContainerGap(590, Short.MAX_VALUE)
                 .addComponent(btAtualizar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btSalvar)
@@ -368,7 +386,7 @@ public class pescador3 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -386,13 +404,15 @@ public class pescador3 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rbQ1sim)
-                    .addComponent(rbQ1nao))
+                    .addComponent(rbQ1nao)
+                    .addComponent(rbq1ns))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel26)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rbQ2Aumentando)
-                    .addComponent(rbQ2Diminuindo))
+                    .addComponent(rbQ2Diminuindo)
+                    .addComponent(rbq2ns))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel27)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -454,7 +474,8 @@ public class pescador3 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ckbQuestao11DeCrescimento)
                     .addComponent(ckbQuestao11Estabilizacao)
-                    .addComponent(ckbQuestao11DeDiminuicao))
+                    .addComponent(ckbQuestao11DeDiminuicao)
+                    .addComponent(rbQ11ns))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
@@ -470,11 +491,11 @@ public class pescador3 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 761, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 763, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE)
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
@@ -562,6 +583,7 @@ public class pescador3 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JRadioButton rbQ11ns;
     private javax.swing.JRadioButton rbQ1nao;
     private javax.swing.JRadioButton rbQ1sim;
     private javax.swing.JRadioButton rbQ2Aumentando;
@@ -572,6 +594,8 @@ public class pescador3 extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbQ4Sim;
     private javax.swing.JRadioButton rbQ5Nao;
     private javax.swing.JRadioButton rbQ5Sim;
+    private javax.swing.JRadioButton rbq1ns;
+    private javax.swing.JRadioButton rbq2ns;
     private javax.swing.JTextArea taQuestao10;
     private javax.swing.JTextArea taQuestao5;
     private javax.swing.JTextArea taQuestao6;
@@ -604,6 +628,11 @@ public class pescador3 extends javax.swing.JFrame {
             else
                    rbQ1nao.setSelected(false);
 
+            if (testador.equals("n/s"))
+                   rbq1ns.setSelected(true);
+            else
+                   rbq1ns.setSelected(false);
+
             testador = conexao.resultSet.getString("questao2");
             if (testador.equals("aumentando"))
                    rbQ2Aumentando.setSelected(true);
@@ -614,6 +643,11 @@ public class pescador3 extends javax.swing.JFrame {
                    rbQ2Diminuindo.setSelected(true);
             else
                    rbQ2Diminuindo.setSelected(false);
+
+            if (testador.equals("n/s"))
+                   rbq2ns.setSelected(true);
+            else
+                   rbq2ns.setSelected(false);
 
             testador = conexao.resultSet.getString("questao3");
             if (!testador.equals(""))
@@ -726,6 +760,11 @@ public class pescador3 extends javax.swing.JFrame {
             else
                    ckbQuestao11DeDiminuicao.setSelected(false);
 
+            if (testador.equals("n/s"))
+                   rbQ11ns.setSelected(true);
+            else
+                   rbQ11ns.setSelected(false);
+
         }catch (SQLException ex) {
                 //JOptionPane.showMessageDialog(null,"Nenhum registro encontrado "+ ex );
                 System.out.println("Erro no mostrar dados");               
@@ -752,8 +791,10 @@ public class pescador3 extends javax.swing.JFrame {
         
         rbQ1sim.setSelected(false);
         rbQ1nao.setSelected(false);
+        rbq1ns.setSelected(false);
         rbQ2Aumentando.setSelected(false);
         rbQ2Diminuindo.setSelected(false);
+        rbq2ns.setSelected(false);
         rbQ3Sim.setSelected(false);
         rbQ3Nao.setSelected(false);
         ckbQ3TrocadeOleo.setSelected(false);
@@ -779,6 +820,7 @@ public class pescador3 extends javax.swing.JFrame {
         ckbQuestao11DeCrescimento.setSelected(false);
         ckbQuestao11Estabilizacao.setSelected(false);
         ckbQuestao11DeDiminuicao.setSelected(false);
+        rbQ11ns.setSelected(false);
 
     }
 
@@ -792,14 +834,19 @@ public class pescador3 extends javax.swing.JFrame {
             String q1 = new String();
             if (rbQ1sim.isSelected())
                    q1 = "sim";
-            else
+            else if (rbQ1nao.isSelected())
                    q1 = "não";
+            else if (rbq1ns.isSelected())
+                   q1 = "n/s";
+
 
             String q2 = new String();
             if (rbQ2Aumentando.isSelected())
                    q2 = "aumentando";
             else if (rbQ2Diminuindo.isSelected())
                    q2 = "diminuindo";
+            else if (rbq2ns.isSelected())
+                   q2 = "n/s";
 
             String q3 = new String();
             if (ckbQ3TrocadeOleo.isSelected())
@@ -832,6 +879,8 @@ public class pescador3 extends javax.swing.JFrame {
                    q11 = "Estabilização";
             else if (ckbQ4PorSobreposicaoDeRedeEEspinhel.isSelected())
                    q11 = "De diminuição";
+            else if (rbQ11ns.isSelected())
+                   q11 = "n/s";
          
             String sqlinsert = "insert into pescador_perspectiva "
                     + "(cod_pescador,questao1,questao2,questao3,"
@@ -853,6 +902,7 @@ public class pescador3 extends javax.swing.JFrame {
 
             //System.out.println(sqlinsert);
             if (conexao.salvar(sqlinsert)) {
+                JOptionPane.showMessageDialog(null,"Salvo com sucesso");
                 System.out.println("Pescador Perspectiva - Cadastrado com sucesso");
                 mostra_dados();
             }
@@ -870,14 +920,18 @@ public class pescador3 extends javax.swing.JFrame {
             String q1 = new String();
             if (rbQ1sim.isSelected())
                    q1 = "sim";
-            else
+            else if (rbQ1nao.isSelected())
                    q1 = "não";
+            else if (rbq1ns.isSelected())
+                   q1 = "n/s";
 
             String q2 = new String();
             if (rbQ2Aumentando.isSelected())
                    q2 = "aumentando";
             else if (rbQ2Diminuindo.isSelected())
                    q2 = "diminuindo";
+            else if (rbq2ns.isSelected())
+                   q2 = "n/s";
 
             String q3 = new String();
             if (ckbQ3TrocadeOleo.isSelected())
@@ -910,6 +964,8 @@ public class pescador3 extends javax.swing.JFrame {
                    q11 = "Estabilização";
             else if (ckbQuestao11DeDiminuicao.isSelected())
                    q11 = "De diminuição";
+            else if (rbQ11ns.isSelected())
+                   q11 = "n/s";
 
         String sqlupdate ="UPDATE pescador_perspectiva SET "
                     +"questao1 = '"+q1+"',"
@@ -928,6 +984,7 @@ public class pescador3 extends javax.swing.JFrame {
 
             //System.out.println(sqlupdate);
             if (conexao.update(sqlupdate)){
+                JOptionPane.showMessageDialog(null,"Alterado com sucesso");
                 System.out.println("Atualizado com sucesso");
                 mostra_dados();
             }

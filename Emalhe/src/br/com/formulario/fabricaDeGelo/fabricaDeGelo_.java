@@ -9,7 +9,7 @@
  * Created on 16/07/2010, 15:50:37
  */
 
-package br.com.formulario.atravessador;
+package br.com.formulario.fabricaDeGelo;
 
 import br.com.conexao.Conexao;
 import br.com.util.JIntField;
@@ -23,12 +23,12 @@ import javax.swing.JOptionPane;
  *
  * @author Jhonathas
  */
-public class atravessador extends javax.swing.JFrame {
+public class fabricaDeGelo_ extends javax.swing.JFrame {
 
      private int navega = 0; //variavel pra saber o  botão clicado;
      private Conexao conexao;
 
-    public atravessador() {
+    public fabricaDeGelo_() {
         initComponents(); //Inicializa os componentes da tela
         conexao = new Conexao();
         conexao.conecta("emalhe");
@@ -45,7 +45,7 @@ public class atravessador extends javax.swing.JFrame {
 
 
         }catch (SQLException ex) {
-            Logger.getLogger(atravessador.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(fabricaDeGelo_.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
@@ -58,17 +58,13 @@ public class atravessador extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         definicao = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
         jpAtravessador = new javax.swing.JPanel();
-        tfIdade = new JIntField();
-        tfNome = new javax.swing.JTextField();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        cbMunicipio = new javax.swing.JComboBox();
-        jLabel24 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         Cadastrar = new javax.swing.JButton();
         botao_excluir = new javax.swing.JButton();
         botao_novo = new javax.swing.JButton();
@@ -77,13 +73,6 @@ public class atravessador extends javax.swing.JFrame {
         botao_proximo = new javax.swing.JButton();
         botao_ultimo = new javax.swing.JButton();
         botao_alterar = new javax.swing.JButton();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        tfApelido = new javax.swing.JTextField();
-        jLabel27 = new javax.swing.JLabel();
-        tfNaturalidade = new javax.swing.JTextField();
-        jLabel28 = new javax.swing.JLabel();
-        cbSexo = new javax.swing.JComboBox();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         tfAtividadeSecundaria = new javax.swing.JTextField();
@@ -93,16 +82,31 @@ public class atravessador extends javax.swing.JFrame {
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         tfPqParou = new javax.swing.JTextField();
-        jLabel35 = new javax.swing.JLabel();
-        cbLocalMoradia = new javax.swing.JComboBox();
         cbEstadoCivil = new javax.swing.JComboBox();
         jLabel42 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         cbEscolaridade = new javax.swing.JComboBox();
-        chbAtravessador = new javax.swing.JRadioButton();
-        chbMarreteiro = new javax.swing.JRadioButton();
-        chbBalanceiro = new javax.swing.JRadioButton();
         cbAtividadePrincipal = new javax.swing.JComboBox();
+        jPanel1 = new javax.swing.JPanel();
+        chbBalanceiro = new javax.swing.JRadioButton();
+        chbMarreteiro = new javax.swing.JRadioButton();
+        vc = new javax.swing.JLabel();
+        chbAtravessador = new javax.swing.JRadioButton();
+        cbMunicipio = new javax.swing.JComboBox();
+        jLabel24 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        tfNaturalidade = new javax.swing.JTextField();
+        tfNome = new javax.swing.JTextField();
+        tfIdade = new JIntField();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        cbSexo = new javax.swing.JComboBox();
+        jLabel35 = new javax.swing.JLabel();
+        cbLocalMoradia = new javax.swing.JComboBox();
+        jLabel26 = new javax.swing.JLabel();
+        tfApelido = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Questionário Atravessador");
@@ -115,13 +119,11 @@ public class atravessador extends javax.swing.JFrame {
         jpAtravessador.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jpAtravessador.setPreferredSize(new java.awt.Dimension(735, 538));
 
-        jLabel22.setText("Idade.:");
-
-        jLabel23.setText("Nome.:");
-
-        jLabel24.setText("Município");
-
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setLayout(new java.awt.GridBagLayout());
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new java.awt.GridBagLayout());
 
         Cadastrar.setText("Cadastrar");
         Cadastrar.addActionListener(new java.awt.event.ActionListener() {
@@ -129,6 +131,12 @@ public class atravessador extends javax.swing.JFrame {
                 CadastrarAction(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel2.add(Cadastrar, gridBagConstraints);
 
         botao_excluir.setText("Excluir");
         botao_excluir.addActionListener(new java.awt.event.ActionListener() {
@@ -136,6 +144,12 @@ public class atravessador extends javax.swing.JFrame {
                 botao_excluirActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel2.add(botao_excluir, gridBagConstraints);
 
         botao_novo.setText("Limpar");
         botao_novo.addActionListener(new java.awt.event.ActionListener() {
@@ -143,6 +157,12 @@ public class atravessador extends javax.swing.JFrame {
                 botao_novoActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel2.add(botao_novo, gridBagConstraints);
 
         botao_primeiro.setText("<<");
         botao_primeiro.addActionListener(new java.awt.event.ActionListener() {
@@ -150,6 +170,11 @@ public class atravessador extends javax.swing.JFrame {
                 botao_primeiroActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel2.add(botao_primeiro, gridBagConstraints);
 
         botao_anterior.setText("<");
         botao_anterior.addActionListener(new java.awt.event.ActionListener() {
@@ -157,6 +182,12 @@ public class atravessador extends javax.swing.JFrame {
                 botao_anteriorActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel2.add(botao_anterior, gridBagConstraints);
 
         botao_proximo.setText(">");
         botao_proximo.addActionListener(new java.awt.event.ActionListener() {
@@ -164,6 +195,11 @@ public class atravessador extends javax.swing.JFrame {
                 botao_proximoActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel2.add(botao_proximo, gridBagConstraints);
 
         botao_ultimo.setText(">>");
         botao_ultimo.addActionListener(new java.awt.event.ActionListener() {
@@ -171,6 +207,12 @@ public class atravessador extends javax.swing.JFrame {
                 botao_ultimoActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel2.add(botao_ultimo, gridBagConstraints);
 
         botao_alterar.setText("Alterar");
         botao_alterar.addActionListener(new java.awt.event.ActionListener() {
@@ -178,60 +220,16 @@ public class atravessador extends javax.swing.JFrame {
                 botao_alterarActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 16;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel2.add(botao_alterar, gridBagConstraints);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(botao_novo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Cadastrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botao_excluir)
-                        .addGap(7, 7, 7)
-                        .addComponent(botao_alterar))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(botao_primeiro)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botao_anterior)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botao_proximo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botao_ultimo)))
-                .addContainerGap(426, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botao_primeiro)
-                    .addComponent(botao_anterior)
-                    .addComponent(botao_proximo)
-                    .addComponent(botao_ultimo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botao_novo)
-                    .addComponent(Cadastrar)
-                    .addComponent(botao_excluir)
-                    .addComponent(botao_alterar))
-                .addContainerGap())
-        );
-
-        jLabel25.setFont(new java.awt.Font("Tahoma", 1, 12));
-        jLabel25.setText("Dados Pessoais");
-
-        jLabel26.setText("Apelido.:");
-
-        jLabel27.setText("Naturalidade.:");
-
-        jLabel28.setText("Sexo.:");
-
-        cbSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "M", "F" }));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 500);
+        jPanel4.add(jPanel2, gridBagConstraints);
 
         jLabel29.setText("Atividade principal de renda.:");
 
@@ -245,29 +243,189 @@ public class atravessador extends javax.swing.JFrame {
 
         jLabel34.setText("Porque Parou?");
 
-        jLabel35.setText("Local de Moradia.:");
-
-        cbLocalMoradia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sede Municipal", "Comunidade/Vila local", "Outro Município", "Capital" }));
-
         cbEstadoCivil.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Solteiro", "Casado", "União Estável" }));
 
         jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel42.setText("Questionário Atravessador");
 
-        jLabel1.setText("Você é:");
+        cbEscolaridade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1° Série fundamental", "2° Série fundamental", "3° Série fundamental", "4° Série fundamental", "5° Série fundamental", "6° Série fundamental", "7° Série fundamental", "8° Série fundamental", "1° Série médio", "2° Série médio", "3° Série médio", "Ensino Superior Incompleto", "Ensino Superior Completo" }));
 
-        cbEscolaridade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Analfabeto", "1° Série fundamental", "2° Série fundamental", "3° Série fundamental", "4° Série fundamental", "5° Série fundamental", "6° Série fundamental", "7° Série fundamental", "8° Série fundamental", "1° Série médio", "2° Série médio", "3° Série médio", "Ensino Superior Incompleto", "Ensino Superior Completo" }));
+        cbAtividadePrincipal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        definicao.add(chbAtravessador);
-        chbAtravessador.setText("Atravessador");
-
-        definicao.add(chbMarreteiro);
-        chbMarreteiro.setText("Marreteiro");
+        jPanel1.setLayout(new java.awt.GridBagLayout());
 
         definicao.add(chbBalanceiro);
         chbBalanceiro.setText("Balanceiro");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 0);
+        jPanel1.add(chbBalanceiro, gridBagConstraints);
 
-        cbAtividadePrincipal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        definicao.add(chbMarreteiro);
+        chbMarreteiro.setText("Marreteiro");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 0);
+        jPanel1.add(chbMarreteiro, gridBagConstraints);
+
+        vc.setText("Você é.:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(4, 0, 0, 0);
+        jPanel1.add(vc, gridBagConstraints);
+
+        definicao.add(chbAtravessador);
+        chbAtravessador.setText("Atravessador");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 0);
+        jPanel1.add(chbAtravessador, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 5, 0, 0);
+        jPanel1.add(cbMunicipio, gridBagConstraints);
+
+        jLabel24.setText("Município.:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(jLabel24, gridBagConstraints);
+
+        jPanel3.setLayout(new java.awt.GridBagLayout());
+
+        jLabel25.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel25.setText("Dados Pessoais");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel3.add(jLabel25, gridBagConstraints);
+
+        jLabel27.setText("Naturalidade.:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 0, 0, 0);
+        jPanel3.add(jLabel27, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 200;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(4, 0, 0, 0);
+        jPanel3.add(tfNaturalidade, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 9;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 300;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(4, 38, 0, 5);
+        jPanel3.add(tfNome, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 24;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 4, 11, 0);
+        jPanel3.add(tfIdade, gridBagConstraints);
+
+        jLabel22.setText("Idade.:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 9;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(9, 4, 0, 0);
+        jPanel3.add(jLabel22, gridBagConstraints);
+
+        jLabel23.setText("Nome.:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 0, 0, 0);
+        jPanel3.add(jLabel23, gridBagConstraints);
+
+        jLabel28.setText("Sexo.:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 0, 0, 0);
+        jPanel3.add(jLabel28, gridBagConstraints);
+
+        cbSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "M", "F" }));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 5;
+        gridBagConstraints.ipady = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 4, 0, 0);
+        jPanel3.add(cbSexo, gridBagConstraints);
+
+        jLabel35.setText("Local de Moradia.:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(8, 0, 0, 0);
+        jPanel3.add(jLabel35, gridBagConstraints);
+
+        cbLocalMoradia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sede Municipal", "Comunidade/Vila local", "Outro Município", "Capital" }));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 13;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 45;
+        gridBagConstraints.ipady = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(4, 2, 0, 0);
+        jPanel3.add(cbLocalMoradia, gridBagConstraints);
+
+        jLabel26.setText("Apelido.:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 0, 0, 0);
+        jPanel3.add(jLabel26, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 13;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 162;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(4, 2, 0, 0);
+        jPanel3.add(tfApelido, gridBagConstraints);
 
         javax.swing.GroupLayout jpAtravessadorLayout = new javax.swing.GroupLayout(jpAtravessador);
         jpAtravessador.setLayout(jpAtravessadorLayout);
@@ -276,74 +434,38 @@ public class atravessador extends javax.swing.JFrame {
             .addGroup(jpAtravessadorLayout.createSequentialGroup()
                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addGap(246, 246, 246)
                         .addComponent(jLabel42))
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel1)
+                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel29)
+                            .addComponent(jLabel31)
+                            .addComponent(jLabel33))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(chbAtravessador)
+                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cbEstadoCivil, 0, 838, Short.MAX_VALUE)
+                            .addComponent(cbEscolaridade, 0, 838, Short.MAX_VALUE)
+                            .addComponent(cbAtividadePrincipal, 0, 838, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(chbMarreteiro)
+                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel30)
+                            .addComponent(jLabel34)
+                            .addComponent(jLabel32))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(chbBalanceiro))
+                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfPqParou, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 844, Short.MAX_VALUE)
+                            .addComponent(tfComposicaoFamiliar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 844, Short.MAX_VALUE)
+                            .addComponent(tfAtividadeSecundaria, javax.swing.GroupLayout.DEFAULT_SIZE, 844, Short.MAX_VALUE)))
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                .addComponent(jLabel24)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cbMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel25)
-                            .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                        .addComponent(jLabel27)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tfNaturalidade, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                        .addComponent(jLabel23)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(tfNome, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel35, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tfApelido)
-                                    .addComponent(cbLocalMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                                        .addComponent(jLabel28)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel22)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel29)
-                                    .addComponent(jLabel31)
-                                    .addComponent(jLabel33))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(cbEstadoCivil, 0, 225, Short.MAX_VALUE)
-                                    .addComponent(cbEscolaridade, 0, 225, Short.MAX_VALUE)
-                                    .addComponent(cbAtividadePrincipal, 0, 225, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel30)
-                                    .addComponent(jLabel34)
-                                    .addComponent(jLabel32))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tfPqParou, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
-                                    .addComponent(tfComposicaoFamiliar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
-                                    .addComponent(tfAtividadeSecundaria, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE))))))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jpAtravessadorLayout.setVerticalGroup(
@@ -353,43 +475,11 @@ public class atravessador extends javax.swing.JFrame {
                 .addComponent(jLabel42)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
-                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(chbAtravessador)
-                    .addComponent(chbMarreteiro)
-                    .addComponent(chbBalanceiro))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cbMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel24))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel25)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tfNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel23))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel27)
-                            .addComponent(tfNaturalidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tfApelido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel26))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel35)
-                            .addComponent(cbLocalMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel28)
-                    .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel22)
-                    .addComponent(tfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel29)
                     .addComponent(jLabel30)
@@ -407,7 +497,7 @@ public class atravessador extends javax.swing.JFrame {
                     .addComponent(tfPqParou, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel34)
                     .addComponent(cbEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(368, Short.MAX_VALUE))
+                .addContainerGap(205, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jpAtravessador);
@@ -476,7 +566,7 @@ public class atravessador extends javax.swing.JFrame {
             navega = 2;
 
         }catch (SQLException ex) {
-            Logger.getLogger(atravessador.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(fabricaDeGelo_.class.getName()).log(Level.SEVERE, null, ex);
         }
 }//GEN-LAST:event_botao_ultimoActionPerformed
 
@@ -499,7 +589,7 @@ public class atravessador extends javax.swing.JFrame {
             navega = 1;
 
         }catch (SQLException ex) {
-            Logger.getLogger(atravessador.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(fabricaDeGelo_.class.getName()).log(Level.SEVERE, null, ex);
         }
 }//GEN-LAST:event_botao_primeiroActionPerformed
 
@@ -602,7 +692,6 @@ public class atravessador extends javax.swing.JFrame {
     private javax.swing.JRadioButton chbBalanceiro;
     private javax.swing.JRadioButton chbMarreteiro;
     private javax.swing.ButtonGroup definicao;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -618,6 +707,9 @@ public class atravessador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel42;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel jpAtravessador;
@@ -628,6 +720,7 @@ public class atravessador extends javax.swing.JFrame {
     private javax.swing.JTextField tfNaturalidade;
     private javax.swing.JTextField tfNome;
     private javax.swing.JTextField tfPqParou;
+    private javax.swing.JLabel vc;
     // End of variables declaration//GEN-END:variables
 
 
@@ -676,7 +769,7 @@ public class atravessador extends javax.swing.JFrame {
          try {
                     conexao.resultSet.previous();
                 } catch (SQLException ex1) {
-                    Logger.getLogger(atravessador.class.getName()).log(Level.SEVERE, null, ex1);
+                    Logger.getLogger(fabricaDeGelo_.class.getName()).log(Level.SEVERE, null, ex1);
                 }
     }
 
@@ -684,7 +777,7 @@ public class atravessador extends javax.swing.JFrame {
         try {
                     conexao.resultSet.next();
                 } catch (SQLException ex1) {
-                    Logger.getLogger(atravessador.class.getName()).log(Level.SEVERE, null, ex1);
+                    Logger.getLogger(fabricaDeGelo_.class.getName()).log(Level.SEVERE, null, ex1);
                 }
     }
 
@@ -728,7 +821,7 @@ public class atravessador extends javax.swing.JFrame {
                 cbMunicipio.addItem(conexao.resultSet.getString("nome"));
             }
         }catch (SQLException ex) {
-            Logger.getLogger(atravessador.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(fabricaDeGelo_.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         try {
@@ -738,7 +831,7 @@ public class atravessador extends javax.swing.JFrame {
                 cbAtividadePrincipal.addItem(conexao.resultSet.getString("atividade"));
             }
         }catch (SQLException ex) {
-            Logger.getLogger(atravessador.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(fabricaDeGelo_.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
