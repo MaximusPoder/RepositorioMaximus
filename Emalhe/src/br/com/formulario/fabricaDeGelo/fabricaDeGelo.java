@@ -1,8 +1,8 @@
 package br.com.formulario.fabricaDeGelo;
 
 
-import br.com.formulario.pescador.*;
 import br.com.conexao.Conexao;
+import br.com.util.JIntField;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -57,17 +57,11 @@ public class fabricaDeGelo extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
-        jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
-        tfNomeFabrica = new javax.swing.JTextField();
-        tfIdade = new javax.swing.JTextField();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        cbMunicipio = new javax.swing.JComboBox();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
+        jp1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         Cadastrar = new javax.swing.JButton();
         botao_excluir = new javax.swing.JButton();
         botao_novo = new javax.swing.JButton();
@@ -76,50 +70,56 @@ public class fabricaDeGelo extends javax.swing.JFrame {
         botao_proximo = new javax.swing.JButton();
         botao_ultimo = new javax.swing.JButton();
         botao_alterar = new javax.swing.JButton();
+        jp2 = new javax.swing.JPanel();
+        cbMunicipio = new javax.swing.JComboBox();
+        jLabel24 = new javax.swing.JLabel();
+        jp3 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
-        tfFoneFaxFabrica = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        tfNomeEmpresa = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
+        tfEndereco = new javax.swing.JTextField();
+        tfFoneFax = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
-        cbSexo = new javax.swing.JComboBox();
-        jLabel29 = new javax.swing.JLabel();
-        tfEnderecoFabrica = new javax.swing.JTextField();
-        jLabel28 = new javax.swing.JLabel();
-        tfAtividadeSecundaria = new javax.swing.JTextField();
-        tfTempoExistencia = new javax.swing.JTextField();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        tfPessoaEntrevistada = new javax.swing.JTextField();
         jLabel35 = new javax.swing.JLabel();
-        lb_pescador = new javax.swing.JLabel();
-        cbEscolaridade = new javax.swing.JComboBox();
-        tfFuncaoFabrica = new javax.swing.JTextField();
+        tfFuncao = new javax.swing.JTextField();
+        jp4 = new javax.swing.JPanel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        cbSempreFoi = new javax.swing.JComboBox();
+        tfQualFoi = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        tfQualFabrica = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        tfPrecoSaca = new javax.swing.JTextField();
+        cbFoi = new javax.swing.JComboBox();
+        jLabel29 = new javax.swing.JLabel();
+        tfTempoExistencia = new JIntField();
+        jp5 = new javax.swing.JPanel();
+        jLabel31 = new javax.swing.JLabel();
+        tfProducaoDiaria = new JIntField();
         jLabel3 = new javax.swing.JLabel();
-        tfPrecoTonelada = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        tfSaca = new javax.swing.JTextField();
+        tfTonelada = new javax.swing.JTextField();
+        TITULO = new javax.swing.JPanel();
+        jLabel42 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Questionário Atravessador");
+        setTitle("Questionário Fabrica de Gêlo");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
                 fechar_janela(evt);
             }
         });
+        getContentPane().setLayout(null);
 
-        jScrollPane1.setAutoscrolls(true);
+        jPanel1.setLayout(new java.awt.GridBagLayout());
 
-        jLabel23.setText("Nome da Fabrica.:");
+        jp1.setBackground(new java.awt.Color(255, 255, 255));
+        jp1.setLayout(new java.awt.GridBagLayout());
 
-        jLabel22.setText("Pessoa Entrevistada.:");
-
-        jLabel24.setText("Município");
-
-        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel42.setText("Questionário fabrica de Gêlo");
-
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new java.awt.GridBagLayout());
 
         Cadastrar.setText("Cadastrar");
         Cadastrar.addActionListener(new java.awt.event.ActionListener() {
@@ -127,6 +127,12 @@ public class fabricaDeGelo extends javax.swing.JFrame {
                 CadastrarAction(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel2.add(Cadastrar, gridBagConstraints);
 
         botao_excluir.setText("Excluir");
         botao_excluir.addActionListener(new java.awt.event.ActionListener() {
@@ -134,6 +140,12 @@ public class fabricaDeGelo extends javax.swing.JFrame {
                 botao_excluirActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel2.add(botao_excluir, gridBagConstraints);
 
         botao_novo.setText("Limpar");
         botao_novo.addActionListener(new java.awt.event.ActionListener() {
@@ -141,6 +153,12 @@ public class fabricaDeGelo extends javax.swing.JFrame {
                 botao_novoActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel2.add(botao_novo, gridBagConstraints);
 
         botao_primeiro.setText("<<");
         botao_primeiro.addActionListener(new java.awt.event.ActionListener() {
@@ -148,6 +166,11 @@ public class fabricaDeGelo extends javax.swing.JFrame {
                 botao_primeiroActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel2.add(botao_primeiro, gridBagConstraints);
 
         botao_anterior.setText("<");
         botao_anterior.addActionListener(new java.awt.event.ActionListener() {
@@ -155,6 +178,12 @@ public class fabricaDeGelo extends javax.swing.JFrame {
                 botao_anteriorActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel2.add(botao_anterior, gridBagConstraints);
 
         botao_proximo.setText(">");
         botao_proximo.addActionListener(new java.awt.event.ActionListener() {
@@ -162,6 +191,11 @@ public class fabricaDeGelo extends javax.swing.JFrame {
                 botao_proximoActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel2.add(botao_proximo, gridBagConstraints);
 
         botao_ultimo.setText(">>");
         botao_ultimo.addActionListener(new java.awt.event.ActionListener() {
@@ -169,6 +203,12 @@ public class fabricaDeGelo extends javax.swing.JFrame {
                 botao_ultimoActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel2.add(botao_ultimo, gridBagConstraints);
 
         botao_alterar.setText("Alterar");
         botao_alterar.addActionListener(new java.awt.event.ActionListener() {
@@ -176,383 +216,330 @@ public class fabricaDeGelo extends javax.swing.JFrame {
                 botao_alterarActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 16;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel2.add(botao_alterar, gridBagConstraints);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(botao_novo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Cadastrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botao_excluir)
-                        .addGap(7, 7, 7)
-                        .addComponent(botao_alterar))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(botao_primeiro)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botao_anterior)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botao_proximo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botao_ultimo)))
-                .addContainerGap(677, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botao_primeiro)
-                    .addComponent(botao_anterior)
-                    .addComponent(botao_proximo)
-                    .addComponent(botao_ultimo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botao_novo)
-                    .addComponent(Cadastrar)
-                    .addComponent(botao_excluir)
-                    .addComponent(botao_alterar))
-                .addContainerGap())
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 308);
+        jp1.add(jPanel2, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 0);
+        jPanel1.add(jp1, gridBagConstraints);
+
+        jp2.setLayout(new java.awt.GridBagLayout());
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 250;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jp2.add(cbMunicipio, gridBagConstraints);
+
+        jLabel24.setText("Município.:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(3, 0, 0, 4);
+        jp2.add(jLabel24, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.ipadx = 5;
+        gridBagConstraints.ipady = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 4, 0);
+        jPanel1.add(jp2, gridBagConstraints);
+
+        jp3.setLayout(new java.awt.GridBagLayout());
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 1, 12));
-        jLabel25.setText("DADOS PESSOAIS:");
+        jLabel25.setText("DADOS.:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jp3.add(jLabel25, gridBagConstraints);
+
+        jLabel23.setText("Nome da Empresa.:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
+        jp3.add(jLabel23, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipadx = 250;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
+        jp3.add(tfNomeEmpresa, gridBagConstraints);
 
         jLabel27.setText("Endereço.:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
+        jp3.add(jLabel27, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
+        jp3.add(tfEndereco, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.ipadx = 150;
+        jp3.add(tfFoneFax, gridBagConstraints);
 
         jLabel26.setText("Fone/Fax.:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 4, 0, 0);
+        jp3.add(jLabel26, gridBagConstraints);
 
-        cbSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Comprada", "Construida", "Modificada(A parti de outra)" }));
-
-        jLabel29.setText("A quanto tempo a empresa existe ?");
-
-        jLabel28.setText("A empresa foi .:");
-
-        jLabel30.setText("Sempre foi só fábrica de gêlo ?");
-
-        jLabel31.setText("Qual a produção diaria da Fábrica de gelo ?");
-
-        jLabel33.setText("Qual o preço do gelo.:");
+        jLabel22.setText("Pessoa Entrevistada.:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
+        jp3.add(jLabel22, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
+        jp3.add(tfPessoaEntrevistada, gridBagConstraints);
 
         jLabel35.setText("Função.:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 4, 0, 0);
+        jp3.add(jLabel35, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        jp3.add(tfFuncao, gridBagConstraints);
 
-        lb_pescador.setText("Fabrica");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.ipady = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 4, 0);
+        jPanel1.add(jp3, gridBagConstraints);
 
-        cbEscolaridade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sim", "Não" }));
+        jp4.setLayout(new java.awt.GridBagLayout());
+
+        jLabel28.setText("A empresa foi .:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(3, 0, 4, 0);
+        jp4.add(jLabel28, gridBagConstraints);
+
+        jLabel30.setText("Sempre foi só fábrica de gêlo ?");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(3, 0, 0, 0);
+        jp4.add(jLabel30, gridBagConstraints);
+
+        cbSempreFoi.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sim", "Não" }));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 2, 0, 2);
+        jp4.add(cbSempreFoi, gridBagConstraints);
+
+        tfQualFoi.setEditable(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipadx = 150;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 3, 0, 1);
+        jp4.add(tfQualFoi, gridBagConstraints);
 
         jLabel1.setText("Qual ?");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(3, 0, 0, 0);
+        jp4.add(jLabel1, gridBagConstraints);
 
-        jLabel2.setText("Sala:");
-
-        tfPrecoSaca.addActionListener(new java.awt.event.ActionListener() {
+        cbFoi.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Comprada", "Construida", "Modificada(A parti de outra)" }));
+        cbFoi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfPrecoSacaActionPerformed(evt);
+                cbFoiActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipadx = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 2, 4, 2);
+        jp4.add(cbFoi, gridBagConstraints);
 
-        jLabel3.setText("Tonelada :");
+        jLabel29.setText("A quanto tempo a empresa existe.:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(3, 0, 4, 0);
+        jp4.add(jLabel29, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(0, 2, 4, 2);
+        jp4.add(tfTempoExistencia, gridBagConstraints);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(273, 273, 273)
-                        .addComponent(jLabel42))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel24)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cbMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel25)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lb_pescador))
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel29)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfTempoExistencia, javax.swing.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel23)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfNomeFabrica, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel27)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfEnderecoFabrica, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel26)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfFoneFaxFabrica, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel22)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel35)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfFuncaoFabrica, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(396, 396, 396))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel33)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(tfPrecoSaca, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfPrecoTonelada))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel31)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(tfAtividadeSecundaria))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel28)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfQualFabrica, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel30)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.ipadx = 5;
+        gridBagConstraints.ipady = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 0);
+        jPanel1.add(jp4, gridBagConstraints);
+
+        jp5.setLayout(new java.awt.GridBagLayout());
+
+        jLabel31.setText("Qual a produção diaria da Fábrica de gelo.:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 3);
+        jp5.add(jLabel31, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.ipadx = 108;
+        gridBagConstraints.ipady = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 0);
+        jp5.add(tfProducaoDiaria, gridBagConstraints);
+
+        jLabel3.setText("Qual o preço do gelo:                        Saca.:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 4);
+        jp5.add(jLabel3, gridBagConstraints);
+
+        jLabel4.setText("Tonelada");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 4, 0, 4);
+        jp5.add(jLabel4, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipadx = 108;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jp5.add(tfSaca, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipadx = 108;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jp5.add(tfTonelada, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 4, 0);
+        jPanel1.add(jp5, gridBagConstraints);
+
+        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel42.setText("Questionário fabrica de gêlo");
+
+        javax.swing.GroupLayout TITULOLayout = new javax.swing.GroupLayout(TITULO);
+        TITULO.setLayout(TITULOLayout);
+        TITULOLayout.setHorizontalGroup(
+            TITULOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TITULOLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel42)
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+        TITULOLayout.setVerticalGroup(
+            TITULOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TITULOLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel42)
-                .addGap(16, 16, 16)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel24))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel25)
-                    .addComponent(lb_pescador))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel23)
-                    .addComponent(tfNomeFabrica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel27)
-                    .addComponent(tfEnderecoFabrica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel26)
-                    .addComponent(tfFoneFaxFabrica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel22)
-                    .addComponent(tfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel35)
-                    .addComponent(tfFuncaoFabrica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel29)
-                    .addComponent(tfTempoExistencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel28)
-                    .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(tfQualFabrica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel30)
-                    .addComponent(cbEscolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel31)
-                    .addComponent(tfAtividadeSecundaria, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel33)
-                    .addComponent(jLabel2)
-                    .addComponent(tfPrecoSaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(tfPrecoTonelada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(148, Short.MAX_VALUE))
+                .addGap(32, 32, 32))
         );
 
-        jScrollPane1.setViewportView(jPanel1);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        jPanel1.add(TITULO, gridBagConstraints);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 600, 360);
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-735)/2, (screenSize.height-444)/2, 735, 444);
+        setBounds((screenSize.width-616)/2, (screenSize.height-404)/2, 616, 404);
     }// </editor-fold>//GEN-END:initComponents
 
     private void fechar_janela(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_fechar_janela
         conexao.desconecta();
     }//GEN-LAST:event_fechar_janela
 
-    private void botao_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_alterarActionPerformed
-        try{
-            String sql ="UPDATE pescador SET "+
-                    "municipio = '"+cbMunicipio.getSelectedItem()+"',"+
-                    "nome = '"+tfNomeFabrica.getText()+"',"+
-                    "apelido = '"+ tfFoneFaxFabrica.getText() +"',"+
-                    "naturalidade = '"+ tfEnderecoFabrica.getText() +"',"+
-//                    "local_moradia = '"+ cbLocalMoradia.getSelectedItem() +"',"+
-//                    "sexo = '"+ cbSexo.getSelectedItem() +"',"+
-//                    "idade = '"+ tfIdade.getText() +"',"+
-//                    "atividade_principal = '"+ tfTempoExistencia.getText() +"',"+
-//                    "atividade_secundaria = '"+ tfAtividadeSecundaria.getText() +"',"+
-//                    "estado_civil = '"+ cbEstadoCivil.getSelectedItem() +"',"+
-//                    "composicao_familiar = '"+ tfComposicaoFamiliar.getText() +"',"+
-//                    "escolaridade = '"+ cbEscolaridade.getSelectedItem() +"',"+
-//                    "pq_parou = '"+ tfPqParou.getText() +"' "+
-
-
-
-
-                    "where cod_pescador = "+conexao.resultSet.getString("cod_pescador");
-
-            System.out.println(sql);
-            if (conexao.update(sql)){
-                JOptionPane.showMessageDialog(null,"Alterado com sucesso");
-                //Atualiza Resultset
-                conexao.execute("select * from pescador");
-                conexao.resultSet.next();
-                mostra_dados_atravessador();
-            }
-
-
-        }catch (Exception e){
-            System.out.println(e + " Erro no botão alterar");
-        }
-}//GEN-LAST:event_botao_alterarActionPerformed
-
-    private void botao_ultimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_ultimoActionPerformed
-        try {
-            conexao.resultSet.last();
-            mostra_dados_atravessador();
-            navega = 2;
-
-        }catch (SQLException ex) {
-            Logger.getLogger(fabricaDeGelo.class.getName()).log(Level.SEVERE, null, ex);
-        }
-}//GEN-LAST:event_botao_ultimoActionPerformed
-
-    private void botao_proximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_proximoActionPerformed
-        proximo();
-        mostra_dados_atravessador();
-        navega = 2;
-}//GEN-LAST:event_botao_proximoActionPerformed
-
-    private void botao_anteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_anteriorActionPerformed
-        anterior();
-        mostra_dados_atravessador();
-        navega = 1;
-}//GEN-LAST:event_botao_anteriorActionPerformed
-
-    private void botao_primeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_primeiroActionPerformed
-        try {
-            conexao.resultSet.first();
-            mostra_dados_atravessador();
-            navega = 1;
-
-        }catch (SQLException ex) {
-            Logger.getLogger(fabricaDeGelo.class.getName()).log(Level.SEVERE, null, ex);
-        }
-}//GEN-LAST:event_botao_primeiroActionPerformed
-
-    private void botao_novoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_novoActionPerformed
-        tfNomeFabrica.setText("");
-        tfFoneFaxFabrica.setText("");
-        tfEnderecoFabrica.setText("");
-        tfIdade.setText("0");
-        tfTempoExistencia.setText("");
-        tfAtividadeSecundaria.setText("");
-//        cbEstadoCivil.setSelectedIndex(0);
-//        tfComposicaoFamiliar.setText("");
-//        cbEscolaridade.setSelectedIndex(0);
-//        tfPqParou.setText("");
-//        cbMunicipio.setSelectedIndex(0);
-//        cbSexo.setSelectedIndex(0);
-//        cbLocalMoradia.setSelectedIndex(0);
-}//GEN-LAST:event_botao_novoActionPerformed
-
-    private void botao_excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_excluirActionPerformed
-        String sql;
-        try {
-            sql = "select * from pescador Where cod_pescador =" + conexao.resultSet.getString("cod_pescador");
-            conexao.execute(sql);
-            conexao.resultSet.first();
-            String nome = "Deletar o pesacador : "+conexao.resultSet.getString("nome")+" ?";
-            int opcao_escolhida = JOptionPane.showConfirmDialog(null,nome,"Exclusão ",JOptionPane.YES_NO_OPTION);
-            if (opcao_escolhida == JOptionPane.YES_OPTION) {
-                sql = "DELETE FROM pescador Where cod_pescador ="+conexao.resultSet.getString("cod_pescador");
-                if (conexao.salvar(sql)) {
-                    JOptionPane.showMessageDialog(null,"Exclusão realizada com sucesso");
-                    //atualiza o ResultSet
-                    conexao.execute("select * from pescador");
-                    conexao.resultSet.first();
-                    mostra_dados_atravessador();
-                }
-            } else{
-                conexao.execute("select * from pescador");
-                conexao.resultSet.first();
-                mostra_dados_atravessador();
-            }
-
-        } catch (SQLException ex) {
-            System.out.println("Erro ao tentar excluir "+ex);
-        }
-}//GEN-LAST:event_botao_excluirActionPerformed
-
     private void CadastrarAction(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarAction
-
         try {
-            String sqlinsert = "insert into pescador "
-                    + "(municipio,nome,apelido,naturalidade,"
-                    + "sexo,idade,atividade_principal,atividade_secundaria,"
-                    + "estado_civil,composicao_familiar,escolaridade,pq_parou,"
-                    + "local_moradia) values ('"+
+            String sqlinsert = "insert into endereco "
+                    + "(municipio,nome_empresa,endereco,fone,pessoa_entrevistada,"
+                    + "funcao,tempo_existencia,criacao,qual_criacao,sempre_fabrica_gelo,"
+                    + "producao_diaria,preco_gelo_saca,preco_gelo_tonelada) values ('"+
                     cbMunicipio.getSelectedItem()+"','"+
-                    tfNomeFabrica.getText()+"','"+
-                    tfFoneFaxFabrica.getText()+"','"+
-                    tfEnderecoFabrica.getText()+"','"+
-                    cbSexo.getSelectedItem()+"',"+
-                    tfIdade.getText()+",'"+
+                    tfNomeEmpresa.getText()+"','"+
+                    tfEndereco.getText()+"','"+
+                    tfFoneFax.getText()+"','"+
+                    tfPessoaEntrevistada.getText()+"','"+
+                    tfFuncao.getText()+"','"+
                     tfTempoExistencia.getText()+"','"+
-                    tfAtividadeSecundaria.getText()+"','"+
-                    "')";
+                    cbFoi.getSelectedItem()+"','"+
+                    tfQualFoi.getText()+"','"+
+                    cbSempreFoi.getSelectedItem()+"','"+
+                    tfProducaoDiaria.getText()+"','"+
+                    tfSaca.getText()+"','"+
+                    tfTonelada.getText()+"')";
 
             //System.out.println(sqlinsert);
             if (conexao.salvar(sqlinsert)) {
                 JOptionPane.showMessageDialog(null,"Cadastrado com sucesso");
                 //agora é hora de atualizar o resultset
-                conexao.execute("select * from pescador");
+                conexao.execute("select * from endereco");
                 conexao.resultSet.first(); //1º registro
                 mostra_dados_atravessador();
             }
@@ -563,9 +550,117 @@ public class fabricaDeGelo extends javax.swing.JFrame {
         }
 }//GEN-LAST:event_CadastrarAction
 
-    private void tfPrecoSacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPrecoSacaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfPrecoSacaActionPerformed
+    private void botao_excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_excluirActionPerformed
+//        String sql;
+//        try {
+//            sql = "select * from atravessador Where cod_atravessador =" + conexao.resultSet.getString("cod_atravessador");
+//            conexao.execute(sql);
+//            conexao.resultSet.first();
+//            String nome = "Deletar o atravessador : "+conexao.resultSet.getString("nome")+" ?";
+//            int opcao_escolhida = JOptionPane.showConfirmDialog(null,nome,"Exclusão ",JOptionPane.YES_NO_OPTION);
+//            if (opcao_escolhida == JOptionPane.YES_OPTION) {
+//                sql = "DELETE FROM atravessador Where cod_atravessador ="+conexao.resultSet.getString("cod_atravessador");
+//                if (conexao.salvar(sql)) {
+//                    JOptionPane.showMessageDialog(null,"Exclusão realizada com sucesso");
+//                    //atualiza o ResultSet
+//                    conexao.execute("select * from atravessador");
+//                    conexao.resultSet.first();
+//                    mostra_dados_atravessador();
+//                }
+//            } else{
+//                conexao.execute("select * from atravessador");
+//                conexao.resultSet.first();
+//                mostra_dados_atravessador();
+//            }
+//
+//        } catch (SQLException ex) {
+//            System.out.println("Erro ao tentar excluir "+ex);
+//        }
+}//GEN-LAST:event_botao_excluirActionPerformed
+
+    private void botao_novoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_novoActionPerformed
+        limpar();
+}//GEN-LAST:event_botao_novoActionPerformed
+
+    private void botao_primeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_primeiroActionPerformed
+        try {
+            conexao.resultSet.first();
+            mostra_dados_atravessador();
+            navega = 1;
+
+        }catch (SQLException ex) {
+            Logger.getLogger(fabricaDeGelo_.class.getName()).log(Level.SEVERE, null, ex);
+        }
+}//GEN-LAST:event_botao_primeiroActionPerformed
+
+    private void botao_anteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_anteriorActionPerformed
+        anterior();
+        mostra_dados_atravessador();
+        navega = 1;
+}//GEN-LAST:event_botao_anteriorActionPerformed
+
+    private void botao_proximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_proximoActionPerformed
+        proximo();
+        mostra_dados_atravessador();
+        navega = 2;
+}//GEN-LAST:event_botao_proximoActionPerformed
+
+    private void botao_ultimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_ultimoActionPerformed
+        try {
+            conexao.resultSet.last();
+            mostra_dados_atravessador();
+            navega = 2;
+
+        }catch (SQLException ex) {
+            Logger.getLogger(fabricaDeGelo_.class.getName()).log(Level.SEVERE, null, ex);
+        }
+}//GEN-LAST:event_botao_ultimoActionPerformed
+
+    private void botao_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_alterarActionPerformed
+//        try{
+//            String sql ="UPDATE atravessador SET "+
+//                    "definicao = '"+getDefinicao()+"',"+
+//                    "municipio = '"+cbMunicipio.getSelectedItem()+"',"+
+//                    "nome = '"+tfNome.getText()+"',"+
+//                    "apelido = '"+ tfApelido.getText() +"',"+
+//                    "naturalidade = '"+ tfNaturalidade.getText() +"',"+
+//                    "local_moradia = '"+ cbLocalMoradia.getSelectedItem() +"',"+
+//                    "sexo = '"+ cbFoi.getSelectedItem() +"',"+
+//                    "idade = '"+ tfPessoaEntrevistada.getText() +"',"+
+//                    "atividade_principal = '"+ cbAtividadePrincipal.getSelectedItem() +"',"+
+//                    "atividade_secundaria = '"+ tfProducaoDiaria.getText() +"',"+
+//                    "estado_civil = '"+ cbEstadoCivil.getSelectedItem() +"',"+
+//                    "composicao_familiar = '"+ tfComposicaoFamiliar.getText() +"',"+
+//                    "escolaridade = '"+ cbSempreFoi.getSelectedItem() +"',"+
+//                    "pq_parou = '"+ tfPqParou.getText() +"' "+
+//
+//
+//                    "where cod_atravessador = "+conexao.resultSet.getString("cod_atravessador");
+//
+//            System.out.println(sql);
+//            if (conexao.update(sql)){
+//                JOptionPane.showMessageDialog(null,"Alterado com sucesso");
+//                //Atualiza Resultset
+//                conexao.execute("select * from atravessador");
+//                conexao.resultSet.next();
+//                mostra_dados_atravessador();
+//            }
+//
+//
+//        }catch (Exception e){
+//            System.out.println(e + " Erro no botão alterar");
+//        }
+}//GEN-LAST:event_botao_alterarActionPerformed
+
+    private void cbFoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFoiActionPerformed
+       if (cbFoi.getSelectedIndex() == 3) {
+           tfQualFoi.setEditable(true);
+       } else {
+           tfQualFoi.setEditable(false);
+           tfQualFoi.setText("");
+       }
+
+    }//GEN-LAST:event_cbFoiActionPerformed
 
     /**
     * @param args the command line arguments
@@ -580,6 +675,7 @@ public class fabricaDeGelo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cadastrar;
+    private javax.swing.JPanel TITULO;
     private javax.swing.JButton botao_alterar;
     private javax.swing.JButton botao_anterior;
     private javax.swing.JButton botao_excluir;
@@ -587,11 +683,10 @@ public class fabricaDeGelo extends javax.swing.JFrame {
     private javax.swing.JButton botao_primeiro;
     private javax.swing.JButton botao_proximo;
     private javax.swing.JButton botao_ultimo;
-    private javax.swing.JComboBox cbEscolaridade;
+    private javax.swing.JComboBox cbFoi;
     private javax.swing.JComboBox cbMunicipio;
-    private javax.swing.JComboBox cbSexo;
+    private javax.swing.JComboBox cbSempreFoi;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -603,34 +698,37 @@ public class fabricaDeGelo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lb_pescador;
-    private javax.swing.JTextField tfAtividadeSecundaria;
-    private javax.swing.JTextField tfEnderecoFabrica;
-    private javax.swing.JTextField tfFoneFaxFabrica;
-    private javax.swing.JTextField tfFuncaoFabrica;
-    private javax.swing.JTextField tfIdade;
-    private javax.swing.JTextField tfNomeFabrica;
-    private javax.swing.JTextField tfPrecoSaca;
-    private javax.swing.JTextField tfPrecoTonelada;
-    private javax.swing.JTextField tfQualFabrica;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jp1;
+    private javax.swing.JPanel jp2;
+    private javax.swing.JPanel jp3;
+    private javax.swing.JPanel jp4;
+    private javax.swing.JPanel jp5;
+    private javax.swing.JTextField tfEndereco;
+    private javax.swing.JTextField tfFoneFax;
+    private javax.swing.JTextField tfFuncao;
+    private javax.swing.JTextField tfNomeEmpresa;
+    private javax.swing.JTextField tfPessoaEntrevistada;
+    private javax.swing.JTextField tfProducaoDiaria;
+    private javax.swing.JTextField tfQualFoi;
+    private javax.swing.JTextField tfSaca;
     private javax.swing.JTextField tfTempoExistencia;
+    private javax.swing.JTextField tfTonelada;
     // End of variables declaration//GEN-END:variables
 
 
     private void mostra_dados_atravessador(){
         try {
-            tfNomeFabrica.setText(conexao.resultSet.getString("nome"));
-            tfFoneFaxFabrica.setText(conexao.resultSet.getString("apelido"));
-            tfEnderecoFabrica.setText(conexao.resultSet.getString("naturalidade"));
-            tfIdade.setText(conexao.resultSet.getString("idade"));
+            tfNomeEmpresa.setText(conexao.resultSet.getString("nome"));
+            tfFoneFax.setText(conexao.resultSet.getString("apelido"));
+            tfEndereco.setText(conexao.resultSet.getString("naturalidade"));
+            tfPessoaEntrevistada.setText(conexao.resultSet.getString("idade"));
             tfTempoExistencia.setText(conexao.resultSet.getString("atividade_principal"));
-            tfAtividadeSecundaria.setText(conexao.resultSet.getString("atividade_secundaria"));
+            tfProducaoDiaria.setText(conexao.resultSet.getString("atividade_secundaria"));
            
             
 
@@ -665,6 +763,22 @@ public class fabricaDeGelo extends javax.swing.JFrame {
                 } catch (SQLException ex1) {
                     Logger.getLogger(fabricaDeGelo.class.getName()).log(Level.SEVERE, null, ex1);
                 }
+    }
+
+    private void limpar() {
+                    cbMunicipio.setSelectedIndex(0);
+                    tfNomeEmpresa.setText("");
+                    tfEndereco.setText("");
+                    tfFoneFax.setText("");
+                    tfPessoaEntrevistada.setText("");
+                    tfFuncao.setText("");
+                    tfTempoExistencia.setText("");
+                    cbFoi.setSelectedIndex(0);
+                    tfQualFoi.setText("");
+                    cbSempreFoi.setSelectedIndex(0);
+                    tfProducaoDiaria.setText("");
+                    tfSaca.setText("");
+                    tfTonelada.setText("");
     }
 
 }
