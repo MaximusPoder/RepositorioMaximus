@@ -262,7 +262,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
         ckbTipoOutros = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Questionário Atravessador");
+        setTitle("Questionário Dono do Barco");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
                 fechar_janela(evt);
@@ -747,7 +747,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
 
         jLabel66.setText("Outros.:");
 
-        jLabel67.setText("Custo.:");
+        jLabel67.setText("Custo/Unidade.:");
 
         jLabel70.setText("Tipo.:");
 
@@ -840,7 +840,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
 
         jLabel73.setText("Quais os gastos com material utilizado na atividade (POR ANO).");
 
-        jLabel74.setText("Custo.:");
+        jLabel74.setText("Custo/Unidade.:");
 
         jLabel75.setText("Tipo.:");
 
@@ -1242,8 +1242,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(tfCustoCusto)
                                     .addComponent(tfOutroCusto, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(tfOutrosGastos))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 368, Short.MAX_VALUE)))
+                            .addComponent(tfOutrosGastos))))
                 .addGap(216, 216, 216))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -1297,7 +1296,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                                     .addComponent(tfCustoCusto1)
                                     .addComponent(tfOutroCusto1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(tfOutrosGastos1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 368, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 330, Short.MAX_VALUE)))
                 .addGap(216, 216, 216))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
