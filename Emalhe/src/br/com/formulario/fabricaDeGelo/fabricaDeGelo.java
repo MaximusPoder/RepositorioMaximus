@@ -22,8 +22,8 @@ public class fabricaDeGelo extends javax.swing.JFrame {
 
     public fabricaDeGelo() {
         initComponents(); //Inicializa os componentes da tela
-//        conexao = new Conexao();
-//        conexao.conecta("emalhe");
+        conexao = new Conexao();
+        conexao.conecta("emalhe");
               
         //Insere nomes do município no cbMunicipio
         try {
@@ -36,7 +36,7 @@ public class fabricaDeGelo extends javax.swing.JFrame {
         }
 
         //inicia a conexão com o bd do formulário
-        conexao.execute("select * from pescador");
+        conexao.execute("select * from fabrica_gelo");
 
         try {
             conexao.resultSet.first();
@@ -517,7 +517,7 @@ public class fabricaDeGelo extends javax.swing.JFrame {
 
     private void CadastrarAction(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarAction
         try {
-            String sqlinsert = "insert into endereco "
+            String sqlinsert = "insert into fabrica_gelo "
                     + "(municipio,nome_empresa,endereco,fone,pessoa_entrevistada,"
                     + "funcao,tempo_existencia,criacao,qual_criacao,sempre_fabrica_gelo,"
                     + "producao_diaria,preco_gelo_saca,preco_gelo_tonelada) values ('"+
@@ -539,7 +539,7 @@ public class fabricaDeGelo extends javax.swing.JFrame {
             if (conexao.salvar(sqlinsert)) {
                 JOptionPane.showMessageDialog(null,"Cadastrado com sucesso");
                 //agora é hora de atualizar o resultset
-                conexao.execute("select * from endereco");
+                conexao.execute("select * from fabrica_gelo");
                 conexao.resultSet.first(); //1º registro
                 mostra_dados_atravessador();
             }
@@ -551,31 +551,31 @@ public class fabricaDeGelo extends javax.swing.JFrame {
 }//GEN-LAST:event_CadastrarAction
 
     private void botao_excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_excluirActionPerformed
-//        String sql;
-//        try {
-//            sql = "select * from atravessador Where cod_atravessador =" + conexao.resultSet.getString("cod_atravessador");
-//            conexao.execute(sql);
-//            conexao.resultSet.first();
-//            String nome = "Deletar o atravessador : "+conexao.resultSet.getString("nome")+" ?";
-//            int opcao_escolhida = JOptionPane.showConfirmDialog(null,nome,"Exclusão ",JOptionPane.YES_NO_OPTION);
-//            if (opcao_escolhida == JOptionPane.YES_OPTION) {
-//                sql = "DELETE FROM atravessador Where cod_atravessador ="+conexao.resultSet.getString("cod_atravessador");
-//                if (conexao.salvar(sql)) {
-//                    JOptionPane.showMessageDialog(null,"Exclusão realizada com sucesso");
-//                    //atualiza o ResultSet
-//                    conexao.execute("select * from atravessador");
-//                    conexao.resultSet.first();
-//                    mostra_dados_atravessador();
-//                }
-//            } else{
-//                conexao.execute("select * from atravessador");
-//                conexao.resultSet.first();
-//                mostra_dados_atravessador();
-//            }
-//
-//        } catch (SQLException ex) {
-//            System.out.println("Erro ao tentar excluir "+ex);
-//        }
+        String sql;
+        try {
+            sql = "select * from fabrica_gelo Where cod_fabrica_gelo =" + conexao.resultSet.getString("cod_fabrica_gelo");
+            conexao.execute(sql);
+            conexao.resultSet.first();
+            String nome = "Deletar a Empresa : "+conexao.resultSet.getString("nome_empresa")+" ?";
+            int opcao_escolhida = JOptionPane.showConfirmDialog(null,nome,"Exclusão ",JOptionPane.YES_NO_OPTION);
+            if (opcao_escolhida == JOptionPane.YES_OPTION) {
+                sql = "DELETE FROM atravessador Where cod_fabrica_gelo ="+conexao.resultSet.getString("cod_fabrica_gelo");
+                if (conexao.salvar(sql)) {
+                    JOptionPane.showMessageDialog(null,"Exclusão realizada com sucesso");
+                    //atualiza o ResultSet
+                    conexao.execute("select * from fabrica_gelo");
+                    conexao.resultSet.first();
+                    mostra_dados_atravessador();
+                }
+            } else{
+                conexao.execute("select * from fabrica_gelo");
+                conexao.resultSet.first();
+                mostra_dados_atravessador();
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Erro ao tentar excluir "+ex);
+        }
 }//GEN-LAST:event_botao_excluirActionPerformed
 
     private void botao_novoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_novoActionPerformed
@@ -589,7 +589,7 @@ public class fabricaDeGelo extends javax.swing.JFrame {
             navega = 1;
 
         }catch (SQLException ex) {
-            Logger.getLogger(fabricaDeGelo_.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(fabricaDeGelo.class.getName()).log(Level.SEVERE, null, ex);
         }
 }//GEN-LAST:event_botao_primeiroActionPerformed
 
@@ -612,48 +612,47 @@ public class fabricaDeGelo extends javax.swing.JFrame {
             navega = 2;
 
         }catch (SQLException ex) {
-            Logger.getLogger(fabricaDeGelo_.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(fabricaDeGelo.class.getName()).log(Level.SEVERE, null, ex);
         }
 }//GEN-LAST:event_botao_ultimoActionPerformed
 
     private void botao_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_alterarActionPerformed
-//        try{
-//            String sql ="UPDATE atravessador SET "+
-//                    "definicao = '"+getDefinicao()+"',"+
-//                    "municipio = '"+cbMunicipio.getSelectedItem()+"',"+
-//                    "nome = '"+tfNome.getText()+"',"+
-//                    "apelido = '"+ tfApelido.getText() +"',"+
-//                    "naturalidade = '"+ tfNaturalidade.getText() +"',"+
-//                    "local_moradia = '"+ cbLocalMoradia.getSelectedItem() +"',"+
-//                    "sexo = '"+ cbFoi.getSelectedItem() +"',"+
-//                    "idade = '"+ tfPessoaEntrevistada.getText() +"',"+
-//                    "atividade_principal = '"+ cbAtividadePrincipal.getSelectedItem() +"',"+
-//                    "atividade_secundaria = '"+ tfProducaoDiaria.getText() +"',"+
-//                    "estado_civil = '"+ cbEstadoCivil.getSelectedItem() +"',"+
-//                    "composicao_familiar = '"+ tfComposicaoFamiliar.getText() +"',"+
-//                    "escolaridade = '"+ cbSempreFoi.getSelectedItem() +"',"+
-//                    "pq_parou = '"+ tfPqParou.getText() +"' "+
-//
-//
-//                    "where cod_atravessador = "+conexao.resultSet.getString("cod_atravessador");
-//
-//            System.out.println(sql);
-//            if (conexao.update(sql)){
-//                JOptionPane.showMessageDialog(null,"Alterado com sucesso");
-//                //Atualiza Resultset
-//                conexao.execute("select * from atravessador");
-//                conexao.resultSet.next();
-//                mostra_dados_atravessador();
-//            }
-//
-//
-//        }catch (Exception e){
-//            System.out.println(e + " Erro no botão alterar");
-//        }
+        try{
+            String sql ="UPDATE fabrica_gelo SET "+
+                    "municipio = '"+cbMunicipio.getSelectedItem()+"',"+
+                    "nome_empresa = '"+tfNomeEmpresa.getText()+"',"+
+                    "endereco = '"+tfEndereco.getText()+"',"+
+                    "fone = '"+tfFoneFax.getText()+"',"+
+                    "pessoa_entrevistada = '"+tfPessoaEntrevistada.getText()+"',"+
+                    "funcao = '"+tfFuncao.getText()+"',"+
+                    "tempo_existencia = '"+tfTempoExistencia.getText()+"',"+
+                    "criacao = '"+cbFoi.getSelectedItem()+"',"+
+                    "qual_criacao = '"+tfQualFoi.getText()+"',"+
+                    "sempre_fabrica_gelo = '"+cbSempreFoi.getSelectedItem()+"',"+
+                    "producao_diaria = '"+ tfProducaoDiaria.getText() +"',"+
+                    "preco_gelo_saca = '"+tfSaca.getText()+"',"+
+                    "preco_gelo_tonelada = '"+tfTonelada.getText()+"' "+
+
+
+                    "where cod_fabrica_gelo = "+conexao.resultSet.getString("cod_fabrica_gelo");
+
+            System.out.println(sql);
+            if (conexao.update(sql)){
+                JOptionPane.showMessageDialog(null,"Alterado com sucesso");
+                //Atualiza Resultset
+                conexao.execute("select * from fabrica_gelo");
+                conexao.resultSet.next();
+                mostra_dados_atravessador();
+            }
+
+
+        }catch (Exception e){
+            System.out.println(e + " Erro no botão alterar");
+        }
 }//GEN-LAST:event_botao_alterarActionPerformed
 
     private void cbFoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFoiActionPerformed
-       if (cbFoi.getSelectedIndex() == 3) {
+       if (cbFoi.getSelectedIndex() == 2) {
            tfQualFoi.setEditable(true);
        } else {
            tfQualFoi.setEditable(false);
@@ -723,16 +722,20 @@ public class fabricaDeGelo extends javax.swing.JFrame {
 
     private void mostra_dados_atravessador(){
         try {
-            tfNomeEmpresa.setText(conexao.resultSet.getString("nome"));
-            tfFoneFax.setText(conexao.resultSet.getString("apelido"));
-            tfEndereco.setText(conexao.resultSet.getString("naturalidade"));
-            tfPessoaEntrevistada.setText(conexao.resultSet.getString("idade"));
-            tfTempoExistencia.setText(conexao.resultSet.getString("atividade_principal"));
-            tfProducaoDiaria.setText(conexao.resultSet.getString("atividade_secundaria"));
+            cbMunicipio.setSelectedItem(conexao.resultSet.getString("municipio"));
+            tfNomeEmpresa.setText(conexao.resultSet.getString("nome_empresa"));
+            tfEndereco.setText(conexao.resultSet.getString("endereco"));
+            tfFoneFax.setText(conexao.resultSet.getString("fone"));
+            tfPessoaEntrevistada.setText(conexao.resultSet.getString("pessoa_entrevistada"));
+            tfFuncao.setText(conexao.resultSet.getString("funcao"));
+            tfTempoExistencia.setText(conexao.resultSet.getString("tempo_existencia"));
+            cbFoi.setSelectedItem(conexao.resultSet.getString("criacao"));
+            tfQualFoi.setText(conexao.resultSet.getString("qual_criacao"));
+            cbSempreFoi.setSelectedItem(conexao.resultSet.getString("sempre_fabrica_gelo"));
+            tfProducaoDiaria.setText(conexao.resultSet.getString("producao_diaria"));
+            tfSaca.setText(conexao.resultSet.getString("preco_gelo_saca"));
+            tfTonelada.setText(conexao.resultSet.getString("preco_gelo_tonelada"));
            
-            
-
-
         }catch (SQLException ex) {
             if (navega == 1){
                 JOptionPane.showMessageDialog(null,"Você já esta no primeiro registro");
