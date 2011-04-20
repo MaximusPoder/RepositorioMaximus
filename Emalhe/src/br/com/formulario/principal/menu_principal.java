@@ -5,6 +5,7 @@ import br.com.caminhoneiro.*;
 import br.com.donoDoBarco.*;
 import br.com.formulario.listas.*;
 import br.com.formulario.atravessador.*;
+import br.com.formulario.fabricaDeGelo.fabricaDeGelo;
 import br.com.formulario.mercadoFeira.*;
 import br.com.formulario.pescador.*;
 import javax.swing.UIManager;
@@ -95,6 +96,10 @@ public class menu_principal extends javax.swing.JFrame {
         artedepesca = new javax.swing.JButton();
         jPanel13 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
+        jPanel15 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -132,7 +137,7 @@ public class menu_principal extends javax.swing.JFrame {
 
         jPanel8.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel1.setForeground(new java.awt.Color(0, 102, 102));
         jLabel1.setText("Formulário Atravessador ");
 
@@ -189,7 +194,7 @@ public class menu_principal extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHEAST;
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 5);
         getContentPane().add(botao_sair, gridBagConstraints);
@@ -232,7 +237,7 @@ public class menu_principal extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
         jPanel2.add(btCaminhoneiroPercepcaoPerspectiva, gridBagConstraints);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel2.setForeground(new java.awt.Color(0, 0, 153));
         jLabel2.setText("Formulário Caminhoneiro");
 
@@ -305,7 +310,7 @@ public class menu_principal extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
         jPanel3.add(jButton1, gridBagConstraints);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel3.setForeground(new java.awt.Color(153, 0, 102));
         jLabel3.setText("Formulário Dono do Barco ");
 
@@ -381,7 +386,7 @@ public class menu_principal extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
         jPanel4.add(jButton6, gridBagConstraints);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel4.setText("Formulário Mercado Feira ");
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
@@ -456,7 +461,7 @@ public class menu_principal extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
         jPanel5.add(jButton3, gridBagConstraints);
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel5.setForeground(new java.awt.Color(153, 153, 0));
         jLabel5.setText("Formulário pescador principal ");
 
@@ -508,7 +513,7 @@ public class menu_principal extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
         jPanel6.add(botao_cadastrar_economia, gridBagConstraints);
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel6.setForeground(new java.awt.Color(204, 0, 0));
         jLabel6.setText("Formulário Empresa");
 
@@ -582,7 +587,7 @@ public class menu_principal extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
         jPanel7.add(artedepesca, gridBagConstraints);
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel7.setText("Listas");
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
@@ -616,6 +621,40 @@ public class menu_principal extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 0);
         getContentPane().add(jPanel7, gridBagConstraints);
+
+        jPanel15.setLayout(new java.awt.GridBagLayout());
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 51, 153));
+        jLabel8.setText("Formulário Fabrica Gêlo");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
+        jPanel15.add(jLabel8, gridBagConstraints);
+
+        jButton7.setText("Cadastrar Fabrica e Gêlo");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
+        jPanel15.add(jButton7, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 5);
+        getContentPane().add(jPanel15, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        getContentPane().add(jSeparator1, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -707,6 +746,10 @@ public class menu_principal extends javax.swing.JFrame {
        new atravessador3().setVisible(true);
     }//GEN-LAST:event_perpectivasAtravessadorActionPerformed
 
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+       new fabricaDeGelo().setVisible(true);
+    }//GEN-LAST:event_jButton7ActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -739,6 +782,7 @@ public class menu_principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -746,12 +790,14 @@ public class menu_principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -760,6 +806,7 @@ public class menu_principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton perpectivasAtravessador;
     // End of variables declaration//GEN-END:variables
 
