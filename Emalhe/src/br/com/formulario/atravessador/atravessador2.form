@@ -34,17 +34,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="698" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="700" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Component id="jScrollPane1" alignment="0" pref="698" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" alignment="0" pref="700" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="743" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="750" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Component id="jScrollPane1" alignment="0" pref="743" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" alignment="0" pref="750" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -53,7 +53,7 @@
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <Properties>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-          <Color id="Default Cursor"/>
+          <Color id="Cursor padr&#xe3;o"/>
         </Property>
       </Properties>
       <AuxValues>
@@ -162,41 +162,6 @@
                                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel58" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace min="10" pref="10" max="10" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="ckbEmpresaP" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="ckbPescadorP" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="ckbOutroAtravessadorP" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="ckbDonoBarcoP" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="ckbMercadoFeiraP" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="ckbCooperativaP" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                              <Component id="jSeparator2" min="-2" pref="14" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="ckbEmpresaG" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="ckbPescadorG" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="ckbOutroAtravessadorG" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="ckbDonoBarcoG" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="ckbMercadoFeiraG" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="ckbCooperativaG" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
                                           <Component id="ckbSempreMesmoFornecedor1" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="ckbSempreMesmoFornecedor2" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -213,6 +178,43 @@
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="ckbFornecedorAumentouSim" min="-2" max="-2" attributes="0"/>
                                           </Group>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="10" pref="10" max="10" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="ckbEmpresaP" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="ckbPescadorP" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="ckbOutroAtravessadorP" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="ckbDonoBarcoP" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="ckbMercadoFeiraP" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="ckbCooperativaP" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                                              <Component id="jSeparator2" min="-2" pref="14" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="ckbEmpresaG" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="ckbPescadorG" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="ckbOutroAtravessadorG" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="ckbDonoBarcoG" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="ckbMercadoFeiraG" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="ckbCooperativaG" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                          <Component id="ckbDeQuemAparece4" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -230,47 +232,8 @@
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jSeparator1" alignment="0" min="-2" pref="581" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel60" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="ckbSoPeixeiInteiro" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jSeparator3" alignment="0" min="-2" pref="581" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="cbEspecieAquisicao" min="-2" pref="182" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="ckbEvisceradoAq" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="ckbSalgadoAq" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="ckbFileAq" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="ckbPostaAq" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="ckbSemCabecaAq" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="ckbOutrosAq" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace pref="219" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -309,19 +272,19 @@
                               </Group>
                               <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jScrollPane32" alignment="0" pref="651" max="32767" attributes="1"/>
+                          <Component id="jScrollPane32" alignment="0" pref="661" max="32767" attributes="1"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="594" max="32767" attributes="0"/>
+                      <EmptySpace pref="608" max="32767" attributes="0"/>
                       <Component id="jToggleButton4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="352" max="32767" attributes="0"/>
+                      <EmptySpace pref="412" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -349,13 +312,13 @@
                           <Component id="ckbOdorAba" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel26" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="261" max="32767" attributes="0"/>
+                      <EmptySpace pref="315" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jSeparator6" pref="642" max="32767" attributes="0"/>
+                              <Component id="jSeparator6" pref="650" max="32767" attributes="0"/>
                               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -404,14 +367,15 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="cliente_pescado_empresa_capital" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cliente_pescado_empresa_municipio" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
                                           <Component id="cliente_pescado_supermercado_municipio" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="cliente_pescado_supermercado_capital" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="cliente_pescado_outro_atravessador" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cliente_pescado_empresa_capital" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cliente_pescado_empresa_municipio" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="cliente_pescado_mercado_feira" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="cliente_pescado_caminhao" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cliente_pescado_outro_atravessador1" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="jSeparator9" min="-2" pref="14" max="-2" attributes="0"/>
@@ -422,6 +386,7 @@
                                           <Component id="cliente_grude_atravessador_outro_municipio" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="cliente_grude_atravessador_municipio" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="cliente_grude_outros" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cliente_pescado_outro_atravessador2" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -430,7 +395,7 @@
                       </Group>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="578" max="32767" attributes="0"/>
+                      <EmptySpace pref="594" max="32767" attributes="0"/>
                       <Component id="btAdiconarJtMercadoCliente" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -438,7 +403,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jScrollPane33" pref="651" max="32767" attributes="1"/>
+                              <Component id="jScrollPane33" pref="661" max="32767" attributes="1"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -452,10 +417,10 @@
                                   <Group type="102" attributes="0">
                                       <Component id="cbProduto" min="-2" pref="117" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="tfProduto" pref="183" max="32767" attributes="0"/>
+                                      <Component id="tfProduto" pref="223" max="32767" attributes="0"/>
                                   </Group>
-                                  <Component id="cbEspecie" alignment="0" pref="307" max="32767" attributes="1"/>
-                                  <Component id="tfCliente" alignment="0" pref="307" max="32767" attributes="1"/>
+                                  <Component id="cbEspecie" alignment="0" pref="346" max="32767" attributes="1"/>
+                                  <Component id="tfCliente" alignment="0" pref="346" max="32767" attributes="1"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
@@ -479,17 +444,17 @@
                       </Group>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="594" max="32767" attributes="0"/>
+                      <EmptySpace pref="608" max="32767" attributes="0"/>
                       <Component id="jToggleButton6" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" pref="651" max="32767" attributes="0"/>
+                      <Component id="jScrollPane2" pref="661" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="594" max="32767" attributes="0"/>
+                      <EmptySpace pref="608" max="32767" attributes="0"/>
                       <Component id="btDeletarJtMercadoCliente" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -507,7 +472,7 @@
                               <Component id="ckbSempreDosMesmos" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="316" max="32767" attributes="0"/>
+                      <EmptySpace pref="409" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -518,19 +483,19 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="botao_salvar_questionario" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jSeparator10" alignment="1" pref="648" max="32767" attributes="0"/>
+                          <Component id="jSeparator10" alignment="1" pref="656" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel72" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="tfQuantasFinanciadas" pref="247" max="32767" attributes="0"/>
+                              <Component id="tfQuantasFinanciadas" pref="263" max="32767" attributes="0"/>
                               <EmptySpace min="-2" pref="343" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel69" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="326" max="-2" attributes="0"/>
+                              <EmptySpace pref="388" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jToggleButton8" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jScrollPane34" alignment="1" pref="648" max="32767" attributes="1"/>
+                          <Component id="jScrollPane34" alignment="1" pref="656" max="32767" attributes="1"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
@@ -567,7 +532,7 @@
                                       <Component id="ckbFinanciarSim" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="158" max="32767" attributes="0"/>
+                              <EmptySpace pref="191" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
@@ -578,9 +543,53 @@
                           <Component id="jToggleButton1" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="btAdicionarespeciesemana" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="jToggleButton3" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jScrollPane31" alignment="1" pref="648" max="32767" attributes="1"/>
+                          <Component id="jScrollPane31" alignment="1" pref="656" max="32767" attributes="1"/>
                       </Group>
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel60" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="ckbSoPeixeiInteiro" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jSeparator3" alignment="0" min="-2" pref="581" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="cbEspecieAquisicao" min="-2" pref="182" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="ckbEvisceradoAq" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="ckbSalgadoAq" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="ckbFileAq" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="ckbPostaAq" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="ckbSemCabecaAq" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="ckbOutrosAq" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace pref="191" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -690,8 +699,8 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="ckbPescadorP" min="-2" max="-2" attributes="0"/>
@@ -706,24 +715,26 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="ckbCooperativaP" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="ckbPescadorG" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="ckbEmpresaG" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="ckbOutroAtravessadorG" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="ckbDonoBarcoG" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="ckbMercadoFeiraG" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="ckbCooperativaG" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="ckbPescadorG" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="ckbEmpresaG" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="ckbOutroAtravessadorG" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="ckbDonoBarcoG" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="ckbMercadoFeiraG" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="ckbCooperativaG" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jSeparator2" alignment="0" max="32767" attributes="1"/>
                           </Group>
-                          <Component id="jSeparator2" alignment="0" min="-2" pref="159" max="-2" attributes="1"/>
                       </Group>
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="tfNumeroFornecedores" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -742,7 +753,9 @@
                       <Component id="ckbSempreMesmoFornecedor2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="ckbMaisBarato3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="ckbDeQuemAparece4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       <Component id="jSeparator3" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       <Component id="jLabel60" min="-2" max="-2" attributes="0"/>
@@ -767,7 +780,7 @@
                           <Component id="ckbSemCabecaAq" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="ckbOutrosAq" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                       <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane31" min="-2" pref="115" max="-2" attributes="0"/>
@@ -883,21 +896,29 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="cliente_grude_atravessador_municipio" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="cliente_grude_atravessador_outro_municipio" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="cliente_grude_empresa_belem" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="cliente_grude_outros" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                              <Component id="jSeparator9" min="-2" pref="207" max="-2" attributes="1"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="cliente_grude_atravessador_municipio" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="cliente_grude_atravessador_outro_municipio" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="cliente_grude_empresa_belem" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="cliente_grude_outros" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="cliente_pescado_outro_atravessador2" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                      <Component id="jSeparator9" min="-2" pref="207" max="-2" attributes="1"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                              <Component id="btAdiconarJtMercadoCliente" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="1">
                               <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
@@ -905,7 +926,7 @@
                               <Component id="cliente_pescado_empresa_municipio" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                               <Component id="cliente_pescado_empresa_capital" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="cliente_pescado_mercado_feira" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="cliente_pescado_supermercado_capital" min="-2" max="-2" attributes="0"/>
@@ -915,10 +936,10 @@
                               <Component id="cliente_pescado_caminhao" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                               <Component id="cliente_pescado_outro_atravessador" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="cliente_pescado_outro_atravessador1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                      <Component id="btAdiconarJtMercadoCliente" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="137" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -1890,7 +1911,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel34">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Adquire o produto sempre dos mesmo pescadores?"/>
+                <Property name="text" type="java.lang.String" value="Sempre vende para os mesmos compradores?"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel35">
@@ -2472,6 +2493,21 @@
             <Component class="javax.swing.JTextField" name="tfOutrosGastos">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="ckbDeQuemAparece4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="De quem aparecer"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="cliente_pescado_outro_atravessador1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="8 Consumidor local"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="cliente_pescado_outro_atravessador2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="5 Consumidor local"/>
               </Properties>
             </Component>
           </SubComponents>
