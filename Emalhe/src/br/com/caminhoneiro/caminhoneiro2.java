@@ -247,6 +247,7 @@ public class caminhoneiro2 extends javax.swing.JFrame {
         tfValor = new JMoneyField();
         jLabel74 = new javax.swing.JLabel();
         tfQtdFrete = new JIntField();
+        cliente_pescado_consumidor_local = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -259,7 +260,7 @@ public class caminhoneiro2 extends javax.swing.JFrame {
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel41.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel41.setFont(new java.awt.Font("Tahoma", 1, 13));
         jLabel41.setForeground(new java.awt.Color(0, 102, 102));
         jLabel41.setText("Questionário Caminhoneiro");
 
@@ -451,7 +452,7 @@ public class caminhoneiro2 extends javax.swing.JFrame {
 
         ckbMaisBarato3.setText("De quem vende mais barato");
 
-        jLabel60.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel60.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel60.setText("2 - Aquisição (comercialização):");
 
         jLabel7.setText("Só vende o peixe inteiro?");
@@ -620,7 +621,7 @@ public class caminhoneiro2 extends javax.swing.JFrame {
 
         cliente_pescado_caminhao.setText("6 Caminhão");
 
-        cliente_pescado_outro_atravessador.setText("7 Outro Atravessdor");
+        cliente_pescado_outro_atravessador.setText("8 Outro Atravessdor");
 
         cliente_grude_atravessador_municipio.setText("1 Atravessador do município");
 
@@ -746,7 +747,7 @@ public class caminhoneiro2 extends javax.swing.JFrame {
             }
         });
 
-        cbGastos.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Combustível", "Lubrificante", "Gelo", "Rancho", "Pagamento de pescador - Vale", "Frete", "Carregador do pescado", "Gelo para transporte", "Outro" }));
+        cbGastos.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Combustível", "Lubrificante", "Gelo", "Carregador do pescado", "Manutenção do veículo", "Outro" }));
         cbGastos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbGastosActionPerformed(evt);
@@ -884,6 +885,8 @@ public class caminhoneiro2 extends javax.swing.JFrame {
         jLabel73.setText("Valor R$.:");
 
         jLabel74.setText("Quantos fretes faz por semana?");
+
+        cliente_pescado_consumidor_local.setText("7 Consumidor Local");
 
         javax.swing.GroupLayout jpPescadoSubprodutoLayout = new javax.swing.GroupLayout(jpPescadoSubproduto);
         jpPescadoSubproduto.setLayout(jpPescadoSubprodutoLayout);
@@ -1053,7 +1056,7 @@ public class caminhoneiro2 extends javax.swing.JFrame {
                         .addComponent(ckbSemCabecaAq)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ckbOutrosAq)))
-                .addContainerGap(219, Short.MAX_VALUE))
+                .addContainerGap(291, Short.MAX_VALUE))
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1082,16 +1085,16 @@ public class caminhoneiro2 extends javax.swing.JFrame {
                                     .addComponent(tfTipoGrude, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(tfPrecoGrude, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE))))
                         .addGap(3, 3, 3))
-                    .addComponent(jScrollPane32, javax.swing.GroupLayout.DEFAULT_SIZE, 651, Short.MAX_VALUE))
+                    .addComponent(jScrollPane32, javax.swing.GroupLayout.DEFAULT_SIZE, 661, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                .addContainerGap(594, Short.MAX_VALUE)
+                .addContainerGap(608, Short.MAX_VALUE)
                 .addComponent(jToggleButton4)
                 .addContainerGap())
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel20)
-                .addContainerGap(352, Short.MAX_VALUE))
+                .addContainerGap(412, Short.MAX_VALUE))
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1115,12 +1118,12 @@ public class caminhoneiro2 extends javax.swing.JFrame {
                     .addComponent(ckbTamanhoAba)
                     .addComponent(ckbOdorAba)
                     .addComponent(jLabel26))
-                .addContainerGap(261, Short.MAX_VALUE))
+                .addContainerGap(315, Short.MAX_VALUE))
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                        .addComponent(jSeparator6, javax.swing.GroupLayout.DEFAULT_SIZE, 642, Short.MAX_VALUE)
+                        .addComponent(jSeparator6, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
                         .addGap(21, 21, 21))
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
@@ -1160,14 +1163,15 @@ public class caminhoneiro2 extends javax.swing.JFrame {
                             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cliente_pescado_supermercado_municipio)
-                                    .addComponent(cliente_pescado_supermercado_capital)
-                                    .addComponent(cliente_pescado_outro_atravessador)
                                     .addComponent(cliente_pescado_empresa_capital)
                                     .addComponent(cliente_pescado_empresa_municipio)
+                                    .addComponent(jLabel32)
+                                    .addComponent(cliente_pescado_supermercado_municipio)
+                                    .addComponent(cliente_pescado_supermercado_capital)
                                     .addComponent(cliente_pescado_mercado_feira)
                                     .addComponent(cliente_pescado_caminhao)
-                                    .addComponent(jLabel32))
+                                    .addComponent(cliente_pescado_consumidor_local)
+                                    .addComponent(cliente_pescado_outro_atravessador))
                                 .addGap(18, 18, 18)
                                 .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1179,14 +1183,14 @@ public class caminhoneiro2 extends javax.swing.JFrame {
                                     .addComponent(cliente_grude_outros))))
                         .addGap(35, 35, 35))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                .addContainerGap(578, Short.MAX_VALUE)
+                .addContainerGap(594, Short.MAX_VALUE)
                 .addComponent(btAdiconarJtMercadoCliente)
                 .addContainerGap())
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                        .addComponent(jScrollPane33, javax.swing.GroupLayout.DEFAULT_SIZE, 651, Short.MAX_VALUE)
+                        .addComponent(jScrollPane33, javax.swing.GroupLayout.DEFAULT_SIZE, 661, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1198,9 +1202,9 @@ public class caminhoneiro2 extends javax.swing.JFrame {
                             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                 .addComponent(cbProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE))
-                            .addComponent(cbEspecie, 0, 307, Short.MAX_VALUE)
-                            .addComponent(tfCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE))
+                                .addComponent(tfProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE))
+                            .addComponent(cbEspecie, 0, 346, Short.MAX_VALUE)
+                            .addComponent(tfCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btAddFormas)
@@ -1216,15 +1220,15 @@ public class caminhoneiro2 extends javax.swing.JFrame {
                                     .addComponent(tfDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(15, 15, 15))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                .addContainerGap(594, Short.MAX_VALUE)
+                .addContainerGap(608, Short.MAX_VALUE)
                 .addComponent(jToggleButton6)
                 .addContainerGap())
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 651, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 661, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                .addContainerGap(594, Short.MAX_VALUE)
+                .addContainerGap(608, Short.MAX_VALUE)
                 .addComponent(btDeletarJtMercadoCliente)
                 .addContainerGap())
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
@@ -1238,14 +1242,14 @@ public class caminhoneiro2 extends javax.swing.JFrame {
                         .addComponent(jLabel34)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ckbSempreDosMesmos)))
-                .addContainerGap(316, Short.MAX_VALUE))
+                .addContainerGap(384, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jToggleButton1)
                     .addComponent(btAdicionarespeciesemana)
                     .addComponent(jToggleButton3)
-                    .addComponent(jScrollPane31, javax.swing.GroupLayout.DEFAULT_SIZE, 648, Short.MAX_VALUE))
+                    .addComponent(jScrollPane31, javax.swing.GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE))
                 .addGap(15, 15, 15))
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
@@ -1259,13 +1263,13 @@ public class caminhoneiro2 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tfValor, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel71, javax.swing.GroupLayout.Alignment.LEADING))
-                .addContainerGap(318, Short.MAX_VALUE))
+                .addContainerGap(345, Short.MAX_VALUE))
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel74)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfQtdFrete, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(395, Short.MAX_VALUE))
+                .addContainerGap(432, Short.MAX_VALUE))
             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1274,12 +1278,12 @@ public class caminhoneiro2 extends javax.swing.JFrame {
                         .addComponent(botao_alterar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botao_salvar_questionario))
-                    .addComponent(jSeparator10, javax.swing.GroupLayout.DEFAULT_SIZE, 648, Short.MAX_VALUE)
+                    .addComponent(jSeparator10, javax.swing.GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addComponent(jLabel69)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 326, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 388, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jToggleButton8)
-                    .addComponent(jScrollPane34, javax.swing.GroupLayout.DEFAULT_SIZE, 648, Short.MAX_VALUE)
+                    .addComponent(jScrollPane34, javax.swing.GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel37)
@@ -1301,7 +1305,7 @@ public class caminhoneiro2 extends javax.swing.JFrame {
                                     .addComponent(tfCustoCusto)
                                     .addComponent(tfOutroCusto, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(tfOutrosGastos))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 164, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 191, Short.MAX_VALUE)))
                 .addGap(15, 15, 15))
         );
         jpPescadoSubprodutoLayout.setVerticalGroup(
@@ -1564,27 +1568,31 @@ public class caminhoneiro2 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel31)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                        .addComponent(jLabel33)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cliente_grude_atravessador_municipio)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cliente_grude_atravessador_outro_municipio)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cliente_grude_empresa_belem)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cliente_grude_outros))
-                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                                .addComponent(jLabel33)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cliente_grude_atravessador_municipio)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cliente_grude_atravessador_outro_municipio)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cliente_grude_empresa_belem)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cliente_grude_outros))
+                            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(14, 14, 14)
+                        .addComponent(btAdiconarJtMercadoCliente))
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addComponent(jLabel32)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cliente_pescado_empresa_municipio)
                         .addGap(5, 5, 5)
                         .addComponent(cliente_pescado_empresa_capital)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(cliente_pescado_mercado_feira)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(cliente_pescado_supermercado_capital)
@@ -1592,10 +1600,10 @@ public class caminhoneiro2 extends javax.swing.JFrame {
                         .addComponent(cliente_pescado_supermercado_municipio)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cliente_pescado_caminhao)
-                        .addGap(5, 5, 5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cliente_pescado_consumidor_local, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(cliente_pescado_outro_atravessador)))
-                .addGap(14, 14, 14)
-                .addComponent(btAdiconarJtMercadoCliente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1693,15 +1701,15 @@ public class caminhoneiro2 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 698, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 698, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 743, Short.MAX_VALUE)
+            .addGap(0, 750, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 743, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE))
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
@@ -1933,6 +1941,7 @@ public class caminhoneiro2 extends javax.swing.JFrame {
     private javax.swing.JCheckBox cliente_grude_empresa_belem;
     private javax.swing.JCheckBox cliente_grude_outros;
     private javax.swing.JCheckBox cliente_pescado_caminhao;
+    private javax.swing.JCheckBox cliente_pescado_consumidor_local;
     private javax.swing.JCheckBox cliente_pescado_empresa_capital;
     private javax.swing.JCheckBox cliente_pescado_empresa_municipio;
     private javax.swing.JCheckBox cliente_pescado_mercado_feira;
@@ -3056,7 +3065,7 @@ public class caminhoneiro2 extends javax.swing.JFrame {
                     + "cliente_pescado_supermercado_capital,cliente_pescado_supermercado_municipio,"
                     + "cliente_pescado_caminhao,cliente_pescado_outro_caminhoneiro,"
                     + "cliente_grude_caminhoneiro_municipio,cliente_grude_caminhoneiro_outro_municipio,"
-                    + "cliente_grude_empresa_belem,cliente_grude_outros) values ("+
+                    + "cliente_grude_empresa_belem,cliente_grude_outros,cliente_pescado_consumidor_local) values ("+
                     codigo+",'"+
                     cbMercado.getSelectedItem()+"','"+
                     util.checarCkb(cliente_pescado_empresa_municipio)+"','"+
@@ -3069,7 +3078,8 @@ public class caminhoneiro2 extends javax.swing.JFrame {
                     util.checarCkb(cliente_grude_atravessador_municipio)+"','"+
                     util.checarCkb(cliente_grude_atravessador_outro_municipio)+"','"+
                     util.checarCkb(cliente_grude_empresa_belem)+"','"+
-                    util.checarCkb(cliente_grude_outros)+"')";
+                    util.checarCkb(cliente_grude_outros)+"','"+
+                    util.checarCkb(cliente_pescado_consumidor_local)+"')";
 
             System.out.println(sqlinsert);
             if (conexao.salvar(sqlinsert)) {
@@ -3117,8 +3127,11 @@ public class caminhoneiro2 extends javax.swing.JFrame {
             if (conexao.resultSet.getString("cliente_pescado_caminhao").equals("1"))
                 pescado = pescado + "6,";
 
-            if (conexao.resultSet.getString("cliente_pescado_outro_caminhoneiro").equals("1"))
+            if (conexao.resultSet.getString("cliente_pescado_consumidor_local").equals("1"))
                 pescado = pescado + "7,";
+
+            if (conexao.resultSet.getString("cliente_pescado_outro_caminhoneiro").equals("1"))
+                pescado = pescado + "8,";
 
             grude = "";
 

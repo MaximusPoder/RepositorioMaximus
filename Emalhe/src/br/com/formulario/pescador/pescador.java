@@ -228,7 +228,7 @@ public class pescador extends javax.swing.JFrame {
 
         lb_pescador.setText("Pescador");
 
-        cbEstadoCivil.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Solteiro", "Casado", "União Estável" }));
+        cbEstadoCivil.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Solteiro", "Casado", "União Estável", "Viúvo" }));
 
         jLabel32.setText("Número de filhos.:");
 

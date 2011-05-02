@@ -372,10 +372,10 @@
                                           <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
                                           <Component id="cliente_pescado_supermercado_municipio" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="cliente_pescado_supermercado_capital" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cliente_pescado_outro_atravessador" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="cliente_pescado_mercado_feira" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="cliente_pescado_caminhao" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cliente_pescado_outro_atravessador1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cliente_pescado_consumidor_local" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cliente_pescado_outro_atravessador" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="jSeparator9" min="-2" pref="14" max="-2" attributes="0"/>
@@ -386,7 +386,6 @@
                                           <Component id="cliente_grude_atravessador_outro_municipio" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="cliente_grude_atravessador_municipio" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="cliente_grude_outros" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cliente_pescado_outro_atravessador2" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -586,7 +585,6 @@
                                       <Component id="ckbOutrosAq" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="191" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -909,8 +907,6 @@
                                       <Component id="cliente_grude_empresa_belem" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="cliente_grude_outros" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="cliente_pescado_outro_atravessador2" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
@@ -934,10 +930,10 @@
                               <Component id="cliente_pescado_supermercado_municipio" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="cliente_pescado_caminhao" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                              <Component id="cliente_pescado_outro_atravessador" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="cliente_pescado_consumidor_local" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="cliente_pescado_outro_atravessador1" min="-2" max="-2" attributes="0"/>
+                              <Component id="cliente_pescado_outro_atravessador" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -1881,7 +1877,7 @@
             </Component>
             <Component class="javax.swing.JCheckBox" name="cliente_pescado_outro_atravessador">
               <Properties>
-                <Property name="text" type="java.lang.String" value="7 Outro Atravessdor"/>
+                <Property name="text" type="java.lang.String" value="8 Outro Atravessdor"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JCheckBox" name="cliente_grude_atravessador_municipio">
@@ -2500,14 +2496,9 @@
                 <Property name="text" type="java.lang.String" value="De quem aparecer"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="cliente_pescado_outro_atravessador1">
+            <Component class="javax.swing.JCheckBox" name="cliente_pescado_consumidor_local">
               <Properties>
-                <Property name="text" type="java.lang.String" value="8 Consumidor local"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="cliente_pescado_outro_atravessador2">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="5 Consumidor local"/>
+                <Property name="text" type="java.lang.String" value="7 Consumidor local"/>
               </Properties>
             </Component>
           </SubComponents>

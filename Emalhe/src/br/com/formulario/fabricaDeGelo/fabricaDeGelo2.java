@@ -1,6 +1,7 @@
 
-package br.com.formulario.atravessador;
+package br.com.formulario.fabricaDeGelo;
 
+import br.com.formulario.atravessador.*;
 import br.com.conexao.Conexao;
 import br.com.util.JDecimal2;
 import br.com.util.JIntField;
@@ -15,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
  * @author MPA
  */
 
-public class atravessador2 extends javax.swing.JFrame {
+public class fabricaDeGelo2 extends javax.swing.JFrame {
 
     /** Creates new form frm_questionario_atravessador */
     private Conexao conexao;
@@ -24,7 +25,7 @@ public class atravessador2 extends javax.swing.JFrame {
     String ItemDoCb;
     private Utilidade util = new Utilidade();
 
-    public atravessador2() {
+    public fabricaDeGelo2() {
         initComponents();
         conexao = new Conexao();
         conexao.conecta("emalhe");
@@ -55,7 +56,7 @@ public class atravessador2 extends javax.swing.JFrame {
         jpPescadoSubproduto = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jLabel41 = new javax.swing.JLabel();
-        cbNomeAtravessador = new javax.swing.JComboBox();
+        cbNomeEmpresa = new javax.swing.JComboBox();
         jLabel8 = new javax.swing.JLabel();
         botao_salvar_questionario = new javax.swing.JButton();
         botao_alterar = new javax.swing.JButton();
@@ -252,9 +253,11 @@ public class atravessador2 extends javax.swing.JFrame {
         tfSempreDosMesmosPq = new javax.swing.JTextField();
         tfOutrosGastos = new javax.swing.JTextField();
         ckbDeQuemAparece4 = new javax.swing.JCheckBox();
-        cliente_pescado_consumidor_local = new javax.swing.JCheckBox();
+        cliente_pescado_outro_atravessador1 = new javax.swing.JCheckBox();
+        cliente_pescado_outro_atravessador2 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Fabrica de Gêlo");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
                 fechar_janela(evt);
@@ -265,9 +268,9 @@ public class atravessador2 extends javax.swing.JFrame {
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel41.setFont(new java.awt.Font("Tahoma", 1, 13));
+        jLabel41.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel41.setForeground(new java.awt.Color(0, 102, 102));
-        jLabel41.setText("Questionário Atravessador");
+        jLabel41.setText("Questionário Fabrica de Gêlo");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -286,13 +289,13 @@ public class atravessador2 extends javax.swing.JFrame {
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
-        cbNomeAtravessador.addActionListener(new java.awt.event.ActionListener() {
+        cbNomeEmpresa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbNomeAtravessadorActionPerformed(evt);
+                cbNomeEmpresaActionPerformed(evt);
             }
         });
 
-        jLabel8.setText("Nome.:");
+        jLabel8.setText("Empresa.:");
 
         botao_salvar_questionario.setText("Salvar");
         botao_salvar_questionario.addActionListener(new java.awt.event.ActionListener() {
@@ -626,7 +629,7 @@ public class atravessador2 extends javax.swing.JFrame {
 
         cliente_pescado_caminhao.setText("6 Caminhão");
 
-        cliente_pescado_outro_atravessador.setText("8 Outro Atravessdor");
+        cliente_pescado_outro_atravessador.setText("7 Outro Atravessdor");
 
         cliente_grude_atravessador_municipio.setText("1 Atravessador do município");
 
@@ -898,7 +901,9 @@ public class atravessador2 extends javax.swing.JFrame {
 
         ckbDeQuemAparece4.setText("De quem aparecer");
 
-        cliente_pescado_consumidor_local.setText("7 Consumidor local");
+        cliente_pescado_outro_atravessador1.setText("8 Consumidor local");
+
+        cliente_pescado_outro_atravessador2.setText("5 Consumidor local");
 
         javax.swing.GroupLayout jpPescadoSubprodutoLayout = new javax.swing.GroupLayout(jpPescadoSubproduto);
         jpPescadoSubproduto.setLayout(jpPescadoSubprodutoLayout);
@@ -912,7 +917,7 @@ public class atravessador2 extends javax.swing.JFrame {
                             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cbNomeAtravessador, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(cbNomeEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel50)
                             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1150,10 +1155,10 @@ public class atravessador2 extends javax.swing.JFrame {
                                     .addComponent(jLabel32)
                                     .addComponent(cliente_pescado_supermercado_municipio)
                                     .addComponent(cliente_pescado_supermercado_capital)
+                                    .addComponent(cliente_pescado_outro_atravessador)
                                     .addComponent(cliente_pescado_mercado_feira)
                                     .addComponent(cliente_pescado_caminhao)
-                                    .addComponent(cliente_pescado_consumidor_local)
-                                    .addComponent(cliente_pescado_outro_atravessador))
+                                    .addComponent(cliente_pescado_outro_atravessador1))
                                 .addGap(18, 18, 18)
                                 .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1162,7 +1167,8 @@ public class atravessador2 extends javax.swing.JFrame {
                                     .addComponent(cliente_grude_empresa_belem)
                                     .addComponent(cliente_grude_atravessador_outro_municipio)
                                     .addComponent(cliente_grude_atravessador_municipio)
-                                    .addComponent(cliente_grude_outros))))
+                                    .addComponent(cliente_grude_outros)
+                                    .addComponent(cliente_pescado_outro_atravessador2))))
                         .addGap(35, 35, 35))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap(594, Short.MAX_VALUE)
@@ -1324,7 +1330,7 @@ public class atravessador2 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(cbNomeAtravessador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbNomeEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel50)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1591,7 +1597,9 @@ public class atravessador2 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(cliente_grude_empresa_belem)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cliente_grude_outros))
+                                .addComponent(cliente_grude_outros)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cliente_pescado_outro_atravessador2))
                             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                 .addGap(8, 8, 8)
                                 .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1611,10 +1619,10 @@ public class atravessador2 extends javax.swing.JFrame {
                         .addComponent(cliente_pescado_supermercado_municipio)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cliente_pescado_caminhao)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cliente_pescado_consumidor_local)
+                        .addGap(5, 5, 5)
+                        .addComponent(cliente_pescado_outro_atravessador)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cliente_pescado_outro_atravessador)))
+                        .addComponent(cliente_pescado_outro_atravessador1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1726,7 +1734,7 @@ public class atravessador2 extends javax.swing.JFrame {
         setBounds((screenSize.width-716)/2, (screenSize.height-788)/2, 716, 788);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cbNomeAtravessadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbNomeAtravessadorActionPerformed
+    private void cbNomeEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbNomeEmpresaActionPerformed
        
         //Pesquisa automática do Combo Box Nome do atravessador
         
@@ -1734,7 +1742,7 @@ public class atravessador2 extends javax.swing.JFrame {
          mostra_dados();
         }inicia_combo = 1;
          
-    }//GEN-LAST:event_cbNomeAtravessadorActionPerformed
+    }//GEN-LAST:event_cbNomeEmpresaActionPerformed
 
     private void fechar_janela(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_fechar_janela
         conexao.desconecta();
@@ -1884,7 +1892,7 @@ public class atravessador2 extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new atravessador2().setVisible(true);
+                new fabricaDeGelo2().setVisible(true);
             }
         });
     }
@@ -1905,7 +1913,7 @@ public class atravessador2 extends javax.swing.JFrame {
     private javax.swing.JComboBox cbEspecieGrude;
     private javax.swing.JComboBox cbGastos;
     private javax.swing.JComboBox cbMercado;
-    private javax.swing.JComboBox cbNomeAtravessador;
+    private javax.swing.JComboBox cbNomeEmpresa;
     private javax.swing.JComboBox cbProduto;
     private javax.swing.JCheckBox ckbAguaSim;
     private javax.swing.JCheckBox ckbConsistenciaCarnePeixe;
@@ -1962,11 +1970,12 @@ public class atravessador2 extends javax.swing.JFrame {
     private javax.swing.JCheckBox cliente_grude_empresa_belem;
     private javax.swing.JCheckBox cliente_grude_outros;
     private javax.swing.JCheckBox cliente_pescado_caminhao;
-    private javax.swing.JCheckBox cliente_pescado_consumidor_local;
     private javax.swing.JCheckBox cliente_pescado_empresa_capital;
     private javax.swing.JCheckBox cliente_pescado_empresa_municipio;
     private javax.swing.JCheckBox cliente_pescado_mercado_feira;
     private javax.swing.JCheckBox cliente_pescado_outro_atravessador;
+    private javax.swing.JCheckBox cliente_pescado_outro_atravessador1;
+    private javax.swing.JCheckBox cliente_pescado_outro_atravessador2;
     private javax.swing.JCheckBox cliente_pescado_supermercado_capital;
     private javax.swing.JCheckBox cliente_pescado_supermercado_municipio;
     private javax.swing.JLabel jLabel1;
@@ -2108,7 +2117,7 @@ public class atravessador2 extends javax.swing.JFrame {
         attjTableAtividadeFamiliar();
         AttjtMercadodeComercializacao();
 
-        String codigo = util.separa(1,cbNomeAtravessador.getSelectedItem().toString());
+        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
         System.out.println(codigo);
         try {
             //Atravessador Moradia
@@ -2391,7 +2400,7 @@ public class atravessador2 extends javax.swing.JFrame {
     }
 
     private void addBtRt() {
-        String codigo = util.separa(1,cbNomeAtravessador.getSelectedItem().toString());
+        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
         System.out.println(codigo);
 
           //Relações de Trabalho - Tabela Renda Familia
@@ -2411,11 +2420,11 @@ public class atravessador2 extends javax.swing.JFrame {
 
     private void attCbAtravessador() {
          try {
-                    cbNomeAtravessador.removeAllItems();
+                    cbNomeEmpresa.removeAllItems();
                     conexao.execute("select * from atravessador");
 
                     while (conexao.resultSet.next()){
-                        cbNomeAtravessador.addItem(conexao.resultSet.getString("cod_atravessador")+
+                        cbNomeEmpresa.addItem(conexao.resultSet.getString("cod_atravessador")+
                                                        " # "+ conexao.resultSet.getString("nome"));
                         
                     }
@@ -2425,7 +2434,7 @@ public class atravessador2 extends javax.swing.JFrame {
     }
 
     private void attjTableAtividadeFamiliar() {
-        String codigo = util.separa(1,cbNomeAtravessador.getSelectedItem().toString());
+        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
 
         conexao.execute("select * from atravessador_moradia_familia_renda"
                         + " where cod_atravessador = " + codigo);
@@ -2457,7 +2466,7 @@ public class atravessador2 extends javax.swing.JFrame {
 
     private void salvar_dados() {
     String sqlinsert = new String();
-    String codigo = util.separa(1,cbNomeAtravessador.getSelectedItem().toString());
+    String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
     System.out.println(codigo);
 
         //Moradia
@@ -2602,7 +2611,7 @@ public class atravessador2 extends javax.swing.JFrame {
 
     private void atualizar_dados() {
     String sqlupdate = new String();
-    String codigo = util.separa(1,cbNomeAtravessador.getSelectedItem().toString());
+    String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
     System.out.println(codigo);
 
     //Pescador Moradia
@@ -2739,7 +2748,7 @@ public class atravessador2 extends javax.swing.JFrame {
     }
 
     private void AddAquisicaoFormasComercilizacao() {
-        String codigo = util.separa(1,cbNomeAtravessador.getSelectedItem().toString());
+        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
         System.out.println(codigo);
 
           //Relações de Trabalho - Tabela Renda Familia
@@ -2763,7 +2772,7 @@ public class atravessador2 extends javax.swing.JFrame {
     }
 
     private void AttAquisicaoFormasComercilizacao() {
-        String codigo = util.separa(1,cbNomeAtravessador.getSelectedItem().toString());
+        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
 
         conexao.execute("select * from atravessador_aquisicao_forma_comercializacao"
                         + " where cod_atravessador = " + codigo);
@@ -2817,7 +2826,7 @@ public class atravessador2 extends javax.swing.JFrame {
     }
 
     private void AttComercializacaoGrude() {
-        String codigo = util.separa(1,cbNomeAtravessador.getSelectedItem().toString());
+        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
         System.out.println(codigo);
 
           //Relações de Trabalho - Tabela Renda Familia
@@ -2857,7 +2866,7 @@ public class atravessador2 extends javax.swing.JFrame {
     }
 
     private void attjtGrudeEspecie() {
-        String codigo = util.separa(1,cbNomeAtravessador.getSelectedItem().toString());
+        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
 
         conexao.execute("select * from atravessador_aquisicao_grude_especie"
                         + " where cod_atravessador = " + codigo);
@@ -2907,7 +2916,7 @@ public class atravessador2 extends javax.swing.JFrame {
     }
 
     private void AddJtFormas() {
-        String codigo = util.separa(1,cbNomeAtravessador.getSelectedItem().toString());
+        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
         System.out.println(codigo);
 
         String produtot = new String();
@@ -2935,7 +2944,7 @@ public class atravessador2 extends javax.swing.JFrame {
     }
 
     private void attjtForma() {
-        String codigo = util.separa(1,cbNomeAtravessador.getSelectedItem().toString());
+        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
 
         conexao.execute("select * from atravessador_comercializacao_formas"
                         + " where cod_atravessador = " + codigo);
@@ -2989,7 +2998,7 @@ public class atravessador2 extends javax.swing.JFrame {
     }
 
     private void AddJtGastos() {
-        String codigo = util.separa(1,cbNomeAtravessador.getSelectedItem().toString());
+        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
         System.out.println(codigo);
 
         String gastot = new String();
@@ -3016,7 +3025,7 @@ public class atravessador2 extends javax.swing.JFrame {
     }
 
     private void attjtGasto() {
-        String codigo = util.separa(1,cbNomeAtravessador.getSelectedItem().toString());
+        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
 
         conexao.execute("select * from atravessador_comercializacao_gastos"
                         + " where cod_atravessador = " + codigo);
@@ -3077,7 +3086,7 @@ public class atravessador2 extends javax.swing.JFrame {
     }
 
     private void AddjtMercadodeComercializacao() {
-        String codigo = util.separa(1,cbNomeAtravessador.getSelectedItem().toString());
+        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
         System.out.println(codigo);
 
         //
@@ -3087,7 +3096,7 @@ public class atravessador2 extends javax.swing.JFrame {
                     + "cliente_pescado_supermercado_capital,cliente_pescado_supermercado_municipio,"
                     + "cliente_pescado_caminhao,cliente_pescado_outro_atravessador,"
                     + "cliente_grude_atravessador_municipio,cliente_grude_atravessador_outro_municipio,"
-                    + "cliente_grude_empresa_belem,cliente_grude_outros,cliente_pescado_consumidor_local) values ("+
+                    + "cliente_grude_empresa_belem,cliente_grude_outros) values ("+
                     codigo+",'"+
                     cbMercado.getSelectedItem()+"','"+
                     util.checarCkb(cliente_pescado_empresa_municipio)+"','"+
@@ -3100,8 +3109,7 @@ public class atravessador2 extends javax.swing.JFrame {
                     util.checarCkb(cliente_grude_atravessador_municipio)+"','"+
                     util.checarCkb(cliente_grude_atravessador_outro_municipio)+"','"+
                     util.checarCkb(cliente_grude_empresa_belem)+"','"+
-                    util.checarCkb(cliente_grude_outros)+"','"+
-                    util.checarCkb(cliente_pescado_consumidor_local)+"')";
+                    util.checarCkb(cliente_grude_outros)+"')";
 
             System.out.println(sqlinsert);
             if (conexao.salvar(sqlinsert)) {
@@ -3111,7 +3119,7 @@ public class atravessador2 extends javax.swing.JFrame {
     }
 
     private void AttjtMercadodeComercializacao() {
-        String codigo = util.separa(1,cbNomeAtravessador.getSelectedItem().toString());
+        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
         String pescado,grude = new String();
 
         conexao.execute("select * from atravessador_comercializacao_mercado_cliente"
@@ -3149,11 +3157,11 @@ public class atravessador2 extends javax.swing.JFrame {
             if (conexao.resultSet.getString("cliente_pescado_caminhao").equals("1"))
                 pescado = pescado + "6,";
 
-            if (conexao.resultSet.getString("cliente_pescado_consumidor_local").equals("1"))
+            if (conexao.resultSet.getString("cliente_pescado_outro_atravessador").equals("1"))
                 pescado = pescado + "7,";
 
-            if (conexao.resultSet.getString("cliente_pescado_outro_atravessador").equals("1"))
-                pescado = pescado + "8,";
+//            if (conexao.resultSet.getString("cliente_pescado_outro_atravessador").equals("1"))
+//                pescado = pescado + "8,";
 
             grude = "";
 
@@ -3169,6 +3177,8 @@ public class atravessador2 extends javax.swing.JFrame {
             if (conexao.resultSet.getString("cliente_grude_outros").equals("1"))
                 grude = grude + "4,";
             
+//            if (conexao.resultSet.getString("cliente_grude_outros").equals("1"))
+//                grude = grude + "5,";
 
             modelo.addRow(new Object[]{conexao.resultSet.getString("cod_atravessador_comercializacao_mercado_cliente"),
                                            conexao.resultSet.getString("mercado"),
