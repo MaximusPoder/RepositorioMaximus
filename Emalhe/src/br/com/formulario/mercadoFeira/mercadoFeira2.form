@@ -6,6 +6,8 @@
     </Component>
     <Component class="javax.swing.ButtonGroup" name="banheiro">
     </Component>
+    <Component class="javax.swing.ButtonGroup" name="reltrab">
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
@@ -75,9 +77,9 @@
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="jScrollPane2" alignment="1" pref="649" max="32767" attributes="0"/>
+                                          <Component id="jScrollPane2" alignment="1" pref="619" max="32767" attributes="0"/>
                                           <Component id="jButton4" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jSeparator3" alignment="0" pref="649" max="32767" attributes="1"/>
+                                          <Component id="jSeparator3" alignment="0" pref="619" max="32767" attributes="1"/>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="jLabel60" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
@@ -159,7 +161,11 @@
                                                       <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                                       <Group type="103" groupAlignment="0" attributes="0">
                                                           <Component id="rbBanheiroFora" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="rbAlvenaria" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="rbAlvenaria" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="rbBarro" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
                                                       </Group>
                                                   </Group>
                                                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
@@ -170,22 +176,6 @@
                                               </Group>
                                           </Group>
                                           <Component id="jLabel53" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="1">
-                                              <Component id="jLabel56" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="tfParentesco" min="-2" pref="93" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="jLabel55" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="tfAtividade" min="-2" pref="95" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jLabel54" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="tfRenda" min="-2" pref="79" max="-2" attributes="0"/>
-                                              <EmptySpace pref="145" max="32767" attributes="0"/>
-                                              <Component id="btAdicionarRendaFamilia" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="jScrollPane30" alignment="0" pref="649" max="32767" attributes="1"/>
                                           <Component id="btExcluirRendaFamilia" alignment="1" min="-2" max="-2" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="jLabel57" min="-2" max="-2" attributes="0"/>
@@ -212,7 +202,6 @@
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="ckbTemRegistroEntidade" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="jLabel49" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="jPanel8" alignment="0" min="-2" max="-2" attributes="1"/>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="jLabel58" min="-2" max="-2" attributes="0"/>
@@ -255,8 +244,8 @@
                                               <Component id="jScrollPane34" alignment="1" min="-2" pref="586" max="-2" attributes="1"/>
                                               <Component id="jToggleButton8" alignment="1" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="jSeparator2" alignment="0" pref="649" max="32767" attributes="1"/>
-                                          <Component id="jSeparator1" alignment="0" pref="649" max="32767" attributes="1"/>
+                                          <Component id="jSeparator2" alignment="0" pref="619" max="32767" attributes="1"/>
+                                          <Component id="jSeparator1" alignment="0" pref="619" max="32767" attributes="1"/>
                                           <Group type="102" alignment="1" attributes="0">
                                               <Component id="botao_alterar" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
@@ -267,7 +256,7 @@
                                               <Component id="jButton3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="jLabel68" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jSeparator4" pref="649" max="32767" attributes="1"/>
+                                          <Component id="jSeparator4" pref="619" max="32767" attributes="1"/>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="102" alignment="0" attributes="0">
@@ -301,10 +290,11 @@
                                                   </Group>
                                                   <Component id="jLabel20" alignment="0" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace pref="274" max="32767" attributes="0"/>
+                                              <EmptySpace pref="244" max="32767" attributes="0"/>
                                               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                                           </Group>
+                                          <Component id="jScrollPane30" alignment="0" pref="619" max="32767" attributes="1"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
                                   </Group>
@@ -313,7 +303,37 @@
                                       <Component id="jScrollPane35" alignment="1" min="-2" pref="648" max="-2" attributes="1"/>
                                   </Group>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" alignment="0" attributes="1">
+                                      <Component id="jLabel56" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="tfParentesco" min="-2" pref="93" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jLabel55" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="tfAtividade" min="-2" pref="95" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel54" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="tfRenda" min="-2" pref="79" max="-2" attributes="0"/>
+                                      <EmptySpace pref="115" max="32767" attributes="0"/>
+                                      <Component id="btAdicionarRendaFamilia" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jLabel49" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="rbFamiliar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="rbAssalariado" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="rbPartes" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -340,6 +360,7 @@
                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                               <Component id="rbAlvenaria" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="rbMadeira" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbBarro" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -388,7 +409,14 @@
                           <Component id="tfDesdeQuando" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbFamiliar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbAssalariado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbPartes" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -401,7 +429,7 @@
                           <Component id="btAdicionarRendaFamilia" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane30" min="-2" pref="115" max="-2" attributes="0"/>
+                      <Component id="jScrollPane30" min="-2" pref="121" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btExcluirRendaFamilia" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
@@ -1379,6 +1407,43 @@
             <Component class="javax.swing.JLabel" name="jLabel23">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Volume (KG)"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="rbBarro">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="casa"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Barro"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel24">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Rela&#xe7;&#xf5;es de trabalho.:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="rbFamiliar">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="reltrab"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Familiar"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="rbAssalariado">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="reltrab"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Assalariado "/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="rbPartes">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="reltrab"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Partes"/>
               </Properties>
             </Component>
           </SubComponents>

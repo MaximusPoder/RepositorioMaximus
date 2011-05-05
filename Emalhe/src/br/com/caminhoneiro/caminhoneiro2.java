@@ -248,6 +248,7 @@ public class caminhoneiro2 extends javax.swing.JFrame {
         jLabel74 = new javax.swing.JLabel();
         tfQtdFrete = new JIntField();
         cliente_pescado_consumidor_local = new javax.swing.JCheckBox();
+        rbBarro = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -888,6 +889,9 @@ public class caminhoneiro2 extends javax.swing.JFrame {
 
         cliente_pescado_consumidor_local.setText("7 Consumidor Local");
 
+        casa.add(rbBarro);
+        rbBarro.setText("Barro");
+
         javax.swing.GroupLayout jpPescadoSubprodutoLayout = new javax.swing.GroupLayout(jpPescadoSubproduto);
         jpPescadoSubproduto.setLayout(jpPescadoSubprodutoLayout);
         jpPescadoSubprodutoLayout.setHorizontalGroup(
@@ -919,7 +923,10 @@ public class caminhoneiro2 extends javax.swing.JFrame {
                                         .addGap(8, 8, 8)
                                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(rbBanheiroFora)
-                                            .addComponent(rbAlvenaria)))
+                                            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                                                .addComponent(rbAlvenaria)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(rbBarro))))
                                     .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(ckbDrenagemSim)
                                         .addComponent(ckbFossaSim)
@@ -1326,7 +1333,8 @@ public class caminhoneiro2 extends javax.swing.JFrame {
                         .addComponent(jLabel46))
                     .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbAlvenaria)
-                        .addComponent(rbMadeira)))
+                        .addComponent(rbMadeira)
+                        .addComponent(rbBarro)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel48)
@@ -2051,6 +2059,7 @@ public class caminhoneiro2 extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbAlvenaria;
     private javax.swing.JRadioButton rbBanheiroDentro;
     private javax.swing.JRadioButton rbBanheiroFora;
+    private javax.swing.JRadioButton rbBarro;
     private javax.swing.JRadioButton rbMadeira;
     private javax.swing.JTextField tfAtividade;
     private javax.swing.JTextField tfCliente;
@@ -2107,6 +2116,9 @@ public class caminhoneiro2 extends javax.swing.JFrame {
 
             if (testador.equals("Alvenaria"))
                    rbAlvenaria.setSelected(true);
+
+            if (testador.equals("Barro"))
+                   rbBarro.setSelected(true);
 
             if (conexao.resultSet.getString("luz").equals("1"))
                    ckbLuzSim.setSelected(true);
@@ -2295,6 +2307,7 @@ public class caminhoneiro2 extends javax.swing.JFrame {
         public void limpar_dados(){
             rbMadeira.setSelected(false);
             rbAlvenaria.setSelected(false);
+            rbBarro.setSelected(false);
             rbBanheiroDentro.setSelected(false);
             rbBanheiroFora.setSelected(false);
             ckbLuzSim.setSelected(false);
@@ -2445,6 +2458,8 @@ public class caminhoneiro2 extends javax.swing.JFrame {
                    tcasa = "Madeira";
             else if (rbAlvenaria.isSelected())
                    tcasa = "Alvenaria";
+            else if (rbBarro.isSelected())
+                   tcasa = "Barro";
 
             String tbanheiro = new String();
 
@@ -2590,6 +2605,8 @@ public class caminhoneiro2 extends javax.swing.JFrame {
                    tcasa = "Madeira";
             else if (rbAlvenaria.isSelected())
                    tcasa = "Alvenaria";
+            else if (rbBarro.isSelected())
+                   tcasa = "Barro";
 
             String tbanheiro = new String();
 
