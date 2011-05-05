@@ -44,6 +44,7 @@ public class mercadoFeira2 extends javax.swing.JFrame {
 
         casa = new javax.swing.ButtonGroup();
         banheiro = new javax.swing.ButtonGroup();
+        reltrab = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
         jpPescadoSubproduto = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
@@ -154,6 +155,11 @@ public class mercadoFeira2 extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         tfEmpresa = new JDecimal2();
         jLabel23 = new javax.swing.JLabel();
+        rbBarro = new javax.swing.JRadioButton();
+        jLabel24 = new javax.swing.JLabel();
+        rbFamiliar = new javax.swing.JRadioButton();
+        rbAssalariado = new javax.swing.JRadioButton();
+        rbPartes = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -522,6 +528,20 @@ public class mercadoFeira2 extends javax.swing.JFrame {
 
         jLabel23.setText("Volume (KG)");
 
+        casa.add(rbBarro);
+        rbBarro.setText("Barro");
+
+        jLabel24.setText("Relações de trabalho.:");
+
+        reltrab.add(rbFamiliar);
+        rbFamiliar.setText("Familiar");
+
+        reltrab.add(rbAssalariado);
+        rbAssalariado.setText("Assalariado ");
+
+        reltrab.add(rbPartes);
+        rbPartes.setText("Partes");
+
         javax.swing.GroupLayout jpPescadoSubprodutoLayout = new javax.swing.GroupLayout(jpPescadoSubproduto);
         jpPescadoSubproduto.setLayout(jpPescadoSubprodutoLayout);
         jpPescadoSubprodutoLayout.setHorizontalGroup(
@@ -534,9 +554,9 @@ public class mercadoFeira2 extends javax.swing.JFrame {
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
                                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 649, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 619, Short.MAX_VALUE)
                                     .addComponent(jButton4)
-                                    .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 649, Short.MAX_VALUE)
+                                    .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 619, Short.MAX_VALUE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
                                         .addComponent(jLabel60)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -603,27 +623,15 @@ public class mercadoFeira2 extends javax.swing.JFrame {
                                                 .addGap(8, 8, 8)
                                                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(rbBanheiroFora)
-                                                    .addComponent(rbAlvenaria)))
+                                                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                                                        .addComponent(rbAlvenaria)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(rbBarro))))
                                             .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                 .addComponent(ckbDrenagemSim)
                                                 .addComponent(ckbFossaSim)
                                                 .addComponent(ckbAguaSim))))
                                     .addComponent(jLabel53, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                                        .addComponent(jLabel56)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tfParentesco, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel55)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tfAtividade, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel54)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tfRenda, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
-                                        .addComponent(btAdicionarRendaFamilia))
-                                    .addComponent(jScrollPane30, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 649, Short.MAX_VALUE)
                                     .addComponent(btExcluirRendaFamilia)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
                                         .addComponent(jLabel57)
@@ -647,7 +655,6 @@ public class mercadoFeira2 extends javax.swing.JFrame {
                                         .addComponent(jLabel47)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(ckbTemRegistroEntidade))
-                                    .addComponent(jLabel49, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
                                         .addComponent(jLabel58)
@@ -682,8 +689,8 @@ public class mercadoFeira2 extends javax.swing.JFrame {
                                         .addComponent(jToggleButton7)
                                         .addComponent(jScrollPane34, javax.swing.GroupLayout.PREFERRED_SIZE, 586, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jToggleButton8))
-                                    .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 649, Short.MAX_VALUE)
-                                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 649, Short.MAX_VALUE)
+                                    .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 619, Short.MAX_VALUE)
+                                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 619, Short.MAX_VALUE)
                                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                         .addComponent(botao_alterar)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -692,7 +699,7 @@ public class mercadoFeira2 extends javax.swing.JFrame {
                                         .addGap(508, 508, 508)
                                         .addComponent(jButton3))
                                     .addComponent(jLabel68, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jSeparator4, javax.swing.GroupLayout.DEFAULT_SIZE, 649, Short.MAX_VALUE)
+                                    .addComponent(jSeparator4, javax.swing.GroupLayout.DEFAULT_SIZE, 619, Short.MAX_VALUE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
                                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
@@ -718,14 +725,41 @@ public class mercadoFeira2 extends javax.swing.JFrame {
                                                         .addGap(4, 4, 4)
                                                         .addComponent(jLabel21))))
                                             .addComponent(jLabel20))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 274, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 244, Short.MAX_VALUE)
                                         .addComponent(jButton1)
-                                        .addGap(13, 13, 13)))
+                                        .addGap(13, 13, 13))
+                                    .addComponent(jScrollPane30, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 619, Short.MAX_VALUE))
                                 .addGap(83, 83, 83))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jButton2)
                                 .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, 648, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap())
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
+                                .addComponent(jLabel56)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfParentesco, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel55)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfAtividade, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel54)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfRenda, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
+                                .addComponent(btAdicionarRendaFamilia))
+                            .addComponent(jLabel49, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(83, 83, 83))
+                    .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                        .addComponent(jLabel24)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rbFamiliar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rbAssalariado)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rbPartes))))
         );
         jpPescadoSubprodutoLayout.setVerticalGroup(
             jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -745,7 +779,8 @@ public class mercadoFeira2 extends javax.swing.JFrame {
                         .addComponent(jLabel46))
                     .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbAlvenaria)
-                        .addComponent(rbMadeira)))
+                        .addComponent(rbMadeira)
+                        .addComponent(rbBarro)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel48)
@@ -782,7 +817,13 @@ public class mercadoFeira2 extends javax.swing.JFrame {
                     .addComponent(jLabel45)
                     .addComponent(tfDesdeQuando, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11))
-                .addGap(16, 16, 16)
+                .addGap(18, 18, 18)
+                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(rbFamiliar)
+                    .addComponent(rbAssalariado)
+                    .addComponent(rbPartes))
+                .addGap(24, 24, 24)
                 .addComponent(jLabel49)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -794,7 +835,7 @@ public class mercadoFeira2 extends javax.swing.JFrame {
                     .addComponent(tfRenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btAdicionarRendaFamilia))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btExcluirRendaFamilia)
                 .addGap(12, 12, 12)
@@ -1087,6 +1128,7 @@ public class mercadoFeira2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1137,9 +1179,14 @@ public class mercadoFeira2 extends javax.swing.JFrame {
     private javax.swing.JTable jtGastosPorSemana;
     private javax.swing.JTable jtOrigemProduto;
     private javax.swing.JRadioButton rbAlvenaria;
+    private javax.swing.JRadioButton rbAssalariado;
     private javax.swing.JRadioButton rbBanheiroDentro;
     private javax.swing.JRadioButton rbBanheiroFora;
+    private javax.swing.JRadioButton rbBarro;
+    private javax.swing.JRadioButton rbFamiliar;
     private javax.swing.JRadioButton rbMadeira;
+    private javax.swing.JRadioButton rbPartes;
+    private javax.swing.ButtonGroup reltrab;
     private javax.swing.JTextField tfAtividade;
     private javax.swing.JTextField tfCooperativas;
     private javax.swing.JTextField tfCustoCusto;
@@ -1193,6 +1240,9 @@ public class mercadoFeira2 extends javax.swing.JFrame {
             if (testador.equals("Alvenaria"))
                    rbAlvenaria.setSelected(true);
 
+            if (testador.equals("Barro"))
+                   rbBarro.setSelected(true);
+
             if (conexao.resultSet.getString("luz").equals("1"))
                    ckbLuzSim.setSelected(true);
 
@@ -1224,6 +1274,17 @@ public class mercadoFeira2 extends javax.swing.JFrame {
             tfQualBeneficio.setText(conexao.resultSet.getString("beneficio"));
             tfTempoAtividadeMoradia.setText(conexao.resultSet.getString("tempo_atividade"));
 
+            testador = conexao.resultSet.getString("relacoes_trabalho");
+            if (testador.equals("Familiar"))
+                   rbFamiliar.setSelected(true);
+
+            if (testador.equals("Assalariado"))
+                   rbAssalariado.setSelected(true);
+
+            if (testador.equals("Partes"))
+                   rbPartes.setSelected(true);
+
+
             System.out.println("1 Moradia - Passou");
 
            
@@ -1237,6 +1298,7 @@ public class mercadoFeira2 extends javax.swing.JFrame {
         public void limpar_dados(){
             rbMadeira.setSelected(false);
             rbAlvenaria.setSelected(false);
+            rbBarro.setSelected(false);
             rbBanheiroDentro.setSelected(false);
             rbBanheiroFora.setSelected(false);
             ckbLuzSim.setSelected(false);
@@ -1249,6 +1311,9 @@ public class mercadoFeira2 extends javax.swing.JFrame {
             ckbRecebeBeneficioGovernoSim.setSelected(false);
             tfQualBeneficio.setText("");
             tfTempoAtividadeMoradia.setText("");
+            rbFamiliar.setSelected(true);
+            rbAssalariado.setSelected(true);
+            rbPartes.setSelected(true);
             
             
 
@@ -1348,6 +1413,8 @@ public class mercadoFeira2 extends javax.swing.JFrame {
                    tcasa = "Madeira";
             else if (rbAlvenaria.isSelected())
                    tcasa = "Alvenaria";
+            else if (rbBarro.isSelected())
+                   tcasa = "Barro";
 
             String tbanheiro = new String();
 
@@ -1360,7 +1427,7 @@ public class mercadoFeira2 extends javax.swing.JFrame {
                     + "(cod_mercado_feira,casa,luz,banheiro,agua_encanada,"
                     + "drenagem_pluvial,fossa,tem_registro,qual_entidade,"
                     + "tempo_registro,recebe_beneficio,beneficio,tempo_trabalhando,"
-                    + "tempo_atividade) values ("+
+                    + "tempo_atividade,relacoes_trabalho) values ("+
                     codigo+",'"+
                     tcasa+"','"+
                     util.checarCkb(ckbLuzSim)+"','"+
@@ -1374,7 +1441,8 @@ public class mercadoFeira2 extends javax.swing.JFrame {
                     util.checarCkb(ckbRecebeBeneficioGovernoSim)+"','"+
                     tfQualBeneficio.getText()+"','"+
                     tfTempoTrabalhando.getText()+"','"+
-                    tfTempoAtividadeMoradia.getText()+"')";
+                    tfTempoAtividadeMoradia.getText()+"','"+
+                    getRelTrab()+"')";
 
             //System.out.println(sqlinsert);
             if (conexao.salvar(sqlinsert)) {
@@ -1399,6 +1467,8 @@ public class mercadoFeira2 extends javax.swing.JFrame {
                    tcasa = "Madeira";
             else if (rbAlvenaria.isSelected())
                    tcasa = "Alvenaria";
+            else if (rbBarro.isSelected())
+                   tcasa = "Barro";
 
             String tbanheiro = new String();
 
@@ -1422,8 +1492,8 @@ public class mercadoFeira2 extends javax.swing.JFrame {
                     +"recebe_beneficio = '"+util.checarCkb(ckbRecebeBeneficioGovernoSim)+"',"
                     +"beneficio = '"+tfQualBeneficio.getText()+"',"
                     +"tempo_trabalhando = '"+tfTempoTrabalhando.getText()+"',"
-                    +"tempo_atividade ='"+tfTempoAtividadeMoradia.getText()+"' "+
-
+                    +"tempo_atividade ='"+tfTempoAtividadeMoradia.getText()+"',"
+                    +"relacoes_trabalho ='"+ getRelTrab()+"' "+
                     
                     "where cod_mercado_feira = "+codigo;
 
@@ -1703,6 +1773,21 @@ public class mercadoFeira2 extends javax.swing.JFrame {
                 attjtEspeciesComercializadas();
             }   else
                     JOptionPane.showMessageDialog(null,"Erro na exclusão");
+    }
+
+    private String getRelTrab() {
+        String str = "";
+
+        if (rbFamiliar.isSelected()) {
+           str = "Familiar";
+        } else if (rbAssalariado.isSelected()) {
+           str = "Assalariado";
+        } else if (rbPartes.isSelected()) {
+           str = "Partes";
+        }
+
+       return str;
+
     }
 
 }

@@ -1,12 +1,10 @@
 package br.com.donoDoBarco;
 
-import br.com.formulario.pescador.*;
 import br.com.conexao.Conexao;
 import br.com.util.JDecimal2;
 import br.com.util.JIntField;
 import br.com.util.JMoneyField;
 import br.com.util.Utilidade;
-import java.awt.Color;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -245,7 +243,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
         tfNumeroCilindros = new JIntField();
         jLabel82 = new javax.swing.JLabel();
         jLabel83 = new javax.swing.JLabel();
-        tfMarca = new JIntField();
+        tfMarca = new javax.swing.JTextField();
         jLabel84 = new javax.swing.JLabel();
         tfTripulacao = new JIntField();
         jLabel85 = new javax.swing.JLabel();
@@ -260,6 +258,11 @@ public class donoDoBarco2 extends javax.swing.JFrame {
         ckbTipoBPP = new javax.swing.JCheckBox();
         ckbTipoBMP = new javax.swing.JCheckBox();
         ckbTipoOutros = new javax.swing.JCheckBox();
+        btDadoEmbarcacao = new javax.swing.JToggleButton();
+        btEcluirDadoEmbarcacao = new javax.swing.JToggleButton();
+        jScrollPane39 = new javax.swing.JScrollPane();
+        jtDadosEmbarcacao = new javax.swing.JTable();
+        rbBarro = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Questionário Dono do Barco");
@@ -956,6 +959,44 @@ public class donoDoBarco2 extends javax.swing.JFrame {
             }
         });
 
+        btDadoEmbarcacao.setText("Adicionar");
+        btDadoEmbarcacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btDadoEmbarcacaoActionPerformed(evt);
+            }
+        });
+
+        btEcluirDadoEmbarcacao.setText("Excluir");
+        btEcluirDadoEmbarcacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btEcluirDadoEmbarcacaoActionPerformed(evt);
+            }
+        });
+
+        jtDadosEmbarcacao.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Cod", "Financiada", "Forma", "Nome", "Comprimento", "Ton Bruta", "Ton Líquida", "Material", "Propulsão", "Cilindros", "Marca", "Tripulação", "Ano", "Situação", "Inscrição"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true, true, true, true, true, true, true, true, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane39.setViewportView(jtDadosEmbarcacao);
+
+        casacasa.add(rbBarro);
+        rbBarro.setText("Barro");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -1047,7 +1088,9 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(rbMadeira)
                                 .addGap(18, 18, 18)
-                                .addComponent(rbAlvenaria))
+                                .addComponent(rbAlvenaria)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(rbBarro))
                             .addComponent(ckbLuzSim)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
@@ -1166,11 +1209,11 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ckbPretrchosPropriosSim)
                     .addComponent(tfSePretrochosProprios, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(742, Short.MAX_VALUE))
+                .addContainerGap(665, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel16)
-                .addContainerGap(831, Short.MAX_VALUE))
+                .addContainerGap(754, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel17)
@@ -1180,7 +1223,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                 .addComponent(jLabel18)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfPqCompPescaria, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(568, Short.MAX_VALUE))
+                .addContainerGap(491, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -1206,22 +1249,22 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                 .addComponent(tfProducaoViagemCompPescaria, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel64)
-                .addContainerGap(635, Short.MAX_VALUE))
+                .addContainerGap(558, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel34)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfRendaMediaPescaria, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(805, Short.MAX_VALUE))
+                .addContainerGap(728, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jToggleButton8)
-                    .addComponent(jScrollPane34, javax.swing.GroupLayout.DEFAULT_SIZE, 833, Short.MAX_VALUE)
+                    .addComponent(jScrollPane34, javax.swing.GroupLayout.DEFAULT_SIZE, 756, Short.MAX_VALUE)
                     .addComponent(jToggleButton7)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel69)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 513, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 436, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel52)
@@ -1249,10 +1292,10 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel65)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 594, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 517, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 761, Short.MAX_VALUE)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 684, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel33)
                                 .addGap(3, 3, 3)
@@ -1261,7 +1304,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                                 .addComponent(jLabel35)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(tfValorPrecoEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 286, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 209, Short.MAX_VALUE)
                                 .addComponent(btAdicionarCP))
                             .addComponent(btExcluirCP))
                         .addGap(288, 288, 288)))
@@ -1270,11 +1313,11 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jToggleButton10)
-                    .addComponent(jScrollPane35, javax.swing.GroupLayout.DEFAULT_SIZE, 833, Short.MAX_VALUE)
+                    .addComponent(jScrollPane35, javax.swing.GroupLayout.DEFAULT_SIZE, 756, Short.MAX_VALUE)
                     .addComponent(jToggleButton9)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel73)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 529, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel53)
@@ -1296,28 +1339,28 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                                     .addComponent(tfCustoCusto1)
                                     .addComponent(tfOutroCusto1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(tfOutrosGastos1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 330, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 253, Short.MAX_VALUE)))
                 .addGap(216, 216, 216))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(472, Short.MAX_VALUE))
+                .addContainerGap(395, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel22)
-                .addContainerGap(906, Short.MAX_VALUE))
+                .addContainerGap(829, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel54)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfFormaFinanciamento, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(762, Short.MAX_VALUE))
+                .addContainerGap(685, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel26)
                 .addGap(18, 18, 18)
                 .addComponent(tfNomeEmbarcacao, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(755, Short.MAX_VALUE))
+                .addContainerGap(678, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel79)
@@ -1327,7 +1370,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                 .addComponent(jLabel80)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cbPropulsao, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(745, Short.MAX_VALUE))
+                .addContainerGap(668, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel81)
@@ -1343,7 +1386,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                 .addComponent(jLabel84)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfTripulacao, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(619, Short.MAX_VALUE))
+                .addContainerGap(542, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel85)
@@ -1353,7 +1396,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                 .addComponent(jLabel86)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cbSitucao, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(701, Short.MAX_VALUE))
+                .addContainerGap(624, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1369,15 +1412,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                         .addComponent(jLabel28)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ckbPossuiInscricaoSim)))
-                .addContainerGap(692, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2))
-                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addContainerGap(615, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1396,13 +1431,13 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                         .addComponent(ckbDestinoOutro)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tfDestinoOutro, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(483, Short.MAX_VALUE))
+                .addContainerGap(406, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel87)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ckbSimDependencia)
-                .addContainerGap(733, Short.MAX_VALUE))
+                .addContainerGap(656, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1434,7 +1469,22 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                         .addComponent(jLabel25)
                         .addGap(4, 4, 4)
                         .addComponent(tfOutroTipoQual, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(584, Short.MAX_VALUE))
+                .addContainerGap(507, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2))
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btEcluirDadoEmbarcacao)
+                    .addComponent(jScrollPane39, javax.swing.GroupLayout.DEFAULT_SIZE, 756, Short.MAX_VALUE)
+                    .addComponent(btDadoEmbarcacao))
+                .addGap(216, 216, 216))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1458,7 +1508,8 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                             .addComponent(ckbLuzSim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbMadeira)
-                        .addComponent(rbAlvenaria)))
+                        .addComponent(rbAlvenaria)
+                        .addComponent(rbBarro)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rbBanheiroDentro)
@@ -1768,7 +1819,13 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
                     .addComponent(ckbPossuiInscricaoSim))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btDadoEmbarcacao)
+                .addGap(11, 11, 11)
+                .addComponent(jScrollPane39, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btEcluirDadoEmbarcacao)
+                .addGap(34, 34, 34)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1977,6 +2034,14 @@ public class donoDoBarco2 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ckbTipoOutrosStateChanged
 
+    private void btEcluirDadoEmbarcacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEcluirDadoEmbarcacaoActionPerformed
+       DeljtDadosEmbarcacao();
+}//GEN-LAST:event_btEcluirDadoEmbarcacaoActionPerformed
+
+    private void btDadoEmbarcacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDadoEmbarcacaoActionPerformed
+        AddDadosEmbarcacao();
+}//GEN-LAST:event_btDadoEmbarcacaoActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -1992,6 +2057,8 @@ public class donoDoBarco2 extends javax.swing.JFrame {
     private javax.swing.ButtonGroup banheirobanheiro;
     private javax.swing.JButton btAdicionarCP;
     private javax.swing.JButton btAdicionarRT;
+    private javax.swing.JToggleButton btDadoEmbarcacao;
+    private javax.swing.JToggleButton btEcluirDadoEmbarcacao;
     private javax.swing.JButton btExcluirCP;
     private javax.swing.JButton btExcluirRT;
     private javax.swing.ButtonGroup casacasa;
@@ -2142,6 +2209,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane34;
     private javax.swing.JScrollPane jScrollPane35;
+    private javax.swing.JScrollPane jScrollPane39;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
@@ -2153,12 +2221,14 @@ public class donoDoBarco2 extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton7;
     private javax.swing.JToggleButton jToggleButton8;
     private javax.swing.JToggleButton jToggleButton9;
+    private javax.swing.JTable jtDadosEmbarcacao;
     private javax.swing.JTable jtGastosPorAno;
     private javax.swing.JTable jtGastosPorViagem;
     private javax.swing.JTable jtPrecoPescado;
     private javax.swing.JRadioButton rbAlvenaria;
     private javax.swing.JRadioButton rbBanheiroDentro;
     private javax.swing.JRadioButton rbBanheiroFora;
+    private javax.swing.JRadioButton rbBarro;
     private javax.swing.JRadioButton rbInssEmpregado;
     private javax.swing.JRadioButton rbInssNao;
     private javax.swing.JRadioButton rbInssSim;
@@ -2223,6 +2293,8 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                    tcasa = "Madeira";
             else if (rbAlvenaria.isSelected())
                    tcasa = "Alvenaria";
+            else if (rbBarro.isSelected())
+                   tcasa = "Barro";
 
             String tbanheiro = new String();
 
@@ -2340,50 +2412,12 @@ public class donoDoBarco2 extends javax.swing.JFrame {
             //System.out.println(sqlinsert);
             if (conexao.salvar(sqlinsert)) {
                 System.out.println("3 dono_barco_composicao_pescaria - Cadastrado com sucesso");
-            }
-
-
-        //Dados da Embarcação
-
-           sqlinsert = "insert into dono_barco_dados_embarcacao "
-                    + "(cod_dono_barco,embarcacao_foi_financiada,qual_instituicao_financiou,"
-                    + "forma_financiamento,cam,bpp,bmp,outro,outro_tipo,nome_embarcacao,"
-                    + "comprimento,ton_bruta,ton_liquida,material_casco,propulsao,cilindros,"
-                    + "marca,tripulacao,ano_construcao,situacao_atual,"
-                    + "conservacao_gelo,conservacao_sal,conservacao_frigorifico,possui_inscricao) values ("+
-                    codigo+",'"+
-                    util.checarCkb(ckbSimFinanciada)+"','"+
-                    tfQualInstituicao.getText()+"','"+
-                    tfFormaFinanciamento.getText()+"','"+
-                    util.checarCkb(ckbTipoCAM)+"','"+
-                    util.checarCkb(ckbTipoBPP)+"','"+
-                    util.checarCkb(ckbTipoBMP)+"','"+
-                    util.checarCkb(ckbTipoOutros)+"','"+
-                    tfOutroTipoQual.getText()+"','"+
-                    tfNomeEmbarcacao.getText()+"','"+
-                    tfComprimento.getText()+"','"+
-                    tfTonBruta.getText()+"','"+
-                    tfTonLiq.getText()+"','"+
-                    cbMaterialCasco.getSelectedItem()+"','"+
-                    cbPropulsao.getSelectedItem()+"','"+
-                    tfNumeroCilindros.getText()+"','"+
-                    tfMarca.getText()+"','"+
-                    tfTripulacao.getText()+"','"+
-                    tfAnoConstrucao.getText()+"','"+
-                    cbSitucao.getSelectedItem()+"','"+
-                    util.checarCkb(ckbGelo)+"','"+
-                    util.checarCkb(ckbSal)+"','"+
-                    util.checarCkb(ckbFrigorifico)+"','"+
-                    util.checarCkb(ckbPossuiInscricaoSim)+"')";
-
-            //System.out.println(sqlinsert);
-            if (conexao.salvar(sqlinsert)) {
-                System.out.println("4 Dados da Embarcação - Cadastrado com sucesso");
                 JOptionPane.showMessageDialog(null,"Salvo com sucesso");
                 //agora é hora de atualizar o resultset
                 mostra_dados();
             }
-   
+
+
     }
 
     private void atualizar_dados(){
@@ -2399,6 +2433,8 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                    tcasa = "Madeira";
             else if (rbAlvenaria.isSelected())
                    tcasa = "Alvenaria";
+            else if (rbBarro.isSelected())
+                   tcasa = "Barro";
 
             String tbanheiro = new String();
 
@@ -2506,47 +2542,11 @@ public class donoDoBarco2 extends javax.swing.JFrame {
             //System.out.println(sqlupdate);
             if (conexao.salvar(sqlupdate)) {
                 System.out.println("3 Composição da Pescaria - Alterado com sucesso");
-            }
-
-
-        //Dados da Embarcação
-
-
-           sqlupdate = "UPDATE dono_barco_dados_embarcacao SET "
-                    +"embarcacao_foi_financiada = '"+util.checarCkb(ckbSimFinanciada)+"',"
-                    +"qual_instituicao_financiou = '"+tfQualInstituicao.getText()+"',"
-                    +"forma_financiamento = '"+tfFormaFinanciamento.getText()+"',"
-                    +"cam= '"+util.checarCkb(ckbTipoCAM)+"',"
-                    +"bpp = '"+util.checarCkb(ckbTipoBPP)+"',"
-
-                    +"bmp= '"+util.checarCkb(ckbTipoBMP)+"',"
-                    +"outro= '"+util.checarCkb(ckbTipoOutros)+"',"
-                    +"outro_tipo= '"+tfOutroTipoQual.getText()+"',"
-                    +"nome_embarcacao= '"+tfNomeEmbarcacao.getText()+"',"
-                    +"comprimento= '"+tfComprimento.getText()+"',"
-                    +"ton_bruta= '"+tfTonBruta.getText()+"',"
-                    +"ton_liquida= '"+tfTonLiq.getText()+"',"
-                    +"material_casco= '"+cbMaterialCasco.getSelectedItem()+"',"
-                    +"propulsao= '"+cbPropulsao.getSelectedItem()+"',"
-                    +"cilindros= '"+tfNumeroCilindros.getText()+"',"
-                    +"marca= '"+tfMarca.getText()+"',"
-                    +"tripulacao= '"+tfTripulacao.getText()+"',"
-                    +"ano_construcao= '"+tfAnoConstrucao.getText()+"',"
-                    +"situacao_atual= '"+cbSitucao.getSelectedItem()+"',"
-                    +"conservacao_gelo = '"+util.checarCkb(ckbGelo)+"',"
-                    +"conservacao_sal = '"+util.checarCkb(ckbSal)+"',"
-                    +"conservacao_frigorifico = '"+util.checarCkb(ckbFrigorifico)+"',"
-                    +"possui_inscricao = '"+util.checarCkb(ckbPossuiInscricaoSim)+"' "+
-
-                    "where cod_dono_barco = "+codigo;
-
-            //System.out.println(sqlupdate);
-            if (conexao.salvar(sqlupdate)) {
-                System.out.println("4 Dados da Embarcação - Atualização com sucesso");
                 JOptionPane.showMessageDialog(null,"Alterado com sucesso");
                 //agora é hora de atualizar o resultset
                 mostra_dados();
             }
+
 
     }
 
@@ -2556,6 +2556,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
         attjtGastosPorViagem();
         attjtPrecoPescado();
         attjtGastosPorAno();
+        attjtDadosEmbarcacao();
 
         String codigo = util.separa(1,cbDonoBarco.getSelectedItem().toString());
         System.out.println(codigo);
@@ -2577,6 +2578,11 @@ public class donoDoBarco2 extends javax.swing.JFrame {
                    rbAlvenaria.setSelected(true);
             else
                    rbAlvenaria.setSelected(false);
+
+            if (testador.equals("Barro"))
+                   rbBarro.setSelected(true);
+            else
+                   rbBarro.setSelected(false);
 
             if (conexao.resultSet.getString("luz").equals("1"))
                    ckbLuzSim.setSelected(true);
@@ -2786,66 +2792,66 @@ public class donoDoBarco2 extends javax.swing.JFrame {
 
             System.out.println("Passou! Composição da Pescaria");
             
-        //Dados da Embarcação
-            conexao.execute("SELECT * FROM dono_barco_dados_embarcacao WHERE cod_dono_barco = "+codigo);
-            conexao.resultSet.first();
-            
-            if (conexao.resultSet.getString("embarcacao_foi_financiada").equals("1"))
-                   ckbSimFinanciada.setSelected(true);
-            
-            tfQualInstituicao.setText(conexao.resultSet.getString("qual_instituicao_financiou"));
-            
-            tfFormaFinanciamento.setText(conexao.resultSet.getString("forma_financiamento"));
-            
-            if (conexao.resultSet.getString("cam").equals("1"))
-                   ckbTipoCAM.setSelected(true);
-            
-            if (conexao.resultSet.getString("bpp").equals("1"))
-                   ckbTipoBPP.setSelected(true);
-            
-            if (conexao.resultSet.getString("bmp").equals("1"))
-                   ckbTipoBMP.setSelected(true);
-            
-            if (conexao.resultSet.getString("outro").equals("1"))
-                   ckbTipoOutros.setSelected(true);
-            
-            tfOutroTipoQual.setText(conexao.resultSet.getString("outro_tipo"));
-
-            tfNomeEmbarcacao.setText(conexao.resultSet.getString("nome_embarcacao"));
-            
-            tfComprimento.setText(conexao.resultSet.getString("comprimento"));
-            
-            tfTonBruta.setText(conexao.resultSet.getString("ton_bruta"));
-            
-            tfTonLiq.setText(conexao.resultSet.getString("ton_liquida"));
-            
-            cbMaterialCasco.setSelectedItem(conexao.resultSet.getString("material_casco"));
-            
-            cbPropulsao.setSelectedItem(conexao.resultSet.getString("propulsao"));
-            
-            tfNumeroCilindros.setText(conexao.resultSet.getString("cilindros"));
-            
-            tfMarca.setText(conexao.resultSet.getString("marca"));
-            
-            tfTripulacao.setText(conexao.resultSet.getString("tripulacao"));
-            
-            tfAnoConstrucao.setText(conexao.resultSet.getString("ano_construcao"));
-            
-            cbSitucao.setSelectedItem(conexao.resultSet.getString("situacao_atual"));   
-            
-            if (conexao.resultSet.getString("conservacao_gelo").equals("1"))
-                   ckbGelo.setSelected(true);
-            
-            if (conexao.resultSet.getString("conservacao_sal").equals("1"))
-                   ckbSal.setSelected(true);
-            
-            if (conexao.resultSet.getString("conservacao_frigorifico").equals("1"))
-                   ckbFrigorifico.setSelected(true);
-            
-            if (conexao.resultSet.getString("possui_inscricao").equals("1"))
-                   ckbPossuiInscricaoSim.setSelected(true);
-
-            System.out.println("Passou! Dados Embarcação");
+//        //Dados da Embarcação
+//            conexao.execute("SELECT * FROM dono_barco_dados_embarcacao WHERE cod_dono_barco = "+codigo);
+//            conexao.resultSet.first();
+//
+//            if (conexao.resultSet.getString("embarcacao_foi_financiada").equals("1"))
+//                   ckbSimFinanciada.setSelected(true);
+//
+//            tfQualInstituicao.setText(conexao.resultSet.getString("qual_instituicao_financiou"));
+//
+//            tfFormaFinanciamento.setText(conexao.resultSet.getString("forma_financiamento"));
+//
+//            if (conexao.resultSet.getString("cam").equals("1"))
+//                   ckbTipoCAM.setSelected(true);
+//
+//            if (conexao.resultSet.getString("bpp").equals("1"))
+//                   ckbTipoBPP.setSelected(true);
+//
+//            if (conexao.resultSet.getString("bmp").equals("1"))
+//                   ckbTipoBMP.setSelected(true);
+//
+//            if (conexao.resultSet.getString("outro").equals("1"))
+//                   ckbTipoOutros.setSelected(true);
+//
+//            tfOutroTipoQual.setText(conexao.resultSet.getString("outro_tipo"));
+//
+//            tfNomeEmbarcacao.setText(conexao.resultSet.getString("nome_embarcacao"));
+//
+//            tfComprimento.setText(conexao.resultSet.getString("comprimento"));
+//
+//            tfTonBruta.setText(conexao.resultSet.getString("ton_bruta"));
+//
+//            tfTonLiq.setText(conexao.resultSet.getString("ton_liquida"));
+//
+//            cbMaterialCasco.setSelectedItem(conexao.resultSet.getString("material_casco"));
+//
+//            cbPropulsao.setSelectedItem(conexao.resultSet.getString("propulsao"));
+//
+//            tfNumeroCilindros.setText(conexao.resultSet.getString("cilindros"));
+//
+//            tfMarca.setText(conexao.resultSet.getString("marca"));
+//
+//            tfTripulacao.setText(conexao.resultSet.getString("tripulacao"));
+//
+//            tfAnoConstrucao.setText(conexao.resultSet.getString("ano_construcao"));
+//
+//            cbSitucao.setSelectedItem(conexao.resultSet.getString("situacao_atual"));
+//
+//            if (conexao.resultSet.getString("conservacao_gelo").equals("1"))
+//                   ckbGelo.setSelected(true);
+//
+//            if (conexao.resultSet.getString("conservacao_sal").equals("1"))
+//                   ckbSal.setSelected(true);
+//
+//            if (conexao.resultSet.getString("conservacao_frigorifico").equals("1"))
+//                   ckbFrigorifico.setSelected(true);
+//
+//            if (conexao.resultSet.getString("possui_inscricao").equals("1"))
+//                   ckbPossuiInscricaoSim.setSelected(true);
+//
+//            System.out.println("Passou! Dados Embarcação");
 
             attCbs();
 
@@ -2859,6 +2865,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
     private void limpar_dados() {
                 rbMadeira.setSelected(false);
                 rbAlvenaria.setSelected(false);
+                rbBarro.setSelected(false);
                 ckbLuzSim.setSelected(false);
                 rbBanheiroDentro.setSelected(false);
                 rbBanheiroFora.setSelected(false);
@@ -3317,6 +3324,120 @@ public class donoDoBarco2 extends javax.swing.JFrame {
             if (conexao.salvar(sql)) {
                 System.out.println("Exclusão realizada com sucesso");
                 attjtGastosPorAno();
+            }   else
+                    JOptionPane.showMessageDialog(null,"Erro na exclusão");
+    }
+
+    private void AddDadosEmbarcacao() {
+    String codigo = util.separa(1,cbDonoBarco.getSelectedItem().toString());
+    System.out.println(codigo);
+
+        //Dados embarcação
+        String sqlinsert = "insert into dono_barco_dados_embarcacao "
+                    + "(cod_dono_barco,embarcacao_foi_financiada,qual_instituicao_financiou,"
+                    + "forma_financiamento,cam,bpp,bmp,outro,outro_tipo,nome_embarcacao,"
+                    + "comprimento,ton_bruta,ton_liquida,material_casco,propulsao,cilindros,"
+                    + "marca,tripulacao,ano_construcao,situacao_atual,"
+                    + "conservacao_gelo,conservacao_sal,conservacao_frigorifico,possui_inscricao) values ("+
+                    codigo+",'"+
+                    util.checarCkb(ckbSimFinanciada)+"','"+
+                    tfQualInstituicao.getText()+"','"+
+                    tfFormaFinanciamento.getText()+"','"+
+                    util.checarCkb(ckbTipoCAM)+"','"+
+                    util.checarCkb(ckbTipoBPP)+"','"+
+                    util.checarCkb(ckbTipoBMP)+"','"+
+                    util.checarCkb(ckbTipoOutros)+"','"+
+                    tfOutroTipoQual.getText()+"','"+
+                    tfNomeEmbarcacao.getText()+"','"+
+                    tfComprimento.getText()+"','"+
+                    tfTonBruta.getText()+"','"+
+                    tfTonLiq.getText()+"','"+
+                    cbMaterialCasco.getSelectedItem()+"','"+
+                    cbPropulsao.getSelectedItem()+"','"+
+                    tfNumeroCilindros.getText()+"','"+
+                    tfMarca.getText()+"','"+
+                    tfTripulacao.getText()+"','"+
+                    tfAnoConstrucao.getText()+"','"+
+                    cbSitucao.getSelectedItem()+"','"+
+                    util.checarCkb(ckbGelo)+"','"+
+                    util.checarCkb(ckbSal)+"','"+
+                    util.checarCkb(ckbFrigorifico)+"','"+
+                    util.checarCkb(ckbPossuiInscricaoSim)+"')";
+
+
+            System.out.println(sqlinsert);
+            if (conexao.salvar(sqlinsert)) {
+               System.out.println("Dados Embarcação");
+               attjtDadosEmbarcacao();
+            }
+    }
+
+    private void attjtDadosEmbarcacao() {
+    String codigo = util.separa(1,cbDonoBarco.getSelectedItem().toString());
+
+        conexao.execute("select * from dono_barco_dados_embarcacao"
+                        + " where cod_dono_barco = " + codigo);
+
+        jtDadosEmbarcacao.getColumnModel().getColumn(0).setMaxWidth(0);
+        jtDadosEmbarcacao.getColumnModel().getColumn(0).setPreferredWidth(0);
+        jtDadosEmbarcacao.getColumnModel().getColumn(1).setPreferredWidth(10);
+        jtDadosEmbarcacao.getColumnModel().getColumn(2).setPreferredWidth(10);
+        jtDadosEmbarcacao.getColumnModel().getColumn(3).setPreferredWidth(10);
+        jtDadosEmbarcacao.getColumnModel().getColumn(4).setPreferredWidth(10);
+        jtDadosEmbarcacao.getColumnModel().getColumn(5).setPreferredWidth(10);
+        jtDadosEmbarcacao.getColumnModel().getColumn(6).setPreferredWidth(10);
+        jtDadosEmbarcacao.getColumnModel().getColumn(7).setPreferredWidth(10);
+        jtDadosEmbarcacao.getColumnModel().getColumn(8).setPreferredWidth(10);
+        jtDadosEmbarcacao.getColumnModel().getColumn(9).setPreferredWidth(10);
+        jtDadosEmbarcacao.getColumnModel().getColumn(10).setPreferredWidth(10);
+        jtDadosEmbarcacao.getColumnModel().getColumn(11).setPreferredWidth(10);
+        jtDadosEmbarcacao.getColumnModel().getColumn(12).setPreferredWidth(10);
+        jtDadosEmbarcacao.getColumnModel().getColumn(13).setPreferredWidth(10);
+        jtDadosEmbarcacao.getColumnModel().getColumn(14).setPreferredWidth(10);
+
+
+
+
+        DefaultTableModel modelo = (DefaultTableModel)jtDadosEmbarcacao.getModel();
+        modelo.setNumRows(0);//limpa o JTable;
+
+        try{
+            while (conexao.resultSet.next())
+                modelo.addRow(new Object[]{conexao.resultSet.getString("cod_dono_barco_dados_embarcacao"),
+                                           conexao.resultSet.getString("embarcacao_foi_financiada"),
+                                           conexao.resultSet.getString("forma_financiamento"),
+                                           conexao.resultSet.getString("nome_embarcacao"),
+                                           conexao.resultSet.getString("comprimento"),
+                                           conexao.resultSet.getString("ton_bruta"),
+                                           conexao.resultSet.getString("ton_liquida"),
+                                           conexao.resultSet.getString("material_casco"),
+                                           conexao.resultSet.getString("propulsao"),
+                                           conexao.resultSet.getString("cilindros"),
+                                           conexao.resultSet.getString("marca"),
+                                           conexao.resultSet.getString("tripulacao"),
+                                           conexao.resultSet.getString("ano_construcao"),
+                                           conexao.resultSet.getString("situacao_atual"),
+                                           conexao.resultSet.getString("possui_inscricao"),
+                                          });
+
+            conexao.resultSet.first();
+
+        }catch (SQLException erro){
+            System.out.println(erro + " tabela gastos");
+        }
+
+    }
+
+    private void DeljtDadosEmbarcacao() {
+        String sql;
+
+        sql = "delete from dono_barco_dados_embarcacao "
+            + "Where cod_dono_barco_dados_embarcacao = "
+            + jtDadosEmbarcacao.getValueAt(jtDadosEmbarcacao.getSelectedRow(),0);
+
+            if (conexao.salvar(sql)) {
+                System.out.println("Exclusão realizada com sucesso");
+                attjtDadosEmbarcacao();
             }   else
                     JOptionPane.showMessageDialog(null,"Erro na exclusão");
     }

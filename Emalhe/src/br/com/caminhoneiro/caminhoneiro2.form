@@ -97,7 +97,11 @@
                                               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="rbBanheiroFora" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="rbAlvenaria" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="rbAlvenaria" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Component id="rbBarro" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
                                               </Group>
                                           </Group>
                                           <Group type="103" alignment="0" groupAlignment="1" attributes="0">
@@ -614,6 +618,7 @@
                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                               <Component id="rbAlvenaria" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="rbMadeira" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbBarro" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -2496,6 +2501,14 @@
             <Component class="javax.swing.JCheckBox" name="cliente_pescado_consumidor_local">
               <Properties>
                 <Property name="text" type="java.lang.String" value="7 Consumidor Local"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="rbBarro">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="casa"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Barro"/>
               </Properties>
             </Component>
           </SubComponents>

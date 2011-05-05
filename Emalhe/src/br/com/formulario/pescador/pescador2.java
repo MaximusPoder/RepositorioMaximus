@@ -237,6 +237,7 @@ public class pescador2 extends javax.swing.JFrame {
         ckbNovEC = new javax.swing.JCheckBox();
         ckbOutEC = new javax.swing.JCheckBox();
         ckbDezEC = new javax.swing.JCheckBox();
+        rbBarro = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Questionário Pescador");
@@ -988,6 +989,9 @@ public class pescador2 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        casacasa.add(rbBarro);
+        rbBarro.setText("Barro");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -1112,16 +1116,21 @@ public class pescador2 extends javax.swing.JFrame {
                                     .addComponent(jLabel38))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rbMadeira)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(rbMadeira)
+                                            .addComponent(rbBanheiroDentro))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(rbBanheiroFora)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(rbAlvenaria)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(rbBarro))))
                                     .addComponent(ckbDrenagemSim)
                                     .addComponent(ckbAguaSim)
                                     .addComponent(ckbFossaSim)
-                                    .addComponent(ckbLuzSim)
-                                    .addComponent(rbBanheiroDentro))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rbBanheiroFora)
-                                    .addComponent(rbAlvenaria)))
+                                    .addComponent(ckbLuzSim)))
                             .addComponent(jLabel51)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel7)
@@ -1299,7 +1308,7 @@ public class pescador2 extends javax.swing.JFrame {
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 736, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(126, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1323,7 +1332,8 @@ public class pescador2 extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbMadeira)
-                            .addComponent(rbAlvenaria))
+                            .addComponent(rbAlvenaria)
+                            .addComponent(rbBarro))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ckbLuzSim, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
                         .addGap(2, 2, 2)))
@@ -1503,13 +1513,12 @@ public class pescador2 extends javax.swing.JFrame {
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                             .addComponent(jLabel20)
                                             .addComponent(tfAlemPescaOutraPescaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(28, 28, 28))
+                                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel16)
                         .addComponent(tfDiasdePesca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel64)))
-                .addGap(138, 138, 138)
+                .addGap(166, 166, 166)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1792,11 +1801,9 @@ public class pescador2 extends javax.swing.JFrame {
     private javax.swing.JRadioButton chbTipoOutros;
     private javax.swing.JCheckBox ckbAbrEC;
     private javax.swing.JCheckBox ckbAbrP;
-    private javax.swing.JCheckBox ckbAbrP1;
     private javax.swing.JCheckBox ckbAbrS;
     private javax.swing.JCheckBox ckbAgoEC;
     private javax.swing.JCheckBox ckbAgoP;
-    private javax.swing.JCheckBox ckbAgoP1;
     private javax.swing.JCheckBox ckbAgoS;
     private javax.swing.JCheckBox ckbAguaSim;
     private javax.swing.JCheckBox ckbArmadorPescador;
@@ -1806,13 +1813,11 @@ public class pescador2 extends javax.swing.JFrame {
     private javax.swing.JCheckBox ckbCooperativaSim;
     private javax.swing.JCheckBox ckbDezEC;
     private javax.swing.JCheckBox ckbDezP;
-    private javax.swing.JCheckBox ckbDezP1;
     private javax.swing.JCheckBox ckbDezS;
     private javax.swing.JCheckBox ckbDrenagemSim;
     private javax.swing.JCheckBox ckbFamiliar;
     private javax.swing.JCheckBox ckbFevEC;
     private javax.swing.JCheckBox ckbFevP;
-    private javax.swing.JCheckBox ckbFevP1;
     private javax.swing.JCheckBox ckbFevS;
     private javax.swing.JCheckBox ckbFossaSim;
     private javax.swing.JCheckBox ckbFrigorifico;
@@ -1820,32 +1825,25 @@ public class pescador2 extends javax.swing.JFrame {
     private javax.swing.JCheckBox ckbIbamaSim;
     private javax.swing.JCheckBox ckbJanEC;
     private javax.swing.JCheckBox ckbJanP;
-    private javax.swing.JCheckBox ckbJanP1;
     private javax.swing.JCheckBox ckbJanS;
     private javax.swing.JCheckBox ckbJulEC;
     private javax.swing.JCheckBox ckbJulP;
-    private javax.swing.JCheckBox ckbJulP1;
     private javax.swing.JCheckBox ckbJulS;
     private javax.swing.JCheckBox ckbJunEC;
     private javax.swing.JCheckBox ckbJunP;
-    private javax.swing.JCheckBox ckbJunP1;
     private javax.swing.JCheckBox ckbJunS;
     private javax.swing.JCheckBox ckbLuzSim;
     private javax.swing.JCheckBox ckbMaiEC;
     private javax.swing.JCheckBox ckbMaiP;
-    private javax.swing.JCheckBox ckbMaiP1;
     private javax.swing.JCheckBox ckbMaiS;
     private javax.swing.JCheckBox ckbMarEC;
     private javax.swing.JCheckBox ckbMarP;
-    private javax.swing.JCheckBox ckbMarP1;
     private javax.swing.JCheckBox ckbMarS;
     private javax.swing.JCheckBox ckbNovEC;
     private javax.swing.JCheckBox ckbNovP;
-    private javax.swing.JCheckBox ckbNovP1;
     private javax.swing.JCheckBox ckbNovS;
     private javax.swing.JCheckBox ckbOutEC;
     private javax.swing.JCheckBox ckbOutP;
-    private javax.swing.JCheckBox ckbOutP1;
     private javax.swing.JCheckBox ckbOutS;
     private javax.swing.JCheckBox ckbParceria;
     private javax.swing.JCheckBox ckbPossuiRgp;
@@ -1853,7 +1851,6 @@ public class pescador2 extends javax.swing.JFrame {
     private javax.swing.JCheckBox ckbSal;
     private javax.swing.JCheckBox ckbSetEC;
     private javax.swing.JCheckBox ckbSetP;
-    private javax.swing.JCheckBox ckbSetP1;
     private javax.swing.JCheckBox ckbSetS;
     private javax.swing.JCheckBox ckbTempoArteAguaDia;
     private javax.swing.JCheckBox ckbTempoArteAguaNoite;
@@ -1932,7 +1929,6 @@ public class pescador2 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -1949,6 +1945,7 @@ public class pescador2 extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbAlvenaria;
     private javax.swing.JRadioButton rbBanheiroDentro;
     private javax.swing.JRadioButton rbBanheiroFora;
+    private javax.swing.JRadioButton rbBarro;
     private javax.swing.JRadioButton rbInssEmpregado;
     private javax.swing.JRadioButton rbInssNao;
     private javax.swing.JRadioButton rbInssSim;
@@ -1997,6 +1994,8 @@ public class pescador2 extends javax.swing.JFrame {
                    tcasa = "Madeira";
             else if (rbAlvenaria.isSelected())
                    tcasa = "Alvenaria";
+            else if (rbBarro.isSelected())
+                   tcasa = "Barro";
 
             String tbanheiro = new String();
 
@@ -2181,6 +2180,8 @@ public class pescador2 extends javax.swing.JFrame {
                    tcasa = "Madeira";
             else if (rbAlvenaria.isSelected())
                    tcasa = "Alvenaria";
+            else if (rbBarro.isSelected())
+                   tcasa = "Barro";
 
             String tbanheiro = new String();
 
@@ -2359,6 +2360,11 @@ public class pescador2 extends javax.swing.JFrame {
                    rbAlvenaria.setSelected(true);
             else
                    rbAlvenaria.setSelected(false);
+
+            if (testador.equals("Barro"))
+                   rbBarro.setSelected(true);
+            else
+                   rbBarro.setSelected(false);
 
             if (conexao.resultSet.getString("luz").equals("1"))
                    ckbLuzSim.setSelected(true);
@@ -2637,6 +2643,7 @@ public class pescador2 extends javax.swing.JFrame {
 
             rbMadeira.setSelected(false);
             rbAlvenaria.setSelected(false);
+            rbBarro.setSelected(false);
             ckbLuzSim.setSelected(false);
             rbBanheiroDentro.setSelected(false);
             rbBanheiroFora.setSelected(false);
