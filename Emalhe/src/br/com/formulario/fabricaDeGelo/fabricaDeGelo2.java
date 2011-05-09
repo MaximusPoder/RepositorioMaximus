@@ -61,75 +61,75 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
         botao_salvar_questionario = new javax.swing.JButton();
         botao_alterar = new javax.swing.JButton();
         jLabel49 = new javax.swing.JLabel();
-        tfTempoAtividadeMoradia = new JIntField();
+        tfQ10 = new JIntField();
         jLabel54 = new javax.swing.JLabel();
-        tfRenda = new JMoneyField();
+        tfSalario = new JMoneyField();
         jLabel55 = new javax.swing.JLabel();
-        tfAtividade = new javax.swing.JTextField();
+        tfNumero = new javax.swing.JTextField();
         btExcluirRendaFamilia = new javax.swing.JButton();
         jLabel56 = new javax.swing.JLabel();
         btAdicionarRendaFamilia = new javax.swing.JButton();
         jScrollPane30 = new javax.swing.JScrollPane();
-        jTableAtividadeFamiliar = new javax.swing.JTable();
+        jtNumeroFuncionarios = new javax.swing.JTable();
         jLabel59 = new javax.swing.JLabel();
         jSeparator10 = new javax.swing.JSeparator();
         jLabel11 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
-        jTextField1 = new javax.swing.JTextField();
+        cbFuncao = new javax.swing.JComboBox();
+        tfHorasTrabalhadas = new javax.swing.JTextField();
         jLabel68 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        taQ11 = new javax.swing.JTextArea();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        taQ12 = new javax.swing.JTextArea();
         jLabel70 = new javax.swing.JLabel();
         jLabel73 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
+        taQ13 = new javax.swing.JTextArea();
         jLabel74 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
+        ckbQ14Filtragem = new javax.swing.JCheckBox();
+        ckbQ14Cloro = new javax.swing.JCheckBox();
+        ckbQ14Ozonio = new javax.swing.JCheckBox();
+        ckbQ14Outros = new javax.swing.JCheckBox();
         jTextField2 = new javax.swing.JTextField();
-        jCheckBox5 = new javax.swing.JCheckBox();
+        ckbQ15Pescador = new javax.swing.JCheckBox();
         jLabel75 = new javax.swing.JLabel();
-        jCheckBox6 = new javax.swing.JCheckBox();
-        jCheckBox7 = new javax.swing.JCheckBox();
-        jCheckBox8 = new javax.swing.JCheckBox();
+        ckbQ15Marreteiro = new javax.swing.JCheckBox();
+        ckbQ15Caminhao = new javax.swing.JCheckBox();
+        ckbQ15Outros = new javax.swing.JCheckBox();
         jTextField3 = new javax.swing.JTextField();
         jLabel76 = new javax.swing.JLabel();
-        jCheckBox9 = new javax.swing.JCheckBox();
+        ckbQ16Sim = new javax.swing.JCheckBox();
         jTextField4 = new javax.swing.JTextField();
         jLabel77 = new javax.swing.JLabel();
-        tfRenda1 = new JMoneyField();
+        tfValor = new JMoneyField();
         jLabel57 = new javax.swing.JLabel();
         jLabel58 = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
-        tfAtividade1 = new javax.swing.JTextField();
+        tfDesconto = new javax.swing.JTextField();
         btExcluirRendaFamilia1 = new javax.swing.JButton();
         jScrollPane35 = new javax.swing.JScrollPane();
-        jTableAtividadeFamiliar1 = new javax.swing.JTable();
+        jtAbatimento = new javax.swing.JTable();
         btAdicionarRendaFamilia1 = new javax.swing.JButton();
-        jComboBox2 = new javax.swing.JComboBox();
-        jTextField5 = new javax.swing.JTextField();
+        cbCusto = new javax.swing.JComboBox();
+        tfAno = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel78 = new javax.swing.JLabel();
         jScrollPane36 = new javax.swing.JScrollPane();
-        jTableAtividadeFamiliar2 = new javax.swing.JTable();
+        jtEmprestimo = new javax.swing.JTable();
         btExcluirRendaFamilia2 = new javax.swing.JButton();
         jCheckBox10 = new javax.swing.JCheckBox();
         jp18 = new javax.swing.JPanel();
         jLabel62 = new javax.swing.JLabel();
-        tfRenda2 = new JMoneyField();
-        btAdicionarRendaFamilia2 = new javax.swing.JButton();
+        tfCapGiro = new JMoneyField();
+        jtEmprestimoEmpresa = new javax.swing.JButton();
         jLabel63 = new javax.swing.JLabel();
-        tfAtividade2 = new javax.swing.JTextField();
-        jComboBox4 = new javax.swing.JComboBox();
+        tfEquipamentos = new javax.swing.JTextField();
+        cbEmprestimo = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        tfOutros = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        tfConstrucao = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Fabrica de Gêlo");
@@ -186,10 +186,10 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
             }
         });
 
-        jLabel49.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel49.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel49.setText("9 - Qual o número de funcionários por setor.");
 
-        tfTempoAtividadeMoradia.setText("0");
+        tfQ10.setText("0");
 
         jLabel54.setText("Salário.:");
 
@@ -211,75 +211,75 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
             }
         });
 
-        jTableAtividadeFamiliar.setModel(new javax.swing.table.DefaultTableModel(
+        jtNumeroFuncionarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Cod", "Parentesco", "Atividade", "Renda"
+                "Cod", "Função", "Salário", "Número", "Horas Trabalhadas"
             }
         ));
-        jScrollPane30.setViewportView(jTableAtividadeFamiliar);
+        jScrollPane30.setViewportView(jtNumeroFuncionarios);
 
-        jLabel59.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel59.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel59.setText("10 - Qual a média do tempo de permanência dos funcionários da empresa em anos.");
 
         jLabel11.setText("Horas Trabalhadas.:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Administração", "Produção", "Vigilante", "Serviços Gerais" }));
+        cbFuncao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Administração", "Produção", "Vigilante", "Serviços Gerais" }));
 
-        jLabel68.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel68.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel68.setText("11 - Qual os principais problemas que enfrenta com a fábrica de gelo");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane3.setViewportView(jTextArea1);
+        taQ11.setColumns(20);
+        taQ11.setRows(5);
+        jScrollPane3.setViewportView(taQ11);
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane4.setViewportView(jTextArea2);
+        taQ12.setColumns(20);
+        taQ12.setRows(5);
+        jScrollPane4.setViewportView(taQ12);
 
-        jLabel70.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel70.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel70.setText("12 - Como solucionar os problemas (gargalos):");
 
-        jLabel73.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel73.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel73.setText("13 - Qual a origem da água utilizada para a fabricação do gelo?");
 
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jScrollPane5.setViewportView(jTextArea3);
+        taQ13.setColumns(20);
+        taQ13.setRows(5);
+        jScrollPane5.setViewportView(taQ13);
 
-        jLabel74.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel74.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel74.setText("14 - A água passa por algum tipo de tratamento? Qual?");
 
-        jCheckBox1.setText("Filtragem");
+        ckbQ14Filtragem.setText("Filtragem");
 
-        jCheckBox2.setText("Cloro");
+        ckbQ14Cloro.setText("Cloro");
 
-        jCheckBox3.setText("Ozônio");
+        ckbQ14Ozonio.setText("Ozônio");
 
-        jCheckBox4.setText("Outros");
+        ckbQ14Outros.setText("Outros");
 
-        jCheckBox5.setText("Pescador");
+        ckbQ15Pescador.setText("Pescador");
 
-        jLabel75.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel75.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel75.setText("15 - Quais os principais clientes?");
 
-        jCheckBox6.setText("Marreteiro");
+        ckbQ15Marreteiro.setText("Marreteiro");
 
-        jCheckBox7.setText("Caminhão");
+        ckbQ15Caminhao.setText("Caminhão");
 
-        jCheckBox8.setText("Outros");
+        ckbQ15Outros.setText("Outros");
 
-        jLabel76.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel76.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel76.setText("16 - A empresa recebeu incentivos fiscais?");
 
-        jCheckBox9.setText("Sim. Qual?");
+        ckbQ16Sim.setText("Sim. Qual?");
 
-        jLabel77.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel77.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel77.setText("17 - A empresa recebe algum abatimento nos custos?");
 
         jLabel57.setText("Desconto.:");
@@ -295,18 +295,18 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
             }
         });
 
-        jTableAtividadeFamiliar1.setModel(new javax.swing.table.DefaultTableModel(
+        jtAbatimento.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Cod", "Parentesco", "Atividade", "Renda"
+                "Cod", "Custos", "Valor", "Desconto", "Ano"
             }
         ));
-        jScrollPane35.setViewportView(jTableAtividadeFamiliar1);
+        jScrollPane35.setViewportView(jtAbatimento);
 
         btAdicionarRendaFamilia1.setText("Adicionar");
         btAdicionarRendaFamilia1.addActionListener(new java.awt.event.ActionListener() {
@@ -315,14 +315,14 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
             }
         });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Luz", "ICMS", "IPTU", "Outros" }));
+        cbCusto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Luz", "ICMS", "IPTU", "Outros" }));
 
         jLabel14.setText("A partir de (ano).:");
 
-        jLabel78.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel78.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel78.setText("18 - Fez algum empréstimo para a empresa?");
 
-        jTableAtividadeFamiliar2.setModel(new javax.swing.table.DefaultTableModel(
+        jtEmprestimo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -333,7 +333,7 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
                 "Cod", "Parentesco", "Atividade", "Renda"
             }
         ));
-        jScrollPane36.setViewportView(jTableAtividadeFamiliar2);
+        jScrollPane36.setViewportView(jtEmprestimo);
 
         btExcluirRendaFamilia2.setText("Excluir");
         btExcluirRendaFamilia2.addActionListener(new java.awt.event.ActionListener() {
@@ -360,12 +360,12 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 100;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(4, 3, 0, 0);
-        jp18.add(tfRenda2, gridBagConstraints);
+        jp18.add(tfCapGiro, gridBagConstraints);
 
-        btAdicionarRendaFamilia2.setText("Adicionar");
-        btAdicionarRendaFamilia2.addActionListener(new java.awt.event.ActionListener() {
+        jtEmprestimoEmpresa.setText("Adicionar");
+        jtEmprestimoEmpresa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAdicionarRendaFamilia2ActionPerformed(evt);
+                jtEmprestimoEmpresaActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -373,7 +373,7 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
         gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHEAST;
         gridBagConstraints.insets = new java.awt.Insets(0, 60, 0, 0);
-        jp18.add(btAdicionarRendaFamilia2, gridBagConstraints);
+        jp18.add(jtEmprestimoEmpresa, gridBagConstraints);
 
         jLabel63.setText("Construção.:");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -388,9 +388,9 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 100;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(4, 3, 0, 0);
-        jp18.add(tfAtividade2, gridBagConstraints);
+        jp18.add(tfEquipamentos, gridBagConstraints);
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Banco", "Linha de credito (FNO, Finame)", "Valor do empréstimo", "Data do empréstimo", "Carência", "Prestações", "Quantas Pagou", "Em dia/Atrasado/Inadimplente" }));
+        cbEmprestimo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Banco", "Linha de credito (FNO, Finame)", "Valor do empréstimo", "Data do empréstimo", "Carência", "Prestações", "Quantas Pagou", "Em dia/Atrasado/Inadimplente" }));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -398,7 +398,7 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
         gridBagConstraints.ipady = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(0, 3, 0, 0);
-        jp18.add(jComboBox4, gridBagConstraints);
+        jp18.add(cbEmprestimo, gridBagConstraints);
 
         jLabel1.setText("Empréstimo.:");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -413,7 +413,7 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(4, 3, 0, 0);
-        jp18.add(jTextField6, gridBagConstraints);
+        jp18.add(tfOutros, gridBagConstraints);
 
         jLabel15.setText("Outros.:");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -436,7 +436,7 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 100;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(4, 3, 0, 0);
-        jp18.add(jTextField7, gridBagConstraints);
+        jp18.add(tfConstrucao, gridBagConstraints);
 
         javax.swing.GroupLayout jpPescadoSubprodutoLayout = new javax.swing.GroupLayout(jpPescadoSubproduto);
         jpPescadoSubproduto.setLayout(jpPescadoSubprodutoLayout);
@@ -451,7 +451,7 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
                                 .addComponent(botao_alterar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(botao_salvar_questionario))
-                            .addComponent(jSeparator10, javax.swing.GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE))
+                            .addComponent(jSeparator10, javax.swing.GroupLayout.DEFAULT_SIZE, 703, Short.MAX_VALUE))
                         .addGap(19, 19, 19))
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -470,18 +470,18 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
                                     .addComponent(jLabel56)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(tfRenda, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(cbFuncao, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(tfSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                             .addComponent(jLabel55)
                                             .addGap(57, 57, 57)
-                                            .addComponent(tfAtividade, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(tfNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                             .addComponent(jLabel11)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jTextField1)))
+                                            .addComponent(tfHorasTrabalhadas)))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
                                     .addComponent(btAdicionarRendaFamilia))
                                 .addComponent(jLabel49, javax.swing.GroupLayout.Alignment.LEADING))
@@ -492,8 +492,8 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addComponent(jLabel59)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfTempoAtividadeMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(141, Short.MAX_VALUE))
+                        .addComponent(tfQ10, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(188, Short.MAX_VALUE))
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -501,7 +501,7 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
                                 .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel68, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(jLabel70))
-                        .addContainerGap(290, Short.MAX_VALUE))
+                        .addContainerGap(337, Short.MAX_VALUE))
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE)
@@ -510,22 +510,22 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jCheckBox6)
-                                .addComponent(jCheckBox7)
+                                .addComponent(ckbQ15Marreteiro)
+                                .addComponent(ckbQ15Caminhao)
                                 .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                                    .addComponent(jCheckBox5)
+                                    .addComponent(ckbQ15Pescador)
                                     .addGap(18, 18, 18)
-                                    .addComponent(jCheckBox8)
+                                    .addComponent(ckbQ15Outros)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE))
                                 .addComponent(jLabel75))
                             .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jCheckBox3)
-                                .addComponent(jCheckBox2)
+                                .addComponent(ckbQ14Ozonio)
+                                .addComponent(ckbQ14Cloro)
                                 .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                                    .addComponent(jCheckBox1)
+                                    .addComponent(ckbQ14Filtragem)
                                     .addGap(18, 18, 18)
-                                    .addComponent(jCheckBox4)
+                                    .addComponent(ckbQ14Outros)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jTextField2))
                                 .addComponent(jLabel74)))
@@ -533,14 +533,14 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
-                                .addComponent(jCheckBox9)
+                                .addComponent(ckbQ16Sim)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTextField4))
                             .addComponent(jLabel76))
-                        .addContainerGap(435, Short.MAX_VALUE))
+                        .addContainerGap(482, Short.MAX_VALUE))
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addComponent(jLabel77)
-                        .addContainerGap(371, Short.MAX_VALUE))
+                        .addContainerGap(418, Short.MAX_VALUE))
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addComponent(jLabel78)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -557,8 +557,8 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
                                         .addComponent(jLabel60)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(tfRenda1)
-                                            .addComponent(jComboBox2, 0, 100, Short.MAX_VALUE)))
+                                            .addComponent(tfValor)
+                                            .addComponent(cbCusto, 0, 100, Short.MAX_VALUE)))
                                     .addComponent(jLabel58))
                                 .addGap(18, 18, 18)
                                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -566,11 +566,11 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
                                     .addComponent(jLabel57))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField5)
-                                    .addComponent(tfAtividade1, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE))
+                                    .addComponent(tfAno)
+                                    .addComponent(tfDesconto, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 173, Short.MAX_VALUE)
                                 .addComponent(btAdicionarRendaFamilia1))
-                            .addComponent(jp18, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 618, Short.MAX_VALUE)
+                            .addComponent(jp18, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 618, Short.MAX_VALUE)
                             .addComponent(btExcluirRendaFamilia2))
                         .addGap(104, 104, 104))))
         );
@@ -591,16 +591,16 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel56)
                             .addComponent(btAdicionarRendaFamilia)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cbFuncao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel54)
-                            .addComponent(tfRenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(tfHorasTrabalhadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel55)
-                        .addComponent(tfAtividade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(tfNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(10, 10, 10)
                 .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -608,7 +608,7 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel59)
-                    .addComponent(tfTempoAtividadeMoradia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfQ10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel68)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -625,29 +625,29 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
                 .addComponent(jLabel74)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox4)
+                    .addComponent(ckbQ14Filtragem)
+                    .addComponent(ckbQ14Outros)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox2)
+                .addComponent(ckbQ14Cloro)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox3)
+                .addComponent(ckbQ14Ozonio)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel75)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox5)
-                    .addComponent(jCheckBox8)
+                    .addComponent(ckbQ15Pescador)
+                    .addComponent(ckbQ15Outros)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox7)
+                .addComponent(ckbQ15Caminhao)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox6)
+                .addComponent(ckbQ15Marreteiro)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel76)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox9)
+                    .addComponent(ckbQ16Sim)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel77)
@@ -657,19 +657,19 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel60)
                             .addComponent(btAdicionarRendaFamilia1)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cbCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel58)
-                            .addComponent(tfRenda1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(tfValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel14)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(tfAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel57)
-                        .addComponent(tfAtividade1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(tfDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(10, 10, 10)
                 .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -737,27 +737,27 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_alterarActionPerformed
 
     private void btExcluirRendaFamiliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirRendaFamiliaActionPerformed
-        excluirRT();
+        DeljtNumeroFuncionarios();
 }//GEN-LAST:event_btExcluirRendaFamiliaActionPerformed
 
     private void btAdicionarRendaFamiliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAdicionarRendaFamiliaActionPerformed
-        addBtRt();
+        AddjtNumeroFuncionarios();
 }//GEN-LAST:event_btAdicionarRendaFamiliaActionPerformed
 
     private void btExcluirRendaFamilia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirRendaFamilia1ActionPerformed
-        // TODO add your handling code here:
+        DeljtAbatimento();
     }//GEN-LAST:event_btExcluirRendaFamilia1ActionPerformed
 
     private void btAdicionarRendaFamilia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAdicionarRendaFamilia1ActionPerformed
-        // TODO add your handling code here:
+        AddjtAbatimento();
     }//GEN-LAST:event_btAdicionarRendaFamilia1ActionPerformed
 
-    private void btAdicionarRendaFamilia2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAdicionarRendaFamilia2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btAdicionarRendaFamilia2ActionPerformed
+    private void jtEmprestimoEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtEmprestimoEmpresaActionPerformed
+        AddjtEmprestimoEmpresa();
+    }//GEN-LAST:event_jtEmprestimoEmpresaActionPerformed
 
     private void btExcluirRendaFamilia2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirRendaFamilia2ActionPerformed
-        // TODO add your handling code here:
+        DeljtEmprestimoEmpresa();
     }//GEN-LAST:event_btExcluirRendaFamilia2ActionPerformed
 
     /**
@@ -777,25 +777,24 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
     private javax.swing.JButton botao_salvar_questionario;
     private javax.swing.JButton btAdicionarRendaFamilia;
     private javax.swing.JButton btAdicionarRendaFamilia1;
-    private javax.swing.JButton btAdicionarRendaFamilia2;
     private javax.swing.JButton btExcluirRendaFamilia;
     private javax.swing.JButton btExcluirRendaFamilia1;
     private javax.swing.JButton btExcluirRendaFamilia2;
     private javax.swing.ButtonGroup casa;
+    private javax.swing.JComboBox cbCusto;
+    private javax.swing.JComboBox cbEmprestimo;
+    private javax.swing.JComboBox cbFuncao;
     private javax.swing.JComboBox cbNomeEmpresa;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox ckbQ14Cloro;
+    private javax.swing.JCheckBox ckbQ14Filtragem;
+    private javax.swing.JCheckBox ckbQ14Outros;
+    private javax.swing.JCheckBox ckbQ14Ozonio;
+    private javax.swing.JCheckBox ckbQ15Caminhao;
+    private javax.swing.JCheckBox ckbQ15Marreteiro;
+    private javax.swing.JCheckBox ckbQ15Outros;
+    private javax.swing.JCheckBox ckbQ15Pescador;
+    private javax.swing.JCheckBox ckbQ16Sim;
     private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
-    private javax.swing.JCheckBox jCheckBox9;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
-    private javax.swing.JComboBox jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
@@ -830,28 +829,29 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator10;
-    private javax.swing.JTable jTableAtividadeFamiliar;
-    private javax.swing.JTable jTableAtividadeFamiliar1;
-    private javax.swing.JTable jTableAtividadeFamiliar2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JPanel jp18;
     private javax.swing.JPanel jpPescadoSubproduto;
-    private javax.swing.JTextField tfAtividade;
-    private javax.swing.JTextField tfAtividade1;
-    private javax.swing.JTextField tfAtividade2;
-    private javax.swing.JTextField tfRenda;
-    private javax.swing.JTextField tfRenda1;
-    private javax.swing.JTextField tfRenda2;
-    private javax.swing.JTextField tfTempoAtividadeMoradia;
+    private javax.swing.JTable jtAbatimento;
+    private javax.swing.JTable jtEmprestimo;
+    private javax.swing.JButton jtEmprestimoEmpresa;
+    private javax.swing.JTable jtNumeroFuncionarios;
+    private javax.swing.JTextArea taQ11;
+    private javax.swing.JTextArea taQ12;
+    private javax.swing.JTextArea taQ13;
+    private javax.swing.JTextField tfAno;
+    private javax.swing.JTextField tfCapGiro;
+    private javax.swing.JTextField tfConstrucao;
+    private javax.swing.JTextField tfDesconto;
+    private javax.swing.JTextField tfEquipamentos;
+    private javax.swing.JTextField tfHorasTrabalhadas;
+    private javax.swing.JTextField tfNumero;
+    private javax.swing.JTextField tfOutros;
+    private javax.swing.JTextField tfQ10;
+    private javax.swing.JTextField tfSalario;
+    private javax.swing.JTextField tfValor;
     // End of variables declaration//GEN-END:variables
 
 
@@ -1131,42 +1131,7 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
 //            tfQuantasFinanciadas.setText("");
 
     }
-
-
-    private void excluirRT() {
-         //System.out.println(jTableAtividadeFamiliar.getValueAt(jTableAtividadeFamiliar.getSelectedRow(),0));
-        String sql;
-
-        sql = "delete from atravessador_moradia_familia_renda "
-            + "Where cod_atravessador_moradia_familia_renda = "
-            + jTableAtividadeFamiliar.getValueAt(jTableAtividadeFamiliar.getSelectedRow(),0);
-
-            if (conexao.salvar(sql)) {
-                System.out.println("Exclusão realizada com sucesso");
-                attjTableAtividadeFamiliar();
-            }   else
-                    JOptionPane.showMessageDialog(null,"Erro na exclusão");
-    }
-
-    private void addBtRt() {
-//        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
-//        System.out.println(codigo);
-//
-//          //Relações de Trabalho - Tabela Renda Familia
-//          String sqlinsert = "insert into atravessador_moradia_familia_renda "
-//                    + "(cod_atravessador,parentesco,atividade,renda) values ("+
-//                    codigo+",'"+
-//                    tfParentesco.getText()+"','"+
-//                    tfAtividade.getText()+"','"+
-//                    tfRenda.getText()+"')";
-//
-//            //System.out.println(sqlinsert);
-//            if (conexao.salvar(sqlinsert)) {
-//                System.out.println("Jtable RT - Cadastrado com sucesso");
-//                attjTableAtividadeFamiliar();
-//            }
-    }
-
+        
     private void attCbAtravessador() {
          try {
                     cbNomeEmpresa.removeAllItems();
@@ -1175,34 +1140,72 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
                     while (conexao.resultSet.next()){
                         cbNomeEmpresa.addItem(conexao.resultSet.getString("cod_atravessador")+
                                                        " # "+ conexao.resultSet.getString("nome"));
-                        
+
                     }
                 }catch (SQLException ex) {
                     System.out.println(ex);
                 }
     }
 
-    private void attjTableAtividadeFamiliar() {
+    private void DeljtNumeroFuncionarios() {
+    //System.out.println(jTableAtividadeFamiliar.getValueAt(jTableAtividadeFamiliar.getSelectedRow(),0));
+        String sql;
+
+        sql = "delete from fabrica_gelo_numero_funcionarios "
+            + "Where cod_fabrica_gelo_numero_funcionarios = "
+            + jtNumeroFuncionarios.getValueAt(jtNumeroFuncionarios.getSelectedRow(),0);
+
+            if (conexao.salvar(sql)) {
+                System.out.println("Exclusão realizada com sucesso");
+                AttjtNumeroFuncionarios();
+            }   else
+                    JOptionPane.showMessageDialog(null,"Erro na exclusão");
+    }
+
+    private void AddjtNumeroFuncionarios() {
+        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
+        System.out.println(codigo);
+
+
+        String sqlinsert = "insert into fabrica_gelo_numero_funcionarios "
+                  + "(cod_fabrica_gelo,funcao,salario,numero,"
+                  + "horas_trabalhadas) values ("+
+                  codigo+",'"+
+                  cbFuncao.getSelectedItem()+"','"+
+                  tfSalario.getText()+"','"+
+                  tfNumero.getText()+"','"+
+                  tfHorasTrabalhadas.getText()+"')";
+
+        //System.out.println(sqlinsert);
+        if (conexao.salvar(sqlinsert)) {
+            System.out.println("Jtable - Cadastrado com sucesso");
+            AttjtNumeroFuncionarios();
+        }
+    }
+
+    private void AttjtNumeroFuncionarios() {
         String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
 
-        conexao.execute("select * from atravessador_moradia_familia_renda"
-                        + " where cod_atravessador = " + codigo);
+        conexao.execute("select * from fabrica_gelo_numero_funcionarios"
+                        + " where cod_fabrica_gelo = " + codigo);
 
-        jTableAtividadeFamiliar.getColumnModel().getColumn(0).setMaxWidth(0);
-        jTableAtividadeFamiliar.getColumnModel().getColumn(0).setPreferredWidth(0);
-        jTableAtividadeFamiliar.getColumnModel().getColumn(1).setPreferredWidth(10);
-        jTableAtividadeFamiliar.getColumnModel().getColumn(2).setPreferredWidth(10);
-        jTableAtividadeFamiliar.getColumnModel().getColumn(3).setPreferredWidth(10);
+        jtNumeroFuncionarios.getColumnModel().getColumn(0).setMaxWidth(0);
+        jtNumeroFuncionarios.getColumnModel().getColumn(0).setPreferredWidth(0);
+        jtNumeroFuncionarios.getColumnModel().getColumn(1).setPreferredWidth(10);
+        jtNumeroFuncionarios.getColumnModel().getColumn(2).setPreferredWidth(10);
+        jtNumeroFuncionarios.getColumnModel().getColumn(3).setPreferredWidth(10);
+        jtNumeroFuncionarios.getColumnModel().getColumn(4).setPreferredWidth(10);
 
-        DefaultTableModel modelo = (DefaultTableModel)jTableAtividadeFamiliar.getModel();
+        DefaultTableModel modelo = (DefaultTableModel)jtNumeroFuncionarios.getModel();
         modelo.setNumRows(0);//limpa o JTable;
 
         try{
             while (conexao.resultSet.next())
-                modelo.addRow(new Object[]{conexao.resultSet.getString("cod_atravessador_moradia_familia_renda"),
-                                           conexao.resultSet.getString("parentesco"),
-                                           conexao.resultSet.getString("atividade"),
-                                           conexao.resultSet.getString("renda"),
+                modelo.addRow(new Object[]{conexao.resultSet.getString("cod_fabrica_gelo_numero_funcionarios"),
+                                           conexao.resultSet.getString("funcao"),
+                                           conexao.resultSet.getString("salario"),
+                                           conexao.resultSet.getString("numero"),
+                                           conexao.resultSet.getString("horas_trabalhadas"),
                                           });
 
             conexao.resultSet.first();
@@ -1211,6 +1214,146 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
             System.out.println(erro + "Tabela Familia Renda Trabalho");
             //attjTableComposicaoPescaria();
         }
+    }
+
+    private void AddjtAbatimento() {
+        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
+        System.out.println(codigo);
+
+
+        String sqlinsert = "insert into fabrica_gelo_abatimento "
+                  + "(cod_fabrica_gelo,custos,valor,desconto,"
+                  + "ano) values ("+
+                  codigo+",'"+
+                  cbCusto.getSelectedItem()+"','"+
+                  tfValor.getText()+"','"+
+                  tfDesconto.getText()+"','"+
+                  tfAno.getText()+"')";
+
+        //System.out.println(sqlinsert);
+        if (conexao.salvar(sqlinsert)) {
+            System.out.println("Jtable - Cadastrado com sucesso");
+            AttjtAbatimento();
+        }
+    }
+
+
+    private void AttjtAbatimento(){
+        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
+
+        conexao.execute("select * from fabrica_gelo_abatimento"
+                        + " where cod_fabrica_gelo = " + codigo);
+
+        jtAbatimento.getColumnModel().getColumn(0).setMaxWidth(0);
+        jtAbatimento.getColumnModel().getColumn(0).setPreferredWidth(0);
+        jtAbatimento.getColumnModel().getColumn(1).setPreferredWidth(10);
+        jtAbatimento.getColumnModel().getColumn(2).setPreferredWidth(10);
+        jtAbatimento.getColumnModel().getColumn(3).setPreferredWidth(10);
+        jtAbatimento.getColumnModel().getColumn(4).setPreferredWidth(10);
+
+        DefaultTableModel modelo = (DefaultTableModel)jtAbatimento.getModel();
+        modelo.setNumRows(0);//limpa o JTable;
+
+        try{
+            while (conexao.resultSet.next())
+                modelo.addRow(new Object[]{conexao.resultSet.getString("cod_fabrica_gelo_abatimento"),
+                                           conexao.resultSet.getString("custos"),
+                                           conexao.resultSet.getString("valor"),
+                                           conexao.resultSet.getString("desconto"),
+                                           conexao.resultSet.getString("ano"),
+                                          });
+
+            conexao.resultSet.first();
+
+        }catch (SQLException erro){
+            System.out.println(erro + "Tabela Familia Renda Trabalho");
+        }
+    }
+
+   private void DeljtAbatimento(){
+    //System.out.println(jTableAtividadeFamiliar.getValueAt(jTableAtividadeFamiliar.getSelectedRow(),0));
+        String sql;
+
+        sql = "delete from fabrica_gelo_abatimento "
+            + "Where cod_fabrica_gelo_abatimento = "
+            + jtAbatimento.getValueAt(jtAbatimento.getSelectedRow(),0);
+
+            if (conexao.salvar(sql)) {
+                System.out.println("Exclusão realizada com sucesso");
+                AttjtAbatimento();
+            }   else
+                    JOptionPane.showMessageDialog(null,"Erro na exclusão");
+    }
+
+    private void AddjtEmprestimoEmpresa() {
+        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
+        System.out.println(codigo);
+
+
+        String sqlinsert = "insert into fabrica_gelo_emprestimo "
+                  + "(cod_fabrica_gelo,emprestimo,construcao,equipamentos,"
+                  + "cap_giro,outros) values ("+
+                  codigo+",'"+
+                  cbEmprestimo.getSelectedItem()+"','"+
+                  tfConstrucao.getText()+"','"+
+                  tfEquipamentos.getText()+"','"+
+                  tfCapGiro.getText()+"','"+
+                  tfOutros.getText()+"')";
+
+        //System.out.println(sqlinsert);
+        if (conexao.salvar(sqlinsert)) {
+            System.out.println("Jtable - Cadastrado com sucesso");
+            AttjtEmprestimoEmpresa();
+        }
+    }
+
+    private void AttjtEmprestimoEmpresa() {
+        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
+
+        conexao.execute("select * from fabrica_gelo_emprestimo"
+                        + " where cod_fabrica_gelo = " + codigo);
+
+        jtEmprestimo.getColumnModel().getColumn(0).setMaxWidth(0);
+        jtEmprestimo.getColumnModel().getColumn(0).setPreferredWidth(0);
+        jtEmprestimo.getColumnModel().getColumn(1).setPreferredWidth(10);
+        jtEmprestimo.getColumnModel().getColumn(2).setPreferredWidth(10);
+        jtEmprestimo.getColumnModel().getColumn(3).setPreferredWidth(10);
+        jtEmprestimo.getColumnModel().getColumn(4).setPreferredWidth(10);
+        jtEmprestimo.getColumnModel().getColumn(5).setPreferredWidth(10);
+
+        DefaultTableModel modelo = (DefaultTableModel)jtEmprestimo.getModel();
+        modelo.setNumRows(0);//limpa o JTable;
+
+        try{
+            while (conexao.resultSet.next())
+                modelo.addRow(new Object[]{conexao.resultSet.getString("cod_fabrica_gelo_emprestimo"),
+                                           conexao.resultSet.getString("emprestimo"),
+                                           conexao.resultSet.getString("construcao"),
+                                           conexao.resultSet.getString("equipamentos"),
+                                           conexao.resultSet.getString("cap_giro"),
+                                           conexao.resultSet.getString("outros"),
+                                          });
+
+            conexao.resultSet.first();
+
+        }catch (SQLException erro){
+            System.out.println(erro + "Tabela Familia Renda Trabalho");
+        }
+    }
+
+   private void DeljtEmprestimoEmpresa(){
+    //System.out.println(jTableAtividadeFamiliar.getValueAt(jTableAtividadeFamiliar.getSelectedRow(),0));
+        String sql;
+
+        sql = "delete from fabrica_gelo_emprestimo "
+            + "Where cod_fabrica_gelo_emprestimo = "
+            + jtEmprestimo.getValueAt(jtEmprestimo.getSelectedRow(),0);
+
+            if (conexao.salvar(sql)) {
+                System.out.println("Exclusão realizada com sucesso");
+                AttjtAbatimento();
+            }   else
+                    JOptionPane.showMessageDialog(null,"Erro na exclusão");
     }
 
     private void salvar_dados() {
@@ -1520,79 +1663,7 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
 //            }
     }
 
-    private void AttAquisicaoFormasComercilizacao() {
-//        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
-//
-//        conexao.execute("select * from atravessador_aquisicao_forma_comercializacao"
-//                        + " where cod_atravessador = " + codigo);
-//
-//        jTableFormaComercializacao.getColumnModel().getColumn(0).setMaxWidth(0);
-//        jTableFormaComercializacao.getColumnModel().getColumn(0).setPreferredWidth(0);
-//        jTableFormaComercializacao.getColumnModel().getColumn(1).setPreferredWidth(10);
-//        jTableFormaComercializacao.getColumnModel().getColumn(2).setPreferredWidth(10);
-//        jTableFormaComercializacao.getColumnModel().getColumn(3).setPreferredWidth(10);
-//        jTableFormaComercializacao.getColumnModel().getColumn(4).setPreferredWidth(10);
-//        jTableFormaComercializacao.getColumnModel().getColumn(5).setPreferredWidth(10);
-//        jTableFormaComercializacao.getColumnModel().getColumn(6).setPreferredWidth(10);
-//        jTableFormaComercializacao.getColumnModel().getColumn(7).setPreferredWidth(10);
-//
-//        DefaultTableModel modelo = (DefaultTableModel)jTableFormaComercializacao.getModel();
-//        modelo.setNumRows(0);//limpa o JTable;
-//
-//        try{
-//            while (conexao.resultSet.next())
-//                modelo.addRow(new Object[]{conexao.resultSet.getString("cod_atravessador_aquisicao_forma_comercializacao"),
-//                                           conexao.resultSet.getString("especie"),
-//                                           conexao.resultSet.getString("eviscerado"),
-//                                           conexao.resultSet.getString("salgado"),
-//                                           conexao.resultSet.getString("file"),
-//                                           conexao.resultSet.getString("postas"),
-//                                           conexao.resultSet.getString("sem_cabeca"),
-//                                           conexao.resultSet.getString("outros"),
-//                                          });
-//
-//            conexao.resultSet.first();
-//
-//        }catch (SQLException erro){
-//            System.out.println(erro + " jTableFormaComercializacao");
-//            //attjTableComposicaoPescaria();
-//        }
-    }
 
-    private void DelAttAquisicaoFormasComercilizacao() {
-//        //System.out.println(jTableAtividadeFamiliar.getValueAt(jTableAtividadeFamiliar.getSelectedRow(),0));
-//        String sql;
-//
-//        sql = "delete from atravessador_aquisicao_forma_comercializacao "
-//            + "Where cod_atravessador_aquisicao_forma_comercializacao = "
-//            + jTableFormaComercializacao.getValueAt(jTableFormaComercializacao.getSelectedRow(),0);
-//
-//            if (conexao.salvar(sql)) {
-//                System.out.println("Exclusão realizada com sucesso");
-//                AttAquisicaoFormasComercilizacao();
-//            }   else
-//                    JOptionPane.showMessageDialog(null,"Erro na exclusão");
-    }
-
-    private void AttComercializacaoGrude() {
-//        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
-//        System.out.println(codigo);
-//
-//          //Relações de Trabalho - Tabela Renda Familia
-//          String sqlinsert = "insert into atravessador_aquisicao_grude_especie "
-//                    + "(cod_atravessador,especie,volume,preco,tipo) values ("+
-//                    codigo+",'"+
-//                    cbEspecieGrude.getSelectedItem()+"','"+
-//                    tfVolumeGrude.getText()+"','"+
-//                    tfPrecoGrude.getText()+"','"+
-//                    tfTipoGrude.getText()+"')";
-//
-//            System.out.println(sqlinsert);
-//            if (conexao.salvar(sqlinsert)) {
-//                System.out.println("Jtable RT - Cadastrado com sucesso");
-//                attjtGrudeEspecie();
-//            }
-    }
 
     private void attCbs() {
 //        String item = new String();
@@ -1614,217 +1685,7 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
 //                }
     }
 
-    private void attjtGrudeEspecie() {
-//        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
-//
-//        conexao.execute("select * from atravessador_aquisicao_grude_especie"
-//                        + " where cod_atravessador = " + codigo);
-//
-//        jtGrude.getColumnModel().getColumn(0).setMaxWidth(0);
-//        jtGrude.getColumnModel().getColumn(0).setPreferredWidth(0);
-//        jtGrude.getColumnModel().getColumn(1).setPreferredWidth(10);
-//        jtGrude.getColumnModel().getColumn(2).setPreferredWidth(10);
-//        jtGrude.getColumnModel().getColumn(3).setPreferredWidth(10);
-//        jtGrude.getColumnModel().getColumn(4).setPreferredWidth(10);
-//
-//
-//
-//        DefaultTableModel modelo = (DefaultTableModel)jtGrude.getModel();
-//        modelo.setNumRows(0);//limpa o JTable;
-//
-//        try{
-//            while (conexao.resultSet.next())
-//                modelo.addRow(new Object[]{conexao.resultSet.getString("cod_atravessador_aquisicao_grude_especie"),
-//                                           conexao.resultSet.getString("especie"),
-//                                           conexao.resultSet.getString("volume"),
-//                                           conexao.resultSet.getString("preco"),
-//                                           conexao.resultSet.getString("tipo"),
-//                                          });
-//
-//            conexao.resultSet.first();
-//
-//        }catch (SQLException erro){
-//            System.out.println(erro + " tabela GRUDE");
-//            //attjTableComposicaoPescaria();
-//        }
-    }
-
-    private void DeljtGrude() {
-//        //System.out.println(jTableAtividadeFamiliar.getValueAt(jTableAtividadeFamiliar.getSelectedRow(),0));
-//        String sql;
-//
-//        sql = "delete from atravessador_aquisicao_grude_especie "
-//            + "Where cod_atravessador_aquisicao_grude_especie = "
-//            + jtGrude.getValueAt(jtGrude.getSelectedRow(),0);
-//
-//            if (conexao.salvar(sql)) {
-//                System.out.println("Exclusão realizada com sucesso");
-//                attjtGrudeEspecie();
-//            }   else
-//                    JOptionPane.showMessageDialog(null,"Erro na exclusão");
-    }
-//
-//    private void AddJtFormas() {
-//        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
-//        System.out.println(codigo);
-//
-//        String produtot = new String();
-//            produtot = cbProduto.getSelectedItem().toString();
-//            if (produtot.equals("Outro"))
-//                produtot = tfProduto.getText();
-//
-//          //Relações de Trabalho - Tabela Renda Familia
-//          String sqlinsert = "insert into atravessador_comercializacao_formas "
-//                    + "(cod_atravessador,especie,produto,cliente,destino,"
-//                    + "volume,preco) values ("+
-//                    codigo+",'"+
-//                    cbEspecie.getSelectedItem()+"','"+
-//                    produtot+"','"+
-//                    tfCliente.getText()+"','"+
-//                    tfDestino.getText()+"','"+
-//                    tfVolume.getText()+"','"+
-//                    tfPreco.getText()+"')";
-//
-//            System.out.println(sqlinsert);
-//            if (conexao.salvar(sqlinsert)) {
-//                System.out.println("Jtable - Cadastrado com sucesso");
-//                attjtForma();
-//            }
-//    }
-//
-//    private void attjtForma() {
-//        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
-//
-//        conexao.execute("select * from atravessador_comercializacao_formas"
-//                        + " where cod_atravessador = " + codigo);
-//
-//        jtForma.getColumnModel().getColumn(0).setMaxWidth(0);
-//        jtForma.getColumnModel().getColumn(0).setPreferredWidth(0);
-//        jtForma.getColumnModel().getColumn(1).setPreferredWidth(10);
-//        jtForma.getColumnModel().getColumn(2).setPreferredWidth(10);
-//        jtForma.getColumnModel().getColumn(3).setPreferredWidth(10);
-//        jtForma.getColumnModel().getColumn(4).setPreferredWidth(10);
-//        jtForma.getColumnModel().getColumn(5).setPreferredWidth(10);
-//        jtForma.getColumnModel().getColumn(6).setPreferredWidth(10);
-//
-//
-//
-//        DefaultTableModel modelo = (DefaultTableModel)jtForma.getModel();
-//        modelo.setNumRows(0);//limpa o JTable;
-//
-//        try{
-//            while (conexao.resultSet.next())
-//                modelo.addRow(new Object[]{conexao.resultSet.getString("cod_atravessador_comercializacao_formas"),
-//                                           conexao.resultSet.getString("especie"),
-//                                           conexao.resultSet.getString("produto"),
-//                                           conexao.resultSet.getString("cliente"),
-//                                           conexao.resultSet.getString("destino"),
-//                                           conexao.resultSet.getString("volume"),
-//                                           conexao.resultSet.getString("preco"),
-//                                          });
-//
-//            conexao.resultSet.first();
-//
-//        }catch (SQLException erro){
-//            System.out.println(erro + " tabela Forma");
-//            //attjTableComposicaoPescaria();
-//        }
-//    }
-//
-//    private void DelJtFormas() {
-//        //System.out.println(jTableAtividadeFamiliar.getValueAt(jTableAtividadeFamiliar.getSelectedRow(),0));
-//        String sql;
-//
-//        sql = "delete from atravessador_comercializacao_formas "
-//            + "Where cod_atravessador_comercializacao_formas = "
-//            + jtForma.getValueAt(jtForma.getSelectedRow(),0);
-//
-//            if (conexao.salvar(sql)) {
-//                System.out.println("Exclusão realizada com sucesso");
-//                attjtForma();
-//            }   else
-//                    JOptionPane.showMessageDialog(null,"Erro na exclusão");
-//    }
-//
-//    private void AddJtGastos() {
-//        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
-//        System.out.println(codigo);
-//
-//        String gastot = new String();
-//            gastot = cbGastos.getSelectedItem().toString();
-//            if (gastot.equals("Outro"))
-//                gastot = tfOutrosGastos.getText();
-//
-//          //Relações de Trabalho - Tabela Renda Familia
-//          String sqlinsert = "insert into atravessador_comercializacao_gastos "
-//                    + "(cod_atravessador,gasto,tipo,quantidade,"
-//                    + "custo,outros) values ("+
-//                    codigo+",'"+
-//                    gastot+"','"+
-//                    tfTipoGasto.getText()+"','"+
-//                    tfQuantidadeCusto.getText()+"','"+
-//                    tfCustoCusto.getText()+"','"+
-//                    tfOutroCusto.getText()+"')";
-//
-//            System.out.println(sqlinsert);
-//            if (conexao.salvar(sqlinsert)) {
-//                System.out.println("Jtable - Cadastrado com sucesso");
-//                attjtGasto();
-//            }
-//    }
-//
-//    private void attjtGasto() {
-//        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
-//
-//        conexao.execute("select * from atravessador_comercializacao_gastos"
-//                        + " where cod_atravessador = " + codigo);
-//
-//        jtGastos.getColumnModel().getColumn(0).setMaxWidth(0);
-//        jtGastos.getColumnModel().getColumn(0).setPreferredWidth(0);
-//        jtGastos.getColumnModel().getColumn(1).setPreferredWidth(10);
-//        jtGastos.getColumnModel().getColumn(2).setPreferredWidth(10);
-//        jtGastos.getColumnModel().getColumn(3).setPreferredWidth(10);
-//        jtGastos.getColumnModel().getColumn(4).setPreferredWidth(10);
-//        jtGastos.getColumnModel().getColumn(5).setPreferredWidth(10);
-//
-//
-//
-//
-//        DefaultTableModel modelo = (DefaultTableModel)jtGastos.getModel();
-//        modelo.setNumRows(0);//limpa o JTable;
-//
-//        try{
-//            while (conexao.resultSet.next())
-//                modelo.addRow(new Object[]{conexao.resultSet.getString("cod_atravessador_comercializacao_gastos"),
-//                                           conexao.resultSet.getString("gasto"),
-//                                           conexao.resultSet.getString("tipo"),
-//                                           conexao.resultSet.getString("quantidade"),
-//                                           conexao.resultSet.getString("custo"),
-//                                           conexao.resultSet.getString("outros"),
-//                                          });
-//
-//            conexao.resultSet.first();
-//
-//        }catch (SQLException erro){
-//            System.out.println(erro + " tabela gastos");
-//            //attjTableComposicaoPescaria();
-//        }
-//    }
-//
-//    private void DelJtGastos() {
-//        //System.out.println(jTableAtividadeFamiliar.getValueAt(jTableAtividadeFamiliar.getSelectedRow(),0));
-//        String sql;
-//
-//        sql = "delete from atravessador_comercializacao_gastos "
-//            + "Where cod_atravessador_comercializacao_gastos = "
-//            + jtGastos.getValueAt(jtGastos.getSelectedRow(),0);
-//
-//            if (conexao.salvar(sql)) {
-//                System.out.println("Exclusão realizada com sucesso");
-//                attjtGasto();
-//            }   else
-//                    JOptionPane.showMessageDialog(null,"Erro na exclusão");
-//    }
+  
 //
 //    private String getNumeroFornecedores() {
 //        if (ckbNaoSabeFornecedores.isSelected()) {
@@ -1834,131 +1695,7 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
 //       }
 //    }
 //
-//    private void AddjtMercadodeComercializacao() {
-//        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
-//        System.out.println(codigo);
-//
-//        //
-//        String sqlinsert = "insert into atravessador_comercializacao_mercado_cliente "
-//                    + "(cod_atravessador,mercado,cliente_pescado_empresa_municipio,"
-//                    + "cliente_pescado_empresa_capital,cliente_pescado_mercado_feira,"
-//                    + "cliente_pescado_supermercado_capital,cliente_pescado_supermercado_municipio,"
-//                    + "cliente_pescado_caminhao,cliente_pescado_outro_atravessador,"
-//                    + "cliente_grude_atravessador_municipio,cliente_grude_atravessador_outro_municipio,"
-//                    + "cliente_grude_empresa_belem,cliente_grude_outros) values ("+
-//                    codigo+",'"+
-//                    cbMercado.getSelectedItem()+"','"+
-//                    util.checarCkb(cliente_pescado_empresa_municipio)+"','"+
-//                    util.checarCkb(cliente_pescado_empresa_capital)+"','"+
-//                    util.checarCkb(cliente_pescado_mercado_feira)+"','"+
-//                    util.checarCkb(cliente_pescado_supermercado_capital)+"','"+
-//                    util.checarCkb(cliente_pescado_supermercado_municipio)+"','"+
-//                    util.checarCkb(cliente_pescado_caminhao)+"','"+
-//                    util.checarCkb(cliente_pescado_outro_atravessador)+"','"+
-//                    util.checarCkb(cliente_grude_atravessador_municipio)+"','"+
-//                    util.checarCkb(cliente_grude_atravessador_outro_municipio)+"','"+
-//                    util.checarCkb(cliente_grude_empresa_belem)+"','"+
-//                    util.checarCkb(cliente_grude_outros)+"')";
-//
-//            System.out.println(sqlinsert);
-//            if (conexao.salvar(sqlinsert)) {
-//                System.out.println("AddjtMercadodeComercializacao() - Cadastrado com sucesso");
-//                AttjtMercadodeComercializacao();
-//            }
-//    }
-//
-//    private void AttjtMercadodeComercializacao() {
-//        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
-//        String pescado,grude = new String();
-//
-//        conexao.execute("select * from atravessador_comercializacao_mercado_cliente"
-//                        + " where cod_atravessador = " + codigo);
-//
-//        jtMercadodeComercializacao.getColumnModel().getColumn(0).setMaxWidth(0);
-//        jtMercadodeComercializacao.getColumnModel().getColumn(0).setPreferredWidth(0);
-//        jtMercadodeComercializacao.getColumnModel().getColumn(1).setPreferredWidth(10);
-//        jtMercadodeComercializacao.getColumnModel().getColumn(2).setPreferredWidth(10);
-//        jtMercadodeComercializacao.getColumnModel().getColumn(3).setPreferredWidth(10);
-//
-//
-//        DefaultTableModel modelo = (DefaultTableModel)jtMercadodeComercializacao.getModel();
-//        modelo.setNumRows(0);//limpa o JTable;
-//
-//        try{
-//            while (conexao.resultSet.next()){
-//            pescado = "";
-//
-//            if (conexao.resultSet.getString("cliente_pescado_empresa_municipio").equals("1"))
-//                pescado = pescado + "1,";
-//
-//            if (conexao.resultSet.getString("cliente_pescado_empresa_capital").equals("1"))
-//                pescado = pescado + "2,";
-//
-//            if (conexao.resultSet.getString("cliente_pescado_mercado_feira").equals("1"))
-//                pescado = pescado + "3,";
-//
-//            if (conexao.resultSet.getString("cliente_pescado_supermercado_capital").equals("1"))
-//                pescado = pescado + "4,";
-//
-//            if (conexao.resultSet.getString("cliente_pescado_supermercado_municipio").equals("1"))
-//                pescado = pescado + "5,";
-//
-//            if (conexao.resultSet.getString("cliente_pescado_caminhao").equals("1"))
-//                pescado = pescado + "6,";
-//
-//            if (conexao.resultSet.getString("cliente_pescado_outro_atravessador").equals("1"))
-//                pescado = pescado + "7,";
-//
-////            if (conexao.resultSet.getString("cliente_pescado_outro_atravessador").equals("1"))
-////                pescado = pescado + "8,";
-//
-//            grude = "";
-//
-//            if (conexao.resultSet.getString("cliente_grude_atravessador_municipio").equals("1"))
-//                grude = grude + "1,";
-//
-//            if (conexao.resultSet.getString("cliente_grude_atravessador_outro_municipio").equals("1"))
-//                grude = grude + "2,";
-//
-//            if (conexao.resultSet.getString("cliente_grude_empresa_belem").equals("1"))
-//                grude = grude + "3,";
-//
-//            if (conexao.resultSet.getString("cliente_grude_outros").equals("1"))
-//                grude = grude + "4,";
-//
-////            if (conexao.resultSet.getString("cliente_grude_outros").equals("1"))
-////                grude = grude + "5,";
-//
-//            modelo.addRow(new Object[]{conexao.resultSet.getString("cod_atravessador_comercializacao_mercado_cliente"),
-//                                           conexao.resultSet.getString("mercado"),
-//                                           pescado,
-//                                           grude,
-//                                       });
-//            }
-//            conexao.resultSet.first();
-//
-//        }catch (SQLException erro){
-//            System.out.println(erro + " tabela gastos");
-//        }
-//    }
-//
-//    private void DeljtMercadodeComercializacao() {
-//        //System.out.println(jTableAtividadeFamiliar.getValueAt(jTableAtividadeFamiliar.getSelectedRow(),0));
-//        String sql;
-//
-//        sql = "delete from atravessador_comercializacao_mercado_cliente "
-//            + "Where cod_atravessador_comercializacao_mercado_cliente = "
-//            + jtMercadodeComercializacao.getValueAt(jtMercadodeComercializacao.getSelectedRow(),0);
-//
-//            if (conexao.salvar(sql)) {
-//                System.out.println("Exclusão realizada com sucesso");
-//                AttjtMercadodeComercializacao();
-//            }   else
-//                    JOptionPane.showMessageDialog(null,"Erro na exclusão");
-//    }
-
-
-
+//    
 
 
 }
