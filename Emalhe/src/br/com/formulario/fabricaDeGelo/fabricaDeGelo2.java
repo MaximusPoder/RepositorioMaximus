@@ -2,7 +2,6 @@
 package br.com.formulario.fabricaDeGelo;
 
 import br.com.conexao.Conexao;
-import br.com.util.JDecimal2;
 import br.com.util.JIntField;
 import br.com.util.JMoneyField;
 import br.com.util.Utilidade;
@@ -17,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class fabricaDeGelo2 extends javax.swing.JFrame {
 
-    /** Creates new form frm_questionario_atravessador */
+    /** Creates new form frm_questionario_atravessador Go Your Own Way*/
     private Conexao conexao;
     int inicia_combo = 0;
     String id_atravessador;
@@ -31,9 +30,6 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
 
         //Insere nome no cbNomeAtravessador
         attCbAtravessador();
-
-        attCbs();
-
         mostra_dados();
 
     }
@@ -65,7 +61,7 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
         jLabel54 = new javax.swing.JLabel();
         tfSalario = new JMoneyField();
         jLabel55 = new javax.swing.JLabel();
-        tfNumero = new javax.swing.JTextField();
+        tfNumero = new JIntField();
         btExcluirRendaFamilia = new javax.swing.JButton();
         jLabel56 = new javax.swing.JLabel();
         btAdicionarRendaFamilia = new javax.swing.JButton();
@@ -75,7 +71,7 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
         jSeparator10 = new javax.swing.JSeparator();
         jLabel11 = new javax.swing.JLabel();
         cbFuncao = new javax.swing.JComboBox();
-        tfHorasTrabalhadas = new javax.swing.JTextField();
+        tfHorasTrabalhadas = new JIntField();
         jLabel68 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         taQ11 = new javax.swing.JTextArea();
@@ -90,34 +86,34 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
         ckbQ14Cloro = new javax.swing.JCheckBox();
         ckbQ14Ozonio = new javax.swing.JCheckBox();
         ckbQ14Outros = new javax.swing.JCheckBox();
-        jTextField2 = new javax.swing.JTextField();
+        tfQ14 = new javax.swing.JTextField();
         ckbQ15Pescador = new javax.swing.JCheckBox();
         jLabel75 = new javax.swing.JLabel();
         ckbQ15Marreteiro = new javax.swing.JCheckBox();
         ckbQ15Caminhao = new javax.swing.JCheckBox();
         ckbQ15Outros = new javax.swing.JCheckBox();
-        jTextField3 = new javax.swing.JTextField();
+        tfQ15 = new javax.swing.JTextField();
         jLabel76 = new javax.swing.JLabel();
         ckbQ16Sim = new javax.swing.JCheckBox();
-        jTextField4 = new javax.swing.JTextField();
+        tfQ16 = new javax.swing.JTextField();
         jLabel77 = new javax.swing.JLabel();
         tfValor = new JMoneyField();
         jLabel57 = new javax.swing.JLabel();
         jLabel58 = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
-        tfDesconto = new javax.swing.JTextField();
+        tfDesconto = new JMoneyField();
         btExcluirRendaFamilia1 = new javax.swing.JButton();
         jScrollPane35 = new javax.swing.JScrollPane();
         jtAbatimento = new javax.swing.JTable();
         btAdicionarRendaFamilia1 = new javax.swing.JButton();
         cbCusto = new javax.swing.JComboBox();
-        tfAno = new javax.swing.JTextField();
+        tfAno = new JIntField();
         jLabel14 = new javax.swing.JLabel();
         jLabel78 = new javax.swing.JLabel();
         jScrollPane36 = new javax.swing.JScrollPane();
         jtEmprestimo = new javax.swing.JTable();
         btExcluirRendaFamilia2 = new javax.swing.JButton();
-        jCheckBox10 = new javax.swing.JCheckBox();
+        ckbQ18Sim = new javax.swing.JCheckBox();
         jp18 = new javax.swing.JPanel();
         jLabel62 = new javax.swing.JLabel();
         tfCapGiro = new JMoneyField();
@@ -262,6 +258,13 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
         ckbQ14Ozonio.setText("Ozônio");
 
         ckbQ14Outros.setText("Outros");
+        ckbQ14Outros.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                ckbQ14OutrosStateChanged(evt);
+            }
+        });
+
+        tfQ14.setEditable(false);
 
         ckbQ15Pescador.setText("Pescador");
 
@@ -273,11 +276,25 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
         ckbQ15Caminhao.setText("Caminhão");
 
         ckbQ15Outros.setText("Outros");
+        ckbQ15Outros.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                ckbQ15OutrosStateChanged(evt);
+            }
+        });
+
+        tfQ15.setEditable(false);
 
         jLabel76.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel76.setText("16 - A empresa recebeu incentivos fiscais?");
 
         ckbQ16Sim.setText("Sim. Qual?");
+        ckbQ16Sim.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                ckbQ16SimStateChanged(evt);
+            }
+        });
+
+        tfQ16.setEditable(false);
 
         jLabel77.setFont(new java.awt.Font("Tahoma", 1, 11));
         jLabel77.setText("17 - A empresa recebe algum abatimento nos custos?");
@@ -324,13 +341,13 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
 
         jtEmprestimo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Cod", "Parentesco", "Atividade", "Renda"
+                "Cod", "Empréstimo", "Construção", "Equipamentos", "Cap.Giro", "Outros"
             }
         ));
         jScrollPane36.setViewportView(jtEmprestimo);
@@ -342,7 +359,7 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
             }
         });
 
-        jCheckBox10.setText("Sim");
+        ckbQ18Sim.setText("Sim");
 
         jp18.setLayout(new java.awt.GridBagLayout());
 
@@ -517,7 +534,7 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
                                     .addGap(18, 18, 18)
                                     .addComponent(ckbQ15Outros)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE))
+                                    .addComponent(tfQ15, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE))
                                 .addComponent(jLabel75))
                             .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(ckbQ14Ozonio)
@@ -527,7 +544,7 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
                                     .addGap(18, 18, 18)
                                     .addComponent(ckbQ14Outros)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextField2))
+                                    .addComponent(tfQ14))
                                 .addComponent(jLabel74)))
                         .addGap(407, 407, 407))
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
@@ -535,7 +552,7 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
                             .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                                 .addComponent(ckbQ16Sim)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField4))
+                                .addComponent(tfQ16))
                             .addComponent(jLabel76))
                         .addContainerGap(482, Short.MAX_VALUE))
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
@@ -544,7 +561,7 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
                     .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addComponent(jLabel78)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox10)
+                        .addComponent(ckbQ18Sim)
                         .addGap(423, 423, 423))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
                         .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -627,7 +644,7 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ckbQ14Filtragem)
                     .addComponent(ckbQ14Outros)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfQ14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ckbQ14Cloro)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -638,7 +655,7 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ckbQ15Pescador)
                     .addComponent(ckbQ15Outros)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfQ15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ckbQ15Caminhao)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -648,7 +665,7 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ckbQ16Sim)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfQ16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel77)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -677,7 +694,7 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel78)
-                    .addComponent(jCheckBox10))
+                    .addComponent(ckbQ18Sim))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jp18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -760,6 +777,33 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
         DeljtEmprestimoEmpresa();
     }//GEN-LAST:event_btExcluirRendaFamilia2ActionPerformed
 
+    private void ckbQ14OutrosStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ckbQ14OutrosStateChanged
+        if (ckbQ14Outros.isSelected()){
+            tfQ14.setEditable(true);
+        }else{
+            tfQ14.setEditable(false);
+            tfQ14.setText("");
+        }
+    }//GEN-LAST:event_ckbQ14OutrosStateChanged
+
+    private void ckbQ15OutrosStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ckbQ15OutrosStateChanged
+        if (ckbQ15Outros.isSelected()){
+            tfQ15.setEditable(true);
+        }else{
+            tfQ15.setEditable(false);
+            tfQ15.setText("");
+        }
+    }//GEN-LAST:event_ckbQ15OutrosStateChanged
+
+    private void ckbQ16SimStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ckbQ16SimStateChanged
+        if (ckbQ16Sim.isSelected()){
+            tfQ16.setEditable(true);
+        }else{
+            tfQ16.setEditable(false);
+            tfQ16.setText("");
+        }
+    }//GEN-LAST:event_ckbQ16SimStateChanged
+
     /**
     * @param args the command line arguments
     */
@@ -794,7 +838,7 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
     private javax.swing.JCheckBox ckbQ15Outros;
     private javax.swing.JCheckBox ckbQ15Pescador;
     private javax.swing.JCheckBox ckbQ16Sim;
-    private javax.swing.JCheckBox jCheckBox10;
+    private javax.swing.JCheckBox ckbQ18Sim;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
@@ -829,9 +873,6 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator10;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JPanel jp18;
     private javax.swing.JPanel jpPescadoSubproduto;
     private javax.swing.JTable jtAbatimento;
@@ -850,296 +891,100 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
     private javax.swing.JTextField tfNumero;
     private javax.swing.JTextField tfOutros;
     private javax.swing.JTextField tfQ10;
+    private javax.swing.JTextField tfQ14;
+    private javax.swing.JTextField tfQ15;
+    private javax.swing.JTextField tfQ16;
     private javax.swing.JTextField tfSalario;
     private javax.swing.JTextField tfValor;
     // End of variables declaration//GEN-END:variables
 
 
     private void mostra_dados(){
-//        limpar_dados();
-//
-//        //tabelas 1:N
-//        attjtGasto();
-//        attjtForma();
-//        attjtGrudeEspecie();
-//        AttAquisicaoFormasComercilizacao();
-//        attjTableAtividadeFamiliar();
-//        AttjtMercadodeComercializacao();
-//
-//        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
-//        System.out.println(codigo);
-//        try {
-//            //Atravessador Moradia
-//            conexao.execute("SELECT * FROM atravessador_moradia WHERE cod_atravessador = "+codigo);
-//            conexao.resultSet.first();
-//
-//            //Moaradia
-//            String testador;
-//
-//            testador = conexao.resultSet.getString("casa");
-//            if (testador.equals("Madeira"))
-//                   rbMadeira.setSelected(true);
-//
-//            if (testador.equals("Alvenaria"))
-//                   rbAlvenaria.setSelected(true);
-//
-//            if (conexao.resultSet.getString("luz").equals("1"))
-//                   ckbLuzSim.setSelected(true);
-//
-//            testador = conexao.resultSet.getString("banheiro");
-//            if (testador.equals("Dentro"))
-//                   rbBanheiroDentro.setSelected(true);
-//
-//            if (testador.equals("Fora"))
-//                   rbBanheiroFora.setSelected(true);
-//
-//            if (conexao.resultSet.getString("agua_encanada").equals("1"))
-//                   ckbAguaSim.setSelected(true);
-//
-//            if (conexao.resultSet.getString("drenagem_pluvial").equals("1"))
-//                   ckbDrenagemSim.setSelected(true);
-//
-//            if (conexao.resultSet.getString("fossa").equals("1"))
-//                   ckbFossaSim.setSelected(true);
-//
-//            if (conexao.resultSet.getString("tem_registro").equals("1"))
-//                   ckbTemRegistroEntidade.setSelected(true);
-//
-//            tfQualEntidade.setText(conexao.resultSet.getString("qual_entidade"));
-//            tfDesdeQuando.setText(conexao.resultSet.getString("tempo_registro"));
-//
-//            if (conexao.resultSet.getString("recebe_beneficio").equals("1"))
-//                   ckbRecebeBeneficioGovernoSim.setSelected(true);
-//
-//            tfQualBeneficio.setText(conexao.resultSet.getString("beneficio"));
-//            tfTempoAtividadeMoradia.setText(conexao.resultSet.getString("tempo_atividade"));
-//
-//            System.out.println("1 Moradia - Passou");
-//
-//            //Atravessador Recepção
-//            conexao.execute("SELECT * FROM atravessador_recepcao_produtos WHERE cod_atravessador = "+codigo);
-//            conexao.resultSet.first();
-//
-//           if (conexao.resultSet.getString("pescador_fornece_pescado").equals("1"))
-//                   ckbPescadorP.setSelected(true);
-//
-//           if (conexao.resultSet.getString("empresa_fornece_pescado").equals("1"))
-//                   ckbEmpresaP.setSelected(true);
-//
-//            if (conexao.resultSet.getString("outro_atravessador_fornece_pescado").equals("1"))
-//                   ckbOutroAtravessadorP.setSelected(true);
-//
-//            if (conexao.resultSet.getString("dono_do_barco_fornece_pescado").equals("1"))
-//                   ckbDonoBarcoP.setSelected(true);
-//
-//            if (conexao.resultSet.getString("mercado_ou_feira_fornece_pescado").equals("1"))
-//                   ckbMercadoFeiraP.setSelected(true);
-//
-//            if (conexao.resultSet.getString("cooperativa_fornece_pescado").equals("1"))
-//                   ckbCooperativaP.setSelected(true);
-//            //
-//            if (conexao.resultSet.getString("pescador_fornece_grude").equals("1"))
-//                   ckbPescadorG.setSelected(true);
-//
-//            if (conexao.resultSet.getString("empresa_fornece_grude").equals("1"))
-//                   ckbEmpresaG.setSelected(true);
-//
-//            if (conexao.resultSet.getString("outro_atravessador_fornece_grude").equals("1"))
-//                   ckbOutroAtravessadorG.setSelected(true);
-//
-//            if (conexao.resultSet.getString("dono_do_barco_fornece_grude").equals("1"))
-//                   ckbDonoBarcoG.setSelected(true);
-//
-//            if (conexao.resultSet.getString("mercado_ou_feira_fornece_grude").equals("1"))
-//                   ckbMercadoFeiraG.setSelected(true);
-//
-//            if (conexao.resultSet.getString("cooperativa_fornece_grude").equals("1"))
-//                   ckbCooperativaG.setSelected(true);
-//
-//            //
-//            String nr = conexao.resultSet.getString("numero_fornecedores");
-//            if (nr.equals("N/S")){
-//                    ckbNaoSabeFornecedores.setSelected(true);
-//            } else {
-//                        tfNumeroFornecedores.setText(nr);
-//                    }
-//            //
-//
-//            if (conexao.resultSet.getString("numero_aumentou").equals("1"))
-//                   ckbFornecedorAumentouSim.setSelected(true);
-//
-//            if (conexao.resultSet.getString("produto_sempre_dos_mesmos").equals("1"))
-//                   ckbSempreMesmoFornecedor1.setSelected(true);
-//
-//            if (conexao.resultSet.getString("produto_sempre_dos_mesmos_quem_aparece").equals("1"))
-//                   ckbSempreMesmoFornecedor2.setSelected(true);
-//
-//            if (conexao.resultSet.getString("produto_sempre_mais_barato").equals("1"))
-//                   ckbMaisBarato3.setSelected(true);
-//
-//            if (conexao.resultSet.getString("produto_de_quem_aparecer").equals("1"))
-//                   ckbDeQuemAparece4.setSelected(true);
-//
-//
-//            System.out.println("2 Recepção - Passou ");
-//
-//             //Aquisicao
-//            conexao.execute("SELECT * FROM atravessador_aquisicao WHERE cod_atravessador = "+codigo);
-//            conexao.resultSet.first();
-//
-//            if (conexao.resultSet.getString("peixe_inteiro").equals("1"))
-//                   ckbSoPeixeiInteiro.setSelected(true);
-//
-//            if (conexao.resultSet.getString("cor_carne_peixe").equals("1"))
-//                   ckbCorCarnePeixe.setSelected(true);
-//
-//            if (conexao.resultSet.getString("odor_carne_peixe").equals("1"))
-//                   ckbOdorCarnePeixe.setSelected(true);
-//
-//            if (conexao.resultSet.getString("consitencia_carne_peixe").equals("1"))
-//                   ckbConsistenciaCarnePeixe.setSelected(true);
-//
-//            if (conexao.resultSet.getString("odor_grude").equals("1"))
-//                   ckbOdorGrude.setSelected(true);
-//
-//            if (conexao.resultSet.getString("tamanho_grude").equals("1"))
-//                   ckbTamanhoGrude.setSelected(true);
-//
-//            if (conexao.resultSet.getString("sem_mancha_grude").equals("1"))
-//                   ckbSemManchaGrude.setSelected(true);
-//
-//            if (conexao.resultSet.getString("odor_aba").equals("1"))
-//                   ckbOdorAba.setSelected(true);
-//
-//            if (conexao.resultSet.getString("tamanho_aba").equals("1"))
-//                   ckbTamanhoAba.setSelected(true);
-//
-//            if (conexao.resultSet.getString("sem_mancha_aba").equals("1"))
-//                   ckbSemManchaAba.setSelected(true);
-//
-//            System.out.println("3 Aquisição - Passou");
-//
-//
-//            //Armazenamento
-//            conexao.execute("SELECT * FROM atravessador_armazenamento WHERE cod_atravessador = "+codigo);
-//            conexao.resultSet.first();
-//
-//            if (conexao.resultSet.getString("pescado_gelo").equals("1"))
-//                   ckbGeloPescador.setSelected(true);
-//
-//            if (conexao.resultSet.getString("pescado_frigorifico").equals("1"))
-//                   ckbFrigorificoPescador.setSelected(true);
-//
-//            if (conexao.resultSet.getString("pescado_innatura").equals("1"))
-//                   ckbInNaturaPescador.setSelected(true);
-//
-//            if (conexao.resultSet.getString("pescado_sal").equals("1"))
-//                   ckbSalPescador.setSelected(true);
-//
-//            if (conexao.resultSet.getString("grude_sal").equals("1"))
-//                   ckbSalGrude.setSelected(true);
-//
-//            if (conexao.resultSet.getString("grude_estufa").equals("1"))
-//                   ckbEstufaGrude.setSelected(true);
-//
-//            if (conexao.resultSet.getString("grude_sol").equals("1"))
-//                   ckbSolGrude.setSelected(true);
-//
-//            if (conexao.resultSet.getString("grude_gelo").equals("1"))
-//                   ckbGeloGrude.setSelected(true);
-//
-//            System.out.println("4 Armazenamento - Passou");
-//
-//            //Comercialização
-//            conexao.execute("SELECT * FROM atravessador_comercializacao WHERE cod_atravessador = "+codigo);
-//            conexao.resultSet.first();
-//
-//            if (conexao.resultSet.getString("sempre_mesmo_comprador").equals("1"))
-//                   ckbSempreDosMesmos.setSelected(true);
-//
-//            tfSempreDosMesmosPq.setText(conexao.resultSet.getString("pq_sempre_o_mesmo"));
-//
-//            if (conexao.resultSet.getString("fincancia_embarcacao").equals("1"))
-//                   ckbFinanciarSim.setSelected(true);
-//
-//            tfQuantasFinanciadas.setText(conexao.resultSet.getString("quantas_financia"));
-//
-//            System.out.println("5 Comércio - Passou");
-//
-//
-//        } catch (Exception e) {
-//            System.out.println(e + " metodo mostrar dados");
-//        }
+        limpar_dados();
+        AttjtEmprestimoEmpresa();
+        AttjtAbatimento();
+        AttjtNumeroFuncionarios();
+
+        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
+        System.out.println(codigo);
+                    
+        try {
+            //Atravessador Moradia
+            conexao.execute("SELECT * FROM fabrica_gelo_questionario WHERE cod_fabrica_gelo = "+codigo);
+            conexao.resultSet.first();
+
+            tfQ10.setText(conexao.resultSet.getString("tempo_permanencia"));
+            taQ11.setText(conexao.resultSet.getString("principais_problemas"));
+            taQ12.setText(conexao.resultSet.getString("solucao_problemas"));
+            taQ13.setText(conexao.resultSet.getString("origem_da_agua"));
+
+            if (conexao.resultSet.getString("tratamento_agua_filtragem").equals("1"))
+                   ckbQ14Filtragem.setSelected(true);
+
+            if (conexao.resultSet.getString("tratamento_agua_cloro").equals("1"))
+                   ckbQ14Cloro.setSelected(true);
+
+            if (conexao.resultSet.getString("tratamento_agua_ozonio").equals("1"))
+                   ckbQ14Ozonio.setSelected(true);
+
+            if (conexao.resultSet.getString("tratamento_agua_outro").equals("1"))
+                   ckbQ14Outros.setSelected(true);
+
+            tfQ14.setText(conexao.resultSet.getString("tratamento_agua_outro_qual"));
+
+            if (conexao.resultSet.getString("principais_clientes_pescador").equals("1"))
+                   ckbQ15Pescador.setSelected(true);
+
+            if (conexao.resultSet.getString("principais_clientes_caminhao").equals("1"))
+                   ckbQ15Caminhao.setSelected(true);
+       
+            if (conexao.resultSet.getString("principais_clientes_marreteiro").equals("1"))
+                   ckbQ15Marreteiro.setSelected(true);
+
+            if (conexao.resultSet.getString("principais_clientes_outro").equals("1"))
+                   ckbQ15Outros.setSelected(true);
+
+            tfQ15.setText(conexao.resultSet.getString("principais_clientes_outro_qual"));
+ 
+            if (conexao.resultSet.getString("recebeu_incentivos_fiscais").equals("1"))
+                   ckbQ16Sim.setSelected(true);
+            
+            if (conexao.resultSet.getString("fez_emprestimo").equals("1"))
+                   ckbQ18Sim.setSelected(true);
+
+ 
+        } catch (Exception e) {
+            System.out.println(e + " metodo mostrar dados");
+        }
     }
 
         public void limpar_dados(){
 
-//            rbMadeira.setSelected(false);
-//            rbAlvenaria.setSelected(false);
-//            rbBanheiroDentro.setSelected(false);
-//            rbBanheiroFora.setSelected(false);
-//            ckbLuzSim.setSelected(false);
-//            ckbAguaSim.setSelected(false);
-//            ckbDrenagemSim.setSelected(false);
-//            ckbFossaSim.setSelected(false);
-//            ckbTemRegistroEntidade.setSelected(false);
-//            tfQualEntidade.setText("");
-//            tfDesdeQuando.setText("");
-//            ckbRecebeBeneficioGovernoSim.setSelected(false);
-//            tfQualBeneficio.setText("");
-//            tfTempoAtividadeMoradia.setText("");
-//            ckbPescadorP.setSelected(false);
-//            ckbEmpresaP.setSelected(false);
-//            ckbOutroAtravessadorP.setSelected(false);
-//            ckbDonoBarcoP.setSelected(false);
-//            ckbMercadoFeiraP.setSelected(false);
-//            ckbCooperativaP.setSelected(false);
-//            ckbPescadorG.setSelected(false);
-//            ckbEmpresaG.setSelected(false);
-//            ckbOutroAtravessadorG.setSelected(false);
-//            ckbDonoBarcoG.setSelected(false);
-//            ckbMercadoFeiraG.setSelected(false);
-//            ckbCooperativaG.setSelected(false);
-//            ckbNaoSabeFornecedores.setSelected(false);
-//            tfNumeroFornecedores.setText("");
-//            ckbFornecedorAumentouSim.setSelected(false);
-//            ckbSempreMesmoFornecedor1.setSelected(false);
-//            ckbSempreMesmoFornecedor2.setSelected(false);
-//            ckbMaisBarato3.setSelected(false);
-//            ckbDeQuemAparece4.setSelected(false);
-//            ckbSoPeixeiInteiro.setSelected(false);
-//            ckbCorCarnePeixe.setSelected(false);
-//            ckbOdorCarnePeixe.setSelected(false);
-//            ckbConsistenciaCarnePeixe.setSelected(false);
-//            ckbOdorGrude.setSelected(false);
-//            ckbTamanhoGrude.setSelected(false);
-//            ckbSemManchaGrude.setSelected(false);
-//            ckbOdorAba.setSelected(false);
-//            ckbTamanhoAba.setSelected(false);
-//            ckbSemManchaAba.setSelected(false);
-//            ckbGeloPescador.setSelected(false);
-//            ckbFrigorificoPescador.setSelected(false);
-//            ckbInNaturaPescador.setSelected(false);
-//            ckbSalPescador.setSelected(false);
-//            ckbSalGrude.setSelected(false);
-//            ckbEstufaGrude.setSelected(false);
-//            ckbSolGrude.setSelected(false);
-//            ckbGeloGrude.setSelected(false);
-//            ckbSempreDosMesmos.setSelected(false);
-//            tfSempreDosMesmosPq.setText("");
-//            ckbFinanciarSim.setSelected(false);
-//            tfQuantasFinanciadas.setText("");
+            tfQ10.setText("");
+            taQ11.setText("");
+            taQ12.setText("");
+            taQ13.setText("");
+            ckbQ14Filtragem.setSelected(false);
+            ckbQ14Cloro.setSelected(false);
+            ckbQ14Ozonio.setSelected(false);
+            ckbQ14Outros.setSelected(false);
+            ckbQ15Pescador.setSelected(false);
+            ckbQ15Caminhao.setSelected(false);
+            ckbQ15Marreteiro.setSelected(false);
+            ckbQ15Outros.setSelected(false);
+            ckbQ16Sim.setSelected(false);
+            ckbQ18Sim.setSelected(false);
 
     }
         
     private void attCbAtravessador() {
          try {
                     cbNomeEmpresa.removeAllItems();
-                    conexao.execute("select * from atravessador");
+                    conexao.execute("select * from fabrica_gelo");
 
                     while (conexao.resultSet.next()){
-                        cbNomeEmpresa.addItem(conexao.resultSet.getString("cod_atravessador")+
-                                                       " # "+ conexao.resultSet.getString("nome"));
+                        cbNomeEmpresa.addItem(conexao.resultSet.getString("cod_fabrica_gelo")+
+                                                       " # "+ conexao.resultSet.getString("nome_empresa"));
 
                     }
                 }catch (SQLException ex) {
@@ -1351,351 +1196,92 @@ public class fabricaDeGelo2 extends javax.swing.JFrame {
 
             if (conexao.salvar(sql)) {
                 System.out.println("Exclusão realizada com sucesso");
-                AttjtAbatimento();
+                AttjtEmprestimoEmpresa();
             }   else
                     JOptionPane.showMessageDialog(null,"Erro na exclusão");
     }
 
     private void salvar_dados() {
-//    String sqlinsert = new String();
-//    String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
-//    System.out.println(codigo);
-//
-//        //Moradia
-//            //Pegando ites do CB
-//            String tcasa = new String();
-//
-//            if (rbMadeira.isSelected())
-//                   tcasa = "Madeira";
-//            else if (rbAlvenaria.isSelected())
-//                   tcasa = "Alvenaria";
-//
-//            String tbanheiro = new String();
-//
-//            if (rbBanheiroDentro.isSelected())
-//                   tbanheiro = "Dentro";
-//            else if (rbBanheiroFora.isSelected())
-//                   tbanheiro = "Fora";
-//
-//            sqlinsert = "insert into atravessador_moradia "
-//                    + "(cod_atravessador,casa,luz,banheiro,agua_encanada,"
-//                    + "drenagem_pluvial,fossa,tem_registro,qual_entidade,"
-//                    + "tempo_registro,recebe_beneficio,beneficio,"
-//                    + "tempo_atividade) values ("+
-//                    codigo+",'"+
-//                    tcasa+"','"+
-//                    util.checarCkb(ckbLuzSim)+"','"+
-//                    tbanheiro+"','"+
-//                    util.checarCkb(ckbAguaSim)+"','"+
-//                    util.checarCkb(ckbDrenagemSim)+"','"+
-//                    util.checarCkb(ckbFossaSim)+"','"+
-//                    util.checarCkb(ckbTemRegistroEntidade)+"','"+
-//                    tfQualEntidade.getText()+"','"+
-//                    tfDesdeQuando.getText()+"','"+
-//                    util.checarCkb(ckbRecebeBeneficioGovernoSim)+"','"+
-//                    tfQualBeneficio.getText()+"','"+
-//                    tfTempoAtividadeMoradia.getText()+"')";
-//
-//            //System.out.println(sqlinsert);
-//            if (conexao.salvar(sqlinsert)) {
-//                System.out.println("1 Moradia - Cadastrado com sucesso");
-//            }
-//
-//       //Recepção atravessador
-//            sqlinsert = "insert into atravessador_recepcao_produtos "
-//                    + "(cod_atravessador,pescador_fornece_pescado,"
-//                    + "empresa_fornece_pescado,outro_atravessador_fornece_pescado,"
-//                    + "dono_do_barco_fornece_pescado,mercado_ou_feira_fornece_pescado,"
-//                    + "cooperativa_fornece_pescado,pescador_fornece_grude,"
-//                    + "empresa_fornece_grude,outro_atravessador_fornece_grude,"
-//                    + "dono_do_barco_fornece_grude,mercado_ou_feira_fornece_grude,"
-//                    + "cooperativa_fornece_grude,numero_fornecedores,numero_aumentou,"
-//                    + "produto_sempre_dos_mesmos,produto_sempre_dos_mesmos_quem_aparece,"
-//                    + "produto_sempre_mais_barato,produto_de_quem_aparecer) values ("+
-//                    codigo+",'"+
-//                    util.checarCkb(ckbPescadorP)+"','"+
-//                    util.checarCkb(ckbEmpresaP)+"','"+
-//                    util.checarCkb(ckbOutroAtravessadorP)+"','"+
-//                    util.checarCkb(ckbDonoBarcoP)+"','"+
-//                    util.checarCkb(ckbMercadoFeiraP)+"','"+
-//                    util.checarCkb(ckbCooperativaP)+"','"+
-//                    util.checarCkb(ckbPescadorG)+"','"+
-//                    util.checarCkb(ckbEmpresaG)+"','"+
-//                    util.checarCkb(ckbOutroAtravessadorG)+"','"+
-//                    util.checarCkb(ckbDonoBarcoG)+"','"+
-//                    util.checarCkb(ckbMercadoFeiraG)+"','"+
-//                    util.checarCkb(ckbCooperativaG)+"','"+
-//                    getNumeroFornecedores()+"','"+
-//                    util.checarCkb(ckbFornecedorAumentouSim)+"','"+
-//                    util.checarCkb(ckbSempreMesmoFornecedor1)+"','"+
-//                    util.checarCkb(ckbSempreMesmoFornecedor2)+"','"+
-//                    util.checarCkb(ckbMaisBarato3)+"','"+
-//                    util.checarCkb(ckbDeQuemAparece4)+"')";
-//
-//            //System.out.println(sqlinsert);
-//            if (conexao.salvar(sqlinsert)) {
-//                System.out.println("2 Recepção - Cadastrado com sucesso");
-//            }
-//
-//            //Aquisicao
-//            sqlinsert = "insert into atravessador_aquisicao "
-//                    + "(cod_atravessador,peixe_inteiro,cor_carne_peixe,"
-//                    + "odor_carne_peixe,consitencia_carne_peixe,odor_grude,"
-//                    + "tamanho_grude,sem_mancha_grude,odor_aba,"
-//                    + "tamanho_aba,sem_mancha_aba) values ("+
-//                    codigo+",'"+
-//                    util.checarCkb(ckbSoPeixeiInteiro)+"','"+
-//                    util.checarCkb(ckbCorCarnePeixe)+"','"+
-//                    util.checarCkb(ckbOdorCarnePeixe)+"','"+
-//                    util.checarCkb(ckbConsistenciaCarnePeixe)+"','"+
-//                    util.checarCkb(ckbOdorGrude)+"','"+
-//                    util.checarCkb(ckbTamanhoGrude)+"','"+
-//                    util.checarCkb(ckbSemManchaGrude)+"','"+
-//                    util.checarCkb(ckbOdorAba)+"','"+
-//                    util.checarCkb(ckbTamanhoAba)+"','"+
-//                    util.checarCkb(ckbSemManchaAba)+"')";
-//
-//            //System.out.println(sqlinsert);
-//            if (conexao.salvar(sqlinsert)) {
-//                System.out.println("3 Aquisicao - Cadastrado com sucesso");
-//            }
-//
-//            //Armazenamento
-//            sqlinsert = "insert into atravessador_armazenamento "
-//                    + "(cod_atravessador,pescado_gelo,pescado_frigorifico,"
-//                    + "pescado_innatura,pescado_sal,grude_sal,"
-//                    + "grude_estufa,grude_sol,grude_gelo) values ("+
-//                    codigo+",'"+
-//                    util.checarCkb(ckbGeloPescador)+"','"+
-//                    util.checarCkb(ckbFrigorificoPescador)+"','"+
-//                    util.checarCkb(ckbInNaturaPescador)+"','"+
-//                    util.checarCkb(ckbSalPescador)+"','"+
-//                    util.checarCkb(ckbSalGrude)+"','"+
-//                    util.checarCkb(ckbEstufaGrude)+"','"+
-//                    util.checarCkb(ckbSolGrude)+"','"+
-//                    util.checarCkb(ckbGeloGrude)+"')";
-//
-//            //System.out.println(sqlinsert);
-//            if (conexao.salvar(sqlinsert)) {
-//                System.out.println("4 Armazenamento - Cadastrado com sucesso");
-//            }
-//
-//            //Comercialização
-//            sqlinsert = "insert into atravessador_comercializacao "
-//                    + "(cod_atravessador,sempre_mesmo_comprador,"
-//                    + "pq_sempre_o_mesmo,fincancia_embarcacao,"
-//                    + "quantas_financia) values ("+
-//                    codigo+",'"+
-//                    util.checarCkb(ckbSempreDosMesmos)+"','"+
-//                    tfSempreDosMesmosPq.getText()+"','"+
-//                    util.checarCkb(ckbFinanciarSim)+"','"+
-//                    tfQuantasFinanciadas.getText()+"')";
-//
-//            //System.out.println(sqlinsert);
-//            if (conexao.salvar(sqlinsert)) {
-//                JOptionPane.showMessageDialog(null,"Salvo sucesso" );
-//                System.out.println("5 Comercialização - Cadastrado com sucesso");
-//                mostra_dados();
-//            }
+    String sqlinsert = new String();
+    String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
+    System.out.println(codigo);
+
+        //Questionario 
+
+            sqlinsert = "insert into fabrica_gelo_questionario "
+                    + "(cod_fabrica_gelo,tempo_permanencia,"
+                    + "principais_problemas,solucao_problemas,origem_da_agua,"
+                    + "tratamento_agua_filtragem,tratamento_agua_cloro,"
+                    + "tratamento_agua_ozonio,tratamento_agua_outro,"
+                    + "tratamento_agua_outro_qual,principais_clientes_pescador,"
+                    + "principais_clientes_caminhao,principais_clientes_marreteiro,"
+                    + "principais_clientes_outro,principais_clientes_outro_qual,"
+                    + "recebeu_incentivos_fiscais,fez_emprestimo) values ("+
+                    codigo+",'"+
+                    tfQ10.getText()+"','"+
+                    taQ11.getText()+"','"+
+                    taQ12.getText()+"','"+
+                    taQ13.getText()+"','"+
+                    util.checarCkb(ckbQ14Filtragem)+"','"+
+                    util.checarCkb(ckbQ14Cloro)+"','"+
+                    util.checarCkb(ckbQ14Ozonio)+"','"+
+                    util.checarCkb(ckbQ14Outros)+"','"+
+                    tfQ14.getText()+"','"+
+                    util.checarCkb(ckbQ15Pescador)+"','"+
+                    util.checarCkb(ckbQ15Caminhao)+"','"+
+                    util.checarCkb(ckbQ15Marreteiro)+"','"+
+                    util.checarCkb(ckbQ15Outros)+"','"+
+                    tfQ15.getText()+"','"+
+                    util.checarCkb(ckbQ16Sim)+"','"+
+                    util.checarCkb(ckbQ18Sim)+"')";
+
+
+            //System.out.println(sqlinsert);
+            if (conexao.salvar(sqlinsert)) {
+                JOptionPane.showMessageDialog(null,"Salvo sucesso" );
+                System.out.println("Cadastrado com sucesso");
+                mostra_dados();
+            }
 
 
     }
 
     private void atualizar_dados() {
-//    String sqlupdate = new String();
-//    String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
-//    System.out.println(codigo);
-//
-//    //Pescador Moradia
-//            //</Pegando ites do CB
-//            String tcasa = new String();
-//
-//            if (rbMadeira.isSelected())
-//                   tcasa = "Madeira";
-//            else if (rbAlvenaria.isSelected())
-//                   tcasa = "Alvenaria";
-//
-//            String tbanheiro = new String();
-//
-//            if (rbBanheiroDentro.isSelected())
-//                   tbanheiro = "Dentro";
-//            else if (rbBanheiroFora.isSelected())
-//                   tbanheiro = "Fora";
-//
-//            //Pegando ites do CB/>
-//
-//            sqlupdate ="UPDATE atravessador_moradia SET "
-//                    +"casa = '"+tcasa+"',"
-//                    +"luz = '"+util.checarCkb(ckbLuzSim)+"',"
-//                    +"banheiro = '"+tbanheiro+"',"
-//                    +"agua_encanada = '"+util.checarCkb(ckbAguaSim)+"',"
-//                    +"drenagem_pluvial = '"+util.checarCkb(ckbDrenagemSim)+"',"
-//                    +"fossa = '"+util.checarCkb(ckbFossaSim)+"',"
-//                    +"tem_registro = '"+util.checarCkb(ckbTemRegistroEntidade)+"',"
-//                    +"qual_entidade = '"+tfQualEntidade.getText()+"',"
-//                    +"tempo_registro = '"+tfDesdeQuando.getText()+"',"
-//                    +"recebe_beneficio = '"+util.checarCkb(ckbRecebeBeneficioGovernoSim)+"',"
-//                    +"beneficio = '"+tfQualBeneficio.getText()+"',"
-//                    +"tempo_atividade ='"+tfTempoAtividadeMoradia.getText()+"' "+
-//
-//
-//                    "where cod_atravessador = "+codigo;
-//
-//            //System.out.println(sqlupdate);
-//            if (conexao.update(sqlupdate)){
-//                System.out.println("Moradia - Atualizado com sucesso");
-//                //Atualiza Resultset
-//            }
-//
-//            //Recepção Produtos
-//            sqlupdate ="UPDATE atravessador_recepcao_produtos SET "
-//                    +"pescador_fornece_pescado = '"+util.checarCkb(ckbPescadorP)+"',"
-//                    +"empresa_fornece_pescado = '"+util.checarCkb(ckbEmpresaP)+"',"
-//                    +"outro_atravessador_fornece_pescado = '"+util.checarCkb(ckbOutroAtravessadorP)+"',"
-//                    +"dono_do_barco_fornece_pescado = '"+util.checarCkb(ckbDonoBarcoP)+"',"
-//                    +"mercado_ou_feira_fornece_pescado = '"+util.checarCkb(ckbMercadoFeiraP)+"',"
-//                    +"cooperativa_fornece_pescado = '"+ util.checarCkb(ckbCooperativaP)+"',"
-//
-//                    +"pescador_fornece_grude = '"+util.checarCkb(ckbPescadorG)+"',"
-//                    +"empresa_fornece_grude = '"+util.checarCkb(ckbEmpresaG)+"',"
-//                    +"outro_atravessador_fornece_grude = '"+util.checarCkb(ckbOutroAtravessadorG)+"',"
-//                    +"dono_do_barco_fornece_grude = '"+util.checarCkb(ckbDonoBarcoG)+"',"
-//                    +"mercado_ou_feira_fornece_grude = '"+util.checarCkb(ckbMercadoFeiraG)+"',"
-//                    +"cooperativa_fornece_grude = '"+util.checarCkb(ckbCooperativaG)+"',"
-//
-//                    +"numero_fornecedores = '"+getNumeroFornecedores()+"',"
-//                    +"numero_aumentou = '"+util.checarCkb(ckbFornecedorAumentouSim)+"',"
-//                    +"produto_sempre_dos_mesmos = '"+util.checarCkb(ckbSempreMesmoFornecedor1)+"',"
-//                    +"produto_sempre_dos_mesmos_quem_aparece = '"+util.checarCkb(ckbSempreMesmoFornecedor2)+"',"
-//                    +"produto_sempre_mais_barato = '"+util.checarCkb(ckbMaisBarato3)+"',"
-//                    +"produto_de_quem_aparecer = '"+util.checarCkb(ckbDeQuemAparece4)+"' "+
-//
-//                    "where cod_atravessador = "+codigo;
-//
-//            //System.out.println(sqlupdate);
-//            if (conexao.update(sqlupdate)){
-//                System.out.println("Recepção - Atualizado com sucesso");
-//                //Atualiza Resultset
-//            }
-//
-//             //Aquisicao
-//            sqlupdate ="UPDATE atravessador_aquisicao SET "
-//                    +"peixe_inteiro = '"+util.checarCkb(ckbSoPeixeiInteiro)+"',"
-//                    +"cor_carne_peixe = '"+util.checarCkb(ckbCorCarnePeixe)+"',"
-//                    +"odor_carne_peixe = '"+util.checarCkb(ckbOdorCarnePeixe)+"',"
-//                    +"consitencia_carne_peixe = '"+util.checarCkb(ckbConsistenciaCarnePeixe)+"',"
-//                    +"odor_grude = '"+util.checarCkb(ckbOdorGrude)+"',"
-//                    +"tamanho_grude = '"+ util.checarCkb(ckbTamanhoGrude)+"',"
-//                    +"sem_mancha_grude = '"+ util.checarCkb(ckbSemManchaGrude)+"',"
-//                    +"odor_aba = '"+ util.checarCkb(ckbOdorAba)+"',"
-//                    +"tamanho_aba = '"+ util.checarCkb(ckbTamanhoAba)+"',"
-//                    +"sem_mancha_aba = '"+ util.checarCkb(ckbSemManchaAba)+"' "+
-//
-//                    "where cod_atravessador = "+codigo;
-//
-//
-//            //System.out.println(sqlupdate);
-//            if (conexao.update(sqlupdate)){
-//                System.out.println("Aquisição - Atualizado com sucesso");
-//                //Atualiza Resultset
-//            }
-//
-//            //Armazenamento
-//
-//            sqlupdate ="UPDATE atravessador_armazenamento SET "
-//                    +"pescado_gelo = '"+util.checarCkb(ckbGeloPescador)+"',"
-//                    +"pescado_frigorifico = '"+util.checarCkb(ckbFrigorificoPescador)+"',"
-//                    +"pescado_innatura = '"+util.checarCkb(ckbInNaturaPescador)+"',"
-//                    +"pescado_sal = '"+util.checarCkb(ckbSalPescador)+"',"
-//                    +"grude_sal = '"+util.checarCkb(ckbSalGrude)+"',"
-//                    +"grude_estufa = '"+util.checarCkb(ckbEstufaGrude)+"',"
-//                    +"grude_sol = '"+ util.checarCkb(ckbSolGrude)+"',"
-//                    +"grude_gelo = '"+util.checarCkb(ckbGeloGrude)+"' "+
-//
-//                    "where cod_atravessador = "+codigo;
-//
-//            //System.out.println(sqlupdate);
-//            if (conexao.update(sqlupdate)){
-//                System.out.println("Armazenamento - Atualizado com sucesso");
-//                //Atualiza Resultset
-//            }
-//
-//            //Comercialização
-//             sqlupdate ="UPDATE atravessador_comercializacao SET "
-//                    +"sempre_mesmo_comprador = '"+util.checarCkb(ckbSempreDosMesmos)+"',"
-//                    +"pq_sempre_o_mesmo = '"+tfSempreDosMesmosPq.getText()+"',"
-//                    +"fincancia_embarcacao = '"+util.checarCkb(ckbFinanciarSim)+"',"
-//                    +"quantas_financia = '"+tfQuantasFinanciadas.getText()+"' "+
-//
-//                    "where cod_atravessador = "+codigo;
-//
-//
-//            //System.out.println(sqlupdate);
-//            if (conexao.update(sqlupdate)){
-//                JOptionPane.showMessageDialog(null,"Atualizado com sucesso" );
-//                System.out.println("Comércio - Atualizado com sucesso");
-//                //Atualiza Resultset
-//                mostra_dados();
-//            }
-//    }
-//
-//    private void AddAquisicaoFormasComercilizacao() {
-//        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
-//        System.out.println(codigo);
-//
-//          //Relações de Trabalho - Tabela Renda Familia
-//          String sqlinsert = "insert into atravessador_aquisicao_forma_comercializacao "
-//                    + "(cod_atravessador,especie,eviscerado,salgado,file,"
-//                    + "postas,sem_cabeca,outros) values ("+
-//                    codigo+",'"+
-//                    cbEspecieAquisicao.getSelectedItem()+"','"+
-//                    util.checarCkb(ckbEvisceradoAq)+"','"+
-//                    util.checarCkb(ckbSalgadoAq)+"','"+
-//                    util.checarCkb(ckbFileAq)+"','"+
-//                    util.checarCkb(ckbPostaAq)+"','"+
-//                    util.checarCkb(ckbSemCabecaAq)+"','"+
-//                    util.checarCkb(ckbOutrosAq)+"')";
-//
-//            System.out.println(sqlinsert);
-//            if (conexao.salvar(sqlinsert)) {
-//                System.out.println("Jtable RT - Cadastrado com sucesso");
-//                AttAquisicaoFormasComercilizacao();
-//            }
+    String sqlupdate = new String();
+    String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
+    System.out.println(codigo);
+
+            sqlupdate ="UPDATE fabrica_gelo_questionario SET "
+                    +"tempo_permanencia = '"+tfQ10.getText()+"',"
+                    +"principais_problemas = '"+taQ11.getText()+"',"
+                    +"solucao_problemas = '"+taQ12.getText()+"',"
+                    +"origem_da_agua = '"+taQ13.getText()+"',"
+                    +"tratamento_agua_filtragem = '"+util.checarCkb(ckbQ14Filtragem)+"',"
+                    +"tratamento_agua_cloro = '"+util.checarCkb(ckbQ14Cloro)+"',"
+                    +"tratamento_agua_ozonio = '"+util.checarCkb(ckbQ14Ozonio)+"',"
+                    +"tratamento_agua_outro = '"+util.checarCkb(ckbQ14Outros)+"',"
+                    +"tratamento_agua_outro_qual = '"+tfQ14.getText()+"',"
+                    +"principais_clientes_pescador = '"+util.checarCkb(ckbQ15Pescador)+"',"
+                    +"principais_clientes_caminhao = '"+util.checarCkb(ckbQ15Caminhao)+"',"
+                    +"principais_clientes_marreteiro ='"+util.checarCkb(ckbQ15Marreteiro)+"',"
+                    +"principais_clientes_outro ='"+util.checarCkb(ckbQ15Outros)+"',"
+                    +"principais_clientes_outro_qual ='"+tfQ15.getText()+"',"
+                    +"recebeu_incentivos_fiscais ='"+util.checarCkb(ckbQ16Sim)+"',"
+                    +"fez_emprestimo ='"+util.checarCkb(ckbQ18Sim)+"' "+
+
+
+                    "where cod_fabrica_gelo = "+codigo;
+
+
+            //System.out.println(sqlupdate);
+            if (conexao.update(sqlupdate)){
+                JOptionPane.showMessageDialog(null,"Atualizado com sucesso" );
+                System.out.println("Comércio - Atualizado com sucesso");
+                //Atualiza Resultset
+                mostra_dados();
+            }
+
     }
-
-
-
-    private void attCbs() {
-//        String item = new String();
-//                try {
-//                    cbEspecieAquisicao.removeAllItems();
-//                    cbEspecieGrude.removeAllItems();
-//                    cbEspecie.removeAllItems();
-//                    conexao.execute("select * from especie");
-//
-//                    while (conexao.resultSet.next()){
-//                        item = conexao.resultSet.getString("especie");
-//                        cbEspecieAquisicao.addItem(item);
-//                        cbEspecieGrude.addItem(item);
-//                        cbEspecie.addItem(item);
-//
-//                    }
-//                }catch (SQLException ex) {
-//                    System.out.println(ex);
-//                }
-    }
-
-  
-//
-//    private String getNumeroFornecedores() {
-//        if (ckbNaoSabeFornecedores.isSelected()) {
-//           return "N/S";
-//        }else{
-//           return tfNumeroFornecedores.getText();
-//       }
-//    }
-//
-//    
-
+   
 
 }
