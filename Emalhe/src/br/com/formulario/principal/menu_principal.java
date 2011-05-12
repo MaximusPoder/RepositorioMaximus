@@ -5,7 +5,7 @@ import br.com.caminhoneiro.*;
 import br.com.donoDoBarco.*;
 import br.com.formulario.listas.*;
 import br.com.formulario.atravessador.*;
-import br.com.formulario.fabricaDeGelo.fabricaDeGelo;
+import br.com.formulario.fabricaDeGelo.*;
 import br.com.formulario.mercadoFeira.*;
 import br.com.formulario.pescador.*;
 import javax.swing.UIManager;
@@ -99,6 +99,7 @@ public class menu_principal extends javax.swing.JFrame {
         jPanel15 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -626,12 +627,12 @@ public class menu_principal extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 51, 153));
-        jLabel8.setText("Formulário Fabrica Gêlo");
+        jLabel8.setText("Formulário Fábrica Gêlo");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
         jPanel15.add(jLabel8, gridBagConstraints);
 
-        jButton7.setText("Cadastrar Fabrica e Gêlo");
+        jButton7.setText("Cadastrar Fábrica e Gêlo");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
@@ -642,6 +643,18 @@ public class menu_principal extends javax.swing.JFrame {
         gridBagConstraints.gridy = 1;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
         jPanel15.add(jButton7, gridBagConstraints);
+
+        jButton8.setText("Questionário Fábrica de Gêlo");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
+        jPanel15.add(jButton8, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
@@ -750,6 +763,10 @@ public class menu_principal extends javax.swing.JFrame {
        new fabricaDeGelo().setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
 
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+       new fabricaDeGelo2().setVisible(true);
+    }//GEN-LAST:event_jButton8ActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -783,6 +800,7 @@ public class menu_principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

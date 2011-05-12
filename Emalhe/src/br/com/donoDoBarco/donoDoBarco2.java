@@ -338,7 +338,7 @@ public class donoDoBarco2 extends javax.swing.JFrame {
         jLabel43.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel43.setText("MORADIA");
 
-        jLabel47.setText("Desde quando é dono do barco.:");
+        jLabel47.setText("Desde quando é pescador.:");
 
         jLabel5.setText("Possui carteira IBAMA.:");
 

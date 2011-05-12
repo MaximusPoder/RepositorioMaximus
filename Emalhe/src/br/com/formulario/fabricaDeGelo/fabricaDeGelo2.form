@@ -164,7 +164,7 @@
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="ckbQ15Outros" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jTextField3" pref="167" max="32767" attributes="0"/>
+                                          <Component id="tfQ15" pref="167" max="32767" attributes="0"/>
                                       </Group>
                                       <Component id="jLabel75" alignment="0" min="-2" max="-2" attributes="1"/>
                                   </Group>
@@ -176,7 +176,7 @@
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="ckbQ14Outros" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jTextField2" max="32767" attributes="0"/>
+                                          <Component id="tfQ14" max="32767" attributes="0"/>
                                       </Group>
                                       <Component id="jLabel74" alignment="0" min="-2" max="-2" attributes="1"/>
                                   </Group>
@@ -188,7 +188,7 @@
                                   <Group type="102" alignment="0" attributes="1">
                                       <Component id="ckbQ16Sim" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextField4" max="32767" attributes="0"/>
+                                      <Component id="tfQ16" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel76" alignment="0" min="-2" max="-2" attributes="1"/>
                               </Group>
@@ -201,7 +201,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel78" min="-2" max="-2" attributes="1"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jCheckBox10" min="-2" max="-2" attributes="0"/>
+                              <Component id="ckbQ18Sim" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="423" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
@@ -303,7 +303,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="ckbQ14Filtragem" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="ckbQ14Outros" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfQ14" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="ckbQ14Cloro" min="-2" max="-2" attributes="0"/>
@@ -315,7 +315,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="ckbQ15Pescador" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="ckbQ15Outros" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfQ15" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="ckbQ15Caminhao" min="-2" max="-2" attributes="0"/>
@@ -326,7 +326,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="ckbQ16Sim" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfQ16" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jLabel77" min="-2" max="-2" attributes="0"/>
@@ -363,7 +363,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel78" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox10" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ckbQ18Sim" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jp18" min="-2" max="-2" attributes="0"/>
@@ -489,6 +489,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfNumero">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JIntField()"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JButton" name="btExcluirRendaFamilia">
               <Properties>
@@ -593,6 +596,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfHorasTrabalhadas">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JIntField()"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel68">
               <Properties>
@@ -690,8 +696,14 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Outros"/>
               </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckbQ14OutrosStateChanged"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField2">
+            <Component class="javax.swing.JTextField" name="tfQ14">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JCheckBox" name="ckbQ15Pescador">
               <Properties>
@@ -720,8 +732,14 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Outros"/>
               </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckbQ15OutrosStateChanged"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField3">
+            <Component class="javax.swing.JTextField" name="tfQ15">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel76">
               <Properties>
@@ -735,8 +753,14 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sim. Qual?"/>
               </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ckbQ16SimStateChanged"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField4">
+            <Component class="javax.swing.JTextField" name="tfQ16">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel77">
               <Properties>
@@ -767,6 +791,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfDesconto">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JMoneyField()"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JButton" name="btExcluirRendaFamilia1">
               <Properties>
@@ -851,6 +878,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfAno">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JIntField()"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel14">
               <Properties>
@@ -875,12 +905,48 @@
                 <Component class="javax.swing.JTable" name="jtEmprestimo">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="4" rowCount="4">
+                      <Table columnCount="6" rowCount="4">
                         <Column editable="true" title="Cod" type="java.lang.Object"/>
-                        <Column editable="true" title="Parentesco" type="java.lang.Object"/>
-                        <Column editable="true" title="Atividade" type="java.lang.Object"/>
-                        <Column editable="true" title="Renda" type="java.lang.Object"/>
+                        <Column editable="true" title="Empr&#xe9;stimo" type="java.lang.Object"/>
+                        <Column editable="true" title="Constru&#xe7;&#xe3;o" type="java.lang.Object"/>
+                        <Column editable="true" title="Equipamentos" type="java.lang.Object"/>
+                        <Column editable="true" title="Cap.Giro" type="java.lang.Object"/>
+                        <Column editable="true" title="Outros" type="java.lang.Object"/>
                       </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
                     </Property>
                     <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
@@ -897,7 +963,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btExcluirRendaFamilia2ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox10">
+            <Component class="javax.swing.JCheckBox" name="ckbQ18Sim">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sim"/>
               </Properties>

@@ -1196,7 +1196,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel47">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Desde quando &#xe9; dono do barco.:"/>
+                <Property name="text" type="java.lang.String" value="Desde quando &#xe9; pescador.:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
