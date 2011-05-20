@@ -4,6 +4,8 @@ package br.com.formulario.fabricaDeGelo;
 import br.com.conexao.Conexao;
 import br.com.util.JIntField;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -18,6 +20,11 @@ public class fabricaDeGelo extends javax.swing.JFrame {
     private int navega = 0; //variavel pra saber o  botão clicado;
 
     private Conexao conexao;
+
+    // Inserir Data atual
+        Date data = new Date();
+        SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+    // Inserir Data atual
 
 
     public fabricaDeGelo() {
@@ -60,6 +67,15 @@ public class fabricaDeGelo extends javax.swing.JFrame {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
+        jp0 = new javax.swing.JPanel();
+        tfColetor = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        tfDataColetor = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        tfDigitador = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        tfDataDigitador = new javax.swing.JTextField();
         jp1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         Cadastrar = new javax.swing.JButton();
@@ -103,6 +119,7 @@ public class fabricaDeGelo extends javax.swing.JFrame {
         tfTonelada = new javax.swing.JTextField();
         TITULO = new javax.swing.JPanel();
         jLabel42 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Questionário Fabrica de Gêlo");
@@ -114,6 +131,67 @@ public class fabricaDeGelo extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jPanel1.setLayout(new java.awt.GridBagLayout());
+
+        jp0.setLayout(new java.awt.GridBagLayout());
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = 250;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 5);
+        jp0.add(tfColetor, gridBagConstraints);
+
+        jLabel5.setText("Data.:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 5);
+        jp0.add(jLabel5, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 0);
+        jp0.add(tfDataColetor, gridBagConstraints);
+
+        jLabel2.setText("Coletor.:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 5);
+        jp0.add(jLabel2, gridBagConstraints);
+
+        jLabel6.setText("Digitador.:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 5);
+        jp0.add(jLabel6, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 5);
+        jp0.add(tfDigitador, gridBagConstraints);
+
+        jLabel7.setText("Data.:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 5);
+        jp0.add(jLabel7, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 0);
+        jp0.add(tfDataDigitador, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.insets = new java.awt.Insets(0, 1, 10, 1);
+        jPanel1.add(jp0, gridBagConstraints);
 
         jp1.setBackground(new java.awt.Color(255, 255, 255));
         jp1.setLayout(new java.awt.GridBagLayout());
@@ -478,34 +556,32 @@ public class fabricaDeGelo extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 4, 0);
         jPanel1.add(jp5, gridBagConstraints);
 
+        TITULO.setLayout(new java.awt.GridBagLayout());
+
         jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel42.setText("Questionário fabrica de gêlo");
-
-        javax.swing.GroupLayout TITULOLayout = new javax.swing.GroupLayout(TITULO);
-        TITULO.setLayout(TITULOLayout);
-        TITULOLayout.setHorizontalGroup(
-            TITULOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TITULOLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel42)
-                .addContainerGap())
-        );
-        TITULOLayout.setVerticalGroup(
-            TITULOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TITULOLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel42)
-                .addGap(32, 32, 32))
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(8, 10, 15, 10);
+        TITULO.add(jLabel42, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
         jPanel1.add(TITULO, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipady = 2;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
+        jPanel1.add(jSeparator1, gridBagConstraints);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 600, 360);
+        jPanel1.setBounds(0, 0, 600, 370);
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
         setBounds((screenSize.width-616)/2, (screenSize.height-404)/2, 616, 404);
@@ -520,7 +596,8 @@ public class fabricaDeGelo extends javax.swing.JFrame {
             String sqlinsert = "insert into fabrica_gelo "
                     + "(municipio,nome_empresa,endereco,fone,pessoa_entrevistada,"
                     + "funcao,tempo_existencia,criacao,qual_criacao,sempre_fabrica_gelo,"
-                    + "producao_diaria,preco_gelo_saca,preco_gelo_tonelada) values ('"+
+                    + "producao_diaria,preco_gelo_saca,preco_gelo_tonelada,"
+                    + "digitador,coletor,data_digitador,data_coletor) values ('"+
                     cbMunicipio.getSelectedItem()+"','"+
                     tfNomeEmpresa.getText()+"','"+
                     tfEndereco.getText()+"','"+
@@ -533,7 +610,11 @@ public class fabricaDeGelo extends javax.swing.JFrame {
                     cbSempreFoi.getSelectedItem()+"','"+
                     tfProducaoDiaria.getText()+"','"+
                     tfSaca.getText()+"','"+
-                    tfTonelada.getText()+"')";
+                    tfTonelada.getText()+"','"+
+                    tfDigitador.getText()+"','"+
+                    tfColetor.getText()+"','"+
+                    tfDataDigitador.getText()+"','"+
+                    tfDataColetor.getText()+"')";
 
             //System.out.println(sqlinsert);
             if (conexao.salvar(sqlinsert)) {
@@ -559,7 +640,7 @@ public class fabricaDeGelo extends javax.swing.JFrame {
             String nome = "Deletar a Empresa : "+conexao.resultSet.getString("nome_empresa")+" ?";
             int opcao_escolhida = JOptionPane.showConfirmDialog(null,nome,"Exclusão ",JOptionPane.YES_NO_OPTION);
             if (opcao_escolhida == JOptionPane.YES_OPTION) {
-                sql = "DELETE FROM atravessador Where cod_fabrica_gelo ="+conexao.resultSet.getString("cod_fabrica_gelo");
+                sql = "DELETE FROM fabrica_gelo Where cod_fabrica_gelo ="+conexao.resultSet.getString("cod_fabrica_gelo");
                 if (conexao.salvar(sql)) {
                     JOptionPane.showMessageDialog(null,"Exclusão realizada com sucesso");
                     //atualiza o ResultSet
@@ -631,6 +712,10 @@ public class fabricaDeGelo extends javax.swing.JFrame {
                     "sempre_fabrica_gelo = '"+cbSempreFoi.getSelectedItem()+"',"+
                     "producao_diaria = '"+ tfProducaoDiaria.getText() +"',"+
                     "preco_gelo_saca = '"+tfSaca.getText()+"',"+
+                    "digitador = '"+ tfDigitador.getText()+"',"+
+                    "coletor = '"+ tfColetor.getText()+"',"+
+                    "data_digitador = '"+ tfDataDigitador.getText()+"',"+
+                    "data_coletor = '"+ tfDataColetor.getText()+"',"+
                     "preco_gelo_tonelada = '"+tfTonelada.getText()+"' "+
 
 
@@ -686,6 +771,7 @@ public class fabricaDeGelo extends javax.swing.JFrame {
     private javax.swing.JComboBox cbMunicipio;
     private javax.swing.JComboBox cbSempreFoi;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -700,13 +786,22 @@ public class fabricaDeGelo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JPanel jp0;
     private javax.swing.JPanel jp1;
     private javax.swing.JPanel jp2;
     private javax.swing.JPanel jp3;
     private javax.swing.JPanel jp4;
     private javax.swing.JPanel jp5;
+    private javax.swing.JTextField tfColetor;
+    private javax.swing.JTextField tfDataColetor;
+    private javax.swing.JTextField tfDataDigitador;
+    private javax.swing.JTextField tfDigitador;
     private javax.swing.JTextField tfEndereco;
     private javax.swing.JTextField tfFoneFax;
     private javax.swing.JTextField tfFuncao;
@@ -735,6 +830,11 @@ public class fabricaDeGelo extends javax.swing.JFrame {
             tfProducaoDiaria.setText(conexao.resultSet.getString("producao_diaria"));
             tfSaca.setText(conexao.resultSet.getString("preco_gelo_saca"));
             tfTonelada.setText(conexao.resultSet.getString("preco_gelo_tonelada"));
+
+            tfDigitador.setText(conexao.resultSet.getString("digitador"));
+            tfColetor.setText(conexao.resultSet.getString("coletor"));
+            tfDataDigitador.setText(conexao.resultSet.getString("data_digitador"));
+            tfDataColetor.setText(conexao.resultSet.getString("data_coletor"));
            
         }catch (SQLException ex) {
             if (navega == 1){
@@ -749,7 +849,10 @@ public class fabricaDeGelo extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null,"Nenhum registro encontrado "+ ex );
             navega = 0;
             //Logger.getLogger(pescador.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }      
+        //Insere data no digitador, caso não tenha nada
+        if (tfDataDigitador.getText().equals(""))
+            tfDataDigitador.setText(formatador.format(data));
     }
 
     private void anterior() {
