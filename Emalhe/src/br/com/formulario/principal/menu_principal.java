@@ -5,6 +5,7 @@ import br.com.caminhoneiro.*;
 import br.com.donoDoBarco.*;
 import br.com.formulario.listas.*;
 import br.com.formulario.atravessador.*;
+import br.com.formulario.empresa.view.WinQuestionarioEmpresa;
 import br.com.formulario.fabricaDeGelo.*;
 import br.com.formulario.mercadoFeira.*;
 import br.com.formulario.pescador.*;
@@ -711,8 +712,7 @@ public class menu_principal extends javax.swing.JFrame {
 
     private void botao_cadastrar_economiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_cadastrar_economiaActionPerformed
         // TODO add your handling code here:
-       
-         // new WinQuestionarioEmpresa().setVisible(true);
+       new WinQuestionarioEmpresa().setVisible(true);
     }//GEN-LAST:event_botao_cadastrar_economiaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
