@@ -634,7 +634,7 @@ public class caminhoneiro2 extends javax.swing.JFrame {
 
         ckbSempreDosMesmos.setText("SIM");
 
-        jLabel34.setText("Adquire o produto sempre dos mesmo pescadores?");
+        jLabel34.setText("Sempre vende para os mesmos compradores?");
 
         jLabel35.setText("Espécie.:");
 
@@ -1249,7 +1249,7 @@ public class caminhoneiro2 extends javax.swing.JFrame {
                         .addComponent(jLabel34)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ckbSempreDosMesmos)))
-                .addContainerGap(384, Short.MAX_VALUE))
+                .addContainerGap(409, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
