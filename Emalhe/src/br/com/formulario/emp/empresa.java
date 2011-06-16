@@ -11,7 +11,6 @@
 
 package br.com.formulario.emp;
 
-import br.com.formulario.atravessador.*;
 import br.com.conexao.Conexao;
 import br.com.util.JIntField;
 import java.sql.SQLException;
@@ -45,7 +44,7 @@ public class empresa extends javax.swing.JFrame {
         AttCb();
 
         //inicia a conexão com o bd do formulário
-        conexao.execute("select * from atravessador");
+        conexao.execute("select * from empresa");
 
         try {
             conexao.resultSet.first();
@@ -534,22 +533,22 @@ public class empresa extends javax.swing.JFrame {
     private void botao_excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_excluirActionPerformed
         String sql;
         try {
-            sql = "select * from atravessador Where cod_atravessador =" + conexao.resultSet.getString("cod_atravessador");
+            sql = "select * from empresa Where cod_empresa =" + conexao.resultSet.getString("cod_empresa");
             conexao.execute(sql);
             conexao.resultSet.first();
-            String nome = "Deletar o atravessador : "+conexao.resultSet.getString("nome")+" ?";
+            String nome = "Deletar o empresa : "+conexao.resultSet.getString("nome_empresa")+" ?";
             int opcao_escolhida = JOptionPane.showConfirmDialog(null,nome,"Exclusão ",JOptionPane.YES_NO_OPTION);
             if (opcao_escolhida == JOptionPane.YES_OPTION) {
-                sql = "DELETE FROM atravessador Where cod_atravessador ="+conexao.resultSet.getString("cod_atravessador");
+                sql = "DELETE FROM empresa Where cod_empresa ="+conexao.resultSet.getString("cod_empresa");
                 if (conexao.salvar(sql)) {
                     JOptionPane.showMessageDialog(null,"Exclusão realizada com sucesso");
                     //atualiza o ResultSet
-                    conexao.execute("select * from atravessador");
+                    conexao.execute("select * from empresa");
                     conexao.resultSet.first();
                     mostra_dados_atravessador();
                 }
             } else{
-                conexao.execute("select * from atravessador");
+                conexao.execute("select * from empresa");
                 conexao.resultSet.first();
                 mostra_dados_atravessador();
             }
@@ -659,52 +658,46 @@ public class empresa extends javax.swing.JFrame {
 
 
     private void mostra_dados_atravessador(){
-//       String teste = new String();
-//        try {
-//            teste = conexao.resultSet.getString("definicao");
-//            if (teste.equals(chbAtravessador.getText()))
-//                chbAtravessador.setSelected(true);
-//            else if (teste.equals(chbBalanceiro.getText()))
-//                chbBalanceiro.setSelected(true);
-//            else if (teste.equals(chbMarreteiro.getText()))
-//                chbMarreteiro.setSelected(true);
-//
-//            tfNome.setText(conexao.resultSet.getString("nome"));
-//            tfApelido.setText(conexao.resultSet.getString("apelido"));
-//            tfNaturalidade.setText(conexao.resultSet.getString("naturalidade"));
-//            tfIdade.setText(conexao.resultSet.getString("idade"));
-//            cbAtividadePrincipal.setSelectedItem(conexao.resultSet.getString("atividade_principal"));
-//            tfAtividadeSecundaria.setText(conexao.resultSet.getString("atividade_secundaria"));
-//            cbEstadoCivil.setSelectedItem(conexao.resultSet.getString("estado_civil"));
-//            tfComposicaoFamiliar.setText(conexao.resultSet.getString("composicao_familiar"));
-//            cbEscolaridade.setSelectedItem(conexao.resultSet.getString("escolaridade"));
-//            tfPqParou.setText(conexao.resultSet.getString("pq_parou"));
-//            cbMunicipio.setSelectedItem(conexao.resultSet.getString("municipio"));
-//            cbSexo.setSelectedItem(conexao.resultSet.getString("sexo"));
-//            cbLocalMoradia.setSelectedItem(conexao.resultSet.getString("local_moradia"));
-//
-//            tfDigitador.setText(conexao.resultSet.getString("digitador"));
-//            tfColetor.setText(conexao.resultSet.getString("coletor"));
-//            tfDataDigitador.setText(conexao.resultSet.getString("data_digitador"));
-//            tfDataColetor.setText(conexao.resultSet.getString("data_coletor"));
-//
-//        }catch (SQLException ex) {
-//            if (navega == 1){
-//                JOptionPane.showMessageDialog(null,"Você já esta no primeiro registro");
-//                proximo();
-//            }
-//            else if (navega == 2){
-//                JOptionPane.showMessageDialog(null,"Você já esta no ultimo registro");
-//                anterior();
-//            }
-//            else
-//                JOptionPane.showMessageDialog(null,"Nenhum registro encontrado "+ ex );
-//            navega = 0;
-//            //Logger.getLogger(pescador.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//       //Insere data no digitador, caso não tenha nada
-//        if (tfDataDigitador.getText().equals(""))
-//            tfDataDigitador.setText(formatador.format(data));
+       String teste = new String();
+        try {
+            teste = conexao.resultSet.getString("status");
+            if (teste.equals(rbComprado.getText()))
+                rbComprado.setSelected(true);
+            else if (teste.equals(rbConstruido.getText()))
+                rbConstruido.setSelected(true);
+            else if (teste.equals(rbModificado.getText()))
+                rbModificado.setSelected(true);
+
+            tfNomeEmpresa.setText(conexao.resultSet.getString("nome_empresa"));
+            tfEndereco.setText(conexao.resultSet.getString("endereco"));
+            tfPessoaEntrevistada.setText(conexao.resultSet.getString("pessoa_entrevistada"));
+            tfFone.setText(conexao.resultSet.getString("fone_fax"));
+            tfTempoEmpresa.setText(conexao.resultSet.getString("tempo_empresa"));
+            tfFuncao.setText(conexao.resultSet.getString("funcao"));        
+            cbMunicipio.setSelectedItem(conexao.resultSet.getString("municipio"));
+            
+            tfDigitador.setText(conexao.resultSet.getString("digitador"));
+            tfColetor.setText(conexao.resultSet.getString("coletor"));
+            tfDataDigitador.setText(conexao.resultSet.getString("data_digitador"));
+            tfDataColetor.setText(conexao.resultSet.getString("data_coletor"));
+
+        }catch (SQLException ex) {
+            if (navega == 1){
+                JOptionPane.showMessageDialog(null,"Você já esta no primeiro registro");
+                proximo();
+            }
+            else if (navega == 2){
+                JOptionPane.showMessageDialog(null,"Você já esta no ultimo registro");
+                anterior();
+            }
+            else
+                JOptionPane.showMessageDialog(null,"Nenhum registro encontrado "+ ex );
+            navega = 0;
+            //Logger.getLogger(pescador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       //Insere data no digitador, caso não tenha nada
+        if (tfDataDigitador.getText().equals(""))
+            tfDataDigitador.setText(formatador.format(data));
     }
 
     private void anterior() {
@@ -723,58 +716,36 @@ public class empresa extends javax.swing.JFrame {
                 }
     }
 
-//    private String getDefinicao() {
-////        String tdefinicao = new String();
-////        if (chbAtravessador.isSelected())
-////            tdefinicao = chbAtravessador.getText();
-////        else if (chbBalanceiro.isSelected())
-////            tdefinicao = chbBalanceiro.getText();
-////        else if (chbMarreteiro.isSelected())
-////            tdefinicao = chbMarreteiro.getText();
-////
-////        return tdefinicao;
-//    }
+
 
     private void limpar() {
-//        tfNome.setText("");
-//        tfApelido.setText("");
-//        tfNaturalidade.setText("");
-//        tfIdade.setText("0");
-//        cbAtividadePrincipal.setSelectedIndex(0);
-//        tfAtividadeSecundaria.setText("");
-//        cbEstadoCivil.setSelectedIndex(0);
-//        tfComposicaoFamiliar.setText("");
-//        cbEscolaridade.setSelectedIndex(0);
-//        tfPqParou.setText("");
-//        cbMunicipio.setSelectedIndex(0);
-//        cbSexo.setSelectedIndex(0);
-//        cbLocalMoradia.setSelectedIndex(0);
-//        cbEscolaridade.setSelectedIndex(0);
-//        chbAtravessador.setSelected(false);
-//        chbBalanceiro.setSelected(false);
-//        chbMarreteiro.setSelected(false);
+            rbComprado.setSelected(false);
+            rbConstruido.setSelected(false);
+            rbModificado.setSelected(false);
+            tfNomeEmpresa.setText("");
+            tfEndereco.setText("");
+            tfPessoaEntrevistada.setText("");
+            tfFone.setText("");
+            tfTempoEmpresa.setText("");
+            tfFuncao.setText("");
+            cbMunicipio.setSelectedItem("");
+            tfDigitador.setText("");
+            tfColetor.setText("");
+            tfDataDigitador.setText("");
+            tfDataColetor.setText("");
     }
 
     private void AttCb() {
-//        try {
-//            cbMunicipio.removeAllItems();
-//            conexao.execute("select * FROM municipios where pai='Pará' or pai='Maranhão' or pai='Amapá' ");
-//            while (conexao.resultSet.next()){
-//                cbMunicipio.addItem(conexao.resultSet.getString("nome"));
-//            }
-//        }catch (SQLException ex) {
-//            Logger.getLogger(empresa.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//
-//        try {
-//            cbAtividadePrincipal.removeAllItems();
-//            conexao.execute("select * FROM atividade ");
-//            while (conexao.resultSet.next()){
-//                cbAtividadePrincipal.addItem(conexao.resultSet.getString("atividade"));
-//            }
-//        }catch (SQLException ex) {
-//            Logger.getLogger(empresa.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+        try {
+            cbMunicipio.removeAllItems();
+            conexao.execute("select * FROM municipios where pai='Pará' or pai='Maranhão' or pai='Amapá' ");
+            while (conexao.resultSet.next()){
+                cbMunicipio.addItem(conexao.resultSet.getString("nome"));
+            }
+        }catch (SQLException ex) {
+            Logger.getLogger(empresa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
     
 
