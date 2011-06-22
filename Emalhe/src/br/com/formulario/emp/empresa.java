@@ -68,6 +68,7 @@ public class empresa extends javax.swing.JFrame {
         java.awt.GridBagConstraints gridBagConstraints;
 
         definicao = new javax.swing.ButtonGroup();
+        status = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
         jpAtravessador = new javax.swing.JPanel();
         cbMunicipio = new javax.swing.JComboBox();
@@ -111,7 +112,7 @@ public class empresa extends javax.swing.JFrame {
         tfPessoaEntrevistada = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Questionário Atravessador");
+        setTitle("Cadastro Empresa");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
                 fechar_janela(evt);
@@ -228,8 +229,8 @@ public class empresa extends javax.swing.JFrame {
         jLabel25.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel25.setText("Dados");
 
-        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12));
-        jLabel42.setText("Questionário Empresa");
+        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel42.setText("Empresa");
 
         jp0.setLayout(new java.awt.GridBagLayout());
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -286,10 +287,13 @@ public class empresa extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 0);
         jp0.add(tfDataDigitador, gridBagConstraints);
 
+        status.add(rbModificado);
         rbModificado.setText("Modificada");
 
+        status.add(rbComprado);
         rbComprado.setText("Comprado");
 
+        status.add(rbConstruido);
         rbConstruido.setText("Construído");
 
         jLabel9.setText("Foi.:");
@@ -315,15 +319,12 @@ public class empresa extends javax.swing.JFrame {
                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(119, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpAtravessadorLayout.createSequentialGroup()
-                        .addComponent(jLabel42)
-                        .addGap(375, 375, 375))
+                        .addContainerGap(170, Short.MAX_VALUE))
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addComponent(jLabel24)
                         .addGap(10, 10, 10)
                         .addComponent(cbMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(392, Short.MAX_VALUE))
+                        .addContainerGap(443, Short.MAX_VALUE))
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jpAtravessadorLayout.createSequentialGroup()
@@ -364,7 +365,7 @@ public class empresa extends javax.swing.JFrame {
                                             .addComponent(jLabel13)
                                             .addGap(15, 15, 15)
                                             .addComponent(tfFuncao, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                        .addContainerGap(194, Short.MAX_VALUE))
+                        .addContainerGap(245, Short.MAX_VALUE))
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(jp0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -372,13 +373,17 @@ public class empresa extends javax.swing.JFrame {
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
+            .addGroup(jpAtravessadorLayout.createSequentialGroup()
+                .addGap(255, 255, 255)
+                .addComponent(jLabel42)
+                .addContainerGap(429, Short.MAX_VALUE))
         );
         jpAtravessadorLayout.setVerticalGroup(
             jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(6, 6, 6)
                 .addComponent(jLabel42)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -453,43 +458,37 @@ public class empresa extends javax.swing.JFrame {
     }//GEN-LAST:event_fechar_janela
 
     private void botao_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_alterarActionPerformed
-//        try{
-//            String sql ="UPDATE atravessador SET "+
-//                    "definicao = '"+getDefinicao()+"',"+
-//                    "municipio = '"+cbMunicipio.getSelectedItem()+"',"+
-//                    "nome = '"+tfNome.getText()+"',"+
-//                    "apelido = '"+ tfApelido.getText() +"',"+
-//                    "naturalidade = '"+ tfNaturalidade.getText() +"',"+
-//                    "local_moradia = '"+ cbLocalMoradia.getSelectedItem() +"',"+
-//                    "sexo = '"+ cbSexo.getSelectedItem() +"',"+
-//                    "idade = '"+ tfIdade.getText() +"',"+
-//                    "atividade_principal = '"+ cbAtividadePrincipal.getSelectedItem() +"',"+
-//                    "atividade_secundaria = '"+ tfAtividadeSecundaria.getText() +"',"+
-//                    "estado_civil = '"+ cbEstadoCivil.getSelectedItem() +"',"+
-//                    "composicao_familiar = '"+ tfComposicaoFamiliar.getText() +"',"+
-//                    "escolaridade = '"+ cbEscolaridade.getSelectedItem() +"',"+
-//                    "digitador = '"+ tfDigitador.getText()+"',"+
-//                    "coletor = '"+ tfColetor.getText()+"',"+
-//                    "data_digitador = '"+ tfDataDigitador.getText()+"',"+
-//                    "data_coletor = '"+ tfDataColetor.getText()+"',"+
-//                    "pq_parou = '"+ tfPqParou.getText() +"' "+
-//
-//
-//                    "where cod_atravessador = "+conexao.resultSet.getString("cod_atravessador");
-//
-//            System.out.println(sql);
-//            if (conexao.update(sql)){
-//                JOptionPane.showMessageDialog(null,"Alterado com sucesso");
-//                //Atualiza Resultset
-//                conexao.execute("select * from atravessador");
-//                conexao.resultSet.next();
-//                mostra_dados_atravessador();
-//            }
-//
-//
-//        }catch (Exception e){
-//            System.out.println(e + " Erro no botão alterar");
-//        }
+        
+        try{
+            String sql ="UPDATE empresa SET "+
+                    "nome_empresa = '"+ tfNomeEmpresa.getText() +"',"+
+                    "municipio = '"+cbMunicipio.getSelectedItem()+"',"+
+                    "endereco = '"+tfEndereco.getText()+"',"+
+                    "pessoa_entrevistada = '"+ tfPessoaEntrevistada.getText() +"',"+
+                    "fone_fax = '"+ tfFone.getText() +"',"+
+                    "tempo_empresa = '"+ tfTempoEmpresa.getText() +"',"+                   
+                    "funcao = '"+ tfFuncao.getText() +"',"+
+                    "status = '"+ getStatus() +"',"+
+                    "coletor = '"+ tfColetor.getText() +"',"+
+                    "data_coletor = '"+ tfDataColetor.getText() +"',"+
+                    "digitador = '"+ tfDigitador.getText() +"',"+
+                    "data_digitador = '"+  tfDataDigitador.getText() +"' "+
+                  
+                    "where cod_empresa = "+conexao.resultSet.getString("cod_empresa");
+
+            System.out.println(sql);
+            if (conexao.update(sql)){
+                JOptionPane.showMessageDialog(null,"Alterado com sucesso");
+                //Atualiza Resultset
+                conexao.execute("select * from empresa");
+                conexao.resultSet.next();
+                mostra_dados_atravessador();
+            }
+
+
+        }catch (Exception e){
+            System.out.println(e + " Erro no botão alterar");
+        }
 }//GEN-LAST:event_botao_alterarActionPerformed
 
     private void botao_ultimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_ultimoActionPerformed
@@ -536,7 +535,7 @@ public class empresa extends javax.swing.JFrame {
             sql = "select * from empresa Where cod_empresa =" + conexao.resultSet.getString("cod_empresa");
             conexao.execute(sql);
             conexao.resultSet.first();
-            String nome = "Deletar o empresa : "+conexao.resultSet.getString("nome_empresa")+" ?";
+            String nome = "Deletar a empresa : "+conexao.resultSet.getString("nome_empresa")+" ?";
             int opcao_escolhida = JOptionPane.showConfirmDialog(null,nome,"Exclusão ",JOptionPane.YES_NO_OPTION);
             if (opcao_escolhida == JOptionPane.YES_OPTION) {
                 sql = "DELETE FROM empresa Where cod_empresa ="+conexao.resultSet.getString("cod_empresa");
@@ -559,45 +558,40 @@ public class empresa extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_excluirActionPerformed
 
     private void CadastrarAction(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarAction
-//         try {
-//            String sqlinsert = "insert into atravessador "
-//                    + "(definicao,municipio,nome,apelido,naturalidade,"
-//                    + "sexo,idade,atividade_principal,atividade_secundaria,"
-//                    + "estado_civil,composicao_familiar,escolaridade,pq_parou,"
-//                    + "local_moradia,"
-//                    + "digitador,coletor,data_digitador,data_coletor) values ('"+
-//                    getDefinicao()+"','"+
-//                    cbMunicipio.getSelectedItem()+"','"+
-//                    tfNome.getText()+"','"+
-//                    tfApelido.getText()+"','"+
-//                    tfNaturalidade.getText()+"','"+
-//                    cbSexo.getSelectedItem()+"',"+
-//                    tfIdade.getText()+",'"+
-//                    cbAtividadePrincipal.getSelectedItem()+"','"+
-//                    tfAtividadeSecundaria.getText()+"','"+
-//                    cbEstadoCivil.getSelectedItem()+"','"+
-//                    tfComposicaoFamiliar.getText()+"','"+
-//                    cbEscolaridade.getSelectedItem()+"','"+
-//                    tfPqParou.getText()+"','"+
-//                    cbLocalMoradia.getSelectedItem()+"','"+
-//                    tfDigitador.getText()+"','"+
-//                    tfColetor.getText()+"','"+
-//                    tfDataDigitador.getText()+"','"+
-//                    tfDataColetor.getText()+"')";
-//
-//            //System.out.println(sqlinsert);
-//            if (conexao.salvar(sqlinsert)) {
-//                JOptionPane.showMessageDialog(null,"Cadastrado com sucesso");
-//                //agora é hora de atualizar o resultset
-//                conexao.execute("select * from atravessador");
-//                conexao.resultSet.first(); //1º registro
-//                mostra_dados_atravessador();
-//            }
-//
-//
-//        }catch (SQLException erro){
-//            System.out.println(erro);
-//        }
+
+         try {
+            String sqlinsert = "insert into empresa "
+                    + "(nome_empresa,municipio,endereco,pessoa_entrevistada,"
+                    + "fone_fax,tempo_empresa,funcao,status,"
+                    + "coletor,data_coletor,digitador,"
+                    + "data_digitador) values ('"+
+                    tfNomeEmpresa.getText()+"','"+
+                    cbMunicipio.getSelectedItem()+"','"+
+                    tfEndereco.getText()+"','"+
+                    tfPessoaEntrevistada.getText()+"','"+
+                    tfFone.getText()+"','"+
+                    tfTempoEmpresa.getText()+"','"+
+                    tfFuncao.getText()+"','"+
+                    getStatus()+"','"+ //fazer
+
+                    tfColetor.getText()+"','"+
+                    tfDataColetor.getText()+"','"+
+                    tfDigitador.getText() +"','"+
+                    tfDataDigitador.getText()+"')";
+
+            //System.out.println(sqlinsert);
+            if (conexao.salvar(sqlinsert)) {
+                JOptionPane.showMessageDialog(null,"Cadastrado com sucesso");
+                //agora é hora de atualizar o resultset
+                conexao.execute("select * from empresa");
+                conexao.resultSet.first(); //1º registro
+                mostra_dados_atravessador();
+            }
+
+
+        }catch (SQLException erro){
+            System.out.println(erro);
+        }
 }//GEN-LAST:event_CadastrarAction
 
     /**
@@ -644,6 +638,7 @@ public class empresa extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbComprado;
     private javax.swing.JRadioButton rbConstruido;
     private javax.swing.JRadioButton rbModificado;
+    private javax.swing.ButtonGroup status;
     private javax.swing.JTextField tfColetor;
     private javax.swing.JTextField tfDataColetor;
     private javax.swing.JTextField tfDataDigitador;
@@ -747,7 +742,18 @@ public class empresa extends javax.swing.JFrame {
         }
 
     }
-    
+
+    private String getStatus() {
+        if (rbComprado.isSelected()){
+            return rbComprado.getText();
+        }else if (rbConstruido.isSelected()){
+            return rbConstruido.getText();
+        }else if (rbModificado.isSelected()){
+            return rbModificado.getText();
+        } else
+            return "";
+    }
+
 
 
 
