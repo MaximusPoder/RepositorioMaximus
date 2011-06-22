@@ -5,8 +5,7 @@ import br.com.caminhoneiro.*;
 import br.com.donoDoBarco.*;
 import br.com.formulario.listas.*;
 import br.com.formulario.atravessador.*;
-import br.com.formulario.emp.empresa;
-import br.com.formulario.empresa.view.WinQuestionarioEmpresa;
+import br.com.formulario.emp.*;
 import br.com.formulario.fabricaDeGelo.*;
 import br.com.formulario.mercadoFeira.*;
 import br.com.formulario.pescador.*;
@@ -92,6 +91,7 @@ public class menu_principal extends javax.swing.JFrame {
         botao_cadastrar_economia = new javax.swing.JButton();
         jPanel14 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
+        jButton9 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         especies = new javax.swing.JButton();
         atividades = new javax.swing.JButton();
@@ -512,7 +512,6 @@ public class menu_principal extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
         jPanel6.add(botao_cadastrar_economia, gridBagConstraints);
 
@@ -544,6 +543,18 @@ public class menu_principal extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 10, 0);
         jPanel6.add(jPanel14, gridBagConstraints);
+
+        jButton9.setText("Questionátio Empresa 2");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
+        jPanel6.add(jButton9, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
@@ -627,7 +638,7 @@ public class menu_principal extends javax.swing.JFrame {
 
         jPanel15.setLayout(new java.awt.GridBagLayout());
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel8.setForeground(new java.awt.Color(0, 51, 153));
         jLabel8.setText("Formulário Fábrica Gêlo");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -768,6 +779,10 @@ public class menu_principal extends javax.swing.JFrame {
        new fabricaDeGelo2().setVisible(true);
     }//GEN-LAST:event_jButton8ActionPerformed
 
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        new empresa2().setVisible(true);
+    }//GEN-LAST:event_jButton9ActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -802,6 +817,7 @@ public class menu_principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
