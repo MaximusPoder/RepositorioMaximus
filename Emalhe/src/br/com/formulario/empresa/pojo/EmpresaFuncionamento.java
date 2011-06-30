@@ -5,60 +5,58 @@
 package br.com.formulario.empresa.pojo;
 
 import java.io.Serializable;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-/**
- *
- * @author Elton
- */
-@Entity
-@Table
+//import javax.persistence.Column;
+//import javax.persistence.Entity;
+//import javax.persistence.Id;
+//import javax.persistence.Table;
+//
+///**
+// *
+// * @author Elton
+// */
+//@Entity
+//@Table
 public class EmpresaFuncionamento implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id
-    @Column
+ //   @Id
+  //  @Column
     // @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @Column
+  //  @Column
     private String administracao;
-    @Column
+  //  @Column
     private String benefiamento;
-    @Column
+ //   @Column
     private String apoio;
-    @Column
+ //   @Column
     private String pescadores;
-    @Column
+ //   @Column
     private String verao;
-    @Column
+  //  @Column
     private String inverno;
-    @Column
+ //   @Column
     private String administracaoTempo;
-    @Column
+  //  @Column
     private String benefiamentoTempo;
-    @Column
+  //  @Column
     private String apoioTempo;
-    @Column
+  //  @Column
     private String administracaoSalario;
-    @Column
+  //  @Column
     private String benefiamentoSalario;
-    @Column
+  //  @Column
     private String apoioSalario;
-    @Column
+  //  @Column
     private String questao64;
-    @Column
+ //   @Column
     private String questao65;
-    @Column
+ //   @Column
     private String questao66;
-    @Column
+  //  @Column
     private Integer empresaId;
 
-     @Column
+    // @Column
     private String observacao;
 
     public String getObservacao() {

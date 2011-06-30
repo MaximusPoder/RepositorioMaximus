@@ -5,57 +5,57 @@
 package br.com.formulario.empresa.pojo;
 
 import java.io.Serializable;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+//import javax.persistence.Column;
+//import javax.persistence.Entity;
+//import javax.persistence.GeneratedValue;
+//import javax.persistence.GenerationType;
+//import javax.persistence.Id;
+//import javax.persistence.Table;
 
 /**
  *
  * @author Elton
  */
-@Table
-@Entity
+//@Table
+//@Entity
 public class EmpresaQuestionario implements Serializable {
 
-    @Id
-    @Column
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Id
+//    @Column
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     
   
-    @Column
+    //@Column
     private String questao48;
-    @Column
+   // @Column
     private String questao48Resposta;
-    @Column
+   // @Column
     private String questao49;
-    @Column
+ //   @Column
     private String questao49Respotsa;
-    @Column
+ //   @Column
     private String questao50;
-    @Column
+  //  @Column
     private String questao50Resposta;
-    @Column
+  //  @Column
     private String questao51;
-    @Column
+  //  @Column
     private String questao52;
-    @Column
+   // @Column
     private String questao53;
-    @Column
+ //   @Column
     private String questao53Resposta;
-    @Column
+ //   @Column
     private String questao55;
-    @Column
+ //   @Column
     private String questao56;
-    @Column
+ //   @Column
     private String questao57;
-    @Column
+ //   @Column
     private String questao58;
-    @Column
+ //   @Column
     private String questao59;
-    @Column
+ //   @Column
     private Integer empresaId;
 }
