@@ -103,7 +103,7 @@ public class empresa extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         tfTempoEmpresa = new JIntField();
         jLabel12 = new javax.swing.JLabel();
-        tfFone = new javax.swing.JTextField();
+        tfFone = new JIntField();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         tfNomeEmpresa = new javax.swing.JTextField();
@@ -229,7 +229,7 @@ public class empresa extends javax.swing.JFrame {
         jLabel25.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel25.setText("Dados");
 
-        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel42.setText("Empresa");
 
         jp0.setLayout(new java.awt.GridBagLayout());
@@ -315,18 +315,15 @@ public class empresa extends javax.swing.JFrame {
         jpAtravessadorLayout.setHorizontalGroup(
             jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(170, Short.MAX_VALUE))
-                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                        .addComponent(jLabel24)
-                        .addGap(10, 10, 10)
-                        .addComponent(cbMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(443, Short.MAX_VALUE))
-                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jpAtravessadorLayout.createSequentialGroup()
+                                .addComponent(jLabel24)
+                                .addGap(10, 10, 10)
+                                .addComponent(cbMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jpAtravessadorLayout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addGap(18, 18, 18)
@@ -364,19 +361,15 @@ public class empresa extends javax.swing.JFrame {
                                         .addGroup(jpAtravessadorLayout.createSequentialGroup()
                                             .addComponent(jLabel13)
                                             .addGap(15, 15, 15)
-                                            .addComponent(tfFuncao, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                        .addContainerGap(245, Short.MAX_VALUE))
+                                            .addComponent(tfFuncao, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(jpAtravessadorLayout.createSequentialGroup()
+                                .addGap(45, 45, 45)
+                                .addComponent(jp0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(jp0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(170, 170, 170))
-                    .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
-            .addGroup(jpAtravessadorLayout.createSequentialGroup()
-                .addGap(255, 255, 255)
-                .addComponent(jLabel42)
-                .addContainerGap(429, Short.MAX_VALUE))
+                        .addGap(255, 255, 255)
+                        .addComponent(jLabel42)))
+                .addContainerGap(170, Short.MAX_VALUE))
         );
         jpAtravessadorLayout.setVerticalGroup(
             jpAtravessadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
