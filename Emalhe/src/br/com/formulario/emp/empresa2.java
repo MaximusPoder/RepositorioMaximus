@@ -75,21 +75,21 @@ public class empresa2 extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jPanel2 = new javax.swing.JPanel();
         jLabel51 = new javax.swing.JLabel();
-        tfVenda = new JMoneyField();
+        tfPreco = new JMoneyField();
         tfQuantidade = new JIntField();
         cbProduto = new javax.swing.JComboBox();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        tfOutro = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
-        tableEspecieProcessada = new javax.swing.JTable();
+        tbEspecieProcessada = new javax.swing.JTable();
         jLabel24 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        cbEspecie7 = new javax.swing.JComboBox();
+        tfOutro7 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -177,11 +177,11 @@ public class empresa2 extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Espécie", "Próprio/Terceiro", "Apetrecho", "Época do Ano"
+                "cod", "Espécie", "Próprio/Terceiro", "Apetrecho", "Época do Ano"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                true, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -270,30 +270,34 @@ public class empresa2 extends javax.swing.JFrame {
         jLabel51.setText("Espécies Processadas Pela Empresa");
 
         cbProduto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Filé Congelado", "Filé Resfriado", "Posta", "Inteiro", "Outros" }));
+        cbProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbProdutoActionPerformed(evt);
+            }
+        });
 
         jLabel26.setText("Preço de Venda.:");
 
         jLabel27.setText("Quantidade (%).:");
 
-        tfOutro.setEnabled(false);
-
-        tableEspecieProcessada.setModel(new javax.swing.table.DefaultTableModel(
+        tbEspecieProcessada.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Espécie", "Produto", "Quantidade", "Preço de Venda (R$)"
+                "cod", "Espécie", "Produto", "Quantidade", "Preço de Venda (R$)"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                true, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane3.setViewportView(tableEspecieProcessada);
+        jScrollPane3.setViewportView(tbEspecieProcessada);
+        tbEspecieProcessada.getColumnModel().getColumn(0).setResizable(false);
 
         jLabel24.setText("Produto.:");
 
@@ -307,10 +311,17 @@ public class empresa2 extends javax.swing.JFrame {
         });
 
         jButton4.setText("Excluir");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Espécie.:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbEspecie7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        tfOutro7.setEditable(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -326,13 +337,13 @@ public class empresa2 extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(cbEspecie7, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel24)
                                 .addGap(4, 4, 4)
                                 .addComponent(cbProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfOutro, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(tfOutro7, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addComponent(jLabel27)
@@ -341,7 +352,7 @@ public class empresa2 extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jLabel26)
                             .addGap(7, 7, 7)
-                            .addComponent(tfVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(jButton3))
                         .addComponent(jScrollPane3)
@@ -359,7 +370,7 @@ public class empresa2 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbEspecie7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -367,7 +378,7 @@ public class empresa2 extends javax.swing.JFrame {
                         .addComponent(jLabel24))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(cbProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(tfOutro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(tfOutro7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -378,7 +389,7 @@ public class empresa2 extends javax.swing.JFrame {
                         .addGap(2, 2, 2)
                         .addComponent(jLabel26))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(tfVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tfPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton3)))
                 .addGap(9, 9, 9)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -429,7 +440,7 @@ public class empresa2 extends javax.swing.JFrame {
                 .addGap(6, 6, 6)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2759, 2759, 2759)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botao_alterar)
@@ -489,8 +500,21 @@ public class empresa2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+       addEmpresaEspecieProcessada();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+       excluirEmpresaEspecieProcessada();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void cbProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbProdutoActionPerformed
+       if (cbProduto.getSelectedItem().equals("Outros"))
+           tfOutro7.setEditable(true);
+       else {
+           tfOutro7.setEditable(false);
+           tfOutro7.setText("");
+       }
+    }//GEN-LAST:event_cbProdutoActionPerformed
 
     /**
     * @param args the command line arguments
@@ -509,13 +533,13 @@ public class empresa2 extends javax.swing.JFrame {
     private javax.swing.JButton botao_salvar_questionario;
     private javax.swing.ButtonGroup casa;
     private javax.swing.JComboBox cbEspecie6;
+    private javax.swing.JComboBox cbEspecie7;
     private javax.swing.JComboBox cbNomeEmpresa;
     private javax.swing.JComboBox cbProduto;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -539,14 +563,14 @@ public class empresa2 extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JPanel jpPescadoSubproduto;
-    private javax.swing.JTable tableEspecieProcessada;
+    private javax.swing.JTable tbEspecieProcessada;
     private javax.swing.JTable tbProdutosCustos;
     private javax.swing.JTextField tfApetrecho;
     private javax.swing.JTextField tfEpocaAno;
-    private javax.swing.JTextField tfOutro;
+    private javax.swing.JTextField tfOutro7;
+    public static javax.swing.JTextField tfPreco;
     private javax.swing.JTextField tfQuantidade;
     private javax.swing.JTextField tfTerceiro;
-    public static javax.swing.JTextField tfVenda;
     // End of variables declaration//GEN-END:variables
 
         private void attCbNomeEmpresa() {
@@ -569,6 +593,8 @@ public class empresa2 extends javax.swing.JFrame {
 
         //tabelas 1:N
         attjTableEmpresaProdutosCusto();
+        attjTableEmpresaEspecieProcessada();
+        attCbspecie7();
         
 
 //        String codigo = util.separa(1,cbNomeAtravessador.getSelectedItem().toString());
@@ -859,6 +885,7 @@ public class empresa2 extends javax.swing.JFrame {
             if (conexao.salvar(sqlinsert)) {
                 System.out.println("1 Jtable empresa_produtos_custo - Cadastrado com sucesso");
                 attjTableEmpresaProdutosCusto();
+                attCbspecie7();
             }
     }
 
@@ -873,6 +900,7 @@ public class empresa2 extends javax.swing.JFrame {
             if (conexao.salvar(sql)) {
                 System.out.println("Exclusão realizada com sucesso");
                 attjTableEmpresaProdutosCusto();
+                attCbspecie7();
             }   else
                     JOptionPane.showMessageDialog(null,"Erro na exclusão");
     }
@@ -908,6 +936,83 @@ public class empresa2 extends javax.swing.JFrame {
         }
     }
 
+    private void addEmpresaEspecieProcessada() {
+        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
+        System.out.println(codigo);
+
+          //Relações de Trabalho - Tabela Renda Familia
+          String sqlinsert = "insert into empresa_especies_processadas "
+                    + "(cod_empresa,especie,produto,quantidade,preco) values ("+
+                    codigo+",'"+
+                    cbEspecie7.getSelectedItem()+"','"+
+                    getProduto()+"','"+
+                    tfQuantidade.getText()+"','"+
+                    tfPreco.getText()+"')";
+
+            //System.out.println(sqlinsert);
+            if (conexao.salvar(sqlinsert)) {
+                System.out.println("1 Jtable empresa_especies_processadas - Cadastrado com sucesso");
+                attjTableEmpresaEspecieProcessada();
+            }
+    }
+
+    private String getProduto() {
+        String saida = "";
+
+        if (cbProduto.getSelectedItem().equals("Outros")){
+            saida = tfOutro7.getText();
+        } else
+            saida = cbProduto.getSelectedItem().toString();
+
+        return saida;
+    }
+
+    private void excluirEmpresaEspecieProcessada() {
+        System.out.println(tbEspecieProcessada.getValueAt(tbEspecieProcessada.getSelectedRow(),0));
+        String sql;
+
+        sql = "delete from empresa_especies_processadas "
+            + "Where cod_empresa_especies_processadas = "
+            + tbEspecieProcessada.getValueAt(tbEspecieProcessada.getSelectedRow(),0);
+
+            if (conexao.salvar(sql)) {
+                System.out.println("Exclusão realizada com sucesso");
+                attjTableEmpresaEspecieProcessada();
+            }   else
+                    JOptionPane.showMessageDialog(null,"Erro na exclusão");
+    }
+
+    private void attjTableEmpresaEspecieProcessada() {
+        String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
+
+        conexao.execute("select * from empresa_especies_processadas"
+                        + " where cod_empresa = " + codigo);
+
+        tbEspecieProcessada.getColumnModel().getColumn(0).setMaxWidth(0);
+        tbEspecieProcessada.getColumnModel().getColumn(0).setPreferredWidth(0);
+        tbEspecieProcessada.getColumnModel().getColumn(1).setPreferredWidth(10);
+        tbEspecieProcessada.getColumnModel().getColumn(2).setPreferredWidth(10);
+        tbEspecieProcessada.getColumnModel().getColumn(3).setPreferredWidth(10);
+
+        DefaultTableModel modelo = (DefaultTableModel)tbEspecieProcessada.getModel();
+        modelo.setNumRows(0);//limpa o JTable;
+
+        try{
+            while (conexao.resultSet.next())
+                modelo.addRow(new Object[]{conexao.resultSet.getString("cod_empresa_especies_processadas"),
+                                           conexao.resultSet.getString("especie"),
+                                           conexao.resultSet.getString("produto"),
+                                           conexao.resultSet.getString("quantidade"),
+                                           conexao.resultSet.getString("preco"),
+                                          });
+
+            conexao.resultSet.first();
+
+        }catch (SQLException erro){
+            System.out.println(erro + "Tabela empresa_especies_processadas");
+        }
+    }
+    
     private void salvar_dados() {
 //    String sqlinsert = new String();
 //    String codigo = util.separa(1,cbNomeAtravessador.getSelectedItem().toString());
@@ -980,6 +1085,31 @@ public class empresa2 extends javax.swing.JFrame {
                     System.out.println(ex);
                 }
     }
+
+    private void attCbspecie7() {
+        String item = new String();
+                try {
+                    cbEspecie7.removeAllItems();
+
+                    conexao.execute("select distinct especie from empresa_produtos_custo");
+
+                    while (conexao.resultSet.next()){
+                        item = conexao.resultSet.getString("especie");
+                        cbEspecie7.addItem(item);
+
+                    }
+                }catch (SQLException ex) {
+                    System.out.println(ex);
+                }
+    }
+
+
+
+
+
+
+
+
 
 
 
