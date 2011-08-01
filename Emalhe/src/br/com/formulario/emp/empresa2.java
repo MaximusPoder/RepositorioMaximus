@@ -90,6 +90,61 @@ public class empresa2 extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         cbEspecie7 = new javax.swing.JComboBox();
         tfOutro7 = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        taQuestao8 = new javax.swing.JTextArea();
+        jPanel4 = new javax.swing.JPanel();
+        tf9depositoGelo = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        tf9inspecao = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        tf9expedicao = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        tf9Passagem = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        tf9LavagemClassificacao = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        tf9evisceracaoFiletamento = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        tf9Escamao = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        tf9recepcao = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        tf9embalagem = new javax.swing.JTextField();
+        tf9estocagem = new javax.swing.JTextField();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        tf9congelamento = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        tf9acondicionamento = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        tf9empacotamento = new javax.swing.JTextField();
+        tf9Inspecao2 = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        tf9Lavagem = new javax.swing.JTextField();
+        jPanel5 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        taQuestao11 = new javax.swing.JTextPane();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        taQuestao12 = new javax.swing.JTextPane();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        taQuestao13 = new javax.swing.JTextPane();
+        tf10outros = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        tf10inteiros = new javax.swing.JTextField();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        tf10posta = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        tf10file = new javax.swing.JTextField();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -358,7 +413,7 @@ public class empresa2 extends javax.swing.JFrame {
                         .addComponent(jScrollPane3)
                         .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jSeparator2)))
-                .addGap(20, 20, 20))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -396,8 +451,278 @@ public class empresa2 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton4)
                 .addGap(8, 8, 8)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jLabel1.setText("8) Como é realizado o armazenamento, a lavagem e o resfriamento do pescado à bordo?");
+
+        taQuestao8.setColumns(20);
+        taQuestao8.setRows(5);
+        jScrollPane4.setViewportView(taQuestao8);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jLabel5.setText("Deposito com Gelo em Camara.....");
+
+        jLabel20.setText("Expedição.............................");
+
+        jLabel6.setText("Pesagem..............................");
+
+        jLabel7.setText("Lavagem e Classificação............");
+
+        jLabel9.setText("Evisceração e Filetamento..........");
+
+        jLabel10.setText("Escamação............................");
+
+        jLabel11.setText("Recepção..............................");
+
+        jLabel12.setText("Inspeção..............................");
+
+        jLabel30.setText("<html> 9- Como funciona a infraestrtura do processo de beneficiamento desde o momento do desembarque na empresa,<p> passando pela embalagem até a expedição final (Agregar ou excluir etapas no esquema dependendo do produto)?</p> Caracterizar cada elo, especificando detalhes (temperatura, forma de estocagem e etc).</html>");
+
+        jLabel17.setText("Estocagem............................");
+
+        jLabel18.setText("Embalagem...........................");
+
+        jLabel19.setText("Congelamento........................");
+
+        jLabel21.setText("Acondicionamento...................");
+
+        jLabel22.setText("Empacotamento......................");
+
+        jLabel23.setText("Inspeção 2............................");
+
+        jLabel25.setText("Lavagem...............................");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(446, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel5)
+                                .addComponent(jLabel12)
+                                .addComponent(jLabel7)
+                                .addComponent(jLabel10)
+                                .addComponent(jLabel6)
+                                .addComponent(jLabel9)
+                                .addComponent(jLabel25)
+                                .addComponent(jLabel23)
+                                .addComponent(jLabel22)
+                                .addComponent(jLabel21)
+                                .addComponent(jLabel19)
+                                .addComponent(jLabel18)
+                                .addComponent(jLabel17)
+                                .addComponent(jLabel20))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(tf9expedicao, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
+                                .addComponent(tf9estocagem, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
+                                .addComponent(tf9embalagem, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
+                                .addComponent(tf9congelamento, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
+                                .addComponent(tf9acondicionamento, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
+                                .addComponent(tf9empacotamento, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
+                                .addComponent(tf9Inspecao2, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
+                                .addComponent(tf9Lavagem, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
+                                .addComponent(tf9evisceracaoFiletamento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
+                                .addComponent(tf9Passagem, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
+                                .addComponent(tf9LavagemClassificacao, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
+                                .addComponent(tf9inspecao, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
+                                .addComponent(tf9recepcao, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
+                                .addComponent(tf9depositoGelo, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
+                                .addComponent(tf9Escamao, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE))))
+                    .addContainerGap()))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addComponent(jLabel11)
+                .addContainerGap(386, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(tf9recepcao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(tf9inspecao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel12))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel5)
+                        .addComponent(tf9depositoGelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel7)
+                        .addComponent(tf9LavagemClassificacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel6)
+                        .addComponent(tf9Passagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel10)
+                        .addComponent(tf9Escamao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel9)
+                        .addComponent(tf9evisceracaoFiletamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(13, 13, 13)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel25)
+                        .addComponent(tf9Lavagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel23)
+                        .addComponent(tf9Inspecao2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel22)
+                        .addComponent(tf9empacotamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel21)
+                        .addComponent(tf9acondicionamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel19)
+                        .addComponent(tf9congelamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel18)
+                        .addComponent(tf9embalagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel17)
+                        .addComponent(tf9estocagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel20)
+                        .addComponent(tf9expedicao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        jScrollPane5.setViewportView(taQuestao11);
+
+        jScrollPane6.setViewportView(taQuestao12);
+
+        jScrollPane7.setViewportView(taQuestao13);
+
+        jLabel28.setText("Outros.:");
+
+        jLabel29.setText("Inteiros.:");
+
+        jLabel33.setText("12 - A empresa esta ampliando ou reduzindo a sua produção?");
+
+        jLabel34.setText("13 - Qual é a quebra?(em %)?");
+
+        jLabel31.setText("Posta.:");
+
+        jLabel32.setText("10 - Quais os equipamentos/utensilios utilizados por tipo de beneficiamento/Processamento");
+
+        jLabel35.setText("11 - A empresa esta ampliando ou reduzindo a sua produção?");
+
+        jLabel36.setText("Filé.:");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel28)
+                            .addComponent(jLabel29)
+                            .addComponent(jLabel31)
+                            .addComponent(jLabel36))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tf10outros)
+                            .addComponent(tf10inteiros)
+                            .addComponent(tf10file)
+                            .addComponent(tf10posta, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)))
+                    .addComponent(jLabel35, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel33, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel34, javax.swing.GroupLayout.Alignment.LEADING))
+                .addContainerGap())
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel32)
+                    .addContainerGap()))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel36)
+                    .addComponent(tf10file, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel31)
+                    .addComponent(tf10posta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29)
+                    .addComponent(tf10inteiros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel28)
+                    .addComponent(tf10outros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel32)
+                    .addContainerGap(351, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout jpPescadoSubprodutoLayout = new javax.swing.GroupLayout(jpPescadoSubproduto);
@@ -409,22 +734,32 @@ public class empresa2 extends javax.swing.JFrame {
                 .addComponent(jLabel8)
                 .addGap(4, 4, 4)
                 .addComponent(cbNomeEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 641, Short.MAX_VALUE))
-                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                    .addGap(10, 10, 10)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPescadoSubprodutoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(833, Short.MAX_VALUE)
                 .addComponent(botao_alterar)
                 .addGap(6, 6, 6)
                 .addComponent(botao_salvar_questionario)
                 .addGap(707, 707, 707))
+            .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpPescadoSubprodutoLayout.createSequentialGroup()
+                    .addGap(10, 10, 10)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(1034, Short.MAX_VALUE))
+            .addGroup(jpPescadoSubprodutoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1207, Short.MAX_VALUE))
         );
         jpPescadoSubprodutoLayout.setVerticalGroup(
             jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -440,8 +775,14 @@ public class empresa2 extends javax.swing.JFrame {
                 .addGap(6, 6, 6)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(2759, 2759, 2759)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2505, 2505, 2505)
                 .addGroup(jpPescadoSubprodutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botao_alterar)
                     .addComponent(botao_salvar_questionario))
@@ -540,31 +881,86 @@ public class empresa2 extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JPanel jpPescadoSubproduto;
+    private javax.swing.JTextPane taQuestao11;
+    private javax.swing.JTextPane taQuestao12;
+    private javax.swing.JTextPane taQuestao13;
+    private javax.swing.JTextArea taQuestao8;
     private javax.swing.JTable tbEspecieProcessada;
     private javax.swing.JTable tbProdutosCustos;
+    private javax.swing.JTextField tf10file;
+    private javax.swing.JTextField tf10inteiros;
+    private javax.swing.JTextField tf10outros;
+    private javax.swing.JTextField tf10posta;
+    private javax.swing.JTextField tf9Escamao;
+    private javax.swing.JTextField tf9Inspecao2;
+    private javax.swing.JTextField tf9Lavagem;
+    private javax.swing.JTextField tf9LavagemClassificacao;
+    private javax.swing.JTextField tf9Passagem;
+    private javax.swing.JTextField tf9acondicionamento;
+    private javax.swing.JTextField tf9congelamento;
+    private javax.swing.JTextField tf9depositoGelo;
+    private javax.swing.JTextField tf9embalagem;
+    private javax.swing.JTextField tf9empacotamento;
+    private javax.swing.JTextField tf9estocagem;
+    private javax.swing.JTextField tf9evisceracaoFiletamento;
+    private javax.swing.JTextField tf9expedicao;
+    private javax.swing.JTextField tf9inspecao;
+    private javax.swing.JTextField tf9recepcao;
     private javax.swing.JTextField tfApetrecho;
     private javax.swing.JTextField tfEpocaAno;
     private javax.swing.JTextField tfOutro7;
@@ -649,161 +1045,7 @@ public class empresa2 extends javax.swing.JFrame {
 //            tfTempoAtividadeMoradia.setText(conexao.resultSet.getString("tempo_atividade"));
 //
 //            System.out.println("1 Moradia - Passou");
-//
-//            //Atravessador Recepção
-//            conexao.execute("SELECT * FROM atravessador_recepcao_produtos WHERE cod_atravessador = "+codigo);
-//            conexao.resultSet.first();
-//
-//           if (conexao.resultSet.getString("pescador_fornece_pescado").equals("1"))
-//                   ckbPescadorP.setSelected(true);
-//
-//           if (conexao.resultSet.getString("empresa_fornece_pescado").equals("1"))
-//                   ckbEmpresaP.setSelected(true);
-//
-//            if (conexao.resultSet.getString("outro_atravessador_fornece_pescado").equals("1"))
-//                   ckbOutroAtravessadorP.setSelected(true);
-//
-//            if (conexao.resultSet.getString("dono_do_barco_fornece_pescado").equals("1"))
-//                   ckbDonoBarcoP.setSelected(true);
-//
-//            if (conexao.resultSet.getString("mercado_ou_feira_fornece_pescado").equals("1"))
-//                   ckbMercadoFeiraP.setSelected(true);
-//
-//            if (conexao.resultSet.getString("cooperativa_fornece_pescado").equals("1"))
-//                   ckbCooperativaP.setSelected(true);
-//            //
-//            if (conexao.resultSet.getString("pescador_fornece_grude").equals("1"))
-//                   ckbPescadorG.setSelected(true);
-//
-//            if (conexao.resultSet.getString("empresa_fornece_grude").equals("1"))
-//                   ckbEmpresaG.setSelected(true);
-//
-//            if (conexao.resultSet.getString("outro_atravessador_fornece_grude").equals("1"))
-//                   ckbOutroAtravessadorG.setSelected(true);
-//
-//            if (conexao.resultSet.getString("dono_do_barco_fornece_grude").equals("1"))
-//                   ckbDonoBarcoG.setSelected(true);
-//
-//            if (conexao.resultSet.getString("mercado_ou_feira_fornece_grude").equals("1"))
-//                   ckbMercadoFeiraG.setSelected(true);
-//
-//            if (conexao.resultSet.getString("cooperativa_fornece_grude").equals("1"))
-//                   ckbCooperativaG.setSelected(true);
-//
-//            //
-//            String nr = conexao.resultSet.getString("numero_fornecedores");
-//            if (nr.equals("N/S")){
-//                    ckbNaoSabeFornecedores.setSelected(true);
-//            } else {
-//                        tfNumeroFornecedores.setText(nr);
-//                    }
-//            //
-//
-//            if (conexao.resultSet.getString("numero_aumentou").equals("1"))
-//                   ckbFornecedorAumentouSim.setSelected(true);
-//
-//            if (conexao.resultSet.getString("produto_sempre_dos_mesmos").equals("1"))
-//                   ckbSempreMesmoFornecedor1.setSelected(true);
-//
-//            if (conexao.resultSet.getString("produto_sempre_dos_mesmos_quem_aparece").equals("1"))
-//                   ckbSempreMesmoFornecedor2.setSelected(true);
-//
-//            if (conexao.resultSet.getString("produto_sempre_mais_barato").equals("1"))
-//                   ckbMaisBarato3.setSelected(true);
-//
-//            if (conexao.resultSet.getString("produto_de_quem_aparecer").equals("1"))
-//                   ckbDeQuemAparece4.setSelected(true);
-//
-//
-//            System.out.println("2 Recepção - Passou ");
-//
-//             //Aquisicao
-//            conexao.execute("SELECT * FROM atravessador_aquisicao WHERE cod_atravessador = "+codigo);
-//            conexao.resultSet.first();
-//
-//            if (conexao.resultSet.getString("peixe_inteiro").equals("1"))
-//                   ckbSoPeixeiInteiro.setSelected(true);
-//
-//            if (conexao.resultSet.getString("cor_carne_peixe").equals("1"))
-//                   ckbCorCarnePeixe.setSelected(true);
-//
-//            if (conexao.resultSet.getString("odor_carne_peixe").equals("1"))
-//                   ckbOdorCarnePeixe.setSelected(true);
-//
-//            if (conexao.resultSet.getString("consitencia_carne_peixe").equals("1"))
-//                   ckbConsistenciaCarnePeixe.setSelected(true);
-//
-//            if (conexao.resultSet.getString("odor_grude").equals("1"))
-//                   ckbOdorGrude.setSelected(true);
-//
-//            if (conexao.resultSet.getString("tamanho_grude").equals("1"))
-//                   ckbTamanhoGrude.setSelected(true);
-//
-//            if (conexao.resultSet.getString("sem_mancha_grude").equals("1"))
-//                   ckbSemManchaGrude.setSelected(true);
-//
-//            if (conexao.resultSet.getString("odor_aba").equals("1"))
-//                   ckbOdorAba.setSelected(true);
-//
-//            if (conexao.resultSet.getString("tamanho_aba").equals("1"))
-//                   ckbTamanhoAba.setSelected(true);
-//
-//            if (conexao.resultSet.getString("sem_mancha_aba").equals("1"))
-//                   ckbSemManchaAba.setSelected(true);
-//
-//            System.out.println("3 Aquisição - Passou");
-//
-//
-//            //Armazenamento
-//            conexao.execute("SELECT * FROM atravessador_armazenamento WHERE cod_atravessador = "+codigo);
-//            conexao.resultSet.first();
-//
-//            if (conexao.resultSet.getString("pescado_gelo").equals("1"))
-//                   ckbGeloPescador.setSelected(true);
-//
-//            if (conexao.resultSet.getString("pescado_frigorifico").equals("1"))
-//                   ckbFrigorificoPescador.setSelected(true);
-//
-//            if (conexao.resultSet.getString("pescado_innatura").equals("1"))
-//                   ckbInNaturaPescador.setSelected(true);
-//
-//            if (conexao.resultSet.getString("pescado_sal").equals("1"))
-//                   ckbSalPescador.setSelected(true);
-//
-//            if (conexao.resultSet.getString("grude_sal").equals("1"))
-//                   ckbSalGrude.setSelected(true);
-//
-//            if (conexao.resultSet.getString("grude_estufa").equals("1"))
-//                   ckbEstufaGrude.setSelected(true);
-//
-//            if (conexao.resultSet.getString("grude_sol").equals("1"))
-//                   ckbSolGrude.setSelected(true);
-//
-//            if (conexao.resultSet.getString("grude_gelo").equals("1"))
-//                   ckbGeloGrude.setSelected(true);
-//
-//            System.out.println("4 Armazenamento - Passou");
-//
-//            //Comercialização
-//            conexao.execute("SELECT * FROM atravessador_comercializacao WHERE cod_atravessador = "+codigo);
-//            conexao.resultSet.first();
-//
-//            if (conexao.resultSet.getString("sempre_mesmo_comprador").equals("1"))
-//                   ckbSempreDosMesmos.setSelected(true);
-//
-//            tfSempreDosMesmosPq.setText(conexao.resultSet.getString("pq_sempre_o_mesmo"));
-//
-//            if (conexao.resultSet.getString("fincancia_embarcacao").equals("1"))
-//                   ckbFinanciarSim.setSelected(true);
-//
-//            tfQuantasFinanciadas.setText(conexao.resultSet.getString("quantas_financia"));
-//
-//            System.out.println("5 Comércio - Passou");
-//
 
-//        } catch (Exception e) {
-//            System.out.println(e + " metodo mostrar dados");
-//        }
     }
 
         public void limpar_dados(){
@@ -1014,57 +1256,48 @@ public class empresa2 extends javax.swing.JFrame {
     }
     
     private void salvar_dados() {
-//    String sqlinsert = new String();
-//    String codigo = util.separa(1,cbNomeAtravessador.getSelectedItem().toString());
-//    System.out.println(codigo);
-//
-//        //Moradia
-//            //Pegando ites do CB
-//
-//            sqlinsert = "insert into atravessador_comercializacao "
-//                    + "(cod_atravessador,sempre_mesmo_comprador,"
-//                    + "pq_sempre_o_mesmo,fincancia_embarcacao,"
-//                    + "quantas_financia) values ("+
-//                    codigo+",'"+
-//                    util.checarCkb(ckbSempreDosMesmos)+"','"+
-//                    tfSempreDosMesmosPq.getText()+"','"+
-//                    util.checarCkb(ckbFinanciarSim)+"','"+
-//                    tfQuantasFinanciadas.getText()+"')";
-//
-//            //System.out.println(sqlinsert);
-//            if (conexao.salvar(sqlinsert)) {
-//                JOptionPane.showMessageDialog(null,"Salvo sucesso" );
-//                System.out.println("5 Comercialização - Cadastrado com sucesso");
-//                mostra_dados();
-//            }
+    String sqlinsert = new String();
+    String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
+    System.out.println(codigo);
 
+            //Pegando ites do CB
 
+            sqlinsert = "insert into empresa_questionario "
+                    + "(cod_atravessador,questao8) values ("+
+                    codigo+",'"+
+                    //util.checarCkb(ckbSempreDosMesmos)+"','"+
+                    taQuestao8.getText()+"')";
+
+            //System.out.println(sqlinsert);
+            if (conexao.salvar(sqlinsert)) {
+                JOptionPane.showMessageDialog(null,"Salvo sucesso" );
+                System.out.println("Cadastrado com sucesso");
+                mostra_dados();
+            }
     }
 
     private void atualizar_dados() {
-//    String sqlupdate = new String();
-//    String codigo = util.separa(1,cbNomeAtravessador.getSelectedItem().toString());
-//    System.out.println(codigo);
-//
-//    //Pescador Moradia
-//
-//            //Comercialização
-//             sqlupdate ="UPDATE atravessador_comercializacao SET "
-//                    +"sempre_mesmo_comprador = '"+util.checarCkb(ckbSempreDosMesmos)+"',"
-//                    +"pq_sempre_o_mesmo = '"+tfSempreDosMesmosPq.getText()+"',"
-//                    +"fincancia_embarcacao = '"+util.checarCkb(ckbFinanciarSim)+"',"
-//                    +"quantas_financia = '"+tfQuantasFinanciadas.getText()+"' "+
-//
-//                    "where cod_atravessador = "+codigo;
-//
-//
-//            //System.out.println(sqlupdate);
-//            if (conexao.update(sqlupdate)){
-//                JOptionPane.showMessageDialog(null,"Atualizado com sucesso" );
-//                System.out.println("Comércio - Atualizado com sucesso");
-//                //Atualiza Resultset
-//                mostra_dados();
-//            }
+    String sqlupdate = new String();
+    String codigo = util.separa(1,cbNomeEmpresa.getSelectedItem().toString());
+    System.out.println(codigo);
+
+    //Pescador Moradia
+
+            //Comercialização
+             sqlupdate ="UPDATE empresa_questionario SET "
+                    +"questao8 = '"+taQuestao8.getText()+"',"
+                    
+                    +"quantas_financia = '"+taQuestao8.getText()+"' "+
+
+                    "where cod_atravessador = "+codigo;
+
+
+            //System.out.println(sqlupdate);
+            if (conexao.update(sqlupdate)){
+                JOptionPane.showMessageDialog(null,"Atualizado com sucesso" );
+                System.out.println("Atualizado com sucesso");
+                mostra_dados();
+            }
     }
 
    
