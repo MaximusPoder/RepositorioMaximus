@@ -2339,6 +2339,7 @@ public class pescador2 extends javax.swing.JFrame {
     }
 
     private void mostra_dados(){
+        attCbs();
         limpar_dados();
         String codigo = util.separa(1,cbPescador.getSelectedItem().toString());
         System.out.println(codigo);
@@ -2630,7 +2631,7 @@ public class pescador2 extends javax.swing.JFrame {
 
             System.out.println("Passou! Tabelas");
 
-            attCbs();
+            
 
         }catch (SQLException ex) {           
                 //JOptionPane.showMessageDialog(null,"Nenhum registro encontrado "+ ex );
