@@ -1263,10 +1263,38 @@ public class empresa2 extends javax.swing.JFrame {
             //Pegando ites do CB
 
             sqlinsert = "insert into empresa_questionario "
-                    + "(cod_atravessador,questao8) values ("+
+                    + "(cod_empresa,questao8) values ("+
                     codigo+",'"+
-                    //util.checarCkb(ckbSempreDosMesmos)+"','"+
-                    taQuestao8.getText()+"')";
+
+                    taQuestao8.getText()+"','"+
+
+                    tf9recepcao.getText()+"','"+
+                    tf9inspecao.getText()+"','"+
+                    tf9depositoGelo.getText()+"','"+
+                    tf9LavagemClassificacao.getText()+"','"+
+                    tf9Passagem.getText()+"','"+
+                    tf9Escamao.getText()+"','"+
+                    tf9evisceracaoFiletamento.getText()+"','"+
+                    tf9Lavagem.getText()+"','"+
+                    tf9Inspecao2.getText()+"','"+
+                    tf9empacotamento.getText()+"','"+
+                    tf9acondicionamento.getText()+"','"+
+                    tf9congelamento.getText()+"','"+
+                    tf9embalagem.getText()+"','"+
+                    tf9estocagem.getText()+"','"+
+                    tf9expedicao.getText()+"','"+
+
+                    tf10file.getText()+"','"+
+                    tf10posta.getText()+"','"+
+                    tf10inteiros.getText()+"','"+
+                    tf10outros.getText()+"','"+
+
+                    taQuestao11.getText()+"','"+
+
+                    taQuestao12.getText()+"','"+
+
+                    taQuestao13.getText()+"')";
+
 
             //System.out.println(sqlinsert);
             if (conexao.salvar(sqlinsert)) {
