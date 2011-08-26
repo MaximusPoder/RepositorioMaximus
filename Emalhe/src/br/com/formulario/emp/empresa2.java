@@ -1838,10 +1838,35 @@ public class empresa2 extends javax.swing.JFrame {
             //Comercialização
              sqlupdate ="UPDATE empresa_questionario SET "
                     +"questao8 = '"+taQuestao8.getText()+"',"
-                    
-                    +"quantas_financia = '"+taQuestao8.getText()+"' "+
+                           
+                    +"q9recepcao = '"+tf9recepcao.getText()+"',"
+                    +"q9inspecao = '"+tf9inspecao.getText()+"',"
+                    +"q9deposito_gelo = '"+tf9depositoGelo.getText()+"',"
+                    +"q9lavagem_classificacao = '"+tf9LavagemClassificacao.getText()+"',"
+                    +"q9passagem = '"+tf9Passagem.getText()+"',"
+                    +"q9escamao = '"+tf9Escamao.getText()+"',"
+                    +"q9evisceracao_filetamento = '"+tf9evisceracaoFiletamento.getText()+"',"
+                    +"q9lavagem = '"+tf9Lavagem.getText()+"',"
+                    +"q9inscepcao2 = '"+tf9Inspecao2.getText()+"',"
+                    +"q9empacotamento = '"+tf9empacotamento.getText()+"',"
+                    +"q9acondicionamento = '"+tf9acondicionamento.getText()+"',"
+                    +"q9congelamento = '"+tf9congelamento.getText()+"',"
+                    +"q9embalagem = '"+tf9embalagem.getText()+"',"
+                    +"q9estocagem = '"+tf9estocagem.getText()+"',"
+                    +"q9expedicao = '"+tf9expedicao.getText()+"',"
 
-                    "where cod_atravessador = "+codigo;
+                    +"q10file = '"+tf10file.getText()+"',"
+                    +"q10posta = '"+tf10posta.getText()+"',"
+                    +"q10inteiros = '"+tf10inteiros.getText()+"',"
+                    +"q10outros = '"+tf10outros.getText()+"',"
+
+                    +"questao11 = '"+taQuestao11.getText()+"',"
+
+                    +"questao12 = '"+taQuestao12.getText()+"',"
+
+                    +"questao13 = '"+taQuestao13.getText()+"' "+
+
+                    "where cod_empresa = "+codigo;
 
 
             //System.out.println(sqlupdate);
