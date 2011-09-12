@@ -10,6 +10,18 @@
     </Component>
     <Component class="javax.swing.ButtonGroup" name="gb56">
     </Component>
+    <Component class="javax.swing.ButtonGroup" name="q46">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="q48">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="q49">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="q50">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="q53">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="q58">
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
@@ -160,7 +172,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jPanel21" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jPanel22" max="32767" attributes="0"/>
                           </Group>
@@ -220,9 +232,9 @@
                       <Component id="jPanel20" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel21" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel22" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1519,14 +1531,14 @@
                                       <Group type="102" attributes="1">
                                           <Component id="jLabel55" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="jTextField3" min="-2" pref="81" max="-2" attributes="0"/>
+                                          <Component id="tfq18" min="-2" pref="81" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel54" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="4" pref="4" max="4" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jTextField1" alignment="0" min="-2" pref="81" max="-2" attributes="0"/>
-                                              <Component id="jTextField2" alignment="0" min="-2" pref="81" max="-2" attributes="0"/>
+                                              <Component id="tfq16" alignment="0" min="-2" pref="81" max="-2" attributes="0"/>
+                                              <Component id="tfq17" alignment="0" min="-2" pref="81" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -1547,7 +1559,7 @@
                           <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel53" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfq16" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="6" pref="6" max="6" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -1555,7 +1567,7 @@
                                   <EmptySpace min="3" pref="3" max="3" attributes="0"/>
                                   <Component id="jLabel54" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jTextField2" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfq17" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
@@ -1581,7 +1593,7 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tfq18" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace pref="13" max="32767" attributes="0"/>
@@ -1630,11 +1642,11 @@
                     <Property name="text" type="java.lang.String" value="16 - Qual a produ&#xe7;&#xe3;o anual da f&#xe1;brica de Gelo (Unidade)?"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField1">
+                <Component class="javax.swing.JTextField" name="tfq16">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField2">
+                <Component class="javax.swing.JTextField" name="tfq17">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField3">
+                <Component class="javax.swing.JTextField" name="tfq18">
                 </Component>
                 <Container class="javax.swing.JScrollPane" name="jScrollPane10">
                   <AuxValues>
@@ -1713,21 +1725,21 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="tfImposto" min="-2" pref="122" max="-2" attributes="0"/>
+                                                  <Component id="tf23Imposto" min="-2" pref="122" max="-2" attributes="0"/>
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                   <Component id="jLabel66" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="tfAnterior" min="-2" pref="122" max="-2" attributes="0"/>
+                                                  <Component id="tf23Anterior" min="-2" pref="122" max="-2" attributes="0"/>
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                   <Component id="jLabel67" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="tfAtual" min="-2" pref="122" max="-2" attributes="0"/>
+                                              <Component id="tf23Atual" min="-2" pref="122" max="-2" attributes="0"/>
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="tfAno" min="-2" pref="122" max="-2" attributes="0"/>
+                                                  <Component id="tf23Ano" min="-2" pref="122" max="-2" attributes="0"/>
                                                   <EmptySpace max="32767" attributes="0"/>
                                                   <Component id="jButton7" min="-2" max="-2" attributes="0"/>
                                               </Group>
@@ -1749,16 +1761,16 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel64" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tfImposto" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf23Imposto" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel66" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tfAtual" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf23Atual" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel65" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tfAnterior" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf23Anterior" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel67" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tfAno" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf23Ano" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jButton7" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -1781,14 +1793,14 @@
                     <Property name="text" type="java.lang.String" value="Imposto"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="tfImposto">
+                <Component class="javax.swing.JTextField" name="tf23Imposto">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel65">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Anterior (%)"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="tfAnterior">
+                <Component class="javax.swing.JTextField" name="tf23Anterior">
                 </Component>
                 <Container class="javax.swing.JScrollPane" name="jScrollPane14">
                   <AuxValues>
@@ -1797,16 +1809,45 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTable" name="tableImposto">
+                    <Component class="javax.swing.JTable" name="tb23Impostos">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                           <Table columnCount="5" rowCount="0">
+                            <Column editable="true" title="cod" type="java.lang.Object"/>
                             <Column editable="false" title="Imposto" type="java.lang.Object"/>
                             <Column editable="false" title="Anterior (%)" type="java.lang.Object"/>
                             <Column editable="false" title="Atual (%)" type="java.lang.Object"/>
                             <Column editable="false" title="A partir de (Ano)" type="java.lang.Object"/>
-                            <Column editable="false" title="Observacao" type="java.lang.Object"/>
                           </Table>
+                        </Property>
+                        <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                          <TableColumnModel selectionModel="0">
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                          </TableColumnModel>
                         </Property>
                         <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                           <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
@@ -1815,9 +1856,9 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JTextField" name="tfAno">
+                <Component class="javax.swing.JTextField" name="tf23Ano">
                 </Component>
-                <Component class="javax.swing.JTextField" name="tfAtual">
+                <Component class="javax.swing.JTextField" name="tf23Atual">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel66">
                   <Properties>
@@ -1828,11 +1869,17 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Adicionar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton8">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Excluir"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel38">
                   <Properties>
@@ -2203,7 +2250,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTable" name="tableQuestao27">
+                    <Component class="javax.swing.JTable" name="tb27emprestimo">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                           <Table columnCount="9" rowCount="0">
@@ -2532,16 +2579,16 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel93" min="-2" max="-2" attributes="1"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ckb33" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="1">
                                   <Component id="jLabel85" min="-2" max="-2" attributes="1"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ckb32" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel92" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField4" min="-2" pref="107" max="-2" attributes="0"/>
+                                  <Component id="tf32" min="-2" pref="107" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jLabel86" alignment="0" min="-2" max="-2" attributes="1"/>
                               <Component id="jScrollPane23" alignment="0" min="-2" pref="492" max="-2" attributes="1"/>
@@ -2584,14 +2631,14 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel85" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="ckb32" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel92" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf32" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel93" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="ckb33" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -2664,7 +2711,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="tfQuestao36">
+                    <Component class="javax.swing.JTextArea" name="ta37">
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
@@ -2712,14 +2759,14 @@
                     <Property name="text" type="java.lang.String" value="(processamento, insumos, embalagem, etc)? a serem comprados? Por que?"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox2">
+                <Component class="javax.swing.JCheckBox" name="ckb32">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Sim"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField4">
+                <Component class="javax.swing.JTextField" name="tf32">
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox3">
+                <Component class="javax.swing.JCheckBox" name="ckb33">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Sim"/>
                   </Properties>
@@ -2731,7 +2778,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="tfQuestao37">
+                    <Component class="javax.swing.JTextArea" name="ta36">
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
@@ -2746,7 +2793,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="tfQuestao38">
+                    <Component class="javax.swing.JTextArea" name="ta38">
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
@@ -2778,7 +2825,7 @@
                                       <Component id="tfPotMotor" max="32767" attributes="1"/>
                                       <Component id="tfEstocagem" alignment="0" max="32767" attributes="1"/>
                                       <Component id="tfCompMedio" alignment="0" max="32767" attributes="1"/>
-                                      <Component id="tfFrota" alignment="0" min="-2" pref="118" max="-2" attributes="1"/>
+                                      <Component id="tf38Frota" alignment="0" min="-2" pref="118" max="-2" attributes="1"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -2795,7 +2842,7 @@
                                       <Group type="102" alignment="1" attributes="1">
                                           <Component id="jLabel99" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="tfFrota1" max="32767" attributes="1"/>
+                                          <Component id="tfgps" max="32767" attributes="1"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel75" min="-2" max="-2" attributes="0"/>
@@ -2849,9 +2896,9 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel90" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tfFrota" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf38Frota" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel99" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tfFrota1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfgps" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel72" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="tfGuincho" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel68" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -2931,10 +2978,11 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTable" name="table">
+                    <Component class="javax.swing.JTable" name="tb38DetalheFrota">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="13" rowCount="0">
+                          <Table columnCount="14" rowCount="0">
+                            <Column editable="true" title="cod" type="java.lang.Object"/>
                             <Column editable="false" title="Frota Especie" type="java.lang.Object"/>
                             <Column editable="false" title="Comp Medio" type="java.lang.Object"/>
                             <Column editable="false" title="Cap Estocagem" type="java.lang.Object"/>
@@ -2952,6 +3000,11 @@
                         </Property>
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                           <TableColumnModel selectionModel="0">
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
                             <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                               <Title/>
                               <Editor/>
@@ -3080,7 +3133,7 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfCompMedio">
                 </Component>
-                <Component class="javax.swing.JTextField" name="tfFrota">
+                <Component class="javax.swing.JTextField" name="tf38Frota">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel88">
                   <Properties>
@@ -3104,17 +3157,23 @@
                     <Property name="text" type="java.lang.String" value="GPS"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="tfFrota1">
+                <Component class="javax.swing.JTextField" name="tfgps">
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton11">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Adicionar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton11ActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton12">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Excluir"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton12ActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel108">
                   <Properties>
@@ -3127,14 +3186,14 @@
                     <Property name="useNullLayout" type="boolean" value="true"/>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JTextField" name="tfMatTipo">
+                    <Component class="javax.swing.JTextField" name="tf38tipo">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="96" y="97" width="187" height="-1"/>
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="tfMatFrequencia">
+                    <Component class="javax.swing.JTextField" name="tf38frequencia">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="563" y="36" width="93" height="-1"/>
@@ -3171,7 +3230,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="tfMatOutros">
+                    <Component class="javax.swing.JTextField" name="tf38outros">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="369" y="95" width="112" height="-1"/>
@@ -3198,7 +3257,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="javax.swing.JComboBox" name="cbMatMaterial">
+                    <Component class="javax.swing.JComboBox" name="cb38material">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="8">
@@ -3214,8 +3273,8 @@
                         </Property>
                       </Properties>
                       <Events>
-                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cbMatMaterialItemStateChanged"/>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbMatMaterialActionPerformed"/>
+                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cb38materialItemStateChanged"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cb38materialActionPerformed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3223,7 +3282,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="tfMatQuantidade">
+                    <Component class="javax.swing.JTextField" name="tf38quantidade">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="369" y="36" width="112" height="-1"/>
@@ -3273,14 +3332,14 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="tfMatTipo1">
+                    <Component class="javax.swing.JTextField" name="tf38material">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="96" y="68" width="187" height="-1"/>
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="tfMatQuantidade1">
+                    <Component class="javax.swing.JTextField" name="tf38custo">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="369" y="65" width="112" height="-1"/>
@@ -3299,20 +3358,26 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTable" name="jTable1">
+                        <Component class="javax.swing.JTable" name="tb38MatUtilizado">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="6" rowCount="4">
+                              <Table columnCount="7" rowCount="4">
                                 <Column editable="true" title="cod" type="java.lang.Object"/>
-                                <Column editable="true" title="tipo" type="java.lang.Object"/>
-                                <Column editable="true" title="quantidade" type="java.lang.Object"/>
-                                <Column editable="true" title="custo" type="java.lang.Object"/>
-                                <Column editable="true" title="outros" type="java.lang.Object"/>
-                                <Column editable="true" title="frequencia" type="java.lang.Object"/>
+                                <Column editable="true" title="Material" type="java.lang.Object"/>
+                                <Column editable="true" title="Tipo" type="java.lang.Object"/>
+                                <Column editable="true" title="Quantidade" type="java.lang.Object"/>
+                                <Column editable="true" title="Custo" type="java.lang.Object"/>
+                                <Column editable="true" title="Outros" type="java.lang.Object"/>
+                                <Column editable="true" title="Frequencia" type="java.lang.Object"/>
                               </Table>
                             </Property>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                               <TableColumnModel selectionModel="0">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
                                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                                   <Title/>
                                   <Editor/>
@@ -3384,57 +3449,60 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="chb38assalariado" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="jLabel119" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                              <Component id="tfFrota2" min="-2" pref="110" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="1" attributes="1">
-                                              <Component id="jLabel121" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="tfFuncao" min="-2" pref="110" max="-2" attributes="0"/>
-                                          </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jLabel119" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                          <Component id="tf38frotaespecieT" min="-2" pref="110" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="jLabel122" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="jLabel118" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          </Group>
+                                      <Group type="102" alignment="1" attributes="1">
+                                          <Component id="jLabel121" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="tf38FuncaoT" min="-2" pref="110" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="tfSalario" max="32767" attributes="1"/>
-                                          <Component id="tfNumero" alignment="0" min="-2" pref="122" max="-2" attributes="1"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel120" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel109" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="tfCusto" max="32767" attributes="1"/>
-                                          <Component id="tfLucro" alignment="0" min="-2" pref="81" max="-2" attributes="1"/>
-                                      </Group>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jButton13" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jScrollPane19" alignment="0" min="-2" pref="640" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace pref="577" max="-2" attributes="0"/>
-                                      <Component id="jButton14" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jLabel122" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jLabel118" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="tf38salarioT" max="32767" attributes="1"/>
+                                      <Component id="tf38NumeroT" alignment="0" pref="122" max="32767" attributes="1"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel120" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel109" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="tf38custoT" pref="118" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                                          <Component id="tf38lucroT" pref="118" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                  <Component id="jButton13" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jScrollPane19" alignment="0" min="-2" pref="640" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace pref="577" max="-2" attributes="0"/>
+                                  <Component id="jButton14" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jLabel123" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -3454,28 +3522,28 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel119" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="tfFrota2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tf38frotaespecieT" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="tfFuncao" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tf38FuncaoT" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel121" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel122" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="tfNumero" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tf38NumeroT" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel120" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="tfCusto" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tf38custoT" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel118" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel109" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="tfLucro" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="tfSalario" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jButton13" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tf38salarioT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tf38lucroT" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -3517,7 +3585,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTable" name="table1">
+                    <Component class="javax.swing.JTable" name="tb38tripulacao">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                           <Table columnCount="7" rowCount="0">
@@ -3586,13 +3654,7 @@
                     <Property name="text" type="java.lang.String" value="S&#xe1;lario"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="tfCusto">
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JMoneyField()"/>
-                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-                  </AuxValues>
-                </Component>
-                <Component class="javax.swing.JTextField" name="tfFrota2">
+                <Component class="javax.swing.JTextField" name="tf38frotaespecieT">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel119">
                   <Properties>
@@ -3604,7 +3666,7 @@
                     <Property name="text" type="java.lang.String" value="Custo R$/Kg"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="tfNumero">
+                <Component class="javax.swing.JTextField" name="tf38NumeroT">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel121">
                   <Properties>
@@ -3616,34 +3678,34 @@
                     <Property name="text" type="java.lang.String" value="N&#xfa;mero"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="tfSalario">
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JMoneyField()"/>
-                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-                  </AuxValues>
-                </Component>
-                <Component class="javax.swing.JTextField" name="tfLucro">
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JMoneyField()"/>
-                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-                  </AuxValues>
-                </Component>
-                <Component class="javax.swing.JTextField" name="tfFuncao">
+                <Component class="javax.swing.JTextField" name="tf38FuncaoT">
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton13">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Adiconar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton13ActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton14">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Excluir"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton14ActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel123">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Tripula&#xe7;&#xe3;o"/>
                   </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="tf38salarioT">
+                </Component>
+                <Component class="javax.swing.JTextField" name="tf38custoT">
+                </Component>
+                <Component class="javax.swing.JTextField" name="tf38lucroT">
                 </Component>
               </SubComponents>
             </Container>
@@ -3664,11 +3726,11 @@
                                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="ckb40" min="-2" max="-2" attributes="0"/>
+                                          <Component id="ckb40a" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="ckb42" min="-2" max="-2" attributes="0"/>
+                                          <Component id="ckb40b" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="ckb43" min="-2" max="-2" attributes="0"/>
+                                          <Component id="ckb40c" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="ckb41" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="ckb39" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -3690,13 +3752,13 @@
                               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                   <Component id="jScrollPane38" alignment="0" max="32767" attributes="1"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jRadioButton35" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rb46Sazo" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton33" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rb46Preco" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton34" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rb46Outros" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jRadioButton36" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rb46concorrencia" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -3734,9 +3796,9 @@
                                           <Component id="ckb41" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                          <Component id="ckb40" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="ckb42" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="ckb43" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="ckb40a" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="ckb40b" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="ckb40c" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -3762,10 +3824,10 @@
                           <Component id="jLabel128" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jRadioButton35" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton33" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton34" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton36" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rb46Sazo" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rb46Preco" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rb46Outros" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rb46concorrencia" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane38" min="-2" pref="53" max="-2" attributes="0"/>
@@ -3819,8 +3881,11 @@
                     <Property name="text" type="java.lang.String" value="39 - A empresa financia frota de pescador?"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton33">
+                <Component class="javax.swing.JRadioButton" name="rb46Preco">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="q46"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Pre&#xe7;o"/>
                   </Properties>
                 </Component>
@@ -3829,18 +3894,27 @@
                     <Property name="text" type="java.lang.String" value="46 - Quais os principais problemas de abastecimento? Citar esp&#xe9;cie."/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton34">
+                <Component class="javax.swing.JRadioButton" name="rb46Outros">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="q46"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Outros"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton35">
+                <Component class="javax.swing.JRadioButton" name="rb46Sazo">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="q46"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Sazonalidade"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton36">
+                <Component class="javax.swing.JRadioButton" name="rb46concorrencia">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="q46"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Concorr&#xea;ncia de outros Mercados"/>
                   </Properties>
                 </Component>
@@ -3864,7 +3938,7 @@
                     <Property name="text" type="java.lang.String" value="Sim"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="ckb40">
+                <Component class="javax.swing.JCheckBox" name="ckb40a">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="paga o gelo"/>
                   </Properties>
@@ -3874,12 +3948,12 @@
                     <Property name="text" type="java.lang.String" value="Sim"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="ckb42">
+                <Component class="javax.swing.JCheckBox" name="ckb40b">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="da os arreios"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="ckb43">
+                <Component class="javax.swing.JCheckBox" name="ckb40c">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="outros"/>
                   </Properties>
@@ -3958,20 +4032,20 @@
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="jTextField5" alignment="0" max="32767" attributes="1"/>
-                                          <Component id="jComboBox1" alignment="0" pref="173" max="32767" attributes="1"/>
+                                          <Component id="tf47especie" alignment="0" max="32767" attributes="1"/>
+                                          <Component id="cb47causaperda" alignment="0" pref="173" max="32767" attributes="1"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Group type="102" attributes="0">
                                               <Component id="jLabel136" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jTextField6" min="-2" pref="177" max="-2" attributes="1"/>
+                                              <Component id="tf47estimativaPerda" min="-2" pref="177" max="-2" attributes="1"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="1">
                                               <Component id="jLabel137" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jTextField7" max="32767" attributes="1"/>
+                                              <Component id="tf47destinoPeixe" max="32767" attributes="1"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace max="32767" attributes="0"/>
@@ -3993,16 +4067,16 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel134" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf47especie" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel136" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf47estimativaPerda" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel135" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cb47causaperda" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel137" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf47destinoPeixe" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jButton15" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -4025,14 +4099,14 @@
                     <Property name="text" type="java.lang.String" value="Esp&#xe9;cie.:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField5">
+                <Component class="javax.swing.JTextField" name="tf47especie">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel135">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Causa da perda.:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox1">
+                <Component class="javax.swing.JComboBox" name="cb47causaperda">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -4044,14 +4118,14 @@
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField6">
+                <Component class="javax.swing.JTextField" name="tf47estimativaPerda">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel136">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Estimativa da perda (%).:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField7">
+                <Component class="javax.swing.JTextField" name="tf47destinoPeixe">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel137">
                   <Properties>
@@ -4065,7 +4139,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTable" name="jTable2">
+                    <Component class="javax.swing.JTable" name="tb47perdaPescado">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                           <Table columnCount="5" rowCount="4">
@@ -4116,11 +4190,17 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Adicionar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton15ActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton16">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Excluir"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton16ActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -4137,11 +4217,11 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel140" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jRadioButton9" min="-2" max="-2" attributes="0"/>
+                                      <Component id="chb50Dim" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jRadioButton8" min="-2" max="-2" attributes="0"/>
+                                      <Component id="chb50Aum" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jRadioButton7" min="-2" max="-2" attributes="0"/>
+                                      <Component id="chb50Est" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
@@ -4149,11 +4229,11 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel138" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="chb48Dim" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="chb48Aum" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="chb48Est" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
@@ -4161,31 +4241,31 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel139" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jRadioButton6" min="-2" max="-2" attributes="0"/>
+                                      <Component id="chb49Dim" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jRadioButton5" min="-2" max="-2" attributes="0"/>
+                                      <Component id="chb49Aum" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
+                                      <Component id="chb49Est" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel141" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jTextField8" min="-2" pref="101" max="-2" attributes="0"/>
+                                  <Component id="tf51" min="-2" pref="101" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel142" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField9" min="-2" pref="101" max="-2" attributes="0"/>
+                                  <Component id="tf52" min="-2" pref="101" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel143" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jRadioButton11" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chb53Dim" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jRadioButton12" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chb53Aum" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jRadioButton10" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chb53Est" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -4198,46 +4278,46 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel138" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="chb48Dim" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="chb48Aum" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="chb48Est" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane21" min="-2" pref="63" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel139" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton6" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton5" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="chb49Dim" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="chb49Aum" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="chb49Est" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane24" min="-2" pref="63" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel140" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton9" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton8" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton7" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="chb50Dim" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="chb50Aum" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="chb50Est" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane25" min="-2" pref="63" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel141" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf51" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel142" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField9" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf52" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel143" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton11" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton12" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton10" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="chb53Dim" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="chb53Aum" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="chb53Est" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -4250,18 +4330,27 @@
                     <Property name="text" type="java.lang.String" value="48 A quantidade de pescado ofertado tem: "/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+                <Component class="javax.swing.JRadioButton" name="chb48Dim">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="q48"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Diminuido"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton2">
+                <Component class="javax.swing.JRadioButton" name="chb48Aum">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="q48"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Aumentado"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton3">
+                <Component class="javax.swing.JRadioButton" name="chb48Est">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="q48"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Est&#xe1;vel"/>
                   </Properties>
                 </Component>
@@ -4272,7 +4361,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="jTextArea1">
+                    <Component class="javax.swing.JTextArea" name="ta48">
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
@@ -4280,13 +4369,19 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton4">
+                <Component class="javax.swing.JRadioButton" name="chb49Est">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="q49"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Est&#xe1;vel"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton5">
+                <Component class="javax.swing.JRadioButton" name="chb49Aum">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="q49"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Aumentado"/>
                   </Properties>
                 </Component>
@@ -4297,7 +4392,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="jTextArea2">
+                    <Component class="javax.swing.JTextArea" name="ta49">
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
@@ -4305,8 +4400,11 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton6">
+                <Component class="javax.swing.JRadioButton" name="chb49Dim">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="q49"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Diminuido"/>
                   </Properties>
                 </Component>
@@ -4315,13 +4413,19 @@
                     <Property name="text" type="java.lang.String" value="49 O tamanho do peixe tem: "/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton7">
+                <Component class="javax.swing.JRadioButton" name="chb50Est">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="q50"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Est&#xe1;vel"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton8">
+                <Component class="javax.swing.JRadioButton" name="chb50Aum">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="q50"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Aumentado"/>
                   </Properties>
                 </Component>
@@ -4332,7 +4436,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="jTextArea3">
+                    <Component class="javax.swing.JTextArea" name="ta50">
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
@@ -4340,8 +4444,11 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton9">
+                <Component class="javax.swing.JRadioButton" name="chb50Dim">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="q50"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Diminuido"/>
                   </Properties>
                 </Component>
@@ -4355,27 +4462,36 @@
                     <Property name="text" type="java.lang.String" value="51 Em que ano era mais farto?"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField8">
+                <Component class="javax.swing.JTextField" name="tf51">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField9">
+                <Component class="javax.swing.JTextField" name="tf52">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel142">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="52 Qual foi o pior ano de oferta?"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton10">
+                <Component class="javax.swing.JRadioButton" name="chb53Est">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="q53"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Est&#xe1;vel"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton11">
+                <Component class="javax.swing.JRadioButton" name="chb53Dim">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="q53"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Diminuido"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton12">
+                <Component class="javax.swing.JRadioButton" name="chb53Aum">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="q53"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Aumentado"/>
                   </Properties>
                 </Component>
@@ -4397,19 +4513,19 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel144" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="cbMercado" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cb54Mercado" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                       <Group type="102" attributes="1">
                                           <Component id="jLabel149" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jTextField14" max="32767" attributes="1"/>
+                                          <Component id="tf54especie" max="32767" attributes="1"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel145" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jTextField10" min="-2" pref="138" max="-2" attributes="1"/>
+                                          <Component id="tf54produto" min="-2" pref="138" max="-2" attributes="1"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -4419,8 +4535,8 @@
                                           <Component id="jLabel147" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="jTextField11" alignment="0" max="32767" attributes="1"/>
-                                              <Component id="jTextField12" alignment="0" min="-2" pref="113" max="-2" attributes="1"/>
+                                              <Component id="tf54Destino" alignment="0" max="32767" attributes="1"/>
+                                              <Component id="tf54volume" alignment="0" min="-2" pref="113" max="-2" attributes="1"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -4429,7 +4545,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel148" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jTextField13" min="-2" pref="94" max="-2" attributes="1"/>
+                                          <Component id="tf54valor" min="-2" pref="94" max="-2" attributes="1"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="199" max="-2" attributes="0"/>
@@ -4452,33 +4568,33 @@
                           <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel144" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="cbMercado" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cb54Mercado" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="1">
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel146" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tf54Destino" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel148" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField13" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tf54valor" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel147" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField12" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tf54volume" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="btAdiconarJtMercadoCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="1" attributes="1">
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel149" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField14" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tf54especie" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel145" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tf54produto" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -4492,7 +4608,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JComboBox" name="cbMercado">
+                <Component class="javax.swing.JComboBox" name="cb54Mercado">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -4532,7 +4648,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTable" name="jtMercadodeComercializacao">
+                    <Component class="javax.swing.JTable" name="tb54mercados">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                           <Table columnCount="7" rowCount="4">
@@ -4596,35 +4712,35 @@
                     <Property name="text" type="java.lang.String" value="Produto.:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField10">
+                <Component class="javax.swing.JTextField" name="tf54produto">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel146">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Destino.:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField11">
+                <Component class="javax.swing.JTextField" name="tf54Destino">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel147">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Volume.:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField12">
+                <Component class="javax.swing.JTextField" name="tf54volume">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel148">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Valor.:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField13">
+                <Component class="javax.swing.JTextField" name="tf54valor">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel149">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Esp&#xe9;cie.:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField14">
+                <Component class="javax.swing.JTextField" name="tf54especie">
                 </Component>
               </SubComponents>
             </Container>
@@ -4638,13 +4754,13 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="ckSuper" min="-2" max="-2" attributes="0"/>
-                                      <Component id="ckRevendedores" min="-2" max="-2" attributes="0"/>
+                                      <Component id="ckb55Super" min="-2" max="-2" attributes="0"/>
+                                      <Component id="ckb55Revendedores" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="ckFeiras" min="-2" max="-2" attributes="0"/>
-                                      <Component id="ckOutro" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="ckb55Feiras" min="-2" max="-2" attributes="0"/>
+                                      <Component id="ckb55Outro" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="253" max="-2" attributes="0"/>
                               </Group>
@@ -4675,16 +4791,16 @@
                                       <Component id="jLabel163" alignment="0" min="-2" max="-2" attributes="1"/>
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jRadioButton42" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jRadioButton40" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rb58mercado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rb58financeiro" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jRadioButton37" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rb58mao" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jRadioButton39" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="rb58ofertaPesca" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jRadioButton41" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="rb58qualidade" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -4706,12 +4822,12 @@
                                               <Group type="102" alignment="1" attributes="0">
                                                   <Component id="jLabel155" min="-2" max="-2" attributes="1"/>
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="tfQuestao60_0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                  <Component id="tf60Administracao" min="-2" pref="53" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="1" attributes="0">
                                                   <Component id="jLabel154" min="-2" max="-2" attributes="1"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="tfQuestao60_1" min="-2" pref="53" max="-2" attributes="0"/>
+                                                  <Component id="tf60Beneficiamento" min="-2" pref="53" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -4719,12 +4835,12 @@
                                               <Group type="102" alignment="1" attributes="1">
                                                   <Component id="jLabel152" min="-2" max="-2" attributes="1"/>
                                                   <EmptySpace max="32767" attributes="0"/>
-                                                  <Component id="tfQuestao60_3" min="-2" pref="53" max="-2" attributes="0"/>
+                                                  <Component id="tf60Pescadores" min="-2" pref="53" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="1" attributes="1">
                                                   <Component id="jLabel153" min="-2" max="-2" attributes="1"/>
                                                   <EmptySpace max="32767" attributes="0"/>
-                                                  <Component id="tfQuestao60_2" min="-2" pref="53" max="-2" attributes="0"/>
+                                                  <Component id="tf60Apoio" min="-2" pref="53" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -4737,11 +4853,11 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel151" min="-2" max="-2" attributes="1"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="tfQuestao61_0" min="-2" pref="86" max="-2" attributes="0"/>
+                                          <Component id="tf61Verao" min="-2" pref="86" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel150" min="-2" max="-2" attributes="1"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="tfQuestao61_1" min="-2" pref="86" max="-2" attributes="0"/>
+                                          <Component id="tf61Inverno" min="-2" pref="86" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace pref="269" max="32767" attributes="0"/>
@@ -4753,30 +4869,30 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel170" min="-2" max="-2" attributes="1"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="tfQuestao62_0" min="-2" pref="53" max="-2" attributes="0"/>
+                                  <Component id="tf62Administracao" min="-2" pref="53" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabel169" min="-2" max="-2" attributes="1"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="tfQuestao62_1" min="-2" pref="53" max="-2" attributes="0"/>
+                                  <Component id="tf62Beneficiamento" min="-2" pref="53" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel171" min="-2" max="-2" attributes="1"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="tfQuestao62_2" min="-2" pref="53" max="-2" attributes="0"/>
+                                  <Component id="tf62Apoio" min="-2" pref="53" max="-2" attributes="0"/>
                                   <EmptySpace pref="180" max="32767" attributes="0"/>
                               </Group>
                               <Component id="jLabel160" alignment="0" min="-2" max="-2" attributes="1"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel165" min="-2" max="-2" attributes="1"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="tfQuestao63_0" min="-2" pref="53" max="-2" attributes="0"/>
+                                  <Component id="tf63Administracao" min="-2" pref="53" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel168" min="-2" max="-2" attributes="1"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="tfQuestao63_1" min="-2" pref="53" max="-2" attributes="0"/>
+                                  <Component id="tf63Beneficiamento" min="-2" pref="53" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel167" min="-2" max="-2" attributes="1"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="tfQuestao63_2" min="-2" pref="53" max="-2" attributes="0"/>
+                                  <Component id="tf63Apoio" min="-2" pref="53" max="-2" attributes="0"/>
                                   <EmptySpace pref="186" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -4810,8 +4926,8 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel156" alignment="0" min="-2" max="-2" attributes="1"/>
-                                  <Component id="ckRest" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ckConsumidor" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ckb55Restaurante" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ckb55Consumidor" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace pref="389" max="32767" attributes="0"/>
                           </Group>
@@ -4824,14 +4940,14 @@
                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="ckFeiras" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ckb55Feiras" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ckOutro" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ckb55Outro" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="ckSuper" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ckb55Super" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ckRevendedores" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ckb55Revendedores" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -4859,17 +4975,17 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="jRadioButton40" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rb58financeiro" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jRadioButton42" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rb58mercado" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jRadioButton39" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton41" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rb58ofertaPesca" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rb58qualidade" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jRadioButton37" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rb58mao" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -4882,23 +4998,23 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="tfQuestao60_0" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tf60Administracao" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel155" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="tfQuestao60_1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tf60Beneficiamento" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel154" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="tfQuestao60_2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tf60Apoio" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel153" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="tfQuestao60_3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tf60Pescadores" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel152" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -4908,31 +5024,31 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel151" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tfQuestao61_0" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf61Verao" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel150" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tfQuestao61_1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf61Inverno" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel161" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="tfQuestao62_0" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf62Administracao" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel170" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tfQuestao62_1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf62Beneficiamento" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel169" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tfQuestao62_2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf62Apoio" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel171" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel160" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="tfQuestao63_0" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf63Administracao" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel165" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tfQuestao63_1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf63Beneficiamento" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel168" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel167" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tfQuestao63_2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf63Apoio" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel159" min="-2" max="-2" attributes="0"/>
@@ -4946,34 +5062,34 @@
                           <Component id="jLabel157" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane35" min="-2" pref="51" max="-2" attributes="1"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="80" max="32767" attributes="0"/>
                       </Group>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel156" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="ckConsumidor" min="-2" max="-2" attributes="0"/>
+                              <Component id="ckb55Consumidor" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="ckRest" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="735" max="32767" attributes="0"/>
+                              <Component id="ckb55Restaurante" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="804" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JCheckBox" name="ckRest">
+                <Component class="javax.swing.JCheckBox" name="ckb55Restaurante">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Restaurante"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="ckOutro">
+                <Component class="javax.swing.JCheckBox" name="ckb55Outro">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Outros"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="ckConsumidor">
+                <Component class="javax.swing.JCheckBox" name="ckb55Consumidor">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Consumidor"/>
                   </Properties>
@@ -4983,9 +5099,9 @@
                     <Property name="text" type="java.lang.String" value="Inverno"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="tfQuestao61_1">
+                <Component class="javax.swing.JTextField" name="tf61Inverno">
                 </Component>
-                <Component class="javax.swing.JTextField" name="tfQuestao61_0">
+                <Component class="javax.swing.JTextField" name="tf61Verao">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel151">
                   <Properties>
@@ -4997,16 +5113,16 @@
                     <Property name="text" type="java.lang.String" value="Pescadores"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="tfQuestao60_3">
+                <Component class="javax.swing.JTextField" name="tf60Pescadores">
                 </Component>
-                <Component class="javax.swing.JTextField" name="tfQuestao60_2">
+                <Component class="javax.swing.JTextField" name="tf60Apoio">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel153">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Apoio"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="tfQuestao60_1">
+                <Component class="javax.swing.JTextField" name="tf60Beneficiamento">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel154">
                   <Properties>
@@ -5028,7 +5144,7 @@
                     <Property name="text" type="java.lang.String" value="&lt;html&gt;66 - Em quanto voc&#xea; estima a receita bruta (ano) da empresa?&lt;/html&gt;"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="tfQuestao60_0">
+                <Component class="javax.swing.JTextField" name="tf60Administracao">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel158">
                   <Properties>
@@ -5060,8 +5176,11 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton40">
+                <Component class="javax.swing.JRadioButton" name="rb58financeiro">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="q58"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Financeiro"/>
                   </Properties>
                 </Component>
@@ -5075,8 +5194,11 @@
                     <Property name="text" type="java.lang.String" value="61 - Em m&#xe9;dia, quantos no ver&#xe3;o? Quantos no Inverno?"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton41">
+                <Component class="javax.swing.JRadioButton" name="rb58qualidade">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="q58"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Qualidade"/>
                   </Properties>
                 </Component>
@@ -5087,8 +5209,11 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="tf57">
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton37">
+                <Component class="javax.swing.JRadioButton" name="rb58mao">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="q58"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="M&#xe3;o de Obra"/>
                   </Properties>
                 </Component>
@@ -5105,13 +5230,19 @@
                     <Property name="text" type="java.lang.String" value="57 - Em que ano se deu sua expans&#xe3;o?"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton39">
+                <Component class="javax.swing.JRadioButton" name="rb58ofertaPesca">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="q58"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Oferta de pescado"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton42">
+                <Component class="javax.swing.JRadioButton" name="rb58mercado">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="q58"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Mercado"/>
                   </Properties>
                 </Component>
@@ -5128,14 +5259,14 @@
                     <Property name="text" type="java.lang.String" value="Mais para local"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="tfQuestao63_0">
+                <Component class="javax.swing.JTextField" name="tf63Administracao">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel166">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="56 - Qual tem sido a principal expans&#xe3;o de sua empresa ao longo do tempo de mercado?"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="tfQuestao63_1">
+                <Component class="javax.swing.JTextField" name="tf63Beneficiamento">
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="chb56nacional">
                   <Properties>
@@ -5145,7 +5276,7 @@
                     <Property name="text" type="java.lang.String" value="Mais para Mercado Nacional"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="tfQuestao63_2">
+                <Component class="javax.swing.JTextField" name="tf63Apoio">
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="chb56estadual">
                   <Properties>
@@ -5155,9 +5286,9 @@
                     <Property name="text" type="java.lang.String" value="Mais para estadual"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="tfQuestao62_1">
+                <Component class="javax.swing.JTextField" name="tf62Beneficiamento">
                 </Component>
-                <Component class="javax.swing.JTextField" name="tfQuestao62_0">
+                <Component class="javax.swing.JTextField" name="tf62Administracao">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel167">
                   <Properties>
@@ -5169,7 +5300,7 @@
                     <Property name="text" type="java.lang.String" value="Beneficiamento"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="tfQuestao62_2">
+                <Component class="javax.swing.JTextField" name="tf62Apoio">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel169">
                   <Properties>
@@ -5186,7 +5317,7 @@
                     <Property name="text" type="java.lang.String" value="Apoio"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="ckFeiras">
+                <Component class="javax.swing.JCheckBox" name="ckb55Feiras">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Feiras"/>
                   </Properties>
@@ -5216,12 +5347,12 @@
                     <Property name="text" type="java.lang.String" value="60 - O n&#xfa;mero de funcionarios"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="ckSuper">
+                <Component class="javax.swing.JCheckBox" name="ckb55Super">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Supermercados"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="ckRevendedores">
+                <Component class="javax.swing.JCheckBox" name="ckb55Revendedores">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Revendedores"/>
                   </Properties>
